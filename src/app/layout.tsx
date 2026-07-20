@@ -1,0 +1,55 @@
+import type { Metadata } from 'next';
+import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
+import './globals.css';
+import { LangProvider } from '@/lib/lang';
+import { SiteHeader, SiteFooter } from '@/components/Site';
+
+// Devanagari-first typography: Hindi is the native language of the site.
+const deva = Noto_Serif_Devanagari({
+  subsets: ['devanagari', 'latin'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-serif',
+  display: 'swap'
+});
+const inter = Inter({ subsets: ['latin'], variable: '--font-deva', display: 'swap' });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://oldco.in'),
+  title: {
+    default: 'OldCo.in — पुराने सिक्कों की दुनिया, आपकी भाषा में',
+    template: '%s · OldCo.in'
+  },
+  description:
+    'पुराने भारतीय सिक्कों का इतिहास, असली क़ीमत, ग्रेडिंग और संग्रह की कला — हिन्दी और अंग्रेज़ी में, मुफ़्त, बिना रजिस्ट्रेशन। Honest guides to old Indian coins, their history and value, in Hindi and English.',
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    siteName: 'OldCo.in',
+    type: 'website',
+    locale: 'hi_IN'
+  },
+  other: { 'google-adsense-account': 'ca-pub-6371903555702163' }
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="hi" className={`${deva.variable} ${inter.variable}`}>
+      <head>
+        {/* Google AdSense — the one loader + account meta, on every page. */}
+        <meta name="google-adsense-account" content="ca-pub-6371903555702163" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6371903555702163"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="font-serif">
+        <LangProvider>
+          <SiteHeader />
+          <main className="min-h-[60vh]">{children}</main>
+          <SiteFooter />
+        </LangProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,116 @@
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Build for Cloudflare
+        run: npm run cf:build
+
+      # The Cloudflare steps below need repo secrets. If they are not set yet,
+      # skip them with a LOUD notice instead of failing the whole run red —
+      # the build above already proved the site compiles. Add the secrets in
+      # GitHub → Settings → Secrets and variables → Actions:
+      #   CLOUDFLARE_API_TOKEN  (same token as the ulyah.com repo)
+      #   CLOUDFLARE_ACCOUNT_ID (same account id as the ulyah.com repo)
+      - name: Check Cloudflare secrets
+        id: cf
+        run: |
+          if [ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" ] && [ -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID secrets are not set — build succeeded but deploy was SKIPPED. Add both secrets (Settings → Secrets and variables → Actions) and re-run this workflow to go live."
+          fi
+
+      # Wrangler refuses to publish without a registered workers.dev subdomain
+      # or explicit routes. Registers one automatically (idempotent).
+      - name: Ensure workers.dev subdomain is registered
+        if: steps.cf.outputs.ok == 'true'
+        run: |
+          set -e
+          current=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain")
+          existing=$(node -e "try{const d=JSON.parse(process.argv[1]);process.stdout.write(d.result&&d.result.subdomain?d.result.subdomain:'')}catch(e){}" "$current")
+          if [ -n "$existing" ]; then
+            echo "workers.dev subdomain already registered: $existing"
+          else
+            echo "Registering workers.dev subdomain 'oldco'..."
+            curl -s -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
+              -d '{"subdomain":"oldco"}' \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Deploy to Cloudflare Workers
+        if: steps.cf.outputs.ok == 'true'
+        run: npx opennextjs-cloudflare deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # Attaches oldco.in / www.oldco.in to this Worker and creates the
+      # DNS records automatically. The zone id is looked up by name via the
+      # API, so no extra secret is needed — the zone just has to exist in the
+      # same Cloudflare account. Conflicting A/AAAA/CNAME records (registrar
+      # parking) are removed first; MX/TXT are left untouched so email keeps
+      # working. Non-fatal if the token lacks zone scope — then attach once by
+      # hand: Workers & Pages → oldco-in → Settings → Domains & Routes.
+      - name: Attach oldco.in custom domain + DNS (best effort)
+        if: steps.cf.outputs.ok == 'true'
+        continue-on-error: true
+        run: |
+          set -e
+          zone=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=oldco.in" \
+            | node -e "try{const d=JSON.parse(require('fs').readFileSync(0,'utf8'));process.stdout.write((d.result&&d.result[0]&&d.result[0].id)||'')}catch(e){}")
+          if [ -z "$zone" ]; then
+            echo "Zone oldco.in not visible to this token — attach the domain manually once."
+            exit 0
+          fi
+          echo "Zone id: $zone"
+          for host in oldco.in www.oldco.in; do
+            for type in A AAAA CNAME; do
+              ids=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                "https://api.cloudflare.com/client/v4/zones/$zone/dns_records?type=$type&name=$host" \
+                | node -e "try{const d=JSON.parse(require('fs').readFileSync(0,'utf8'));(d.result||[]).forEach(r=>console.log(r.id))}catch(e){}")
+              for id in $ids; do
+                echo "Deleting conflicting $type record for $host ($id)..."
+                curl -s -X DELETE -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                  "https://api.cloudflare.com/client/v4/zones/$zone/dns_records/$id" > /dev/null
+              done
+            done
+            echo "Attaching $host ..."
+            curl -s -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
+              -d "{\"hostname\":\"$host\",\"zone_id\":\"$zone\",\"service\":\"oldco-in\",\"environment\":\"production\"}" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/domains"
+            echo
+          done
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
