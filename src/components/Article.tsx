@@ -32,7 +32,6 @@ export function ArticleCard({ article }: { article: Article }) {
  * mid-article. Density stays reader-first and AdSense-compliant. */
 export function ArticleBody({ article }: { article: Article }) {
   const { lang } = useLang();
-  const midpoint = Math.max(2, Math.floor(article.sections.length / 2));
 
   return (
     <article className="mx-auto max-w-prose2 px-4">
@@ -52,8 +51,13 @@ export function ArticleBody({ article }: { article: Article }) {
       <div className={`article-body mt-6 ${lang === 'hi' ? 'dropcap-hi' : 'dropcap-en'}`}>
         {article.sections.map((s, i) => (
           <section key={i}>
+            {/* Reader-friendly ad density: distinct in-content slots spaced ~2
+                sections apart (each centrally controlled from the ulyah.com
+                admin), so a normal article shows 3–4 tasteful ads with the
+                footer unit — never inside a paragraph, never sticky. */}
             {i === 1 && <AdSlot placement="in_article" />}
-            {i === midpoint && i !== 1 && <AdSlot placement="in_article" />}
+            {i === 3 && <AdSlot placement="in_article_1" />}
+            {i === 5 && <AdSlot placement="in_article_2" />}
             {(lang === 'hi' ? s.hHi : s.hEn) && <h2>{lang === 'hi' ? s.hHi : s.hEn}</h2>}
             {(lang === 'hi' ? s.pHi : s.pEn).map((p, j) => (
               <p key={j}>{p}</p>
@@ -61,6 +65,8 @@ export function ArticleBody({ article }: { article: Article }) {
           </section>
         ))}
       </div>
+
+      <AdSlot placement="footer" />
 
       <div className="ornament-rule mt-10" />
       <p className="mt-4 text-xs leading-relaxed text-ink-800/60">
