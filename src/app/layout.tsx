@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   description:
     'पुराने भारतीय सिक्कों का इतिहास, असली क़ीमत, ग्रेडिंग और संग्रह की कला — हिन्दी और अंग्रेज़ी में, मुफ़्त, बिना रजिस्ट्रेशन। Honest guides to old Indian coins, their history and value, in Hindi and English.',
   alternates: { canonical: '/' },
+  // Own brand favicon — overrides the leftover Sedo parking favicon that a
+  // browser may still show for a freshly-migrated domain.
+  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
   robots: { index: true, follow: true },
   openGraph: {
     siteName: 'OldCo.in',
