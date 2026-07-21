@@ -45,6 +45,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6371903555702163"
           crossOrigin="anonymous"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                { '@type': 'Organization', '@id': 'https://oldco.in#org', name: 'OldCo.in', url: 'https://oldco.in', logo: 'https://oldco.in/icon.svg' },
+                { '@type': 'WebSite', '@id': 'https://oldco.in#site', name: 'OldCo.in', url: 'https://oldco.in', publisher: { '@id': 'https://oldco.in#org' }, inLanguage: ['hi','en'] },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="font-serif">
         <LangProvider>
