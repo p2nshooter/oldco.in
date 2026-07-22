@@ -1,4 +1,5 @@
 import { ARTICLES_BATCH2 } from './articles-batch2';
+import { ARTICLES_BATCH3 } from './articles-batch3';
 import AUTO_ARTICLES from "./auto-articles.json";
 /**
  * OldCo.in — original bilingual library on India's old coins and numismatics.
@@ -726,6 +727,9 @@ export function getArticlesByCategory(cat: CatSlug): Article[] {
 
 // Batch 2 merges into the same library; all lists sort by date.
 ARTICLES.push(...ARTICLES_BATCH2);
+
+// Batch 3 — bilingual numismatics deep-dives (Kushan to naya paisa).
+ARTICLES.push(...ARTICLES_BATCH3);
 
 // Autonomous content bot output (committed by the ulyah.com Orchestra).
 ARTICLES.push(...(AUTO_ARTICLES as unknown as Article[]));
