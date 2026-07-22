@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SiteBeacon } from "@/components/SiteBeacon";
 import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
 import './globals.css';
 import { LangProvider } from '@/lib/lang';
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-serif">
+        <SiteBeacon />
         <LangProvider>
           <SiteHeader />
           <main className="min-h-[60vh]">{children}</main>
