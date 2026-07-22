@@ -95,54 +95,101 @@ export function RelatedArticles({ articles }: { articles: Article[] }) {
   );
 }
 
-/** Home hero + category strip + article grid. */
 export function HomeContent({ articles }: { articles: Article[] }) {
   const { lang } = useLang();
+  const latest = [...articles].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const featured = latest[0];
+  const featuredCat = featured ? CATEGORIES.find((c) => c.slug === featured.category) : undefined;
   return (
     <div>
-      <section className="paper-motif border-b border-gold-400/30">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-600">
-            {lang === 'hi' ? 'मुफ़्त · बिना रजिस्ट्रेशन · हिन्दी में' : 'Free · No registration · In Hindi & English'}
-          </p>
-          <h1 className="mx-auto mt-4 max-w-3xl font-serif text-4xl font-black leading-tight text-ink-900 sm:text-5xl">
-            {lang === 'hi' ? (
-              <>पैसे की समझ, <span className="gold-text">आपकी भाषा</span> में</>
-            ) : (
-              <>Money, understood — <span className="gold-text">in your language</span></>
-            )}
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ink-800/75">
-            {lang === 'hi'
-              ? 'निवेश, बचत, टैक्स, बीमा और डिजिटल पैसे पर गहरे, ईमानदार और आसान लेख — हर लेख हिन्दी और अंग्रेज़ी दोनों में।'
-              : 'Deep, honest, plain-spoken guides to investing, saving, tax, insurance and digital money — every article in both Hindi and English.'}
-          </p>
-          <div className="ornament-rule mx-auto mt-8 max-w-md" />
+      {/* Hero — animated orbs + grid ornament + the newest piece as the splash. */}
+      <section className="relative overflow-hidden border-b border-gold-400/30">
+        <div className="mk-grid-bg absolute inset-0" aria-hidden />
+        <div className="mk-orb" style={{ width: 360, height: 360, left: -130, top: -90, background: 'var(--gold)' }} aria-hidden />
+        <div className="mk-orb mk-orb-2" style={{ width: 300, height: 300, right: -70, bottom: -130, background: 'var(--gold)' }} aria-hidden />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 lg:grid-cols-[1.1fr_1fr] lg:py-20">
+          <div className="mk-fade-up">
+            <span className="mk-chip text-gold-600">
+              {lang === 'hi' ? 'मुफ़्त · बिना रजिस्ट्रेशन · हिन्दी + English' : 'Free · No registration · Hindi + English'}
+            </span>
+            <h1 className="mt-5 font-serif text-4xl font-black leading-tight text-ink-900 sm:text-6xl">
+              {lang === 'hi' ? (
+                <>पुराने सिक्कों की दुनिया, <span className="gold-text">आपकी भाषा</span> में</>
+              ) : (
+                <>Old Indian coins, <span className="gold-text">finally explained</span></>
+              )}
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-800/75 sm:text-lg">
+              {lang === 'hi'
+                ? 'सिक्कों का इतिहास, असली क़ीमत, संग्रह की कला और ठगों से बचाव — गहरे, ईमानदार लेख, हर एक हिन्दी और अंग्रेज़ी दोनों में।'
+                : 'The history, honest values, collecting craft and scam-proofing of old Indian coins — deep, candid articles, every one in both Hindi and English.'}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-8">
+              <div>
+                <p className="font-serif text-3xl font-black text-gold-600">{articles.length}</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-ink-800/60">{lang === 'hi' ? 'मौलिक लेख' : 'Original articles'}</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl font-black text-gold-600">{CATEGORIES.length}</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-ink-800/60">{lang === 'hi' ? 'विषय' : 'Topic desks'}</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl font-black text-gold-600">2</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-ink-800/60">{lang === 'hi' ? 'भाषाएँ — हिन्दी + English' : 'Languages — Hindi + English'}</p>
+              </div>
+            </div>
+          </div>
+          {featured && (
+            <div className="relative self-center">
+              <div className="mk-ring" style={{ width: 340, height: 340, right: -40, top: -40 }} aria-hidden />
+              <Link href={`/articles/${featured.slug}`} className="premium-card mk-fade-up mk-d2 relative block p-7">
+                <span className="mk-chip text-gold-600">
+                  ★ {lang === 'hi' ? 'विशेष' : 'Featured'} · {lang === 'hi' ? featuredCat?.nameHi : featuredCat?.nameEn}
+                </span>
+                <h2 className="mt-4 font-serif text-2xl font-black leading-snug text-ink-900">
+                  {lang === 'hi' ? featured.titleHi : featured.titleEn}
+                </h2>
+                <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-ink-800/70">
+                  {lang === 'hi' ? featured.excerptHi : featured.excerptEn}
+                </p>
+                <p className="mt-4 text-sm font-bold text-gold-600">{lang === 'hi' ? 'पूरा लेख पढ़िए →' : 'Read the full story →'}</p>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-10">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {CATEGORIES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/category/${c.slug}`}
-              className="premium-card p-4 text-center"
-            >
-              <span className="text-2xl">{c.icon}</span>
-              <p className="mt-2 font-serif text-sm font-bold text-ink-900">{lang === 'hi' ? c.nameHi : c.nameEn}</p>
+      {/* Topic desks */}
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <div className="flex items-end justify-between">
+          <h2 className="font-serif text-2xl font-bold text-ink-900">{lang === 'hi' ? 'विषय चुनिए' : 'Explore by topic'}</h2>
+          <span className="text-xs font-semibold uppercase tracking-widest text-gold-600">{CATEGORIES.length} {lang === 'hi' ? 'विषय' : 'desks'}</span>
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {CATEGORIES.map((c, i) => (
+            <Link key={c.slug} href={`/category/${c.slug}`} className={`premium-card mk-lift mk-fade-up mk-d${Math.min(i + 1, 6)} p-5`}>
+              <span className="mk-icon-bubble" aria-hidden>{c.icon}</span>
+              <p className="mt-3 font-serif text-base font-bold text-ink-900">{lang === 'hi' ? c.nameHi : c.nameEn}</p>
+              <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-800/60">{lang === 'hi' ? c.taglineHi : c.taglineEn}</p>
+              <p className="mt-2 text-[11px] font-semibold text-gold-600">
+                {articles.filter((a) => a.category === c.slug).length} {lang === 'hi' ? 'लेख →' : 'articles →'}
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* Latest */}
       <section className="mx-auto max-w-6xl px-4 pb-10">
-        <h2 className="font-serif text-2xl font-bold text-ink-900">
-          {lang === 'hi' ? 'ताज़ा लेख' : 'Latest articles'}
-        </h2>
+        <div className="flex items-end justify-between">
+          <h2 className="font-serif text-2xl font-bold text-ink-900">{lang === 'hi' ? 'ताज़ा लेख' : 'Latest articles'}</h2>
+          <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gold-600">
+            <span className="mk-live-dot" /> {lang === 'hi' ? 'नियमित अपडेट' : 'Updated often'}
+          </span>
+        </div>
         <div className="ornament-rule mt-3 max-w-xs" />
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((a) => (
+          {latest.map((a) => (
             <ArticleCard key={a.slug} article={a} />
           ))}
         </div>

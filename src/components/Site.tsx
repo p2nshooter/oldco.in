@@ -1,11 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import { useLang } from '@/lib/lang';
-import { CATEGORIES } from '@/content/articles';
+import { CATEGORIES, ARTICLES } from '@/content/articles';
 
-/** Header + footer + language toggle — one client bundle, both languages inline. */
+/**
+ * Magazine-style chrome (v2 redesign), bilingual: breaking-news ticker,
+ * bold masthead, sticky icon nav with the language toggle, rich footer
+ * with a giant watermark. Motion comes from the CSS magazine kit in
+ * globals.css and honours prefers-reduced-motion.
+ */
+
+function latest(n: number) {
+  return [...ARTICLES].sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, n);
+}
 
 export function LangToggle() {
   const { lang, setLang } = useLang();
@@ -31,78 +39,80 @@ export function LangToggle() {
 
 export function SiteHeader() {
   const { lang } = useLang();
-  const [open, setOpen] = useState(false);
-
+  const ticker = latest(8);
   return (
-    <header className="sticky top-0 z-40 border-b border-gold-400/30 bg-ivory-50/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
-        <Link href="/" className="flex items-baseline gap-1.5">
-          <span className="font-serif text-2xl font-black tracking-tight text-ink-900">
-            OldCo<span className="gold-text">.in</span>
+    <header id="top">
+      {/* Ticker bar */}
+      <div className="bg-ink-950 text-ivory-50">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-1.5 text-[11px]">
+          <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-0.5 font-bold uppercase tracking-widest">
+            <span className="mk-live-dot" /> {lang === 'hi' ? 'ताज़ा' : 'Latest'}
           </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.2em] text-gold-600 sm:inline">
-            {lang === 'hi' ? 'पुराने सिक्कों की दुनिया' : 'The world of old coins'}
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-5 lg:flex">
-          {CATEGORIES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/category/${c.slug}`}
-              className="text-sm font-medium text-ink-800 transition hover:text-gold-600"
-            >
-              {lang === 'hi' ? c.nameHi : c.nameEn}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <LangToggle />
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="rounded-md border border-gold-400/50 p-2 lg:hidden"
-            aria-label="Menu"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
+          <div className="mk-ticker relative flex-1">
+            <div className="mk-ticker-track">
+              {[...ticker, ...ticker].map((a, i) => (
+                <Link key={i} href={`/articles/${a.slug}`} className="whitespace-nowrap opacity-80 transition hover:opacity-100">
+                  <span className="mr-2 text-gold-300">◆</span>
+                  {lang === 'hi' ? a.titleHi : a.titleEn}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {open && (
-        <nav className="border-t border-gold-400/25 bg-ivory-50 px-4 py-3 lg:hidden">
+      {/* Masthead */}
+      <div className="relative overflow-hidden border-b border-gold-400/30 bg-ivory-50">
+        <div className="mk-orb" style={{ width: 280, height: 280, right: -90, top: -130, background: 'var(--gold)' }} />
+        <div className="relative mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6">
+          <Link href="/" className="flex flex-wrap items-baseline gap-3">
+            <span className="font-serif text-4xl font-black tracking-tight text-ink-900 sm:text-5xl">
+              OldCo<span className="gold-text">.in</span>
+            </span>
+            <span className="mk-chip hidden text-gold-600 sm:inline-flex">
+              {lang === 'hi' ? 'पुराने सिक्कों की दुनिया' : 'The world of old coins'}
+            </span>
+          </Link>
+          <LangToggle />
+        </div>
+      </div>
+
+      {/* Sticky icon nav */}
+      <nav className="sticky top-0 z-40 border-b border-gold-400/30 bg-ivory-50/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center gap-6 overflow-x-auto px-4 py-3 text-sm font-semibold text-ink-800 [scrollbar-width:none]">
+          <Link href="/" className="mk-underline shrink-0 whitespace-nowrap transition hover:text-gold-600">
+            ⌂ {lang === 'hi' ? 'मुखपृष्ठ' : 'Home'}
+          </Link>
           {CATEGORIES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/category/${c.slug}`}
-              onClick={() => setOpen(false)}
-              className="block rounded-md px-2 py-2.5 text-sm font-medium text-ink-800 hover:bg-gold-300/15"
-            >
-              {c.icon} {lang === 'hi' ? c.nameHi : c.nameEn}
+            <Link key={c.slug} href={`/category/${c.slug}`} className="mk-underline shrink-0 whitespace-nowrap transition hover:text-gold-600">
+              <span className="mr-1" aria-hidden>{c.icon}</span>
+              {lang === 'hi' ? c.nameHi : c.nameEn}
             </Link>
           ))}
-        </nav>
-      )}
+          <Link href="/about" className="mk-underline shrink-0 whitespace-nowrap opacity-70 transition hover:text-gold-600">
+            {lang === 'hi' ? 'हमारे बारे में' : 'About'}
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }
 
 export function SiteFooter() {
   const { lang } = useLang();
+  const fresh = latest(4);
   return (
-    <footer className="mt-16 border-t border-gold-400/30 bg-ink-900 text-ivory-100">
-      <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-3">
+    <footer className="relative mt-16 overflow-hidden bg-ink-900 text-ivory-100">
+      <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
+      <div className="mk-watermark text-ivory-50">OldCo</div>
+      <div className="relative mx-auto max-w-6xl px-4 py-12">
+        <div className="grid gap-10 md:grid-cols-4">
           <div>
             <p className="font-serif text-2xl font-black">
               OldCo<span className="gold-text">.in</span>
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory-100/70">
-              {lang === 'hi'
-                ? 'पुराने सिक्कों का इतिहास, क़ीमत और संग्रह — सबकी भाषा में। मुफ़्त, बिना रजिस्ट्रेशन।'
-                : 'The history, value and craft of old Indian coins — in your language. Free, no registration.'}
+              {lang === 'hi' ? 'पुराने सिक्कों का इतिहास, क़ीमत और संग्रह — सबकी भाषा में। मुफ़्त, बिना रजिस्ट्रेशन।' : 'The history, value and craft of old Indian coins — in your language. Free, no registration.'}
             </p>
           </div>
           <div>
@@ -110,8 +120,21 @@ export function SiteFooter() {
             <ul className="mt-3 space-y-2 text-sm text-ivory-100/70">
               {CATEGORIES.map((c) => (
                 <li key={c.slug}>
-                  <Link href={`/category/${c.slug}`} className="hover:text-gold-300">
+                  <Link href={`/category/${c.slug}`} className="transition hover:text-gold-300">
+                    <span className="mr-1.5" aria-hidden>{c.icon}</span>
                     {lang === 'hi' ? c.nameHi : c.nameEn}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-gold-300">{lang === 'hi' ? 'ताज़ा लेख' : 'Fresh off the desk'}</p>
+            <ul className="mt-3 space-y-2.5 text-sm text-ivory-100/70">
+              {fresh.map((a) => (
+                <li key={a.slug}>
+                  <Link href={`/articles/${a.slug}`} className="line-clamp-2 transition hover:text-gold-300">
+                    {lang === 'hi' ? a.titleHi : a.titleEn}
                   </Link>
                 </li>
               ))}
@@ -120,10 +143,11 @@ export function SiteFooter() {
           <div>
             <p className="text-sm font-semibold text-gold-300">{lang === 'hi' ? 'साइट' : 'Site'}</p>
             <ul className="mt-3 space-y-2 text-sm text-ivory-100/70">
-              <li><Link href="/about" className="hover:text-gold-300">{lang === 'hi' ? 'हमारे बारे में' : 'About us'}</Link></li>
-              <li><Link href="/contact" className="hover:text-gold-300">{lang === 'hi' ? 'संपर्क' : 'Contact'}</Link></li>
-              <li><Link href="/privacy" className="hover:text-gold-300">{lang === 'hi' ? 'गोपनीयता नीति' : 'Privacy Policy'}</Link></li>
-              <li><Link href="/terms" className="hover:text-gold-300">{lang === 'hi' ? 'नियम व शर्तें' : 'Terms'}</Link></li>
+              <li><Link href="/about" className="transition hover:text-gold-300">{lang === 'hi' ? 'हमारे बारे में' : 'About us'}</Link></li>
+              <li><Link href="/contact" className="transition hover:text-gold-300">{lang === 'hi' ? 'संपर्क' : 'Contact'}</Link></li>
+              <li><Link href="/privacy" className="transition hover:text-gold-300">{lang === 'hi' ? 'गोपनीयता नीति' : 'Privacy Policy'}</Link></li>
+              <li><Link href="/terms" className="transition hover:text-gold-300">{lang === 'hi' ? 'नियम व शर्तें' : 'Terms'}</Link></li>
+              <li><a href="#top" className="transition hover:text-gold-300">↑ {lang === 'hi' ? 'ऊपर जाएँ' : 'Back to top'}</a></li>
             </ul>
           </div>
         </div>
