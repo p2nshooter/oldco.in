@@ -3,6 +3,7 @@ import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
 import './globals.css';
 import { LangProvider } from '@/lib/lang';
 import { SiteHeader, SiteFooter } from '@/components/Site';
+import { GlobalAds } from '@/components/Ads';
 
 // Devanagari-first typography: Hindi is the native language of the site.
 const deva = Noto_Serif_Devanagari({
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           <main className="min-h-[60vh]">{children}</main>
           <SiteFooter />
+          <GlobalAds />
         </LangProvider>
       </body>
     </html>
