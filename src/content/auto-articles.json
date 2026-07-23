@@ -238,5 +238,63 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "indian-coin-legends-in-foreign-languages",
+    "category": "itihas",
+    "titleHi": "विदेशी भाषाओं में भारतीय सिक्के के देवता",
+    "titleEn": "Indian Coin Legends in Foreign Languages",
+    "excerptHi": "भारतीय सिक्के के पीछे छिपे देवता और उनकी कहानियाँ",
+    "excerptEn": "The hidden gods and their stories behind Indian coins",
+    "date": "2026-07-23",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्के के पीछे छिपे देवता और उनकी कहानियाँ विश्वभर में प्रसिद्ध हैं। इन देवताओं की कहानियाँ विभिन्न संस्कृतियों और भाषाओं में प्रसारित हुई हैं।"
+        ],
+        "pEn": [
+          "The hidden gods and their stories behind Indian coins are famous worldwide. These stories have spread across various cultures and languages."
+        ]
+      },
+      {
+        "hHi": "विष्णु और विष्णु अवतार",
+        "hEn": "Vishnu and his Avatars",
+        "pHi": [
+          "विष्णु के अवतारों की कहानियाँ भारतीय सिक्कों पर पाई जाती हैं। इनमें गोविंद, माधव, त्रिविक्रम, वामन, कूर्म, नरसिंह, परशुराम, राम, बालराम, कृष्ण और कल्कि शामिल हैं।",
+          "इन अवतारों की कहानियाँ विभिन्न भारतीय संस्कृतियों में प्रसारित हुई हैं और वे आज भी लोकप्रिय हैं।"
+        ],
+        "pEn": [
+          "The stories of Vishnu's avatars are found on Indian coins. These include Govind, Madhav, Trivikram, Vaman, Kurma, Narasimha, Parasuram, Ram, Balram, Krishna, and Kalki.",
+          "These stories have spread across various Indian cultures and are still popular today."
+        ]
+      },
+      {
+        "hHi": "शिव और उनकी कहानियाँ",
+        "hEn": "Shiva and his Stories",
+        "pHi": [
+          "शिव की कहानियाँ भारतीय सिक्कों पर पाई जाती हैं। इनमें शिव के विभिन्न अवतारों की कहानियाँ शामिल हैं।",
+          "इन कहानियों का महत्व विभिन्न भारतीय संस्कृतियों में है और वे आज भी लोकप्रिय हैं।"
+        ],
+        "pEn": [
+          "The stories of Shiva are found on Indian coins. These include the stories of Shiva's various avatars.",
+          "The significance of these stories is in various Indian cultures and they are still popular today."
+        ]
+      },
+      {
+        "hHi": "भारतीय सिक्के के देवता विश्वभर में प्रसिद्ध",
+        "hEn": "Indian Coin Gods Famous Worldwide",
+        "pHi": [
+          "भारतीय सिक्के के देवता और उनकी कहानियाँ विश्वभर में प्रसिद्ध हैं। इन देवताओं की कहानियाँ विभिन्न संस्कृतियों और भाषाओं में प्रसारित हुई हैं।",
+          "इन देवताओं की कहानियों का महत्व विभिन्न भारतीय संस्कृतियों में है और वे आज भी लोकप्रिय हैं।"
+        ],
+        "pEn": [
+          "Indian coin gods and their stories are famous worldwide. These stories have spread across various cultures and languages.",
+          "The significance of these stories is in various Indian cultures and they are still popular today."
+        ]
+      }
+    ]
   }
 ]
