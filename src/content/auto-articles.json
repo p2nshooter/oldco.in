@@ -296,5 +296,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "indian-coins-in-mughal-art",
+    "category": "itihas",
+    "titleHi": "मुगल कला में भारतीय मुद्राएं",
+    "titleEn": "Indian Coins in Mughal Art",
+    "excerptHi": "मुगल साम्राज्य में भारतीय मुद्राएं कला और संस्कृति का महत्वपूर्ण हिस्सा थीं।",
+    "excerptEn": "Indian coins played a significant role in Mughal art and culture.",
+    "date": "2026-07-23",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "मुगल साम्राज्य के दौरान, भारतीय मुद्राएं कला और संस्कृति का महत्वपूर्ण हिस्सा थीं।",
+          "इन मुद्राओं को अक्सर मुगल शासकों के चित्रों में दिखाया जाता था, जो इन्हें अपने राज्य का प्रतीक बनाते थे।"
+        ],
+        "pEn": [
+          "During the Mughal era, Indian coins played a significant role in art and culture.",
+          "These coins were often depicted in the portraits of Mughal rulers, making them a symbol of their kingdom."
+        ]
+      },
+      {
+        "hHi": "मुगल शासकों के प्रति मुद्राओं का महत्व",
+        "hEn": "The Significance of Coins to Mughal Rulers",
+        "pHi": [
+          "मुगल शासकों के लिए, भारतीय मुद्राएं एक महत्वपूर्ण वस्तु थीं, जो उनके शक्ति और समृद्धि का प्रतीक थीं।",
+          "इन मुद्राओं को अक्सर मुगल शासकों के सिक्कों पर चित्रित किया जाता था, जो इन्हें अपने राज्य का प्रतीक बनाते थे।"
+        ],
+        "pEn": [
+          "For Mughal rulers, Indian coins were an important item, symbolizing their power and prosperity.",
+          "These coins were often depicted on Mughal coins, making them a symbol of their kingdom."
+        ]
+      },
+      {
+        "hHi": "मुगल कला में मुद्राओं का प्रभाव",
+        "hEn": "The Impact of Coins on Mughal Art",
+        "pHi": [
+          "मुगल कला में मुद्राएं एक महत्वपूर्ण विषय थे, जो कलाकारों को प्रेरित करते थे कि वे इन्हें अपने काम में शामिल करें।",
+          "इन मुद्राओं को अक्सर मुगल कला में दिखाया जाता था, जो इन्हें अपने राज्य का प्रतीक बनाते थे।"
+        ],
+        "pEn": [
+          "In Mughal art, coins were a significant subject, inspiring artists to incorporate them into their work.",
+          "These coins were often depicted in Mughal art, making them a symbol of their kingdom."
+        ]
+      },
+      {
+        "hHi": "निष्कर्ष",
+        "hEn": "Conclusion",
+        "pHi": [
+          "मुगल साम्राज्य में भारतीय मुद्राएं कला और संस्कृति का महत्वपूर्ण हिस्सा थीं, जो कलाकारों को प्रेरित करती थीं कि वे इन्हें अपने काम में शामिल करें।",
+          "इन मुद्राओं को अक्सर मुगल कला में दिखाया जाता था, जो इन्हें अपने राज्य का प्रतीक बनाते थे।"
+        ],
+        "pEn": [
+          "In the Mughal era, Indian coins played a significant role in art and culture, inspiring artists to incorporate them into their work.",
+          "These coins were often depicted in Mughal art, making them a symbol of their kingdom."
+        ]
+      }
+    ]
   }
 ]
