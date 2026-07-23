@@ -58,5 +58,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "indian-coin-legends",
+    "category": "itihas",
+    "titleHi": "भारतीय सिक्कों की देवियाँ",
+    "titleEn": "Legends of Indian Coins",
+    "excerptHi": "भारतीय सिक्कों की देवियाँ, जिन्होंने इतिहास को बदल दिया",
+    "excerptEn": "Legends of Indian Coins, who changed the course of history",
+    "date": "2026-07-23",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्कों का इतिहास एक लंबी और जटिल कहानी है। यह कहानी प्राचीन काल से लेकर आधुनिक समय तक की है।",
+          "भारतीय सिक्कों ने न केवल आर्थिक विकास में महत्वपूर्ण भूमिका निभाई है, बल्कि सांस्कृतिक और ऐतिहासिक महत्व भी रखते हैं।"
+        ],
+        "pEn": [
+          "The history of Indian coins is a long and complex story. This story spans from ancient times to modern days.",
+          "Indian coins have not only played a significant role in economic development, but also hold cultural and historical significance."
+        ]
+      },
+      {
+        "hHi": "महान सम्राटों की सिक्कियाँ",
+        "hEn": "Coins of Great Emperors",
+        "pHi": [
+          "महान सम्राटों ने भारतीय इतिहास में अपना निशान छोड़ दिया है। उनके शासनकाल में सिक्कों का निर्माण एक महत्वपूर्ण कार्य था।",
+          "अखंड भारत के शासकों ने अपने सिक्कों पर अपने नाम और प्रतीकों को दर्शाया था।"
+        ],
+        "pEn": [
+          "Great emperors have left their mark on Indian history. Coin minting was a significant task during their reign.",
+          "The rulers of Akhand Bharat had their names and symbols depicted on their coins."
+        ]
+      },
+      {
+        "hHi": "सांस्कृतिक महत्व",
+        "hEn": "Cultural Significance",
+        "pHi": [
+          "भारतीय सिक्कों का सांस्कृतिक महत्व बहुत अधिक है। वे हमारे समाज और संस्कृति के महत्वपूर्ण हिस्से हैं।",
+          "सिक्कों के माध्यम से हम अपने पूर्वजों के साथ जुड़ सकते हैं और उनके जीवन को समझ सकते हैं।"
+        ],
+        "pEn": [
+          "Indian coins have significant cultural value. They are an important part of our society and culture.",
+          "Through coins, we can connect with our ancestors and understand their lives."
+        ]
+      },
+      {
+        "hHi": "सिक्कों का भविष्य",
+        "hEn": "Future of Coins",
+        "pHi": [
+          "भारतीय सिक्कों का भविष्य बहुत रोचक है। नए-नए सिक्के निर्मित हो रहे हैं और पुराने सिक्कों का संग्रह भी बढ़ रहा है।",
+          "भविष्य में सिक्कों का महत्व और बढ़ेगा और हमें उनकी रक्षा और संरक्षण के लिए काम करना होगा।"
+        ],
+        "pEn": [
+          "The future of Indian coins is very exciting. New coins are being minted and the collection of old coins is also increasing.",
+          "In the future, the importance of coins will increase and we will have to work to protect and preserve them."
+        ]
+      }
+    ]
   }
 ]
