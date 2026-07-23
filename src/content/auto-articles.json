@@ -356,5 +356,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coins-in-indian-art",
+    "category": "itihas",
+    "titleHi": "मुग़ल मुद्राएं भारतीय कला में",
+    "titleEn": "Mughal Coins in Indian Art",
+    "excerptHi": "मुग़ल शासनकाल में भारतीय कला में मुद्राओं का महत्वपूर्ण योगदान",
+    "excerptEn": "Mughal coins played a significant role in Indian art during their reign",
+    "date": "2026-07-23",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय कला में मुद्राओं का महत्वपूर्ण योगदान क्यों है?",
+          "मुग़ल शासनकाल में भारतीय कला में मुद्राओं का महत्वपूर्ण योगदान"
+        ],
+        "pEn": [
+          "Why are coins significant in Indian art?",
+          "Mughal coins played a significant role in Indian art during their reign"
+        ]
+      },
+      {
+        "hHi": "मुग़ल मुद्राओं का कलात्मक महत्व",
+        "hEn": "Artistic Significance of Mughal Coins",
+        "pHi": [
+          "मुग़ल मुद्राएं अपने अद्वितीय डिज़ाइन और चित्रण के लिए जानी जाती हैं।",
+          "इन मुद्राओं में अक्सर ताजमहल, लाल किला, और दिल्ली के मस्जिद जैसे ऐतिहासिक स्थलों के चित्र होते हैं।"
+        ],
+        "pEn": [
+          "Mughal coins are known for their unique design and depiction.",
+          "These coins often feature images of historical sites such as the Taj Mahal, Red Fort, and Delhi's Mosque."
+        ]
+      },
+      {
+        "hHi": "मुग़ल मुद्राओं का सांस्कृतिक महत्व",
+        "hEn": "Cultural Significance of Mughal Coins",
+        "pHi": [
+          "मुग़ल मुद्राएं भारतीय संस्कृति का एक महत्वपूर्ण हिस्सा हैं।",
+          "इन मुद्राओं में अक्सर हिंदू और मुस्लिम दोनों धर्मों के प्रतीक होते हैं।"
+        ],
+        "pEn": [
+          "Mughal coins are an integral part of Indian culture.",
+          "These coins often feature symbols of both Hinduism and Islam."
+        ]
+      },
+      {
+        "hHi": "मुग़ल मुद्राओं का वितरण",
+        "hEn": "Distribution of Mughal Coins",
+        "pHi": [
+          "मुग़ल मुद्राएं भारत के विभिन्न हिस्सों में वितरित की गई थीं।",
+          "इन मुद्राओं को अक्सर ऐतिहासिक स्थलों और संग्रहालयों में प्रदर्शित किया जाता है।"
+        ],
+        "pEn": [
+          "Mughal coins were distributed across various parts of India.",
+          "These coins are often displayed at historical sites and museums."
+        ]
+      }
+    ]
   }
 ]
