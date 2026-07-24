@@ -844,5 +844,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "indian-coin-archaeology",
+    "category": "itihas",
+    "titleHi": "भारतीय मुद्रा की खुदाई",
+    "titleEn": "The Archaeology of Indian Coins",
+    "excerptHi": "भारतीय मुद्रा की खुदाई के प्रमुख पहलू",
+    "excerptEn": "Key aspects of Indian coin archaeology",
+    "date": "2026-07-24",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय मुद्रा की खुदाई एक ऐसा क्षेत्र है जिसमें भारतीय मुद्राओं के इतिहास और विकास का अध्ययन किया जाता है।",
+          "यह क्षेत्र भारतीय मुद्रा के विभिन्न पहलुओं जैसे कि उनकी उत्पत्ति, विकास, और उपयोग का अध्ययन करता है।"
+        ],
+        "pEn": [
+          "The archaeology of Indian coins is a field of study that examines the history and development of Indian coins.",
+          "This field studies various aspects of Indian coins, including their origin, development, and use."
+        ]
+      },
+      {
+        "hHi": "भारतीय मुद्रा के प्रारंभिक चरण",
+        "hEn": "Early Stages of Indian Coins",
+        "pHi": [
+          "भारतीय मुद्रा के प्रारंभिक चरण में हमें प्राचीन भारतीय सभ्यताओं की मुद्राओं का पता चलता है।",
+          "इन मुद्राओं में हमें विभिन्न प्रकार के धातुओं और धातु-आधारित मुद्राओं का पता चलता है।"
+        ],
+        "pEn": [
+          "The early stages of Indian coins reveal to us the coinages of ancient Indian civilizations.",
+          "These coins show us various types of metals and metal-based coins."
+        ]
+      },
+      {
+        "hHi": "भारतीय मुद्रा का विकास",
+        "hEn": "Development of Indian Coins",
+        "pHi": [
+          "भारतीय मुद्रा का विकास एक जटिल और विविध प्रक्रिया थी।",
+          "यह प्रक्रिया भारतीय मुद्रा के विभिन्न पहलुओं को प्रभावित करती थी।"
+        ],
+        "pEn": [
+          "The development of Indian coins was a complex and diverse process.",
+          "This process affected various aspects of Indian coins."
+        ]
+      },
+      {
+        "hHi": "भारतीय मुद्रा का महत्व",
+        "hEn": "Importance of Indian Coins",
+        "pHi": [
+          "भारतीय मुद्रा का महत्व केवल उनकी ऐतिहासिक और सांस्कृतिक महत्व तक ही सीमित नहीं है।",
+          "यह उनके आर्थिक और सामाजिक महत्व को भी दर्शाता है।"
+        ],
+        "pEn": [
+          "The importance of Indian coins extends beyond their historical and cultural significance.",
+          "It also highlights their economic and social importance."
+        ]
+      }
+    ]
   }
 ]
