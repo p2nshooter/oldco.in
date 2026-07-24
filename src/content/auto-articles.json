@@ -416,5 +416,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "indian-coin-chronicles",
+    "category": "itihas",
+    "titleHi": "भारतीय सिक्कों का इतिहास",
+    "titleEn": "The Chronicles of Indian Coins",
+    "excerptHi": "भारतीय सिक्कों का इतिहास एक दिलचस्प और जटिल विषय है जिसमें कई संस्कृतियों और राजवंशों का प्रभाव है।",
+    "excerptEn": "The history of Indian coins is a fascinating and complex subject with influences from various cultures and dynasties.",
+    "date": "2026-07-24",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्कों का इतिहास प्राचीन काल से लेकर आधुनिक समय तक फैला हुआ है।",
+          "विभिन्न संस्कृतियों और राजवंशों ने अपने समय में सिक्कों का निर्माण किया है, जिनमें से कुछ प्रसिद्ध हैं और अन्य कम जाने जाते हैं।"
+        ],
+        "pEn": [
+          "The history of Indian coins spans from ancient times to the present day.",
+          "Various cultures and dynasties have minted coins during their time, some of which are well-known and others are lesser-known."
+        ]
+      },
+      {
+        "hHi": "प्राचीन भारतीय सिक्के",
+        "hEn": "Ancient Indian Coins",
+        "pHi": [
+          "प्राचीन भारतीय सिक्के मुख्य रूप से रजत, तांबा, और लोहे के बने होते थे।",
+          "इनमें से कुछ प्रसिद्ध सिक्कों में मौर्य और गुप्त वंश के सिक्के शामिल हैं।"
+        ],
+        "pEn": [
+          "Ancient Indian coins were mainly made of gold, copper, and iron.",
+          "Some of the well-known coins from this period include those of the Mauryan and Gupta dynasties."
+        ]
+      },
+      {
+        "hHi": "मध्यकालीन भारतीय सिक्के",
+        "hEn": "Medieval Indian Coins",
+        "pHi": [
+          "मध्यकालीन भारतीय सिक्के मुख्य रूप से तांबे और लोहे के बने होते थे।",
+          "इनमें से कुछ प्रसिद्ध सिक्कों में दिल्ली सल्तनत और मुगल वंश के सिक्के शामिल हैं।"
+        ],
+        "pEn": [
+          "Medieval Indian coins were mainly made of copper and iron.",
+          "Some of the well-known coins from this period include those of the Delhi Sultanate and Mughal dynasties."
+        ]
+      },
+      {
+        "hHi": "आधुनिक भारतीय सिक्के",
+        "hEn": "Modern Indian Coins",
+        "pHi": [
+          "आधुनिक भारतीय सिक्के मुख्य रूप से निकले हुए सिक्के होते हैं।",
+          "इनमें से कुछ प्रसिद्ध सिक्कों में भारतीय रिज़र्व बैंक के सिक्के शामिल हैं।"
+        ],
+        "pEn": [
+          "Modern Indian coins are mainly minted coins.",
+          "Some of the well-known coins from this period include those of the Reserve Bank of India."
+        ]
+      }
+    ]
   }
 ]
