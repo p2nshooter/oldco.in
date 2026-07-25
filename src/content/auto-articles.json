@@ -1242,5 +1242,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coin-design-evolution",
+    "category": "collecting",
+    "titleHi": "मुग़ल सिक्कों का डिज़ाइन विकास",
+    "titleEn": "Evolution of Mughal Coin Design",
+    "excerptHi": "मुग़ल सिक्कों का डिज़ाइन विकास के बारे में जानें",
+    "excerptEn": "Learn about the evolution of Mughal coin design",
+    "date": "2026-07-25",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "मुग़ल सिक्कों का डिज़ाइन विकास भारतीय सिक्का इतिहास में एक महत्वपूर्ण योगदान है।",
+          "यह विकास मुग़ल बादशाहों के शासनकाल में हुआ, जिन्होंने भारतीय सिक्का डिज़ाइन में कई नवाचार लाए।"
+        ],
+        "pEn": [
+          "The evolution of Mughal coin design is a significant contribution to the history of Indian coins.",
+          "This evolution took place during the reign of Mughal emperors, who introduced several innovations in Indian coin design."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का डिज़ाइन विकास के चरण",
+        "hEn": "Phases of Mughal Coin Design Evolution",
+        "pHi": [
+          "मुग़ल सिक्कों का डिज़ाइन विकास कई चरणों में हुआ। पहले चरण में सिक्कों पर मुग़ल बादशाहों के चित्र और उनके शाही मुहरबंद नाम का उपयोग किया गया था।",
+          "दूसरे चरण में सिक्कों पर ज्यामितीय और भौगोलिक प्रतीकों का उपयोग किया गया था।"
+        ],
+        "pEn": [
+          "The evolution of Mughal coin design took place in several phases. In the first phase, coins featured images of Mughal emperors and their royal monograms.",
+          "In the second phase, geometric and geographical symbols were used on coins."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का डिज़ाइन विकास के प्रभाव",
+        "hEn": "Impact of Mughal Coin Design Evolution",
+        "pHi": [
+          "मुग़ल सिक्कों का डिज़ाइन विकास न केवल भारतीय सिक्का इतिहास में एक महत्वपूर्ण योगदान है, बल्कि यह भारतीय कला और संस्कृति पर भी प्रभाव डाला।",
+          "यह विकास भारतीय सिक्का डिज़ाइन में नवाचार और विविधता लाने में मदद किया।"
+        ],
+        "pEn": [
+          "The evolution of Mughal coin design not only contributed significantly to the history of Indian coins, but also had an impact on Indian art and culture.",
+          "This evolution helped introduce innovation and diversity in Indian coin design."
+        ]
+      },
+      {
+        "hHi": "निष्कर्ष",
+        "hEn": "Conclusion",
+        "pHi": [
+          "मुग़ल सिक्कों का डिज़ाइन विकास एक महत्वपूर्ण योगदान है जिसने भारतीय सिक्का इतिहास को आकार दिया है।",
+          "यह विकास भारतीय कला और संस्कृति पर भी प्रभाव डाला है।"
+        ],
+        "pEn": [
+          "The evolution of Mughal coin design is a significant contribution that has shaped the history of Indian coins.",
+          "This evolution has also had an impact on Indian art and culture."
+        ]
+      }
+    ]
   }
 ]
