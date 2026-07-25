@@ -1182,5 +1182,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coins-in-mughal-era-literature",
+    "category": "itihas",
+    "titleHi": "मुग़ल सिक्कों का साहित्यिक महत्व",
+    "titleEn": "The Literary Significance of Mughal Coins",
+    "excerptHi": "मुग़ल सिक्कों का साहित्यिक महत्व और उनकी प्राचीन विरासत",
+    "excerptEn": "The literary significance of Mughal coins and their ancient heritage",
+    "date": "2026-07-25",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्के के इतिहास में मुग़ल सिक्कों की एक महत्वपूर्ण भूमिका है।",
+          "इन सिक्कों ने भारतीय संस्कृति और साहित्य में एक अद्वितीय स्थान बनाया है।"
+        ],
+        "pEn": [
+          "Mughal coins have played a significant role in the history of Indian coins.",
+          "These coins have carved a unique place in Indian culture and literature."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का साहित्यिक महत्व",
+        "hEn": "The Literary Significance of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों के चित्रों और अभिव्यक्तियों ने भारतीय साहित्य में एक नई दिशा दी है।",
+          "इन सिक्कों के माध्यम से हमें भारतीय संस्कृति की गहराई और समृद्धि का पता चलता है।"
+        ],
+        "pEn": [
+          "The images and expressions on Mughal coins have given a new direction to Indian literature.",
+          "Through these coins, we get a glimpse of the depth and richness of Indian culture."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों की प्राचीन विरासत",
+        "hEn": "The Ancient Heritage of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों की प्राचीनता और महत्व को समझने के लिए हमें उनके इतिहास और संस्कृति को जानना होगा।",
+          "इन सिक्कों के माध्यम से हमें भारतीय इतिहास और संस्कृति की गहराई का पता चलता है।"
+        ],
+        "pEn": [
+          "To understand the ancient heritage and significance of Mughal coins, we need to know their history and culture.",
+          "Through these coins, we get a glimpse of the depth of Indian history and culture."
+        ]
+      },
+      {
+        "hHi": "निष्कर्ष",
+        "hEn": "Conclusion",
+        "pHi": [
+          "मुग़ल सिक्कों का साहित्यिक महत्व और प्राचीन विरासत को समझने के लिए हमें इन सिक्कों के इतिहास और संस्कृति को जानना होगा।",
+          "इन सिक्कों के माध्यम से हमें भारतीय संस्कृति और साहित्य की गहराई और समृद्धि का पता चलता है।"
+        ],
+        "pEn": [
+          "To understand the literary significance and ancient heritage of Mughal coins, we need to know their history and culture.",
+          "Through these coins, we get a glimpse of the depth and richness of Indian culture and literature."
+        ]
+      }
+    ]
   }
 ]
