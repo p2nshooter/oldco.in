@@ -962,5 +962,53 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coin-legacies",
+    "category": "itihas",
+    "titleHi": "मुग़ल सिक्कों की विरासत",
+    "titleEn": "Mughal Coin Legacies",
+    "excerptHi": "मुग़ल साम्राज्य के समय के सिक्कों की कहानी",
+    "excerptEn": "The story of coins from the Mughal Empire's time",
+    "date": "2026-07-25",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्का इतिहास में मुग़ल साम्राज्य का एक महत्वपूर्ण योगदान रहा है। मुग़ल शासकों ने अपने शासनकाल के दौरान सिक्कों के डिज़ाइन और मुद्रण को विकसित किया, जिससे भारतीय सिक्का इतिहास में एक नए युग की शुरुआत हुई।",
+          "मुग़ल सिक्कों की विशेषता उनके सुंदर डिज़ाइन और उच्च गुणवत्ता वाले मुद्रण थे। मुग़ल शासक अकबर ने सिक्कों के डिज़ाइन में विशेष ध्यान दिया और उन्हें अपने शासनकाल के दौरान विभिन्न प्रकार के सिक्के जारी किए।"
+        ],
+        "pEn": [
+          "The Mughal Empire made a significant contribution to Indian numismatic history. Mughal rulers developed the design and printing of coins during their reign, marking the beginning of a new era in Indian numismatic history.",
+          "Mughal coins were characterized by their beautiful design and high-quality printing. Mughal ruler Akbar paid special attention to the design of coins and issued various types of coins during his reign."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों के प्रकार",
+        "hEn": "Types of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों के विभिन्न प्रकार थे, जिनमें से कुछ प्रमुख प्रकार हैं - रुपया, आना, पैसा, और पैसा। इन सिक्कों के डिज़ाइन और मुद्रण में विभिन्न प्रकार की विशेषताएं थीं।",
+          "मुग़ल सिक्कों के प्रकार के आधार पर, वे विभिन्न प्रकार के व्यापार और आर्थिक गतिविधियों में उपयोग किए जाते थे।"
+        ],
+        "pEn": [
+          "There were various types of Mughal coins, including rupee, anna, paise, and paise. These coins had different design and printing features.",
+          "The types of Mughal coins were used in various types of trade and economic activities based on their type."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का महत्व",
+        "hEn": "Importance of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों का महत्व उनके सिक्का इतिहास में है, जो भारतीय सिक्का इतिहास में एक महत्वपूर्ण योगदान है। मुग़ल सिक्कों का उपयोग व्यापार और आर्थिक गतिविधियों में किया जाता था।",
+          "मुग़ल सिक्कों का महत्व उनके सुंदर डिज़ाइन और उच्च गुणवत्ता वाले मुद्रण के कारण है, जो उन्हें एक विशेष स्थान देता है भारतीय सिक्का इतिहास में।"
+        ],
+        "pEn": [
+          "The importance of Mughal coins lies in their numismatic history, which is a significant contribution to Indian numismatic history. Mughal coins were used in trade and economic activities.",
+          "The importance of Mughal coins is due to their beautiful design and high-quality printing, which gives them a special place in Indian numismatic history."
+        ]
+      }
+    ]
   }
 ]
