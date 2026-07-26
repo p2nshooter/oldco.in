@@ -1412,5 +1412,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coin-legacies-pfez",
+    "category": "itihas",
+    "titleHi": "मुग़ल सिक्कों की विरासत",
+    "titleEn": "Mughal Coin Legacies",
+    "excerptHi": "मुग़ल सिक्कों की विरासत और उनके महत्व को समझने के लिए एक संक्षिप्त परिचय",
+    "excerptEn": "A brief introduction to the legacies of Mughal coins and their significance",
+    "date": "2026-07-26",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारत में मुग़ल साम्राज्य का गठन 1526 में हुआ था और इसके शासनकाल के दौरान मुग़ल सिक्के एक महत्वपूर्ण भूमिका निभाते थे।",
+          "इन सिक्कों ने भारतीय अर्थव्यवस्था और सांस्कृतिक विरासत में एक महत्वपूर्ण स्थान प्राप्त किया है।"
+        ],
+        "pEn": [
+          "The Mughal Empire was formed in India in 1526 and during its reign, Mughal coins played a crucial role.",
+          "These coins have secured a significant place in Indian economy and cultural heritage."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का महत्व",
+        "hEn": "Importance of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों का महत्व उनकी विशिष्ट डिज़ाइन और मुद्रित सामग्री में निहित है।",
+          "इन सिक्कों का उपयोग भारतीय व्यापार और वाणिज्य में एक आम मुद्रा के रूप में किया जाता था।"
+        ],
+        "pEn": [
+          "The importance of Mughal coins lies in their unique design and printed material.",
+          "These coins were used as a common currency in Indian trade and commerce."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों की विरासत",
+        "hEn": "Legacy of Mughal Coins",
+        "pHi": [
+          "आजकल, मुग़ल सिक्कों की विरासत एक महत्वपूर्ण सांस्कृतिक और ऐतिहासिक मूल्य के रूप में मानी जाती है।",
+          "इन सिक्कों को भारतीय संग्रहालयों और कलेक्टरों द्वारा महत्व दिया जाता है।"
+        ],
+        "pEn": [
+          "Today, the legacy of Mughal coins is considered a significant cultural and historical value.",
+          "These coins are valued by Indian museums and collectors."
+        ]
+      },
+      {
+        "hHi": "निष्कर्ष",
+        "hEn": "Conclusion",
+        "pHi": [
+          "इस लेख में, हमने मुग़ल सिक्कों की विरासत और उनके महत्व को समझने का प्रयास किया है।",
+          "इन सिक्कों की महत्वपूर्ण भूमिका और उनकी सांस्कृतिक और ऐतिहासिक मूल्य को समझना आवश्यक है।"
+        ],
+        "pEn": [
+          "In this article, we have tried to understand the legacy of Mughal coins and their significance.",
+          "It is essential to understand their crucial role and cultural and historical value."
+        ]
+      }
+    ]
   }
 ]
