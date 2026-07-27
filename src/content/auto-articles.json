@@ -1770,5 +1770,65 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mughal-coin-legacies-fi8b",
+    "category": "itihas",
+    "titleHi": "मुग़ल सिक्कों की विरासत",
+    "titleEn": "Mughal Coin Legacies",
+    "excerptHi": "मुग़ल सिक्कों की विरासत और उनका प्रभाव भारतीय संस्कृति पर",
+    "excerptEn": "Mughal coin legacies and their impact on Indian culture",
+    "date": "2026-07-27",
+    "minutes": 6,
+    "sections": [
+      {
+        "hHi": "",
+        "hEn": "",
+        "pHi": [
+          "भारतीय सिक्का इतिहास में मुग़ल सिक्के एक महत्वपूर्ण भूमिका निभाते हैं।",
+          "इन सिक्कों ने भारतीय संस्कृति को प्रभावित करने के साथ-साथ दुनिया भर में अपनी उपस्थिति दर्ज कराई है।"
+        ],
+        "pEn": [
+          "Mughal coins play a significant role in Indian numismatic history.",
+          "These coins have not only influenced Indian culture but have also made their presence felt across the globe."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का इतिहास",
+        "hEn": "History of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों का इतिहास 1526 से 1857 तक का है, जब मुग़ल साम्राज्य का शासन था।",
+          "इस समय के दौरान, मुग़ल शासकों ने अपने सिक्कों पर विशिष्ट डिज़ाइन और प्रतीकों का उपयोग किया जो उनकी शक्ति और समृद्धि को दर्शाते थे।"
+        ],
+        "pEn": [
+          "The history of Mughal coins dates back to 1526 and 1857, when the Mughal Empire was in power.",
+          "During this period, Mughal rulers used distinctive designs and symbols on their coins that reflected their power and prosperity."
+        ]
+      },
+      {
+        "hHi": "मुग़ल सिक्कों का प्रभाव",
+        "hEn": "Impact of Mughal Coins",
+        "pHi": [
+          "मुग़ल सिक्कों ने भारतीय संस्कृति पर गहरा प्रभाव डाला है।",
+          "इन सिक्कों के डिज़ाइन और प्रतीकों ने भारतीय कला और संस्कृति को प्रभावित किया है।"
+        ],
+        "pEn": [
+          "Mughal coins have had a profound impact on Indian culture.",
+          "The designs and symbols on these coins have influenced Indian art and culture."
+        ]
+      },
+      {
+        "hHi": "निष्कर्ष",
+        "hEn": "Conclusion",
+        "pHi": [
+          "मुग़ल सिक्कों की विरासत और उनका प्रभाव भारतीय संस्कृति पर एक महत्वपूर्ण विषय है।",
+          "इन सिक्कों का इतिहास और उनका प्रभाव भारतीय कला और संस्कृति को समझने के लिए महत्वपूर्ण है।"
+        ],
+        "pEn": [
+          "Mughal coin legacies and their impact on Indian culture is an important topic.",
+          "The history and impact of these coins are crucial to understanding Indian art and culture."
+        ]
+      }
+    ]
   }
 ]
