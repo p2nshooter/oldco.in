@@ -404,6 +404,585 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'error-coins-value',
+    sections: [
+      {
+        hHi: 'ढलाई की प्रक्रिया, जिससे हर एरर निकलता है',
+        hEn: 'The minting process, from which every error comes',
+        pHi: [
+          'एरर समझने के लिए पहले यह जानना ज़रूरी है कि सिक्का बनता कैसे है। धातु की एक लंबी पट्टी से गोल टुकड़े (प्लांचेट) काटे जाते हैं, उनके किनारे उभारे जाते हैं, फिर उन्हें दो डाई के बीच रखकर भारी दबाव से ठोंका जाता है। एक झटके में दोनों तरफ़ की छाप एक साथ पड़ती है।',
+          'इस पूरी क़तार में गड़बड़ी कहीं भी हो सकती है — प्लांचेट कटने में, डाई बैठने में, सिक्का ठीक जगह न आने में, या डाई के ख़ुद घिस जाने में। हर असली एरर इनमें से किसी एक चरण की विफलता है।',
+          'यही कारण है कि असली एरर की एक तार्किक व्याख्या हमेशा मौजूद होती है। जब कोई विक्रेता एरर दिखाए, तो सवाल यह पूछिए कि यह मशीन के किस चरण में बना होगा। अगर उसका कोई जवाब नहीं बनता, तो वह एरर नहीं, नुक़सान है।',
+        ],
+        pEn: [
+          'To understand errors you first need to know how a coin is made. Round blanks called planchets are punched from a long strip of metal, their edges are raised, and they are then placed between two dies and struck under enormous pressure. Both faces receive their impression in a single blow.',
+          'Something can go wrong anywhere along that line — in the punching of the planchet, in the seating of the die, in the coin failing to arrive in the right position, or in the die itself wearing out. Every genuine error is a failure at one of those specific stages.',
+          'This is why an authentic error always has a logical explanation behind it. When a seller shows you an error, the question to ask is which stage of the machinery would have produced it. If no answer fits, what you are looking at is not an error but damage.',
+        ],
+      },
+      {
+        hHi: 'असली एरर के मुख्य प्रकार',
+        hEn: 'The main types of genuine error',
+        pHi: [
+          'ऑफ़-सेंटर स्ट्राइक — सिक्का डाई के नीचे ठीक बीच में नहीं बैठा, इसलिए छाप एक तरफ़ खिसकी हुई है और दूसरी तरफ़ ख़ाली धातु दिखती है। जितना ज़्यादा खिसकाव, पर तारीख़ फिर भी पढ़ने लायक़ — उतनी ज़्यादा माँग।',
+          'डबल स्ट्राइक — सिक्का पहली ठोंक के बाद हिल गया और दोबारा ठोंका गया, जिससे अक्षर और आकृतियाँ दो जगह दिखती हैं। इसे डाई की घिसाई से पैदा हुई धुँधली दोहराव से अलग पहचानना ज़रूरी है।',
+          'रोटेटेड डाई — दोनों तरफ़ की छाप आपस में सीधी नहीं। सामान्य सिक्के में एक तय कोण होता है; उससे बड़ा घुमाव एरर माना जाता है।',
+          'ब्रॉकेज, क्लिप्ड प्लांचेट और लैमिनेशन — क्रमशः जब पिछला सिक्का डाई में फँस जाए, जब प्लांचेट किनारे से कटा-सा निकले, और जब धातु की परत उखड़ जाए। ये तीनों कम मिलते हैं और इसीलिए ज़्यादा चाहे जाते हैं।',
+        ],
+        pEn: [
+          'Off-centre strike — the coin did not sit centrally under the die, so the impression is shifted to one side and bare metal shows on the other. The greater the shift while the date remains readable, the greater the demand.',
+          'Double strike — the coin moved after the first blow and was struck again, so letters and devices appear in two places. This must be distinguished carefully from the blurred doubling produced by a worn die, which is common and worth little.',
+          'Rotated die — the two faces are not aligned with each other. A normal coin has a fixed alignment; a rotation beyond that is treated as an error.',
+          'Brockage, clipped planchet and lamination — respectively when a previous coin sticks in the die, when the planchet comes out cut at the edge, and when a layer of metal peels away. All three are scarce and therefore more sought after.',
+        ],
+      },
+      {
+        hHi: 'नक़ली एरर कैसे बनाए जाते हैं',
+        hEn: 'How fake errors are manufactured',
+        pHi: [
+          'बाज़ार में घूमने वाले अधिकांश “एरर सिक्के” टकसाल से नहीं, किसी की कार्यशाला से निकले हैं। सबसे आम तरीक़ा है साधारण सिक्के को घिसकर या रगड़कर बदल देना, ताकि वह कुछ अलग दिखे।',
+          'दूसरा तरीक़ा है सिक्के को गर्म करके या तेज़ाब में डुबोकर उसकी सतह बदल देना, जिससे धातु का रंग और बनावट असामान्य लगे। तीसरा है दो सिक्कों को काटकर जोड़ना, जो नज़दीक से देखने पर जोड़ की रेखा दिखा देता है।',
+          'पहचान का सबसे बड़ा सूत्र यह है कि टकसाल की ग़लती हमेशा ठोंकने के समय होती है, इसलिए धातु का प्रवाह और चमक उसी दबाव के अनुरूप रहती है। बाद में की गई छेड़छाड़ में धातु खिंची, कटी या पिघली हुई दिखती है — दोनों में फ़र्क़ अनुभवी आँख तुरंत पकड़ लेती है।',
+        ],
+        pEn: [
+          'Most of the “error coins” circulating in the market came not from a mint but from somebody’s workshop. The commonest method is to file or grind an ordinary coin so that it looks unusual in some way.',
+          'A second method is to heat the coin or dip it in acid so that the surface changes, giving the metal an abnormal colour and texture. A third is to cut two coins and join them, which reveals a seam under close inspection.',
+          'The single best clue is that a mint error always happens at the moment of striking, so the metal flow and lustre remain consistent with that pressure. Tampering done afterwards leaves metal that looks stretched, cut or melted — and an experienced eye separates the two immediately.',
+        ],
+      },
+      {
+        hHi: 'भारतीय एरर का बाज़ार कैसा है',
+        hEn: 'What the Indian error market is actually like',
+        pHi: [
+          'ईमानदार बात यह है कि भारत में एरर सिक्कों का बाज़ार अमेरिका या यूरोप जितना संगठित नहीं है। वहाँ ग्रेडिंग कंपनियाँ एरर को श्रेणीबद्ध करती हैं और नीलामी के रिकॉर्ड सार्वजनिक रहते हैं; यहाँ अधिकांश सौदे व्यक्तिगत स्तर पर होते हैं।',
+          'इसका एक नतीजा यह है कि दाम में बहुत बड़ा फैलाव मिलता है। एक ही तरह का एरर एक जगह कुछ सौ रुपये में और दूसरी जगह हज़ारों में माँगा जा सकता है, और दोनों में से कोई भी “सही” दाम नहीं होता।',
+          'इसलिए दो नियम काम आते हैं। पहला — किसी भी बड़ी ख़रीद से पहले नीलामी के बीते नतीजे देखिए, माँगी गई क़ीमतें नहीं। दूसरा — अगर सिक्का महँगा है, तो प्रमाणन (ग्रेडिंग) का ख़र्च उठाइए; वह ख़र्च ग़लत ख़रीद से हमेशा सस्ता पड़ता है।',
+        ],
+        pEn: [
+          'The honest position is that the error market in India is not as organised as in America or Europe. There, grading companies classify errors and auction records stay public; here most transactions happen privately between individuals.',
+          'One consequence is an enormous spread in prices. The same type of error may be asked at a few hundred rupees in one place and at several thousand in another, and neither figure is the “correct” one.',
+          'Two rules therefore help. First, before any significant purchase, look at past auction results rather than at asking prices. Second, if the coin is expensive, pay for certification; that cost is always cheaper than a wrong purchase.',
+        ],
+      },
+      {
+        hHi: 'वायरल दावों से बचाव',
+        hEn: 'Guarding against viral claims',
+        pHi: [
+          'हर कुछ महीनों में सोशल मीडिया पर एक वीडियो घूमता है कि “अगर आपके पास यह एरर वाला सिक्का है तो आप करोड़पति हैं।” ढाँचा हमेशा एक जैसा होता है — एक आम सिक्का, एक असाधारण दावा, और नीचे एक फ़ोन नंबर।',
+          'ऐसे दावों की जाँच सरल है। पूछिए कि यह किस नीलामी में, किस तारीख़ को, किस दाम पर बिका। असली रिकॉर्ड सार्वजनिक होते हैं और उन्हें दिखाया जा सकता है; कहानी नहीं दिखाई जा सकती।',
+          'और वही बुनियादी नियम यहाँ भी लागू है जो हर सौदे में लागू होता है: पैसा ख़रीदार से विक्रेता की ओर बहता है। जो व्यक्ति आपका सिक्का ख़रीदने से पहले आपसे शुल्क माँग रहा है, वह ख़रीदार नहीं है।',
+        ],
+        pEn: [
+          'Every few months a video circulates on social media claiming that if you own this particular error coin you are a crorepati. The structure is always the same — an ordinary coin, an extraordinary claim, and a phone number underneath.',
+          'Checking such claims is simple. Ask at which auction, on what date, and at what price it sold. Genuine records are public and can be produced; a story cannot be produced.',
+          'And the same basic rule applies here as in every transaction: money flows from the buyer to the seller. Anybody asking you for a fee before buying your coin is not a buyer.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'coin-grading-basics',
+    sections: [
+      {
+        hHi: 'घिसाव सबसे पहले कहाँ दिखता है',
+        hEn: 'Where wear shows up first',
+        pHi: [
+          'सिक्के पर घिसाव समान रूप से नहीं फैलता। सबसे पहले वे जगहें घिसती हैं जो सबसे ऊँची उठी हुई हैं, क्योंकि जेब, हथेली और गल्ले में वही सबसे ज़्यादा रगड़ खाती हैं।',
+          'व्यवहार में इसका अर्थ है कि चेहरे वाले सिक्कों में गाल की हड्डी, बालों की ऊपरी लट, और मुकुट या ताज का सबसे ऊँचा हिस्सा पहले चपटा होता है। दूसरी तरफ़ अक्षरों के ऊपरी किनारे और किसी भी उभरे चिह्न का शिखर।',
+          'इसलिए ग्रेडिंग सीखने का सबसे अच्छा तरीक़ा है एक ही सिक्के के तीन-चार अलग-अलग नमूने पास-पास रखकर देखना। कुछ ही मिनटों में आँख यह पहचानने लगती है कि कौन-सा ब्योरा पहले जाता है और कौन-सा आख़िर तक टिकता है।',
+        ],
+        pEn: [
+          'Wear does not spread evenly across a coin. The highest points go first, because those are the areas that rub against pockets, palms and cash drawers most of all.',
+          'In practice this means that on portrait coins the cheekbone, the uppermost lock of hair, and the highest part of a crown or diadem flatten earliest. On the other side it is the upper edges of the lettering and the peak of any raised device.',
+          'The best way to learn grading is therefore to place three or four different examples of the same coin side by side and look. Within a few minutes the eye begins to recognise which detail disappears first and which survives to the end.',
+        ],
+      },
+      {
+        hHi: 'लस्टर क्या है और उसे कैसे देखा जाता है',
+        hEn: 'What lustre is, and how to see it',
+        pHi: [
+          'लस्टर वह चमक है जो सिक्के पर ढलाई के समय बनती है। ठोंकने के भारी दबाव में धातु डाई की सतह के साथ बहती है और सूक्ष्म रेखाएँ छोड़ती है, जो रोशनी को एक ख़ास तरीक़े से घुमाती हैं।',
+          'इसे पहचानने के लिए सिक्के को एक ही रोशनी के नीचे धीरे-धीरे घुमाइए। असली लस्टर में चमक का एक चक्र सतह पर घूमता हुआ दिखता है, जैसे पानी पर तेल की लहर। पॉलिश की गई सतह पर चमक स्थिर और सपाट रहती है — वह पूरी सतह पर एक साथ चमकती है।',
+          'यही फ़र्क़ अनुभवी ख़रीदार को दो सेकंड में बता देता है कि सिक्का साफ़ किया गया है या नहीं। और चूँकि लस्टर एक बार चला जाए तो लौटता नहीं, यह ग्रेडिंग का सबसे निर्णायक तत्व है।',
+        ],
+        pEn: [
+          'Lustre is the shine created on a coin at the moment of striking. Under the pressure of the blow the metal flows across the surface of the die and leaves microscopic lines, which turn light in a particular way.',
+          'To see it, rotate the coin slowly under a single light source. Genuine lustre shows a wheel of brightness travelling across the surface, like an oil slick moving on water. A polished surface shines flatly and steadily instead — the whole face lights up at once.',
+          'That difference tells an experienced buyer within two seconds whether a coin has been cleaned. And because lustre never returns once lost, it is the single most decisive element in grading.',
+        ],
+      },
+      {
+        hHi: 'सीढ़ी के बीच के पायदान',
+        hEn: 'The rungs in the middle of the ladder',
+        pHi: [
+          'फ़ाइन (F) — मुख्य आकृतियाँ साफ़ हैं, पर बारीक ब्योरे घिस चुके हैं। बालों की लटें एक-दूसरे में मिल गई हैं और सजावट के छोटे हिस्से ग़ायब हैं।',
+          'वेरी फ़ाइन (VF) — अधिकांश ब्योरे मौजूद हैं, घिसाव केवल सबसे ऊँचे बिंदुओं पर। यह वह पायदान है जहाँ अधिकांश अच्छे संग्रह टिकते हैं, क्योंकि यहाँ दाम और दिखावट का संतुलन सबसे अच्छा बैठता है।',
+          'एक्स्ट्रीमली फ़ाइन (EF/XF) — घिसाव बहुत हल्का, केवल ध्यान से देखने पर। कुछ जगह मूल लस्टर बचा हो सकता है।',
+          'अनसर्कुलेटेड (UNC) — कोई घिसाव नहीं, पूरा लस्टर। ध्यान रहे, UNC का मतलब “बेदाग़” नहीं है; टकसाल की थैली में सिक्के आपस में टकराते हैं, इसलिए हल्के बैग-मार्क UNC में भी सामान्य हैं।',
+        ],
+        pEn: [
+          'Fine (F) — the main devices are clear but the fine detail has worn away. Locks of hair have merged into one another and small ornamental elements are missing.',
+          'Very Fine (VF) — most detail is present, with wear only on the highest points. This is the rung where most good collections settle, because the balance between price and appearance is best here.',
+          'Extremely Fine (EF/XF) — wear is very light and visible only on close inspection. Some original lustre may survive in places.',
+          'Uncirculated (UNC) — no wear at all and full lustre. Note that UNC does not mean flawless; coins knock against each other in the mint bag, so light bag marks are entirely normal even at this grade.',
+        ],
+      },
+      {
+        hHi: 'भारत में थर्ड-पार्टी ग्रेडिंग कब समझदारी है',
+        hEn: 'When third-party grading makes sense in India',
+        pHi: [
+          'अंतरराष्ट्रीय ग्रेडिंग कंपनियाँ सिक्के की जाँच करके उसे एक सीलबंद, छेड़छाड़-रोधी डिब्बे में बंद कर देती हैं, जिस पर ग्रेड और प्रामाणिकता दर्ज होती है। इससे ख़रीदार को भरोसा मिलता है और सिक्का बेचना आसान हो जाता है।',
+          'पर यह मुफ़्त नहीं है। शुल्क, भारत से भेजने का ख़र्च, बीमा और लौटने में लगने वाला समय — सब जोड़कर यह एक ठीक-ठाक रक़म बनती है। इसीलिए हर सिक्के के लिए यह उचित नहीं।',
+          'सीधा नियम यह है: अगर ग्रेडिंग का कुल ख़र्च सिक्के की अनुमानित क़ीमत के एक चौथाई से ज़्यादा है, तो मत कीजिए। महँगे, दुर्लभ और विवादित सिक्कों के लिए यह निवेश सार्थक है; आम सिक्कों के लिए यह पैसा बर्बाद करना है।',
+        ],
+        pEn: [
+          'International grading companies examine a coin and seal it in a tamper-evident holder marked with its grade and authenticity. This gives buyers confidence and makes the coin considerably easier to sell.',
+          'But it is not free. The fee, shipping from India, insurance and the waiting time add up to a substantial amount. That is why it is not justified for every coin.',
+          'The straightforward rule is this: if the total cost of grading exceeds about a quarter of the coin’s estimated value, do not do it. For expensive, rare or disputed pieces the investment is worthwhile; for ordinary coins it is money thrown away.',
+        ],
+      },
+      {
+        hHi: 'अभ्यास कैसे करें',
+        hEn: 'How to practise',
+        pHi: [
+          'ग्रेडिंग किताब पढ़कर नहीं, हाथ में सिक्के लेकर सीखी जाती है। शुरुआत सस्ते, आम सिक्कों से कीजिए — जैसे ब्रिटिश भारत के ताँबे के छोटे सिक्के, जो कुछ रुपयों में मिल जाते हैं।',
+          'एक ही प्रकार के दस सिक्के ख़रीदिए और उन्हें बिना कैटलॉग देखे अपनी समझ से सबसे घिसे से सबसे अच्छे तक क्रम में लगाइए। फिर एक-एक करके देखिए कि आपने किस ब्योरे के आधार पर फ़ैसला किया।',
+          'यह अभ्यास दो-तीन बार करने के बाद आँख बदल जाती है। उसके बाद आप किसी भी सिक्के को देखकर उसका मोटा ग्रेड बता सकेंगे, और यही वह कौशल है जो आपको ज़्यादा दाम चुकाने से बचाता है।',
+        ],
+        pEn: [
+          'Grading is not learned from a book but with coins in your hand. Begin with cheap, common pieces — the small copper coins of British India, which cost a few rupees each.',
+          'Buy ten of the same type and arrange them, without consulting any catalogue, from most worn to best by your own judgement. Then go through them one at a time and work out which detail drove each decision.',
+          'After doing this exercise two or three times the eye changes. From then on you can look at any coin and state its approximate grade, and that is precisely the skill that stops you from overpaying.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'sell-old-coins-legally',
+    sections: [
+      {
+        hHi: 'बेचने से पहले क्या तैयार रखें',
+        hEn: 'What to prepare before selling',
+        pHi: [
+          'सबसे पहले एक सूची बनाइए। हर सिक्के का मूल्यवर्ग, वर्ष, धातु (जहाँ पता हो), और कोई दिखने वाली ख़ासियत। यह सूची आपको मोल-भाव में मज़बूत बनाती है, क्योंकि आप जानते हैं कि आपके पास क्या है।',
+          'फिर तस्वीरें लीजिए — दोनों तरफ़ की, सीधी रोशनी में, बिना फ़्लैश के, सादे गहरे रंग की पृष्ठभूमि पर। धुँधली तस्वीर सबसे बड़ी वजह है कि गंभीर ख़रीदार जवाब नहीं देते।',
+          'और सबसे ज़रूरी — बेचने से पहले साफ़ मत कीजिए। यह सलाह बार-बार दोहराने लायक़ है क्योंकि लोग यही ग़लती सबसे ज़्यादा करते हैं। चमकाया हुआ सिक्का अपनी क़ीमत का बड़ा हिस्सा उसी क्षण खो देता है।',
+        ],
+        pEn: [
+          'Start by making a list. For every coin, note the denomination, the year, the metal where you know it, and any visible peculiarity. That list strengthens your position in a negotiation, because you know what you are holding.',
+          'Then photograph them — both faces, in direct light, without flash, against a plain dark background. Blurred photographs are the single biggest reason serious buyers never reply.',
+          'And most important — do not clean anything before selling. This advice bears repeating because it is the mistake people make most often. A polished coin loses a large part of its value at that very moment.',
+        ],
+      },
+      {
+        hHi: 'तीन असली रास्ते, और हर एक का हिसाब',
+        hEn: 'The three real routes, and the arithmetic of each',
+        pHi: [
+          'डीलर — सबसे तेज़ रास्ता। आप सिक्के ले जाइए, वह देखकर दाम बताएगा, सौदा उसी दिन हो सकता है। बदले में दाम बाज़ार-भाव से कम रहेगा, क्योंकि उसे आगे बेचकर मुनाफ़ा कमाना है। जल्दी और निश्चितता चाहिए तो यही रास्ता है।',
+          'नीलामी घर — सबसे ऊँचा संभावित दाम, पर सबसे धीमा। सिक्का सूचीबद्ध होगा, कैटलॉग बनेगा, नीलामी की तारीख़ आएगी। कमीशन कटेगा और पैसा मिलने में हफ़्ते-महीने लग सकते हैं। महँगे सिक्कों के लिए यह सबसे उचित है।',
+          'संग्राहकों की समिति और प्रदर्शनी — बीच का रास्ता। यहाँ आप सीधे उस व्यक्ति से मिलते हैं जो सिक्का ख़ुद रखना चाहता है, इसलिए दाम डीलर से बेहतर मिल सकता है। बदले में समय और मेहनत आपकी लगती है।',
+          'चौथा रास्ता — ऑनलाइन मंच — मौजूद तो है, पर वहाँ सतर्कता सबसे ज़्यादा चाहिए। सुरक्षित भुगतान, ट्रैकिंग वाली कूरियर, और लेन-देन का पूरा रिकॉर्ड — इन तीनों के बिना बड़ा सौदा मत कीजिए।',
+        ],
+        pEn: [
+          'A dealer — the fastest route. You take the coins in, he examines them and quotes, and the transaction can close the same day. In exchange the price sits below market value, because he has to resell at a profit. If you want speed and certainty, this is the route.',
+          'An auction house — the highest potential price but the slowest. The coin is catalogued, a sale date is set, a commission is deducted, and payment can take weeks or months. For expensive coins this is the most appropriate choice.',
+          'A collectors’ society or fair — the middle path. Here you meet the person who actually wants to own the coin, so the price can beat a dealer’s. In exchange the time and effort are yours.',
+          'A fourth route — online platforms — exists, but demands the most caution. Secure payment, a tracked courier, and a complete record of the transaction: do not make a large sale without all three.',
+        ],
+      },
+      {
+        hHi: 'क़ानूनी स्थिति साफ़-साफ़',
+        hEn: 'The legal position, stated plainly',
+        pHi: [
+          'भारत में पुराने सिक्के इकट्ठा करना और उन्हें आपस में ख़रीदना-बेचना वैध है। संग्राहकों का बाज़ार, प्रदर्शनियाँ और नीलामियाँ सब सामान्य रूप से चलती हैं।',
+          'एक अहम बात यह है कि रिज़र्व बैंक पुराने सिक्के या नोट नहीं ख़रीदता। जो भी विज्ञापन “आरबीआई अनुमोदित ख़रीदार” होने का दावा करे, वह झूठ बोल रहा है — यह जाँचने का सबसे तेज़ तरीक़ा है।',
+          'दूसरी बात पुरातात्विक महत्व की वस्तुओं से जुड़ी है। बहुत पुरानी, ख़ासकर उत्खनन से निकली वस्तुओं पर अलग नियम लागू होते हैं। अगर आपके पास कुछ ऐसा है जो प्राचीन लगता है और जिसका स्रोत अस्पष्ट है, तो बेचने से पहले सलाह लेना ही समझदारी है।',
+        ],
+        pEn: [
+          'In India, collecting old coins and buying and selling them among collectors is lawful. The collectors’ market, its fairs and its auctions all operate normally.',
+          'One important point is that the Reserve Bank does not buy old coins or notes. Any advertisement claiming to be an “RBI approved buyer” is lying — and that is the fastest test you can apply.',
+          'A second point concerns objects of archaeological importance. Very old items, particularly anything from an excavation, fall under separate rules. If you hold something that looks ancient and whose origin is unclear, taking advice before selling is simply the sensible course.',
+        ],
+      },
+      {
+        hHi: 'दाम का अंदाज़ा ख़ुद कैसे लगाएँ',
+        hEn: 'How to estimate a price yourself',
+        pHi: [
+          'माँगी गई क़ीमत और बिकी हुई क़ीमत दो अलग चीज़ें हैं, और यही अंतर अधिकांश निराशा की जड़ है। किसी वेबसाइट पर कोई सिक्का पचास हज़ार में सूचीबद्ध होने का मतलब यह नहीं कि वह पचास हज़ार में बिका।',
+          'भरोसेमंद स्रोत वे हैं जो बीते नतीजे दर्ज करते हैं — प्रतिष्ठित नीलामी घरों के पुराने कैटलॉग और परिणाम। वहाँ लिखा होता है कि सिक्का किस ग्रेड में था और किस दाम पर हथौड़ा गिरा।',
+          'तुलना करते समय ग्रेड का मिलान ज़रूरी है। आपका VF सिक्का किसी UNC नमूने के दाम से नहीं तौला जा सकता; वह अंतर कई गुना का होता है, और यही वह जगह है जहाँ लोग सबसे ज़्यादा उम्मीद बाँध लेते हैं।',
+        ],
+        pEn: [
+          'Asking price and realised price are two different things, and that gap is the root of most disappointment. A coin listed on a website at fifty thousand does not mean a coin that sold for fifty thousand.',
+          'The reliable sources are those that record past results — the old catalogues and results of reputable auction houses. They state which grade the coin was in and at what price the hammer fell.',
+          'When comparing, match the grade. Your VF coin cannot be weighed against the price of a UNC example; that difference runs to several multiples, and it is exactly where people build up the most unrealistic hope.',
+        ],
+      },
+      {
+        hHi: 'बेचना ही ज़रूरी नहीं है',
+        hEn: 'Selling is not compulsory',
+        pHi: [
+          'एक बात जो सलाह देने वाले कम कहते हैं: विरासत में मिले सिक्कों को बेचना ही एकमात्र विकल्प नहीं है। अक्सर मिलने वाली रक़म इतनी नहीं होती कि उस चीज़ की भरपाई करे जो साथ चली जाती है।',
+          'अगर संग्रह छोटा है और उसकी बाज़ारू क़ीमत कुछ हज़ार रुपये है, तो एक अच्छा एल्बम ख़रीदकर उसे व्यवस्थित कर देना अक्सर बेहतर फ़ैसला है। साथ में एक पर्ची लगा दीजिए कि ये सिक्के किसके थे और कहाँ से आए।',
+          'और अगर बेचना ही है, तो पूरा संग्रह एक साथ बेचने के बजाय पहले एक-दो सिक्के बेचकर देखिए। इससे आपको बाज़ार का असली अंदाज़ा भी लगेगा और जल्दबाज़ी में पूरा संग्रह सस्ते में जाने का ख़तरा भी नहीं रहेगा।',
+        ],
+        pEn: [
+          'One thing advisers rarely say: selling inherited coins is not the only option. Very often the amount received does not compensate for what leaves along with them.',
+          'If the collection is small and its market value runs to a few thousand rupees, buying a good album and organising it properly is frequently the better decision. Add a slip recording whose coins these were and where they came from.',
+          'And if you do intend to sell, try selling one or two pieces first rather than the whole collection at once. That gives you a genuine sense of the market and removes the risk of the entire holding going cheaply in a hurry.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'start-coin-collection',
+    sections: [
+      {
+        hHi: 'पहला महीना: क्या करें और क्या न करें',
+        hEn: 'The first month: what to do and what not to',
+        pHi: [
+          'पहले महीने में कुछ भी महँगा मत ख़रीदिए। यह सबसे उपयोगी नियम है और सबसे कम माना जाने वाला भी। शुरुआत में आँख प्रशिक्षित नहीं होती, और अप्रशिक्षित आँख से की गई महँगी ख़रीद लगभग हमेशा ग़लत निकलती है।',
+          'इसके बजाय घर में जो है उसी से शुरू कीजिए। लगभग हर भारतीय घर में कहीं न कहीं पुराने सिक्कों की एक मुट्ठी पड़ी होती है। उन्हें निकालिए, धोइए मत, और वर्ष के हिसाब से क्रम में लगाइए।',
+          'फिर उन्हीं में से जो सबसे दिलचस्प लगे, उसके बारे में पढ़िए — वह किस दौर का है, किस टकसाल में बना, तब क्या चल रहा था। यह पढ़ाई ही असल में संग्रह की शुरुआत है; सिक्के तो बहाना हैं।',
+        ],
+        pEn: [
+          'Buy nothing expensive in the first month. This is the most useful rule there is and the least often followed. At the start the eye is untrained, and an expensive purchase made with an untrained eye turns out wrong almost every time.',
+          'Begin instead with what is already in the house. Nearly every Indian home has a handful of old coins lying somewhere. Take them out, do not wash them, and arrange them in order of year.',
+          'Then read about whichever one interests you most — which period it belongs to, which mint made it, what was happening at the time. That reading is the actual beginning of a collection; the coins are only the excuse.',
+        ],
+      },
+      {
+        hHi: 'विषय चुनना, और भटकाव से बचना',
+        hEn: 'Choosing a theme, and avoiding the drift',
+        pHi: [
+          'बिना विषय के इकट्ठा करना सबसे आम ग़लती है। नतीजा एक डिब्बा भर असंबंधित सिक्के होते हैं, जिनमें न कोई क्रम है न कोई पूर्णता का एहसास।',
+          'अच्छा विषय तीन शर्तें पूरी करता है: वह सीमित हो, सस्ता हो, और आपको सचमुच दिलचस्प लगे। उदाहरण के लिए — “जॉर्ज V के सारे एक-आना”, या “1950 से 1970 तक के सारे चलन सिक्के”, या “मेरे राज्य की रियासत के सिक्के”।',
+          'विषय का सबसे बड़ा फ़ायदा यह है कि वह आपको ना कहना सिखाता है। जब कोई डीलर कुछ आकर्षक दिखाए, तो सवाल सरल हो जाता है — क्या यह मेरे विषय में आता है? अधिकांश बार जवाब “नहीं” होता है, और वही जवाब आपका पैसा बचाता है।',
+        ],
+        pEn: [
+          'Collecting without a theme is the commonest mistake. The result is a box of unrelated coins with neither order nor any sense of completion.',
+          'A good theme meets three conditions: it is bounded, it is affordable, and it genuinely interests you. For example — “every one-anna of George V”, or “every circulation coin from 1950 to 1970”, or “the coins of my own state’s princely house”.',
+          'The greatest advantage of a theme is that it teaches you to say no. When a dealer shows you something attractive, the question becomes simple — does this belong to my theme? Most of the time the answer is no, and that answer is what saves your money.',
+        ],
+      },
+      {
+        hHi: 'ज़रूरी औज़ार, जो सस्ते हैं',
+        hEn: 'The tools you need, which are cheap',
+        pHi: [
+          'तीन चीज़ें काफ़ी हैं। पहली — एक अच्छा लूप (मैग्निफ़ायर), दस गुना आवर्धन वाला। यह टकसाल चिह्न पढ़ने, घिसाव देखने और नक़ल पहचानने के लिए ज़रूरी है।',
+          'दूसरी — एक डिजिटल तराज़ू जो 0.01 ग्राम तक नापे। वज़न सबसे तेज़ प्रामाणिकता-परीक्षण है, और अधिकांश जाली सिक्के इसी एक जाँच में पकड़े जाते हैं।',
+          'तीसरी — सही भंडारण: माइलर या पॉलीप्रोपिलीन के फ़्लिप, अम्ल-रहित लिफ़ाफ़े, या संग्राहकों वाला एल्बम। पीवीसी वाली पुरानी प्लास्टिक थैलियाँ हरगिज़ नहीं, वे सालों में धातु पर चिपचिपी हरी परत छोड़ देती हैं।',
+          'इन तीनों का कुल ख़र्च एक अच्छे सिक्के से भी कम है, और ये तीनों जीवन भर काम आते हैं।',
+        ],
+        pEn: [
+          'Three things are enough. First, a good loupe at ten times magnification. It is essential for reading mint marks, judging wear and spotting forgeries.',
+          'Second, a digital scale accurate to 0.01 gram. Weight is the fastest authenticity test there is, and most counterfeits are caught by this single check.',
+          'Third, proper storage: Mylar or polypropylene flips, acid-free envelopes, or a collectors’ album. Never the old PVC plastic sleeves, which leave a sticky green film on the metal over the years.',
+          'All three together cost less than one decent coin, and all three last a lifetime.',
+        ],
+      },
+      {
+        hHi: 'संगत ढूँढ़िए',
+        hEn: 'Find company',
+        pHi: [
+          'यह शौक़ अकेले भी चल सकता है, पर अकेले चलने वाला संग्राहक हमेशा ज़्यादा दाम चुकाता है और ज़्यादा नक़ल ख़रीदता है। जानकारी इस क्षेत्र में सबसे क़ीमती मुद्रा है, और वह लोगों के पास होती है, किताबों में नहीं।',
+          'भारत के लगभग हर बड़े शहर में संग्राहकों की समिति है, और साल भर प्रदर्शनियाँ होती रहती हैं। वहाँ जाने का सबसे बड़ा फ़ायदा ख़रीदना नहीं, देखना है — सैकड़ों असली सिक्के एक साथ हाथ में लेकर देखने से आँख जितनी तेज़ होती है, उतनी किसी और तरीक़े से नहीं।',
+          'ऑनलाइन समूह भी उपयोगी हैं, पर वहाँ सलाह की गुणवत्ता मिली-जुली रहती है। सबसे भरोसेमंद वे लोग होते हैं जो अपने संग्रह की तस्वीरें दिखाते हैं और अपनी ग़लतियों की भी बात करते हैं।',
+        ],
+        pEn: [
+          'The hobby works alone, but the collector who works alone always overpays and always buys more forgeries. Knowledge is the most valuable currency in this field, and it lives with people rather than in books.',
+          'Almost every major Indian city has a collectors’ society, and fairs run throughout the year. The greatest benefit of attending is not buying but looking — handling hundreds of genuine coins in one afternoon sharpens the eye faster than anything else can.',
+          'Online groups are useful too, though the quality of advice there is mixed. The most reliable members are those who show photographs of their own collections and talk about their own mistakes as well.',
+        ],
+      },
+      {
+        hHi: 'रिकॉर्ड रखना, जो बाद में सबसे क़ीमती निकलता है',
+        hEn: 'Keeping records, which turn out to be the most valuable part',
+        pHi: [
+          'हर सिक्के के साथ एक छोटी पर्ची रखिए: कब मिला, कहाँ से, कितने में, और अगर विरासत है तो किसका था। इसमें हर बार तीस सेकंड लगते हैं।',
+          'यह जानकारी वर्षों बाद सोने जैसी क़ीमती हो जाती है। बेचते समय स्रोत का रिकॉर्ड दाम बढ़ाता है, और न बेचें तो भी अगली पीढ़ी को सिक्के के साथ उसकी कहानी मिलती है।',
+          'एक साधारण स्प्रेडशीट भी काफ़ी है — मूल्यवर्ग, वर्ष, टकसाल, ग्रेड, ख़रीद का दाम और तारीख़। छह कॉलम, और संग्रह जितना बढ़ेगा, यह उतना ही उपयोगी होता जाएगा।',
+        ],
+        pEn: [
+          'Keep a small slip with every coin: when you acquired it, from where, for how much, and if inherited, whose it was. Each entry takes thirty seconds.',
+          'That information becomes gold years later. When selling, a record of provenance raises the price; and if you never sell, the next generation receives the coin together with its story.',
+          'A simple spreadsheet is enough — denomination, year, mint, grade, purchase price and date. Six columns, and the larger the collection grows the more useful it becomes.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'princely-states-coins',
+    sections: [
+      {
+        hHi: 'रियासतों की मुद्रा-व्यवस्था कैसे चलती थी',
+        hEn: 'How the princely coinage actually worked',
+        pHi: [
+          'ब्रिटिश भारत के नक़्शे में लगभग छह सौ रियासतें थीं, और उनमें से सैकड़ों को अपने सिक्के ढालने का अधिकार था। यह अधिकार समान नहीं था — कुछ राज्य पूरी तरह स्वतंत्र मुद्रा चलाते थे, कुछ केवल ताँबे के छोटे सिक्के, और कुछ ने ब्रिटिश सिक्का ही अपना लिया।',
+          'सिक्का ढालने का अधिकार प्रतिष्ठा का प्रश्न था, केवल अर्थशास्त्र का नहीं। अपने नाम का सिक्का चलाना संप्रभुता का सबसे दृश्य प्रमाण था, और इसीलिए छोटी रियासतें भी इसे बनाए रखना चाहती थीं।',
+          'बीसवीं सदी की शुरुआत तक ब्रिटिश प्रशासन ने धीरे-धीरे इन्हें समेटना शुरू किया, और आज़ादी के बाद 1950 तक यह पूरा तंत्र इतिहास बन गया। इसीलिए यह क्षेत्र समय की एक बंद खिड़की है — इसमें अब कुछ नया नहीं जुड़ेगा।',
+        ],
+        pEn: [
+          'The map of British India held some six hundred princely states, and hundreds of them had the right to strike their own coins. That right was not uniform — some states ran a fully independent currency, some issued only small copper pieces, and some simply adopted British coinage.',
+          'The right to strike coins was a question of prestige and not merely of economics. Issuing a coin in your own name was the most visible proof of sovereignty, which is why even small states wanted to keep it.',
+          'By the early twentieth century the British administration had begun to wind these arrangements down, and after independence the whole system had become history by 1950. This makes the field a closed window in time — nothing new will ever be added to it.',
+        ],
+      },
+      {
+        hHi: 'बड़े नाम, बड़ी टकसालें',
+        hEn: 'The big names, the big mints',
+        pHi: [
+          'हैदराबाद सबसे बड़ी और सबसे लंबे समय तक चलने वाली रियासती मुद्रा थी। निज़ाम का “हाली सिक्का” आज़ादी के बाद भी कुछ समय चलता रहा, और उसका ओस्मानिया विश्वविद्यालय वाला डिज़ाइन संग्राहकों में ख़ासा लोकप्रिय है।',
+          'ग्वालियर, इंदौर, बड़ौदा, जयपुर, बीकानेर और मैसूर — इन सबकी अपनी विशिष्ट शैली और चिह्न हैं। मैसूर के सिक्कों पर हाथी, बड़ौदा के सिक्कों पर विशेष लिपि, और बीकानेर के कुछ सिक्कों पर ब्रिटिश राजा के साथ स्थानीय शासक का नाम — हर राज्य की अपनी पहचान।',
+          'कश्मीर, त्रावणकोर और कच्छ अपनी अलग परंपराओं के कारण दिलचस्प हैं। त्रावणकोर के छोटे चाँदी के सिक्के और कच्छ की कोरी अपने-अपने क्षेत्र में गहरी जड़ें रखते हैं।',
+        ],
+        pEn: [
+          'Hyderabad ran the largest and longest-lasting princely currency. The Nizam’s “Hali Sicca” continued to circulate for a period even after independence, and its Osmania University design is popular among collectors.',
+          'Gwalior, Indore, Baroda, Jaipur, Bikaner and Mysore — each has its own distinct style and symbols. Elephants on the Mysore coins, a particular script on those of Baroda, and on some Bikaner issues the local ruler’s name alongside the British king — every state carries its own identity.',
+          'Kashmir, Travancore and Kutch are interesting for their separate traditions. The small silver coins of Travancore and the kori of Kutch have deep roots in their own regions.',
+        ],
+      },
+      {
+        hHi: 'लिपियों की विविधता',
+        hEn: 'The variety of scripts',
+        pHi: [
+          'यही वह चीज़ है जो इस क्षेत्र को सबसे रंगीन और सबसे चुनौतीपूर्ण बनाती है। रियासती सिक्कों पर फ़ारसी, देवनागरी, कन्नड़, तेलुगु, तमिल, मलयालम, गुजराती, बांग्ला और शारदा तक मिलती है — कई बार एक ही सिक्के पर दो लिपियाँ।',
+          'शुरुआती संग्राहक के लिए यह डराने वाला लग सकता है, पर व्यवहार में मदद उपलब्ध है। हर बड़ी रियासत की सिक्का-सूची प्रकाशित है, और चित्रों से मिलान करके पहचान करना कुछ हफ़्तों में आ जाता है।',
+          'और यही कठिनाई इस क्षेत्र का सबसे बड़ा आकर्षण भी है। जो सिक्के पढ़ने में मुश्किल हैं, उनकी माँग कम रहती है, और कम माँग का सीधा अर्थ है कम दाम। धैर्य रखने वाले संग्राहक के लिए यह वरदान है।',
+        ],
+        pEn: [
+          'This is what makes the field the most colourful and the most demanding. Princely coins carry Persian, Devanagari, Kannada, Telugu, Tamil, Malayalam, Gujarati, Bengali and even Sharada — sometimes two scripts on a single coin.',
+          'For a beginner this can look intimidating, but help exists in practice. Published listings cover every major state, and identification by matching against illustrations comes within a few weeks.',
+          'And that very difficulty is the field’s greatest attraction. Coins that are hard to read attract less demand, and less demand means lower prices. For a patient collector this is a gift.',
+        ],
+      },
+      {
+        hHi: 'यह क्षेत्र सस्ता क्यों है',
+        hEn: 'Why this field remains affordable',
+        pHi: [
+          'तीन कारण मिलकर काम करते हैं। पहला — विविधता इतनी ज़्यादा है कि कोई एक “पूरा सेट” संभव नहीं, इसलिए पूर्णता की वह होड़ नहीं बनती जो दाम चढ़ाती है।',
+          'दूसरा — पहचान कठिन है, इसलिए आकस्मिक ख़रीदार इस ओर नहीं आते। बाज़ार में भीड़ कम है, और भीड़ ही दाम बनाती है।',
+          'तीसरा — बहुत-सी रियासतों के ताँबे के सिक्के बड़ी संख्या में ढले और बचे हैं। ये आज भी कुछ सौ रुपये में मिल जाते हैं, जबकि उनकी कहानी किसी महँगे सिक्के से कम दिलचस्प नहीं।',
+          'यानी सीमित बजट वाले संग्राहक के लिए यह शायद सबसे संतोषजनक क्षेत्र है — कम पैसे में असली इतिहास, और सीखने के लिए जीवन भर की सामग्री।',
+        ],
+        pEn: [
+          'Three reasons work together. First, the variety is so vast that no single “complete set” is possible, so the race for completion that drives prices up never forms.',
+          'Second, identification is difficult, so casual buyers stay away. There is little crowding in this market, and crowding is what creates price.',
+          'Third, the copper coins of many states were struck and survive in large numbers. They still cost a few hundred rupees, and their stories are no less interesting than those of far more expensive coins.',
+          'For a collector on a limited budget this is arguably the most satisfying field there is — genuine history for little money, and a lifetime of material to learn from.',
+        ],
+      },
+      {
+        hHi: 'शुरुआत कहाँ से करें',
+        hEn: 'Where to begin',
+        pHi: [
+          'सबसे स्वाभाविक शुरुआत अपने ही क्षेत्र की रियासत से है। जिस राज्य में आप रहते हैं या जहाँ से आपका परिवार आता है, उसके सिक्के जुटाना विषय को व्यक्तिगत बना देता है, और स्थानीय जानकारी भी आसानी से मिल जाती है।',
+          'दूसरा तरीक़ा एक धातु चुनना है — जैसे केवल ताँबे के रियासती सिक्के। यह सस्ता रहता है, विविधता भरपूर मिलती है, और आँख को अलग-अलग शैलियाँ पहचानने का अच्छा अभ्यास होता है।',
+          'तीसरा तरीक़ा एक चिह्न या विषय चुनना है — जैसे वे सारे सिक्के जिन पर कोई पशु बना हो। यह विषय अपने आप में सुंदर है और प्रदर्शित करने पर लोगों को तुरंत आकर्षित करता है।',
+        ],
+        pEn: [
+          'The most natural starting point is the princely state of your own region. Collecting the coins of the state you live in, or the one your family comes from, makes the subject personal and local knowledge easy to find.',
+          'A second approach is to pick one metal — only the copper issues of the princely states, say. It stays inexpensive, the variety is plentiful, and it gives the eye good practice at recognising different regional styles.',
+          'A third is to pick a symbol or motif — every coin bearing an animal, for instance. That theme is beautiful in itself and draws people in immediately when displayed.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'error-coins-value',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'असली एरर टकसाल की मशीन में किसी एक चरण की विफलता से बनता है, और उसकी हमेशा एक तार्किक व्याख्या होती है। जो “एरर” किसी चरण से नहीं जुड़ता, वह नुक़सान है या जालसाज़ी।',
+          'ऑफ़-सेंटर स्ट्राइक, डबल स्ट्राइक, रोटेटेड डाई, ब्रॉकेज और क्लिप्ड प्लांचेट — ये पाँच सबसे भरोसेमंद श्रेणियाँ हैं। महँगी ख़रीद से पहले प्रमाणन कराइए और बीते नीलामी-नतीजे देखिए, माँगी गई क़ीमतें नहीं।',
+        ],
+        pEn: [
+          'A genuine error comes from the failure of one specific stage in the minting machinery, and it always has a logical explanation behind it. Any “error” that cannot be tied to a stage is either damage or deliberate fakery.',
+          'Off-centre strikes, double strikes, rotated dies, brockages and clipped planchets are the five most dependable categories to work with. Before any expensive purchase, get the piece certified and look at past auction results rather than at the prices people are asking.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'coin-grading-basics',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'दशा ही दाम है। घिसाव सबसे ऊँचे बिंदुओं पर पहले दिखता है, और लस्टर की मौजूदगी सबसे निर्णायक तत्व है — क्योंकि वह एक बार चला जाए तो लौटता नहीं।',
+          'सीढ़ी याद रखिए: पुअर, गुड, फ़ाइन, वेरी फ़ाइन, एक्स्ट्रीमली फ़ाइन, अनसर्कुलेटेड। और वह एक नियम जो सबसे ज़्यादा पैसा बचाता है — सिक्का कभी साफ़ मत कीजिए।',
+        ],
+        pEn: [
+          'Condition is price. Wear appears first on the highest points, and the presence of lustre is the single most decisive element — because once it is gone it never comes back.',
+          'Remember the ladder: Poor, Good, Fine, Very Fine, Extremely Fine, Uncirculated. And remember the one rule that saves the most money of all — never clean a coin, whatever it looks like.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'sell-old-coins-legally',
+    sections: [
+      {
+        hHi: 'याद रखने लायक़ चार बातें',
+        hEn: 'Four things worth remembering',
+        pHi: [
+          'पहली — रिज़र्व बैंक पुराने सिक्के नहीं ख़रीदता। “आरबीआई अनुमोदित ख़रीदार” का दावा करने वाला हर विज्ञापन झूठा है, और यह जाँचने का सबसे तेज़ तरीक़ा है।',
+          'दूसरी — पैसा हमेशा ख़रीदार से विक्रेता की ओर बहता है। जो आपसे रजिस्ट्रेशन, वेरिफ़िकेशन, जीएसटी या कूरियर का शुल्क माँगे, वह ठग है, चाहे कहानी कितनी भी भरोसेमंद लगे।',
+          'तीसरी — बेचने से पहले सिक्का साफ़ मत कीजिए, तस्वीरें साफ़ लीजिए, और एक सूची बनाइए। ये तीनों काम मिलकर आपको बेहतर दाम दिलाते हैं।',
+          'चौथी — तीन असली रास्ते हैं: डीलर (तेज़, दाम कम), नीलामी घर (धीमा, दाम ऊँचा), और संग्राहकों की समिति (बीच का रास्ता)। तीनों में मोल-भाव होता है और किसी में अग्रिम शुल्क नहीं।',
+        ],
+        pEn: [
+          'First — the Reserve Bank does not buy old coins. Every advertisement claiming to be an “RBI approved buyer” is false, and that is the fastest test you can apply to any offer.',
+          'Second — money always flows from the buyer to the seller. Anybody asking you for a registration, verification, GST or courier fee is a fraud, however convincing the story sounds.',
+          'Third — before selling, do not clean the coin, do photograph it clearly, and do make a list. Those three together get you a better price than any negotiation tactic will.',
+          'Fourth — there are three real routes: a dealer (fast, lower price), an auction house (slow, higher price), and a collectors’ society (the middle path). All three negotiate, and none of them asks for money up front.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'start-coin-collection',
+    sections: [
+      {
+        hHi: 'पहली ख़रीद कैसी होनी चाहिए',
+        hEn: 'What your first purchase should look like',
+        pHi: [
+          'जब आप ख़रीदने के लिए तैयार हों, तो पहली ख़रीद सस्ती और आम होनी चाहिए — कोई ऐसा सिक्का जिसकी क़ीमत इतनी हो कि ग़लती निकलने पर भी तकलीफ़ न हो।',
+          'किसी प्रदर्शनी में जाकर, हाथ में लेकर ख़रीदिए। ऑनलाइन पहली ख़रीद इसलिए ठीक नहीं कि तस्वीर से घिसाव, लस्टर और वज़न का अंदाज़ा नहीं लगता, और यही तीनों सबसे ज़्यादा मायने रखते हैं।',
+          'विक्रेता से पूछिए कि वह इसे किस ग्रेड का मानता है और क्यों। एक अच्छा डीलर जवाब देने में ख़ुशी महसूस करता है, और वह बातचीत आपको किसी किताब से ज़्यादा सिखाती है।',
+        ],
+        pEn: [
+          'When you are ready to buy, the first purchase should be cheap and common — a coin priced low enough that a mistake would not hurt.',
+          'Buy it at a fair, with the coin in your hand. A first purchase online is a poor idea because a photograph tells you nothing reliable about wear, lustre or weight, and those three matter more than anything else.',
+          'Ask the seller what grade he considers it and why. A good dealer is happy to answer, and that one conversation teaches you more than any book will.',
+        ],
+      },
+      {
+        hHi: 'धैर्य ही असली औज़ार है',
+        hEn: 'Patience is the real tool',
+        pHi: [
+          'यह शौक़ जमा करने का नहीं, धीरे-धीरे समझने का है। जो संग्राहक पहले साल में सबसे ज़्यादा सिक्के ख़रीदते हैं, वे अक्सर तीसरे साल तक आधे बेच देते हैं।',
+          'बेहतर तरीक़ा उल्टा है — कम ख़रीदिए, ज़्यादा देखिए, और हर ख़रीद से पहले एक हफ़्ता रुकिए। जो सिक्का हफ़्ते भर बाद भी उतना ही ज़रूरी लगे, वही असल में चाहिए था।',
+        ],
+        pEn: [
+          'This hobby is not about accumulating but about understanding, slowly. Collectors who buy the most coins in their first year very often sell half of them by their third.',
+          'The better approach is the opposite — buy less, look more, and wait a week before every purchase. A coin that still feels necessary after that week is the one you actually wanted.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'princely-states-coins',
+    sections: [
+      {
+        hHi: 'नक़ल से बचाव',
+        hEn: 'Guarding against forgeries',
+        pHi: [
+          'रियासती सिक्कों में भी नक़ल मौजूद है, पर उसका ढाँचा अलग है। चूँकि अधिकांश सिक्के सस्ते हैं, बड़े पैमाने पर जाली बनाना फ़ायदेमंद नहीं — इसलिए नक़ल मुख्यतः महँगी, दुर्लभ किस्मों में मिलती है।',
+          'सबसे आम धोखा वही है जो मुग़ल सिक्कों में है — ढला हुआ (कास्ट) नक़ल, जिसकी सतह पर छोटे गड्ढे और किनारे पर गोलापन दिखता है, जबकि असली सिक्का ठोंककर बनाया गया था।',
+          'वज़न फिर से सबसे तेज़ जाँच है, बशर्ते आपको उस राज्य का मानक वज़न मालूम हो। यही एक कारण है कि रियासती संग्रह में एक अच्छी संदर्भ-सूची रखना ज़रूरी है।',
+        ],
+        pEn: [
+          'Forgeries exist among princely coins too, but the pattern differs. Because most of these coins are inexpensive, faking them at scale is not profitable — so counterfeits are found mainly among the expensive, scarce varieties.',
+          'The commonest deception is the same one seen with Mughal coins — a cast copy, showing small pits across the surface and rounded edges, whereas the genuine piece was struck by hammer.',
+          'Weight is again the fastest check, provided you know the standard for that particular state. This is one reason a good reference listing is essential for anybody collecting in this field.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'यह भारतीय संग्रह का सबसे विविध, सबसे सस्ता और सबसे कम भीड़ वाला क्षेत्र है। लिपियों की कठिनाई ही इसे सुलभ रखती है।',
+          'अपने ही क्षेत्र की रियासत से शुरू कीजिए, एक अच्छी संदर्भ-सूची रखिए, और सस्ते ताँबे के सिक्कों से आँख बनाइए। कुछ महीनों में आप वह पढ़ने लगेंगे जो अधिकांश लोग देख भी नहीं पाते।',
+        ],
+        pEn: [
+          'This is the most varied, the most affordable and the least crowded field in Indian collecting. The very difficulty of the scripts is what keeps it accessible.',
+          'Begin with the princely state of your own region, keep a good reference listing beside you, and build your eye on the cheap copper issues. Within a few months you will be reading what most people cannot even see.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'error-coins-value',
+    sections: [
+      {
+        hHi: 'एक आख़िरी सलाह',
+        hEn: 'One last piece of advice',
+        pHi: [
+          'एरर संग्रह में उतरने से पहले साधारण सिक्कों पर आँख बना लीजिए। जो व्यक्ति सामान्य ढलाई को ठीक से नहीं पहचानता, वह असामान्य को कैसे पहचानेगा।',
+        ],
+        pEn: [
+          'Before entering error collecting, build your eye on ordinary coins first. Somebody who cannot recognise a normal strike properly has no reliable way of recognising an abnormal one, and that is where most expensive mistakes in this field begin.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'coin-grading-basics',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last point',
+        pHi: [
+          'ग्रेड कोई कठोर विज्ञान नहीं है — दो अनुभवी लोग एक ही सिक्के पर एक पायदान का फ़र्क़ रख सकते हैं। इसीलिए मोल-भाव में ग्रेड पर बहस करने के बजाय सिक्के के ब्योरे पर बात कीजिए।',
+        ],
+        pEn: [
+          'Grading is not an exact science — two experienced people can differ by one rung on the same coin. For that reason, when negotiating, discuss the specific details of the piece rather than arguing about the label, because details are checkable and labels are opinions.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'sell-old-coins-legally',
+    sections: [
+      {
+        hHi: 'और अंत में',
+        hEn: 'And finally',
+        pHi: [
+          'बेचना ही एकमात्र विकल्प नहीं है। अगर संग्रह छोटा है और उसकी बाज़ारू क़ीमत मामूली है, तो उसे व्यवस्थित करके रख लेना अक्सर बेहतर फ़ैसला साबित होता है।',
+        ],
+        pEn: [
+          'Selling is not the only option available to you. If the collection is small and its market value is modest, organising it properly and keeping it very often turns out to be the better decision in the end.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'start-coin-collection',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'एक विषय चुनिए, एक लूप और एक तराज़ू ख़रीदिए, सही भंडारण का इंतज़ाम कीजिए, और घर में मौजूद सिक्कों से शुरुआत कीजिए। पहले महीने में कुछ महँगा मत ख़रीदिए।',
+          'फिर किसी प्रदर्शनी में जाइए, लोगों से मिलिए, और हर सिक्के के साथ एक छोटी पर्ची रखने की आदत डालिए। यही चार-पाँच आदतें मिलकर एक ऐसा संग्रह बनाती हैं जो वर्षों बाद भी संतोष देता है।',
+        ],
+        pEn: [
+          'Choose a theme, buy a loupe and a scale, arrange proper storage, and begin with the coins already in your house. Buy nothing expensive in the first month, however tempting it looks.',
+          'Then visit a fair, meet other collectors, and build the habit of keeping a small slip with every coin. Those four or five habits together are what produce a collection that still gives satisfaction years later, rather than a box of things you once bought.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'princely-states-coins',
+    sections: [
+      {
+        hHi: 'एक व्यावहारिक सुझाव',
+        hEn: 'A practical suggestion',
+        pHi: [
+          'एक अच्छी संदर्भ-पुस्तक इस क्षेत्र में सबसे अच्छा निवेश है — किसी भी एक सिक्के से ज़्यादा उपयोगी। रियासती सिक्कों की मानक सूचियाँ उपलब्ध हैं और उनमें वज़न, धातु और चित्र सब दर्ज रहते हैं।',
+        ],
+        pEn: [
+          'A good reference book is the single best investment in this field — more useful than any one coin you could buy with the same money. Standard listings of the princely issues are available, and they record weights, metals and illustrations for each type, which is exactly what identification requires.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
