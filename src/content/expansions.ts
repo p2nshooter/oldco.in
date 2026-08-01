@@ -983,6 +983,530 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'punch-marked-coins-ancient-india',
+    sections: [
+      {
+        hHi: 'ये सिक्के कब और क्यों बने',
+        hEn: 'When these coins appeared, and why',
+        pHi: [
+          'आहत सिक्के (पंच-मार्क्ड) भारत की सबसे पुरानी मुद्रा हैं, और उनका समय लगभग छठी शताब्दी ईसा पूर्व से शुरू होता है। यह वही दौर है जब गंगा के मैदान में महाजनपद उभर रहे थे, नगर बस रहे थे, और व्यापार को वस्तु-विनिमय से आगे किसी चीज़ की ज़रूरत पड़ी।',
+          'इनका जन्म किसी एक राजा के आदेश से नहीं, व्यापार की व्यावहारिक ज़रूरत से हुआ। शुरुआती सिक्के व्यापारी श्रेणियों और नगर-निगमों ने जारी किए, और बाद में मगध जैसे बड़े राज्यों ने इस व्यवस्था को अपने हाथ में लिया।',
+          'मौर्य काल तक आते-आते ये सिक्के पूरे उपमहाद्वीप में फैल चुके थे। कौटिल्य के अर्थशास्त्र में सिक्कों की जाँच करने वाले अधिकारी का उल्लेख मिलता है — यानी उस समय भी नक़ली सिक्कों की समस्या मौजूद थी और उसके लिए सरकारी व्यवस्था बनी हुई थी।',
+        ],
+        pEn: [
+          'Punch-marked coins are India’s oldest currency, and their story begins around the sixth century before the common era. This is the same period in which the mahajanapadas were rising across the Gangetic plain, cities were being founded, and trade needed something beyond barter to work with.',
+          'They were born not from any single king’s decree but from the practical requirements of commerce. The earliest issues came from merchant guilds and city corporations, and only later did large states such as Magadha take the system into their own hands.',
+          'By the Mauryan period these coins had spread across the subcontinent. The Arthashastra of Kautilya mentions an officer whose job was to examine coins — which tells us that counterfeiting was already a problem then, and that an official arrangement existed to deal with it.',
+        ],
+      },
+      {
+        hHi: 'बनाने की विधि, जो नाम में ही छिपी है',
+        hEn: 'The method of manufacture, which is hidden in the name itself',
+        pHi: [
+          'नाम ही तरीक़ा बता देता है। चाँदी की एक चादर से टुकड़े काटे जाते थे, फिर हर टुकड़े को तय वज़न तक काट-छाँटकर लाया जाता था, और अंत में उस पर छोटे-छोटे ठप्पे (पंच) अलग-अलग ठोंके जाते थे।',
+          'यही कारण है कि इन सिक्कों का आकार अनियमित है — कोई गोल, कोई चौकोर, कोई बेढंगा। आकार मायने नहीं रखता था; वज़न रखता था। मानक वज़न लगभग 3.4 ग्राम के आसपास बैठता है, जिसे प्राचीन ग्रंथों में कर्षापण कहा गया।',
+          'हर सिक्के पर आमतौर पर पाँच ठप्पे मिलते हैं, और वे एक साथ नहीं, अलग-अलग ठोंके गए थे। इसीलिए कई बार एक ठप्पा दूसरे के ऊपर चढ़ा हुआ दिखता है — और यही असलियत का सबसे भरोसेमंद प्रमाण भी है, क्योंकि ढली हुई नक़ल में यह क्रम बन ही नहीं सकता।',
+        ],
+        pEn: [
+          'The name itself describes the method. Pieces were cut from a sheet of silver, each piece was then trimmed until it reached the correct weight, and finally small stamps — punches — were struck onto it one at a time.',
+          'This is why these coins are irregular in shape: some round, some square, some simply shapeless. The shape did not matter; the weight did. The standard sits at around 3.4 grams, the unit the ancient texts call a karshapana.',
+          'Most coins carry five punches, and they were applied separately rather than together. That is why one punch is often seen overlapping another — and it happens to be the most dependable proof of authenticity, because a cast forgery cannot reproduce that sequence of overlaps.',
+        ],
+      },
+      {
+        hHi: 'प्रतीकों की दुनिया',
+        hEn: 'The world of the symbols',
+        pHi: [
+          'इन सिक्कों पर लिखावट नहीं, प्रतीक हैं — और यही उन्हें सबसे रहस्यमय बनाता है। सूर्य लगभग हर सिक्के पर मिलता है, और उसके साथ एक छह-भुजाओं वाला चिह्न, जिसे विद्वान “षडर चक्र” कहते हैं।',
+          'बाक़ी प्रतीकों में पहाड़ी (जिस पर अक्सर अर्धचंद्र बना होता है), वृक्ष जिसके चारों ओर रेलिंग हो, हाथी, बैल, मछली, और ज्यामितीय आकृतियाँ शामिल हैं। सैकड़ों अलग-अलग प्रतीक दर्ज किए जा चुके हैं।',
+          'इनका अर्थ आज भी पूरी तरह तय नहीं है। कुछ विद्वान इन्हें जारी करने वाले अधिकारियों के चिह्न मानते हैं, कुछ राज्यों या टकसालों के, और कुछ धार्मिक प्रतीक। यही अनिश्चितता इस क्षेत्र को शोध के लिए जीवित बनाए रखती है।',
+          'संग्राहक के लिए व्यावहारिक बात यह है कि प्रतीकों का संयोजन ही वर्गीकरण का आधार है। एक ही सिक्के पर कौन-से पाँच प्रतीक हैं, यह जानकर उसे एक विशेष शृंखला में रखा जा सकता है।',
+        ],
+        pEn: [
+          'These coins carry symbols rather than inscriptions, and that is what makes them most mysterious. The sun appears on almost every one, accompanied by a six-armed device that scholars call the shadara chakra.',
+          'Among the other symbols are a hill, often surmounted by a crescent; a tree enclosed by a railing; an elephant; a bull; a fish; and a range of geometric forms. Several hundred distinct symbols have been recorded.',
+          'Their meaning is still not settled. Some scholars read them as the marks of the officials who issued the coin, some as marks of states or mints, and some as religious devices. That very uncertainty is what keeps the field alive for research.',
+          'The practical point for a collector is that the combination of symbols is the basis of classification. Knowing which five appear on a given coin allows it to be placed within a particular series.',
+        ],
+      },
+      {
+        hHi: 'असली और नक़ली में फ़र्क़',
+        hEn: 'Telling genuine from forged',
+        pHi: [
+          'सबसे पहला परीक्षण ठप्पों का है। असली सिक्के में हर ठप्पा अलग-अलग ठोंका गया, इसलिए उनकी गहराई और कोण अलग होते हैं, और कई बार वे एक-दूसरे को काटते हैं। ढले हुए नक़ल में सारे चिह्न एक ही तल पर, एक ही गहराई में बैठे मिलते हैं।',
+          'दूसरा परीक्षण धातु का है। ये सिक्के चाँदी के हैं, अक्सर मिश्रित शुद्धता वाले, और सदियों में उन पर एक गहरी प्राकृतिक परत (पैटिना) बनी होती है। नई बनी नक़ल में यह परत या तो अनुपस्थित होती है या कृत्रिम रूप से बनाई गई और असमान होती है।',
+          'तीसरा वज़न है। लगभग 3.4 ग्राम के मानक से बहुत दूर बैठने वाला सिक्का सवाल खड़ा करता है, हालाँकि घिसाव और क्षरण के कारण थोड़ी कमी सामान्य है।',
+          'और चौथा — किनारा। असली सिक्का चादर से काटा गया था, इसलिए किनारे पर कटाई के निशान मिलते हैं। ढले हुए सिक्के का किनारा गोल और चिकना होता है, जो साँचे से निकलने का सबूत है।',
+        ],
+        pEn: [
+          'The first test concerns the punches. On a genuine coin each punch was struck separately, so their depths and angles differ and they frequently cut across one another. On a cast forgery every mark sits on the same plane at the same depth.',
+          'The second test is the metal. These coins are silver, often of variable purity, and centuries have laid down a deep natural patina. On a recent forgery that layer is either absent or has been created artificially and looks uneven.',
+          'The third is weight. A coin sitting far from the standard of roughly 3.4 grams raises a question, though some loss through wear and corrosion is entirely normal.',
+          'And the fourth is the edge. A genuine coin was cut from a sheet, so cutting marks appear along its edge. A cast coin has a rounded, smooth edge — the evidence of its release from a mould.',
+        ],
+      },
+      {
+        hHi: 'ये आज भी सुलभ क्यों हैं',
+        hEn: 'Why they remain affordable today',
+        pHi: [
+          'यह सबसे सुखद आश्चर्य है: ढाई हज़ार साल पुराने सिक्के आज भी कुछ हज़ार रुपये में मिल जाते हैं। कारण सीधा है — इन्हें भारी संख्या में ढाला गया, ये चाँदी के होने के कारण गलाए नहीं गए, और ज़मीन में दबे भंडार आज भी मिलते रहते हैं।',
+          'दाम मुख्यतः दो बातों से बनता है: सिक्के की दशा, और प्रतीकों का कितना हिस्सा स्पष्ट पढ़ा जा सकता है। जिस सिक्के पर पाँचों ठप्पे साफ़ हों, वह उसी वज़न के धुँधले सिक्के से कई गुना ऊपर बैठता है।',
+          'इसलिए यह उन कम क्षेत्रों में से है जहाँ एक साधारण बजट वाला संग्राहक सचमुच प्राचीन वस्तु रख सकता है। हथेली पर वह चाँदी का टुकड़ा किसी संग्रहालय की वस्तु से कम नहीं, और वह आपका है।',
+        ],
+        pEn: [
+          'This is the most pleasant surprise in the subject: coins two and a half thousand years old can still be had for a few thousand rupees. The reason is straightforward — they were struck in enormous numbers, being silver they were not melted down, and buried hoards continue to surface.',
+          'Price is set mainly by two things: the condition of the piece, and how much of the symbolism can be read clearly. A coin showing all five punches sharply sits several multiples above a blurred example of the same weight.',
+          'This makes it one of the few fields where a collector on an ordinary budget can genuinely own something ancient. That piece of silver in your palm is no lesser an object than one in a museum case, and it is yours.',
+        ],
+      },
+      {
+        hHi: 'ख़रीदते समय क्या पूछें',
+        hEn: 'What to ask when buying',
+        pHi: [
+          'पहला सवाल स्रोत का है — यह सिक्का कहाँ से आया। प्राचीन वस्तुओं के मामले में स्रोत मायने रखता है, और ईमानदार विक्रेता इसका जवाब देने में हिचकता नहीं।',
+          'दूसरा — वज़न कितना है, और क्या तराज़ू पर तौलकर दिखाया जा सकता है। यह सामान्य अनुरोध है और कोई भी गंभीर डीलर इसे मान लेता है।',
+          'तीसरा — क्या इसे साफ़ किया गया है। बहुत-से आहत सिक्के बाज़ार में आने से पहले रगड़ दिए जाते हैं, जिससे पैटिना और सतह के ब्योरे दोनों चले जाते हैं। साफ़ किया हुआ सिक्का सस्ता होना चाहिए, और यह बात खुलकर कही जानी चाहिए।',
+        ],
+        pEn: [
+          'The first question is provenance — where did this coin come from. With ancient objects the source matters, and an honest seller does not hesitate to answer it.',
+          'The second is the weight, and whether it can be shown on a scale. This is an ordinary request and any serious dealer accepts it without complaint.',
+          'The third is whether the piece has been cleaned. A great many punch-marked coins are scrubbed before reaching the market, which removes both the patina and the surface detail. A cleaned coin should cost less, and that fact ought to be stated openly.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'small-coins-25-50-paise',
+    sections: [
+      {
+        hHi: '2011 में क्या हुआ',
+        hEn: 'What happened in 2011',
+        pHi: [
+          '30 जून 2011 से 25 पैसे और उससे छोटे सभी सिक्के वैध मुद्रा नहीं रहे। यह घोषणा रिज़र्व बैंक ने की, और उस तारीख़ के बाद इन सिक्कों से कुछ ख़रीदा नहीं जा सकता था।',
+          'कारण आर्थिक था। महँगाई बढ़ने के साथ इन सिक्कों की क्रय-शक्ति लगभग शून्य हो चुकी थी, जबकि उन्हें ढालने, ढोने और गिनने की लागत उनके अंकित मूल्य से कहीं ऊपर जा चुकी थी। एक पैसे का सिक्का बनाने में एक पैसे से ज़्यादा ख़र्च होता था।',
+          'उस दिन ये सिक्के मुद्रा से इतिहास बन गए — और यही वह क्षण है जिसने इन्हें संग्राहकों के लिए दिलचस्प बना दिया। जो चीज़ बननी बंद हो जाए, उसकी संख्या अब कभी नहीं बढ़ेगी।',
+        ],
+        pEn: [
+          'From 30 June 2011 the 25 paise and every smaller coin ceased to be legal tender. The Reserve Bank made the announcement, and after that date nothing could be bought with them.',
+          'The reason was economic. As inflation rose the purchasing power of these coins had fallen to almost nothing, while the cost of striking, transporting and counting them had climbed well above their face value. Making a one-paisa coin cost more than one paisa.',
+          'On that day these pieces turned from currency into history — and that is precisely the moment that made them interesting to collectors. Once something stops being made, its number can never grow again.',
+        ],
+      },
+      {
+        hHi: 'धातुओं और डिज़ाइनों का जुलूस',
+        hEn: 'A parade of metals and designs',
+        pHi: [
+          'छोटे सिक्कों की कहानी असल में धातु की कहानी है। 1957 में दशमलव प्रणाली आने पर एक, दो, पाँच, दस, पच्चीस और पचास नए पैसे जारी हुए — छोटे मूल्यवर्ग काँसे और निकल-पीतल में, बड़े कप्रो-निकल में।',
+          '1960 के दशक में लागत के दबाव में एल्युमिनियम आया, और सिक्के अचानक बहुत हल्के हो गए। एक और दो पैसे के वे हल्के, तिकोने-से सिक्के आज भी लोगों को याद हैं — बच्चे उन्हें उछालकर देखते थे कि कितनी देर हवा में रहते हैं।',
+          'बाद में स्टेनलेस स्टील आया, और उसके साथ सिक्कों का चरित्र फिर बदला — कठोर, चमकदार, और घिसने में मुश्किल। यही कारण है कि इस दौर के सिक्के आज भी अच्छी दशा में मिल जाते हैं।',
+          'डिज़ाइन में भी विविधता है: गेहूँ की बालियाँ, कमल, गैंडा, घोड़ा, और अनेक स्मारक विषय। एक दराज़ भर छोटे सिक्के असल में आधी सदी का डिज़ाइन-इतिहास हैं।',
+        ],
+        pEn: [
+          'The story of the small coins is really the story of metal. When decimalisation arrived in 1957, one, two, five, ten, twenty-five and fifty naye paise were issued — the smaller denominations in bronze and nickel-brass, the larger in cupro-nickel.',
+          'Under cost pressure in the 1960s aluminium arrived, and the coins suddenly became very light. Those weightless one and two paise pieces with their scalloped edges are still remembered — children used to toss them to see how long they stayed in the air.',
+          'Later came stainless steel, and with it the character of the coinage changed again — hard, bright, and difficult to wear down. That is why coins of this period still turn up in good condition.',
+          'The designs vary as widely: ears of wheat, a lotus, a rhinoceros, a horse, and numerous commemorative subjects. A drawerful of small coins is in fact half a century of design history.',
+        ],
+      },
+      {
+        hHi: 'किन सिक्कों को सँभालकर रखें',
+        hEn: 'Which of them to put away',
+        pHi: [
+          'पहले वे जो अच्छी दशा में हैं। छोटे सिक्के भारी संख्या में ढले थे, इसलिए आम घिसे हुए नमूने की माँग कम है — पर बिना घिसे, मूल चमक वाले सिक्के अपेक्षाकृत दुर्लभ हैं, क्योंकि किसी ने उन्हें सँभालने की सोची ही नहीं।',
+          'दूसरे वे जो कम ढले वर्षों के हैं। हर वर्ष की ढलाई-संख्या अलग थी, और कुछ वर्ष-टकसाल संयोजन बहुत कम बने। यह जानकारी कैटलॉग में दर्ज है और उसे देखे बिना अंदाज़ा लगाना मुश्किल है।',
+          'तीसरे वे जिन पर एरर है — ऑफ़-सेंटर छाप, दोहरी ठोंक, या धातु का दोष। छोटे सिक्कों में एरर अपेक्षाकृत ज़्यादा मिलते हैं क्योंकि उनकी ढलाई तेज़ रफ़्तार से होती थी।',
+          'और चौथे — वे जिनसे आपकी अपनी याद जुड़ी है। संग्रह का सबसे टिकाऊ आधार भावना है, बाज़ार नहीं।',
+        ],
+        pEn: [
+          'First, those in good condition. Small coins were struck in vast numbers, so ordinary worn examples attract little demand — but unworn pieces retaining their original lustre are comparatively scarce, precisely because nobody thought to save them.',
+          'Second, those from low-mintage years. Production varied from year to year, and certain year-and-mint combinations were made in very small numbers. That information sits in the catalogues and is hard to guess at without them.',
+          'Third, those carrying errors — an off-centre strike, a doubled blow, or a flaw in the metal. Errors are comparatively common among small coins because they were struck at high speed.',
+          'And fourth, those attached to a memory of your own. The most durable basis for a collection is feeling rather than market value.',
+        ],
+      },
+      {
+        hHi: 'क़ीमत के बारे में ईमानदार बात',
+        hEn: 'An honest word about their value',
+        pHi: [
+          'इंटरनेट पर छोटे सिक्कों को लेकर सबसे ज़्यादा झूठे दावे घूमते हैं — “यह 25 पैसे का सिक्का लाखों में बिकता है” जैसी बातें लगभग हर महीने वायरल होती हैं।',
+          'सच्चाई यह है कि अधिकांश छोटे सिक्के आज भी बहुत सस्ते हैं, क्योंकि वे करोड़ों की संख्या में ढले और करोड़ों की संख्या में बचे हैं। अपवाद वही तीन श्रेणियाँ हैं जो ऊपर बताई गईं — ऊँची दशा, कम ढलाई, और असली एरर।',
+          'जाल का ढाँचा हमेशा एक जैसा रहता है: एक फ़ोन नंबर, एक असाधारण दावा, और फिर रजिस्ट्रेशन या कूरियर के नाम पर अग्रिम शुल्क। पैसा हमेशा ख़रीदार से विक्रेता की ओर बहता है; उल्टी दिशा में बहे तो वह सौदा नहीं, ठगी है।',
+        ],
+        pEn: [
+          'The small coins attract more false claims online than anything else — “this 25 paise piece sells for lakhs” goes viral almost every month.',
+          'The truth is that most small coins remain very cheap, because they were struck in crores and survive in crores. The exceptions are the same three categories named above — high grade, low mintage, and genuine errors.',
+          'The structure of the trap never changes: a phone number, an extraordinary claim, and then an advance fee for registration or courier. Money always flows from the buyer to the seller; when it flows the other way, that is not a transaction but a fraud.',
+        ],
+      },
+      {
+        hHi: 'एक पूरा सेट बनाना',
+        hEn: 'Building a complete set',
+        pHi: [
+          'छोटे सिक्के उस दुर्लभ श्रेणी में आते हैं जहाँ एक “पूरा सेट” सचमुच संभव है, और वही इस क्षेत्र का सबसे बड़ा आकर्षण है।',
+          'सबसे स्वाभाविक लक्ष्य है: 1957 से 2011 तक हर मूल्यवर्ग का कम से कम एक अच्छा नमूना। यह कुछ दर्जन सिक्कों का मामला है, अधिकांश सस्ते, और पूरा होने पर एक साफ़ कहानी बनती है — दशमलव प्रणाली का जन्म से अंत तक।',
+          'अधिक महत्वाकांक्षी लक्ष्य है हर वर्ष का हर मूल्यवर्ग, टकसाल-चिह्न सहित। यह वर्षों का काम है, कुछ वर्ष कठिन मिलते हैं, और यही उसे दिलचस्प बनाता है।',
+          'दोनों में साझा बात यह है कि ख़र्च नियंत्रण में रहता है। यह संभवतः इकलौता भारतीय संग्रह-क्षेत्र है जहाँ कुछ हज़ार रुपये में एक सचमुच पूर्ण संग्रह खड़ा किया जा सकता है।',
+        ],
+        pEn: [
+          'The small coins fall into that rare category where a genuinely complete set is possible, and that is the field’s greatest attraction.',
+          'The most natural target is one good example of every denomination from 1957 to 2011. That is a matter of a few dozen coins, most of them inexpensive, and once assembled it tells a clean story — the decimal system from birth to end.',
+          'A more ambitious target is every denomination for every year, mint marks included. That is a project of years, some dates are difficult, and the difficulty is exactly what makes it interesting.',
+          'What both share is that the cost stays controlled. This is possibly the only Indian collecting field in which a genuinely complete holding can be built for a few thousand rupees.',
+        ],
+      },
+      {
+        hHi: 'रख-रखाव, ख़ासकर एल्युमिनियम का',
+        hEn: 'Care, particularly of the aluminium',
+        pHi: [
+          'एल्युमिनियम के सिक्के इस समूह में सबसे नाज़ुक हैं। वे नरम हैं, आसानी से मुड़ते और ख़रोंच खाते हैं, और नमी में उन पर सफ़ेद पाउडर जैसी परत जम जाती है जो सतह को स्थायी नुक़सान पहुँचाती है।',
+          'इसलिए इन्हें अलग-अलग रखिए — एक ही लिफ़ाफ़े में कई सिक्के डालने से वे आपस में रगड़ खाते हैं। माइलर या पॉलीप्रोपिलीन के फ़्लिप सबसे उपयुक्त हैं, और पीवीसी वाली पुरानी थैलियाँ बिल्कुल नहीं।',
+          'स्टेनलेस स्टील के सिक्के सबसे मज़बूत हैं और लगभग किसी देखभाल की माँग नहीं करते। कप्रो-निकल बीच में है — वह हवा में धीरे-धीरे टोन पकड़ता है, जो नुक़सान नहीं बल्कि स्वाभाविक है और उसे हटाना नहीं चाहिए।',
+        ],
+        pEn: [
+          'Aluminium coins are the most fragile in this group. They are soft, bend and scratch easily, and in damp conditions develop a white powdery bloom that damages the surface permanently.',
+          'So keep them separated — several coins in one envelope simply rub against each other. Mylar or polypropylene flips suit them best, and old PVC sleeves must be avoided entirely.',
+          'The stainless steel issues are the toughest and ask for almost no care at all. Cupro-nickel sits in between: it tones slowly in the air, which is natural rather than damage and should be left alone.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'coin-storage-album-guide',
+    sections: [
+      {
+        hHi: 'पीवीसी असल में करता क्या है',
+        hEn: 'What PVC actually does',
+        pHi: [
+          'पुरानी प्लास्टिक थैलियों को नरम और लचीला बनाने के लिए उनमें प्लास्टिसाइज़र मिलाए जाते हैं। समय के साथ ये रसायन प्लास्टिक से निकलकर बाहर आते हैं, और जो सतह उनके संपर्क में हो, उस पर जम जाते हैं।',
+          'सिक्के पर यह एक हरी, चिपचिपी परत के रूप में दिखता है। यह केवल गंदगी नहीं है — यह धातु के साथ रासायनिक क्रिया करती है, और अगर वर्षों तक रहने दी जाए तो सतह पर स्थायी गड्ढे छोड़ जाती है।',
+          'सबसे बुरी बात यह है कि यह धीमा है। नुक़सान महीनों-वर्षों में होता है, इसलिए तब तक पता नहीं चलता जब तक बहुत देर न हो जाए। जिन संग्रहों को “सुरक्षित रखा गया” माना जाता है, उनमें सबसे ज़्यादा नुक़सान इसी वजह से मिलता है।',
+          'अगर आपके पास पुरानी थैलियों में रखा संग्रह है, तो उसे आज ही निकालिए। यह इस पूरे लेख की सबसे ज़रूरी सलाह है।',
+        ],
+        pEn: [
+          'Plasticisers are added to old plastic sleeves to make them soft and flexible. Over time these chemicals migrate out of the plastic and settle on whatever surface they are in contact with.',
+          'On a coin this appears as a green, sticky film. It is not merely dirt — it reacts chemically with the metal, and if left for years it leaves permanent pitting across the surface.',
+          'The worst part is that it is slow. The damage unfolds over months and years, so it goes unnoticed until it is too late. Collections believed to have been “kept safe” are exactly where this damage is found most often.',
+          'If you hold a collection stored in old sleeves, take it out today. This is the single most important piece of advice in this article.',
+        ],
+      },
+      {
+        hHi: 'सुरक्षित सामग्री कौन-सी है',
+        hEn: 'Which materials are safe',
+        pHi: [
+          'माइलर — यह पॉलिएस्टर की एक स्थिर फ़िल्म है जिसमें कोई प्लास्टिसाइज़र नहीं होता। यह कड़ी होती है, मुड़ती नहीं, और अभिलेखागारों में इसी का उपयोग होता है। सिक्कों के लिए सबसे भरोसेमंद विकल्प।',
+          'पॉलीप्रोपिलीन और पॉलीएथिलीन — ये भी सुरक्षित हैं और सस्ते हैं। थैली पर “PVC-free” या “archival safe” लिखा हो तो आमतौर पर यही होते हैं।',
+          'अम्ल-रहित काग़ज़ के लिफ़ाफ़े (2×2 इंच वाले) — सस्ते, हल्के, और लिखने की जगह देते हैं। इनका नुक़सान यह है कि सिक्का देखने के लिए हर बार निकालना पड़ता है, और यही निकालना-रखना ख़रोंच का सबसे बड़ा कारण है।',
+          'कार्डबोर्ड फ़्लिप जिनमें माइलर की खिड़की हो और जिन्हें स्टेपल किया जाता है — ये दोनों फ़ायदे जोड़ते हैं। स्टेपल करते समय ध्यान रखिए कि पिन सिक्के से दूर रहे।',
+        ],
+        pEn: [
+          'Mylar — a stable polyester film containing no plasticiser. It is rigid rather than floppy, and it is what archives use. The most dependable choice for coins.',
+          'Polypropylene and polyethylene — also safe, and inexpensive. A sleeve marked “PVC-free” or “archival safe” is generally one of these.',
+          'Acid-free paper envelopes, the two-inch square kind — cheap, light, and they give you somewhere to write. Their drawback is that the coin must be taken out to be seen, and that handling is the commonest cause of scratches.',
+          'Cardboard flips with a Mylar window, closed with a staple, combine both advantages. When stapling, take care that the pin stays well away from the coin itself.',
+        ],
+      },
+      {
+        hHi: 'नमी, हवा और जगह',
+        hEn: 'Humidity, air and location',
+        pHi: [
+          'भारत की जलवायु में नमी सबसे बड़ा शत्रु है। ताँबे और काँसे के सिक्कों पर हरी परत, लोहे के सिक्कों पर ज़ंग, और चाँदी पर काली टोनिंग — तीनों की जड़ नमी है।',
+          'समाधान सस्ता है: एक बंद डिब्बा और उसमें सिलिका जेल के पाउच। पाउच को साल में एक-दो बार बदलिए, या उन्हें धूप में सुखाकर दोबारा इस्तेमाल कीजिए। लक्ष्य लगभग 40 प्रतिशत सापेक्ष आर्द्रता है।',
+          'जगह का चुनाव भी उतना ही मायने रखता है। रसोई और स्नानघर के पास मत रखिए — भाप वहाँ नियमित पहुँचती है। खिड़की के पास भी नहीं, क्योंकि तापमान का उतार-चढ़ाव संघनन पैदा करता है।',
+          'सबसे अच्छी जगह घर के भीतर की कोई अलमारी है, ज़मीन से ऊपर, बाहरी दीवार से दूर। तहख़ाना और छत दोनों तापमान के चरम झेलते हैं और इसीलिए दोनों अनुपयुक्त हैं।',
+        ],
+        pEn: [
+          'In the Indian climate humidity is the greatest enemy. Green film on copper and bronze, rust on iron issues, and black toning on silver all have moisture at their root.',
+          'The remedy is cheap: a closed box with silica gel sachets inside. Replace the sachets once or twice a year, or dry them in the sun and reuse them. The target is around forty per cent relative humidity.',
+          'The choice of location matters just as much. Do not store near a kitchen or a bathroom, where steam arrives regularly. Nor beside a window, because swings in temperature produce condensation.',
+          'The best place is an interior cupboard, raised off the floor and away from an outside wall. A basement and a roof room both suffer extremes of temperature, and both are therefore unsuitable.',
+        ],
+      },
+      {
+        hHi: 'सिक्का पकड़ने का सही तरीक़ा',
+        hEn: 'The right way to hold a coin',
+        pHi: [
+          'हमेशा किनारों से पकड़िए, अँगूठे और तर्जनी के बीच, और चेहरे पर उँगली मत रखिए। त्वचा का तेल और पसीना धातु पर निशान छोड़ते हैं जो महीनों बाद उभरकर दिखने लगते हैं।',
+          'नरम कपड़े या मुलायम सतह के ऊपर काम कीजिए। गिरा हुआ सिक्का काँच या पत्थर पर गिरे तो किनारा दब जाता है, और वह चोट स्थायी है।',
+          'गंभीर संग्राहक सूती दस्ताने पहनते हैं। यह अतिशयोक्ति नहीं है — बहुमूल्य सिक्कों के लिए यह मानक अभ्यास है और दस्ताने बहुत सस्ते होते हैं।',
+          'और एक बात जो बार-बार कहनी पड़ती है: बात करते समय सिक्के के ऊपर मत झुकिए। साँस की नमी चाँदी पर धब्बे छोड़ती है, और यह सचमुच होता है।',
+        ],
+        pEn: [
+          'Always hold a coin by its edges, between thumb and forefinger, and keep your fingers off the faces. Skin oils and perspiration leave marks on metal that surface visibly months later.',
+          'Work over a soft cloth or padded surface. A coin dropped onto glass or stone takes a knock to the rim, and that injury is permanent.',
+          'Serious collectors wear cotton gloves. This is not an affectation — for valuable pieces it is standard practice, and gloves cost very little.',
+          'And one point that bears repeating: do not lean over a coin while talking. The moisture in your breath spots silver, and it genuinely happens.',
+        ],
+      },
+      {
+        hHi: 'एल्बम, ट्रे और प्रदर्शन',
+        hEn: 'Albums, trays and display',
+        pHi: [
+          'संग्राहकों के लिए बने एल्बम सबसे व्यावहारिक विकल्प हैं — सिक्के क्रम में रहते हैं, दोनों तरफ़ देखे जा सकते हैं, और निकालने की ज़रूरत नहीं पड़ती। ख़रीदते समय पुष्टि कीजिए कि पॉकेट पीवीसी-रहित हैं।',
+          'लकड़ी की ट्रे सुंदर लगती हैं और उनमें एक छिपा जोखिम है: कुछ लकड़ियाँ, ख़ासकर ओक, समय के साथ अम्लीय वाष्प छोड़ती हैं जो धातु पर असर डालती हैं। भीतर से अस्तर लगी ट्रे बेहतर हैं।',
+          'प्रदर्शन के लिए फ़्रेम बनवाते समय दो बातें याद रखिए — सीधी धूप से दूर, और भीतर सिलिका जेल की जगह। धूप एल्बम के काग़ज़ को पीला करती है और कुछ धातुओं की टोनिंग बदल देती है।',
+          'और सुरक्षा का एक व्यावहारिक पहलू: पूरा संग्रह एक ही जगह मत रखिए, ख़ासकर अगर उसमें कुछ महँगे सिक्के हैं।',
+        ],
+        pEn: [
+          'Albums made for collectors are the most practical option — the coins stay in order, both faces can be seen, and nothing needs to be taken out. When buying, confirm that the pockets are PVC-free.',
+          'Wooden trays look beautiful and carry a hidden risk: some timbers, oak in particular, release acidic vapours over time that act on metal. Trays lined on the inside are the better choice.',
+          'If you frame part of a collection for display, remember two things — keep it out of direct sunlight, and leave room for a silica sachet inside. Sunlight yellows album paper and alters the toning of certain metals.',
+          'And one practical point about security: do not keep an entire collection in one place, particularly if it contains a few expensive pieces.',
+        ],
+      },
+      {
+        hHi: 'रिकॉर्ड और उत्तराधिकार',
+        hEn: 'Records and inheritance',
+        pHi: [
+          'एक साधारण सूची बनाइए — मूल्यवर्ग, वर्ष, टकसाल, दशा, ख़रीद का दाम और तारीख़, और स्रोत। छह कॉलम, और हर सिक्के पर तीस सेकंड।',
+          'तस्वीरें भी लीजिए, दोनों तरफ़ की, सादे पृष्ठभूमि पर। चोरी या नुक़सान की स्थिति में यह अकेला दस्तावेज़ है जो काम आता है, और बीमा के लिए भी यही माँगा जाता है।',
+          'सबसे उपेक्षित पहलू उत्तराधिकार है। परिवार में किसी को बताइए कि संग्रह कहाँ है, उसका मोटा मूल्य क्या है, और बेचना पड़े तो किससे संपर्क करना चाहिए।',
+          'हर साल अनगिनत संग्रह इसीलिए कौड़ियों के मोल चले जाते हैं — क्योंकि जिनके हाथ आए उन्हें पता ही नहीं था कि वे क्या पकड़े हुए हैं। एक काग़ज़ इस पूरी समस्या को हल कर देता है।',
+        ],
+        pEn: [
+          'Keep a simple list — denomination, year, mint, grade, purchase price and date, and source. Six columns, and thirty seconds per coin.',
+          'Photograph them too, both faces, against a plain background. In the event of theft or damage this is the one document that helps, and it is what insurers ask for.',
+          'The most neglected aspect is inheritance. Tell somebody in the family where the collection is, roughly what it is worth, and whom to approach if it ever has to be sold.',
+          'Every year countless collections go for a pittance for exactly this reason — those who inherited them had no idea what they were holding. A single sheet of paper solves the whole problem.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'fake-coins-detection',
+    sections: [
+      {
+        hHi: 'नक़ल के तीन परिवार',
+        hEn: 'The three families of fake',
+        pHi: [
+          'पहला परिवार — ढला हुआ (कास्ट) नक़ल। असली सिक्के से एक साँचा बनाकर उसमें पिघली धातु डाली जाती है। यह सबसे आम और सबसे आसानी से पकड़ा जाने वाला प्रकार है।',
+          'दूसरा — ठोंका हुआ (स्ट्रक) नक़ल। जालसाज़ ख़ुद डाई बनाता है और असली प्रक्रिया की नक़ल करता है। यह कहीं ज़्यादा ख़तरनाक है, क्योंकि धातु का प्रवाह असली जैसा दिखता है; पकड़ने के लिए बारीक ब्योरों की तुलना करनी पड़ती है।',
+          'तीसरा — बदला हुआ असली सिक्का। यहाँ सिक्का सचमुच असली है, पर उस पर तारीख़ या टकसाल-चिह्न बदल दिया गया है ताकि वह किसी दुर्लभ किस्म जैसा लगे। यह सबसे कठिन है, क्योंकि धातु, वज़न और पैटिना सब असली रहते हैं।',
+          'तीनों के लिए अलग-अलग जाँच चाहिए, और यही कारण है कि कोई एक “जादुई परीक्षण” मौजूद नहीं है।',
+        ],
+        pEn: [
+          'The first family is the cast fake. A mould is taken from a genuine coin and molten metal poured into it. This is the commonest type and the easiest to catch.',
+          'The second is the struck fake. The forger cuts his own dies and imitates the real process. This is far more dangerous, because the metal flow looks authentic; catching it means comparing fine details.',
+          'The third is the altered genuine coin. Here the piece really is genuine, but the date or mint mark has been changed so that it resembles a rare variety. This is the hardest of all, because the metal, the weight and the patina are all real.',
+          'Each family requires a different check, which is why no single “magic test” exists.',
+        ],
+      },
+      {
+        hHi: 'वज़न — सबसे तेज़ जाँच',
+        hEn: 'Weight — the fastest check',
+        pHi: [
+          'हर मानक सिक्के का एक निर्धारित वज़न होता है, और वह प्रकाशित है। ब्रिटिश भारत का चाँदी का रुपया लगभग 11.66 ग्राम, आधा रुपया उसका आधा, और इसी तरह आगे।',
+          'जालसाज़ अक्सर सस्ती धातु का उपयोग करते हैं, जिसका घनत्व अलग होता है। नतीजा यह कि सही आकार का सिक्का बनाने पर वज़न ग़लत आता है, या सही वज़न रखने पर मोटाई अजीब हो जाती है।',
+          'एक डिजिटल तराज़ू जो 0.01 ग्राम तक नापे, कुछ सौ रुपये का आता है और अधिकांश नक़लों को पहली ही जाँच में पकड़ लेता है। यह इस पूरे विषय का सबसे अच्छा निवेश है।',
+          'ध्यान रहे कि घिसाव से वज़न कुछ कम हो सकता है — पर घिसा हुआ सिक्का देखने में भी घिसा दिखेगा। साफ़-सुथरा दिखने वाला हल्का सिक्का सीधा संदेह का विषय है।',
+        ],
+        pEn: [
+          'Every standard coin has a defined weight, and that figure is published. The British India silver rupee sits at about 11.66 grams, the half rupee at half of that, and so on down the scale.',
+          'Forgers frequently use cheaper metal of a different density. The result is that a coin of the correct size comes out at the wrong weight, or that keeping the correct weight makes the thickness odd.',
+          'A digital scale reading to 0.01 gram costs a few hundred rupees and catches most forgeries at the very first check. It is the best investment in this entire subject.',
+          'Bear in mind that wear reduces weight slightly — but a worn coin also looks worn. A crisp-looking coin that weighs light is straightforwardly suspicious.',
+        ],
+      },
+      {
+        hHi: 'किनारा और सतह',
+        hEn: 'The edge and the surface',
+        pHi: [
+          'किनारा वह जगह है जहाँ ढली हुई नक़ल सबसे ज़्यादा ख़ुद को दिखाती है। साँचे से निकले सिक्के के किनारे पर एक बारीक सीवन (सीम) रह जाती है, जिसे घिसकर हटाया जाता है — और वही घिसाई असामान्य चिकनाई पैदा करती है।',
+          'असली ठोंके हुए सिक्के का किनारा तीखा होता है, और अगर उस पर मिल्ड (धारीदार) डिज़ाइन है तो हर धारी समान गहराई और दूरी पर रहती है। नक़ल में ये धारियाँ अक्सर उथली या असमान होती हैं।',
+          'सतह पर ढली हुई नक़ल छोटे-छोटे गड्ढे दिखाती है, जो पिघली धातु में फँसी हवा के बुलबुलों से बनते हैं। दस गुना आवर्धन के लूप से ये साफ़ नज़र आते हैं।',
+          'और अक्षरों के किनारे देखिए। ठोंकने में धातु दबाव से बहती है, इसलिए अक्षर के किनारे तीखे और साफ़ होते हैं। ढलाई में वे नरम, गोल और थोड़े धुँधले लगते हैं।',
+        ],
+        pEn: [
+          'The edge is where a cast fake gives itself away most readily. A coin released from a mould keeps a fine seam along its rim, which is then filed away — and that filing produces an unnatural smoothness.',
+          'A genuine struck coin has a sharp edge, and where a milled design is present every reeding sits at the same depth and spacing. On a forgery these are frequently shallow or irregular.',
+          'On the surface, a cast fake shows small pits formed by air bubbles trapped in the molten metal. Under a ten-times loupe they are plainly visible.',
+          'And look at the edges of the lettering. Striking makes metal flow under pressure, so letters have sharp, clean edges. Casting leaves them soft, rounded and slightly blurred.',
+        ],
+      },
+      {
+        hHi: 'आवाज़ और चुंबक',
+        hEn: 'Sound and the magnet',
+        pHi: [
+          'चाँदी के सिक्के को उँगली पर संतुलित करके हल्के से ठोकिए — वह एक लंबी, साफ़, ऊँची आवाज़ देता है जो कुछ सेकंड तक गूँजती है। सीसे या मिश्रित धातु की नक़ल एक छोटी, भोथरी “ठक” देती है।',
+          'यह परीक्षण पुराना है और अनुभव माँगता है, इसलिए पहले कुछ असली सिक्कों पर अभ्यास कीजिए ताकि कान को अंतर मालूम हो जाए। और सिक्का किसी नरम सतह के ऊपर रखकर कीजिए, ताकि गिरने पर नुक़सान न हो।',
+          'चुंबक का परीक्षण और भी सरल है। चाँदी, सोना, ताँबा, निकल और एल्युमिनियम — इनमें से कोई भी चुंबक से नहीं चिपकता। अगर कोई सिक्का जो चाँदी का होना चाहिए चुंबक से चिपक जाए, तो सवाल वहीं ख़त्म हो जाता है।',
+          'उल्टी बात भी सच है: कुछ आधुनिक भारतीय सिक्के स्टेनलेस स्टील के हैं और उन्हें चुंबक खींचता है। इसलिए यह परीक्षण जानकारी के साथ ही उपयोगी है।',
+        ],
+        pEn: [
+          'Balance a silver coin on a fingertip and tap it lightly — it gives a long, clear, high note that rings for a couple of seconds. A lead or alloy forgery gives a short, dull thud.',
+          'This test is old and needs experience, so practise first on coins you know to be genuine until your ear learns the difference. And do it over a soft surface, so a slip costs nothing.',
+          'The magnet test is simpler still. Silver, gold, copper, nickel and aluminium are all non-magnetic. If a coin that should be silver clings to a magnet, the question ends there.',
+          'The reverse also holds: several modern Indian coins are stainless steel and a magnet does attract them. So the test is only useful alongside knowing what the coin should be.',
+        ],
+      },
+      {
+        hHi: 'तुलना ही सबसे बड़ा हथियार है',
+        hEn: 'Comparison is the greatest weapon',
+        pHi: [
+          'सारे तकनीकी परीक्षणों से ऊपर एक सरल तरीक़ा है: संदिग्ध सिक्के की तुलना उसी किस्म के असली सिक्के से कीजिए, अच्छी रोशनी में, साथ-साथ रखकर।',
+          'देखिए कि अक्षरों का आकार और दूरी मिलती है या नहीं, तारीख़ के अंक एक जैसे बने हैं या नहीं, और डिज़ाइन के छोटे ब्योरे — बालों की लटें, पत्तियों की नसें — कितने साफ़ हैं।',
+          'जालसाज़ बड़ी तस्वीर सही बना लेते हैं; वे छोटे ब्योरों पर पकड़े जाते हैं। एक ही डाई से बने असली सिक्कों में ये ब्योरे हमेशा एक जैसे होते हैं।',
+          'अगर तुलना के लिए असली सिक्का उपलब्ध न हो, तो अच्छे कैटलॉग की उच्च-गुणवत्ता तस्वीरें काम आती हैं। यह आदर्श नहीं है, पर कुछ न होने से कहीं बेहतर है।',
+        ],
+        pEn: [
+          'Above all the technical tests sits one simple method: compare the suspect coin against a genuine example of the same type, in good light, placed side by side.',
+          'Look at whether the shape and spacing of the letters match, whether the digits of the date are formed identically, and how crisp the small details are — locks of hair, the veins of a leaf.',
+          'Forgers get the large picture right; they are caught on the small details. Genuine coins from the same die always agree on these.',
+          'Where no genuine coin is available for comparison, high-quality photographs in a good catalogue serve. It is not ideal, and it is considerably better than nothing.',
+        ],
+      },
+      {
+        hHi: 'कब विशेषज्ञ के पास जाएँ',
+        hEn: 'When to go to an expert',
+        pHi: [
+          'तीन स्थितियों में घर की जाँच पर मत रुकिए। पहली — जब सिक्का महँगा हो। दूसरी — जब वह किसी दुर्लभ किस्म का दावा करता हो, क्योंकि दुर्लभ किस्मों की ही सबसे ज़्यादा नक़ल बनती है।',
+          'तीसरी — जब कुछ सही न लग रहा हो, पर आप बता न पा रहे हों कि क्या। यह अनुभवी संग्राहकों का सबसे भरोसेमंद संकेत होता है, और इसे नज़रअंदाज़ नहीं करना चाहिए।',
+          'प्रतिष्ठित डीलर, संग्राहक समितियों के वरिष्ठ सदस्य, और अंतरराष्ट्रीय ग्रेडिंग सेवाएँ — तीनों विकल्प मौजूद हैं। ग्रेडिंग महँगी है, इसलिए उसे तब चुनिए जब सिक्के का मूल्य उसे उचित ठहराए।',
+          'और सबसे सस्ता बचाव अंत में यही है: उससे ख़रीदिए जिसकी साख आपसे बड़ी है। एक भरोसेमंद विक्रेता का नाम हर परीक्षण से ज़्यादा सुरक्षा देता है।',
+        ],
+        pEn: [
+          'In three situations do not stop at the checks you can do at home. The first is when the coin is expensive. The second is when it claims to be a rare variety, because rare varieties attract the most forgery.',
+          'The third is when something feels wrong and you cannot say what. That instinct is the most reliable signal experienced collectors have, and it should not be dismissed.',
+          'Reputable dealers, senior members of collectors’ societies, and international grading services are all available. Grading costs money, so choose it when the coin’s value justifies the fee.',
+          'And the cheapest protection of all is this: buy from somebody whose reputation is larger than yours. The name of a trustworthy seller offers more security than any test.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'rupiya-ka-janm-sher-shah',
+    sections: [
+      {
+        hHi: 'शेर शाह का सुधार क्यों टिका',
+        hEn: 'Why Sher Shah’s reform lasted',
+        pHi: [
+          'शेर शाह सूरी ने केवल पाँच वर्ष शासन किया, और उसी छोटी अवधि में उन्होंने एक ऐसी मुद्रा-व्यवस्था खड़ी की जो पाँच सौ साल चली। यह अपने आप में विचारणीय बात है।',
+          'सफलता का कारण मानकीकरण था। उन्होंने चाँदी के सिक्के का वज़न लगभग 178 ग्रेन तय किया, शुद्धता निश्चित की, और ताँबे के दाम तथा सोने की मोहर के साथ उसका अनुपात स्पष्ट किया।',
+          'उससे पहले की व्यवस्था में मूल्यवर्ग उलझे हुए थे और अलग-अलग क्षेत्रों में अलग-अलग मानक चलते थे। व्यापारी को हर सौदे में धातु तौलनी पड़ती थी। शेर शाह ने उस अनिश्चितता को हटाया, और यही वह चीज़ है जिसे बाज़ार ने अपनाया।',
+          'यही कारण है कि मुग़लों ने इसे बदलने के बजाय अपनाया, और उनके बाद ब्रिटिश ने भी इसी नींव पर अपनी मुद्रा खड़ी की।',
+        ],
+        pEn: [
+          'Sher Shah Suri ruled for only five years, and within that short span he built a monetary system that lasted five hundred. That fact alone deserves attention.',
+          'The reason it succeeded was standardisation. He fixed the weight of the silver coin at roughly 178 grains, set its purity, and made its ratio to the copper dam and the gold mohur explicit.',
+          'The arrangement before him had tangled denominations and different standards in different regions. A merchant had to weigh metal at every transaction. Sher Shah removed that uncertainty, and it is exactly what the market adopted.',
+          'This is why the Mughals adopted the system rather than replacing it, and why the British after them built their own currency on the same foundation.',
+        ],
+      },
+      {
+        hHi: 'नाम की यात्रा',
+        hEn: 'The journey of the name',
+        pHi: [
+          '“रुपिया” शब्द संस्कृत के “रूप्य” से आया है, जिसका अर्थ है चाँदी या गढ़ा हुआ चाँदी। नाम ही बताता है कि यह मूलतः एक चाँदी का सिक्का था।',
+          'वहाँ से यह शब्द उपमहाद्वीप से बाहर निकला। इंडोनेशिया का “रुपिया”, मालदीव का “रुफ़िया”, श्रीलंका, नेपाल, पाकिस्तान, मॉरीशस और सेशेल्स की मुद्राएँ — सबकी जड़ इसी एक सिक्के में है।',
+          'यह व्यापार का प्रमाण है। नाम वहीं फैलता है जहाँ सिक्का पहुँचता है, और रुपिया हिंद महासागर के व्यापारिक मार्गों पर सदियों तक चला।',
+          'आज दुनिया में कई सौ करोड़ लोग जिस मुद्रा का नाम रोज़ बोलते हैं, वह सोलहवीं सदी के एक अफ़ग़ान सुल्तान के सुधार से निकला है — यह इतिहास की उन कड़ियों में से है जो सबसे लंबी टिकीं।',
+        ],
+        pEn: [
+          'The word “rupiya” comes from the Sanskrit rupya, meaning silver or wrought silver. The name itself declares that this was originally a silver coin.',
+          'From there the word travelled beyond the subcontinent. Indonesia’s rupiah, the Maldivian rufiyaa, and the currencies of Sri Lanka, Nepal, Pakistan, Mauritius and the Seychelles all trace back to this single coin.',
+          'This is evidence of trade. A name spreads where the coin reaches, and the rupiya travelled the Indian Ocean routes for centuries.',
+          'Several hundred crore people today speak the name of a currency that emerged from the reform of a sixteenth-century Afghan sultan — one of the longest-surviving links in history.',
+        ],
+      },
+      {
+        hHi: 'सड़क, डाक और बाक़ी सुधार',
+        hEn: 'Roads, post, and the other reforms',
+        pHi: [
+          'मुद्रा शेर शाह के सुधारों में से एक थी, और उन्हें अलग से देखना पूरी तस्वीर नहीं देता। उन्होंने ग्रैंड ट्रंक रोड को पुनर्जीवित किया, जो बंगाल से काबुल तक फैली और आज भी उसी मार्ग पर चलती है।',
+          'उन्होंने सड़क के किनारे सराय बनवाईं — यात्रियों के ठहरने की जगह, जो साथ ही डाक-चौकी का काम करती थीं। घोड़ों की व्यवस्था से संदेश उल्लेखनीय गति से एक छोर से दूसरे छोर पहुँचते थे।',
+          'भूमि-राजस्व की व्यवस्था भी उन्हीं की देन है, जिसमें ज़मीन की माप के आधार पर कर तय होता था। अकबर के समय के प्रसिद्ध राजस्व सुधार इसी ढाँचे पर खड़े हुए।',
+          'यह जुड़ाव महत्वपूर्ण है: सिक्का अकेले नहीं चलता। मानक मुद्रा, सुरक्षित सड़क और भरोसेमंद डाक — तीनों मिलकर व्यापार को वह ढाँचा देते हैं जिसमें वह बढ़ सके।',
+        ],
+        pEn: [
+          'Currency was one of Sher Shah’s reforms, and looking at it alone gives an incomplete picture. He revived the Grand Trunk Road, which ran from Bengal to Kabul and still follows the same course today.',
+          'He built sarais along it — resting places for travellers that doubled as postal stations. With relays of horses, messages crossed the country at a remarkable speed for the period.',
+          'The land revenue system was his as well, with tax assessed on measured land. The famous revenue reforms of Akbar’s time were built on that framework.',
+          'The connection matters: a coin does not work on its own. A standard currency, a safe road and a dependable post together give trade the structure it needs in order to grow.',
+        ],
+      },
+      {
+        hHi: 'ये सिक्के आज कैसे मिलते हैं',
+        hEn: 'How these coins turn up today',
+        pHi: [
+          'शेर शाह के चाँदी के रुपये आज भी मिलते हैं, हालाँकि आम नहीं हैं। उनका शासन छोटा था, इसलिए ढलाई की कुल संख्या मुग़ल सिक्कों की तुलना में सीमित रही।',
+          'पहचान के लिए मुख्य सूत्र लिखावट है — फ़ारसी और कुछ पर देवनागरी दोनों में, जिस पर उनका नाम और उपाधि दर्ज है। टकसाल का नाम भी आमतौर पर मौजूद रहता है।',
+          'दाम दशा और टकसाल पर निर्भर करता है, और अच्छी दशा के नमूने ठीक-ठाक क़ीमत माँगते हैं। सूरी वंश के बाक़ी शासकों के सिक्के अपेक्षाकृत सस्ते मिलते हैं और उसी परंपरा का हिस्सा हैं।',
+          'ख़रीदते समय वही सावधानियाँ लागू होती हैं जो हर पुराने सिक्के पर — वज़न जाँचिए, किनारा देखिए, और महँगे नमूने के लिए प्रमाणन कराइए।',
+        ],
+        pEn: [
+          'Sher Shah’s silver rupees still turn up, though they are not common. His reign was short, so the total struck remained limited beside the Mughal output that followed.',
+          'The main clue to identification is the inscription — in Persian, and on some issues in Devanagari as well, carrying his name and titles. The mint name is usually present too.',
+          'Price depends on condition and mint, and examples in good grade command a fair sum. Coins of the other Suri rulers are comparatively affordable and belong to the same tradition.',
+          'When buying, the usual cautions apply as with any old coin — check the weight, examine the edge, and have an expensive example certified.',
+        ],
+      },
+      {
+        hHi: 'एक सिक्का जो दस्तावेज़ है',
+        hEn: 'A coin that is also a document',
+        pHi: [
+          'इस सिक्के का असली महत्व उसकी बाज़ारू क़ीमत नहीं है। यह एक भौतिक दस्तावेज़ है — यह बताता है कि पाँच सौ साल पहले इस उपमहाद्वीप में प्रशासन किस स्तर का था।',
+          'एक मानक वज़न तय करना, उसे सैकड़ों टकसालों में लागू करवाना, और उसे इतना भरोसेमंद बनाना कि व्यापारी बिना तौले स्वीकार करें — यह आधुनिक अर्थ में एक संस्था खड़ी करना है।',
+          'और यह संस्था अपने निर्माता से बहुत आगे तक चली। वंश गिरे, साम्राज्य बदले, उपनिवेश आया और गया — पर सिक्के का नाम और उसका बुनियादी ढाँचा टिका रहा।',
+          'इसीलिए जब आप आज “रुपया” कहते हैं, तो आप एक ऐसे शब्द का उपयोग कर रहे हैं जो शेर शाह के पाँच वर्षों से निकलकर आपके पास पहुँचा है।',
+        ],
+        pEn: [
+          'The real importance of this coin is not its market price. It is a physical document — it tells us what level of administration existed in this subcontinent five hundred years ago.',
+          'To fix a standard weight, to enforce it across hundreds of mints, and to make it trusted enough that merchants accepted it without weighing, is to build an institution in the modern sense.',
+          'And that institution outlived its maker by a very long way. Dynasties fell, empires changed, colonial rule came and went — and the name of the coin and its basic framework held.',
+          'So when you say “rupee” today, you are using a word that has reached you out of Sher Shah’s five years.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'punch-marked-coins-ancient-india',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'ढाई हज़ार साल पुरानी चाँदी, अनियमित आकार, पाँच अलग-अलग ठोंके गए प्रतीक, और लगभग 3.4 ग्राम का मानक वज़न — यही आहत सिक्के की पहचान है।',
+        ],
+        pEn: [
+          'Silver two and a half thousand years old, irregular in shape, five symbols each punched separately, and a standard weight of roughly 3.4 grams — that is the signature of a punch-marked coin, and it is also the checklist you carry into any purchase.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'small-coins-25-50-paise',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          '2011 में 25 पैसे और उससे छोटे सिक्के चलन से हटे, और उसी दिन वे मुद्रा से स्मृति बन गए। अब उनकी संख्या कभी नहीं बढ़ेगी।',
+          'रखने लायक़ वे हैं जो अच्छी दशा में हों, कम ढलाई वाले वर्ष के हों, या जिन पर असली एरर हो। बाक़ी अधिकांश आज भी सस्ते हैं, और उनके बारे में किए गए “लाखों में बिकेगा” वाले दावे बिना अपवाद झूठे हैं।',
+        ],
+        pEn: [
+          'In 2011 the 25 paise and everything below it left circulation, and on that day they turned from currency into memory. Their number can never grow again.',
+          'The ones worth putting away are those in good condition, those from low-mintage years, and those carrying a genuine error. Most of the rest remain cheap, and the “this sells for lakhs” claims made about them are false without exception — the structure of that trap is always an advance fee.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'rupiya-ka-janm-sher-shah',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'शेर शाह सूरी ने पाँच वर्षों में चाँदी के सिक्के का वज़न, शुद्धता और अनुपात तय किया, और वही मानक पाँच सौ साल चला।',
+          'नाम संस्कृत “रूप्य” से आया, और व्यापार के साथ इंडोनेशिया, मालदीव, नेपाल, श्रीलंका और मॉरीशस तक पहुँचा। मुग़लों ने इसे बदला नहीं, अपनाया; ब्रिटिश ने भी इसी नींव पर अपनी मुद्रा खड़ी की।',
+        ],
+        pEn: [
+          'In five years Sher Shah Suri fixed the weight, the purity and the ratios of the silver coin, and that standard then held for five hundred years.',
+          'The name came from the Sanskrit rupya, and it travelled with trade as far as Indonesia, the Maldives, Nepal, Sri Lanka and Mauritius. The Mughals did not replace the system but adopted it, and the British in turn built their own currency on the same foundation.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
