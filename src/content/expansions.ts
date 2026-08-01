@@ -2063,6 +2063,531 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'sikke-saaf-karne-ki-galti',
+    sections: [
+      {
+        hHi: 'टोनिंग असल में क्या है',
+        hEn: 'What toning actually is',
+        pHi: [
+          'जिस परत को अधिकांश लोग गंदगी समझकर हटाना चाहते हैं, वह असल में धातु की सतह पर वर्षों में बनी एक रासायनिक परत है। चाँदी पर यह हवा में मौजूद सल्फ़र से बनती है, और ताँबे पर ऑक्सीजन से।',
+          'यह परत सतह को आगे के क्षरण से बचाती है — यानी वह ढाल है, बीमारी नहीं। इसे हटाने का अर्थ है सिक्के को नंगा करके फिर से ऑक्सीकरण के हवाले कर देना।',
+          'संग्राहकों के लिए इसका सौंदर्य-मूल्य भी है। चाँदी पर बनी इंद्रधनुषी टोनिंग — नीले, बैंगनी, सुनहरे रंगों की परतें — बाज़ार में प्रीमियम पाती है, और वह प्रीमियम कभी-कभी काफ़ी बड़ा होता है।',
+          'और सबसे व्यावहारिक बात: टोनिंग प्रामाणिकता का प्रमाण भी है। सदियों में स्वाभाविक रूप से बनी परत की नक़ल कठिन है, और उसका होना विशेषज्ञ को भरोसा देता है।',
+        ],
+        pEn: [
+          'The layer most people want to scrub away as dirt is in fact a chemical film formed on the metal surface over many years. On silver it comes from sulphur in the air, and on copper from oxygen.',
+          'That film protects the surface from further corrosion — it is a shield rather than a disease. Removing it means stripping the coin bare and handing it back to oxidation.',
+          'For collectors it also carries aesthetic value. Rainbow toning on silver — layers of blue, violet and gold — commands a premium in the market, and that premium is sometimes considerable.',
+          'And the most practical point of all: toning is evidence of authenticity. A film built up naturally over centuries is difficult to imitate, and its presence gives an expert confidence.',
+        ],
+      },
+      {
+        hHi: 'रसोई के हथियार, जो सबसे ज़्यादा नुक़सान करते हैं',
+        hEn: 'The weapons in the kitchen, which do the most damage',
+        pHi: [
+          'नींबू और इमली — दोनों अम्लीय हैं और चाँदी तथा ताँबे की सतह को सचमुच घोल देते हैं। सिक्का चमक तो जाता है, पर वह चमक उसी धातु की है जो अभी-अभी काटी गई है, और उसके साथ ब्योरे भी चले जाते हैं।',
+          'टूथपेस्ट और राख — दोनों घर्षक हैं। सूक्ष्मदर्शी के नीचे ये असंख्य बारीक ख़रोंचें छोड़ते हैं, जो लस्टर को स्थायी रूप से नष्ट कर देती हैं और सिक्के को एक अप्राकृतिक, सपाट चमक दे देती हैं।',
+          'धातु पॉलिश और तार का ब्रश — ये सबसे विनाशकारी हैं। पॉलिश धातु की एक परत उतार देती है, और ब्रश खुली ख़रोंचें छोड़ता है जिन्हें कोई विशेषज्ञ चूकता नहीं।',
+          'बेकिंग सोडा और एल्युमिनियम फ़ॉइल वाला “जादुई” तरीक़ा, जो इंटरनेट पर घूमता है, चाँदी पर एक रासायनिक क्रिया करता है जो टोनिंग को खींच लेती है और सतह को धुँधला, बेजान सफ़ेद बना देती है।',
+        ],
+        pEn: [
+          'Lemon and tamarind — both are acidic and genuinely dissolve the surface of silver and copper. The coin does brighten, but that brightness belongs to metal just cut open, and the detail leaves with it.',
+          'Toothpaste and ash — both are abrasives. Under a microscope they leave countless fine scratches that destroy lustre permanently and give the coin an unnatural, flat shine.',
+          'Metal polish and a wire brush are the most destructive of all. Polish removes a layer of metal, and a brush leaves open scratches that no expert misses.',
+          'The “magic” baking soda and aluminium foil method that circulates online sets off a chemical reaction on silver that pulls the toning away and leaves the surface dull and lifelessly white.',
+        ],
+      },
+      {
+        hHi: 'क्या कभी कुछ करना उचित है',
+        hEn: 'Is anything ever acceptable?',
+        pHi: [
+          'एक चीज़ हमेशा सुरक्षित है: ढीली धूल हटाना। एक मुलायम ब्रश, जैसे चित्रकारी वाला, हल्के हाथ से — बस इतना।',
+          'दूसरी चीज़ सीमित परिस्थिति में स्वीकार्य है: आसुत जल में डुबोना, अगर सिक्के पर मिट्टी या चिपचिपाहट हो। नल का पानी नहीं, क्योंकि उसमें क्लोरीन और खनिज होते हैं जो धातु से क्रिया करते हैं।',
+          'तीसरी — पीवीसी की हरी परत हटाना। यह वह इकलौता मामला है जहाँ हस्तक्षेप ज़रूरी है, क्योंकि वह परत सक्रिय रूप से धातु को नुक़सान पहुँचा रही है। इसके लिए एसीटोन का उपयोग होता है, पर यह काम अनुभव माँगता है और महँगे सिक्के पर स्वयं नहीं करना चाहिए।',
+          'बाक़ी सब कुछ — रगड़ना, चमकाना, अम्ल, घर्षक — कभी उचित नहीं। और यह नियम इतना दृढ़ है कि इसे याद रखने का सबसे अच्छा तरीक़ा है इसे अपवाद-रहित मान लेना।',
+        ],
+        pEn: [
+          'One thing is always safe: removing loose dust. A soft brush, of the kind used for painting, with a light hand — that is all.',
+          'A second is acceptable in limited circumstances: a soak in distilled water, if the coin carries soil or stickiness. Not tap water, which contains chlorine and minerals that react with metal.',
+          'A third is removing the green PVC film. This is the one case where intervention is necessary, because that film is actively attacking the metal. Acetone is used for it, but the work requires experience and should not be attempted yourself on a valuable coin.',
+          'Everything else — rubbing, polishing, acids, abrasives — is never appropriate. The rule is firm enough that the best way to remember it is to treat it as having no exceptions.',
+        ],
+      },
+      {
+        hHi: 'साफ़ किया हुआ सिक्का कैसे पहचाना जाता है',
+        hEn: 'How a cleaned coin is recognised',
+        pHi: [
+          'अनुभवी ख़रीदार इसे कुछ सेकंड में पकड़ लेता है, और तरीक़ा सरल है। सिक्के को एक ही रोशनी के नीचे धीरे-धीरे घुमाइए।',
+          'असली, अछूती सतह पर लस्टर का एक चक्र घूमता हुआ दिखता है — जैसे पानी पर तेल की लहर। साफ़ की गई सतह पूरी एक साथ चमकती है, सपाट और मृत।',
+          'दूसरा संकेत ख़रोंचों की दिशा है। प्राकृतिक घिसाव हर दिशा में यादृच्छिक होता है; रगड़ने से बनी ख़रोंचें समानांतर रेखाओं में चलती हैं, और लूप के नीचे यह तुरंत दिखता है।',
+          'तीसरा — दरारों और अक्षरों के कोनों में बची हुई गहरी परत। रगड़ने वाला ऊँची सतह साफ़ कर देता है पर कोनों तक नहीं पहुँचता, इसलिए वहाँ पुरानी टोनिंग बची रहती है और यह विरोधाभास ही सबूत बन जाता है।',
+        ],
+        pEn: [
+          'An experienced buyer catches it within seconds, and the method is simple. Rotate the coin slowly under a single light.',
+          'A genuine untouched surface shows a wheel of lustre travelling across it, like an oil slick moving on water. A cleaned surface lights up all at once, flat and dead.',
+          'The second clue is the direction of the scratches. Natural wear is random in every direction; scratches from rubbing run in parallel lines, and under a loupe this is immediately visible.',
+          'The third is the darker film surviving in the crevices and in the corners of the letters. Somebody rubbing a coin cleans the raised surface but cannot reach the corners, so the old toning remains there — and that contradiction becomes the proof.',
+        ],
+      },
+      {
+        hHi: 'क़ीमत पर असर, संख्या में',
+        hEn: 'The effect on price, in numbers',
+        pHi: [
+          'यह वह हिस्सा है जो लोगों को सबसे ज़्यादा चौंकाता है। साफ़ किया हुआ सिक्का अपनी संभावित क़ीमत का बड़ा हिस्सा खो देता है — कई बार आधे से भी ज़्यादा।',
+          'कारण यह है कि ग्रेडिंग की दुनिया में साफ़ किया गया सिक्का एक अलग श्रेणी में चला जाता है। अंतरराष्ट्रीय ग्रेडिंग सेवाएँ उसे संख्यात्मक ग्रेड देने के बजाय “cleaned” या “damaged” का लेबल लगाती हैं।',
+          'यानी वह सिक्का उस बाज़ार से लगभग बाहर हो जाता है जहाँ गंभीर संग्राहक ख़रीदते हैं। जो बचता है वह उन ख़रीदारों का बाज़ार है जो केवल धातु या स्मृति के लिए ले रहे हैं।',
+          'और यह नुक़सान अपरिवर्तनीय है। घिसा हुआ सिक्का ईमानदार है — उसने अपना जीवन जिया। साफ़ किया हुआ सिक्का क्षतिग्रस्त है, और वह अंतर स्थायी है।',
+        ],
+        pEn: [
+          'This is the part that surprises people most. A cleaned coin loses a large share of its potential value — frequently more than half.',
+          'The reason is that in the grading world a cleaned coin moves into a separate category. International grading services do not assign it a numerical grade at all; they label it “cleaned” or “damaged”.',
+          'That effectively removes it from the market where serious collectors buy. What remains is the market of buyers taking it for the metal or for sentiment alone.',
+          'And the loss is irreversible. A worn coin is honest — it lived its life. A cleaned coin is damaged, and that distinction is permanent.',
+        ],
+      },
+      {
+        hHi: 'तो करना क्या चाहिए',
+        hEn: 'So what should you actually do',
+        pHi: [
+          'कुछ नहीं। यह उत्तर असंतोषजनक लगता है और यही सही है। सिक्के को जैसा मिला वैसा रहने दीजिए, और अपनी ऊर्जा उसे सही ढंग से रखने में लगाइए।',
+          'सही भंडारण: माइलर या पॉलीप्रोपिलीन के फ़्लिप, या अम्ल-रहित काग़ज़ के लिफ़ाफ़े। पीवीसी वाली पुरानी थैलियाँ आज ही हटाइए।',
+          'नमी नियंत्रण: एक बंद डिब्बा और उसमें सिलिका जेल का पाउच, साल में एक-दो बार बदला हुआ। रसोई और स्नानघर से दूर, खिड़की से दूर, घर के भीतर की अलमारी में।',
+          'और पकड़ने का तरीक़ा: हमेशा किनारों से, चेहरे पर उँगली नहीं, नरम सतह के ऊपर। यह चार बातें मिलकर सिक्के को अगली सदी तक पहुँचा देती हैं, और चारों मुफ़्त हैं।',
+        ],
+        pEn: [
+          'Nothing. That answer feels unsatisfying, and it is the correct one. Leave the coin as you found it and put your energy into storing it properly.',
+          'Proper storage: Mylar or polypropylene flips, or acid-free paper envelopes. Get rid of old PVC sleeves today.',
+          'Humidity control: a closed box with a silica gel sachet inside, replaced once or twice a year. Away from the kitchen and bathroom, away from windows, in an interior cupboard.',
+          'And how to hold it: always by the edges, fingers off the faces, over a soft surface. Those four things together will carry a coin into the next century, and all four are free.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'dadaji-ki-sandook-kahani',
+    sections: [
+      {
+        hHi: 'चौथा सिक्का: एक नया पैसा',
+        hEn: 'A fourth coin: one naya paisa',
+        pHi: [
+          'संदूक़ के कोने में एक और सिक्का था, इतना हल्का कि पहले हाथ में आया ही नहीं। एल्युमिनियम का, छोटा, और उस पर लिखा था “एक नया पैसा”।',
+          '“नया” क्यों? — बच्चे ने पूछा। दादाजी ने कहा कि 1957 में पूरा हिसाब बदल गया था। उससे पहले रुपये में सोलह आने होते थे, और हर आने में चार पैसे। फिर एक दिन तय हुआ कि अब रुपये में सौ पैसे होंगे।',
+          'लोग उलझन में थे, इसलिए कुछ वर्षों तक सिक्के पर “नया” लिखा गया — ताकि कोई पुराने पैसे से भ्रमित न हो। जब सब आदी हो गए, तो वह शब्द हटा दिया गया।',
+          'बच्चे ने सिक्का हथेली पर रखा और कहा कि यह तो काग़ज़ जितना हल्का है। दादाजी हँसे — “हाँ, और इसी से मैं स्कूल के बाहर एक गोली ख़रीदता था।”',
+        ],
+        pEn: [
+          'In a corner of the trunk lay one more coin, so light that it did not reach the hand at first. Aluminium, small, and stamped “one naya paisa”.',
+          '“Why new?” asked the child. The grandfather explained that in 1957 the whole arithmetic changed. Before that a rupee held sixteen annas, and each anna four paise. Then one day it was decided that a rupee would hold a hundred paise.',
+          'People were confused, so for some years the coins carried the word naya — new — so that nobody would mix them up with the old paise. Once everyone had grown used to it, the word was dropped.',
+          'The child laid the coin on a palm and said it was as light as paper. The grandfather laughed — “Yes, and with this I used to buy a sweet outside the school.”',
+        ],
+      },
+      {
+        hHi: 'बच्चे के सवाल, जो सबसे अच्छे होते हैं',
+        hEn: 'The child’s questions, which are the best ones',
+        pHi: [
+          '“इस पर औरत का चेहरा क्यों है?” — क्योंकि वह ब्रिटेन की रानी थी, और उस समय भारत पर उसका शासन था। यह एक वाक्य का उत्तर है और उसमें दो सौ साल का इतिहास बैठा है।',
+          '“यह चाँदी का है और वह नहीं क्यों?” — क्योंकि युद्ध के दौरान चाँदी महँगी हो गई थी, और सरकार को सस्ती धातु पर जाना पड़ा। बच्चा यहीं पहली बार सीखता है कि पैसा और धातु दो अलग चीज़ें हैं।',
+          '“यह क्यों टेढ़ा है?” — क्योंकि यह हज़ारों हाथों से गुज़रा है। हर ख़रोंच किसी के जेब की है, किसी की दुकान की, किसी के गुल्लक की।',
+          'इन सवालों का सबसे अच्छा जवाब यह मान लेना है कि हर सिक्का यात्रा कर चुका है। बच्चा फिर पूछता है कि यह कहाँ-कहाँ गया होगा, और वही सवाल इतिहास की सबसे अच्छी कक्षा है।',
+        ],
+        pEn: [
+          '“Why is there a woman’s face on this one?” — because she was the queen of Britain, and at that time she ruled India. That is a one-sentence answer with two hundred years of history sitting inside it.',
+          '“Why is this one silver and that one not?” — because during the war silver became expensive and the government had to move to a cheaper metal. Here the child learns for the first time that money and metal are two different things.',
+          '“Why is this one bent?” — because it has passed through thousands of hands. Every scratch belongs to somebody’s pocket, somebody’s shop, somebody’s money box.',
+          'The best way to answer these is to accept that every coin has travelled. The child then asks where it might have gone, and that question is the finest history lesson there is.',
+        ],
+      },
+      {
+        hHi: 'संदूक़ खोलने का सही तरीक़ा',
+        hEn: 'The right way to open the trunk',
+        pHi: [
+          'यह कहानी एक व्यावहारिक सलाह के साथ आती है, क्योंकि हर घर में ऐसी एक संदूक़ है और उसे खोलते समय दो ग़लतियाँ सबसे ज़्यादा होती हैं।',
+          'पहली — सफ़ाई। कोई भी सिक्का जो निकले, उसे धोइए मत, रगड़िए मत, चमकाइए मत। यह वह क्षण है जहाँ सबसे ज़्यादा क़ीमत नष्ट होती है, और वह भी नेक इरादे से।',
+          'दूसरी — बिखेरना। बच्चों में बाँट देना, अलग-अलग जगह रख देना, या जल्दबाज़ी में बेच देना। संग्रह की पूरी कहानी तभी बचती है जब वह एक साथ रहे।',
+          'सही क़दम सरल है: सब कुछ एक साफ़ मेज़ पर फैलाइए, वर्ष के क्रम में लगाइए, तस्वीरें लीजिए, और एक सूची बनाइए। यह एक शाम का काम है और यह पीढ़ियों की संपत्ति सुरक्षित कर देता है।',
+        ],
+        pEn: [
+          'This story comes with a piece of practical advice, because every household has such a trunk and two mistakes are made most often when it is opened.',
+          'The first is cleaning. Whatever coin emerges, do not wash it, do not rub it, do not polish it. This is the moment at which the most value is destroyed, and always with good intentions.',
+          'The second is scattering. Distributing them among children, storing them in different places, or selling in a hurry. The whole story of a collection survives only while it stays together.',
+          'The right step is simple: spread everything on a clean table, arrange it by year, take photographs, and make a list. That is an evening’s work and it secures what generations put aside.',
+        ],
+      },
+      {
+        hHi: 'कहानी के भीतर का पाठ',
+        hEn: 'The lesson inside the story',
+        pHi: [
+          'इस कहानी का असली विषय सिक्के नहीं हैं। असली विषय यह है कि इतिहास कोई दूर की चीज़ नहीं — वह हथेली पर रखा जा सकता है।',
+          'एक बच्चा जिसने चौथाई आना छुआ है, उसके लिए “ब्रिटिश शासन” किताब का एक अध्याय नहीं रह जाता। वह एक धातु का टुकड़ा बन जाता है जिसका वज़न उसे याद है।',
+          'और दूसरा पाठ मूल्य के बारे में है। इन सिक्कों की बाज़ारू क़ीमत कुछ सौ रुपये है। पर उनकी असली क़ीमत उस शाम में है जब दादाजी ने संदूक़ खोली और बताया कि यह किसका था।',
+          'वह चीज़ बिकती नहीं। और यही समझ लेना शायद इस पूरी कहानी का सबसे उपयोगी हिस्सा है — दोनों तरह की क़ीमत असली हैं, पर वे एक ही चीज़ नहीं हैं।',
+        ],
+        pEn: [
+          'The real subject of this story is not coins. The real subject is that history is not a distant thing — it can be held in a palm.',
+          'For a child who has touched a quarter anna, “British rule” stops being a chapter in a book. It becomes a piece of metal whose weight is remembered.',
+          'And the second lesson is about value. The market price of these coins is a few hundred rupees. Their real value lies in the evening when the grandfather opened the trunk and said whose these had been.',
+          'That does not sell. Understanding it is perhaps the most useful part of the whole story — both kinds of value are real, and they are not the same thing.',
+        ],
+      },
+      {
+        hHi: 'घर पर यह कैसे दोहराएँ',
+        hEn: 'How to repeat this at home',
+        pHi: [
+          'आपको दुर्लभ सिक्कों की ज़रूरत नहीं। रसोई के गल्ले में पड़े आज के सिक्के भी काम कर जाते हैं — बस उन्हें वर्ष के क्रम में लगा दीजिए।',
+          'बच्चे से पूछिए कि सबसे पुराना कौन-सा है, और उस वर्ष क्या हुआ था। फिर पूछिए कि तब वह कहाँ था, या आप कहाँ थे। कहानी अपने आप शुरू हो जाती है।',
+          'अगर घर में कोई पुराना सिक्का है — किसी का भी, किसी भी दौर का — तो उसे बच्चे के हाथ में दीजिए और बताइए कि यह किसका था। यह पंद्रह मिनट का काम है।',
+          'और अंत में सबसे ज़रूरी बात: सिक्के के साथ एक पर्ची रखिए जिस पर लिखा हो कि यह किसका था। पचास साल बाद वह पर्ची सिक्के से ज़्यादा क़ीमती निकलेगी।',
+        ],
+        pEn: [
+          'You do not need rare coins. Today’s coins from the kitchen change bowl work perfectly well — simply arrange them in order of year.',
+          'Ask the child which is oldest, and what happened in that year. Then ask where they were then, or where you were. The story starts on its own.',
+          'If there is an old coin in the house — anybody’s, from any period — put it in the child’s hand and say whose it was. That is fifteen minutes of work.',
+          'And the most important thing at the end: keep a slip with the coin recording whose it was. Fifty years from now that slip will be worth more than the coin.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'purane-note-ki-keemat',
+    sections: [
+      {
+        hHi: 'नोट की दशा, जो सिक्के से भी ज़्यादा मायने रखती है',
+        hEn: 'The condition of a note, which matters even more than a coin’s',
+        pHi: [
+          'काग़ज़ धातु से कहीं ज़्यादा नाज़ुक है, और यही कारण है कि नोटों में दशा का असर क़ीमत पर सिक्कों से भी तीखा होता है।',
+          'संग्राहक नोट की दशा को इन शब्दों में नापते हैं: UNC (बिल्कुल अनछुआ, कोई मोड़ नहीं), AU (लगभग अनछुआ, एक हल्का मोड़), XF, VF, F, और अंत में Poor। हर पायदान पर दाम गिरता है।',
+          'सबसे बड़ा फ़र्क़ UNC और उसके ठीक नीचे वाले पायदान के बीच है। एक भी मोड़ नोट को UNC से बाहर कर देता है, और वह अकेला मोड़ कई बार आधी क़ीमत ले जाता है।',
+          'इसीलिए जिस नोट को आप रखना चाहते हैं, उसे मोड़िए मत, पिन मत लगाइए, और स्टेपल तो कभी नहीं। स्टेपल के छेद स्थायी हैं और वे दशा को कई पायदान नीचे गिरा देते हैं।',
+        ],
+        pEn: [
+          'Paper is far more fragile than metal, which is why condition affects the price of a note even more sharply than it does a coin.',
+          'Collectors describe the condition of a note as UNC (entirely untouched, no fold), AU (about uncirculated, one light fold), XF, VF, F, and finally Poor. The price falls at every step.',
+          'The largest gap sits between UNC and the grade immediately below it. A single fold takes a note out of UNC, and that one fold frequently takes half the value with it.',
+          'So a note you intend to keep should never be folded, never pinned, and certainly never stapled. Staple holes are permanent and drop the grade by several steps.',
+        ],
+      },
+      {
+        hHi: 'सचमुच माँग वाले नोट कौन-से हैं',
+        hEn: 'Which notes are genuinely sought',
+        pHi: [
+          'पहले, ब्रिटिश भारत के नोट — जिन पर जॉर्ज V या जॉर्ज VI का चित्र है। ये स्वाभाविक रूप से कम बचे हैं और गंभीर माँग रखते हैं।',
+          'दूसरे, हज नोट। ये विशेष रूप से हज यात्रियों के लिए जारी किए गए थे, उन पर “HAJ” अंकित है और उपसर्ग HA है, ताकि वे भारत में प्रचलित न हों। सीमित उद्देश्य का मतलब सीमित संख्या, और यही उन्हें ख़ास बनाता है।',
+          'तीसरे, फ़ारसी खाड़ी के लिए जारी नोट, जिन पर “Z” उपसर्ग है — ये भी एक विशिष्ट प्रयोजन के लिए बने थे।',
+          'चौथे, वे नोट जिन पर किसी गवर्नर के हस्ताक्षर बहुत कम समय के लिए रहे, और पहली शृंखलाएँ — जैसे स्वतंत्र भारत के शुरुआती जारी नोट, जिन पर अशोक स्तंभ पहली बार आया।',
+        ],
+        pEn: [
+          'First, the notes of British India carrying the portrait of George V or George VI. Fewer of these naturally survive and they attract serious demand.',
+          'Second, the Haj notes. These were issued specifically for pilgrims, marked “HAJ” with the HA prefix so that they would not circulate within India. A limited purpose meant limited numbers, and that is what makes them special.',
+          'Third, the notes issued for the Persian Gulf carrying the “Z” prefix — these too were made for one particular purpose.',
+          'Fourth, notes bearing the signature of a governor who served only briefly, and first series — such as the earliest issues of independent India, on which the Ashoka pillar appeared for the first time.',
+        ],
+      },
+      {
+        hHi: 'सीरियल नंबर का सच',
+        hEn: 'The truth about serial numbers',
+        pHi: [
+          'यह वह क्षेत्र है जहाँ सबसे ज़्यादा अतिशयोक्ति फैली है। कुछ सीरियल नंबर सचमुच संग्राहकों को आकर्षित करते हैं — 000001 जैसा पहला नंबर, या 123456 जैसी सीढ़ी, या 777777 जैसा दोहराव।',
+          'इनकी माँग असली है और दाम अंकित मूल्य से ऊपर जाता है। पर यह माँग एक सीमित समुदाय की है, और दाम उतने ही होते हैं जितने कोई देने को तैयार हो — कोई प्रकाशित दर नहीं है।',
+          'जो झूठ है वह यह दावा है कि कोई साधारण नंबर आपको लखपति बना देगा। ऐसे वीडियो हर महीने वायरल होते हैं, और उनका ढाँचा वही होता है: असाधारण दावा, एक फ़ोन नंबर, फिर अग्रिम शुल्क।',
+          'जाँच का तरीक़ा भी वही है — पूछिए कि यह किस नीलामी में, किस तारीख़ को, किस दाम पर बिका। असली रिकॉर्ड दिखाया जा सकता है; कहानी नहीं।',
+        ],
+        pEn: [
+          'This is where the most exaggeration circulates. Some serial numbers genuinely attract collectors — a first number such as 000001, a ladder such as 123456, or a repeater such as 777777.',
+          'That demand is real and prices do rise above face value. But it is the demand of a small community, and the price is whatever somebody is willing to pay — there is no published rate.',
+          'What is false is the claim that some ordinary number will make you a lakhpati. Such videos go viral every month, and their structure never changes: an extraordinary claim, a phone number, then an advance fee.',
+          'The test is the same as always — ask at which auction, on what date, and at what price it sold. A genuine record can be produced; a story cannot.',
+        ],
+      },
+      {
+        hHi: 'विमुद्रीकरण वाले नोट',
+        hEn: 'The demonetised notes',
+        pHi: [
+          '2016 में पाँच सौ और एक हज़ार के पुराने नोट वैध मुद्रा नहीं रहे, और तब से सबसे ज़्यादा पूछा जाने वाला सवाल यही है कि उनकी क़ीमत क्या है।',
+          'ईमानदार उत्तर: बहुत कम। ये नोट अरबों की संख्या में छपे थे और करोड़ों की संख्या में लोगों के पास बचे हुए हैं। जो चीज़ इतनी बहुतायत में हो, वह दुर्लभ नहीं हो सकती।',
+          'संग्राहक की दृष्टि से इनका महत्व स्मृति का है, बाज़ार का नहीं। एक अच्छी दशा का नमूना रखना उचित है — यह एक ऐतिहासिक क्षण का दस्तावेज़ है — पर उसे निवेश समझना ग़लत है।',
+          'यही बात 1978 के विमुद्रीकरण पर लागू नहीं होती। उस समय के बड़े मूल्यवर्ग के नोट — एक हज़ार, पाँच हज़ार, दस हज़ार — सचमुच दुर्लभ हैं, क्योंकि वे कम छपे और कम बचे।',
+        ],
+        pEn: [
+          'In 2016 the old five hundred and one thousand rupee notes ceased to be legal tender, and the question asked most often since then is what they are worth.',
+          'The honest answer: very little. These notes were printed in billions and remain with people in crores. Something that abundant cannot be rare.',
+          'From a collector’s point of view their importance is one of memory rather than market. Keeping one good example is reasonable — it documents a historical moment — but treating it as an investment is a mistake.',
+          'The same does not apply to the demonetisation of 1978. The large denominations of that period — one thousand, five thousand and ten thousand rupees — are genuinely scarce, because few were printed and fewer survive.',
+        ],
+      },
+      {
+        hHi: 'काग़ज़ को सँभालना',
+        hEn: 'Preserving paper',
+        pHi: [
+          'नोट के तीन दुश्मन हैं: नमी, धूप और अम्ल। नमी फफूँद लाती है, धूप रंग उड़ाती है, और साधारण काग़ज़ या प्लास्टिक में मौजूद अम्ल काग़ज़ को भीतर से भूरा कर देता है।',
+          'सुरक्षित भंडारण के लिए माइलर की स्लीव सबसे अच्छी है — वह कड़ी होती है, अम्ल-रहित है, और नोट को मुड़ने नहीं देती। पीवीसी वाली पुरानी थैलियाँ यहाँ भी वर्जित हैं।',
+          'नोट को समतल रखिए, कभी मोड़कर नहीं। एक एल्बम में सीधा रखा नोट दशकों तक अपनी दशा बनाए रखता है; एक बटुए में मुड़ा नोट कुछ महीनों में गिर जाता है।',
+          'और लेमिनेशन कभी मत कराइए। यह सुरक्षा जैसा लगता है और वास्तव में स्थायी क्षति है — लेमिनेट किया गया नोट संग्राहकों के बाज़ार से पूरी तरह बाहर हो जाता है।',
+        ],
+        pEn: [
+          'A note has three enemies: moisture, sunlight and acid. Moisture brings mould, sunlight fades the colours, and the acid present in ordinary paper or plastic browns the paper from within.',
+          'For safe storage a Mylar sleeve is best — rigid, acid-free, and it stops the note from folding. Old PVC sleeves are forbidden here as well.',
+          'Keep notes flat, never folded. A note stored flat in an album holds its grade for decades; a note folded in a wallet loses it within months.',
+          'And never have one laminated. It looks like protection and is in fact permanent damage — a laminated note is removed entirely from the collectors’ market.',
+        ],
+      },
+      {
+        hHi: 'बेचने से पहले',
+        hEn: 'Before selling',
+        pHi: [
+          'वही चार क़दम जो सिक्कों पर लागू होते हैं, नोटों पर भी लागू हैं। एक सूची बनाइए — मूल्यवर्ग, वर्ष, गवर्नर के हस्ताक्षर, उपसर्ग, सीरियल नंबर, और दशा।',
+          'तस्वीरें लीजिए, दोनों तरफ़ की, समतल रखकर, बिना फ़्लैश के। नोटों के मामले में तस्वीर की गुणवत्ता और भी ज़्यादा मायने रखती है क्योंकि दशा ही सब कुछ है।',
+          'बीते नीलामी-नतीजे देखिए, माँगी गई क़ीमतें नहीं। और दशा का मिलान कीजिए — आपका मुड़ा हुआ नोट किसी UNC नमूने के दाम से नहीं तौला जा सकता।',
+          'और वही अंतिम नियम: पैसा ख़रीदार से विक्रेता की ओर बहता है। जो आपसे रजिस्ट्रेशन, वेरिफ़िकेशन या कूरियर का शुल्क माँगे, वह ख़रीदार नहीं है।',
+        ],
+        pEn: [
+          'The same four steps that apply to coins apply to notes. Make a list — denomination, year, governor’s signature, prefix, serial number, and condition.',
+          'Photograph them, both sides, laid flat, without flash. With notes the quality of the photograph matters even more, because condition is everything.',
+          'Look at past auction results rather than asking prices. And match the grade — your folded note cannot be weighed against the price of a UNC example.',
+          'And the same final rule: money flows from the buyer to the seller. Anybody asking you for a registration, verification or courier fee is not a buyer.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'sikkon-se-bacchon-ki-shiksha',
+    sections: [
+      {
+        hHi: 'गतिविधि एक: समय की रेखा',
+        hEn: 'Activity one: the timeline',
+        pHi: [
+          'घर के सारे सिक्के एक मेज़ पर फैलाइए और बच्चे से कहिए कि उन्हें वर्ष के क्रम में लगाए, सबसे पुराने से सबसे नए तक।',
+          'यह सरल काम कई चीज़ें एक साथ सिखाता है: अंक पढ़ना, बड़े-छोटे की तुलना, और यह विचार कि समय एक रेखा है जिस पर चीज़ें क्रम से बैठती हैं।',
+          'फिर पूछिए कि सबसे पुराना सिक्का कितने साल का है, और उस वर्ष कौन पैदा हुआ था — शायद आप, शायद उनके दादा। घटाव का अभ्यास अपने आप हो जाता है और वह उबाऊ नहीं लगता।',
+          'बड़े बच्चों के लिए इसे आगे बढ़ाइए: हर दशक के लिए एक घटना लिखवाइए। तब वह रेखा केवल सिक्कों की नहीं, देश की भी बन जाती है।',
+        ],
+        pEn: [
+          'Spread every coin in the house on a table and ask the child to arrange them by year, from oldest to newest.',
+          'This simple task teaches several things at once: reading numerals, comparing larger and smaller, and the idea that time is a line along which things sit in order.',
+          'Then ask how old the oldest coin is, and who was born in that year — perhaps you, perhaps their grandfather. Subtraction gets practised on its own and does not feel like a chore.',
+          'For older children, extend it: have them write one event against each decade. The line then becomes not only a line of coins but a line of the country.',
+        ],
+      },
+      {
+        hHi: 'गतिविधि दो: टकसाल का नक़्शा',
+        hEn: 'Activity two: the map of mints',
+        pHi: [
+          'भारत का एक नक़्शा दीवार पर लगाइए और उस पर चार बिंदु चिह्नित कीजिए: मुंबई, कोलकाता, हैदराबाद और नोएडा।',
+          'अब बच्चे को लूप दीजिए और कहिए कि हर सिक्के के नीचे टकसाल-चिह्न ढूँढ़े — मुंबई का हीरा, हैदराबाद का बिंदु या तारा, नोएडा का ठोस बिंदु, और कोलकाता का “कोई चिह्न नहीं”।',
+          'हर मिले हुए सिक्के को नक़्शे पर उसकी टकसाल के पास रख दीजिए। कुछ ही देर में मेज़ पर एक भौगोलिक चित्र बन जाता है।',
+          'यह गतिविधि भूगोल पढ़ाती है बिना पढ़ाए। बच्चा शहरों के नाम याद नहीं करता — वह उन्हें अपने हाथ के सिक्कों से जोड़ लेता है, और वह जोड़ टिकता है।',
+        ],
+        pEn: [
+          'Put a map of India on the wall and mark four points on it: Mumbai, Kolkata, Hyderabad and Noida.',
+          'Now give the child a loupe and ask them to find the mint mark under each coin — the Mumbai diamond, the Hyderabad dot or star, the Noida solid dot, and Kolkata’s “no mark at all”.',
+          'Place each identified coin on the map beside its mint. Within a short while a geographical picture forms on the table.',
+          'This activity teaches geography without teaching. The child does not memorise city names — they attach them to coins held in their own hand, and that attachment lasts.',
+        ],
+      },
+      {
+        hHi: 'गतिविधि तीन: वज़न और घनत्व',
+        hEn: 'Activity three: weight and density',
+        pHi: [
+          'एक सस्ता रसोई-तराज़ू लीजिए और बच्चे से हर सिक्के का वज़न लिखवाइए। फिर पूछिए: सबसे भारी कौन-सा है, सबसे हल्का कौन-सा।',
+          'यहाँ एक बहुत अच्छा सवाल निकलता है — दो सिक्के एक ही आकार के हैं, फिर वज़न अलग क्यों? यह घनत्व की अवधारणा का सबसे स्वाभाविक परिचय है।',
+          'एल्युमिनियम का एक पैसा और स्टेनलेस स्टील का एक रुपया साथ-साथ रखिए। आकार में अंतर कम, वज़न में बहुत। बच्चा ख़ुद निष्कर्ष निकाल लेता है कि धातुएँ अलग-अलग होती हैं।',
+          'और यहीं से एक इतिहास की बात भी निकलती है: सरकारें धातु बदलती क्यों हैं? क्योंकि धातु महँगी हो जाती है। दसवीं कक्षा का अर्थशास्त्र, आठ साल की उम्र में।',
+        ],
+        pEn: [
+          'Take a cheap kitchen scale and have the child record the weight of each coin. Then ask which is heaviest and which lightest.',
+          'A very good question emerges here — two coins are the same size, so why do they weigh differently? That is the most natural introduction there is to the idea of density.',
+          'Place an aluminium one paisa beside a stainless steel one rupee. Little difference in size, a great difference in weight. The child concludes on their own that metals are not the same as one another.',
+          'And a piece of history follows from it: why do governments change the metal? Because the metal becomes expensive. Secondary-school economics, at the age of eight.',
+        ],
+      },
+      {
+        hHi: 'गतिविधि चार: बचत का असली गणित',
+        hEn: 'Activity four: the real arithmetic of saving',
+        pHi: [
+          'बच्चे को एक पारदर्शी डिब्बा दीजिए और तय कीजिए कि हर हफ़्ते कुछ सिक्के उसमें जाएँगे। पारदर्शी इसलिए कि ढेर का बढ़ना दिखे।',
+          'हर महीने के अंत में उसे गिनवाइए और एक नोटबुक में दर्ज करवाइए। कुछ महीनों बाद बच्चा ख़ुद अंदाज़ा लगाने लगता है कि किसी लक्ष्य तक पहुँचने में कितना समय लगेगा।',
+          'यहाँ एक बात कहनी ज़रूरी है जो अक्सर छूट जाती है: बच्चे को पैसे ख़र्च करने भी दीजिए। बचत तभी अर्थ रखती है जब उसका एक उद्देश्य हो, और उद्देश्य पूरा होना दिखे।',
+          'गिनने में समूह बनाना सिखाइए — दस-दस के ढेर, फिर सौ के। यह गुणा और स्थानीय मान का सबसे ठोस अभ्यास है, और इसमें कोई कार्यपुस्तिका नहीं लगती।',
+        ],
+        pEn: [
+          'Give the child a transparent box and agree that some coins go into it every week. Transparent, so that the growing pile is visible.',
+          'At the end of each month have them count it and record the figure in a notebook. After a few months the child begins estimating on their own how long a target will take to reach.',
+          'One thing needs saying here that is often left out: let the child spend some of it too. Saving means something only when it has a purpose, and when that purpose is seen to arrive.',
+          'Teach grouping while counting — piles of ten, then of a hundred. That is the most concrete practice in multiplication and place value there is, and it needs no workbook.',
+        ],
+      },
+      {
+        hHi: 'गतिविधि पाँच: सिक्के की कहानी लिखना',
+        hEn: 'Activity five: writing the coin’s story',
+        pHi: [
+          'सबसे पुराना सिक्का चुनिए और बच्चे से कहिए कि उसकी यात्रा की कहानी लिखे — यह किन-किन हाथों से गुज़रा होगा, किस दुकान में गया होगा, किसने इससे क्या ख़रीदा होगा।',
+          'यह कल्पना का अभ्यास है और साथ ही इतिहास का। कहानी लिखने के लिए बच्चे को यह जानना पड़ता है कि उस वर्ष चीज़ें कितने की मिलती थीं, लोग कैसे रहते थे।',
+          'बड़े बच्चों के लिए इसे शोध बना दीजिए: उस वर्ष के बारे में तीन तथ्य ढूँढ़ो और कहानी में डालो। अब यह लेखन और शोध दोनों का काम है।',
+          'और सबसे अच्छी बात — यह कहानी सँभालकर रखी जा सकती है। सिक्के के साथ एक पर्ची में, बच्चे की अपनी लिखावट में। पचास साल बाद वह पर्ची अपने आप में एक वस्तु होगी।',
+        ],
+        pEn: [
+          'Pick the oldest coin and ask the child to write the story of its journey — through whose hands it passed, which shop it entered, what somebody bought with it.',
+          'This is an exercise in imagination and equally in history. To write the story the child has to find out what things cost that year and how people lived.',
+          'For older children, turn it into research: find three facts about that year and work them into the story. Now it is a piece of writing and a piece of research at once.',
+          'And the best part — the story can be kept. On a slip beside the coin, in the child’s own handwriting. Fifty years from now that slip will be an object in its own right.',
+        ],
+      },
+      {
+        hHi: 'माता-पिता के लिए तीन नियम',
+        hEn: 'Three rules for the parents',
+        pHi: [
+          'पहला — छोटे बच्चों की निगरानी कीजिए। सिक्के मुँह में जा सकते हैं, और यह एक वास्तविक ख़तरा है। तीन साल से छोटे बच्चों के साथ यह गतिविधि उपयुक्त नहीं है।',
+          'दूसरा — साफ़ मत करने दीजिए। बच्चों की स्वाभाविक इच्छा सिक्के को चमकाने की होती है, और यहीं सबसे ज़्यादा नुक़सान होता है। समझा दीजिए कि पुराना दिखना अच्छी बात है।',
+          'तीसरा — इसे पाठ मत बनाइए। जिस क्षण यह “पढ़ाई” बन जाएगी, रुचि ख़त्म हो जाएगी। सवाल पूछिए, जवाब मत दीजिए, और बच्चे को ख़ुद खोजने दीजिए।',
+          'इस पूरी बात की सबसे अच्छी विशेषता यही है कि इसका ख़र्च लगभग शून्य है। एक लूप, एक तराज़ू, एक नक़्शा, और घर में पहले से मौजूद सिक्के — इतना ही चाहिए।',
+        ],
+        pEn: [
+          'First — supervise small children. Coins can go into mouths, and that is a genuine hazard. This activity is not appropriate for children under three.',
+          'Second — do not let them clean anything. A child’s natural instinct is to polish a coin, and that is where the most damage happens. Explain that looking old is a good thing here.',
+          'Third — do not turn it into a lesson. The moment it becomes “study”, the interest ends. Ask questions, do not supply answers, and let the child find things out.',
+          'The best feature of the whole exercise is that it costs almost nothing. A loupe, a scale, a map, and the coins already in the house — that is the entire requirement.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'kushan-swarn-mudra',
+    sections: [
+      {
+        hHi: 'कुषाण कौन थे',
+        hEn: 'Who the Kushans were',
+        pHi: [
+          'कुषाण मध्य एशिया के यूएझी लोगों की एक शाखा से निकले, और पहली से तीसरी शताब्दी के बीच उन्होंने एक ऐसा साम्राज्य खड़ा किया जो आज के ताजिकिस्तान से लेकर उत्तरी भारत तक फैला था।',
+          'उनकी सबसे बड़ी उपलब्धि भौगोलिक थी। वे रेशम मार्ग के उस हिस्से पर बैठे थे जहाँ चीन, ईरान, रोम और भारत का व्यापार मिलता था — और इसी स्थिति ने उनके सिक्कों को वह चरित्र दिया जो और कहीं नहीं मिलता।',
+          'कनिष्क सबसे प्रसिद्ध शासक हैं, और उनके सिक्के इस पूरी शृंखला का केंद्र हैं। उनसे पहले विम कडफ़ाइसेस ने सोने की मुद्रा की नींव रखी, और उनके बाद हुविष्क और वासुदेव ने उसे आगे बढ़ाया।',
+          'भारतीय इतिहास में कुषाणों का महत्व केवल राजनीतिक नहीं है। बौद्ध कला का गांधार और मथुरा रूप इसी दौर में विकसित हुआ, और सिक्के उसी सांस्कृतिक मिश्रण के सबसे छोटे दस्तावेज़ हैं।',
+        ],
+        pEn: [
+          'The Kushans emerged from a branch of the Yuezhi people of Central Asia, and between the first and third centuries they built an empire stretching from present-day Tajikistan into northern India.',
+          'Their greatest asset was geographical. They sat on the stretch of the Silk Road where the trade of China, Iran, Rome and India met — and that position gave their coinage a character found nowhere else.',
+          'Kanishka is the best-known ruler, and his coins are the centre of the whole series. Before him Vima Kadphises laid the foundation of the gold coinage, and after him Huvishka and Vasudeva carried it forward.',
+          'The importance of the Kushans in Indian history is not only political. The Gandhara and Mathura forms of Buddhist art developed in this period, and the coins are the smallest documents of that same cultural mixing.',
+        ],
+      },
+      {
+        hHi: 'सिक्कों पर देवताओं की भीड़',
+        hEn: 'The crowd of deities on the coins',
+        pHi: [
+          'कुषाण सिक्कों की सबसे उल्लेखनीय बात यह है कि उन पर कितने अलग-अलग धर्मों के देवता एक साथ मिलते हैं। यह किसी और प्राचीन मुद्रा में इस पैमाने पर नहीं दिखता।',
+          'एक ओर शिव नंदी के साथ, जिन्हें लेख में “ओएशो” कहा गया है। दूसरी ओर बुद्ध, जिन्हें “बोद्दो” लिखा गया — और यह बुद्ध के सबसे शुरुआती ज्ञात मुद्रा-चित्रणों में से है।',
+          'इनके साथ ईरानी देवता — मिथ्र (सूर्य), नाना, अथ्शो (अग्नि) — और यूनानी परंपरा से हेलिओस तथा सेलेने। एक ही शासक के सिक्कों पर तीन-चार परंपराएँ साथ-साथ चलती हैं।',
+          'इतिहासकार इसे व्यावहारिक शासन-कला के रूप में पढ़ते हैं। एक ऐसा साम्राज्य जिसमें कई धर्मों के लोग रहते हों, उसके सिक्के सबकी पहचान को जगह देते हैं — और यह निर्णय आज भी उल्लेखनीय लगता है।',
+        ],
+        pEn: [
+          'The most remarkable feature of Kushan coinage is how many deities from different religions appear on it together. No other ancient coinage shows this on the same scale.',
+          'On one side Shiva with Nandi, named in the legend as Oesho. On another the Buddha, written as Boddo — among the earliest known depictions of the Buddha on any coin.',
+          'Alongside them the Iranian deities — Mithra the sun, Nana, Athsho the fire — and from the Greek tradition Helios and Selene. Three or four traditions run side by side on the coins of a single ruler.',
+          'Historians read this as practical statecraft. An empire containing people of many religions issued coins that made room for each identity — a decision that still looks notable today.',
+        ],
+      },
+      {
+        hHi: 'लिखावट और भाषा',
+        hEn: 'Script and language',
+        pHi: [
+          'कुषाण सिक्कों की लिपि यूनानी है, पर भाषा यूनानी नहीं — वह बैक्ट्रियन है, एक ईरानी भाषा जिसे यूनानी अक्षरों में लिखा गया।',
+          'यह अपने आप में उस दौर के सांस्कृतिक मिश्रण का प्रमाण है। सिकंदर के बाद इस क्षेत्र में यूनानी लिपि टिकी रही, और स्थानीय भाषा ने उसे अपना लिया।',
+          'शुरुआती कुषाण सिक्कों पर खरोष्ठी लिपि भी मिलती है, जो गांधार क्षेत्र की अपनी लिपि थी और दाएँ से बाएँ लिखी जाती थी।',
+          'संग्राहक के लिए व्यावहारिक बात यह है कि शासक का नाम आमतौर पर पढ़ा जा सकता है — कनिष्क “ΚΑΝΗϷΚΙ” के रूप में, और यही पहचान का सबसे भरोसेमंद सूत्र है। नाम के अक्षरों का आकार पहचान लेना कुछ ही दिनों का काम है।',
+        ],
+        pEn: [
+          'The script on Kushan coins is Greek, but the language is not Greek — it is Bactrian, an Iranian language written in Greek letters.',
+          'That alone is evidence of the cultural mixing of the period. After Alexander, the Greek script survived in this region and the local language adopted it.',
+          'Early Kushan coins also carry Kharoshthi, the script of the Gandhara region, written from right to left.',
+          'The practical point for a collector is that the ruler’s name can usually be read — Kanishka as ΚΑΝΗϷΚΙ — and it is the most dependable clue to identification. Learning to recognise the shapes of that name takes only a few days.',
+        ],
+      },
+      {
+        hHi: 'सोने का मानक',
+        hEn: 'The gold standard',
+        pHi: [
+          'कुषाण सोने के सिक्के का वज़न लगभग 8 ग्राम रहा, जो रोमन ऑरियस के मानक के क़रीब बैठता है — और यह संयोग नहीं था।',
+          'रोम के साथ भारत का व्यापार उस दौर में बहुत बड़ा था, और रोमन सोने के सिक्के भारत में बड़ी मात्रा में पहुँचते थे। एक मिलता-जुलता मानक अपनाना व्यापार को आसान बनाता है।',
+          'कुषाणों ने आधे और चौथाई मूल्यवर्ग भी जारी किए, और साथ में ताँबे की मुद्रा जो रोज़मर्रा के बाज़ार में चलती थी। ताँबे के कुषाण सिक्के आज भी बहुत सस्ते मिलते हैं।',
+          'इस मानक की सबसे बड़ी विरासत यह है कि गुप्त सम्राटों ने इसे अपनाया। गुप्त दीनार का जन्म कुषाण मानक से हुआ, और वहीं से भारतीय सोने की मुद्रा की वह परंपरा शुरू हुई जो सदियों चली।',
+        ],
+        pEn: [
+          'The Kushan gold coin weighed roughly 8 grams, close to the standard of the Roman aureus — and that was no coincidence.',
+          'India’s trade with Rome was very large in this period, and Roman gold arrived in quantity. Adopting a comparable standard made trade simpler.',
+          'The Kushans also issued half and quarter denominations, alongside a copper coinage that served the everyday market. Kushan copper remains very inexpensive today.',
+          'The greatest legacy of this standard is that the Gupta emperors adopted it. The Gupta dinara was born from the Kushan standard, and from there began the tradition of Indian gold coinage that ran for centuries.',
+        ],
+      },
+      {
+        hHi: 'संग्राहक के लिए रास्ता',
+        hEn: 'A route for the collector',
+        pHi: [
+          'सोने के कुषाण सिक्के महँगे हैं, पर एक अच्छी ख़बर है: वे गुप्त सोने से अक्सर सस्ते मिलते हैं, क्योंकि माँग तुलनात्मक रूप से कम है।',
+          'ताँबे के कुषाण सिक्के इस क्षेत्र का असली प्रवेश-द्वार हैं। ये बड़ी संख्या में बचे हैं, कुछ हज़ार रुपये में मिल जाते हैं, और उन पर वही देवता और वही लिखावट मिलती है जो सोने पर।',
+          'शुरुआत के लिए सबसे अच्छा लक्ष्य “एक शासक, कई प्रकार” है — जैसे कनिष्क के ताँबे के सिक्कों में अलग-अलग देवताओं वाले प्रकार जुटाना। यह सीमित है, सस्ता है, और उसमें कहानी है।',
+          'चेतावनी वही जो हर प्राचीन सोने पर लागू होती है: बिना प्रमाणन के महँगा सिक्का मत ख़रीदिए, स्रोत पूछिए, और वज़न तौलकर देखिए।',
+        ],
+        pEn: [
+          'Kushan gold is expensive, but there is good news: it often costs less than Gupta gold, because demand for it is comparatively lower.',
+          'Kushan copper is the real doorway into this field. It survives in quantity, costs a few thousand rupees, and carries the same deities and the same script as the gold.',
+          'The best target to begin with is “one ruler, many types” — assembling the copper coins of Kanishka showing different deities, for instance. It is bounded, affordable, and it contains a story.',
+          'The caution is the one that applies to all ancient gold: do not buy an expensive coin without certification, ask about provenance, and check the weight on a scale.',
+        ],
+      },
+      {
+        hHi: 'ये सिक्के क्या बताते हैं',
+        hEn: 'What these coins tell us',
+        pHi: [
+          'कुषाण मुद्रा का असली महत्व उसकी सुंदरता नहीं, उसकी गवाही है। ये सिक्के बताते हैं कि दो हज़ार साल पहले इस क्षेत्र में कितनी परंपराएँ एक साथ चल रही थीं।',
+          'एक ही शासक ने शिव, बुद्ध, मिथ्र और हेलिओस को अपने सिक्कों पर जगह दी — और यह किसी उदारता की घोषणा नहीं थी, बल्कि उस समाज का सीधा प्रतिबिंब था जिस पर वह शासन कर रहा था।',
+          'व्यापार का पक्ष भी उतना ही स्पष्ट है। रोमन मानक के क़रीब वज़न, यूनानी लिपि, ईरानी भाषा, भारतीय देवता — एक सिक्के पर चार दुनियाएँ।',
+          'इसीलिए कुषाण सिक्का किसी भी भारतीय संग्रह में एक विशेष जगह रखता है। वह केवल पुराना नहीं है; वह उस क्षण का दस्तावेज़ है जब यह उपमहाद्वीप दुनिया के बीचोंबीच था।',
+        ],
+        pEn: [
+          'The real importance of Kushan coinage is not its beauty but its testimony. These coins tell us how many traditions were running side by side in this region two thousand years ago.',
+          'One ruler gave Shiva, the Buddha, Mithra and Helios a place on his coins — and that was not a declaration of tolerance but a direct reflection of the society he governed.',
+          'The commercial side is equally clear. A weight close to the Roman standard, a Greek script, an Iranian language, Indian deities — four worlds on one coin.',
+          'This is why a Kushan coin holds a particular place in any Indian collection. It is not merely old; it documents the moment when this subcontinent sat at the centre of the world.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'dadaji-ki-sandook-kahani',
+    sections: [
+      {
+        hHi: 'और एक आख़िरी बात',
+        hEn: 'And one last thing',
+        pHi: [
+          'कहानी ख़त्म होने पर बच्चे ने पूछा कि ये सिक्के अब किसके हैं। दादाजी ने कहा — “अभी मेरे। फिर तुम्हारे। और उसके बाद जिसे तुम बताओगे कि ये किसके थे।”',
+          'यही इस पूरी कहानी का सार है। वस्तु हस्तांतरित होती है, पर उसकी क़ीमत तभी हस्तांतरित होती है जब उसके साथ उसकी कहानी जाए।',
+        ],
+        pEn: [
+          'When the story ended the child asked whose these coins were now. The grandfather said — “Mine for the moment. Then yours. And after that, whoever you tell whose they were.”',
+          'That is the whole of it. The object passes down easily enough, but its value passes down only when the story travels with it, which is why the slip of paper beside each coin matters as much as the coin does.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'kushan-swarn-mudra',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'कुषाणों ने पहली से तीसरी शताब्दी में भारत की पहली बड़ी मानक सोने की मुद्रा चलाई, लगभग 8 ग्राम के रोमन-निकट मानक पर।',
+          'उनके सिक्कों पर शिव, बुद्ध, मिथ्र और हेलिओस एक साथ मिलते हैं — यूनानी लिपि में लिखी बैक्ट्रियन भाषा के साथ। एक सिक्के पर चार दुनियाएँ।',
+          'सोना महँगा है, पर ताँबे के कुषाण सिक्के कुछ हज़ार में मिलते हैं और उन पर वही देवता, वही लिखावट होती है। यही इस क्षेत्र का असली प्रवेश-द्वार है।',
+        ],
+        pEn: [
+          'The Kushans issued India’s first great standard gold coinage between the first and third centuries, on a weight of roughly 8 grams close to the Roman standard.',
+          'Their coins carry Shiva, the Buddha, Mithra and Helios together, with Bactrian written in Greek letters. Four worlds on a single coin, and no other ancient coinage shows this on the same scale.',
+          'The gold is expensive, but Kushan copper costs a few thousand rupees and carries the same deities and the same script. That is the real doorway into this field for anybody starting out.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
