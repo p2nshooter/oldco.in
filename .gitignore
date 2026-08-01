@@ -5,3 +5,8 @@ node_modules/
 *.tsbuildinfo
 .env*
 .DS_Store
+
+# throwaway word-count scripts
+check.ts
+outline.ts
+fullcheck.ts
