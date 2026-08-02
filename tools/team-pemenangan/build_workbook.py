@@ -54,8 +54,8 @@ MAX_KADUS = 20                 # baris Kadus yang ditampilkan pada rekap/target
 MAX_RT = 20                    # kolom RT pada matriks REKAP
 N_CARI = 150                   # baris hasil pada sheet CARI
 N_MASALAH = 150                # baris hasil pada sheet VALIDASI
-N_CETAK = 50                   # baris formulir CETAK
-N_ABSEN = 40                   # baris daftar hadir
+N_CETAK = 25                   # nama per halaman formulir CETAK
+N_ABSEN = 25                   # nama per halaman daftar hadir
 N_KARTU = 8                    # kartu per halaman (2 kolom x 4 baris)
 MENU_KADUS = 12                # baris Kadus pada ringkasan MENU (rekap penuh di REKAP)
 
@@ -203,12 +203,13 @@ def gambar(ws, nama, anchor, lebar, dx=0, dy=0):
     return img
 
 
-def page_print(ws, area=None, landscape=False, fit_width=1, titles=None):
+def page_print(ws, area=None, landscape=False, fit_width=1, titles=None,
+               fit_height=0):
     ws.page_setup.orientation = "landscape" if landscape else "portrait"
     ws.page_setup.paperSize = ws.PAPERSIZE_A4
     ws.sheet_properties.pageSetUpPr.fitToPage = True
     ws.page_setup.fitToWidth = fit_width
-    ws.page_setup.fitToHeight = 0
+    ws.page_setup.fitToHeight = fit_height
     ws.page_margins.left = ws.page_margins.right = 0.4
     ws.page_margins.top = ws.page_margins.bottom = 0.5
     if area:
@@ -331,9 +332,10 @@ DB_COLS = [
 ]
 # kolom bantu (tersembunyi)
 HELP_COLS = [("KEY", 24), ("MASALAH", 26), ("IDX_CARI", 10),
-             ("IDX_MASALAH", 12), ("KEY_KADUS", 22)]
-# A B C D E F G H I J K L M N O P Q R | S T U V W
-AUTO_COLS = {"A", "G", "M", "N", "S", "T", "U", "V", "W"}
+             ("IDX_MASALAH", 12), ("KEY_KADUS", 22), ("IDX_CETAK", 10),
+             ("IDX_ABSEN", 10), ("IDX_KARTU", 10)]
+# A B C D E F G H I J K L M N O P Q R | S T U V W X Y Z
+AUTO_COLS = {"A", "G", "M", "N", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 INPUT_COLS = ["B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "O", "P", "Q", "R"]
 
 
@@ -386,6 +388,32 @@ def build_database(wb):
                 f'MAX($U$3:U{p})+1,""))'
             ),
             "V": f'=IF($T{row}="","",MAX($V$3:V{p})+1)',
+            # nomor urut hasil penyaringan untuk tiap sheet cetak; filter yang
+            # dikosongkan berarti "semua", sehingga satu rumus melayani cetak
+            # semua anggota, per Kadus, per RT, per korwil, maupun per TPS
+            "X": (
+                f'=IF($B{row}="","",IF(AND('
+                f'OR(CETAK!$J$10="",$E{row}=CETAK!$J$10),'
+                f'OR(CETAK!$J$11="",$F{row}=CETAK!$J$11),'
+                f'OR(CETAK!$J$12="",$K{row}=CETAK!$J$12),'
+                f'OR(CETAK!$J$13="",$H{row}=CETAK!$J$13),'
+                f'OR(CETAK!$J$14="",$O{row}=CETAK!$J$14)),'
+                f'MAX($X$3:X{p})+1,""))'
+            ),
+            "Y": (
+                f'=IF($B{row}="","",IF(AND('
+                f'OR(ABSENSI!$H$10="",$E{row}=ABSENSI!$H$10),'
+                f'OR(ABSENSI!$H$11="",$F{row}=ABSENSI!$H$11),'
+                f'OR(ABSENSI!$H$12="",$K{row}=ABSENSI!$H$12)),'
+                f'MAX($Y$3:Y{p})+1,""))'
+            ),
+            "Z": (
+                f'=IF($B{row}="","",IF(AND('
+                f'OR(KARTU!$K$6="",$E{row}=KARTU!$K$6),'
+                f'OR(KARTU!$K$7="",$F{row}=KARTU!$K$7),'
+                f'OR(KARTU!$K$8="",$K{row}=KARTU!$K$8)),'
+                f'MAX($Z$3:Z{p})+1,""))'
+            ),
         }
         for i, (name, _w) in enumerate(all_cols):
             col = get_column_letter(1 + i)
@@ -462,7 +490,13 @@ def build_database(wb):
 
     ws.freeze_panes = "B4"
     ws.sheet_view.zoomScale = 100
-    page_print(ws, area=f"A1:R{LAST}", landscape=True, titles="3:3")
+    # Siap cetak hasil penyaringan: Excel tidak mencetak baris yang disembunyikan
+    # AutoFilter, jadi "cetak semua per TPS / RT / Kadus" cukup dengan menyaring
+    # kolomnya lalu Ctrl+P — tanpa baris kosong, berapa pun jumlah datanya.
+    page_print(ws, area=f"A3:R{LAST}", landscape=True, titles="3:3")
+    ws.oddHeader.center.text = "&\"Arial,Bold\"&12DAFTAR ANGGOTA TEAM PEMENANGAN"
+    ws.oddHeader.right.text = "&\"Arial,Italic\"&9&D"
+    ws.oddFooter.right.text = "&\"Arial,Regular\"&9Halaman &P dari &N"
     return ws
 
 
@@ -494,9 +528,12 @@ def build_menu(wb):
         ("▶   REKAP & ANALISA", "REKAP!A1", "Matriks Kadus x RT, gender, usia"),
         ("▶   TARGET & CAPAIAN", "TARGET!A1", "Target vs realisasi per Kadus"),
         ("▶   VALIDASI DATA", "VALIDASI!A1", "Daftar data yang perlu diperbaiki"),
-        ("▶   CETAK FORMULIR PER KORWIL", "CETAK!A1", "Formulir tanda tangan"),
-        ("▶   CETAK KARTU ANGGOTA", "KARTU!A1", "Kartu siap potong, 8 per halaman"),
-        ("▶   CETAK DAFTAR HADIR", "ABSENSI!A1", "Absensi kegiatan per korwil"),
+        ("▶   CETAK DAFTAR / FORMULIR", "CETAK!A1",
+         "Semua, per Kadus, RT, korwil, atau TPS"),
+        ("▶   CETAK KARTU ANGGOTA", "KARTU!A1",
+         "8 per halaman, bisa disaring per wilayah"),
+        ("▶   CETAK DAFTAR HADIR", "ABSENSI!A1",
+         "Absensi kegiatan, filter sama seperti CETAK"),
         ("▶   PROFIL & MEDIA KAMPANYE", "PROFIL!A1", "Poster dan emblem siap cetak"),
         ("▶   PENGATURAN KADUS / RT / JABATAN", "REFERENSI!A1", "Dropdown, target, identitas"),
         ("▶   PETUNJUK PENGGUNAAN", "PETUNJUK!A1", "Manual + kode makro opsional"),
@@ -1059,89 +1096,125 @@ def build_validasi(wb):
 
 
 def build_cetak(wb):
+    """Formulir cetak serbaguna.
+
+    Lima filter opsional (Kadus, RT, TPS, jabatan, status) menyaring daftar.
+    Filter yang dikosongkan berarti "semua", jadi satu sheet ini melayani cetak
+    seluruh anggota, per Kadus, per RT, per korwil (Kadus+RT), maupun per TPS.
+    Judul dan jumlah pada kop menyesuaikan sendiri.
+    """
     ws = wb.create_sheet("CETAK")
     ws.sheet_view.showGridLines = False
-    for col, w in zip("ABCDEFGHIJ", [6, 30, 20, 20, 15, 18, 3, 18, 16, 3]):
+    for col, w in zip("ABCDEFGHIJKL",
+                      [5, 27, 19, 19, 17, 13, 15, 3, 19, 17, 3, 9]):
         ws.column_dimensions[col].width = w
+    ws.column_dimensions["L"].hidden = True     # penunjuk baris DATABASE
 
-    # emblem sebagai kop surat di kiri; teks judul tetap rata tengah A:F
+    # emblem sebagai kop surat di kiri; teks judul tetap rata tengah A:G
     gambar(ws, "logo-emblem.png", "A2", 88)
     put(ws, "A2", "=id_team", f(16, True), align=CENTER)
-    ws.merge_cells("A2:F2")
     put(ws, "A3", "=id_calon", f(14, True), align=CENTER)
-    ws.merge_cells("A3:F3")
     put(ws, "A4", "=id_periode", f(11), align=CENTER)
-    ws.merge_cells("A4:F4")
     put(ws, "A5", '="DESA "&id_desa&IF(id_kecamatan="-",""," • KECAMATAN "&id_kecamatan)'
         '&IF(id_kabupaten="-",""," • KABUPATEN "&id_kabupaten)', f(10), align=CENTER)
-    ws.merge_cells("A5:F5")
-    for col in "ABCDEF":
+    for r in range(2, 6):
+        ws.merge_cells(f"A{r}:G{r}")
+    for col in "ABCDEFG":
         ws[f"{col}6"].border = Border(bottom=MED)
 
     put(ws, "A8", "DAFTAR ANGGOTA TEAM PEMENANGAN", f(12, True), align=CENTER)
-    ws.merge_cells("A8:F8")
+    ws.merge_cells("A8:G8")
 
-    # panel pemilihan (di luar area cetak)
-    put(ws, "H9", "PANEL — TIDAK IKUT DICETAK", f(9, True, WHITE), BLUE, CENTER)
-    ws.merge_cells("H9:I9")
-    panel = [("H10", "Pilih Kadus", "I10", "=daftar_kadus"),
-             ("H11", "Pilih RT", "I11", "=daftar_rt")]
-    for lab_ref, label, in_ref, formula in panel:
-        put(ws, lab_ref, label, f(10, True), GREY_BG, LEFT, BOX)
-        put(ws, in_ref, None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
+    # ---- panel pemilihan (di luar area cetak)
+    put(ws, "I9", "PANEL — TIDAK IKUT DICETAK", f(9, True, WHITE), BLUE, CENTER)
+    ws.merge_cells("I9:J9")
+    panel = [("Pilih Kadus", "=daftar_kadus"), ("Pilih RT", "=daftar_rt"),
+             ("Pilih TPS", "=daftar_tps"), ("Pilih Jabatan", "=daftar_jabatan"),
+             ("Pilih Status", "=daftar_status")]
+    for i, (label, formula) in enumerate(panel):
+        r = 10 + i
+        put(ws, f"I{r}", label, f(10, True), GREY_BG, LEFT, BOX)
+        put(ws, f"J{r}", None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
         d = DataValidation(type="list", formula1=formula, allow_blank=True)
         ws.add_data_validation(d)
-        d.add(in_ref)
-    put(ws, "H12", "Jumlah anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "I12", f'=COUNTIF({DB}!$G${FIRST}:$G${LAST},'
-        f'IF(OR($I$10="",$I$11=""),"~",$I$10&" - RT "&$I$11))',
-        f(11, True, RED), None, CENTER, BOX)
-    link(ws, "H14", "◀  MENU", "MENU!A1")
-    put(ws, "H16", "Pilih Kadus & RT, daftar terisi otomatis, lalu tekan Ctrl+P.",
-        f(9, italic=True, color="595959"), align=LEFT)
-    put(ws, "H17", f"Kapasitas formulir {N_CETAK} nama. Bila anggota satu korwil "
-        "lebih banyak, cetak juga sheet CARI.", f(9, italic=True, color="595959"),
-        align=LEFT)
+        d.add(f"J{r}")
 
-    put(ws, "A10", "KORWIL", f(11, True), align=LEFT)
+    put(ws, "I15", "Halaman ke-", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "J15", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
+    dvh = DataValidation(type="whole", operator="greaterThanOrEqual", formula1="1",
+                         showErrorMessage=True, errorStyle="warning",
+                         errorTitle="Halaman", error="Isi angka 1 atau lebih.")
+    ws.add_data_validation(dvh)
+    dvh.add("J15")
+    put(ws, "I16", "Jumlah data", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "J16", f'=COUNT({DB}!$X${FIRST}:$X${LAST})', f(11, True, RED),
+        None, CENTER, BOX, "#,##0")
+    put(ws, "I17", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "J17", f'=MAX(1,ROUNDUP($J$16/{N_CETAK},0))', f(11, True, NAVY),
+        None, CENTER, BOX, "#,##0")
+    link(ws, "I19", "◀  MENU", "MENU!A1")
+    catatan = [
+        (20, "Kosongkan semua filter = cetak SELURUH anggota."),
+        (21, "Isi satu filter saja untuk cetak per Kadus, per RT, atau per TPS."),
+        (22, "Isi Kadus + RT sekaligus untuk cetak per korwil."),
+        (23, f"Satu halaman memuat {N_CETAK} nama. Bila Total halaman lebih dari 1,"),
+        (24, "ganti angka Halaman ke- lalu Ctrl+P lagi."),
+        (25, "Daftar sangat panjang? Saring kolom di sheet DATABASE lalu Ctrl+P —"),
+        (26, "baris yang tersembunyi filter tidak ikut tercetak."),
+    ]
+    for r, teks in catatan:
+        put(ws, f"I{r}", teks, f(9, italic=True, color="595959"), align=LEFT)
+
+    # ---- keterangan kop yang menyesuaikan filter
+    judul = ('=IF(COUNTA($J$10:$J$14)=0,"SELURUH ANGGOTA",'
+             'MID(IF($J$10="",""," • "&$J$10)'
+             '&IF($J$11="",""," • RT "&$J$11)'
+             '&IF($J$12="",""," • TPS "&$J$12)'
+             '&IF($J$13="",""," • "&$J$13)'
+             '&IF($J$14="",""," • "&$J$14),4,200))')
+    put(ws, "A10", "KELOMPOK", f(11, True), align=LEFT)
     put(ws, "C10", ":", f(11, True), align=CENTER)
-    put(ws, "D10", '=IF(OR($I$10="",$I$11=""),"— pilih Kadus & RT pada panel kanan —",'
-        '$I$10&" - RT "&$I$11)', f(11, True, NAVY), align=LEFT)
-    ws.merge_cells("D10:F10")
+    put(ws, "D10", judul, f(11, True, NAVY), align=LEFT)
+    ws.merge_cells("D10:G10")
     put(ws, "A11", "JUMLAH", f(11, True), align=LEFT)
     put(ws, "C11", ":", f(11, True), align=CENTER)
-    put(ws, "D11", '=$I$12&" orang"', f(11, True), align=LEFT)
+    put(ws, "D11", '=$J$16&" orang"&IF($J$17>1,"     (halaman "&$J$15&" dari "'
+        '&$J$17&")","")', f(11, True), align=LEFT)
+    ws.merge_cells("D11:G11")
 
     hd = 13
     header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("NIK", None),
-                        ("JABATAN", None), ("NO. HP", None), ("TANDA TANGAN", None)])
-    src = {"B": "B", "C": "C", "D": "H", "E": "I"}
+                        ("KORWIL", None), ("JABATAN", None), ("NO. HP", None),
+                        ("TANDA TANGAN", None)])
+    # satu MATCH per baris, sisanya INDEX yang murah
+    src = {"B": "B", "C": "C", "D": "G", "E": "H", "F": "I"}
     for i in range(N_CETAK):
         r = hd + 1 + i
-        put(ws, f"A{r}", i + 1, f(10), None, CENTER, BOX)
+        urut = f'(($J$15-1)*{N_CETAK}+{i + 1})'
+        put(ws, f"L{r}", f'=IFERROR(MATCH({urut},{DB}!$X${FIRST}:$X${LAST},0),"")',
+            f(9))
+        put(ws, f"A{r}", f'=IF($L{r}="","",{urut})', f(10), None, CENTER, BOX)
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
-                f'=IFERROR(INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},'
-                f'MATCH($D$10&"#"&$A{r},{DB}!$S${FIRST}:$S${LAST},0))&"","")',
-                f(10), None, LEFT if col in ("B", "D") else CENTER, BOX,
-                "@" if col in ("C", "E") else None)
-        put(ws, f"F{r}", f'=IF($B{r}="","",$A{r}&".")', f(9, color="808080"),
+                f'=IF($L{r}="","",INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},$L{r})&"")',
+                f(10), None, LEFT if col in ("B", "D", "E") else CENTER, BOX,
+                "@" if col in ("C", "F") else None)
+        put(ws, f"G{r}", f'=IF($L{r}="","",$A{r}&".")', f(9, color="808080"),
             None, LEFT, BOX)
-        ws.row_dimensions[r].height = 24
+        ws.row_dimensions[r].height = 22
 
     ttd = hd + N_CETAK + 2
-    put(ws, f"D{ttd}", f'=id_desa&", ......................... "&id_tahun',
+    put(ws, f"E{ttd}", f'=id_desa&", ......................... "&id_tahun',
         f(11), align=CENTER)
-    ws.merge_cells(f"D{ttd}:F{ttd}")
-    put(ws, f"D{ttd + 1}", "=id_jabatan_ttd", f(11), align=CENTER)
-    ws.merge_cells(f"D{ttd + 1}:F{ttd + 1}")
-    put(ws, f"D{ttd + 5}", "=id_ketua", f(11, True, color="000000"), align=CENTER)
-    ws.merge_cells(f"D{ttd + 5}:F{ttd + 5}")
-    for col in "DEF":
+    put(ws, f"E{ttd + 1}", "=id_jabatan_ttd", f(11), align=CENTER)
+    put(ws, f"E{ttd + 5}", "=id_ketua", f(11, True, color="000000"), align=CENTER)
+    for r in (ttd, ttd + 1, ttd + 5):
+        ws.merge_cells(f"E{r}:G{r}")
+    for col in "EFG":
         ws[f"{col}{ttd + 5}"].border = Border(top=Side(style="thin", color="000000"))
 
     lock_sheet(ws)
-    page_print(ws, area=f"A1:F{ttd + 6}", landscape=False, titles=f"{hd}:{hd}")
+    page_print(ws, area=f"A1:G{ttd + 6}", landscape=False, fit_height=1)
     return ws
 
 
@@ -1162,18 +1235,30 @@ def build_kartu(wb):
     ws.merge_cells("J4:K4")
     put(ws, "J5", "Nomor awal", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "K5", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
-    put(ws, "J6", "Total anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "K6", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', f(11, True, RED),
-        None, CENTER, BOX)
-    put(ws, "J7", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "K7", f'="isi "&($K$5+{N_KARTU})&" untuk 8 kartu berikutnya"',
+    for i, (label, formula) in enumerate([("Pilih Kadus", "=daftar_kadus"),
+                                          ("Pilih RT", "=daftar_rt"),
+                                          ("Pilih TPS", "=daftar_tps")]):
+        r = 6 + i
+        put(ws, f"J{r}", label, f(10, True), GREY_BG, LEFT, BOX)
+        put(ws, f"K{r}", None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
+        d = DataValidation(type="list", formula1=formula, allow_blank=True)
+        ws.add_data_validation(d)
+        d.add(f"K{r}")
+    put(ws, "J9", "Jumlah tersaring", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "K9", f'=COUNT({DB}!$Z${FIRST}:$Z${LAST})', f(11, True, RED),
+        None, CENTER, BOX, "#,##0")
+    put(ws, "J10", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "K10", f'=IF($K$5+{N_KARTU}>$K$9,"— sudah halaman terakhir —",'
+        f'"isi "&($K$5+{N_KARTU})&" untuk {N_KARTU} kartu berikutnya")',
         f(9, italic=True), None, LEFT, BOX)
     dvn = DataValidation(type="whole", operator="greaterThanOrEqual", formula1="1",
                          showErrorMessage=True, errorStyle="warning",
                          errorTitle="Nomor awal", error="Isi angka 1 atau lebih.")
     ws.add_data_validation(dvn)
     dvn.add("K5")
-    link(ws, "J9", "◀  MENU", "MENU!A1")
+    link(ws, "J12", "◀  MENU", "MENU!A1")
+    put(ws, "J13", "Kosongkan filter = kartu untuk seluruh anggota.",
+        f(9, italic=True, color="595959"), align=LEFT)
 
     # Tiap kartu: bilah judul, lalu badan berisi segel di kiri dan data di
     # kanan — segel dibuat cukup besar (62 px) agar tulisan emblem tetap
@@ -1187,8 +1272,9 @@ def build_kartu(wb):
         top = start_row + rblock * 8
         cs, cl, cv = ("B", "C", "D") if cblock == 0 else ("F", "G", "H")
         no = f"($K$5+{idx})"
+        # nomor mengikuti hasil penyaringan (kolom Z), bukan nomor urut global
         lookup = (f'IFERROR(INDEX({DB}!$%s${FIRST}:$%s${LAST},'
-                  f'MATCH({no},{DB}!$A${FIRST}:$A${LAST},0))&"","")')
+                  f'MATCH({no},{DB}!$Z${FIRST}:$Z${LAST},0))&"","")')
 
         ws.merge_cells(f"{cs}{top}:{cv}{top}")
         put(ws, f"{cs}{top}", '=id_team&" — "&id_calon', f(9, True, WHITE), NAVY,
@@ -1255,7 +1341,8 @@ def build_absensi(wb):
               ("G8", "Tanggal", "H8", None),
               ("G9", "Tempat", "H9", None),
               ("G10", "Pilih Kadus", "H10", "=daftar_kadus"),
-              ("G11", "Pilih RT", "H11", "=daftar_rt")]
+              ("G11", "Pilih RT", "H11", "=daftar_rt"),
+              ("G12", "Pilih TPS", "H12", "=daftar_tps")]
     for lab_ref, label, in_ref, formula in fields:
         put(ws, lab_ref, label, f(10, True), GREY_BG, LEFT, BOX)
         put(ws, in_ref, None, f(10, True, NAVY), INPUT, LEFT, BOX, "@", unlock=True)
@@ -1263,18 +1350,37 @@ def build_absensi(wb):
             d = DataValidation(type="list", formula1=formula, allow_blank=True)
             ws.add_data_validation(d)
             d.add(in_ref)
-    put(ws, "G12", "Jumlah anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "H12", f'=COUNTIF({DB}!$G${FIRST}:$G${LAST},'
-        f'IF(OR($H$10="",$H$11=""),"~",$H$10&" - RT "&$H$11))',
-        f(11, True, RED), None, CENTER, BOX)
-    link(ws, "G14", "◀  MENU", "MENU!A1")
+    put(ws, "G13", "Halaman ke-", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "H13", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
+    dvh = DataValidation(type="whole", operator="greaterThanOrEqual", formula1="1",
+                         showErrorMessage=True, errorStyle="warning",
+                         errorTitle="Halaman", error="Isi angka 1 atau lebih.")
+    ws.add_data_validation(dvh)
+    dvh.add("H13")
+    put(ws, "G14", "Jumlah anggota", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "H14", f'=COUNT({DB}!$Y${FIRST}:$Y${LAST})', f(11, True, RED),
+        None, CENTER, BOX, "#,##0")
+    put(ws, "G15", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "H15", f'=MAX(1,ROUNDUP($H$14/{N_ABSEN},0))', f(11, True, NAVY),
+        None, CENTER, BOX, "#,##0")
+    link(ws, "G17", "◀  MENU", "MENU!A1")
+    for i, teks in enumerate([
+            "Kosongkan filter Kadus/RT/TPS = daftar hadir SELURUH anggota.",
+            "Isi satu filter untuk per Kadus, per RT, atau per TPS;",
+            "isi Kadus + RT sekaligus untuk per korwil.",
+            f"Satu halaman memuat {N_ABSEN} nama — ganti Halaman ke- lalu Ctrl+P."]):
+        put(ws, f"G{18 + i}", teks, f(9, italic=True, color="595959"), align=LEFT)
 
+    kelompok = ('=IF(COUNTA($H$10:$H$12)=0,"SELURUH ANGGOTA",'
+                'MID(IF($H$10="",""," • "&$H$10)'
+                '&IF($H$11="",""," • RT "&$H$11)'
+                '&IF($H$12="",""," • TPS "&$H$12),4,200))')
     info = [("A7", "KEGIATAN", '=IF($H$7="","......................................",$H$7)'),
             ("A8", "HARI / TANGGAL", '=IF($H$8="","......................................",$H$8)'),
             ("A9", "TEMPAT", '=IF($H$9="","......................................",$H$9)'),
-            ("A10", "KORWIL", '=IF(OR($H$10="",$H$11=""),'
-                              '"— pilih Kadus & RT pada panel kanan —",'
-                              '$H$10&" - RT "&$H$11)')]
+            ("A10", "KELOMPOK", kelompok),
+            ("A11", "JUMLAH", '=$H$14&" orang"&IF($H$15>1,"     (halaman "&$H$13'
+                              '&" dari "&$H$15&")","")')]
     for ref, label, formula in info:
         row = ref[1:]
         put(ws, ref, label, f(10, True), align=LEFT)
@@ -1283,22 +1389,25 @@ def build_absensi(wb):
         put(ws, f"D{row}", formula, f(10, True, NAVY), align=LEFT)
         ws.merge_cells(f"D{row}:E{row}")
 
-    hd = 12
+    ws.column_dimensions["J"].hidden = True     # penunjuk baris DATABASE
+    hd = 13
     header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("JABATAN", None),
                         ("NO. HP", None), ("TANDA TANGAN", None)])
     src = {"B": "B", "C": "H", "D": "I"}
     for i in range(N_ABSEN):
         r = hd + 1 + i
-        put(ws, f"A{r}", i + 1, f(10), None, CENTER, BOX)
+        urut = f'(($H$13-1)*{N_ABSEN}+{i + 1})'
+        put(ws, f"J{r}", f'=IFERROR(MATCH({urut},{DB}!$Y${FIRST}:$Y${LAST},0),"")',
+            f(9))
+        put(ws, f"A{r}", f'=IF($J{r}="","",{urut})', f(10), None, CENTER, BOX)
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
-                f'=IFERROR(INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},'
-                f'MATCH($D$10&"#"&$A{r},{DB}!$S${FIRST}:$S${LAST},0))&"","")',
+                f'=IF($J{r}="","",INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},$J{r})&"")',
                 f(10), None, LEFT if col in ("B", "C") else CENTER, BOX,
                 "@" if col == "D" else None)
-        put(ws, f"E{r}", f'=IF($B{r}="","",$A{r}&".")', f(9, color="808080"),
+        put(ws, f"E{r}", f'=IF($J{r}="","",$A{r}&".")', f(9, color="808080"),
             None, LEFT, BOX)
-        ws.row_dimensions[r].height = 24
+        ws.row_dimensions[r].height = 22
 
     ttd = hd + N_ABSEN + 2
     put(ws, f"D{ttd}", f'=id_desa&", ......................... "&id_tahun', f(11), align=CENTER)
@@ -1310,7 +1419,7 @@ def build_absensi(wb):
         ws[f"{col}{ttd + 5}"].border = Border(top=Side(style="thin", color="000000"))
 
     lock_sheet(ws)
-    page_print(ws, area=f"A1:E{ttd + 6}", landscape=False, titles=f"{hd}:{hd}")
+    page_print(ws, area=f"A1:E{ttd + 6}", landscape=False, fit_height=1)
     return ws
 
 
@@ -1383,37 +1492,53 @@ PETUNJUK_ISI = [
     ("T", "Nama desa dan nama calon pada kop diambil dari sheet PENGATURAN, bukan"),
     ("T", "dari gambar — ubah di sana bila berganti wilayah atau periode."),
     ("", ""),
-    ("H", "C.  ARTI WARNA"),
+    ("H", "C.  MENCETAK — SEMUA, PER KADUS, PER RT, PER KORWIL, PER TPS"),
+    ("T", "Sheet CETAK punya lima filter di panel kanan: Kadus, RT, TPS, jabatan, status."),
+    ("T", "Filter yang dikosongkan berarti SEMUA, jadi satu sheet melayani semua kebutuhan:"),
+    ("T", "   •  semua filter kosong          →  seluruh anggota"),
+    ("T", "   •  isi Kadus saja               →  per Kadus"),
+    ("T", "   •  isi RT saja                  →  per RT"),
+    ("T", "   •  isi Kadus + RT               →  per korwil"),
+    ("T", "   •  isi TPS saja                 →  per TPS"),
+    ("T", "Judul dan jumlah pada kop ikut berubah sendiri. Bila Total halaman lebih dari 1,"),
+    ("T", "ganti angka Halaman ke- lalu Ctrl+P lagi. Sheet ABSENSI memakai cara yang sama,"),
+    ("T", "sheet KARTU bisa disaring per Kadus/RT/TPS."),
+    ("T", "Daftar sangat panjang dalam sekali cetak: buka sheet DATABASE, klik panah pada"),
+    ("T", "judul kolom (TPS, RT, KADUS, KORWIL) untuk menyaring, lalu Ctrl+P. Baris yang"),
+    ("T", "disembunyikan filter tidak ikut tercetak, jadi tidak ada halaman kosong."),
+    ("", ""),
+    ("H", "D.  ARTI WARNA"),
     ("T", "Kuning   : sel isian — boleh diketik/dipilih."),
     ("T", "Abu-abu  : hasil rumus otomatis — jangan diketik manual."),
     ("T", "Merah muda pada DATABASE : NIK ganda (dobel) — periksa dan perbaiki."),
     ("T", "Kuning muda pada DATABASE: NIK bukan 16 digit."),
     ("T", "Abu-abu miring pada DATABASE: anggota berstatus Nonaktif."),
     ("", ""),
-    ("H", "D.  KOLOM PADA SHEET DATABASE"),
+    ("H", "E.  KOLOM PADA SHEET DATABASE"),
     ("T", "Wajib   : NAMA LENGKAP, NIK, L/P, KADUS, RT, JABATAN, NO. HP, ALAMAT."),
     ("T", "Pilihan : TPS, TGL LAHIR, STATUS, TGL GABUNG, PEREKRUT, CATATAN."),
     ("T", "TGL LAHIR diisi format hh/bb/tttt — USIA dan KELOMPOK USIA lahir dari sini."),
     ("T", "STATUS diisi Aktif / Calon / Nonaktif; dipakai pada REKAP dan TARGET."),
     ("T", "PEREKRUT dipilih dari daftar nama anggota yang sudah terdata."),
     ("", ""),
-    ("H", "E.  MENYIMPAN & CADANGAN"),
+    ("H", "F.  MENYIMPAN & CADANGAN"),
     ("T", "Tekan Ctrl+S setiap selesai menginput — seluruh sheet tersimpan sekaligus."),
     ("T", "Buat salinan cadangan tiap minggu: File > Save As, beri nama + tanggal."),
     ("T", "Simpan juga satu salinan di HP atau flashdisk sebagai cadangan kedua."),
     ("", ""),
-    ("H", "F.  SHEET TERKUNCI"),
+    ("H", "G.  SHEET TERKUNCI"),
     ("T", "Sheet REKAP, TARGET, VALIDASI, CARI, CETAK, KARTU, dan ABSENSI dikunci agar"),
     ("T", "rumus tidak terhapus. Sel kuning tetap bisa diisi. Bila perlu mengubah isinya:"),
     ("T", "tab Review (Tinjau) > Unprotect Sheet — tanpa kata sandi."),
     ("T", "Sheet DATABASE dan PENGATURAN sengaja tidak dikunci agar bebas disunting."),
     ("", ""),
-    ("H", "G.  KAPASITAS"),
+    ("H", "H.  KAPASITAS"),
     ("T", "Kapasitas 2.000 baris anggota, 40 pilihan Kadus/RT/jabatan/TPS,"),
-    ("T", "20 Kadus dan 20 RT pada matriks REKAP, 150 baris hasil pada CARI dan VALIDASI."),
+    ("T", "20 Kadus dan 20 RT pada matriks REKAP, 150 baris hasil pada CARI dan VALIDASI,"),
+    ("T", "25 nama per halaman pada CETAK dan ABSENSI, 8 kartu per halaman pada KARTU."),
     ("T", "Sisa kapasitas terlihat di sheet MENU dan pojok kanan atas sheet DATABASE."),
     ("", ""),
-    ("H", "H.  MENAMBAH TOMBOL MAKRO — OPSIONAL"),
+    ("H", "I.  MENAMBAH TOMBOL MAKRO — OPSIONAL"),
     ("T", "Tombol pada aplikasi ini memakai hyperlink sehingga aman dibuka di HP maupun"),
     ("T", "komputer tanpa peringatan keamanan. Bila ingin tombol SIMPAN dan FILTER otomatis:"),
     ("T", "1.  File > Save As > pilih tipe Excel Macro-Enabled Workbook (*.xlsm)."),
@@ -1485,7 +1610,7 @@ def build_petunjuk(wb):
         row += 1
 
     row += 1
-    put(ws, f"B{row}", "I.  CONTOH FORMAT PENGISIAN SHEET DATABASE",
+    put(ws, f"B{row}", "J.  CONTOH FORMAT PENGISIAN SHEET DATABASE",
         f(11, True, WHITE), NAVY, LEFT)
     ws.merge_cells(f"B{row}:E{row}")
     row += 1

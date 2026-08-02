@@ -34,14 +34,14 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 | Sheet | Fungsi |
 |---|---|
 | **MENU** | Dasbor: 10 angka ringkasan, capaian per Kadus, dan tombol ke semua sheet |
-| **DATABASE** | Input data anggota, 2.000 baris, 18 kolom + 5 kolom bantu tersembunyi |
+| **DATABASE** | Input data anggota, 2.000 baris, 18 kolom + 8 kolom bantu tersembunyi; siap cetak hasil filter |
 | **CARI** | Pencarian bebas (nama/NIK/HP/alamat/perekrut) + filter Kadus, RT, status |
 | **REKAP** | Matriks Kadus × RT, gender & status, jabatan, segmen usia, TPS, daftar per korwil, 2 grafik |
 | **TARGET** | Target vs realisasi per Kadus, % capaian, grafik batang, penanda warna |
 | **VALIDASI** | 13 ringkasan masalah + daftar baris yang perlu diperbaiki |
-| **CETAK** | Formulir tanda tangan per korwil, 50 nama, kop & penandatangan otomatis |
-| **KARTU** | Kartu anggota siap potong, 8 per halaman |
-| **ABSENSI** | Daftar hadir kegiatan per korwil, 40 baris |
+| **CETAK** | Formulir tanda tangan serbaguna: seluruh anggota / per Kadus / per RT / per korwil / per TPS |
+| **KARTU** | Kartu anggota siap potong, 8 per halaman, bisa disaring per wilayah |
+| **ABSENSI** | Daftar hadir kegiatan dengan filter yang sama seperti CETAK |
 | **PROFIL** | Poster resmi siap cetak + kedua emblem beserta keterangannya |
 | **REFERENSI** | Pengaturan dropdown, target per Kadus, identitas (kop surat) |
 | **PETUNJUK** | Manual penggunaan + kode makro opsional |
@@ -49,12 +49,13 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 ## Yang berubah dari versi sebelumnya
 
 **Kapasitas** — 500 → 2.000 baris; 15 → 20 RT dan 8 → 20 Kadus pada rekap;
-daftar per korwil 30 → 40 baris; formulir cetak 30 → 50 nama.
+daftar per korwil 30 → 40 baris; formulir cetak 25 nama per halaman dengan
+halaman otomatis.
 
 **Kolom baru pada DATABASE** — TPS, TGL LAHIR, USIA (otomatis), KELOMPOK USIA
 (otomatis), STATUS, TGL GABUNG, PEREKRUT, CATATAN.
 
-**Sheet baru** — CARI, TARGET, VALIDASI, KARTU, ABSENSI.
+**Sheet baru** — CARI, TARGET, VALIDASI, KARTU, ABSENSI, PROFIL.
 
 **Identitas terpusat** — nama calon, team, periode, desa, kecamatan, kabupaten,
 ketua, dan jabatan penandatangan diambil dari sheet PENGATURAN lewat named
@@ -75,6 +76,41 @@ disortir.
 
 **Cetak** — setiap sheet cetak sudah diatur ukuran A4, skala muat selebar
 halaman, area cetak, dan baris judul yang berulang tiap halaman.
+
+## Mencetak per kelompok apa pun
+
+Sheet CETAK punya lima filter opsional — Kadus, RT, TPS, jabatan, status.
+Filter yang dikosongkan berarti "semua", jadi satu mekanisme melayani seluruh
+kebutuhan cetak:
+
+| Filter yang diisi | Hasil cetak |
+|---|---|
+| (kosong semua) | Seluruh anggota |
+| Kadus | Per Kadus |
+| RT | Per RT |
+| Kadus + RT | Per korwil |
+| TPS | Per TPS |
+| Jabatan / status | Per jabatan atau status keanggotaan |
+
+Judul kop, jumlah orang, dan total halaman menyesuaikan sendiri. ABSENSI
+memakai mekanisme yang sama (Kadus/RT/TPS), KARTU juga bisa disaring per
+wilayah.
+
+Di balik layar, tiap sheet cetak punya satu kolom bantu di DATABASE yang
+memberi nomor urut pada baris yang lolos filter. Sheet cetak lalu memanggil
+nomor itu — satu `MATCH` per baris, sisanya `INDEX` yang murah.
+
+**Daftar panjang dalam sekali cetak.** Formulir CETAK memuat 25 nama per
+halaman; untuk daftar ratusan orang, saring kolom di sheet DATABASE lalu
+Ctrl+P. Excel tidak mencetak baris yang disembunyikan AutoFilter, sehingga
+hasilnya persis sebanyak data — tanpa halaman kosong, berapa pun jumlahnya.
+DATABASE sudah disiapkan untuk itu: baris judul berulang tiap halaman, kop
+"DAFTAR ANGGOTA TEAM PEMENANGAN", dan nomor halaman otomatis.
+
+Dua pendekatan lain sempat diuji dan ditolak: area cetak dinamis lewat
+`OFFSET` diabaikan saat diekspor, dan pelewatan halaman kosong tidak terjadi
+karena sel berisi rumus tetap dihitung sebagai sel terisi walaupun hasilnya
+kosong.
 
 ## Logo dan aset gambar
 
@@ -127,7 +163,7 @@ gambar di Excel > Change Picture — ukuran dan posisinya tetap.
 
 ## Verifikasi
 
-Berkas rilis lulus perhitungan ulang LibreOffice: **22.003 rumus, 0 error**,
+Berkas rilis lulus perhitungan ulang LibreOffice: **27.946 rumus, 0 error**,
 dengan 14 gambar dan 3 grafik utuh setelah perhitungan ulang.
 Dengan data contoh, seluruh angka pada MENU, REKAP, TARGET, dan VALIDASI sudah
 dicocokkan satu per satu terhadap perhitungan independen di Python — termasuk
