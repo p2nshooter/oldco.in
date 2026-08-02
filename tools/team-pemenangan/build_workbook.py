@@ -25,6 +25,7 @@ jangan dipakai untuk berkas yang dibagikan.
 
 from __future__ import annotations
 
+import importlib.util
 import pathlib
 import sys
 
@@ -41,6 +42,19 @@ from openpyxl.workbook.defined_name import DefinedName
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.hyperlink import Hyperlink
 from openpyxl.worksheet.table import Table, TableStyleInfo
+
+
+def _muat_seed():
+    """Struktur pengurus dibaca dari berkas data awal aplikasi HTML supaya
+    kedua aplikasi memakai satu sumber yang sama."""
+    berkas = pathlib.Path(__file__).with_name("web") / "seed" / "anggota_jf3.py"
+    spec = importlib.util.spec_from_file_location("anggota_jf3", berkas)
+    modul = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modul)
+    return modul
+
+
+SEED = _muat_seed()
 
 # ---------------------------------------------------------------- konstanta
 
@@ -224,28 +238,26 @@ def page_print(ws, area=None, landscape=False, fit_width=1, titles=None,
 KAMPUNG_DEFAULT = ["Kp. Gamprit", "Kp. Kuda Kuda", "Kp. Wangkal",
                    "Kp. Tenjolaut", "Kp. Putri Melintang"]
 KADUS_DEFAULT = ["Kadus 1", "Kadus 2", "Kadus 3"]
-# struktur pengurus desa: (kadus, nama kadus, [(no RK, nama)], [(no RT, nama)])
+# Struktur pengurus desa:
+#   (kadus, nama kadus, [(no RW, nama)], [(no RT, nama, kampung, no RW)])
+# Nomor RT berulang di tiap kadus, sedangkan nomor RW 001-006 berlaku satu desa
+# — jadi nomor RW sudah cukup untuk menemukan ketuanya.
+#
+# Sumbernya satu: web/seed/anggota_jf3.py. Aplikasi Excel dan aplikasi HTML
+# membaca struktur yang sama persis, jadi keduanya tidak mungkin berbeda.
 PENGURUS_DEFAULT = [
-    ("Kadus 1", "", [("1", "Maska"), ("2", "Pasni")],
-     [("001", "Ikin Lois", "Kp. Tenjolaut"), ("002", "Sarjan", "Kp. Tenjolaut"),
-      ("003", "Basir", "Kp. Kuda Kuda"), ("004", "Onin", "Kp. Kuda Kuda"),
-      ("005", "Tongkat / Kahidir", "Kp. Kuda Kuda"),
-      ("006", "Sa ari", "Kp. Kuda Kuda")]),
-    ("Kadus 2", "", [("3", "Sutejo"), ("4", "Ilyas")],
-     [("001", "Dedi", "Kp. Gamprit"), ("002", "Rimun", "Kp. Gamprit"),
-      ("003", "Adi Ardiansyah", "Kp. Gamprit"), ("004", "Kusnadi", "Kp. Gamprit")]),
-    ("Kadus 3", "Markum", [("5", "Uding"), ("6", "Saiman")],
-     [("001", "Ropic", "Kp. Gamprit"), ("002", "", "Kp. Gamprit"),
-      ("003", "Wandy Suwandi", "Kp. Gamprit"), ("004", "Toyib", "Kp. Wangkal"),
-      ("005", "Nemuin", "Kp. Wangkal"), ("006", "Sumintra", "Kp. Gamprit")]),
+    (k["kadus"], k["nama"],
+     [(no, nm) for no, nm in k["rw"]],
+     [(no, nm, kp, rw) for no, nm, kp, rw in k["rt"]])
+    for k in SEED.PENGURUS
 ]
 NAMA_RT_DEFAULT = [r[1] for _, _, _, rt in PENGURUS_DEFAULT for r in rt if r[1]]
-NAMA_RK_DEFAULT = [n for _, _, rk, _ in PENGURUS_DEFAULT for _, n in rk if n]
+NAMA_RW_DEFAULT = [n for _, _, rw, _ in PENGURUS_DEFAULT for _, n in rw if n]
 RW_DEFAULT = [f"{i:03d}" for i in range(1, 9)]
 RT_DEFAULT = [f"{i:03d}" for i in range(1, 16)]
 JABATAN_DEFAULT = [
     "Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara", "Kadus",
-    "Ketua RK", "Ketua RT", "Koordinator Wilayah", "Koordinator Lapangan",
+    "Ketua RW", "Ketua RT", "Koordinator Wilayah", "Koordinator Lapangan",
     "Anggota", "Relawan",
 ]
 TPS_DEFAULT = [f"{i:02d}" for i in range(1, 21)]
@@ -286,7 +298,7 @@ def build_referensi(wb):
     hdr = [("B5", "DAFTAR KAMPUNG"), ("C5", "TARGET"), ("D5", "DAFTAR RT"),
            ("E5", "DAFTAR RW"), ("F5", "DAFTAR JABATAN"), ("H5", "DAFTAR TPS"),
            ("J5", "STATUS ANGGOTA"), ("L5", "KELOMPOK USIA"), ("M5", "USIA MIN"),
-           ("O5", "NAMA RT"), ("P5", "NAMA RK"), ("Q5", "NAMA KADUS")]
+           ("O5", "NAMA RT"), ("P5", "NAMA RW"), ("Q5", "NAMA KADUS")]
     for ref, text in hdr:
         put(ws, ref, text, f(10, True, WHITE), NAVY, CENTER, BOX)
 
@@ -303,7 +315,7 @@ def build_referensi(wb):
     isi("F", JABATAN_DEFAULT)
     isi("H", TPS_DEFAULT, numfmt="@")
     isi("O", NAMA_RT_DEFAULT)
-    isi("P", NAMA_RK_DEFAULT)
+    isi("P", NAMA_RW_DEFAULT)
     isi("Q", KADUS_DEFAULT)
     for i in range(REF_FIRST, REF_FIRST + 5):
         put(ws, f"J{i}", STATUS_DEFAULT[i - REF_FIRST] if i - REF_FIRST < 3 else None,
@@ -322,31 +334,35 @@ def build_referensi(wb):
         ws.merge_cells(f"C{row}:F{row}")
         put(ws, f"C{row}", value, f(10), INPUT, LEFT, BOX, unlock=True)
 
-    # --- struktur pengurus: acuan siapa RT/RK di kadus mana
-    put(ws, "B60", "STRUKTUR PENGURUS  •  ACUAN NAMA RT, RK, DAN KADUS",
+    # --- struktur pengurus: acuan siapa RT/RW di kadus mana
+    put(ws, "B60", "STRUKTUR PENGURUS  •  ACUAN NAMA RT, RW, DAN KADUS",
         f(10, True, WHITE), BLUE, LEFT)
     ws.merge_cells("B60:F60")
     baris = 61
-    for kadus, nama_kadus, rk_list, rt_list in PENGURUS_DEFAULT:
+    for kadus, nama_kadus, rw_list, rt_list in PENGURUS_DEFAULT:
         put(ws, f"B{baris}", kadus, f(10, True), GREY_BG, LEFT, BOX)
         put(ws, f"C{baris}", "Kadus", f(9, color="595959"), GREY_BG, LEFT, BOX)
         put(ws, f"D{baris}", nama_kadus or "(belum ada nama)",
             f(10, True) if nama_kadus else f(9, italic=True, color=RED),
             GREY_BG, LEFT, BOX)
         baris += 1
-        for no, nm in rk_list:
-            put(ws, f"C{baris}", "RK " + no, f(9), None, CENTER, BOX)
+        for no, nm in rw_list:
+            put(ws, f"C{baris}", "RW " + no, f(9), None, CENTER, BOX)
             put(ws, f"D{baris}", nm, f(10), None, LEFT, BOX)
             baris += 1
-        for no, nm, kp in rt_list:
+        for no, nm, kp, rw in rt_list:
             put(ws, f"C{baris}", "RT " + no, f(9), None, CENTER, BOX)
             put(ws, f"D{baris}", nm or "(belum ada nama)",
                 f(10) if nm else f(9, italic=True, color=RED), None, LEFT, BOX)
             put(ws, f"E{baris}", kp, f(9, color="595959"), None, LEFT, BOX)
+            put(ws, f"F{baris}", ("RW " + rw) if rw else "RW ?",
+                f(9, color="595959") if rw else f(9, italic=True, color=RED),
+                None, LEFT, BOX)
             baris += 1
         baris += 1
     put(ws, f"B{baris}", "Nomor RT berulang di tiap kadus dan Kampung Gamprit ada "
-        "di Kadus 2 maupun Kadus 3 — nama pengurusnyalah yang membedakan.",
+        "di Kadus 2 maupun Kadus 3 — nama pengurusnyalah yang membedakan. "
+        "Nomor RW 001-006 berlaku satu desa, jadi nomornya sudah menentukan ketuanya.",
         f(9, italic=True, color="595959"), align=LEFT)
 
     # --- catatan
@@ -380,7 +396,7 @@ def build_referensi(wb):
 DB_COLS = [
     ("NO", 6), ("NAMA LENGKAP", 28), ("NIK KTP (16 digit)", 20),
     ("NO. KK (16 digit)", 20), ("L/P", 6), ("KAMPUNG", 18), ("RT", 7),
-    ("RW", 7), ("ALAMAT", 26), ("NAMA RT", 14), ("NAMA RK", 14),
+    ("RW", 7), ("ALAMAT", 26), ("NAMA RT", 14), ("NAMA RW", 14),
     ("NAMA KADUS", 14), ("KORWIL", 24), ("JABATAN", 20), ("NO. HP", 15),
     ("TPS", 7), ("TGL LAHIR", 13), ("USIA", 7), ("KELOMPOK USIA", 18),
     ("STATUS", 11), ("TGL GABUNG", 13), ("PEREKRUT", 22), ("CATATAN", 30),
@@ -510,7 +526,7 @@ def build_database(wb):
     dv("=daftar_rt", ["G"])
     dv("=daftar_rw", ["H"])
     dv("=daftar_nama_rt", ["J"])
-    dv("=daftar_nama_rk", ["K"])
+    dv("=daftar_nama_rw", ["K"])
     dv("=daftar_kadus", ["L"])
     dv("=daftar_jabatan", ["N"])
     dv("=daftar_tps", ["P"])
@@ -1581,7 +1597,7 @@ PETUNJUK_ISI = [
     ("H", "E.  KOLOM PADA SHEET DATABASE"),
     ("T", "Identitas : NAMA LENGKAP, NIK KTP (16 digit), NO. KK (16 digit), L/P."),
     ("T", "Alamat    : KAMPUNG, RT, RW, ALAMAT (keterangan tambahan)."),
-    ("T", "Pengurus  : NAMA RT, NAMA RK, NAMA KADUS — lihat daftar di sheet PENGATURAN."),
+    ("T", "Pengurus  : NAMA RT, NAMA RW, NAMA KADUS — lihat daftar di sheet PENGATURAN."),
     ("T", "Lainnya   : TPS, JABATAN, NO. HP, TGL LAHIR, STATUS, TGL GABUNG, PEREKRUT."),
     ("T", "KORWIL, USIA, dan KELOMPOK USIA terisi otomatis — jangan diketik."),
     ("T", "NIK KTP milik perorangan dan tidak boleh kembar; NO. KK milik satu keluarga"),
@@ -1592,7 +1608,7 @@ PETUNJUK_ISI = [
     ("T", "Kampung Gamprit pun dipakai Kadus 2 dan Kadus 3 sekaligus."),
     ("T", "Karena itu nama pengurusnyalah yang membedakan satu RT dari RT lain."),
     ("T", "Daftar lengkapnya ada di sheet PENGATURAN, di bawah judul STRUKTUR PENGURUS,"),
-    ("T", "berisi kadus, ketua RK, ketua RT, dan kampung masing-masing."),
+    ("T", "berisi kadus, ketua RW, ketua RT, kampung, dan nomor RW masing-masing."),
     ("", ""),
     ("H", "G.  MENYIMPAN & CADANGAN"),
     ("T", "Tekan Ctrl+S setiap selesai menginput — seluruh sheet tersimpan sekaligus."),
@@ -1715,7 +1731,7 @@ def add_names(wb):
                      f"MAX(1,COUNTA(REFERENSI!$E${REF_FIRST}:$E${REF_LAST})),1)",
         "daftar_nama_rt": f"OFFSET(REFERENSI!$O${REF_FIRST},0,0,"
                           f"MAX(1,COUNTA(REFERENSI!$O${REF_FIRST}:$O${REF_LAST})),1)",
-        "daftar_nama_rk": f"OFFSET(REFERENSI!$P${REF_FIRST},0,0,"
+        "daftar_nama_rw": f"OFFSET(REFERENSI!$P${REF_FIRST},0,0,"
                           f"MAX(1,COUNTA(REFERENSI!$P${REF_FIRST}:$P${REF_LAST})),1)",
         "daftar_kadus": f"OFFSET(REFERENSI!$Q${REF_FIRST},0,0,"
                         f"MAX(1,COUNTA(REFERENSI!$Q${REF_FIRST}:$Q${REF_LAST})),1)",

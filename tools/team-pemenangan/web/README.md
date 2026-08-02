@@ -211,26 +211,44 @@ peramban mendukung, dan disimpan apa adanya bila tidak.
 
 Data induk kepengurusan diisi lebih dulu dan mengisi dropdown formulir:
 
-| Kadus | Ketua RK | Kampung | Ketua RT |
-|---|---|---|---|
-| Kadus 1 | 1 Maska, 2 Pasni | Kp. Tenjolaut | 001 Ikin Lois, 002 Sarjan |
-| | | Kp. Kuda Kuda | 003 Basir, 004 Onin, 005 Tongkat / Kahidir, 006 Sa ari |
-| Kadus 2 | 3 Sutejo, 4 Ilyas | Kp. Gamprit | 001 Dedi, 002 Rimun, 003 Adi Ardiansyah, 004 Kusnadi |
-| Kadus 3 — Markum | 5 Uding, 6 Saiman | Kp. Gamprit | 001 Ropic, 002 (belum ada), 003 Wandy Suwandi, 006 Sumintra |
-| | | Kp. Wangkal | 004 Toyib, 005 Nemuin |
+| Kadus | Ketua RW | Kampung | Ketua RT | RW |
+|---|---|---|---|---|
+| Kadus 1 | RW 001 Maska, RW 002 Pasni | Kp. Tenjolaut | 001 Ikin Lois, 002 Sarjan | belum diisi |
+| | | Kp. Kuda Kuda | 003 Basir, 004 Onin, 005 Tongket / Khidir, 006 Saari | belum diisi |
+| Kadus 2 | RW 003 Sutejo, RW 004 Ilyas | Kp. Gamprit | 001 Dedi, 002 Rimun, 003 Adi Ardiansyah, 004 Kusnadi | belum diisi |
+| Kadus 3 — Markum | RW 005 Uding, RW 006 Saiman | Kp. Gamprit | 001 Ropic, 002 (belum ada) | RW 005 |
+| | | Kp. Gamprit | 003 Wandy Suwandi | RW 006 |
+| | | Kp. Wangkal | 004 Nemin, 005 Toyib | RW 006 |
+| | | Kp. Gamprit | 006 Sumintra | RW 005 |
 
-**Hanya nama pengurus yang benar-benar membedakan satu RT dari RT lain.**
-Nomor RT berulang di tiap kadus — RT 001 ada di ketiganya — dan Kampung
-Gamprit dipakai Kadus 2 maupun Kadus 3. Karena itu dropdown Nama RT
-dikelompokkan per kadus memakai `optgroup` dengan label yang menyebut kampung,
-dan memilih nama RT otomatis mengisi **nomor RT, kampung, dan kadus** sekaligus.
+Dua nomor ini berperilaku berbeda, dan perbedaannya menentukan cara aplikasi
+mengisi kolom secara otomatis:
+
+- **Nomor RW berlaku satu desa.** RW 001 sampai RW 006 tidak mengulang per
+  kadus, jadi nomornya saja sudah cukup untuk menemukan ketuanya. Karena itu
+  memilih nomor RW langsung mengisi Nama RW, dan sebaliknya.
+- **Nomor RT berulang di tiap kadus.** RT 001 ada di ketiganya, dan Kampung
+  Gamprit dipakai Kadus 2 maupun Kadus 3 — **hanya nama pengurus yang
+  benar-benar membedakan satu RT dari RT lain.** Karena itu dropdown Nama RT
+  dikelompokkan per kadus memakai `optgroup` berlabel kampung, dan memilih
+  nama RT otomatis mengisi **nomor RT, nomor RW, kampung, dan kadus** sekaligus.
 
 Nomor pada struktur disamakan tiga digit (`003`, bukan `03`) supaya cocok
-dengan daftar RT; tanpa penyamaan ini pengisian otomatis gagal diam-diam.
+dengan daftar RT dan RW; tanpa penyamaan ini pengisian otomatis gagal
+diam-diam.
+
+Kolom **RW** pada tabel di atas adalah RW yang membawahi tiap RT. Untuk Kadus 3
+sudah ada datanya; Kadus 1 dan Kadus 2 belum disebutkan, jadi sengaja
+dikosongkan dan bisa diisi sendiri lewat **Pengaturan → Struktur Pengurus**
+(kotak pilihan RW di sebelah kanan tiap RT). Begitu diisi, pengisian otomatis
+langsung berlaku untuk kadus itu juga.
 
 Struktur bisa disunting di **Pengaturan → Struktur Pengurus**; daftar nama RT
-dan RK ikut diperbarui sendiri. Pada Excel, acuannya ada di sheet PENGATURAN
-mulai baris 60, lengkap dengan kolom kampung.
+dan RW ikut diperbarui sendiri. Pada Excel, acuannya ada di sheet PENGATURAN
+mulai baris 60, lengkap dengan kolom kampung dan nomor RW.
+
+Sumbernya satu berkas: `web/seed/anggota_jf3.py`. `build_workbook.py` membaca
+struktur dari sana juga, jadi aplikasi Excel dan HTML tidak mungkin berbeda.
 
 ### Penyelarasan ejaan
 
@@ -242,14 +260,21 @@ antaranya cocok kampung **dan** nomor RT-nya, jadi diselaraskan ke ejaan resmi
 |---|---|---|
 | Wandi (8 orang) | Wandy Suwandi | Kp. Gamprit, Kadus 3 RT 003 |
 | Ropik / Opic-Ropik (2) | Ropic | Kp. Gamprit, Kadus 3 RT 001 |
-| Nemin (1) | Nemuin | Kp. Wangkal, Kadus 3 RT 005 |
 
-**Engkus** (1 orang) dan **Niman** (RK) tidak ada di struktur resmi sehingga
-dibiarkan apa adanya; keduanya tetap muncul di dropdown pada kelompok
-"Belum ada di struktur pengurus".
+`Nemin` tidak lagi diselaraskan: sejak struktur terbaru, **Nemin** justru ejaan
+resminya, dan ia memegang **RT 004** (sebelumnya tercatat RT 005). **Toyib**
+pindah ke RT 005. Anggota yang RT-nya tertulis "RT nemin" ikut berpindah
+sendiri karena nomornya diturunkan dari struktur, bukan diketik.
 
-Struktur ini juga melengkapi data yang kosong: **20 anggota** mendapat kadus
-dan **4 anggota** mendapat kampung dari nama RT-nya.
+**Engkus** (1 orang) dan **Niman** (Ketua RW) tidak ada di struktur resmi
+sehingga dibiarkan apa adanya; keduanya tetap muncul di dropdown pada kelompok
+"Belum ada di struktur pengurus". Perlu diperiksa: Niman tercatat di RT 002 /
+RW 005 Kp. Gamprit, dan **RT 002 Kadus 3 memang satu-satunya RT yang namanya
+masih kosong** pada struktur — kemungkinan besar itu tempatnya.
+
+Struktur ini juga melengkapi data yang kosong: **39 dari 52 anggota** mendapat
+kadus, **42** mendapat kampung, dan **35** mendapat nama ketua RW tanpa
+diketik satu per satu.
 
 ## Struktur alamat
 
@@ -260,8 +285,8 @@ Mengikuti cara daftar aslinya ditulis:
 | KAMPUNG | Gamprit, Kuda Kuda, Wangkal, Tenjolaut, Putri Melintang | ada |
 | RT / RW | nomor — tampil menyatu di alamat, mis. `RT 004/002` | ada |
 | ALAMAT | keterangan tambahan (patokan) | — |
-| NAMA RT | Wandi, Basir, Onin, Ropik, Nemin, Engkus, Opic/Ropik | ada |
-| NAMA RK | Niman | ada |
+| NAMA RT | Wandy Suwandi, Basir, Onin, Ropic, Nemin, Engkus | ada |
+| NAMA RW | Maska, Pasni, Sutejo, Ilyas, Uding, Saiman, Niman | ada |
 | NAMA KADUS | Markum | ada |
 | NIK KTP / NO. KK | 16 digit, keduanya divalidasi | — |
 
@@ -275,3 +300,31 @@ CSS (`@page lebar`), sedangkan daftar hadir dan kartu tetap tegak. Lebar kolom
 selalu dijumlahkan tepat 100% supaya tidak ada sel yang terdorong keluar
 kertas. Orientasi diperiksa dari PDF hasil render: 842×595pt untuk yang
 melintang, 595×842pt untuk yang tegak.
+
+## NIK dan No. KK
+
+Dua aturan yang sering tertukar, dan sengaja dibedakan:
+
+| | NIK KTP | No. KK |
+|---|---|---|
+| Panjang | 16 digit, wajib | 16 digit bila diisi |
+| Boleh sama antar anggota | **tidak** | **ya** |
+| Alasan | satu orang satu NIK | satu keluarga satu KK — suami, istri, dan anak memakai nomor yang sama |
+
+Pemeriksaan berlapis: saat menyimpan formulir (`validasiForm`), saat impor
+CSV/JSON (baris ber-NIK kembar dilewati, bukan menimpa), pada daftar
+**Validasi Data** (`masalah()` → "NIK ganda"), dan — bila kelak pindah ke
+Supabase — oleh indeks unik `anggota_nik_unik` di dalam database itu sendiri.
+
+## Persiapan database daring
+
+Folder `../supabase` berisi bahan pindah ke database bersama bila suatu saat
+dibutuhkan: `schema.sql` (tabel, aturan, view, RLS), `seed.sql` (seluruh data
+sekarang), `klien-contoh.js` (CRUD memakai supabase-js), dan langkah pemasangan
+Supabase + GitHub + Vercel. **Belum dipakai** — aplikasi ini tetap offline
+sepenuhnya.
+
+Aplikasi juga bisa membuat berkas SQL itu sendiri kapan saja lewat
+**Data & Cadangan → Unduh SQL (Supabase)**. Keluarannya diuji byte-per-byte
+sama dengan `supabase/seed.sql` yang dihasilkan `build_sql.py`, jadi berapa
+lama pun tim bekerja offline lebih dulu, hasilnya tetap bisa diangkat utuh.

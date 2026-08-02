@@ -1201,10 +1201,10 @@ const DEFAULTS = {
     driveUrl: 'https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8'
   },
   kadus: ['Kadus 1', 'Kadus 2', 'Kadus 3'],
-  // struktur pengurus desa: tiap kadus punya daftar RK dan RT beserta namanya.
+  // struktur pengurus desa: tiap kadus punya daftar RW dan RT beserta namanya.
   // Nomor RT berulang di tiap kadus, jadi nama pengurusnya yang membedakan.
   pengurus: [],
-  namaRk: [],
+  namaRw: [],
   namaRt: [],
   kampung: ['Kp. Gamprit', 'Kp. Kuda Kuda', 'Kp. Wangkal', 'Kp. Tenjolaut',
     'Kp. Putri Melintang'],
@@ -1226,12 +1226,12 @@ const DEFAULTS = {
   ]
 };
 
-const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRk', 'namaRt',
+const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRw', 'namaRt',
   'kampung', 'rt', 'rw', 'alamat', 'tps', 'jabatan', 'hp', 'tglLahir',
   'status', 'tglGabung', 'perekrut', 'catatan'];
 
 /** Daftar pilihan yang bisa disunting di Pengaturan. */
-const LISTS = ['kadus', 'namaRk', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
+const LISTS = ['kadus', 'namaRw', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
   'jabatan', 'status'];
 
 /* ----------------------------------------------------------------- state */
@@ -1241,12 +1241,12 @@ let ui = {
   view: 'dasbor',
   theme: 'light',
   q: '',
-  f: { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
+  f: { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
   sort: { by: 'nama', dir: 1 },
   page: 1,
   perPage: 25,
   cetak: {
-    jenis: 'daftar', kadus: '', namaRk: '', namaRt: '', kampung: '',
+    jenis: 'daftar', kadus: '', namaRw: '', namaRt: '', kampung: '',
     rt: '', rw: '', tps: '', jabatan: '', status: ''
   },
   kartu: { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' }
@@ -1260,11 +1260,45 @@ function defaultSettings() {
   return s;
 }
 
+/** Data lama memakai istilah "RK". Sejak versi 3 istilahnya "RW": nomor RW
+ *  001-006 berlaku satu desa dan tiap RT sudah tahu berada di RW mana.
+ *  Cadangan lama tetap bisa dibuka — isinya dipindahkan di sini, sekali saja. */
+function naikkanVersi(d) {
+  if (!d || typeof d !== 'object') return d;
+  const s = d.settings;
+  if (s) {
+    if (s.namaRk && !s.namaRw) s.namaRw = s.namaRk;
+    delete s.namaRk;
+    (s.pengurus || []).forEach(k => {
+      if (k.rk && !k.rw) k.rw = k.rk;
+      delete k.rk;
+      // nomor RW lama ("1") disamakan dengan penulisan tiga digit ("001")
+      k.rw = (k.rw || []).map(r => [tigaDigit(r[0]), r[1] || '']);
+      // baris RT lama hanya (nomor, nama, kampung) — kolom nomor RW ditambahkan
+      k.rt = (k.rt || []).map(r => [r[0], r[1] || '', r[2] || '', r[3] || '']);
+    });
+  }
+  (d.members || []).forEach(m => {
+    if (m.namaRk !== undefined) {
+      if (!m.namaRw) m.namaRw = m.namaRk;
+      delete m.namaRk;
+    }
+    if (m.jabatan === 'Ketua RK') m.jabatan = 'Ketua RW';
+  });
+  d.v = 3;
+  return d;
+}
+
+function tigaDigit(no) {
+  const t = String(no || '').trim();
+  return /^\d+$/.test(t) ? t.padStart(3, '0') : t;
+}
+
 function load() {
   try {
     const raw = localStorage.getItem(KEY);
     if (raw) {
-      const d = JSON.parse(raw);
+      const d = naikkanVersi(JSON.parse(raw));
       state.members = Array.isArray(d.members) ? d.members : [];
       state.disimpan = d.disimpan || '';
       state.settings = Object.assign(defaultSettings(), d.settings || {});
@@ -1292,8 +1326,8 @@ function load() {
   try {
     const rawUi = localStorage.getItem(KEY_UI);
     if (rawUi) ui = Object.assign(ui, JSON.parse(rawUi));
-    if (!ui.f) ui.f = { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
-    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
+    if (!ui.f) ui.f = { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
+    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
     if (!ui.kartu) ui.kartu = { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' };
   } catch (e) { /* pengaturan tampilan boleh gagal tanpa mengganggu data */ }
 }
@@ -1331,7 +1365,7 @@ function korwil(m) {
 }
 
 /** Alamat utuh satu baris. RT/RW ikut menyatu di sini, sedangkan nama RT,
- *  RK, dan Kadus tetap berdiri sebagai kolom tersendiri. */
+ *  RW, dan Kadus tetap berdiri sebagai kolom tersendiri. */
 function wilayah(m) {
   const b = [];
   if (m.kampung) b.push(m.kampung);
@@ -1340,43 +1374,66 @@ function wilayah(m) {
   return b.join(' ');
 }
 
-/** Cari data kadus dan nomor RT dari nama ketua RT pada struktur pengurus. */
+/** Cari kadus, nomor RT, kampung, dan nomor RW dari nama ketua RT. */
 function cariRt(nama) {
   if (!nama) return null;
   for (const k of state.settings.pengurus || []) {
     for (const r of k.rt || []) {
       if (r[1] && r[1] === nama) {
-        return { kadus: k.kadus, no: samakanRt(r[0]), kampung: r[2] || '' };
+        return {
+          kadus: k.kadus, no: samakanRt(r[0]), kampung: r[2] || '',
+          rw: samakanNo(r[3], state.settings.rw)
+        };
       }
     }
   }
   return null;
 }
 
-/** Samakan penulisan nomor RT dengan yang ada di daftar RT (mis. 03 -> 003). */
-function samakanRt(no) {
+/** Samakan penulisan nomor dengan daftar acuan (mis. 03 -> 003). */
+function samakanNo(no, daftar) {
   if (!no) return '';
-  const daftar = state.settings.rt || [];
-  if (daftar.includes(no)) return no;
+  const d = daftar || [];
+  if (d.includes(no)) return no;
   const padat = String(no).replace(/^0+/, '');
-  return daftar.find(x => String(x).replace(/^0+/, '') === padat) || no;
+  return d.find(x => String(x).replace(/^0+/, '') === padat) || no;
 }
 
-function cariRk(nama) {
+function samakanRt(no) { return samakanNo(no, state.settings.rt); }
+
+/** Cari kadus dan nomor RW dari nama ketua RW. */
+function cariRw(nama) {
   if (!nama) return null;
   for (const k of state.settings.pengurus || []) {
-    for (const r of k.rk || []) {
-      if (r[1] && r[1] === nama) return { kadus: k.kadus, no: r[0] };
+    for (const r of k.rw || []) {
+      if (r[1] && r[1] === nama) {
+        return { kadus: k.kadus, no: samakanNo(r[0], state.settings.rw) };
+      }
     }
   }
   return null;
 }
 
-/** Baris kepengurusan: RT / RK / Kadus yang membawahi anggota tersebut. */
+/** Kebalikannya: nomor RW -> ketua RW dan kadusnya. Nomor RW berlaku satu
+ *  desa (001-006 tidak mengulang per kadus), jadi nomornya sudah cukup. */
+function rwDariNomor(no) {
+  if (!no) return null;
+  const padat = String(no).replace(/^0+/, '');
+  for (const k of state.settings.pengurus || []) {
+    for (const r of k.rw || []) {
+      if (r[1] && String(r[0]).replace(/^0+/, '') === padat) {
+        return { kadus: k.kadus, nama: r[1] };
+      }
+    }
+  }
+  return null;
+}
+
+/** Baris kepengurusan: RT / RW / Kadus yang membawahi anggota tersebut. */
 function pengurus(m) {
   const b = [];
   if (m.namaRt) b.push('RT ' + m.namaRt);
-  if (m.namaRk) b.push('RK ' + m.namaRk);
+  if (m.namaRw) b.push('RW ' + m.namaRw);
   if (m.kadus) b.push(m.kadus);   // nilainya sudah berbentuk "Kadus 3"
   return b.join(' • ');
 }
@@ -1431,7 +1488,7 @@ function hitungNik() {
 
 function cocok(m, f, q) {
   if (f.kadus && m.kadus !== f.kadus) return false;
-  if (f.namaRk && m.namaRk !== f.namaRk) return false;
+  if (f.namaRw && m.namaRw !== f.namaRw) return false;
   if (f.namaRt && m.namaRt !== f.namaRt) return false;
   if (f.kampung && m.kampung !== f.kampung) return false;
   if (f.rt && m.rt !== f.rt) return false;
@@ -1623,25 +1680,32 @@ function toast(msg, jenis, ms) {
 
 /* --------------------------------------------------------------- pilihan */
 
-function opts(list, sel, kosong) {
+function opts(list, sel, kosong, label) {
   let h = '<option value="">' + esc(kosong || '— semua —') + '</option>';
   for (const v of list) {
-    h += '<option value="' + esc(v) + '"' + (v === sel ? ' selected' : '') + '>' + esc(v) + '</option>';
+    h += '<option value="' + esc(v) + '"' + (v === sel ? ' selected' : '') + '>' +
+      esc(label ? label(v) : v) + '</option>';
   }
   return h;
 }
 
+/** Nomor RW ditampilkan sekalian nama ketuanya supaya tidak perlu menghafal. */
+function labelRw(no) {
+  const p = rwDariNomor(no);
+  return p ? 'RW ' + no + ' · ' + p.nama : 'RW ' + no;
+}
+
 function filterBar(f, prefix, extra) {
   const s = state.settings;
-  const sel = (k, list, kosong) =>
+  const sel = (k, list, kosong, label) =>
     '<select data-fk="' + k + '" data-fp="' + prefix + '">' +
-    opts(list, f[k], kosong) + '</select>';
+    opts(list, f[k], kosong, label) + '</select>';
   return '<div class="filters">' +
     sel('kampung', s.kampung, '— semua Kampung —') +
-    sel('rt', s.rt, '— semua RT —') +
-    sel('rw', s.rw, '— semua RW —') +
+    sel('rt', s.rt, '— semua RT —', v => 'RT ' + v) +
+    sel('rw', s.rw, '— semua RW —', labelRw) +
     (s.namaRt.length ? sel('namaRt', s.namaRt, '— semua Nama RT —') : '') +
-    (s.namaRk.length ? sel('namaRk', s.namaRk, '— semua Nama RK —') : '') +
+    (s.namaRw.length ? sel('namaRw', s.namaRw, '— semua Nama RW —') : '') +
     (s.kadus.length ? sel('kadus', s.kadus, '— semua Kadus —') : '') +
     sel('tps', s.tps, '— semua TPS —') +
     (extra === false ? '' :
@@ -1656,8 +1720,8 @@ function labelFilter(f) {
   if (f.kampung) b.push(f.kampung);
   if (f.rt) b.push('RT ' + f.rt + (f.rw ? '/' + f.rw : ''));
   else if (f.rw) b.push('RW ' + f.rw);
-  if (f.namaRt) b.push('RT ' + f.namaRt);
-  if (f.namaRk) b.push('RK ' + f.namaRk);
+  if (f.namaRt) b.push('Ketua RT ' + f.namaRt);
+  if (f.namaRw) b.push('Ketua RW ' + f.namaRw);
   if (f.kadus) b.push('Kadus ' + f.kadus);
   if (f.tps) b.push('TPS ' + f.tps);
   if (f.jabatan) b.push(f.jabatan);
@@ -1803,7 +1867,7 @@ function viewData() {
   h += '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
     '<th style="width:44px">#</th>' + th('Nama', 'nama') + th('NIK', 'nik') +
     '<th>No. KK</th><th>L/P</th>' + th('Alamat', 'korwil') +
-    '<th>Nama RT</th><th>Nama RK</th><th>Kadus</th><th>TPS</th>' +
+    '<th>Nama RT</th><th>Nama RW</th><th>Kadus</th><th>TPS</th>' +
     th('Jabatan', 'jabatan') +
     '<th>No. HP</th>' + th('Usia', 'usia', 'num') + th('Status', 'status') +
     '<th style="width:86px">Aksi</th></tr></thead><tbody>';
@@ -1821,7 +1885,7 @@ function viewData() {
       '<td>' + esc(m.jk || '—') + '</td>' +
       '<td style="white-space:normal;min-width:190px">' + esc(wilayah(m) || '—') + '</td>' +
       '<td>' + esc(m.namaRt || '—') + '</td>' +
-      '<td>' + esc(m.namaRk || '—') + '</td>' +
+      '<td>' + esc(m.namaRw || '—') + '</td>' +
       '<td>' + esc(m.kadus || '—') + '</td>' +
       '<td>' + esc(m.tps || '—') + '</td>' +
       '<td>' + esc(m.jabatan || '—') + '</td>' +
@@ -2584,6 +2648,7 @@ function pakaiPaket(d) {
 /** Terapkan database bawaan paket, tanpa pernah menimpa data diam-diam. */
 function terapkanBawaan(d) {
   if (!d || !Array.isArray(d.members) || !d.members.length) return;
+  d = naikkanVersi(d);
 
   if (!state.members.length) {
     pakaiPaket(d);
@@ -2630,6 +2695,205 @@ function terapkanBawaan(d) {
     toast('Ditambahkan ' + num(tambahJml) + ' anggota' +
       (lewat ? ', ' + num(lewat) + ' dilewati karena NIK sudah ada.' : '.'));
   });
+}
+
+/* ------------------------------------------------- ekspor SQL (Supabase)
+
+   Persiapan pindah ke database daring. Aplikasi ini tetap dipakai offline;
+   begitu tim siap, seluruh isinya dituangkan menjadi satu berkas SQL yang
+   tinggal ditempel ke SQL Editor Supabase — tanpa mengetik ulang apa pun.
+
+   Keluarannya sengaja dibuat sama persis dengan supabase/build_sql.py,
+   supaya dua jalur itu tidak pernah menghasilkan bentuk yang berbeda. */
+
+const TIM_ID = '8f6d1c3a-4b2e-4f10-9a77-1c0d5e9b7a21';
+const KODE_TIM = 'jf3-sukakarya';
+
+/** Nilai menjadi literal SQL yang aman. */
+function sq(v) {
+  if (v === null || v === undefined) return 'null';
+  if (typeof v === 'number') return String(v);
+  return "'" + String(v).replace(/'/g, "''") + "'";
+}
+
+function sqlTgl(v) { return v ? sq(v) + '::date' : 'null'; }
+
+function buatSql() {
+  const s = state.settings;
+  const id = s.identitas || {};
+  const png = s.pengurus || [];
+  const kampung = s.kampung || [];
+  const target = s.target || {};
+  const ms = state.members;
+  const b = [];
+  const w = x => b.push(x);
+  const T = sq(TIM_ID);
+
+  w('-- ===================================================================');
+  w('--  Data awal Team Pemenangan — dihasilkan dari database.json');
+  w('--  Jalankan setelah schema.sql. Aman dijalankan berulang kali.');
+  w('-- ===================================================================');
+  w('');
+  w('begin;');
+  w('');
+
+  const kolom = ['id', 'kode', 'calon', 'team', 'periode', 'tahun', 'desa',
+    'kecamatan', 'kabupaten', 'ketua', 'jabatan_ttd', 'motto', 'drive_url'];
+  const nilai = [T, sq(KODE_TIM), sq(id.calon || ''), sq(id.team || ''),
+    sq(id.periode || ''), sq(id.tahun || ''), sq(id.desa || ''),
+    sq(id.kecamatan || ''), sq(id.kabupaten || ''), sq(id.ketua || ''),
+    sq(id.jabatanTtd || ''), sq(id.motto || ''), sq(id.driveUrl || '')];
+  w('-- identitas team ---------------------------------------------------');
+  w('insert into public.tim (' + kolom.join(', ') + ')');
+  w('values (' + nilai.join(', ') + ')');
+  w('on conflict (id) do update set');
+  w(kolom.slice(1).map(k => '  ' + k + ' = excluded.' + k).join(',\n') + ';');
+  w('');
+
+  w('-- kampung dan targetnya --------------------------------------------');
+  w('insert into public.kampung (tim_id, nama, target, urutan) values');
+  w(kampung.map((k, i) =>
+    '  (' + T + ', ' + sq(k) + ', ' + (Number(target[k]) || 0) + ', ' + i + ')')
+    .join(',\n'));
+  w('on conflict (tim_id, nama) do update set');
+  w('  target = excluded.target, urutan = excluded.urutan;');
+  w('');
+
+  w('-- kadus --------------------------------------------------------------');
+  w('insert into public.kadus (tim_id, nama, nama_ketua, urutan) values');
+  w(png.map((k, i) =>
+    '  (' + T + ', ' + sq(k.kadus) + ', ' + sq(k.nama || '') + ', ' + i + ')')
+    .join(',\n'));
+  w('on conflict (tim_id, nama) do update set nama_ketua = excluded.nama_ketua;');
+  w('');
+
+  let baris = [];
+  png.forEach(k => (k.rw || []).forEach(r => {
+    baris.push('  (' + T + ', ' + sq(r[0]) + ', ' + sq(r[1] || '') +
+      ', (select id from public.kadus where tim_id = ' + T +
+      ' and nama = ' + sq(k.kadus) + '))');
+  }));
+  w('-- ketua RW — nomor RW berlaku satu desa, jadi unik per tim ----------');
+  if (baris.length) {
+    w('insert into public.rw (tim_id, nomor, nama_ketua, kadus_id) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, nomor) do update set');
+    w('  nama_ketua = excluded.nama_ketua, kadus_id = excluded.kadus_id;');
+    w('');
+  }
+
+  baris = [];
+  png.forEach(k => (k.rt || []).forEach(r => {
+    baris.push('  (' + T + ', (select id from public.kadus where tim_id = ' + T +
+      ' and nama = ' + sq(k.kadus) + '), ' + sq(r[0]) + ', ' + sq(r[1] || '') +
+      ', (select id from public.kampung where tim_id = ' + T +
+      ' and nama = ' + sq(r[2] || '') + ')' +
+      ', (select id from public.rw where tim_id = ' + T +
+      ' and nomor = ' + sq(r[3] || '') + '))');
+  }));
+  w('-- ketua RT — nomor RT berulang per kadus, keunikannya per kadus -----');
+  if (baris.length) {
+    w('insert into public.rt (tim_id, kadus_id, nomor, nama_ketua, kampung_id, rw_id) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, kadus_id, nomor) do update set');
+    w('  nama_ketua = excluded.nama_ketua,');
+    w('  kampung_id = excluded.kampung_id,');
+    w('  rw_id      = excluded.rw_id;');
+    w('');
+  }
+
+  baris = [];
+  ['tps', 'jabatan', 'status', 'rt', 'rw'].forEach(jenis => {
+    (s[jenis] || []).forEach((v, i) => {
+      baris.push('  (' + T + ', ' + sq(jenis) + ', ' + sq(v) + ', ' + i + ')');
+    });
+  });
+  w('-- isi dropdown -------------------------------------------------------');
+  if (baris.length) {
+    w('insert into public.daftar_pilihan (tim_id, jenis, nilai, urutan) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, jenis, nilai) do update set urutan = excluded.urutan;');
+    w('');
+  }
+
+  const ku = s.kelompokUsia || [];
+  if (ku.length) {
+    w('insert into public.kelompok_usia (tim_id, label, usia_min) values');
+    w(ku.map(g => '  (' + T + ', ' + sq(g.label) + ', ' + Number(g.min) + ')')
+      .join(',\n'));
+    w('on conflict (tim_id, label) do update set usia_min = excluded.usia_min;');
+    w('');
+  }
+
+  w('-- anggota ------------------------------------------------------------');
+  w('-- Tabel sementara menampung baris apa adanya; penyambungan ke tabel');
+  w('-- wilayah dikerjakan sesudahnya supaya nama yang belum terdaftar di');
+  w('-- struktur pengurus tidak menggagalkan impor.');
+  w('create temporary table _impor (');
+  w('  nama text, nik text, kk text, jk text, kampung text, kadus text,');
+  w('  rt_nomor text, rw_nomor text, nama_rt text, nama_rw text,');
+  w('  alamat text, tps text, jabatan text, hp text, tgl_lahir date,');
+  w('  status text, tgl_gabung date, perekrut text, catatan text');
+  w(') on commit drop;');
+  w('');
+
+  if (ms.length) {
+    w('insert into _impor values');
+    w(ms.map(m => '  (' + [
+      sq(m.nama || ''), sq(m.nik || ''), sq(m.kk || ''), sq(m.jk || ''),
+      sq(m.kampung || ''), sq(m.kadus || ''), sq(m.rt || ''), sq(m.rw || ''),
+      sq(m.namaRt || ''), sq(m.namaRw || ''), sq(m.alamat || ''), sq(m.tps || ''),
+      sq(m.jabatan || 'Anggota'), sq(m.hp || ''), sqlTgl(m.tglLahir || ''),
+      sq(m.status || 'Aktif'), sqlTgl(m.tglGabung || ''), sq(m.perekrut || ''),
+      sq(m.catatan || '')
+    ].join(', ') + ')').join(',\n') + ';');
+    w('');
+  }
+
+  w('insert into public.anggota (');
+  w('  tim_id, nama, nik, kk, jk, kampung_id, kadus_id, rw_id, rt_id,');
+  w('  rt_nomor, rw_nomor, alamat, tps, jabatan, hp, tgl_lahir, status,');
+  w('  tgl_gabung, perekrut, catatan)');
+  w('select');
+  w('  ' + T + ', i.nama, i.nik, i.kk, i.jk,');
+  w('  kp.id, kd.id, rw.id, rt.id,');
+  w('  i.rt_nomor, i.rw_nomor, i.alamat, i.tps, i.jabatan, i.hp,');
+  w('  i.tgl_lahir, i.status, i.tgl_gabung, i.perekrut, i.catatan');
+  w('from _impor i');
+  w('left join public.kampung kp on kp.tim_id = ' + T + ' and kp.nama = i.kampung');
+  w('left join public.kadus   kd on kd.tim_id = ' + T + ' and kd.nama = i.kadus');
+  w('left join public.rw      rw on rw.tim_id = ' + T + ' and rw.nomor = i.rw_nomor');
+  w('left join public.rt      rt on rt.tim_id = ' + T);
+  w('                            and rt.kadus_id = kd.id and rt.nomor = i.rt_nomor');
+  w('-- NIK adalah kunci sesungguhnya, tetapi sebagian anggota memang belum');
+  w('-- punya NIK. Selama itu, pasangan nama + catatan asli dipakai sebagai');
+  w('-- pengenal sementara supaya menjalankan ulang berkas ini tidak');
+  w('-- menggandakan barisnya.');
+  w('where not exists (');
+  w('  select 1 from public.anggota a');
+  w('   where a.tim_id = ' + T);
+  w("     and ((i.nik <> '' and a.nik = i.nik)");
+  w("       or (i.nik  = '' and a.nik = '' and a.nama = i.nama");
+  w('           and a.catatan = i.catatan)));');
+  w('');
+  w('-- baris yang sudah ada: diperbarui, bukan digandakan');
+  w('update public.anggota a set');
+  w('  nama = i.nama, kk = i.kk, jk = i.jk,');
+  w('  rt_nomor = i.rt_nomor, rw_nomor = i.rw_nomor, alamat = i.alamat,');
+  w('  tps = i.tps, jabatan = i.jabatan, hp = i.hp, tgl_lahir = i.tgl_lahir,');
+  w('  status = i.status, tgl_gabung = i.tgl_gabung, perekrut = i.perekrut,');
+  w('  catatan = i.catatan');
+  w('from _impor i');
+  w('where a.tim_id = ' + T + " and i.nik <> '' and a.nik = i.nik;");
+  w('');
+  w('commit;');
+  w('');
+  const nRw = png.reduce((a, k) => a + (k.rw || []).length, 0);
+  const nRt = png.reduce((a, k) => a + (k.rt || []).length, 0);
+  w('-- ringkas: ' + ms.length + ' anggota, ' + kampung.length + ' kampung, ' +
+    png.length + ' kadus,');
+  w('--          ' + nRw + ' RW, ' + nRt + ' RT');
+  return b.join('\n') + '\n';
 }
 
 /* ==========================================================================
@@ -2695,17 +2959,22 @@ function viewPengaturan() {
   return h;
 }
 
-/** Struktur pengurus: kadus, ketua RK, dan ketua RT beserta namanya.
- *  Inilah sumber isi dropdown Nama RT dan Nama RK pada formulir anggota. */
+/** Struktur pengurus: kadus, ketua RW, dan ketua RT beserta namanya.
+ *  Inilah sumber isi dropdown Nama RT dan Nama RW pada formulir anggota. */
 function viewPengurus() {
   const list = state.settings.pengurus || [];
-  let h = '<div class="sec-title">Struktur Pengurus — Kadus, RK, dan RT</div>' +
+  let h = '<div class="sec-title">Struktur Pengurus — Kadus, RW, dan RT</div>' +
     '<div class="card"><div class="card-b">' +
     '<p class="mini-note" style="margin-bottom:12px">Daftar ini mengisi dropdown ' +
-    '<b>Nama RT</b> dan <b>Nama RK</b> pada formulir anggota. Memilih nama RT ' +
-    'otomatis mengisi nomor RT, kampung, dan kadusnya. Nomor RT berulang di ' +
+    '<b>Nama RT</b> dan <b>Nama RW</b> pada formulir anggota. Memilih nama RT ' +
+    'otomatis mengisi nomor RT, RW, kampung, dan kadusnya. Nomor RT berulang di ' +
     'tiap kadus dan Kampung Gamprit ada di Kadus 2 maupun Kadus 3 — jadi hanya ' +
-    'nama pengurusnya yang benar-benar membedakan.</p>';
+    'nama pengurusnya yang benar-benar membedakan. Nomor RW sebaliknya: ' +
+    '001 s/d 006 berlaku satu desa, jadi nomornya sudah cukup untuk menemukan ketuanya.</p>' +
+    '<div class="tip blue">' + ICON.bulb +
+    '<div>Kolom <b>RW</b> di sebelah kanan tiap RT menentukan RW mana yang ' +
+    'membawahi RT itu. Begitu diisi, memilih nama RT pada formulir anggota ' +
+    'langsung mengisi nomor RW dan nama ketua RW-nya sekaligus.</div></div>';
 
   if (!list.length) {
     h += '<p class="mini-note">Belum ada struktur pengurus.</p></div></div>';
@@ -2722,24 +2991,41 @@ function viewPengurus() {
       '<label>Nama Kadus</label>' +
       '<input type="text" data-png="' + ik + '" data-pf="nama" value="' +
       esc(k.nama || '') + '" placeholder="nama kadus"></div>';
-    [['rk', 'Ketua RK'], ['rt', 'Ketua RT']].forEach(([jenis, judul]) => {
+    [['rw', 'Ketua RW'], ['rt', 'Ketua RT']].forEach(([jenis, judul]) => {
       h += '<div class="mini-note" style="margin:10px 0 6px;font-weight:700">' +
         esc(judul) + '</div>';
       (k[jenis] || []).forEach((r, ir) => {
         h += '<div class="flex" style="gap:8px;margin-bottom:5px">' +
           '<span class="chip" style="min-width:62px;justify-content:center">' +
-          esc((jenis === 'rt' ? 'RT ' : 'RK ') + r[0]) + '</span>' +
+          esc((jenis === 'rt' ? 'RT ' : 'RW ') + r[0]) + '</span>' +
           '<input type="text" data-png="' + ik + '" data-pj="' + jenis +
           '" data-pi="' + ir + '" value="' + esc(r[1] || '') +
           '" placeholder="belum ada nama" style="flex:1">' +
           (jenis === 'rt'
-            ? '<span class="mini-note" style="min-width:104px">' +
-              esc(r[2] || '—') + '</span>' : '') + '</div>';
+            ? '<span class="mini-note" style="min-width:96px">' + esc(r[2] || '—') + '</span>' +
+              '<select data-png="' + ik + '" data-pj="rt" data-pi="' + ir +
+              '" data-prw="1" style="width:88px" title="RW yang membawahi RT ini">' +
+              optRw(r[3] || '') + '</select>'
+            : '') + '</div>';
       });
     });
     h += '</div></div>';
   });
   return h + '</div></div></div>';
+}
+
+/** Pilihan nomor RW lengkap dengan nama ketuanya. */
+function optRw(terpilih) {
+  let h = '<option value="">RW —</option>';
+  (state.settings.rw || []).forEach(no => {
+    const p = rwDariNomor(no);
+    h += '<option value="' + esc(no) + '"' + (no === terpilih ? ' selected' : '') +
+      '>RW ' + esc(no) + (p ? ' · ' + esc(p.nama) : '') + '</option>';
+  });
+  if (terpilih && !(state.settings.rw || []).includes(terpilih)) {
+    h += '<option value="' + esc(terpilih) + '" selected>RW ' + esc(terpilih) + '</option>';
+  }
+  return h;
 }
 
 /* -------------------------------------------------------- cadangan/drive */
@@ -2781,6 +3067,28 @@ function viewDataIo() {
     '<div class="hr"></div>' +
     '<div class="mini-note">Tersimpan sekarang: <b>' + num(r.total) + '</b> anggota</div>' +
     '<button class="btn btn-red btn-sm" id="btnReset" style="margin-top:10px">Hapus semua data</button>' +
+    '</div></div>';
+
+  h += '<div class="card"><div class="card-h"><h3>Persiapan database daring</h3>' +
+    '<div class="grow"></div><span class="chip">untuk nanti</span></div><div class="card-b">' +
+    '<p class="mini-note">Aplikasi ini tetap bekerja penuh tanpa internet. Tetapi bila suatu ' +
+    'saat tim ingin pindah ke database bersama — beberapa orang menginput dari HP masing-masing, ' +
+    'data langsung menyatu — jalannya sudah disiapkan: <b>Supabase</b> untuk databasenya, ' +
+    '<b>GitHub</b> untuk kodenya, <b>Vercel</b> untuk alamat webnya.</p>' +
+    '<div class="tip blue" style="margin-top:12px">' + ICON.bulb +
+    '<div>Tombol di bawah menuangkan <b>seluruh isi aplikasi ini</b> menjadi satu berkas SQL: ' +
+    'identitas team, kampung, struktur pengurus, isi dropdown, dan semua anggota. ' +
+    'Berkas itu tinggal ditempel ke SQL Editor Supabase — tidak ada yang perlu diketik ulang.</div></div>' +
+    '<div class="flex" style="margin-top:12px">' +
+    '<button class="btn" id="btnSql">Unduh SQL (Supabase)</button>' +
+    '<span class="mini-note">' + num(r.total) + ' anggota + seluruh pengaturan</span>' +
+    '</div>' +
+    '<div class="hr"></div>' +
+    '<p class="mini-note">Aturan yang sudah ikut terbawa ke database daring: <b>NIK KTP tidak ' +
+    'boleh sama</b> (ditolak oleh database itu sendiri, bukan hanya oleh aplikasi), sedangkan ' +
+    '<b>No. KK boleh sama</b> karena satu keluarga memang memakai satu nomor KK. ' +
+    'Berkas <span class="kbd">supabase/schema.sql</span> dan langkah lengkapnya ada di ' +
+    'folder <span class="kbd">supabase</span> pada paket ini.</p>' +
     '</div></div>';
 
   h += '<div class="card"><div class="card-h"><h3>Google Drive</h3></div><div class="card-b">' +
@@ -2836,7 +3144,7 @@ function exportJson() {
 }
 
 const CSV_KOLOM = ['nama', 'nik', 'kk', 'jk', 'kampung', 'rt', 'rw', 'alamat',
-  'namaRt', 'namaRk', 'kadus', 'tps', 'jabatan', 'hp', 'tglLahir', 'status',
+  'namaRt', 'namaRw', 'kadus', 'tps', 'jabatan', 'hp', 'tglLahir', 'status',
   'tglGabung', 'perekrut', 'catatan'];
 
 function csvCell(v) {
@@ -2880,7 +3188,7 @@ function importFile(file, gabung) {
       let masuk = [];
       let setelan = null;
       if (/\.json$/i.test(file.name) || teks.trim().startsWith('{')) {
-        const d = JSON.parse(teks);
+        const d = naikkanVersi(JSON.parse(teks));
         masuk = Array.isArray(d.members) ? d.members : (Array.isArray(d) ? d : []);
         if (d.settings) setelan = d.settings;
       } else {
@@ -2891,7 +3199,9 @@ function importFile(file, gabung) {
           'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
           'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
           'nik ktp': 'nik', 'no. kk': 'kk', 'no kk': 'kk',
-          'nama rt': 'namaRt', 'nama rk': 'namaRk', 'nama kadus': 'kadus',
+          'nama rt': 'namaRt', 'nama rw': 'namaRw', 'nama kadus': 'kadus',
+          // cadangan lama masih memakai istilah RK
+          'nama rk': 'namaRw', 'namark': 'namaRw',
           'tgl gabung': 'tglGabung', 'kelompok usia': null, 'usia': null,
           'korwil': null, 'no': null, 'key': null
         };
@@ -2958,13 +3268,15 @@ function viewPetunjuk() {
 
   h += '<div class="sec-title">Empat langkah, selesai</div><div class="steps">' +
     '<div class="step"><div><h4>Periksa struktur pengurus</h4><p>Buka <b>Pengaturan</b>. ' +
-    'Di sana sudah ada <b>Struktur Pengurus</b>: 3 kadus, 6 ketua RK, dan 16 ketua RT ' +
-    'lengkap dengan kampungnya. Lengkapi nama yang masih kosong, lalu isi target ' +
-    'anggota tiap kampung.</p></div></div>' +
+    'Di sana sudah ada <b>Struktur Pengurus</b>: 3 kadus, 6 ketua RW, dan 15 ketua RT ' +
+    'lengkap dengan kampungnya. Lengkapi nama yang masih kosong, tentukan RW yang ' +
+    'membawahi tiap RT, lalu isi target anggota tiap kampung.</p></div></div>' +
     '<div class="step"><div><h4>Masukkan anggota</h4><p>Buka <b>Data Anggota</b> lalu tekan ' +
-    '<b>Tambah</b>. Cukup pilih <b>Nama RT</b> — nomor RT, kampung, dan kadus terisi ' +
-    'sendiri. NIK KTP dan No. KK diperiksa harus 16 angka dan NIK tidak boleh kembar. ' +
-    'Usia serta kelompok usia dihitung otomatis dari tanggal lahir.</p></div></div>' +
+    '<b>Tambah</b>. Cukup pilih <b>Nama RT</b> — nomor RT, nomor RW, nama ketua RW, ' +
+    'kampung, dan kadus terisi sendiri. NIK KTP dan No. KK diperiksa harus 16 angka; ' +
+    '<b>NIK tidak boleh sama</b>, sedangkan <b>No. KK boleh sama</b> karena satu ' +
+    'keluarga memang memakai satu nomor KK. Usia dan kelompok usia dihitung otomatis ' +
+    'dari tanggal lahir.</p></div></div>' +
     '<div class="step"><div><h4>Rapikan lewat Validasi</h4><p>Buka <b>Validasi Data</b>. ' +
     'Semua baris yang bermasalah muncul di sana lengkap dengan sebabnya — tekan ' +
     '<b>Perbaiki</b> untuk langsung menyuntingnya.</p></div></div>' +
@@ -2980,7 +3292,7 @@ function viewPetunjuk() {
     '<tr><td>Per RT</td><td>pilih <b>RT</b> saja</td></tr>' +
     '<tr><td>Per korwil</td><td>pilih <b>Kampung</b> + <b>RT</b></td></tr>' +
     '<tr><td>Per wilayah RT tertentu</td><td>pilih <b>Nama RT</b></td></tr>' +
-    '<tr><td>Per RK atau per kadus</td><td>pilih <b>Nama RK</b> atau <b>Kadus</b></td></tr>' +
+    '<tr><td>Per RW atau per kadus</td><td>pilih <b>Nama RW</b> atau <b>Kadus</b></td></tr>' +
     '<tr><td>Per TPS</td><td>pilih <b>TPS</b> saja</td></tr>' +
     '<tr><td>Per jabatan / status</td><td>pilih jabatan atau status</td></tr>' +
     '</tbody></table></div></div>' +
@@ -3084,12 +3396,13 @@ function formAnggota(id) {
 
     '<div class="field" data-f="kampung"><label>Kampung</label><select name="kampung">' + sel(s.kampung, 'kampung') + '</select></div>' +
     '<div class="field" data-f="rt"><label>RT</label><select name="rt">' + sel(s.rt, 'rt') + '</select></div>' +
-    '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + sel(s.rw, 'rw') + '</select></div>' +
+    '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + optRw(m ? m.rw : '') + '</select></div>' +
     '<div class="field" data-f="namaRt"><label>Nama RT</label>' +
     '<select name="namaRt">' + optPengurus('rt', m ? m.namaRt : '') + '</select>' +
-    '<span class="hint">Memilih nama RT otomatis mengisi nomor RT, Kampung, dan Kadus.</span></div>' +
-    '<div class="field" data-f="namaRk"><label>Nama RK</label>' +
-    '<select name="namaRk">' + optPengurus('rk', m ? m.namaRk : '') + '</select></div>' +
+    '<span class="hint">Memilih nama RT otomatis mengisi nomor RT, RW, Kampung, dan Kadus.</span></div>' +
+    '<div class="field" data-f="namaRw"><label>Nama RW</label>' +
+    '<select name="namaRw">' + optPengurus('rw', m ? m.namaRw : '') + '</select>' +
+    '<span class="hint">Terisi sendiri dari nomor RW — nomor RW berlaku satu desa.</span></div>' +
     '<div class="field" data-f="kadus"><label>Kadus</label>' +
     '<select name="kadus">' + sel(s.kadus, 'kadus') + '</select></div>' +
     '<div class="field" data-f="tps"><label>TPS</label><select name="tps">' + sel(s.tps, 'tps') + '</select></div>' +
@@ -3128,7 +3441,7 @@ function formAnggota(id) {
     '</div>';
 }
 
-/** Pilihan nama RT / RK dikelompokkan per kadus memakai optgroup. */
+/** Pilihan nama RT / RW dikelompokkan per kadus memakai optgroup. */
 function optPengurus(jenis, terpilih) {
   let h = '<option value="">— pilih —</option>';
   (state.settings.pengurus || []).forEach(k => {
@@ -3136,7 +3449,7 @@ function optPengurus(jenis, terpilih) {
     if (!isi.length) return;
     h += '<optgroup label="' + esc(k.kadus + (k.nama ? ' — ' + k.nama : '')) + '">';
     isi.forEach(r => {
-      const label = (jenis === 'rt' ? 'RT ' : 'RK ') + r[0] + ' — ' + r[1] +
+      const label = (jenis === 'rt' ? 'RT ' : 'RW ') + r[0] + ' — ' + r[1] +
         (jenis === 'rt' && r[2] ? '  ·  ' + r[2] : '');
       h += '<option value="' + esc(r[1]) + '"' +
         (r[1] === terpilih ? ' selected' : '') + '>' + esc(label) + '</option>';
@@ -3356,18 +3669,30 @@ function bukaForm(id) {
   ['kampung', 'rt', 'rw', 'alamat'].forEach(k =>
     form[k].addEventListener('change', perbaruiKorwil));
   form.alamat.addEventListener('input', perbaruiKorwil);
-  // memilih nama RT/RK langsung mengisi nomor RT dan kadusnya
+  // nomor RW menentukan ketua RW-nya, dan sebaliknya — keduanya saling mengisi
+  const isiDariRw = () => {
+    const p = rwDariNomor(form.rw.value);
+    if (!p) return;
+    form.namaRw.value = p.nama;
+    if (!form.kadus.value) form.kadus.value = p.kadus;
+  };
+  // memilih nama RT langsung mengisi nomor RT, RW, kampung, dan kadusnya
   form.namaRt.addEventListener('change', () => {
     const info = cariRt(form.namaRt.value);
     if (!info) return;
     form.rt.value = info.no;
     form.kadus.value = info.kadus;
     if (info.kampung) form.kampung.value = info.kampung;
+    if (info.rw) { form.rw.value = info.rw; isiDariRw(); }
     perbaruiKorwil();
   });
-  form.namaRk.addEventListener('change', () => {
-    const info = cariRk(form.namaRk.value);
-    if (info && !form.kadus.value) form.kadus.value = info.kadus;
+  form.rw.addEventListener('change', isiDariRw);
+  form.namaRw.addEventListener('change', () => {
+    const info = cariRw(form.namaRw.value);
+    if (!info) return;
+    if (info.no) form.rw.value = info.no;
+    if (!form.kadus.value) form.kadus.value = info.kadus;
+    perbaruiKorwil();
   });
   form.tglLahir.addEventListener('change', () => {
     const u = usia({ tglLahir: form.tglLahir.value });
@@ -3453,6 +3778,12 @@ function onKlik(e) {
   if (t.closest('#btnCsv')) { exportCsv(urut(saring(), ui.sort.by, ui.sort.dir)); return; }
   if (t.closest('#btnExport')) { exportJson(); return; }
   if (t.closest('#btnExportCsv')) { exportCsv(); return; }
+  if (t.closest('#btnSql')) {
+    unduh('team-pemenangan-' + stamp() + '.sql', buatSql(), 'application/sql;charset=utf-8');
+    toast('Berkas SQL terunduh — tempel ke SQL Editor Supabase setelah schema.sql.',
+      'info', 6000);
+    return;
+  }
   if (t.closest('#btnReset')) {
     konfirmasi('Hapus semua data?',
       'Seluruh <b>' + num(state.members.length) + ' anggota</b> akan dihapus dari perangkat ini. ' +
@@ -3507,6 +3838,27 @@ function tambahDaftar(kunci) {
   toast('"' + v + '" ditambahkan.');
 }
 
+/** Menyunting satu sel struktur pengurus. Mengembalikan true bila elemennya
+ *  memang bagian dari struktur, supaya penanganan lain berhenti di sini. */
+function suntingPengurus(t) {
+  if (t.dataset.png === undefined || t.dataset.png === '') return false;
+  const k = state.settings.pengurus[Number(t.dataset.png)];
+  if (!k) return true;
+  if (t.dataset.pf === 'nama') k.nama = t.value.trim();
+  else if (t.dataset.pj) {
+    const baris = k[t.dataset.pj][Number(t.dataset.pi)];
+    // kolom 1 = nama pengurus, kolom 3 = nomor RW yang membawahi RT itu
+    baris[t.dataset.prw ? 3 : 1] = t.value.trim();
+  }
+  // daftar nama ikut diperbarui supaya dropdown dan filter tetap cocok
+  state.settings.namaRt = state.settings.pengurus
+    .flatMap(x => (x.rt || []).map(r => r[1])).filter(Boolean);
+  state.settings.namaRw = state.settings.pengurus
+    .flatMap(x => (x.rw || []).map(r => r[1])).filter(Boolean);
+  save();
+  return true;
+}
+
 function onInput(e) {
   const t = e.target;
   if (t.id === 'q') {
@@ -3529,20 +3881,7 @@ function onInput(e) {
     $('#brandCalon').textContent = state.settings.identitas.calon || '';
     return;
   }
-  if (t.dataset.png !== undefined && t.dataset.png !== '') {
-    const k = state.settings.pengurus[Number(t.dataset.png)];
-    if (k) {
-      if (t.dataset.pf === 'nama') k.nama = t.value.trim();
-      else if (t.dataset.pj) k[t.dataset.pj][Number(t.dataset.pi)][1] = t.value.trim();
-      // daftar nama ikut diperbarui supaya dropdown dan filter tetap cocok
-      state.settings.namaRt = state.settings.pengurus
-        .flatMap(x => (x.rt || []).map(r => r[1])).filter(Boolean);
-      state.settings.namaRk = state.settings.pengurus
-        .flatMap(x => (x.rk || []).map(r => r[1])).filter(Boolean);
-      save();
-    }
-    return;
-  }
+  if (suntingPengurus(t)) return;
   if (t.dataset.target !== undefined && t.dataset.target !== '') {
     state.settings.target[t.dataset.target] = Math.max(0, Number(t.value) || 0);
     save();
@@ -3553,6 +3892,7 @@ function onInput(e) {
 
 function onChange(e) {
   const t = e.target;
+  if (t.dataset.prw && suntingPengurus(t)) return;
   if (t.dataset.fk) {
     const p = t.dataset.fp;
     const wadah = p === 'data' ? ui.f : (p === 'cetak' ? ui.cetak : ui.kartu);

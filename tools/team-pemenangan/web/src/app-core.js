@@ -23,10 +23,10 @@ const DEFAULTS = {
     driveUrl: 'https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8'
   },
   kadus: ['Kadus 1', 'Kadus 2', 'Kadus 3'],
-  // struktur pengurus desa: tiap kadus punya daftar RK dan RT beserta namanya.
+  // struktur pengurus desa: tiap kadus punya daftar RW dan RT beserta namanya.
   // Nomor RT berulang di tiap kadus, jadi nama pengurusnya yang membedakan.
   pengurus: [],
-  namaRk: [],
+  namaRw: [],
   namaRt: [],
   kampung: ['Kp. Gamprit', 'Kp. Kuda Kuda', 'Kp. Wangkal', 'Kp. Tenjolaut',
     'Kp. Putri Melintang'],
@@ -48,12 +48,12 @@ const DEFAULTS = {
   ]
 };
 
-const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRk', 'namaRt',
+const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRw', 'namaRt',
   'kampung', 'rt', 'rw', 'alamat', 'tps', 'jabatan', 'hp', 'tglLahir',
   'status', 'tglGabung', 'perekrut', 'catatan'];
 
 /** Daftar pilihan yang bisa disunting di Pengaturan. */
-const LISTS = ['kadus', 'namaRk', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
+const LISTS = ['kadus', 'namaRw', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
   'jabatan', 'status'];
 
 /* ----------------------------------------------------------------- state */
@@ -63,12 +63,12 @@ let ui = {
   view: 'dasbor',
   theme: 'light',
   q: '',
-  f: { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
+  f: { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
   sort: { by: 'nama', dir: 1 },
   page: 1,
   perPage: 25,
   cetak: {
-    jenis: 'daftar', kadus: '', namaRk: '', namaRt: '', kampung: '',
+    jenis: 'daftar', kadus: '', namaRw: '', namaRt: '', kampung: '',
     rt: '', rw: '', tps: '', jabatan: '', status: ''
   },
   kartu: { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' }
@@ -82,11 +82,45 @@ function defaultSettings() {
   return s;
 }
 
+/** Data lama memakai istilah "RK". Sejak versi 3 istilahnya "RW": nomor RW
+ *  001-006 berlaku satu desa dan tiap RT sudah tahu berada di RW mana.
+ *  Cadangan lama tetap bisa dibuka — isinya dipindahkan di sini, sekali saja. */
+function naikkanVersi(d) {
+  if (!d || typeof d !== 'object') return d;
+  const s = d.settings;
+  if (s) {
+    if (s.namaRk && !s.namaRw) s.namaRw = s.namaRk;
+    delete s.namaRk;
+    (s.pengurus || []).forEach(k => {
+      if (k.rk && !k.rw) k.rw = k.rk;
+      delete k.rk;
+      // nomor RW lama ("1") disamakan dengan penulisan tiga digit ("001")
+      k.rw = (k.rw || []).map(r => [tigaDigit(r[0]), r[1] || '']);
+      // baris RT lama hanya (nomor, nama, kampung) — kolom nomor RW ditambahkan
+      k.rt = (k.rt || []).map(r => [r[0], r[1] || '', r[2] || '', r[3] || '']);
+    });
+  }
+  (d.members || []).forEach(m => {
+    if (m.namaRk !== undefined) {
+      if (!m.namaRw) m.namaRw = m.namaRk;
+      delete m.namaRk;
+    }
+    if (m.jabatan === 'Ketua RK') m.jabatan = 'Ketua RW';
+  });
+  d.v = 3;
+  return d;
+}
+
+function tigaDigit(no) {
+  const t = String(no || '').trim();
+  return /^\d+$/.test(t) ? t.padStart(3, '0') : t;
+}
+
 function load() {
   try {
     const raw = localStorage.getItem(KEY);
     if (raw) {
-      const d = JSON.parse(raw);
+      const d = naikkanVersi(JSON.parse(raw));
       state.members = Array.isArray(d.members) ? d.members : [];
       state.disimpan = d.disimpan || '';
       state.settings = Object.assign(defaultSettings(), d.settings || {});
@@ -114,8 +148,8 @@ function load() {
   try {
     const rawUi = localStorage.getItem(KEY_UI);
     if (rawUi) ui = Object.assign(ui, JSON.parse(rawUi));
-    if (!ui.f) ui.f = { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
-    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
+    if (!ui.f) ui.f = { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
+    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
     if (!ui.kartu) ui.kartu = { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' };
   } catch (e) { /* pengaturan tampilan boleh gagal tanpa mengganggu data */ }
 }
@@ -153,7 +187,7 @@ function korwil(m) {
 }
 
 /** Alamat utuh satu baris. RT/RW ikut menyatu di sini, sedangkan nama RT,
- *  RK, dan Kadus tetap berdiri sebagai kolom tersendiri. */
+ *  RW, dan Kadus tetap berdiri sebagai kolom tersendiri. */
 function wilayah(m) {
   const b = [];
   if (m.kampung) b.push(m.kampung);
@@ -162,43 +196,66 @@ function wilayah(m) {
   return b.join(' ');
 }
 
-/** Cari data kadus dan nomor RT dari nama ketua RT pada struktur pengurus. */
+/** Cari kadus, nomor RT, kampung, dan nomor RW dari nama ketua RT. */
 function cariRt(nama) {
   if (!nama) return null;
   for (const k of state.settings.pengurus || []) {
     for (const r of k.rt || []) {
       if (r[1] && r[1] === nama) {
-        return { kadus: k.kadus, no: samakanRt(r[0]), kampung: r[2] || '' };
+        return {
+          kadus: k.kadus, no: samakanRt(r[0]), kampung: r[2] || '',
+          rw: samakanNo(r[3], state.settings.rw)
+        };
       }
     }
   }
   return null;
 }
 
-/** Samakan penulisan nomor RT dengan yang ada di daftar RT (mis. 03 -> 003). */
-function samakanRt(no) {
+/** Samakan penulisan nomor dengan daftar acuan (mis. 03 -> 003). */
+function samakanNo(no, daftar) {
   if (!no) return '';
-  const daftar = state.settings.rt || [];
-  if (daftar.includes(no)) return no;
+  const d = daftar || [];
+  if (d.includes(no)) return no;
   const padat = String(no).replace(/^0+/, '');
-  return daftar.find(x => String(x).replace(/^0+/, '') === padat) || no;
+  return d.find(x => String(x).replace(/^0+/, '') === padat) || no;
 }
 
-function cariRk(nama) {
+function samakanRt(no) { return samakanNo(no, state.settings.rt); }
+
+/** Cari kadus dan nomor RW dari nama ketua RW. */
+function cariRw(nama) {
   if (!nama) return null;
   for (const k of state.settings.pengurus || []) {
-    for (const r of k.rk || []) {
-      if (r[1] && r[1] === nama) return { kadus: k.kadus, no: r[0] };
+    for (const r of k.rw || []) {
+      if (r[1] && r[1] === nama) {
+        return { kadus: k.kadus, no: samakanNo(r[0], state.settings.rw) };
+      }
     }
   }
   return null;
 }
 
-/** Baris kepengurusan: RT / RK / Kadus yang membawahi anggota tersebut. */
+/** Kebalikannya: nomor RW -> ketua RW dan kadusnya. Nomor RW berlaku satu
+ *  desa (001-006 tidak mengulang per kadus), jadi nomornya sudah cukup. */
+function rwDariNomor(no) {
+  if (!no) return null;
+  const padat = String(no).replace(/^0+/, '');
+  for (const k of state.settings.pengurus || []) {
+    for (const r of k.rw || []) {
+      if (r[1] && String(r[0]).replace(/^0+/, '') === padat) {
+        return { kadus: k.kadus, nama: r[1] };
+      }
+    }
+  }
+  return null;
+}
+
+/** Baris kepengurusan: RT / RW / Kadus yang membawahi anggota tersebut. */
 function pengurus(m) {
   const b = [];
   if (m.namaRt) b.push('RT ' + m.namaRt);
-  if (m.namaRk) b.push('RK ' + m.namaRk);
+  if (m.namaRw) b.push('RW ' + m.namaRw);
   if (m.kadus) b.push(m.kadus);   // nilainya sudah berbentuk "Kadus 3"
   return b.join(' • ');
 }
@@ -253,7 +310,7 @@ function hitungNik() {
 
 function cocok(m, f, q) {
   if (f.kadus && m.kadus !== f.kadus) return false;
-  if (f.namaRk && m.namaRk !== f.namaRk) return false;
+  if (f.namaRw && m.namaRw !== f.namaRw) return false;
   if (f.namaRt && m.namaRt !== f.namaRt) return false;
   if (f.kampung && m.kampung !== f.kampung) return false;
   if (f.rt && m.rt !== f.rt) return false;

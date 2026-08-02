@@ -58,25 +58,32 @@ function toast(msg, jenis, ms) {
 
 /* --------------------------------------------------------------- pilihan */
 
-function opts(list, sel, kosong) {
+function opts(list, sel, kosong, label) {
   let h = '<option value="">' + esc(kosong || '— semua —') + '</option>';
   for (const v of list) {
-    h += '<option value="' + esc(v) + '"' + (v === sel ? ' selected' : '') + '>' + esc(v) + '</option>';
+    h += '<option value="' + esc(v) + '"' + (v === sel ? ' selected' : '') + '>' +
+      esc(label ? label(v) : v) + '</option>';
   }
   return h;
 }
 
+/** Nomor RW ditampilkan sekalian nama ketuanya supaya tidak perlu menghafal. */
+function labelRw(no) {
+  const p = rwDariNomor(no);
+  return p ? 'RW ' + no + ' · ' + p.nama : 'RW ' + no;
+}
+
 function filterBar(f, prefix, extra) {
   const s = state.settings;
-  const sel = (k, list, kosong) =>
+  const sel = (k, list, kosong, label) =>
     '<select data-fk="' + k + '" data-fp="' + prefix + '">' +
-    opts(list, f[k], kosong) + '</select>';
+    opts(list, f[k], kosong, label) + '</select>';
   return '<div class="filters">' +
     sel('kampung', s.kampung, '— semua Kampung —') +
-    sel('rt', s.rt, '— semua RT —') +
-    sel('rw', s.rw, '— semua RW —') +
+    sel('rt', s.rt, '— semua RT —', v => 'RT ' + v) +
+    sel('rw', s.rw, '— semua RW —', labelRw) +
     (s.namaRt.length ? sel('namaRt', s.namaRt, '— semua Nama RT —') : '') +
-    (s.namaRk.length ? sel('namaRk', s.namaRk, '— semua Nama RK —') : '') +
+    (s.namaRw.length ? sel('namaRw', s.namaRw, '— semua Nama RW —') : '') +
     (s.kadus.length ? sel('kadus', s.kadus, '— semua Kadus —') : '') +
     sel('tps', s.tps, '— semua TPS —') +
     (extra === false ? '' :
@@ -91,8 +98,8 @@ function labelFilter(f) {
   if (f.kampung) b.push(f.kampung);
   if (f.rt) b.push('RT ' + f.rt + (f.rw ? '/' + f.rw : ''));
   else if (f.rw) b.push('RW ' + f.rw);
-  if (f.namaRt) b.push('RT ' + f.namaRt);
-  if (f.namaRk) b.push('RK ' + f.namaRk);
+  if (f.namaRt) b.push('Ketua RT ' + f.namaRt);
+  if (f.namaRw) b.push('Ketua RW ' + f.namaRw);
   if (f.kadus) b.push('Kadus ' + f.kadus);
   if (f.tps) b.push('TPS ' + f.tps);
   if (f.jabatan) b.push(f.jabatan);
@@ -238,7 +245,7 @@ function viewData() {
   h += '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
     '<th style="width:44px">#</th>' + th('Nama', 'nama') + th('NIK', 'nik') +
     '<th>No. KK</th><th>L/P</th>' + th('Alamat', 'korwil') +
-    '<th>Nama RT</th><th>Nama RK</th><th>Kadus</th><th>TPS</th>' +
+    '<th>Nama RT</th><th>Nama RW</th><th>Kadus</th><th>TPS</th>' +
     th('Jabatan', 'jabatan') +
     '<th>No. HP</th>' + th('Usia', 'usia', 'num') + th('Status', 'status') +
     '<th style="width:86px">Aksi</th></tr></thead><tbody>';
@@ -256,7 +263,7 @@ function viewData() {
       '<td>' + esc(m.jk || '—') + '</td>' +
       '<td style="white-space:normal;min-width:190px">' + esc(wilayah(m) || '—') + '</td>' +
       '<td>' + esc(m.namaRt || '—') + '</td>' +
-      '<td>' + esc(m.namaRk || '—') + '</td>' +
+      '<td>' + esc(m.namaRw || '—') + '</td>' +
       '<td>' + esc(m.kadus || '—') + '</td>' +
       '<td>' + esc(m.tps || '—') + '</td>' +
       '<td>' + esc(m.jabatan || '—') + '</td>' +

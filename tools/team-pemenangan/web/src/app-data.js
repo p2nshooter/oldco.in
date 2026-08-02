@@ -266,6 +266,7 @@ function pakaiPaket(d) {
 /** Terapkan database bawaan paket, tanpa pernah menimpa data diam-diam. */
 function terapkanBawaan(d) {
   if (!d || !Array.isArray(d.members) || !d.members.length) return;
+  d = naikkanVersi(d);
 
   if (!state.members.length) {
     pakaiPaket(d);
@@ -312,4 +313,203 @@ function terapkanBawaan(d) {
     toast('Ditambahkan ' + num(tambahJml) + ' anggota' +
       (lewat ? ', ' + num(lewat) + ' dilewati karena NIK sudah ada.' : '.'));
   });
+}
+
+/* ------------------------------------------------- ekspor SQL (Supabase)
+
+   Persiapan pindah ke database daring. Aplikasi ini tetap dipakai offline;
+   begitu tim siap, seluruh isinya dituangkan menjadi satu berkas SQL yang
+   tinggal ditempel ke SQL Editor Supabase — tanpa mengetik ulang apa pun.
+
+   Keluarannya sengaja dibuat sama persis dengan supabase/build_sql.py,
+   supaya dua jalur itu tidak pernah menghasilkan bentuk yang berbeda. */
+
+const TIM_ID = '8f6d1c3a-4b2e-4f10-9a77-1c0d5e9b7a21';
+const KODE_TIM = 'jf3-sukakarya';
+
+/** Nilai menjadi literal SQL yang aman. */
+function sq(v) {
+  if (v === null || v === undefined) return 'null';
+  if (typeof v === 'number') return String(v);
+  return "'" + String(v).replace(/'/g, "''") + "'";
+}
+
+function sqlTgl(v) { return v ? sq(v) + '::date' : 'null'; }
+
+function buatSql() {
+  const s = state.settings;
+  const id = s.identitas || {};
+  const png = s.pengurus || [];
+  const kampung = s.kampung || [];
+  const target = s.target || {};
+  const ms = state.members;
+  const b = [];
+  const w = x => b.push(x);
+  const T = sq(TIM_ID);
+
+  w('-- ===================================================================');
+  w('--  Data awal Team Pemenangan — dihasilkan dari database.json');
+  w('--  Jalankan setelah schema.sql. Aman dijalankan berulang kali.');
+  w('-- ===================================================================');
+  w('');
+  w('begin;');
+  w('');
+
+  const kolom = ['id', 'kode', 'calon', 'team', 'periode', 'tahun', 'desa',
+    'kecamatan', 'kabupaten', 'ketua', 'jabatan_ttd', 'motto', 'drive_url'];
+  const nilai = [T, sq(KODE_TIM), sq(id.calon || ''), sq(id.team || ''),
+    sq(id.periode || ''), sq(id.tahun || ''), sq(id.desa || ''),
+    sq(id.kecamatan || ''), sq(id.kabupaten || ''), sq(id.ketua || ''),
+    sq(id.jabatanTtd || ''), sq(id.motto || ''), sq(id.driveUrl || '')];
+  w('-- identitas team ---------------------------------------------------');
+  w('insert into public.tim (' + kolom.join(', ') + ')');
+  w('values (' + nilai.join(', ') + ')');
+  w('on conflict (id) do update set');
+  w(kolom.slice(1).map(k => '  ' + k + ' = excluded.' + k).join(',\n') + ';');
+  w('');
+
+  w('-- kampung dan targetnya --------------------------------------------');
+  w('insert into public.kampung (tim_id, nama, target, urutan) values');
+  w(kampung.map((k, i) =>
+    '  (' + T + ', ' + sq(k) + ', ' + (Number(target[k]) || 0) + ', ' + i + ')')
+    .join(',\n'));
+  w('on conflict (tim_id, nama) do update set');
+  w('  target = excluded.target, urutan = excluded.urutan;');
+  w('');
+
+  w('-- kadus --------------------------------------------------------------');
+  w('insert into public.kadus (tim_id, nama, nama_ketua, urutan) values');
+  w(png.map((k, i) =>
+    '  (' + T + ', ' + sq(k.kadus) + ', ' + sq(k.nama || '') + ', ' + i + ')')
+    .join(',\n'));
+  w('on conflict (tim_id, nama) do update set nama_ketua = excluded.nama_ketua;');
+  w('');
+
+  let baris = [];
+  png.forEach(k => (k.rw || []).forEach(r => {
+    baris.push('  (' + T + ', ' + sq(r[0]) + ', ' + sq(r[1] || '') +
+      ', (select id from public.kadus where tim_id = ' + T +
+      ' and nama = ' + sq(k.kadus) + '))');
+  }));
+  w('-- ketua RW — nomor RW berlaku satu desa, jadi unik per tim ----------');
+  if (baris.length) {
+    w('insert into public.rw (tim_id, nomor, nama_ketua, kadus_id) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, nomor) do update set');
+    w('  nama_ketua = excluded.nama_ketua, kadus_id = excluded.kadus_id;');
+    w('');
+  }
+
+  baris = [];
+  png.forEach(k => (k.rt || []).forEach(r => {
+    baris.push('  (' + T + ', (select id from public.kadus where tim_id = ' + T +
+      ' and nama = ' + sq(k.kadus) + '), ' + sq(r[0]) + ', ' + sq(r[1] || '') +
+      ', (select id from public.kampung where tim_id = ' + T +
+      ' and nama = ' + sq(r[2] || '') + ')' +
+      ', (select id from public.rw where tim_id = ' + T +
+      ' and nomor = ' + sq(r[3] || '') + '))');
+  }));
+  w('-- ketua RT — nomor RT berulang per kadus, keunikannya per kadus -----');
+  if (baris.length) {
+    w('insert into public.rt (tim_id, kadus_id, nomor, nama_ketua, kampung_id, rw_id) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, kadus_id, nomor) do update set');
+    w('  nama_ketua = excluded.nama_ketua,');
+    w('  kampung_id = excluded.kampung_id,');
+    w('  rw_id      = excluded.rw_id;');
+    w('');
+  }
+
+  baris = [];
+  ['tps', 'jabatan', 'status', 'rt', 'rw'].forEach(jenis => {
+    (s[jenis] || []).forEach((v, i) => {
+      baris.push('  (' + T + ', ' + sq(jenis) + ', ' + sq(v) + ', ' + i + ')');
+    });
+  });
+  w('-- isi dropdown -------------------------------------------------------');
+  if (baris.length) {
+    w('insert into public.daftar_pilihan (tim_id, jenis, nilai, urutan) values');
+    w(baris.join(',\n'));
+    w('on conflict (tim_id, jenis, nilai) do update set urutan = excluded.urutan;');
+    w('');
+  }
+
+  const ku = s.kelompokUsia || [];
+  if (ku.length) {
+    w('insert into public.kelompok_usia (tim_id, label, usia_min) values');
+    w(ku.map(g => '  (' + T + ', ' + sq(g.label) + ', ' + Number(g.min) + ')')
+      .join(',\n'));
+    w('on conflict (tim_id, label) do update set usia_min = excluded.usia_min;');
+    w('');
+  }
+
+  w('-- anggota ------------------------------------------------------------');
+  w('-- Tabel sementara menampung baris apa adanya; penyambungan ke tabel');
+  w('-- wilayah dikerjakan sesudahnya supaya nama yang belum terdaftar di');
+  w('-- struktur pengurus tidak menggagalkan impor.');
+  w('create temporary table _impor (');
+  w('  nama text, nik text, kk text, jk text, kampung text, kadus text,');
+  w('  rt_nomor text, rw_nomor text, nama_rt text, nama_rw text,');
+  w('  alamat text, tps text, jabatan text, hp text, tgl_lahir date,');
+  w('  status text, tgl_gabung date, perekrut text, catatan text');
+  w(') on commit drop;');
+  w('');
+
+  if (ms.length) {
+    w('insert into _impor values');
+    w(ms.map(m => '  (' + [
+      sq(m.nama || ''), sq(m.nik || ''), sq(m.kk || ''), sq(m.jk || ''),
+      sq(m.kampung || ''), sq(m.kadus || ''), sq(m.rt || ''), sq(m.rw || ''),
+      sq(m.namaRt || ''), sq(m.namaRw || ''), sq(m.alamat || ''), sq(m.tps || ''),
+      sq(m.jabatan || 'Anggota'), sq(m.hp || ''), sqlTgl(m.tglLahir || ''),
+      sq(m.status || 'Aktif'), sqlTgl(m.tglGabung || ''), sq(m.perekrut || ''),
+      sq(m.catatan || '')
+    ].join(', ') + ')').join(',\n') + ';');
+    w('');
+  }
+
+  w('insert into public.anggota (');
+  w('  tim_id, nama, nik, kk, jk, kampung_id, kadus_id, rw_id, rt_id,');
+  w('  rt_nomor, rw_nomor, alamat, tps, jabatan, hp, tgl_lahir, status,');
+  w('  tgl_gabung, perekrut, catatan)');
+  w('select');
+  w('  ' + T + ', i.nama, i.nik, i.kk, i.jk,');
+  w('  kp.id, kd.id, rw.id, rt.id,');
+  w('  i.rt_nomor, i.rw_nomor, i.alamat, i.tps, i.jabatan, i.hp,');
+  w('  i.tgl_lahir, i.status, i.tgl_gabung, i.perekrut, i.catatan');
+  w('from _impor i');
+  w('left join public.kampung kp on kp.tim_id = ' + T + ' and kp.nama = i.kampung');
+  w('left join public.kadus   kd on kd.tim_id = ' + T + ' and kd.nama = i.kadus');
+  w('left join public.rw      rw on rw.tim_id = ' + T + ' and rw.nomor = i.rw_nomor');
+  w('left join public.rt      rt on rt.tim_id = ' + T);
+  w('                            and rt.kadus_id = kd.id and rt.nomor = i.rt_nomor');
+  w('-- NIK adalah kunci sesungguhnya, tetapi sebagian anggota memang belum');
+  w('-- punya NIK. Selama itu, pasangan nama + catatan asli dipakai sebagai');
+  w('-- pengenal sementara supaya menjalankan ulang berkas ini tidak');
+  w('-- menggandakan barisnya.');
+  w('where not exists (');
+  w('  select 1 from public.anggota a');
+  w('   where a.tim_id = ' + T);
+  w("     and ((i.nik <> '' and a.nik = i.nik)");
+  w("       or (i.nik  = '' and a.nik = '' and a.nama = i.nama");
+  w('           and a.catatan = i.catatan)));');
+  w('');
+  w('-- baris yang sudah ada: diperbarui, bukan digandakan');
+  w('update public.anggota a set');
+  w('  nama = i.nama, kk = i.kk, jk = i.jk,');
+  w('  rt_nomor = i.rt_nomor, rw_nomor = i.rw_nomor, alamat = i.alamat,');
+  w('  tps = i.tps, jabatan = i.jabatan, hp = i.hp, tgl_lahir = i.tgl_lahir,');
+  w('  status = i.status, tgl_gabung = i.tgl_gabung, perekrut = i.perekrut,');
+  w('  catatan = i.catatan');
+  w('from _impor i');
+  w('where a.tim_id = ' + T + " and i.nik <> '' and a.nik = i.nik;");
+  w('');
+  w('commit;');
+  w('');
+  const nRw = png.reduce((a, k) => a + (k.rw || []).length, 0);
+  const nRt = png.reduce((a, k) => a + (k.rt || []).length, 0);
+  w('-- ringkas: ' + ms.length + ' anggota, ' + kampung.length + ' kampung, ' +
+    png.length + ' kadus,');
+  w('--          ' + nRw + ' RW, ' + nRt + ' RT');
+  return b.join('\n') + '\n';
 }

@@ -6,11 +6,23 @@ disesuaikan dan dibangun ulang kapan saja tanpa menyunting sel satu per satu.
 
 Berkas siap pakai: **`Aplikasi_Team_Pemenangan_v2.xlsx`**
 
+Aplikasi ini punya dua wujud dengan data yang sama persis:
+
+| | Berkas | Untuk |
+|---|---|---|
+| Excel | `Aplikasi_Team_Pemenangan_v2.xlsx` | laptop, sudah terbiasa Excel |
+| HTML | `web/Aplikasi_Team_Pemenangan.html` | HP maupun laptop, cukup Chrome |
+| Paket | `web/Aplikasi-Team-Pemenangan.zip` | keduanya sekaligus + database |
+
+Folder `supabase/` berisi persiapan pindah ke database daring (Supabase +
+GitHub + Vercel) bila suatu saat dibutuhkan — belum dipakai.
+
 ## Membangun ulang
 
 ```bash
 pip install openpyxl pillow
 python3 prepare_logos.py                                  # aset gambar
+python3 web/seed/anggota_jf3.py web/seed/database.json    # data awal
 python3 build_workbook.py Aplikasi_Team_Pemenangan_v2.xlsx
 python3 isi_data.py Aplikasi_Team_Pemenangan_v2.xlsx web/seed/database.json
 python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
@@ -20,6 +32,11 @@ Urutannya penting. `isi_data.py` menyalin data dari sumber yang sama dengan
 versi web (`web/seed/database.json`) sehingga isi kedua aplikasi identik, dan
 tahap hitung-ulang terakhir menanamkan nilai hasil rumus — tanpa itu berkasnya
 membengkak dari 1,2 MB menjadi 3,1 MB.
+
+Struktur pengurus (kadus, ketua RW, ketua RT) tidak ditulis dua kali:
+`build_workbook.py` membacanya langsung dari `web/seed/anggota_jf3.py`, berkas
+yang sama yang dipakai aplikasi HTML. Mengganti nama pengurus cukup di satu
+tempat itu.
 
 `prepare_logos.py` cukup dijalankan ulang bila gambar di `assets/sumber/`
 diganti. Bila folder `assets/` kosong, workbook tetap terbangun — hanya tanpa

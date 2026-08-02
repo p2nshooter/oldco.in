@@ -24,7 +24,7 @@ FIRST = 4
 # kolom Excel -> kunci pada JSON
 KOLOM = {
     "B": "nama", "C": "nik", "D": "kk", "E": "jk", "F": "kampung",
-    "G": "rt", "H": "rw", "I": "alamat", "J": "namaRt", "K": "namaRk",
+    "G": "rt", "H": "rw", "I": "alamat", "J": "namaRt", "K": "namaRw",
     "L": "kadus", "N": "jabatan", "O": "hp", "P": "tps", "Q": "tglLahir",
     "T": "status", "U": "tglGabung", "V": "perekrut", "W": "catatan",
 }
@@ -65,7 +65,7 @@ def isi(xlsx: pathlib.Path, data_path: pathlib.Path) -> int:
     tulis("F", st.get("jabatan", []))
     tulis("H", st.get("tps", []))
     tulis("O", st.get("namaRt", []))
-    tulis("P", st.get("namaRk", []))
+    tulis("P", st.get("namaRw", []))
     tulis("Q", st.get("kadus", []))
     target = st.get("target", {})
     for j, k in enumerate(st.get("kampung", [])):

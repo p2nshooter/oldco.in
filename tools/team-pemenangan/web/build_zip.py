@@ -38,6 +38,8 @@ Isi paket ini:
   data/database.js                <- database, dimuat otomatis oleh versi HTML
   data/database.json              <- database yang sama, untuk cadangan
   data/untuk-excel.csv            <- database yang sama dalam bentuk CSV
+  supabase/                       <- bahan pindah ke database daring (belum
+                                     dipakai; hanya persiapan untuk nanti)
   BACA-DULU.txt                   <- berkas ini
 
 CARA PAKAI
@@ -79,15 +81,53 @@ PENTING
 Selama dipakai, data disimpan di penyimpanan peramban perangkat tersebut,
 bukan di dalam berkas HTML. Membersihkan data peramban akan menghapusnya.
 Biasakan menekan "Unduh paket ZIP" setiap selesai menginput banyak data.
+
+FOLDER SUPABASE
+---------------
+Belum dipakai, dan tidak perlu disentuh untuk pemakaian sehari-hari.
+Isinya persiapan bila suatu saat tim ingin database bersama secara daring
+(beberapa orang menginput dari HP masing-masing, data langsung menyatu).
+Penjelasan lengkapnya ada di supabase/README.md.
 """
 
 KOSONG = {
     "aplikasi": "Aplikasi Team Pemenangan",
-    "v": 1,
+    "v": 3,
     "disimpan": "1970-01-01T00:00:00.000Z",
     "settings": None,
     "members": []
 }
+
+# Database yang ikut dipaketkan bila tidak ditentukan lain. Tanpa bawaan ini
+# paket ikut terkirim dalam keadaan kosong — kelihatan wajar dari luar, tetapi
+# baru ketahuan setelah dibuka di perangkat tujuan.
+DATA_BAWAAN = HERE / "seed" / "database.json"
+
+
+# Judul kolom CSV memakai nama yang tampil di aplikasi; pembaca CSV pada
+# aplikasi HTML sudah mengenali seluruhnya, dan urutannya sama dengan sheet
+# DATABASE pada Excel sehingga bisa ditempel langsung.
+CSV_JUDUL = [
+    ("NAMA LENGKAP", "nama"), ("NIK KTP", "nik"), ("NO. KK", "kk"),
+    ("L/P", "jk"), ("KAMPUNG", "kampung"), ("RT", "rt"), ("RW", "rw"),
+    ("ALAMAT", "alamat"), ("NAMA RT", "namaRt"), ("NAMA RW", "namaRw"),
+    ("NAMA KADUS", "kadus"), ("TPS", "tps"), ("JABATAN", "jabatan"),
+    ("NO. HP", "hp"), ("TGL LAHIR", "tglLahir"), ("STATUS", "status"),
+    ("TGL GABUNG", "tglGabung"), ("PEREKRUT", "perekrut"), ("CATATAN", "catatan"),
+]
+
+
+def csv_dari(data: dict) -> str:
+    """CSV dibuat dari database yang sama, bukan berkas terpisah — supaya
+    tidak bisa tertinggal versi lama tanpa ketahuan."""
+    def sel(v):
+        s = "" if v is None else str(v)
+        return '"' + s.replace('"', '""') + '"' if any(c in s for c in ',";\n') else s
+
+    baris = [",".join(j for j, _ in CSV_JUDUL)]
+    for m in data.get("members") or []:
+        baris.append(",".join(sel(m.get(k, "")) for _, k in CSV_JUDUL))
+    return "﻿" + "\r\n".join(baris) + "\r\n"
 
 
 def build(keluaran: pathlib.Path, data_path: pathlib.Path | None = None) -> pathlib.Path:
@@ -95,9 +135,12 @@ def build(keluaran: pathlib.Path, data_path: pathlib.Path | None = None) -> path
     build_html.build(html_path)              # selalu pakai aplikasi terbaru
     html = html_path.read_text(encoding="utf-8")
 
-    if data_path and data_path.exists():
+    if data_path is None:
+        data_path = DATA_BAWAAN
+    if data_path.exists():
         data = json.loads(data_path.read_text(encoding="utf-8"))
     else:
+        print(f"PERINGATAN: {data_path} tidak ada — paket dibuat tanpa database.")
         data = KOSONG
     padat = json.dumps(data, ensure_ascii=False, indent=2)
 
@@ -108,18 +151,37 @@ def build(keluaran: pathlib.Path, data_path: pathlib.Path | None = None) -> path
         excel = HERE.parent / "Aplikasi_Team_Pemenangan_v2.xlsx"
         if excel.exists():
             z.writestr("Aplikasi Team Pemenangan.xlsx", excel.read_bytes())
-        csv = HERE / "seed" / "anggota-jf3.csv"
-        if csv.exists():
-            z.writestr("data/untuk-excel.csv", csv.read_text(encoding="utf-8"))
+        csv = csv_dari(data)
+        z.writestr("data/untuk-excel.csv", csv)
+        (HERE / "seed" / "anggota-jf3.csv").write_text(csv, encoding="utf-8")
+        # bahan pindah ke database daring — belum dipakai, disertakan supaya
+        # tidak perlu dicari lagi bila suatu saat dibutuhkan
+        sup = HERE.parent / "supabase"
+        for nama in ("schema.sql", "seed.sql", "README.md", "klien-contoh.js",
+                     "env.example"):
+            berkas = sup / nama
+            if berkas.exists():
+                z.writestr("supabase/" + nama, berkas.read_text(encoding="utf-8"))
         z.writestr("BACA-DULU.txt", BACA_DULU)
     return keluaran
 
 
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    out = pathlib.Path(args[0] if args else "Aplikasi-Team-Pemenangan.zip")
-    sumber = None
-    if "--data" in sys.argv:
-        sumber = pathlib.Path(sys.argv[sys.argv.index("--data") + 1])
+    # nilai di belakang --data adalah miliknya, bukan nama berkas keluaran
+    argv, sumber, lepas = sys.argv[1:], None, []
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--data" and i + 1 < len(argv):
+            sumber = pathlib.Path(argv[i + 1])
+            i += 2
+            continue
+        if not argv[i].startswith("--"):
+            lepas.append(argv[i])
+        i += 1
+
+    out = pathlib.Path(lepas[0] if lepas else "Aplikasi-Team-Pemenangan.zip")
     build(out, sumber)
-    print(f"tersimpan: {out}  ({out.stat().st_size / 1024:.0f} KB)")
+    with zipfile.ZipFile(out) as z:
+        isi = json.loads(z.read("data/database.json").decode("utf-8"))
+    print(f"tersimpan: {out}  ({out.stat().st_size / 1024:.0f} KB, "
+          f"{len(isi.get('members') or [])} anggota di dalamnya)")
