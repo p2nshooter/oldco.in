@@ -3,19 +3,24 @@
 
 Struktur alamat mengikuti keadaan desa:
 
-    KADUS     Dusun 1 / Dusun 2 / Dusun 3 — tiga kadus yang memang ada
-    KAMPUNG   Gamprit, Kuda Kuda, Wangkal, Tenjolaut, Putri Melintang
-    RT / RW   nomor, dipakai untuk menyaring dan mencetak per RT
-    ALAMAT    keterangan tambahan (patokan) — RT/RW sudah menyatu di alamat
-    NAMA RT   nama ketua RT: Wandi, Basir, Onin, Ropik, Nemin, Engkus
-    NAMA RK   nama ketua RK: Niman
-    NAMA KADUS nama kadus: Markum
+    KADUS      Kadus 1 / Kadus 2 / Kadus 3 — tiga kadus yang memang ada
+    KAMPUNG    Gamprit, Kuda Kuda, Wangkal, Tenjolaut, Putri Melintang
+    RT / RW    nomor; menyatu di alamat tetapi tetap punya filter sendiri
+    ALAMAT     keterangan tambahan (patokan)
+    NAMA RT    nama ketua RT — 16 orang, lihat PENGURUS di bawah
+    NAMA RK    nama ketua RK — 6 orang
+    NAMA KADUS wilayah kadusnya
+
+Nomor RT berulang di tiap kadus dan Kampung Gamprit dipakai Kadus 2 maupun
+Kadus 3, sehingga hanya nama pengurus yang benar-benar membedakan satu RT dari
+RT lain. Struktur PENGURUS itulah yang melengkapi kadus, nomor RT, dan kampung
+yang kosong pada daftar anggota.
 
 Baris asli tetap disimpan pada kolom CATATAN supaya tidak ada keterangan yang
 hilang dan mudah diperiksa ulang.
 
 Yang belum ada di sumber dibiarkan kosong — NIK, No. KK, no. HP, tanggal lahir,
-jenis kelamin, TPS, dan pembagian kadus tidak ditebak.
+jenis kelamin, dan TPS tidak ditebak.
 
 Jalankan:  python3 anggota_jf3.py [keluaran.json]
 """

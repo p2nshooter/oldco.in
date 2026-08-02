@@ -2957,12 +2957,14 @@ function viewPetunjuk() {
     'Tanpa internet, tanpa pemasangan, data tersimpan di perangkat Anda.</p></div></div>';
 
   h += '<div class="sec-title">Empat langkah, selesai</div><div class="steps">' +
-    '<div class="step"><div><h4>Atur dulu wilayahnya</h4><p>Buka <b>Pengaturan</b>. ' +
-    'Sesuaikan nama Kadus, daftar RT, TPS, jabatan, dan identitas untuk kop surat. ' +
-    'Isi juga target anggota tiap Kadus.</p></div></div>' +
+    '<div class="step"><div><h4>Periksa struktur pengurus</h4><p>Buka <b>Pengaturan</b>. ' +
+    'Di sana sudah ada <b>Struktur Pengurus</b>: 3 kadus, 6 ketua RK, dan 16 ketua RT ' +
+    'lengkap dengan kampungnya. Lengkapi nama yang masih kosong, lalu isi target ' +
+    'anggota tiap kampung.</p></div></div>' +
     '<div class="step"><div><h4>Masukkan anggota</h4><p>Buka <b>Data Anggota</b> lalu tekan ' +
-    '<b>Tambah</b>. Kolom bertanda wajib akan diperiksa otomatis: NIK harus 16 angka dan ' +
-    'tidak boleh kembar. Korwil, usia, dan kelompok usia dihitung sendiri.</p></div></div>' +
+    '<b>Tambah</b>. Cukup pilih <b>Nama RT</b> — nomor RT, kampung, dan kadus terisi ' +
+    'sendiri. NIK KTP dan No. KK diperiksa harus 16 angka dan NIK tidak boleh kembar. ' +
+    'Usia serta kelompok usia dihitung otomatis dari tanggal lahir.</p></div></div>' +
     '<div class="step"><div><h4>Rapikan lewat Validasi</h4><p>Buka <b>Validasi Data</b>. ' +
     'Semua baris yang bermasalah muncul di sana lengkap dengan sebabnya — tekan ' +
     '<b>Perbaiki</b> untuk langsung menyuntingnya.</p></div></div>' +
@@ -2974,12 +2976,18 @@ function viewPetunjuk() {
     '<div class="card"><div class="tbl-wrap"><table class="tbl">' +
     '<thead><tr><th>Ingin mencetak</th><th>Isi filter</th></tr></thead><tbody>' +
     '<tr><td>Seluruh anggota</td><td>kosongkan semua filter</td></tr>' +
-    '<tr><td>Per Kadus</td><td>pilih <b>Kadus</b> saja</td></tr>' +
+    '<tr><td>Per kampung</td><td>pilih <b>Kampung</b> saja</td></tr>' +
     '<tr><td>Per RT</td><td>pilih <b>RT</b> saja</td></tr>' +
-    '<tr><td>Per korwil</td><td>pilih <b>Kadus</b> + <b>RT</b></td></tr>' +
+    '<tr><td>Per korwil</td><td>pilih <b>Kampung</b> + <b>RT</b></td></tr>' +
+    '<tr><td>Per wilayah RT tertentu</td><td>pilih <b>Nama RT</b></td></tr>' +
+    '<tr><td>Per RK atau per kadus</td><td>pilih <b>Nama RK</b> atau <b>Kadus</b></td></tr>' +
     '<tr><td>Per TPS</td><td>pilih <b>TPS</b> saja</td></tr>' +
     '<tr><td>Per jabatan / status</td><td>pilih jabatan atau status</td></tr>' +
-    '</tbody></table></div></div>';
+    '</tbody></table></div></div>' +
+    '<div class="tip blue" style="margin-top:12px">' + ICON.bulb +
+    '<div><b>Daftar lengkap dan rekapitulasi otomatis memakai kertas A4 melintang</b> ' +
+    'karena kolomnya banyak (NIK KTP, No. KK, alamat). Daftar hadir dan kartu anggota ' +
+    'tetap tegak. Tidak perlu diatur — sudah otomatis.</div></div>';
 
   h += '<div class="tip" style="margin-top:14px">' + ICON.bulb +
     '<div>Saat kotak cetak muncul, pilih <b>Simpan sebagai PDF</b> bila ingin mengirim lewat ' +
@@ -3008,6 +3016,22 @@ function viewPetunjuk() {
       '<b>Pulihkan dari berkas</b>. Judul kolom seperti NAMA LENGKAP, NIK, L/P, KADUS, RT, ' +
       'JABATAN, NO. HP, ALAMAT, TPS dikenali otomatis. Kolom hitungan seperti KORWIL dan USIA ' +
       'diabaikan karena dihitung ulang.</p>') +
+    faq('Kenapa memilih Nama RT mengisi kolom lain?',
+      '<p>Karena struktur pengurus desa menyimpan hubungannya: tiap ketua RT terikat ' +
+      'pada satu nomor RT, satu kampung, dan satu kadus. Begitu namanya dipilih, ' +
+      'ketiganya ikut terisi.</p>' +
+      '<p><b>Kenapa nama, bukan nomor?</b> Nomor RT berulang di tiap kadus — RT 001 ada ' +
+      'di ketiganya — dan Kampung Gamprit dipakai Kadus 2 maupun Kadus 3. Jadi hanya ' +
+      'nama pengurusnya yang benar-benar membedakan satu RT dari RT lain.</p>') +
+    faq('Nama RT yang saya cari tidak ada di dropdown',
+      '<p>Berarti nama itu belum ada di struktur pengurus. Tambahkan lewat ' +
+      '<b>Pengaturan → Struktur Pengurus</b>, isikan pada nomor RT yang sesuai.</p>' +
+      '<p>Nama lama yang terlanjur terpakai tetap muncul di dropdown pada kelompok ' +
+      '<b>Belum ada di struktur pengurus</b>, jadi datanya tidak hilang.</p>') +
+    faq('Apa beda NIK KTP dan No. KK?',
+      '<p>NIK KTP milik perorangan dan harus unik — aplikasi menolak NIK kembar. ' +
+      'No. KK milik satu keluarga, jadi beberapa anggota boleh punya No. KK yang sama. ' +
+      'Keduanya diperiksa harus 16 angka, dan keduanya boleh dikosongkan dulu.</p>') +
     faq('Kenapa nama anggota otomatis jadi huruf kapital?',
       '<p>Agar seragam di dokumen resmi dan pencarian tidak terganggu beda besar-kecil huruf. ' +
       'Pencarian sendiri tetap mengabaikan besar-kecil huruf.</p>') +
