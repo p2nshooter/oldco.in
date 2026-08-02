@@ -395,7 +395,8 @@ def build_database(wb):
                 # #VALUE! di LibreOffice sehingga harus dijaga lebih dulu.
                 f'=IF($B{row}="","",IF(AND('
                 f'OR(CARI!$C$5="",ISNUMBER(SEARCH(CARI!$C$5,'
-                f'$B{row}&" "&$C{row}&" "&$D{row}&" "&$O{row}&" "&$I{row}&" "&$V{row}))),'
+                f'$B{row}&" "&$C{row}&" "&$D{row}&" "&$O{row}&" "&$I{row}&" "'
+                f'&$F{row}&" "&$J{row}&" "&$K{row}&" "&$L{row}&" "&$V{row}))),'
                 f'OR(CARI!$C$6="",$F{row}=CARI!$C$6),'
                 f'OR(CARI!$C$7="",$G{row}=CARI!$C$7),'
                 f'OR(CARI!$C$8="",$T{row}=CARI!$C$8)),'
@@ -818,24 +819,28 @@ def build_rekap(wb):
     sel = row
     put(ws, f"B{sel}", "PILIH KAMPUNG", f(10, True), align=LEFT)
     put(ws, f"D{sel}", None, f(10, True, NAVY), INPUT, CENTER, BOX, unlock=True)
-    put(ws, f"E{sel}", "PILIH RT", f(10, True), align=RIGHT)
+    put(ws, f"E{sel}", "RT", f(10, True), align=RIGHT)
     put(ws, f"F{sel}", None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
-    put(ws, f"G{sel}", "JUMLAH", f(10, True), align=RIGHT)
-    put(ws, f"H{sel}", f'=COUNTIF({DB}!$M${FIRST}:$M${LAST},$AA$1)',
+    put(ws, f"G{sel}", "RW", f(10, True), align=RIGHT)
+    put(ws, f"H{sel}", None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
+    put(ws, f"I{sel}", "JUMLAH", f(10, True), align=RIGHT)
+    put(ws, f"J{sel}", f'=COUNTIF({DB}!$M${FIRST}:$M${LAST},$AA$1)',
         f(11, True, RED), None, CENTER, BOX, "#,##0")
-    put(ws, f"I{sel}", "◀  pilih pada sel kuning", f(9, italic=True, color="595959"),
+    put(ws, f"K{sel}", "◀  isi sel kuning", f(9, italic=True, color="595959"),
         align=LEFT)
-    # kunci gabungan korwil disimpan pada sel bantu AA1 (kolom disembunyikan)
-    put(ws, "AA1", f'=IF(OR($D${sel}="",$F${sel}=""),"~",$D${sel}&" - RT "&$F${sel})',
-        f(9))
+    # Kunci korwil disimpan di sel bantu AA1. Bentuknya harus persis sama
+    # dengan kolom KORWIL pada DATABASE, termasuk bagian RW-nya.
+    put(ws, "AA1",
+        f'=IF(OR($D${sel}="",$F${sel}=""),"~",$D${sel}&" - RT "&$F${sel}'
+        f'&IF($H${sel}="","","/"&$H${sel}))', f(9))
     ws.column_dimensions["AA"].hidden = True
 
     dvk = DataValidation(type="list", formula1="=daftar_kampung", allow_blank=True)
     dvr = DataValidation(type="list", formula1="=daftar_rt", allow_blank=True)
-    ws.add_data_validation(dvk)
-    ws.add_data_validation(dvr)
-    dvk.add(f"D{sel}")
-    dvr.add(f"F{sel}")
+    dvw = DataValidation(type="list", formula1="=daftar_rw", allow_blank=True)
+    for d, ref in ((dvk, f"D{sel}"), (dvr, f"F{sel}"), (dvw, f"H{sel}")):
+        ws.add_data_validation(d)
+        d.add(ref)
 
     hd = sel + 1
     cols = [("NO", 6), ("NAMA LENGKAP", 28), ("NIK", 20), ("L/P", 6), ("JABATAN", 20),
@@ -843,7 +848,7 @@ def build_rekap(wb):
     for i, (text, w) in enumerate(cols):
         col = get_column_letter(2 + i)
         put(ws, f"{col}{hd}", text, f(9, True, WHITE), NAVY, CENTER, BOX)
-    src = {"C": "B", "D": "C", "E": "D", "F": "H", "G": "I", "H": "O", "I": "J"}
+    src = {"C": "B", "D": "C", "E": "E", "F": "N", "G": "O", "H": "T", "I": "I"}
     for i in range(40):
         r = hd + 1 + i
         bg = BAND if i % 2 == 0 else WHITE
@@ -1018,8 +1023,8 @@ def build_cari(wb):
             ("KAMPUNG", None), ("RT", None), ("JABATAN", None), ("NO. HP", None),
             ("STATUS", None), ("ALAMAT", None)]
     header_row(ws, hd, cols, first_col=2)
-    src = {"C": "B", "D": "C", "E": "D", "F": "E", "G": "F", "H": "H",
-           "I": "I", "J": "O", "K": "J"}
+    src = {"C": "B", "D": "C", "E": "E", "F": "F", "G": "G", "H": "N",
+           "I": "O", "J": "T", "K": "I"}
     for i in range(N_CARI):
         r = hd + 1 + i
         bg = BAND if i % 2 == 0 else WHITE
@@ -1091,7 +1096,7 @@ def build_validasi(wb):
     header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("NIK", None),
                         ("KAMPUNG", None), ("RT", None), ("MASALAH", None),
                         ("NO. HP", None)], first_col=2)
-    src = {"C": "B", "D": "C", "E": "E", "F": "F", "G": "T", "H": "I"}
+    src = {"C": "B", "D": "C", "E": "F", "F": "G", "G": "Y", "H": "O"}
     for i in range(N_MASALAH):
         r = hd + 1 + i
         bg = BAND if i % 2 == 0 else WHITE
@@ -1302,9 +1307,9 @@ def build_kartu(wb):
         rows = [
             ("NAMA", lookup % ("B", "B"), f(10, True)),
             ("NIK", lookup % ("C", "C"), f(9)),
-            ("KORWIL", lookup % ("G", "G"), f(9)),
-            ("JABATAN", lookup % ("H", "H"), f(9)),
-            ("NO. HP", lookup % ("I", "I"), f(9)),
+            ("ALAMAT", lookup % ("M", "M"), f(9)),
+            ("JABATAN", lookup % ("N", "N"), f(9)),
+            ("NO. HP", lookup % ("O", "O"), f(9)),
         ]
         # segel menempati satu blok tergabung di sisi kiri badan kartu
         ws.merge_cells(f"{cs}{top + 1}:{cs}{top + len(rows)}")
@@ -1411,7 +1416,7 @@ def build_absensi(wb):
     hd = 13
     header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("JABATAN", None),
                         ("NO. HP", None), ("TANDA TANGAN", None)])
-    src = {"B": "B", "C": "H", "D": "I"}
+    src = {"B": "B", "C": "N", "D": "O"}
     for i in range(N_ABSEN):
         r = hd + 1 + i
         urut = f'(($H$13-1)*{N_ABSEN}+{i + 1})'

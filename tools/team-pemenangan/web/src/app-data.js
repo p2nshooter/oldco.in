@@ -146,7 +146,12 @@ Isi paket ini:
   Aplikasi Team Pemenangan.html   <- buka berkas ini (klik dua kali)
   data/database.js                <- database Anda, dimuat otomatis
   data/database.json              <- database yang sama, untuk cadangan
+  data/untuk-excel.csv            <- untuk dibuka / diimpor di Excel
   BACA-DULU.txt                   <- berkas ini
+
+Berkas Excel tidak ikut dalam paket yang dibuat dari dalam aplikasi.
+Salin "Aplikasi Team Pemenangan.xlsx" dari paket aslinya, lalu perbarui
+isinya lewat data/untuk-excel.csv.
 
 CARA PAKAI
 ----------
@@ -175,6 +180,15 @@ bukan di dalam berkas HTML. Membersihkan data peramban akan menghapusnya.
 Biasakan menekan "Unduh paket ZIP" setiap selesai menginput banyak data.
 `;
 
+/** Isi CSV yang sama dengan tombol "Unduh CSV" — dipakai di dalam paket ZIP. */
+function isiCsv() {
+  const baris = [CSV_KOLOM.join(',')];
+  state.members.forEach(m => {
+    baris.push(CSV_KOLOM.map(k => csvCell(m[k])).join(','));
+  });
+  return '\ufeff' + baris.join('\r\n');
+}
+
 async function unduhPaketZip() {
   const tombol = $('#btnZip');
   if (tombol) { tombol.disabled = true; tombol.textContent = 'Menyiapkan paket…'; }
@@ -186,6 +200,8 @@ async function unduhPaketZip() {
       { nama: 'Aplikasi Team Pemenangan.html', data: enc.encode(salinanAplikasi()) },
       { nama: 'data/database.js', data: enc.encode('window.TP_DATA = ' + json + ';\n') },
       { nama: 'data/database.json', data: enc.encode(json) },
+      // jembatan ke versi Excel: kolomnya sama dengan sheet DATABASE
+      { nama: 'data/untuk-excel.csv', data: enc.encode(isiCsv()) },
       { nama: 'BACA-DULU.txt', data: enc.encode(BACA_DULU) }
     ];
     const zip = await buatZip(berkas);

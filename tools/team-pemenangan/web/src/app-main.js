@@ -465,6 +465,14 @@ function validasiForm(form, idSekarang) {
       if (kembar) setBad('nik', 'NIK ini sudah dipakai anggota lain.');
     }
   }
+
+  const kk = form.kk.value.trim();
+  if (kk) {
+    if (!/^\d+$/.test(kk)) setBad('kk', 'No. KK hanya boleh angka.');
+    else if (kk.length !== 16) {
+      setBad('kk', 'No. KK harus tepat 16 angka (sekarang ' + kk.length + ').');
+    }
+  }
   return ok;
 }
 

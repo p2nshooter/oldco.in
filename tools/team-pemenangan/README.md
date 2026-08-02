@@ -12,7 +12,14 @@ Berkas siap pakai: **`Aplikasi_Team_Pemenangan_v2.xlsx`**
 pip install openpyxl pillow
 python3 prepare_logos.py                                  # aset gambar
 python3 build_workbook.py Aplikasi_Team_Pemenangan_v2.xlsx
+python3 isi_data.py Aplikasi_Team_Pemenangan_v2.xlsx web/seed/database.json
+python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 ```
+
+Urutannya penting. `isi_data.py` menyalin data dari sumber yang sama dengan
+versi web (`web/seed/database.json`) sehingga isi kedua aplikasi identik, dan
+tahap hitung-ulang terakhir menanamkan nilai hasil rumus — tanpa itu berkasnya
+membengkak dari 1,2 MB menjadi 3,1 MB.
 
 `prepare_logos.py` cukup dijalankan ulang bila gambar di `assets/sumber/`
 diganti. Bila folder `assets/` kosong, workbook tetap terbangun — hanya tanpa

@@ -6,19 +6,26 @@ paket ZIP.
 
 | Berkas | Untuk apa |
 |---|---|
-| **`Aplikasi-Team-Pemenangan.zip`** (± 660 KB) | Paket lengkap: aplikasi + database. **Ini yang dibagikan.** |
-| `Aplikasi_Team_Pemenangan.html` (± 950 KB) | Aplikasi saja, tanpa database bawaan |
+| **`Aplikasi-Team-Pemenangan.zip`** (± 1,45 MB) | Paket lengkap: aplikasi HTML + Excel + database. **Ini yang dibagikan.** |
+| `Aplikasi_Team_Pemenangan.html` (± 980 KB) | Aplikasi web saja, tanpa database bawaan |
 
 ## Paket ZIP — database yang ikut berpindah
 
 Isi paket:
 
 ```
-Aplikasi Team Pemenangan.html   aplikasi lengkap, satu berkas
-data/database.js                database, dimuat otomatis saat aplikasi dibuka
+Aplikasi Team Pemenangan.html   cara 1 — buka dengan Chrome
+Aplikasi Team Pemenangan.xlsx   cara 2 — buka dengan Excel
+data/database.js                database, dimuat otomatis oleh versi HTML
 data/database.json              database yang sama, untuk cadangan/alat lain
+data/untuk-excel.csv            jembatan data ke Excel
 BACA-DULU.txt                   petunjuk singkat
 ```
+
+Keduanya berkas terpisah — mengetik di satu sisi tidak langsung muncul di sisi
+lain. Jembatannya CSV, dan sebaiknya pilih satu sebagai induk data. Paket yang
+dibuat dari dalam aplikasi (tombol **Unduh paket ZIP**) berisi HTML + database
++ CSV; berkas Excel disalin sekali dari paket asli.
 
 Alur pemakaian:
 
@@ -199,3 +206,28 @@ disimpan sebagai `data/database.js` yang mengisi `window.TP_DATA`. Berkas
 Berkas ZIP ditulis sendiri di dalam aplikasi tanpa pustaka luar: CRC-32 plus
 struktur ZIP baku, dimampatkan dengan `CompressionStream('deflate-raw')` bila
 peramban mendukung, dan disimpan apa adanya bila tidak.
+
+## Struktur alamat
+
+Mengikuti cara daftar aslinya ditulis:
+
+| Kolom | Isi | Filter |
+|---|---|---|
+| KAMPUNG | Gamprit, Kuda Kuda, Wangkal, Tenjolaut, Putri Melintang | ada |
+| RT / RW | nomor — tampil menyatu di alamat, mis. `RT 004/002` | ada |
+| ALAMAT | keterangan tambahan (patokan) | — |
+| NAMA RT | Wandi, Basir, Onin, Ropik, Nemin, Engkus, Opic/Ropik | ada |
+| NAMA RK | Niman | ada |
+| NAMA KADUS | Markum | ada |
+| NIK KTP / NO. KK | 16 digit, keduanya divalidasi | — |
+
+RW wajib ada karena daftar memuat RT 04/02, 04/04, dan 04/06 — tanpa RW
+ketiganya tertulis sama padahal wilayahnya berbeda.
+
+## Ukuran kertas
+
+Daftar lengkap dan rekapitulasi memakai **A4 melintang** lewat halaman bernama
+CSS (`@page lebar`), sedangkan daftar hadir dan kartu tetap tegak. Lebar kolom
+selalu dijumlahkan tepat 100% supaya tidak ada sel yang terdorong keluar
+kertas. Orientasi diperiksa dari PDF hasil render: 842×595pt untuk yang
+melintang, 595×842pt untuk yang tegak.
