@@ -41,6 +41,28 @@ berisi perbandingan jumlah dan tanggal keduanya, dengan tiga pilihan:
 *Gunakan data paket*, *Gabungkan* (hanya NIK baru yang ditambah), atau
 *Pertahankan data perangkat*. Tidak ada yang berubah sampai dipilih.
 
+## Data awal yang sudah terisi
+
+Paket rilis sudah berisi **52 anggota Team Pemenangan JF Jilid 3** dengan
+alamat yang dipisah menjadi empat bagian: kampung, RT, RW, dan nama ketua RT.
+
+Alamat aslinya ditulis bebas dalam satu baris — misalnya
+`Haris kuda kuda Rt003/001 Rt basir` menjadi kampung *Kp. Kuda Kuda*, RT *003*,
+RW *001*, ketua RT *Basir*. Baris asli tetap disimpan pada kolom **Catatan**
+sehingga tidak ada keterangan yang hilang dan mudah diperiksa ulang.
+
+**RW dan Ketua RT adalah kolom yang memang diperlukan data ini,** bukan
+tambahan hiasan: di daftar tersebut ada RT 04/02, 04/04, dan 04/06 yang tanpa
+RW akan tertulis sama; dan 15 orang beralamat hanya "RT Wandi", "RT Basir",
+"RT Onin", "RT Ropik", "RT Nemin", atau "RT Engkus" tanpa nomor sama sekali.
+
+Sumber dan pembangkitnya ada di `seed/anggota_jf3.py`; hasilnya
+`seed/database.json` dan `seed/anggota-jf3.csv`.
+
+Yang **tidak** ditebak dan sengaja dibiarkan kosong: NIK, no. HP, jenis
+kelamin, tanggal lahir, TPS, dan target per kampung. Menu **Validasi Data**
+menampilkannya sebagai daftar tugas pelengkapan.
+
 ## Membangun ulang
 
 ```bash

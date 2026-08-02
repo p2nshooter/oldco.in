@@ -97,7 +97,7 @@ function buatDokumen(jenis, f, ekstra) {
     '<th style="width:' + w.no + '%">No</th>' +
     '<th style="width:' + w.nama + '%">Nama Lengkap</th>' +
     '<th style="width:' + w.nik + '%">NIK</th>' +
-    (hadir ? '' : '<th style="width:' + w.korwil + '%">Korwil</th>') +
+    (hadir ? '' : '<th style="width:' + w.korwil + '%">Alamat</th>') +
     '<th style="width:' + w.jab + '%">Jabatan</th>' +
     '<th style="width:' + w.hp + '%">No. HP</th>' +
     '<th style="width:' + w.ttd + '%">Tanda Tangan</th></tr></thead><tbody>';
@@ -109,7 +109,7 @@ function buatDokumen(jenis, f, ekstra) {
   list.forEach((m, i) => {
     h += '<tr><td class="c">' + (i + 1) + '</td><td>' + esc(m.nama) + '</td>' +
       '<td class="c nw">' + esc(m.nik || '') + '</td>' +
-      (hadir ? '' : '<td class="nw">' + esc(korwil(m)) + '</td>') +
+      (hadir ? '' : '<td class="nw">' + esc(wilayah(m)) + '</td>') +
       '<td>' + esc(m.jabatan || '') + '</td><td class="c">' + esc(m.hp || '') + '</td>' +
       '<td class="sig">' + (i + 1) + '.</td></tr>';
   });
@@ -182,7 +182,7 @@ function dokKartu(list) {
         '<div>' +
         '<div class="kr"><span>NAMA</span><span>' + esc(m.nama) + '</span></div>' +
         '<div class="kr"><span>NIK</span><span>' + esc(m.nik || '-') + '</span></div>' +
-        '<div class="kr"><span>KORWIL</span><span>' + esc(korwil(m) || '-') + '</span></div>' +
+        '<div class="kr"><span>ALAMAT</span><span>' + esc(wilayah(m) || '-') + '</span></div>' +
         '<div class="kr"><span>JABATAN</span><span>' + esc(m.jabatan || '-') + '</span></div>' +
         '<div class="kr"><span>NO. HP</span><span>' + esc(m.hp || '-') + '</span></div>' +
         '</div></div>' +

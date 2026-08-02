@@ -39,14 +39,17 @@ function viewPengaturan() {
     return x + '</div></div>';
   };
 
-  h += daftar('kadus', 'Daftar Kadus / Dusun',
-    'Menghapus Kadus tidak menghapus anggotanya — data lama tetap ada dan bisa diperbaiki lewat menu Data Anggota.');
+  h += daftar('kadus', 'Daftar Kampung / Dusun',
+    'Menghapus kampung tidak menghapus anggotanya — data lama tetap ada dan bisa diperbaiki lewat menu Data Anggota.');
   h += daftar('rt', 'Daftar RT', 'Tulis tiga angka, contoh 001.');
+  h += daftar('rw', 'Daftar RW', 'Tulis tiga angka, contoh 002.');
+  h += daftar('ketuaRt', 'Daftar Ketua RT',
+    'Nama ketua RT, dipakai untuk alamat yang hanya menyebut "RT Wandi" tanpa nomor.');
   h += daftar('tps', 'Daftar TPS', 'Tulis dua angka, contoh 01.');
   h += daftar('jabatan', 'Daftar Jabatan', 'Urutan bebas; dipakai pada dropdown formulir anggota.');
   h += daftar('status', 'Status Keanggotaan', 'Bawaan: Aktif, Calon, Nonaktif.');
 
-  h += '<div class="sec-title">Target per Kadus</div><div class="card"><div class="card-b">' +
+  h += '<div class="sec-title">Target per Kampung</div><div class="card"><div class="card-b">' +
     '<p class="mini-note" style="margin-bottom:12px">Angka ini asumsi yang Anda tentukan sendiri, ' +
     'dipakai untuk menghitung % capaian pada Dasbor dan Target.</p><div class="form-grid">';
   s.kadus.forEach(k => {
@@ -151,8 +154,9 @@ function exportJson() {
   toast('Cadangan JSON terunduh — unggah ke folder Drive Anda.');
 }
 
-const CSV_KOLOM = ['nama', 'nik', 'jk', 'kadus', 'rt', 'tps', 'jabatan', 'hp',
-  'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut', 'catatan'];
+const CSV_KOLOM = ['nama', 'nik', 'jk', 'kadus', 'rt', 'rw', 'ketuaRt', 'tps',
+  'jabatan', 'hp', 'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut',
+  'catatan'];
 
 function csvCell(v) {
   const s = String(v === undefined || v === null ? '' : v);
@@ -205,6 +209,7 @@ function importFile(file, gabung) {
         const petaAlias = {
           'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
           'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
+          'kampung': 'kadus', 'ketua rt': 'ketuaRt',
           'tgl gabung': 'tglGabung', 'kelompok usia': null, 'usia': null,
           'korwil': null, 'no': null, 'key': null
         };
@@ -369,6 +374,12 @@ function formAnggota(id) {
 
     '<div class="field" data-f="kadus"><label>Kadus</label><select name="kadus">' + sel(s.kadus, 'kadus') + '</select></div>' +
     '<div class="field" data-f="rt"><label>RT</label><select name="rt">' + sel(s.rt, 'rt') + '</select></div>' +
+    '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + sel(s.rw, 'rw') + '</select></div>' +
+    '<div class="field" data-f="ketuaRt"><label>Ketua RT</label>' +
+    '<input type="text" name="ketuaRt" value="' + v('ketuaRt') + '" list="daftarKetuaRt" ' +
+    'placeholder="mis. Wandi"><span class="hint">Dipakai bila alamat hanya menyebut nama Ketua RT.</span>' +
+    '<datalist id="daftarKetuaRt">' +
+    s.ketuaRt.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
     '<div class="field" data-f="tps"><label>TPS</label><select name="tps">' + sel(s.tps, 'tps') + '</select></div>' +
     '<div class="field" data-f="jabatan"><label>Jabatan</label><select name="jabatan">' + sel(s.jabatan, 'jabatan') + '</select></div>' +
 
@@ -393,8 +404,8 @@ function formAnggota(id) {
     '<div class="field" data-f="catatan"><label>Catatan</label>' +
     '<input type="text" name="catatan" value="' + v('catatan') + '" placeholder="Catatan bebas"></div>' +
 
-    '<div class="field span2"><label>Korwil (otomatis)</label>' +
-    '<input type="text" id="korwilPrev" value="' + esc(m ? korwil(m) : '') + '" readonly ' +
+    '<div class="field span2"><label>Alamat wilayah (otomatis)</label>' +
+    '<input type="text" id="korwilPrev" value="' + esc(m ? wilayah(m) : '') + '" readonly ' +
     'style="background:var(--surface-2);color:var(--muted)"></div>' +
     '</div></form></div>' +
     '<div class="modal-f">' +
@@ -593,11 +604,14 @@ function bukaForm(id) {
   bukaModal(formAnggota(id));
   const form = $('#formAnggota');
   const perbaruiKorwil = () => {
-    const k = form.kadus.value, r = form.rt.value;
-    $('#korwilPrev').value = (k && r) ? k + ' - RT ' + r : '';
+    $('#korwilPrev').value = wilayah({
+      kadus: form.kadus.value, rt: form.rt.value,
+      rw: form.rw.value, ketuaRt: form.ketuaRt.value
+    });
   };
-  form.kadus.addEventListener('change', perbaruiKorwil);
-  form.rt.addEventListener('change', perbaruiKorwil);
+  ['kadus', 'rt', 'rw', 'ketuaRt'].forEach(k =>
+    form[k].addEventListener('change', perbaruiKorwil));
+  form.ketuaRt.addEventListener('input', perbaruiKorwil);
   form.tglLahir.addEventListener('change', () => {
     const u = usia({ tglLahir: form.tglLahir.value });
     $('#usiaHint').textContent = u === null

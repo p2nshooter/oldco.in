@@ -25,6 +25,8 @@ const DEFAULTS = {
   kadus: ['Kadus I', 'Kadus II', 'Kadus III', 'Kadus IV', 'Kadus V'],
   rt: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010',
     '011', '012', '013', '014', '015'],
+  rw: ['001', '002', '003', '004', '005', '006', '007', '008'],
+  ketuaRt: [],
   tps: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'],
   jabatan: ['Ketua Team', 'Wakil Ketua', 'Sekretaris', 'Bendahara',
     'Koordinator Wilayah', 'Koordinator Lapangan', 'Anggota', 'Relawan'],
@@ -40,8 +42,9 @@ const DEFAULTS = {
   ]
 };
 
-const FIELDS = ['nama', 'nik', 'jk', 'kadus', 'rt', 'tps', 'jabatan', 'hp',
-  'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut', 'catatan'];
+const FIELDS = ['nama', 'nik', 'jk', 'kadus', 'rt', 'rw', 'ketuaRt', 'tps',
+  'jabatan', 'hp', 'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut',
+  'catatan'];
 
 /* ----------------------------------------------------------------- state */
 
@@ -50,12 +53,12 @@ let ui = {
   view: 'dasbor',
   theme: 'light',
   q: '',
-  f: { kadus: '', rt: '', tps: '', jabatan: '', status: '' },
+  f: { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' },
   sort: { by: 'nama', dir: 1 },
   page: 1,
   perPage: 25,
-  cetak: { jenis: 'daftar', kadus: '', rt: '', tps: '', jabatan: '', status: '' },
-  kartu: { kadus: '', rt: '', tps: '' }
+  cetak: { jenis: 'daftar', kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' },
+  kartu: { kadus: '', rt: '', rw: '', ketuaRt: '' }
 };
 
 function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -75,7 +78,7 @@ function load() {
       state.disimpan = d.disimpan || '';
       state.settings = Object.assign(defaultSettings(), d.settings || {});
       // pastikan setiap daftar tetap array walau berkas cadangan lama
-      ['kadus', 'rt', 'tps', 'jabatan', 'status'].forEach(k => {
+      ['kadus', 'rt', 'rw', 'ketuaRt', 'tps', 'jabatan', 'status'].forEach(k => {
         if (!Array.isArray(state.settings[k])) state.settings[k] = DEFAULTS[k].slice();
       });
       if (!state.settings.identitas) state.settings.identitas = clone(DEFAULTS.identitas);
@@ -97,9 +100,9 @@ function load() {
   try {
     const rawUi = localStorage.getItem(KEY_UI);
     if (rawUi) ui = Object.assign(ui, JSON.parse(rawUi));
-    if (!ui.f) ui.f = { kadus: '', rt: '', tps: '', jabatan: '', status: '' };
-    if (!ui.cetak) ui.cetak = { jenis: 'daftar', kadus: '', rt: '', tps: '', jabatan: '', status: '' };
-    if (!ui.kartu) ui.kartu = { kadus: '', rt: '', tps: '' };
+    if (!ui.f) ui.f = { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' };
+    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' });
+    if (!ui.kartu) ui.kartu = { kadus: '', rt: '', rw: '', ketuaRt: '' };
   } catch (e) { /* pengaturan tampilan boleh gagal tanpa mengganggu data */ }
 }
 
@@ -129,8 +132,19 @@ function saveUi() {
 /* ------------------------------------------------------------- turunan */
 
 function korwil(m) {
-  if (!m.kadus || !m.rt) return '';
-  return m.kadus + ' - RT ' + m.rt;
+  if (!m.kadus) return '';
+  if (m.rt) return m.kadus + ' - RT ' + m.rt + (m.rw ? '/' + m.rw : '');
+  if (m.ketuaRt) return m.kadus + ' - RT ' + m.ketuaRt;
+  return m.kadus;
+}
+
+/** Alamat lengkap yang sudah terpisah, untuk tampilan dan dokumen cetak. */
+function wilayah(m) {
+  const b = [];
+  if (m.kadus) b.push(m.kadus);
+  if (m.rt) b.push('RT ' + m.rt + (m.rw ? '/' + m.rw : ''));
+  if (m.ketuaRt) b.push('(RT ' + m.ketuaRt + ')');
+  return b.join(' ');
 }
 
 function usia(m, ref) {
@@ -160,11 +174,11 @@ function masalah(m, nikCount) {
   if (!nik) return 'NIK kosong';
   if (!/^\d{16}$/.test(nik)) return 'NIK bukan 16 digit';
   if (nikCount && (nikCount[nik] || 0) > 1) return 'NIK ganda';
-  if (!m.kadus) return 'Kadus kosong';
-  if (!m.rt) return 'RT kosong';
+  if (!m.kadus) return 'Kampung kosong';
+  if (!m.rt && !m.ketuaRt) return 'RT kosong';
   if (!m.jabatan) return 'Jabatan kosong';
   if (!(m.hp || '').trim()) return 'No. HP kosong';
-  if (!(m.alamat || '').trim()) return 'Alamat kosong';
+  if (!(m.alamat || '').trim() && !wilayah(m)) return 'Alamat kosong';
   const u = usia(m);
   if (u !== null && u < 17) return 'Usia di bawah 17';
   return '';
@@ -184,13 +198,15 @@ function hitungNik() {
 function cocok(m, f, q) {
   if (f.kadus && m.kadus !== f.kadus) return false;
   if (f.rt && m.rt !== f.rt) return false;
+  if (f.rw && m.rw !== f.rw) return false;
+  if (f.ketuaRt && m.ketuaRt !== f.ketuaRt) return false;
   if (f.tps && m.tps !== f.tps) return false;
   if (f.jabatan && m.jabatan !== f.jabatan) return false;
   if (f.status && m.status !== f.status) return false;
   if (q) {
     const t = q.toLowerCase();
     const blob = [m.nama, m.nik, m.hp, m.alamat, m.perekrut, m.jabatan,
-      korwil(m), m.tps, m.catatan].join(' ').toLowerCase();
+      wilayah(m), m.ketuaRt, m.tps, m.catatan].join(' ').toLowerCase();
     if (!blob.includes(t)) return false;
   }
   return true;

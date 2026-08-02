@@ -68,13 +68,18 @@ function opts(list, sel, kosong) {
 
 function filterBar(f, prefix, extra) {
   const s = state.settings;
+  const sel = (k, list, kosong) =>
+    '<select data-fk="' + k + '" data-fp="' + prefix + '">' +
+    opts(list, f[k], kosong) + '</select>';
   return '<div class="filters">' +
-    '<select data-fk="kadus" data-fp="' + prefix + '">' + opts(s.kadus, f.kadus, '— semua Kadus —') + '</select>' +
-    '<select data-fk="rt" data-fp="' + prefix + '">' + opts(s.rt, f.rt, '— semua RT —') + '</select>' +
-    '<select data-fk="tps" data-fp="' + prefix + '">' + opts(s.tps, f.tps, '— semua TPS —') + '</select>' +
+    sel('kadus', s.kadus, '— semua Kampung —') +
+    sel('rt', s.rt, '— semua RT —') +
+    sel('rw', s.rw, '— semua RW —') +
+    (s.ketuaRt.length ? sel('ketuaRt', s.ketuaRt, '— semua Ketua RT —') : '') +
+    sel('tps', s.tps, '— semua TPS —') +
     (extra === false ? '' :
-      '<select data-fk="jabatan" data-fp="' + prefix + '">' + opts(s.jabatan, f.jabatan, '— semua jabatan —') + '</select>' +
-      '<select data-fk="status" data-fp="' + prefix + '">' + opts(s.status, f.status, '— semua status —') + '</select>') +
+      sel('jabatan', s.jabatan, '— semua jabatan —') +
+      sel('status', s.status, '— semua status —')) +
     '<button class="btn btn-sm" data-reset="' + prefix + '">Reset filter</button>' +
     '</div>';
 }
@@ -82,7 +87,9 @@ function filterBar(f, prefix, extra) {
 function labelFilter(f) {
   const b = [];
   if (f.kadus) b.push(f.kadus);
-  if (f.rt) b.push('RT ' + f.rt);
+  if (f.rt) b.push('RT ' + f.rt + (f.rw ? '/' + f.rw : ''));
+  else if (f.rw) b.push('RW ' + f.rw);
+  if (f.ketuaRt) b.push('RT ' + f.ketuaRt);
   if (f.tps) b.push('TPS ' + f.tps);
   if (f.jabatan) b.push(f.jabatan);
   if (f.status) b.push(f.status);
@@ -126,7 +133,7 @@ function viewDasbor() {
 
   h += '<div class="grid two" style="margin-top:16px">';
 
-  h += '<div class="card"><div class="card-h"><h3>Sebaran per Kadus</h3><div class="grow"></div>' +
+  h += '<div class="card"><div class="card-h"><h3>Sebaran per Kampung</h3><div class="grow"></div>' +
     '<span class="mini-note">jumlah / target</span></div><div class="card-b">';
   if (!pk.length) {
     h += '<div class="empty">' + ICON.empty + '<h4>Belum ada data</h4>' +
@@ -176,7 +183,7 @@ function viewDasbor() {
       '<th>Status</th><th>Ditambahkan</th></tr></thead><tbody>';
     terbaru.forEach(m => {
       h += '<tr data-open="' + m.id + '" style="cursor:pointer"><td class="name">' + esc(m.nama) + '</td>' +
-        '<td>' + esc(korwil(m) || '—') + '</td><td>' + esc(m.jabatan || '—') + '</td>' +
+        '<td>' + esc(wilayah(m) || '—') + '</td><td>' + esc(m.jabatan || '—') + '</td>' +
         '<td>' + chipStatus(m.status) + '</td><td>' + esc(tglId(m.dibuat)) + '</td></tr>';
     });
     h += '</tbody></table></div></div>';
@@ -226,7 +233,8 @@ function viewData() {
 
   h += '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
     '<th style="width:44px">#</th>' + th('Nama', 'nama') + th('NIK', 'nik') +
-    '<th>L/P</th>' + th('Korwil', 'korwil') + '<th>TPS</th>' + th('Jabatan', 'jabatan') +
+    '<th>L/P</th>' + th('Kampung', 'kadus') + '<th>RT/RW</th><th>Ketua RT</th>' +
+    '<th>TPS</th>' + th('Jabatan', 'jabatan') +
     '<th>No. HP</th>' + th('Usia', 'usia', 'num') + th('Status', 'status') +
     '<th style="width:86px">Aksi</th></tr></thead><tbody>';
 
@@ -240,7 +248,10 @@ function viewData() {
       (mm ? '<div class="mini-note" style="color:var(--danger);font-weight:600">' + esc(mm) + '</div>' : '') + '</td>' +
       '<td style="font-variant-numeric:tabular-nums">' + esc(m.nik || '—') + '</td>' +
       '<td>' + esc(m.jk || '—') + '</td>' +
-      '<td>' + esc(korwil(m) || '—') + '</td>' +
+      '<td>' + esc(m.kadus || '—') + '</td>' +
+      '<td style="font-variant-numeric:tabular-nums">' +
+      esc(m.rt ? m.rt + (m.rw ? '/' + m.rw : '') : '—') + '</td>' +
+      '<td>' + esc(m.ketuaRt || '—') + '</td>' +
       '<td>' + esc(m.tps || '—') + '</td>' +
       '<td>' + esc(m.jabatan || '—') + '</td>' +
       '<td>' + esc(m.hp || '—') + '</td>' +
@@ -274,8 +285,8 @@ function viewRekap() {
   const rtAda = s.rt.filter(rt => state.members.some(m => m.rt === rt));
   const rtList = rtAda.length ? rtAda : s.rt.slice(0, 8);
 
-  let h = '<div class="sec-title">Matriks Kadus × RT</div><div class="card"><div class="tbl-wrap">' +
-    '<table class="tbl matrix"><thead><tr><th>Kadus</th>';
+  let h = '<div class="sec-title">Matriks Kampung × RT</div><div class="card"><div class="tbl-wrap">' +
+    '<table class="tbl matrix"><thead><tr><th>Kampung</th>';
   rtList.forEach(rt => { h += '<th>' + esc(rt) + '</th>'; });
   h += '<th>Total</th></tr></thead><tbody>';
   s.kadus.forEach(k => {
@@ -297,8 +308,8 @@ function viewRekap() {
   });
   h += '<td>' + num(grand) + '</td></tr></tfoot></table></div></div>';
 
-  h += '<div class="sec-title">Gender &amp; status per Kadus</div><div class="card"><div class="tbl-wrap">' +
-    '<table class="tbl matrix"><thead><tr><th>Kadus</th><th>Laki-laki</th><th>Perempuan</th>' +
+  h += '<div class="sec-title">Gender &amp; status per Kampung</div><div class="card"><div class="tbl-wrap">' +
+    '<table class="tbl matrix"><thead><tr><th>Kampung</th><th>Laki-laki</th><th>Perempuan</th>' +
     '<th>Aktif</th><th>Calon</th><th>Nonaktif</th><th>Total</th><th>% total</th></tr></thead><tbody>';
   const totalAll = state.members.length || 1;
   perKadus().forEach(x => {
@@ -414,7 +425,7 @@ function viewValidasi() {
     h += '<tr class="bad-row"><td class="num" style="color:var(--muted)">' + (i + 1) + '</td>' +
       '<td class="name">' + esc(o.m.nama || '(tanpa nama)') + '</td>' +
       '<td style="font-variant-numeric:tabular-nums">' + esc(o.m.nik || '—') + '</td>' +
-      '<td>' + esc(korwil(o.m) || '—') + '</td>' +
+      '<td>' + esc(wilayah(o.m) || '—') + '</td>' +
       '<td><span class="chip bad">' + esc(o.x) + '</span></td>' +
       '<td><button class="btn btn-sm btn-primary" data-edit="' + o.m.id + '">Perbaiki</button></td></tr>';
   });
