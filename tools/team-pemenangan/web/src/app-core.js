@@ -167,7 +167,9 @@ function cariRt(nama) {
   if (!nama) return null;
   for (const k of state.settings.pengurus || []) {
     for (const r of k.rt || []) {
-      if (r[1] && r[1] === nama) return { kadus: k.kadus, no: samakanRt(r[0]) };
+      if (r[1] && r[1] === nama) {
+        return { kadus: k.kadus, no: samakanRt(r[0]), kampung: r[2] || '' };
+      }
     }
   }
   return null;

@@ -209,23 +209,47 @@ peramban mendukung, dan disimpan apa adanya bila tidak.
 
 ## Struktur pengurus
 
-Data induk kepengurusan desa diisi lebih dulu dan mengisi dropdown formulir:
+Data induk kepengurusan diisi lebih dulu dan mengisi dropdown formulir:
 
-| Kadus | Ketua RK | Ketua RT |
+| Kadus | Ketua RK | Kampung | Ketua RT |
+|---|---|---|---|
+| Kadus 1 | 1 Maska, 2 Pasni | Kp. Tenjolaut | 001 Ikin Lois, 002 Sarjan |
+| | | Kp. Kuda Kuda | 003 Basir, 004 Onin, 005 Tongkat / Kahidir, 006 Sa ari |
+| Kadus 2 | 3 Sutejo, 4 Ilyas | Kp. Gamprit | 001 Dedi, 002 Rimun, 003 Adi Ardiansyah, 004 Kusnadi |
+| Kadus 3 — Markum | 5 Uding, 6 Saiman | Kp. Gamprit | 001 Ropic, 002 (belum ada), 003 Wandy Suwandi, 006 Sumintra |
+| | | Kp. Wangkal | 004 Toyib, 005 Nemuin |
+
+**Hanya nama pengurus yang benar-benar membedakan satu RT dari RT lain.**
+Nomor RT berulang di tiap kadus — RT 001 ada di ketiganya — dan Kampung
+Gamprit dipakai Kadus 2 maupun Kadus 3. Karena itu dropdown Nama RT
+dikelompokkan per kadus memakai `optgroup` dengan label yang menyebut kampung,
+dan memilih nama RT otomatis mengisi **nomor RT, kampung, dan kadus** sekaligus.
+
+Nomor pada struktur disamakan tiga digit (`003`, bukan `03`) supaya cocok
+dengan daftar RT; tanpa penyamaan ini pengisian otomatis gagal diam-diam.
+
+Struktur bisa disunting di **Pengaturan → Struktur Pengurus**; daftar nama RT
+dan RK ikut diperbarui sendiri. Pada Excel, acuannya ada di sheet PENGATURAN
+mulai baris 60, lengkap dengan kolom kampung.
+
+### Penyelarasan ejaan
+
+Ejaan pada daftar 52 nama berbeda dengan daftar pengurus resmi. Tiga di
+antaranya cocok kampung **dan** nomor RT-nya, jadi diselaraskan ke ejaan resmi
+— baris aslinya tetap tersimpan di kolom CATATAN:
+
+| Ditulis di daftar anggota | Diselaraskan ke | Bukti |
 |---|---|---|
-| Kadus 1 | RK 1 Maska, RK 2 Pasni | RT 001 Ikin Lois, 002 Sarjan, 003 Basir, 004 Onin, 005 Tongkat / Kahidir, 006 Sa ari |
-| Kadus 2 | RK 3 Sutejo, RK 4 Ilyas | RT 001 Dedi, 002 Rimun, 003 Adi Ardiansyah, 004 Kusnadi |
-| Kadus 3 — Markum | RK 5 Uding, RK 6 Saiman | RT 001 Ropic, 002 (belum ada), 003 Wandy Suwandi, 004 Toyib, 005 Nemuin, 006 Sumintra |
+| Wandi (8 orang) | Wandy Suwandi | Kp. Gamprit, Kadus 3 RT 003 |
+| Ropik / Opic-Ropik (2) | Ropic | Kp. Gamprit, Kadus 3 RT 001 |
+| Nemin (1) | Nemuin | Kp. Wangkal, Kadus 3 RT 005 |
 
-**Nomor RT berulang di tiap kadus** — RT 001 ada di ketiganya — jadi nama
-pengurusnya yang membedakan. Karena itu dropdown Nama RT dikelompokkan per
-kadus memakai `optgroup`, dan memilih nama RT otomatis mengisi nomor RT serta
-kadusnya. Nomor pada struktur disamakan tiga digit (`003`, bukan `03`) supaya
-cocok dengan daftar RT.
+**Engkus** (1 orang) dan **Niman** (RK) tidak ada di struktur resmi sehingga
+dibiarkan apa adanya; keduanya tetap muncul di dropdown pada kelompok
+"Belum ada di struktur pengurus".
 
-Struktur ini bisa disunting di **Pengaturan → Struktur Pengurus**; daftar nama
-RT dan RK ikut diperbarui sendiri. Pada Excel, acuannya ada di sheet
-PENGATURAN mulai baris 60.
+Struktur ini juga melengkapi data yang kosong: **20 anggota** mendapat kadus
+dan **4 anggota** mendapat kampung dari nama RT-nya.
 
 ## Struktur alamat
 

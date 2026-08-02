@@ -227,16 +227,19 @@ KADUS_DEFAULT = ["Kadus 1", "Kadus 2", "Kadus 3"]
 # struktur pengurus desa: (kadus, nama kadus, [(no RK, nama)], [(no RT, nama)])
 PENGURUS_DEFAULT = [
     ("Kadus 1", "", [("1", "Maska"), ("2", "Pasni")],
-     [("001", "Ikin Lois"), ("002", "Sarjan"), ("003", "Basir"),
-      ("004", "Onin"), ("005", "Tongkat / Kahidir"), ("006", "Sa ari")]),
+     [("001", "Ikin Lois", "Kp. Tenjolaut"), ("002", "Sarjan", "Kp. Tenjolaut"),
+      ("003", "Basir", "Kp. Kuda Kuda"), ("004", "Onin", "Kp. Kuda Kuda"),
+      ("005", "Tongkat / Kahidir", "Kp. Kuda Kuda"),
+      ("006", "Sa ari", "Kp. Kuda Kuda")]),
     ("Kadus 2", "", [("3", "Sutejo"), ("4", "Ilyas")],
-     [("001", "Dedi"), ("002", "Rimun"), ("003", "Adi Ardiansyah"),
-      ("004", "Kusnadi")]),
+     [("001", "Dedi", "Kp. Gamprit"), ("002", "Rimun", "Kp. Gamprit"),
+      ("003", "Adi Ardiansyah", "Kp. Gamprit"), ("004", "Kusnadi", "Kp. Gamprit")]),
     ("Kadus 3", "Markum", [("5", "Uding"), ("6", "Saiman")],
-     [("001", "Ropic"), ("002", ""), ("003", "Wandy Suwandi"),
-      ("004", "Toyib"), ("005", "Nemuin"), ("006", "Sumintra")]),
+     [("001", "Ropic", "Kp. Gamprit"), ("002", "", "Kp. Gamprit"),
+      ("003", "Wandy Suwandi", "Kp. Gamprit"), ("004", "Toyib", "Kp. Wangkal"),
+      ("005", "Nemuin", "Kp. Wangkal"), ("006", "Sumintra", "Kp. Gamprit")]),
 ]
-NAMA_RT_DEFAULT = [n for _, _, _, rt in PENGURUS_DEFAULT for _, n in rt if n]
+NAMA_RT_DEFAULT = [r[1] for _, _, _, rt in PENGURUS_DEFAULT for r in rt if r[1]]
 NAMA_RK_DEFAULT = [n for _, _, rk, _ in PENGURUS_DEFAULT for _, n in rk if n]
 RW_DEFAULT = [f"{i:03d}" for i in range(1, 9)]
 RT_DEFAULT = [f"{i:03d}" for i in range(1, 16)]
@@ -335,14 +338,16 @@ def build_referensi(wb):
             put(ws, f"C{baris}", "RK " + no, f(9), None, CENTER, BOX)
             put(ws, f"D{baris}", nm, f(10), None, LEFT, BOX)
             baris += 1
-        for no, nm in rt_list:
+        for no, nm, kp in rt_list:
             put(ws, f"C{baris}", "RT " + no, f(9), None, CENTER, BOX)
             put(ws, f"D{baris}", nm or "(belum ada nama)",
                 f(10) if nm else f(9, italic=True, color=RED), None, LEFT, BOX)
+            put(ws, f"E{baris}", kp, f(9, color="595959"), None, LEFT, BOX)
             baris += 1
         baris += 1
-    put(ws, f"B{baris}", "Nomor RT berulang di tiap kadus — nama pengurusnyalah "
-        "yang membedakan.", f(9, italic=True, color="595959"), align=LEFT)
+    put(ws, f"B{baris}", "Nomor RT berulang di tiap kadus dan Kampung Gamprit ada "
+        "di Kadus 2 maupun Kadus 3 — nama pengurusnyalah yang membedakan.",
+        f(9, italic=True, color="595959"), align=LEFT)
 
     # --- catatan
     catatan = [

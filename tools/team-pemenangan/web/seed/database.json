@@ -38,27 +38,33 @@
         "rt": [
           [
             "001",
-            "Ikin Lois"
+            "Ikin Lois",
+            "Kp. Tenjolaut"
           ],
           [
             "002",
-            "Sarjan"
+            "Sarjan",
+            "Kp. Tenjolaut"
           ],
           [
             "003",
-            "Basir"
+            "Basir",
+            "Kp. Kuda Kuda"
           ],
           [
             "004",
-            "Onin"
+            "Onin",
+            "Kp. Kuda Kuda"
           ],
           [
             "005",
-            "Tongkat / Kahidir"
+            "Tongkat / Kahidir",
+            "Kp. Kuda Kuda"
           ],
           [
             "006",
-            "Sa ari"
+            "Sa ari",
+            "Kp. Kuda Kuda"
           ]
         ]
       },
@@ -78,19 +84,23 @@
         "rt": [
           [
             "001",
-            "Dedi"
+            "Dedi",
+            "Kp. Gamprit"
           ],
           [
             "002",
-            "Rimun"
+            "Rimun",
+            "Kp. Gamprit"
           ],
           [
             "003",
-            "Adi Ardiansyah"
+            "Adi Ardiansyah",
+            "Kp. Gamprit"
           ],
           [
             "004",
-            "Kusnadi"
+            "Kusnadi",
+            "Kp. Gamprit"
           ]
         ]
       },
@@ -110,27 +120,33 @@
         "rt": [
           [
             "001",
-            "Ropic"
+            "Ropic",
+            "Kp. Gamprit"
           ],
           [
             "002",
-            ""
+            "",
+            "Kp. Gamprit"
           ],
           [
             "003",
-            "Wandy Suwandi"
+            "Wandy Suwandi",
+            "Kp. Gamprit"
           ],
           [
             "004",
-            "Toyib"
+            "Toyib",
+            "Kp. Wangkal"
           ],
           [
             "005",
-            "Nemuin"
+            "Nemuin",
+            "Kp. Wangkal"
           ],
           [
             "006",
-            "Sumintra"
+            "Sumintra",
+            "Kp. Gamprit"
           ]
         ]
       }
@@ -504,7 +520,7 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Basir",
       "kampung": "Kp. Kuda Kuda",
@@ -552,11 +568,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -600,11 +616,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -648,11 +664,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -672,11 +688,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Onin",
       "kampung": "Kp. Kuda Kuda",
-      "rt": "",
+      "rt": "004",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -696,11 +712,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -720,11 +736,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Nemin",
+      "namaRt": "Nemuin",
       "kampung": "Kp. Wangkal",
-      "rt": "",
+      "rt": "005",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -768,11 +784,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -792,11 +808,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -888,10 +904,10 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Onin",
-      "kampung": "",
+      "kampung": "Kp. Kuda Kuda",
       "rt": "004",
       "rw": "002",
       "alamat": "",
@@ -1008,10 +1024,10 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Onin",
-      "kampung": "",
+      "kampung": "Kp. Kuda Kuda",
       "rt": "004",
       "rw": "002",
       "alamat": "",
@@ -1032,10 +1048,10 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Onin",
-      "kampung": "",
+      "kampung": "Kp. Kuda Kuda",
       "rt": "004",
       "rw": "002",
       "alamat": "",
@@ -1056,7 +1072,7 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Basir",
       "kampung": "Kp. Kuda Kuda",
@@ -1248,11 +1264,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Basir",
       "kampung": "Kp. Kuda Kuda",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -1272,11 +1288,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Ropik",
+      "namaRt": "Ropic",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "001",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -1344,11 +1360,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 1",
       "namaRk": "",
       "namaRt": "Onin",
       "kampung": "Kp. Kuda Kuda",
-      "rt": "",
+      "rt": "004",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -1368,10 +1384,10 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Opic/Ropik",
-      "kampung": "",
+      "namaRt": "Ropic",
+      "kampung": "Kp. Gamprit",
       "rt": "001",
       "rw": "005",
       "alamat": "",
@@ -1440,11 +1456,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",
@@ -1464,11 +1480,11 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "",
+      "kadus": "Kadus 3",
       "namaRk": "",
-      "namaRt": "Wandi",
+      "namaRt": "Wandy Suwandi",
       "kampung": "Kp. Gamprit",
-      "rt": "",
+      "rt": "003",
       "rw": "",
       "alamat": "",
       "tps": "",

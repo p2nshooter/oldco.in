@@ -82,26 +82,49 @@ ANGGOTA = [
     ("ALI NURDIN", "Kp. Gamprit", "", "", ("Wandi", "", ""), "", "Ali Nurdin kp gamprit RT wandi"),
 ]
 
-# Struktur pengurus desa. Nomor RT berulang di tiap kadus (RT 01 ada di
-# ketiganya), jadi nomor saja tidak cukup — nama pengurusnyalah pembedanya.
+# Struktur pengurus desa: kadus -> RK dan RT, lengkap dengan kampungnya.
+# Nomor RT berulang di tiap kadus (RT 001 ada di ketiganya) dan Kampung
+# Gamprit dipakai oleh Kadus 2 maupun Kadus 3 — jadi hanya nama pengurusnya
+# yang benar-benar membedakan satu RT dari RT lain.
+# Format RT: (nomor, nama ketua RT, kampung)
 PENGURUS = [
     {"kadus": "Kadus 1", "nama": "",
      "rk": [("1", "Maska"), ("2", "Pasni")],
-     "rt": [("001", "Ikin Lois"), ("002", "Sarjan"), ("003", "Basir"),
-            ("004", "Onin"), ("005", "Tongkat / Kahidir"), ("006", "Sa ari")]},
+     "rt": [("001", "Ikin Lois", "Kp. Tenjolaut"),
+            ("002", "Sarjan", "Kp. Tenjolaut"),
+            ("003", "Basir", "Kp. Kuda Kuda"),
+            ("004", "Onin", "Kp. Kuda Kuda"),
+            ("005", "Tongkat / Kahidir", "Kp. Kuda Kuda"),
+            ("006", "Sa ari", "Kp. Kuda Kuda")]},
     {"kadus": "Kadus 2", "nama": "",
      "rk": [("3", "Sutejo"), ("4", "Ilyas")],
-     "rt": [("001", "Dedi"), ("002", "Rimun"), ("003", "Adi Ardiansyah"),
-            ("004", "Kusnadi")]},
+     "rt": [("001", "Dedi", "Kp. Gamprit"),
+            ("002", "Rimun", "Kp. Gamprit"),
+            ("003", "Adi Ardiansyah", "Kp. Gamprit"),
+            ("004", "Kusnadi", "Kp. Gamprit")]},
     {"kadus": "Kadus 3", "nama": "Markum",
      "rk": [("5", "Uding"), ("6", "Saiman")],
-     "rt": [("001", "Ropic"), ("002", ""), ("003", "Wandy Suwandi"),
-            ("004", "Toyib"), ("005", "Nemuin"), ("006", "Sumintra")]},
+     "rt": [("001", "Ropic", "Kp. Gamprit"),
+            ("002", "", "Kp. Gamprit"),
+            ("003", "Wandy Suwandi", "Kp. Gamprit"),
+            ("004", "Toyib", "Kp. Wangkal"),
+            ("005", "Nemuin", "Kp. Wangkal"),
+            ("006", "Sumintra", "Kp. Gamprit")]},
 ]
 
+# Ejaan pada daftar 52 nama berbeda dengan daftar pengurus resmi. Tiga di
+# antaranya cocok kampung dan nomor RT-nya, jadi diselaraskan ke ejaan resmi;
+# nama aslinya tetap tersimpan di kolom CATATAN.
+SELARAS_RT = {
+    "Wandi": "Wandy Suwandi",      # Kp. Gamprit, Kadus 3 RT 003
+    "Ropik": "Ropic",              # Kp. Gamprit, Kadus 3 RT 001
+    "Opic/Ropik": "Ropic",
+    "Nemin": "Nemuin",             # Kp. Wangkal, Kadus 3 RT 005
+}
+
 KADUS = [k["kadus"] for k in PENGURUS]
-NAMA_RT = [n for k in PENGURUS for _, n in k["rt"] if n]
-NAMA_RK = [n for k in PENGURUS for _, n in k["rk"] if n]
+NAMA_RT = [r[1] for k in PENGURUS for r in k["rt"] if r[1]]
+NAMA_RK = [r[1] for k in PENGURUS for r in k["rk"] if r[1]]
 KAMPUNG = ["Kp. Gamprit", "Kp. Kuda Kuda", "Kp. Wangkal", "Kp. Tenjolaut",
            "Kp. Putri Melintang"]
 JABATAN = ["Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara", "Kadus",
@@ -112,10 +135,30 @@ RW = ["001", "002", "003", "004", "005", "006"]
 TPS = [f"{i:02d}" for i in range(1, 21)]
 
 
+def cari_rt(nama_rt):
+    """Kembalikan (kadus, nomor RT, kampung) dari struktur pengurus."""
+    for k in PENGURUS:
+        for no, nm, kp in k["rt"]:
+            if nm and nm == nama_rt:
+                return k["kadus"], no, kp
+    return None
+
+
 def build():
     members = []
     for i, (nama, kampung, rt, rw, pengurus, jabatan, asli) in enumerate(ANGGOTA):
         nama_rt, nama_rk, nama_kadus = pengurus
+        nama_rt = SELARAS_RT.get(nama_rt, nama_rt)
+        # struktur pengurus melengkapi kadus, nomor RT, dan kampung yang kosong
+        info = cari_rt(nama_rt)
+        if info:
+            kadus_rt, no_rt, kampung_rt = info
+            if not nama_kadus:
+                nama_kadus = kadus_rt
+            if not rt:
+                rt = no_rt
+            if not kampung:
+                kampung = kampung_rt
         members.append({
             "id": f"jf3-{i + 1:03d}",
             "nama": nama,

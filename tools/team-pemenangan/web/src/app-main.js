@@ -69,8 +69,9 @@ function viewPengurus() {
     '<div class="card"><div class="card-b">' +
     '<p class="mini-note" style="margin-bottom:12px">Daftar ini mengisi dropdown ' +
     '<b>Nama RT</b> dan <b>Nama RK</b> pada formulir anggota. Memilih nama RT ' +
-    'otomatis mengisi nomor RT dan kadusnya. Nomor RT berulang di tiap kadus, ' +
-    'jadi nama pengurusnya yang membedakan.</p>';
+    'otomatis mengisi nomor RT, kampung, dan kadusnya. Nomor RT berulang di ' +
+    'tiap kadus dan Kampung Gamprit ada di Kadus 2 maupun Kadus 3 — jadi hanya ' +
+    'nama pengurusnya yang benar-benar membedakan.</p>';
 
   if (!list.length) {
     h += '<p class="mini-note">Belum ada struktur pengurus.</p></div></div>';
@@ -96,7 +97,10 @@ function viewPengurus() {
           esc((jenis === 'rt' ? 'RT ' : 'RK ') + r[0]) + '</span>' +
           '<input type="text" data-png="' + ik + '" data-pj="' + jenis +
           '" data-pi="' + ir + '" value="' + esc(r[1] || '') +
-          '" placeholder="belum ada nama" style="flex:1"></div>';
+          '" placeholder="belum ada nama" style="flex:1">' +
+          (jenis === 'rt'
+            ? '<span class="mini-note" style="min-width:104px">' +
+              esc(r[2] || '—') + '</span>' : '') + '</div>';
       });
     });
     h += '</div></div>';
@@ -425,7 +429,7 @@ function formAnggota(id) {
     '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + sel(s.rw, 'rw') + '</select></div>' +
     '<div class="field" data-f="namaRt"><label>Nama RT</label>' +
     '<select name="namaRt">' + optPengurus('rt', m ? m.namaRt : '') + '</select>' +
-    '<span class="hint">Memilih nama RT otomatis mengisi nomor RT dan Kadus.</span></div>' +
+    '<span class="hint">Memilih nama RT otomatis mengisi nomor RT, Kampung, dan Kadus.</span></div>' +
     '<div class="field" data-f="namaRk"><label>Nama RK</label>' +
     '<select name="namaRk">' + optPengurus('rk', m ? m.namaRk : '') + '</select></div>' +
     '<div class="field" data-f="kadus"><label>Kadus</label>' +
@@ -474,7 +478,8 @@ function optPengurus(jenis, terpilih) {
     if (!isi.length) return;
     h += '<optgroup label="' + esc(k.kadus + (k.nama ? ' — ' + k.nama : '')) + '">';
     isi.forEach(r => {
-      const label = (jenis === 'rt' ? 'RT ' : 'RK ') + r[0] + ' — ' + r[1];
+      const label = (jenis === 'rt' ? 'RT ' : 'RK ') + r[0] + ' — ' + r[1] +
+        (jenis === 'rt' && r[2] ? '  ·  ' + r[2] : '');
       h += '<option value="' + esc(r[1]) + '"' +
         (r[1] === terpilih ? ' selected' : '') + '>' + esc(label) + '</option>';
     });
@@ -699,6 +704,7 @@ function bukaForm(id) {
     if (!info) return;
     form.rt.value = info.no;
     form.kadus.value = info.kadus;
+    if (info.kampung) form.kampung.value = info.kampung;
     perbaruiKorwil();
   });
   form.namaRk.addEventListener('change', () => {
