@@ -25,13 +25,18 @@ jangan dipakai untuk berkas yang dibagikan.
 
 from __future__ import annotations
 
+import pathlib
 import sys
 
 from openpyxl import Workbook
+from openpyxl.drawing.image import Image as XLImage
 from openpyxl.chart import BarChart, PieChart, Reference
 from openpyxl.formatting.rule import CellIsRule, FormulaRule
+from openpyxl.drawing.spreadsheet_drawing import AnchorMarker, OneCellAnchor
+from openpyxl.drawing.xdr import XDRPositiveSize2D
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Protection, Side
-from openpyxl.utils import get_column_letter
+from openpyxl.utils import coordinate_to_tuple, get_column_letter
+from openpyxl.utils.units import pixels_to_EMU
 from openpyxl.workbook.defined_name import DefinedName
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.hyperlink import Hyperlink
@@ -165,6 +170,37 @@ def lock_sheet(ws):
     ws.protection.formatRows = False
     ws.protection.sort = False
     ws.protection.autoFilter = False
+
+
+ASSETS = pathlib.Path(__file__).parent / "assets"
+
+
+def gambar(ws, nama, anchor, lebar, dx=0, dy=0):
+    """Sisipkan gambar dari folder assets, diskalakan proporsional ke `lebar` px.
+
+    `dx`/`dy` menggeser gambar dalam piksel dari pojok kiri atas sel jangkar,
+    dipakai untuk menengahkan segel pada kartu dan kop surat. Rasio gambar
+    selalu dipertahankan agar logo tidak gepeng.
+
+    Dilewati diam-diam bila berkasnya tidak ada, supaya workbook tetap bisa
+    dibangun tanpa aset gambar.
+    """
+    berkas = ASSETS / nama
+    if not berkas.exists():
+        return None
+    img = XLImage(berkas)
+    tinggi = int(round(img.height * lebar / img.width))
+    img.width, img.height = lebar, tinggi
+    if dx or dy:
+        col, row = coordinate_to_tuple(anchor)[1] - 1, coordinate_to_tuple(anchor)[0] - 1
+        img.anchor = OneCellAnchor(
+            _from=AnchorMarker(col=col, colOff=pixels_to_EMU(dx),
+                               row=row, rowOff=pixels_to_EMU(dy)),
+            ext=XDRPositiveSize2D(pixels_to_EMU(lebar), pixels_to_EMU(tinggi)))
+        ws._images.append(img)
+    else:
+        ws.add_image(img, anchor)
+    return img
 
 
 def page_print(ws, area=None, landscape=False, fit_width=1, titles=None):
@@ -447,6 +483,8 @@ def build_menu(wb):
     ws.merge_cells("B6:G6")
     put(ws, "I2", '="Hari ini: "&TEXT(TODAY(),"dd/mm/yyyy")',
         f(9, italic=True, color="595959"), align=RIGHT)
+    # emblem di pojok kanan atas, sejajar blok judul
+    gambar(ws, "logo-emblem.png", "I3", 150)
 
     # ---- panel navigasi
     section(ws, 8, "MENU UTAMA", width="C")
@@ -459,6 +497,7 @@ def build_menu(wb):
         ("▶   CETAK FORMULIR PER KORWIL", "CETAK!A1", "Formulir tanda tangan"),
         ("▶   CETAK KARTU ANGGOTA", "KARTU!A1", "Kartu siap potong, 8 per halaman"),
         ("▶   CETAK DAFTAR HADIR", "ABSENSI!A1", "Absensi kegiatan per korwil"),
+        ("▶   PROFIL & MEDIA KAMPANYE", "PROFIL!A1", "Poster dan emblem siap cetak"),
         ("▶   PENGATURAN KADUS / RT / JABATAN", "REFERENSI!A1", "Dropdown, target, identitas"),
         ("▶   PETUNJUK PENGGUNAAN", "PETUNJUK!A1", "Manual + kode makro opsional"),
     ]
@@ -1025,6 +1064,8 @@ def build_cetak(wb):
     for col, w in zip("ABCDEFGHIJ", [6, 30, 20, 20, 15, 18, 3, 18, 16, 3]):
         ws.column_dimensions[col].width = w
 
+    # emblem sebagai kop surat di kiri; teks judul tetap rata tengah A:F
+    gambar(ws, "logo-emblem.png", "A2", 88)
     put(ws, "A2", "=id_team", f(16, True), align=CENTER)
     ws.merge_cells("A2:F2")
     put(ws, "A3", "=id_calon", f(14, True), align=CENTER)
@@ -1110,45 +1151,50 @@ def build_cetak(wb):
 def build_kartu(wb):
     ws = wb.create_sheet("KARTU")
     ws.sheet_view.showGridLines = False
-    for col, w in zip("ABCDEFGHI", [2, 16, 26, 3, 16, 26, 3, 20, 20]):
+    for col, w in zip("ABCDEFGHIJK", [2, 10, 12, 22, 3, 10, 12, 22, 3, 20, 20]):
         ws.column_dimensions[col].width = w
 
-    title_block(ws, 1, "KARTU ANGGOTA  •  SIAP POTONG", width="F")
+    title_block(ws, 1, "KARTU ANGGOTA  •  SIAP POTONG", width="H")
     put(ws, "C2", "Isi nomor awal, lalu Ctrl+P. Satu halaman berisi 8 kartu.",
         f(9, italic=True, color="595959"), align=LEFT)
 
-    put(ws, "H4", "PANEL — TIDAK DICETAK", f(9, True, WHITE), BLUE, CENTER)
-    ws.merge_cells("H4:I4")
-    put(ws, "H5", "Nomor awal", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "I5", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
-    put(ws, "H6", "Total anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "I6", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', f(11, True, RED),
+    put(ws, "J4", "PANEL — TIDAK DICETAK", f(9, True, WHITE), BLUE, CENTER)
+    ws.merge_cells("J4:K4")
+    put(ws, "J5", "Nomor awal", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "K5", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
+    put(ws, "J6", "Total anggota", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "K6", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', f(11, True, RED),
         None, CENTER, BOX)
-    put(ws, "H7", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "I7", f'="isi "&($I$5+{N_KARTU})&" untuk 8 kartu berikutnya"',
+    put(ws, "J7", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
+    put(ws, "K7", f'="isi "&($K$5+{N_KARTU})&" untuk 8 kartu berikutnya"',
         f(9, italic=True), None, LEFT, BOX)
     dvn = DataValidation(type="whole", operator="greaterThanOrEqual", formula1="1",
                          showErrorMessage=True, errorStyle="warning",
                          errorTitle="Nomor awal", error="Isi angka 1 atau lebih.")
     ws.add_data_validation(dvn)
-    dvn.add("I5")
-    link(ws, "H9", "◀  MENU", "MENU!A1")
+    dvn.add("K5")
+    link(ws, "J9", "◀  MENU", "MENU!A1")
 
-    # 4 baris x 2 kolom kartu, tiap kartu 6 baris
+    # Tiap kartu: bilah judul, lalu badan berisi segel di kiri dan data di
+    # kanan — segel dibuat cukup besar (62 px) agar tulisan emblem tetap
+    # terbaca; ukuran mini di bilah judul terlihat sebagai noda gelap.
     start_row = 4
+    tinggi_baris = 17          # tinggi baris data kartu, dalam poin
+    px_per_baris = tinggi_baris * 4 / 3
+    segel = 62
     for idx in range(N_KARTU):
-        rblock = idx // 2
-        cblock = idx % 2
-        top = start_row + rblock * 7
-        c1 = "B" if cblock == 0 else "E"
-        c2 = "C" if cblock == 0 else "F"
-        no = f"($I$5+{idx})"
+        rblock, cblock = idx // 2, idx % 2
+        top = start_row + rblock * 8
+        cs, cl, cv = ("B", "C", "D") if cblock == 0 else ("F", "G", "H")
+        no = f"($K$5+{idx})"
         lookup = (f'IFERROR(INDEX({DB}!$%s${FIRST}:$%s${LAST},'
                   f'MATCH({no},{DB}!$A${FIRST}:$A${LAST},0))&"","")')
 
-        ws.merge_cells(f"{c1}{top}:{c2}{top}")
-        put(ws, f"{c1}{top}", '=id_team&" — "&id_calon', f(9, True, WHITE), NAVY,
+        ws.merge_cells(f"{cs}{top}:{cv}{top}")
+        put(ws, f"{cs}{top}", '=id_team&" — "&id_calon', f(9, True, WHITE), NAVY,
             CENTER, BOX)
+        ws.row_dimensions[top].height = 20
+
         rows = [
             ("NAMA", lookup % ("B", "B"), f(10, True)),
             ("NIK", lookup % ("C", "C"), f(9)),
@@ -1156,22 +1202,31 @@ def build_kartu(wb):
             ("JABATAN", lookup % ("H", "H"), f(9)),
             ("NO. HP", lookup % ("I", "I"), f(9)),
         ]
+        # segel menempati satu blok tergabung di sisi kiri badan kartu
+        ws.merge_cells(f"{cs}{top + 1}:{cs}{top + len(rows)}")
+        put(ws, f"{cs}{top + 1}", None, f(9), None, CENTER, BOX)
+        tinggi_badan = len(rows) * px_per_baris
+        gambar(ws, "logo-emblem.png", f"{cs}{top + 1}", segel,
+               dx=6, dy=int(round((tinggi_badan - segel) / 2)))
+
         for j, (label, formula, font) in enumerate(rows):
             r = top + 1 + j
-            put(ws, f"{c1}{r}", label, f(8, color="595959"), GREY_BG, LEFT, BOX)
-            put(ws, f"{c2}{r}", "=" + formula, font, None, LEFT, BOX,
+            put(ws, f"{cl}{r}", label, f(8, color="595959"), GREY_BG, LEFT, BOX)
+            put(ws, f"{cv}{r}", "=" + formula, font, None, LEFT, BOX,
                 "@" if label in ("NIK", "NO. HP") else None)
-            ws.row_dimensions[r].height = 17
-        put(ws, f"{c1}{top + 6}", f'="No. "&{no}', f(8, color="808080"), None, LEFT)
-        put(ws, f"{c2}{top + 6}", "=id_periode", f(8, color="808080"), None, RIGHT)
+            ws.row_dimensions[r].height = tinggi_baris
+        foot = top + len(rows) + 1
+        put(ws, f"{cs}{foot}", f'="No. "&{no}', f(8, color="808080"), None, LEFT)
+        ws.merge_cells(f"{cs}{foot}:{cl}{foot}")
+        put(ws, f"{cv}{foot}", "=id_periode", f(8, color="808080"), None, RIGHT)
 
-    last = start_row + 4 * 7
+    last = start_row + 4 * 8
     put(ws, f"B{last}", "Potong mengikuti garis kotak. Kartu kosong berarti nomor "
         "tersebut belum ada datanya.", f(9, italic=True, color="595959"), align=LEFT)
-    ws.merge_cells(f"B{last}:F{last}")
+    ws.merge_cells(f"B{last}:H{last}")
 
     lock_sheet(ws)
-    page_print(ws, area=f"B{start_row}:F{last - 1}", landscape=False)
+    page_print(ws, area=f"B{start_row}:H{last - 1}", landscape=False)
     return ws
 
 
@@ -1184,6 +1239,7 @@ def build_absensi(wb):
     for col, w in zip("ABCDEFGHIJ", [6, 30, 22, 15, 22, 3, 18, 16, 3, 3]):
         ws.column_dimensions[col].width = w
 
+    gambar(ws, "logo-emblem.png", "A2", 80)
     put(ws, "A2", "DAFTAR HADIR KEGIATAN", f(16, True), align=CENTER)
     ws.merge_cells("A2:E2")
     put(ws, "A3", '=id_team&"  —  "&id_calon', f(12, True), align=CENTER)
@@ -1258,7 +1314,55 @@ def build_absensi(wb):
     return ws
 
 
-# ============================================================ 11. PETUNJUK
+# ============================================================== 11. PROFIL
+
+
+def build_profil(wb):
+    ws = wb.create_sheet("PROFIL")
+    ws.sheet_view.showGridLines = False
+    for col, w in zip("ABCDEFGHI", [2, 12, 12, 12, 12, 12, 4, 34, 3]):
+        ws.column_dimensions[col].width = w
+
+    title_block(ws, 1, "PROFIL & MEDIA KAMPANYE", width="H")
+    put(ws, "C2", "Poster dan emblem resmi — siap dicetak atau dibagikan.",
+        f(9, italic=True, color="595959"), align=LEFT)
+
+    section(ws, 4, "POSTER RESMI", width="F")
+    gambar(ws, "poster.jpg", "B5", 560)
+    for r in range(5, 48):
+        ws.row_dimensions[r].height = 15
+
+    # emblem 200 px ≈ 10 baris (tinggi baris 15 pt = 20 px), keterangan
+    # ditaruh tepat di bawahnya
+    put(ws, "H4", "▌  EMBLEM RESMI", f(11, True, WHITE), NAVY, LEFT)
+    gambar(ws, "logo-emblem.png", "H5", 200)
+    put(ws, "H16", "Emblem utama — dipakai pada dasbor MENU, kop formulir "
+        "CETAK dan ABSENSI, serta kartu anggota.",
+        f(9, color="595959"), align=WRAP)
+    ws.merge_cells("H16:H18")
+
+    gambar(ws, "logo-emblem-alt.png", "H20", 200)
+    put(ws, "H31", "Emblem alternatif tanpa pita nama — untuk spanduk, kaus, "
+        "atau media yang butuh versi lebih ringkas.",
+        f(9, color="595959"), align=WRAP)
+    ws.merge_cells("H31:H33")
+
+    put(ws, "H36", "Mengganti gambar: klik kanan pada gambar > Change Picture "
+        "(Ganti Gambar). Ukuran dan posisinya tetap.",
+        f(9, italic=True, color="595959"), align=WRAP)
+    ws.merge_cells("H36:H38")
+
+    put(ws, "B49", "Catatan ejaan: poster menuliskan JONI FAHAMSYAH, sedangkan "
+        "pita pada emblem tertulis JONI FAHAMASYAH. Samakan lebih dulu bila "
+        "keduanya dipakai berdampingan.", f(9, italic=True, color=RED), align=WRAP)
+    ws.merge_cells("B49:F51")
+
+    lock_sheet(ws)
+    page_print(ws, area="A1:F48", landscape=False)
+    return ws
+
+
+# ============================================================ 12. PETUNJUK
 
 PETUNJUK_ISI = [
     ("H", "A.  ALUR KERJA SINGKAT"),
@@ -1269,38 +1373,47 @@ PETUNJUK_ISI = [
     ("T", "4.  Buka sheet VALIDASI, perbaiki semua baris yang muncul di sana."),
     ("T", "5.  Pantau perkembangan di sheet REKAP dan TARGET."),
     ("T", "6.  Cetak lewat sheet CETAK (formulir), KARTU (kartu anggota), atau ABSENSI."),
+    ("T", "7.  Sheet PROFIL memuat poster dan emblem resmi yang siap dicetak."),
     ("", ""),
-    ("H", "B.  ARTI WARNA"),
+    ("H", "B.  LOGO & KOP SURAT"),
+    ("T", "Emblem tampil di dasbor MENU, kop sheet CETAK dan ABSENSI, serta di setiap"),
+    ("T", "kartu pada sheet KARTU. Semuanya memakai berkas gambar yang sama."),
+    ("T", "Mengganti logo: klik kanan pada gambar > Change Picture (Ganti Gambar);"),
+    ("T", "ukuran dan posisinya tetap, jadi tata letak tidak perlu diatur ulang."),
+    ("T", "Nama desa dan nama calon pada kop diambil dari sheet PENGATURAN, bukan"),
+    ("T", "dari gambar — ubah di sana bila berganti wilayah atau periode."),
+    ("", ""),
+    ("H", "C.  ARTI WARNA"),
     ("T", "Kuning   : sel isian — boleh diketik/dipilih."),
     ("T", "Abu-abu  : hasil rumus otomatis — jangan diketik manual."),
     ("T", "Merah muda pada DATABASE : NIK ganda (dobel) — periksa dan perbaiki."),
     ("T", "Kuning muda pada DATABASE: NIK bukan 16 digit."),
     ("T", "Abu-abu miring pada DATABASE: anggota berstatus Nonaktif."),
     ("", ""),
-    ("H", "C.  KOLOM PADA SHEET DATABASE"),
+    ("H", "D.  KOLOM PADA SHEET DATABASE"),
     ("T", "Wajib   : NAMA LENGKAP, NIK, L/P, KADUS, RT, JABATAN, NO. HP, ALAMAT."),
     ("T", "Pilihan : TPS, TGL LAHIR, STATUS, TGL GABUNG, PEREKRUT, CATATAN."),
     ("T", "TGL LAHIR diisi format hh/bb/tttt — USIA dan KELOMPOK USIA lahir dari sini."),
     ("T", "STATUS diisi Aktif / Calon / Nonaktif; dipakai pada REKAP dan TARGET."),
     ("T", "PEREKRUT dipilih dari daftar nama anggota yang sudah terdata."),
     ("", ""),
-    ("H", "D.  MENYIMPAN & CADANGAN"),
+    ("H", "E.  MENYIMPAN & CADANGAN"),
     ("T", "Tekan Ctrl+S setiap selesai menginput — seluruh sheet tersimpan sekaligus."),
     ("T", "Buat salinan cadangan tiap minggu: File > Save As, beri nama + tanggal."),
     ("T", "Simpan juga satu salinan di HP atau flashdisk sebagai cadangan kedua."),
     ("", ""),
-    ("H", "E.  SHEET TERKUNCI"),
+    ("H", "F.  SHEET TERKUNCI"),
     ("T", "Sheet REKAP, TARGET, VALIDASI, CARI, CETAK, KARTU, dan ABSENSI dikunci agar"),
     ("T", "rumus tidak terhapus. Sel kuning tetap bisa diisi. Bila perlu mengubah isinya:"),
     ("T", "tab Review (Tinjau) > Unprotect Sheet — tanpa kata sandi."),
     ("T", "Sheet DATABASE dan PENGATURAN sengaja tidak dikunci agar bebas disunting."),
     ("", ""),
-    ("H", "F.  KAPASITAS"),
+    ("H", "G.  KAPASITAS"),
     ("T", "Kapasitas 2.000 baris anggota, 40 pilihan Kadus/RT/jabatan/TPS,"),
     ("T", "20 Kadus dan 20 RT pada matriks REKAP, 150 baris hasil pada CARI dan VALIDASI."),
     ("T", "Sisa kapasitas terlihat di sheet MENU dan pojok kanan atas sheet DATABASE."),
     ("", ""),
-    ("H", "G.  MENAMBAH TOMBOL MAKRO — OPSIONAL"),
+    ("H", "H.  MENAMBAH TOMBOL MAKRO — OPSIONAL"),
     ("T", "Tombol pada aplikasi ini memakai hyperlink sehingga aman dibuka di HP maupun"),
     ("T", "komputer tanpa peringatan keamanan. Bila ingin tombol SIMPAN dan FILTER otomatis:"),
     ("T", "1.  File > Save As > pilih tipe Excel Macro-Enabled Workbook (*.xlsm)."),
@@ -1372,7 +1485,7 @@ def build_petunjuk(wb):
         row += 1
 
     row += 1
-    put(ws, f"B{row}", "H.  CONTOH FORMAT PENGISIAN SHEET DATABASE",
+    put(ws, f"B{row}", "I.  CONTOH FORMAT PENGISIAN SHEET DATABASE",
         f(11, True, WHITE), NAVY, LEFT)
     ws.merge_cells(f"B{row}:E{row}")
     row += 1
@@ -1488,11 +1601,12 @@ def build(path, sample=False):
     build_cetak(wb)
     build_kartu(wb)
     build_absensi(wb)
+    build_profil(wb)
     build_petunjuk(wb)
     add_names(wb)
 
     order = ["MENU", "DATABASE", "CARI", "REKAP", "TARGET", "VALIDASI",
-             "CETAK", "KARTU", "ABSENSI", "REFERENSI", "PETUNJUK"]
+             "CETAK", "KARTU", "ABSENSI", "PROFIL", "REFERENSI", "PETUNJUK"]
     wb._sheets = [wb[name] for name in order]
     wb.active = 0
 

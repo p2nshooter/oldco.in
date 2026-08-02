@@ -9,9 +9,14 @@ Berkas siap pakai: **`Aplikasi_Team_Pemenangan_v2.xlsx`**
 ## Membangun ulang
 
 ```bash
-pip install openpyxl
+pip install openpyxl pillow
+python3 prepare_logos.py                                  # aset gambar
 python3 build_workbook.py Aplikasi_Team_Pemenangan_v2.xlsx
 ```
+
+`prepare_logos.py` cukup dijalankan ulang bila gambar di `assets/sumber/`
+diganti. Bila folder `assets/` kosong, workbook tetap terbangun — hanya tanpa
+gambar.
 
 Tambahkan `--sample` untuk mengisi 30 baris data contoh — hanya untuk menguji
 rumus, jangan dibagikan.
@@ -37,6 +42,7 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 | **CETAK** | Formulir tanda tangan per korwil, 50 nama, kop & penandatangan otomatis |
 | **KARTU** | Kartu anggota siap potong, 8 per halaman |
 | **ABSENSI** | Daftar hadir kegiatan per korwil, 40 baris |
+| **PROFIL** | Poster resmi siap cetak + kedua emblem beserta keterangannya |
 | **REFERENSI** | Pengaturan dropdown, target per Kadus, identitas (kop surat) |
 | **PETUNJUK** | Manual penggunaan + kode makro opsional |
 
@@ -70,6 +76,37 @@ disortir.
 **Cetak** — setiap sheet cetak sudah diatur ukuran A4, skala muat selebar
 halaman, area cetak, dan baris judul yang berulang tiap halaman.
 
+## Logo dan aset gambar
+
+Emblem asli berupa PNG persegi berlatar gelap. Bila disisipkan apa adanya,
+yang tampak adalah kotak hitam di atas lembar putih, jadi `prepare_logos.py`
+menghapus latarnya lebih dulu dengan dua metode berbeda:
+
+- **Emblem bertagline** — cincin emas luarnya utuh, sehingga latar bisa dihapus
+  dengan flood fill dari empat sudut. Bidang hitam di dalam emblem aman karena
+  cincin menjadi dinding penahan.
+- **Emblem berpita nama** — cincinnya terputus oleh mahkota, jadi flood fill
+  merembes ke dalam dan ikut menghapus panel "#2026". Emblem ini dipotong
+  memakai batas lingkaran, lalu digabung dengan piksel terang pada pita nama
+  supaya ujung pita yang menjorok keluar lingkaran tidak terpotong.
+
+Penempatan di workbook:
+
+| Tempat | Ukuran | Alasan |
+|---|---|---|
+| MENU, pojok kanan atas | 150 px | Sejajar blok judul, tidak menabrak panel ringkasan |
+| Kop CETAK dan ABSENSI | 88 / 80 px | Format kop surat resmi: logo kiri, teks rata tengah |
+| Segel kartu anggota | 62 px | Cukup besar agar tulisan emblem tetap terbaca saat dicetak |
+| PROFIL | 200 px | Etalase kedua emblem beserta keterangan pemakaiannya |
+
+Ukuran segel kartu sengaja tidak lebih kecil: pada percobaan 26 px di bilah
+judul kartu, emblem hanya terbaca sebagai noda gelap. Kartu karena itu memakai
+tata letak kartu identitas — segel di panel kiri, data di kanan.
+
+Rasio gambar selalu dipertahankan oleh fungsi `gambar()`, jadi logo tidak
+pernah gepeng. Untuk mengganti logo tanpa membangun ulang: klik kanan pada
+gambar di Excel > Change Picture — ukuran dan posisinya tetap.
+
 ## Catatan teknis
 
 - **Deteksi NIK ganda** memakai `COUNTIF(range, NIK & "*")`. `COUNTIF` biasa
@@ -90,7 +127,8 @@ halaman, area cetak, dan baris judul yang berulang tiap halaman.
 
 ## Verifikasi
 
-Berkas rilis lulus perhitungan ulang LibreOffice: **22.003 rumus, 0 error**.
+Berkas rilis lulus perhitungan ulang LibreOffice: **22.003 rumus, 0 error**,
+dengan 14 gambar dan 3 grafik utuh setelah perhitungan ulang.
 Dengan data contoh, seluruh angka pada MENU, REKAP, TARGET, dan VALIDASI sudah
 dicocokkan satu per satu terhadap perhitungan independen di Python — termasuk
 jumlah per Kadus, komposisi gender, status, deteksi NIK ganda, dan NIK pendek.
