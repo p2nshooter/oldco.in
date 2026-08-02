@@ -221,11 +221,18 @@ def page_print(ws, area=None, landscape=False, fit_width=1, titles=None,
 # =========================================================== 1. REFERENSI
 
 
-KADUS_DEFAULT = ["Kadus I", "Kadus II", "Kadus III", "Kadus IV", "Kadus V"]
+KAMPUNG_DEFAULT = ["Kp. Gamprit", "Kp. Kuda Kuda", "Kp. Wangkal",
+                   "Kp. Tenjolaut", "Kp. Putri Melintang"]
+KADUS_DEFAULT = ["Markum"]
+NAMA_RT_DEFAULT = ["Wandi", "Basir", "Onin", "Ropik", "Nemin", "Engkus",
+                   "Opic/Ropik"]
+NAMA_RK_DEFAULT = ["Niman"]
+RW_DEFAULT = [f"{i:03d}" for i in range(1, 9)]
 RT_DEFAULT = [f"{i:03d}" for i in range(1, 16)]
 JABATAN_DEFAULT = [
-    "Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara",
-    "Koordinator Wilayah", "Koordinator Lapangan", "Anggota", "Relawan",
+    "Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara", "Kadus",
+    "Ketua RK", "Ketua RT", "Koordinator Wilayah", "Koordinator Lapangan",
+    "Anggota", "Relawan",
 ]
 TPS_DEFAULT = [f"{i:02d}" for i in range(1, 11)]
 STATUS_DEFAULT = ["Aktif", "Calon", "Nonaktif"]
@@ -253,17 +260,19 @@ IDENTITAS = [
 def build_referensi(wb):
     ws = wb.create_sheet("REFERENSI")
     ws.sheet_view.showGridLines = False
-    for col, w in zip("ABCDEFGHIJKLMNO",
-                      [3, 20, 10, 10, 3, 24, 3, 10, 3, 12, 3, 20, 8, 3, 46]):
+    for col, w in zip("ABCDEFGHIJKLMNOPQRS",
+                      [3, 20, 10, 8, 8, 24, 3, 10, 3, 12, 3, 20, 8, 3, 14, 14,
+                       14, 3, 46]):
         ws.column_dimensions[col].width = w
 
     r = title_block(ws, 1, "PENGATURAN  •  DAFTAR PILIHAN, TARGET & IDENTITAS",
                     "Semua isian di sel kuning boleh diubah — dropdown dan kop "
-                    "surat ikut berubah otomatis.", width="O")
+                    "surat ikut berubah otomatis.", width="S")
 
-    hdr = [("B5", "DAFTAR KADUS"), ("C5", "TARGET"), ("D5", "DAFTAR RT"),
-           ("F5", "DAFTAR JABATAN"), ("H5", "DAFTAR TPS"),
-           ("J5", "STATUS ANGGOTA"), ("L5", "KELOMPOK USIA"), ("M5", "USIA MIN")]
+    hdr = [("B5", "DAFTAR KAMPUNG"), ("C5", "TARGET"), ("D5", "DAFTAR RT"),
+           ("E5", "DAFTAR RW"), ("F5", "DAFTAR JABATAN"), ("H5", "DAFTAR TPS"),
+           ("J5", "STATUS ANGGOTA"), ("L5", "KELOMPOK USIA"), ("M5", "USIA MIN"),
+           ("O5", "NAMA RT"), ("P5", "NAMA RK"), ("Q5", "NAMA KADUS")]
     for ref, text in hdr:
         put(ws, ref, text, f(10, True, WHITE), NAVY, CENTER, BOX)
 
@@ -273,11 +282,15 @@ def build_referensi(wb):
             put(ws, ref, values[i] if i < len(values) else None,
                 f(10), INPUT, LEFT, BOX, numfmt, unlock=True)
 
-    isi("B", KADUS_DEFAULT)
-    isi("C", [50] * len(KADUS_DEFAULT))
+    isi("B", KAMPUNG_DEFAULT)
+    isi("C", [0] * len(KAMPUNG_DEFAULT))
     isi("D", RT_DEFAULT, numfmt="@")
+    isi("E", RW_DEFAULT, numfmt="@")
     isi("F", JABATAN_DEFAULT)
     isi("H", TPS_DEFAULT, numfmt="@")
+    isi("O", NAMA_RT_DEFAULT)
+    isi("P", NAMA_RK_DEFAULT)
+    isi("Q", KADUS_DEFAULT)
     for i in range(REF_FIRST, REF_FIRST + 5):
         put(ws, f"J{i}", STATUS_DEFAULT[i - REF_FIRST] if i - REF_FIRST < 3 else None,
             f(10), INPUT, LEFT, BOX, unlock=True)
@@ -311,7 +324,7 @@ def build_referensi(wb):
         "• KELOMPOK USIA dipakai untuk rekap segmen pemilih.",
     ]
     for i, text in enumerate(catatan):
-        ref = f"O{5 + i}"
+        ref = f"S{5 + i}"
         put(ws, ref, text, f(10, True) if i == 0 else f(9),
             NAVY if i == 0 else None, LEFT)
         if i == 0:
@@ -324,33 +337,33 @@ def build_referensi(wb):
 # ============================================================ 2. DATABASE
 
 DB_COLS = [
-    ("NO", 6), ("NAMA LENGKAP", 30), ("NIK (16 digit)", 20), ("L/P", 6),
-    ("KADUS", 16), ("RT", 7), ("KORWIL", 22), ("JABATAN", 22),
-    ("NO. HP", 16), ("ALAMAT", 30), ("TPS", 7), ("TGL LAHIR", 13),
-    ("USIA", 7), ("KELOMPOK USIA", 18), ("STATUS", 11), ("TGL GABUNG", 13),
-    ("PEREKRUT", 24), ("CATATAN", 28),
+    ("NO", 6), ("NAMA LENGKAP", 28), ("NIK KTP (16 digit)", 20),
+    ("NO. KK (16 digit)", 20), ("L/P", 6), ("KAMPUNG", 18), ("RT", 7),
+    ("RW", 7), ("ALAMAT", 26), ("NAMA RT", 14), ("NAMA RK", 14),
+    ("NAMA KADUS", 14), ("KORWIL", 24), ("JABATAN", 20), ("NO. HP", 15),
+    ("TPS", 7), ("TGL LAHIR", 13), ("USIA", 7), ("KELOMPOK USIA", 18),
+    ("STATUS", 11), ("TGL GABUNG", 13), ("PEREKRUT", 22), ("CATATAN", 30),
 ]
 # kolom bantu (tersembunyi)
 HELP_COLS = [("KEY", 24), ("MASALAH", 26), ("IDX_CARI", 10),
-             ("IDX_MASALAH", 12), ("KEY_KADUS", 22), ("IDX_CETAK", 10),
+             ("IDX_MASALAH", 12), ("KEY_KAMPUNG", 22), ("IDX_CETAK", 10),
              ("IDX_ABSEN", 10), ("IDX_KARTU", 10)]
-# A B C D E F G H I J K L M N O P Q R | S T U V W X Y Z
-AUTO_COLS = {"A", "G", "M", "N", "S", "T", "U", "V", "W", "X", "Y", "Z"}
-INPUT_COLS = ["B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "O", "P", "Q", "R"]
+# A..W data | X..AE bantu
+AUTO_COLS = {"A", "M", "R", "S", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE"}
 
 
 def build_database(wb):
     ws = wb.create_sheet(DB)
     ws.sheet_view.showGridLines = False
 
-    r = title_block(ws, 1, "DATABASE ANGGOTA TEAM PEMENANGAN", width="R")
+    r = title_block(ws, 1, "DATABASE ANGGOTA TEAM PEMENANGAN", width="W")
     put(ws, "C2", "Ketik pada baris kosong pertama. Kolom abu-abu (NO, KORWIL, "
         "USIA, KELOMPOK USIA) terisi otomatis — jangan diketik manual.",
         f(9, italic=True, color="595959"), align=LEFT)
-    put(ws, "O2", "TOTAL", f(10, True), align=RIGHT)
-    put(ws, "P2", f"=COUNTA($B${FIRST}:$B${LAST})", f(11, True, RED), align=LEFT)
-    put(ws, "Q2", "SISA BARIS", f(10, True), align=RIGHT)
-    put(ws, "R2", f"={ROWS}-COUNTA($B${FIRST}:$B${LAST})", f(11, True, GREEN), align=LEFT)
+    put(ws, "T2", "TOTAL", f(10, True), align=RIGHT)
+    put(ws, "U2", f"=COUNTA($B${FIRST}:$B${LAST})", f(11, True, RED), align=LEFT)
+    put(ws, "V2", "SISA BARIS", f(10, True), align=RIGHT)
+    put(ws, "W2", f"={ROWS}-COUNTA($B${FIRST}:$B${LAST})", f(11, True, GREEN), align=LEFT)
 
     all_cols = DB_COLS + HELP_COLS
     header_row(ws, 3, all_cols)
@@ -359,60 +372,61 @@ def build_database(wb):
         p = row - 1  # baris sebelumnya
         vals = {
             "A": f'=IF($B{row}="","",COUNTA($B${FIRST}:$B{row}))',
-            "G": f'=IF(OR($E{row}="",$F{row}=""),"",$E{row}&" - RT "&$F{row})',
-            "M": f'=IF(OR($B{row}="",$L{row}=""),"",DATEDIF($L{row},TODAY(),"Y"))',
-            "N": f'=IF($M{row}="","",INDEX(usia_label,MATCH($M{row},usia_min,1)))',
-            "S": f'=IF($G{row}="","",$G{row}&"#"&COUNTIF($G${FIRST}:$G{row},$G{row}))',
-            "W": f'=IF($E{row}="","",$E{row}&"#"&COUNTIF($E${FIRST}:$E{row},$E{row}))',
-            "T": (
+            # korwil: kampung + RT bila nomornya ada
+            "M": (f'=IF($F{row}="","",$F{row}&IF($G{row}="",""," - RT "&$G{row}'
+                  f'&IF($H{row}="","","/"&$H{row})))'),
+            "R": f'=IF(OR($B{row}="",$Q{row}=""),"",DATEDIF($Q{row},TODAY(),"Y"))',
+            "S": f'=IF($R{row}="","",INDEX(usia_label,MATCH($R{row},usia_min,1)))',
+            "X": f'=IF($M{row}="","",$M{row}&"#"&COUNTIF($M${FIRST}:$M{row},$M{row}))',
+            "AB": f'=IF($F{row}="","",$F{row}&"#"&COUNTIF($F${FIRST}:$F{row},$F{row}))',
+            "Y": (
                 f'=IF($B{row}="","",'
                 f'IF($C{row}="","NIK kosong",'
                 f'IF(LEN($C{row})<>16,"NIK bukan 16 digit",'
                 f'IF(COUNTIF($C${FIRST}:$C${LAST},$C{row}&"*")>1,"NIK ganda",'
-                f'IF($E{row}="","Kadus kosong",'
-                f'IF($F{row}="","RT kosong",'
-                f'IF($H{row}="","Jabatan kosong",'
-                f'IF($I{row}="","No. HP kosong",'
-                f'IF($J{row}="","Alamat kosong",'
-                f'IF(AND($M{row}<>"",$M{row}<17),"Usia di bawah 17","")))))))))) '
-            ).strip(),
-            "U": (
+                f'IF(AND($D{row}<>"",LEN($D{row})<>16),"No. KK bukan 16 digit",'
+                f'IF(AND($F{row}="",$I{row}=""),"Alamat kosong",'
+                f'IF($N{row}="","Jabatan kosong",'
+                f'IF($O{row}="","No. HP kosong",'
+                f'IF(AND($R{row}<>"",$R{row}<17),"Usia di bawah 17","")))))))))'
+            ),
+            "Z": (
                 # kata kunci kosong = cocokkan semua; SEARCH("") menghasilkan
                 # #VALUE! di LibreOffice sehingga harus dijaga lebih dulu.
                 f'=IF($B{row}="","",IF(AND('
                 f'OR(CARI!$C$5="",ISNUMBER(SEARCH(CARI!$C$5,'
-                f'$B{row}&" "&$C{row}&" "&$I{row}&" "&$J{row}&" "&$Q{row}))),'
-                f'OR(CARI!$C$6="",$E{row}=CARI!$C$6),'
-                f'OR(CARI!$C$7="",$F{row}=CARI!$C$7),'
-                f'OR(CARI!$C$8="",$O{row}=CARI!$C$8)),'
-                f'MAX($U$3:U{p})+1,""))'
+                f'$B{row}&" "&$C{row}&" "&$D{row}&" "&$O{row}&" "&$I{row}&" "&$V{row}))),'
+                f'OR(CARI!$C$6="",$F{row}=CARI!$C$6),'
+                f'OR(CARI!$C$7="",$G{row}=CARI!$C$7),'
+                f'OR(CARI!$C$8="",$T{row}=CARI!$C$8)),'
+                f'MAX($Z$3:Z{p})+1,""))'
             ),
-            "V": f'=IF($T{row}="","",MAX($V$3:V{p})+1)',
+            "AA": f'=IF($Y{row}="","",MAX($AA$3:AA{p})+1)',
             # nomor urut hasil penyaringan untuk tiap sheet cetak; filter yang
             # dikosongkan berarti "semua", sehingga satu rumus melayani cetak
-            # semua anggota, per Kadus, per RT, per korwil, maupun per TPS
-            "X": (
+            # semua anggota, per kampung, per RT, per korwil, maupun per TPS
+            "AC": (
                 f'=IF($B{row}="","",IF(AND('
-                f'OR(CETAK!$J$10="",$E{row}=CETAK!$J$10),'
-                f'OR(CETAK!$J$11="",$F{row}=CETAK!$J$11),'
-                f'OR(CETAK!$J$12="",$K{row}=CETAK!$J$12),'
-                f'OR(CETAK!$J$13="",$H{row}=CETAK!$J$13),'
-                f'OR(CETAK!$J$14="",$O{row}=CETAK!$J$14)),'
-                f'MAX($X$3:X{p})+1,""))'
+                f'OR(CETAK!$J$10="",$F{row}=CETAK!$J$10),'
+                f'OR(CETAK!$J$11="",$G{row}=CETAK!$J$11),'
+                f'OR(CETAK!$J$12="",$P{row}=CETAK!$J$12),'
+                f'OR(CETAK!$J$13="",$N{row}=CETAK!$J$13),'
+                f'OR(CETAK!$J$14="",$T{row}=CETAK!$J$14)),'
+                f'MAX($AC$3:AC{p})+1,""))'
             ),
-            "Y": (
+            "AD": (
                 f'=IF($B{row}="","",IF(AND('
-                f'OR(ABSENSI!$H$10="",$E{row}=ABSENSI!$H$10),'
-                f'OR(ABSENSI!$H$11="",$F{row}=ABSENSI!$H$11),'
-                f'OR(ABSENSI!$H$12="",$K{row}=ABSENSI!$H$12)),'
-                f'MAX($Y$3:Y{p})+1,""))'
+                f'OR(ABSENSI!$H$10="",$F{row}=ABSENSI!$H$10),'
+                f'OR(ABSENSI!$H$11="",$G{row}=ABSENSI!$H$11),'
+                f'OR(ABSENSI!$H$12="",$P{row}=ABSENSI!$H$12)),'
+                f'MAX($AD$3:AD{p})+1,""))'
             ),
-            "Z": (
+            "AE": (
                 f'=IF($B{row}="","",IF(AND('
-                f'OR(KARTU!$K$6="",$E{row}=KARTU!$K$6),'
-                f'OR(KARTU!$K$7="",$F{row}=KARTU!$K$7),'
-                f'OR(KARTU!$K$8="",$K{row}=KARTU!$K$8)),'
-                f'MAX($Z$3:Z{p})+1,""))'
+                f'OR(KARTU!$K$6="",$F{row}=KARTU!$K$6),'
+                f'OR(KARTU!$K$7="",$G{row}=KARTU!$K$7),'
+                f'OR(KARTU!$K$8="",$P{row}=KARTU!$K$8)),'
+                f'MAX($AE$3:AE{p})+1,""))'
             ),
         }
         for i, (name, _w) in enumerate(all_cols):
@@ -422,17 +436,17 @@ def build_database(wb):
                 c.value = vals[col]
             c.font = f(10)
             c.border = BOX
-            c.alignment = CENTER if col in ("A", "D", "F", "K", "M") else LEFT
+            c.alignment = CENTER if col in ("A", "E", "G", "H", "P", "R") else LEFT
             if col in AUTO_COLS:
                 c.fill = fill(GREY_CALC)
-            if col in ("C", "I"):
+            if col in ("C", "D", "G", "H", "O", "P"):
                 c.number_format = "@"
-            if col in ("L", "P"):
+            if col in ("Q", "U"):
                 c.number_format = "dd/mm/yyyy"
                 c.alignment = CENTER
 
     # tabel ber-filter (kolom bantu sengaja di luar tabel)
-    tbl = Table(displayName="tblAnggota", ref=f"A3:R{LAST}")
+    tbl = Table(displayName="tblAnggota", ref=f"A3:W{LAST}")
     tbl.tableStyleInfo = TableStyleInfo(
         name="TableStyleLight9", showRowStripes=True, showColumnStripes=False)
     ws.add_table(tbl)
@@ -449,13 +463,17 @@ def build_database(wb):
             d.add(f"{col}{FIRST}:{col}{LAST}")
         return d
 
-    dv('"L,P"', ["D"])
-    dv("=daftar_kadus", ["E"])
-    dv("=daftar_rt", ["F"])
-    dv("=daftar_jabatan", ["H"])
-    dv("=daftar_tps", ["K"])
-    dv("=daftar_status", ["O"])
-    dv("=nama_anggota", ["Q"])
+    dv('"L,P"', ["E"])
+    dv("=daftar_kampung", ["F"])
+    dv("=daftar_rt", ["G"])
+    dv("=daftar_rw", ["H"])
+    dv("=daftar_nama_rt", ["J"])
+    dv("=daftar_nama_rk", ["K"])
+    dv("=daftar_kadus", ["L"])
+    dv("=daftar_jabatan", ["N"])
+    dv("=daftar_tps", ["P"])
+    dv("=daftar_status", ["T"])
+    dv("=nama_anggota", ["V"])
 
     nik = DataValidation(
         type="custom", formula1=f'=OR($C{FIRST}="",AND(LEN($C{FIRST})=16,ISNUMBER($C{FIRST}*1)))',
@@ -464,7 +482,7 @@ def build_database(wb):
         error="NIK sebaiknya 16 angka tanpa spasi. Tekan Ya bila memang ingin "
               "menyimpan apa adanya.")
     ws.add_data_validation(nik)
-    nik.add(f"C{FIRST}:C{LAST}")
+    nik.add(f"C{FIRST}:D{LAST}")
 
     tgl = DataValidation(
         type="date", operator="between", formula1="DATE(1900,1,1)",
@@ -472,20 +490,20 @@ def build_database(wb):
         errorStyle="warning", errorTitle="Format tanggal",
         error="Isi tanggal dengan format hh/bb/tttt, contoh 12/03/1980.")
     ws.add_data_validation(tgl)
-    tgl.add(f"L{FIRST}:L{LAST}")
-    tgl.add(f"P{FIRST}:P{LAST}")
+    tgl.add(f"Q{FIRST}:Q{LAST}")
+    tgl.add(f"U{FIRST}:U{LAST}")
 
     # ---- pewarnaan otomatis
     # memakai kolom bantu $T (MASALAH) supaya ringan: satu COUNTIF per baris,
     # bukan satu COUNTIF per sel yang diwarnai.
-    rng = f"A{FIRST}:R{LAST}"
+    rng = f"A{FIRST}:W{LAST}"
     ws.conditional_formatting.add(rng, FormulaRule(
-        formula=[f'$T{FIRST}="NIK ganda"'], fill=fill(BAD_FILL), stopIfTrue=True))
+        formula=[f'$Y{FIRST}="NIK ganda"'], fill=fill(BAD_FILL), stopIfTrue=True))
     ws.conditional_formatting.add(rng, FormulaRule(
-        formula=[f'OR($T{FIRST}="NIK bukan 16 digit",$T{FIRST}="NIK kosong")'],
+        formula=[f'OR($Y{FIRST}="NIK bukan 16 digit",$Y{FIRST}="NIK kosong")'],
         fill=fill(WARN_FILL), stopIfTrue=True))
     ws.conditional_formatting.add(rng, FormulaRule(
-        formula=[f'$O{FIRST}="Nonaktif"'],
+        formula=[f'$T{FIRST}="Nonaktif"'],
         font=Font(name=FONT, size=10, color="808080", italic=True), stopIfTrue=False))
 
     ws.freeze_panes = "B4"
@@ -493,7 +511,7 @@ def build_database(wb):
     # Siap cetak hasil penyaringan: Excel tidak mencetak baris yang disembunyikan
     # AutoFilter, jadi "cetak semua per TPS / RT / Kadus" cukup dengan menyaring
     # kolomnya lalu Ctrl+P — tanpa baris kosong, berapa pun jumlah datanya.
-    page_print(ws, area=f"A3:R{LAST}", landscape=True, titles="3:3")
+    page_print(ws, area=f"A3:W{LAST}", landscape=True, titles="3:3")
     ws.oddHeader.center.text = "&\"Arial,Bold\"&12DAFTAR ANGGOTA TEAM PEMENANGAN"
     ws.oddHeader.right.text = "&\"Arial,Italic\"&9&D"
     ws.oddFooter.right.text = "&\"Arial,Regular\"&9Halaman &P dari &N"
@@ -552,26 +570,26 @@ def build_menu(wb):
 
     kpi = [
         ("Total anggota terdata", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', "#,##0"),
-        ("Anggota berstatus Aktif", f'=COUNTIF({DB}!$O${FIRST}:$O${LAST},"Aktif")', "#,##0"),
+        ("Anggota berstatus Aktif", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"Aktif")', "#,##0"),
         ("Laki-laki  /  Perempuan",
-         f'=COUNTIF({DB}!$D${FIRST}:$D${LAST},"L")&"  /  "'
-         f'&COUNTIF({DB}!$D${FIRST}:$D${LAST},"P")', "@"),
-        ("Jumlah Kadus aktif",
-         f'=SUMPRODUCT((COUNTIF({DB}!$E${FIRST}:$E${LAST},'
+         f'=COUNTIF({DB}!$E${FIRST}:$E${LAST},"L")&"  /  "'
+         f'&COUNTIF({DB}!$E${FIRST}:$E${LAST},"P")', "@"),
+        ("Jumlah kampung aktif",
+         f'=SUMPRODUCT((COUNTIF({DB}!$F${FIRST}:$F${LAST},'
          f'REFERENSI!$B${REF_FIRST}:$B${REF_LAST})>0)*'
          f'(REFERENSI!$B${REF_FIRST}:$B${REF_LAST}<>""))', "#,##0"),
         ("Jumlah RT tercakup",
-         f'=SUMPRODUCT((COUNTIF({DB}!$F${FIRST}:$F${LAST},'
+         f'=SUMPRODUCT((COUNTIF({DB}!$G${FIRST}:$G${LAST},'
          f'REFERENSI!$D${REF_FIRST}:$D${REF_LAST})>0)*'
          f'(REFERENSI!$D${REF_FIRST}:$D${REF_LAST}<>""))', "#,##0"),
         ("Rata-rata usia (tahun)",
-         f'=IFERROR(ROUND(AVERAGE({DB}!$M${FIRST}:$M${LAST}),0),"-")', "#,##0"),
+         f'=IFERROR(ROUND(AVERAGE({DB}!$R${FIRST}:$R${LAST}),0),"-")', "#,##0"),
         ("Total target (semua Kadus)",
          f'=SUM(REFERENSI!$C${REF_FIRST}:$C${REF_LAST})', "#,##0"),
         ("Capaian terhadap target",
          f'=IFERROR(COUNTA({DB}!$B${FIRST}:$B${LAST})/'
          f'SUM(REFERENSI!$C${REF_FIRST}:$C${REF_LAST}),"-")', "0.0%"),
-        ("Data perlu diperbaiki", f'=COUNT({DB}!$V${FIRST}:$V${LAST})', "#,##0"),
+        ("Data perlu diperbaiki", f'=COUNT({DB}!$AA${FIRST}:$AA${LAST})', "#,##0"),
         ("Sisa kapasitas baris", f'={ROWS}-COUNTA({DB}!$B${FIRST}:$B${LAST})', "#,##0"),
     ]
     for i, (label, formula, fmt) in enumerate(kpi):
@@ -586,9 +604,9 @@ def build_menu(wb):
         font=Font(name=FONT, size=11, bold=True, color=RED)))
 
     # ---- jumlah anggota per Kadus
-    section(ws, 21, "JUMLAH ANGGOTA PER KADUS", width="G")
+    section(ws, 21, "JUMLAH ANGGOTA PER KAMPUNG", width="G")
     ws.merge_cells("B21:G21")
-    header_row(ws, 22, [("KADUS", None), ("", None), ("", None), ("JUMLAH", None),
+    header_row(ws, 22, [("KAMPUNG", None), ("", None), ("", None), ("JUMLAH", None),
                         ("TARGET", None), ("CAPAIAN", None)], first_col=2)
     ws.merge_cells("B22:D22")
     for i in range(MENU_KADUS):
@@ -596,8 +614,8 @@ def build_menu(wb):
         n = i + 1
         bg = BAND if i % 2 == 0 else WHITE
         ws.merge_cells(f"B{row}:D{row}")
-        put(ws, f"B{row}", f'=IFERROR(INDEX(daftar_kadus,{n}),"")', f(10), bg, LEFT, BOX)
-        put(ws, f"E{row}", f'=IF($B{row}="","",COUNTIF({DB}!$E${FIRST}:$E${LAST},$B{row}))',
+        put(ws, f"B{row}", f'=IFERROR(INDEX(daftar_kampung,{n}),"")', f(10), bg, LEFT, BOX)
+        put(ws, f"E{row}", f'=IF($B{row}="","",COUNTIF({DB}!$F${FIRST}:$F${LAST},$B{row}))',
             f(10, True), bg, CENTER, BOX, "#,##0")
         put(ws, f"F{row}", f'=IF($B{row}="","",IFERROR(INDEX(REFERENSI!$C${REF_FIRST}:'
             f'$C${REF_LAST},{n}),0))', f(10), bg, CENTER, BOX, "#,##0")
@@ -605,7 +623,7 @@ def build_menu(wb):
             f(10, True, GREEN), bg, CENTER, BOX, "0.0%")
     total = 23 + MENU_KADUS
     ws.merge_cells(f"B{total}:D{total}")
-    put(ws, f"B{total}", "TOTAL SEMUA KADUS", f(10, True, WHITE), NAVY, LEFT, BOX)
+    put(ws, f"B{total}", "TOTAL SEMUA KAMPUNG", f(10, True, WHITE), NAVY, LEFT, BOX)
     # TOTAL dihitung dari seluruh data, bukan hanya 12 baris yang tampil di atas,
     # sehingga tetap benar bila jumlah Kadus lebih dari 12.
     put(ws, f"E{total}", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})',
@@ -621,7 +639,7 @@ def build_menu(wb):
         operator="lessThan", formula=["0.5"], fill=fill(WARN_FILL)))
 
     put(ws, f"B{total + 1}",
-        f"Menampilkan {MENU_KADUS} Kadus pertama — rekap lengkap ada di sheet REKAP "
+        f"Menampilkan {MENU_KADUS} kampung pertama — rekap lengkap ada di sheet REKAP "
         "dan TARGET.", f(9, italic=True, color="595959"), align=LEFT)
     ws.merge_cells(f"B{total + 1}:G{total + 1}")
 
@@ -664,10 +682,10 @@ def build_rekap(wb):
 
     row = 4
     # ---------- A. matriks Kadus x RT
-    section(ws, row, "A.  MATRIKS JUMLAH ANGGOTA PER KADUS & RT", width=last_rt_col)
+    section(ws, row, "A.  MATRIKS JUMLAH ANGGOTA PER KAMPUNG & RT", width=last_rt_col)
     row += 1
     head = row
-    put(ws, f"B{head}", "KADUS", f(10, True, WHITE), BLUE, CENTER, BOX)
+    put(ws, f"B{head}", "KAMPUNG", f(10, True, WHITE), BLUE, CENTER, BOX)
     for i in range(MAX_RT):
         col = get_column_letter(3 + i)
         put(ws, f"{col}{head}", f"=REFERENSI!$D${REF_FIRST + i}",
@@ -678,16 +696,16 @@ def build_rekap(wb):
     for k in range(MAX_KADUS):
         r = first + k
         bg = BAND if k % 2 == 0 else WHITE
-        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kadus,{k + 1}),"")', f(10), bg, LEFT, BOX)
+        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kampung,{k + 1}),"")', f(10), bg, LEFT, BOX)
         for i in range(MAX_RT):
             col = get_column_letter(3 + i)
             put(ws, f"{col}{r}",
                 f'=IF(OR($B{r}="",{col}${head}=""),"",'
-                f'COUNTIFS({DB}!$E${FIRST}:$E${LAST},$B{r},'
-                f'{DB}!$F${FIRST}:$F${LAST},{col}${head}))',
+                f'COUNTIFS({DB}!$F${FIRST}:$F${LAST},$B{r},'
+                f'{DB}!$G${FIRST}:$G${LAST},{col}${head}))',
                 f(9), bg, CENTER, BOX)
         put(ws, f"{last_rt_col}{r}",
-            f'=IF($B{r}="","",COUNTIF({DB}!$E${FIRST}:$E${LAST},$B{r}))',
+            f'=IF($B{r}="","",COUNTIF({DB}!$F${FIRST}:$F${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX)
     tot = first + MAX_KADUS
     put(ws, f"B{tot}", "TOTAL", f(10, True, WHITE), NAVY, LEFT, BOX)
@@ -699,10 +717,10 @@ def build_rekap(wb):
     row = tot + 2
 
     # ---------- B. rekap gender + status per Kadus
-    section(ws, row, "B.  GENDER & STATUS PER KADUS", width="K")
+    section(ws, row, "B.  GENDER & STATUS PER KAMPUNG", width="K")
     row += 1
     hb = row
-    for ref, text in [("B", "KADUS"), ("C", "LAKI-LAKI"), ("D", "PEREMPUAN"),
+    for ref, text in [("B", "KAMPUNG"), ("C", "LAKI-LAKI"), ("D", "PEREMPUAN"),
                       ("E", "AKTIF"), ("F", "CALON"), ("G", "NONAKTIF"),
                       ("H", "TOTAL"), ("I", "% DARI TOTAL")]:
         put(ws, f"{ref}{hb}", text, f(9, True, WHITE), BLUE, CENTER, BOX)
@@ -710,15 +728,15 @@ def build_rekap(wb):
     for k in range(MAX_KADUS):
         r = hb + 1 + k
         bg = BAND if k % 2 == 0 else WHITE
-        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kadus,{k + 1}),"")', f(10), bg, LEFT, BOX)
+        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kampung,{k + 1}),"")', f(10), bg, LEFT, BOX)
         pairs = [("C", "$D$", "L"), ("D", "$D$", "P"), ("E", "$O$", "Aktif"),
                  ("F", "$O$", "Calon"), ("G", "$O$", "Nonaktif")]
         for col, colref, crit in pairs:
             cr = colref.replace("$", "")
             put(ws, f"{col}{r}",
-                f'=IF($B{r}="","",COUNTIFS({DB}!$E${FIRST}:$E${LAST},$B{r},'
+                f'=IF($B{r}="","",COUNTIFS({DB}!$F${FIRST}:$F${LAST},$B{r},'
                 f'{DB}!${cr}${FIRST}:${cr}${LAST},"{crit}"))', f(9), bg, CENTER, BOX)
-        put(ws, f"H{r}", f'=IF($B{r}="","",COUNTIF({DB}!$E${FIRST}:$E${LAST},$B{r}))',
+        put(ws, f"H{r}", f'=IF($B{r}="","",COUNTIF({DB}!$F${FIRST}:$F${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX)
         put(ws, f"I{r}",
             f'=IF(OR($B{r}="",COUNTA({DB}!$B${FIRST}:$B${LAST})=0),"",'
@@ -743,10 +761,10 @@ def build_rekap(wb):
         r = hj + 1 + i
         bg = BAND if i % 2 == 0 else WHITE
         put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_jabatan,{i + 1}),"")', f(10), bg, LEFT, BOX)
-        put(ws, f"C{r}", f'=IF($B{r}="","",COUNTIF({DB}!$H${FIRST}:$H${LAST},$B{r}))',
+        put(ws, f"C{r}", f'=IF($B{r}="","",COUNTIF({DB}!$N${FIRST}:$N${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX)
-        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$H${FIRST}:$H${LAST},$B{r},'
-            f'{DB}!$O${FIRST}:$O${LAST},"Aktif"))', f(9), bg, CENTER, BOX)
+        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$N${FIRST}:$N${LAST},$B{r},'
+            f'{DB}!$T${FIRST}:$T${LAST},"Aktif"))', f(9), bg, CENTER, BOX)
         put(ws, f"E{r}", f'=IF(OR($B{r}="",COUNTA({DB}!$B${FIRST}:$B${LAST})=0),"",'
             f'$C{r}/COUNTA({DB}!$B${FIRST}:$B${LAST}))', f(9), bg, CENTER, BOX, "0.0%")
     row = hj + 14
@@ -762,18 +780,18 @@ def build_rekap(wb):
         r = hu + 1 + i
         bg = BAND if i % 2 == 0 else WHITE
         put(ws, f"B{r}", f"=REFERENSI!$L${REF_FIRST + i}", f(10), bg, LEFT, BOX)
-        put(ws, f"C{r}", f'=IF($B{r}="","",COUNTIF({DB}!$N${FIRST}:$N${LAST},$B{r}))',
+        put(ws, f"C{r}", f'=IF($B{r}="","",COUNTIF({DB}!$S${FIRST}:$S${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX)
-        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$N${FIRST}:$N${LAST},$B{r},'
-            f'{DB}!$D${FIRST}:$D${LAST},"L"))', f(9), bg, CENTER, BOX)
-        put(ws, f"E{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$N${FIRST}:$N${LAST},$B{r},'
-            f'{DB}!$D${FIRST}:$D${LAST},"P"))', f(9), bg, CENTER, BOX)
-        put(ws, f"F{r}", f'=IF(OR($B{r}="",COUNT({DB}!$M${FIRST}:$M${LAST})=0),"",'
-            f'$C{r}/COUNT({DB}!$M${FIRST}:$M${LAST}))', f(9), bg, CENTER, BOX, "0.0%")
+        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$S${FIRST}:$S${LAST},$B{r},'
+            f'{DB}!$E${FIRST}:$E${LAST},"L"))', f(9), bg, CENTER, BOX)
+        put(ws, f"E{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$S${FIRST}:$S${LAST},$B{r},'
+            f'{DB}!$E${FIRST}:$E${LAST},"P"))', f(9), bg, CENTER, BOX)
+        put(ws, f"F{r}", f'=IF(OR($B{r}="",COUNT({DB}!$R${FIRST}:$R${LAST})=0),"",'
+            f'$C{r}/COUNT({DB}!$R${FIRST}:$R${LAST}))', f(9), bg, CENTER, BOX, "0.0%")
     put(ws, f"B{hu + 1 + len(USIA_DEFAULT)}", "Tanpa tanggal lahir", f(10, italic=True),
         WARN_FILL, LEFT, BOX)
     put(ws, f"C{hu + 1 + len(USIA_DEFAULT)}",
-        f'=COUNTA({DB}!$B${FIRST}:$B${LAST})-COUNT({DB}!$M${FIRST}:$M${LAST})',
+        f'=COUNTA({DB}!$B${FIRST}:$B${LAST})-COUNT({DB}!$R${FIRST}:$R${LAST})',
         f(10, True), WARN_FILL, CENTER, BOX)
     row = hu + len(USIA_DEFAULT) + 3
 
@@ -790,7 +808,7 @@ def build_rekap(wb):
     for i in range(10):
         col = get_column_letter(3 + i)
         put(ws, f"{col}{ht + 1}",
-            f'=IF({col}${ht}="","",COUNTIF({DB}!$K${FIRST}:$K${LAST},{col}${ht}))',
+            f'=IF({col}${ht}="","",COUNTIF({DB}!$P${FIRST}:$P${LAST},{col}${ht}))',
             f(10, True), None, CENTER, BOX)
     row = ht + 3
 
@@ -798,12 +816,12 @@ def build_rekap(wb):
     section(ws, row, "F.  DAFTAR ANGGOTA PER KORWIL", width="K")
     row += 1
     sel = row
-    put(ws, f"B{sel}", "PILIH KADUS", f(10, True), align=LEFT)
+    put(ws, f"B{sel}", "PILIH KAMPUNG", f(10, True), align=LEFT)
     put(ws, f"D{sel}", None, f(10, True, NAVY), INPUT, CENTER, BOX, unlock=True)
     put(ws, f"E{sel}", "PILIH RT", f(10, True), align=RIGHT)
     put(ws, f"F{sel}", None, f(10, True, NAVY), INPUT, CENTER, BOX, "@", unlock=True)
     put(ws, f"G{sel}", "JUMLAH", f(10, True), align=RIGHT)
-    put(ws, f"H{sel}", f'=COUNTIF({DB}!$G${FIRST}:$G${LAST},$AA$1)',
+    put(ws, f"H{sel}", f'=COUNTIF({DB}!$M${FIRST}:$M${LAST},$AA$1)',
         f(11, True, RED), None, CENTER, BOX, "#,##0")
     put(ws, f"I{sel}", "◀  pilih pada sel kuning", f(9, italic=True, color="595959"),
         align=LEFT)
@@ -812,7 +830,7 @@ def build_rekap(wb):
         f(9))
     ws.column_dimensions["AA"].hidden = True
 
-    dvk = DataValidation(type="list", formula1="=daftar_kadus", allow_blank=True)
+    dvk = DataValidation(type="list", formula1="=daftar_kampung", allow_blank=True)
     dvr = DataValidation(type="list", formula1="=daftar_rt", allow_blank=True)
     ws.add_data_validation(dvk)
     ws.add_data_validation(dvr)
@@ -833,7 +851,7 @@ def build_rekap(wb):
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
                 f'=IFERROR(INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},'
-                f'MATCH($AA$1&"#"&$B{r},{DB}!$S${FIRST}:$S${LAST},0))&"","")',
+                f'MATCH($AA$1&"#"&$B{r},{DB}!$X${FIRST}:$X${LAST},0))&"","")',
                 f(9), bg, LEFT if col in ("C", "I", "F") else CENTER, BOX,
                 "@" if col in ("D", "G") else None)
     last_row = hd + 41
@@ -879,13 +897,13 @@ def build_target(wb):
     for col, w in zip("ABCDEFGHI", [2, 24, 12, 12, 12, 12, 12, 30, 3]):
         ws.column_dimensions[col].width = w
 
-    title_block(ws, 1, "TARGET & CAPAIAN PER KADUS")
+    title_block(ws, 1, "TARGET & CAPAIAN PER KAMPUNG")
     put(ws, "C2", "Ubah angka target pada sheet PENGATURAN kolom TARGET.",
         f(9, italic=True, color="595959"), align=LEFT)
 
     section(ws, 4, "PERBANDINGAN TARGET DENGAN REALISASI")
     hd = 5
-    for ref, text in [("B", "KADUS"), ("C", "TARGET"), ("D", "REALISASI"),
+    for ref, text in [("B", "KAMPUNG"), ("C", "TARGET"), ("D", "REALISASI"),
                       ("E", "AKTIF"), ("F", "KURANG"), ("G", "% CAPAIAN"),
                       ("H", "GRAFIK CAPAIAN")]:
         put(ws, f"{ref}{hd}", text, f(10, True, WHITE), NAVY, CENTER, BOX)
@@ -894,13 +912,13 @@ def build_target(wb):
         r = hd + 1 + k
         n = k + 1
         bg = BAND if k % 2 == 0 else WHITE
-        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kadus,{n}),"")', f(10), bg, LEFT, BOX)
+        put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kampung,{n}),"")', f(10), bg, LEFT, BOX)
         put(ws, f"C{r}", f'=IF($B{r}="","",IFERROR(INDEX(REFERENSI!$C${REF_FIRST}:'
             f'$C${REF_LAST},{n}),0))', f(10), bg, CENTER, BOX, "#,##0")
-        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIF({DB}!$E${FIRST}:$E${LAST},$B{r}))',
+        put(ws, f"D{r}", f'=IF($B{r}="","",COUNTIF({DB}!$F${FIRST}:$F${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX, "#,##0")
-        put(ws, f"E{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$E${FIRST}:$E${LAST},$B{r},'
-            f'{DB}!$O${FIRST}:$O${LAST},"Aktif"))', f(10), bg, CENTER, BOX, "#,##0")
+        put(ws, f"E{r}", f'=IF($B{r}="","",COUNTIFS({DB}!$F${FIRST}:$F${LAST},$B{r},'
+            f'{DB}!$T${FIRST}:$T${LAST},"Aktif"))', f(10), bg, CENTER, BOX, "#,##0")
         put(ws, f"F{r}", f'=IF($B{r}="","",MAX(0,$C{r}-$D{r}))', f(10), bg, CENTER,
             BOX, "#,##0")
         put(ws, f"G{r}", f'=IF(OR($B{r}="",$C{r}=0),"",$D{r}/$C{r})',
@@ -983,13 +1001,13 @@ def build_cari(wb):
         put(ws, f"C{row}", None, f(11, True, NAVY), INPUT, LEFT, BOX, "@", unlock=True)
         put(ws, f"D{row}", "◀  " + ket, f(9, italic=True, color="595959"), align=LEFT)
 
-    for row, formula in [(6, "=daftar_kadus"), (7, "=daftar_rt"), (8, "=daftar_status")]:
+    for row, formula in [(6, "=daftar_kampung"), (7, "=daftar_rt"), (8, "=daftar_status")]:
         d = DataValidation(type="list", formula1=formula, allow_blank=True)
         ws.add_data_validation(d)
         d.add(f"C{row}")
 
     put(ws, "B10", "DITEMUKAN", f(11, True, WHITE), NAVY, CENTER, BOX)
-    put(ws, "C10", f'=COUNT({DB}!$U${FIRST}:$U${LAST})&" data"',
+    put(ws, "C10", f'=COUNT({DB}!$Z${FIRST}:$Z${LAST})&" data"',
         f(12, True, RED), None, LEFT, BOX)
     put(ws, "D10", f"Maksimal {N_CARI} baris pertama yang ditampilkan di bawah. "
         "Persempit kata kunci bila hasil terpotong.",
@@ -997,7 +1015,7 @@ def build_cari(wb):
 
     hd = 12
     cols = [("NO", None), ("NAMA LENGKAP", None), ("NIK", None), ("L/P", None),
-            ("KADUS", None), ("RT", None), ("JABATAN", None), ("NO. HP", None),
+            ("KAMPUNG", None), ("RT", None), ("JABATAN", None), ("NO. HP", None),
             ("STATUS", None), ("ALAMAT", None)]
     header_row(ws, hd, cols, first_col=2)
     src = {"C": "B", "D": "C", "E": "D", "F": "E", "G": "F", "H": "H",
@@ -1009,7 +1027,7 @@ def build_cari(wb):
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
                 f'=IFERROR(INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},'
-                f'MATCH($B{r},{DB}!$U${FIRST}:$U${LAST},0))&"","")',
+                f'MATCH($B{r},{DB}!$Z${FIRST}:$Z${LAST},0))&"","")',
                 f(9), bg, LEFT if col in ("C", "H", "K") else CENTER, BOX,
                 "@" if col in ("D", "G", "I") else None)
 
@@ -1035,20 +1053,20 @@ def build_validasi(wb):
     section(ws, 4, "RINGKASAN MASALAH")
     ringkas = [
         ("Total data terdata", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', False),
-        ("Total baris bermasalah", f'=COUNT({DB}!$V${FIRST}:$V${LAST})', True),
-        ("NIK kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"NIK kosong")', True),
-        ("NIK bukan 16 digit", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"NIK bukan 16 digit")', True),
-        ("NIK ganda (dobel)", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"NIK ganda")', True),
-        ("Kadus kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"Kadus kosong")', True),
-        ("RT kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"RT kosong")', True),
-        ("Jabatan kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"Jabatan kosong")', True),
-        ("No. HP kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"No. HP kosong")', True),
-        ("Alamat kosong", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"Alamat kosong")', True),
-        ("Usia di bawah 17 tahun", f'=COUNTIF({DB}!$T${FIRST}:$T${LAST},"Usia di bawah 17")', True),
+        ("Total baris bermasalah", f'=COUNT({DB}!$AA${FIRST}:$AA${LAST})', True),
+        ("NIK kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK kosong")', True),
+        ("NIK bukan 16 digit", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK bukan 16 digit")', True),
+        ("NIK ganda (dobel)", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK ganda")', True),
+        ("Kadus kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"Kadus kosong")', True),
+        ("RT kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"RT kosong")', True),
+        ("Jabatan kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"Jabatan kosong")', True),
+        ("No. HP kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"No. HP kosong")', True),
+        ("Alamat kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"Alamat kosong")', True),
+        ("Usia di bawah 17 tahun", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"Usia di bawah 17")', True),
         ("Tanpa tanggal lahir",
-         f'=COUNTA({DB}!$B${FIRST}:$B${LAST})-COUNT({DB}!$M${FIRST}:$M${LAST})', False),
+         f'=COUNTA({DB}!$B${FIRST}:$B${LAST})-COUNT({DB}!$R${FIRST}:$R${LAST})', False),
         ("Tanpa status keanggotaan",
-         f'=COUNTIFS({DB}!$B${FIRST}:$B${LAST},"<>",{DB}!$O${FIRST}:$O${LAST},"")', False),
+         f'=COUNTIFS({DB}!$B${FIRST}:$B${LAST},"<>",{DB}!$T${FIRST}:$T${LAST},"")', False),
     ]
     for i, (label, formula, warn) in enumerate(ringkas):
         r = 5 + i
@@ -1071,7 +1089,7 @@ def build_validasi(wb):
     hd = after + 2
     section(ws, hd - 1, "DAFTAR BARIS YANG PERLU DIPERBAIKI")
     header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("NIK", None),
-                        ("KADUS", None), ("RT", None), ("MASALAH", None),
+                        ("KAMPUNG", None), ("RT", None), ("MASALAH", None),
                         ("NO. HP", None)], first_col=2)
     src = {"C": "B", "D": "C", "E": "E", "F": "F", "G": "T", "H": "I"}
     for i in range(N_MASALAH):
@@ -1081,7 +1099,7 @@ def build_validasi(wb):
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
                 f'=IFERROR(INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},'
-                f'MATCH($B{r},{DB}!$V${FIRST}:$V${LAST},0))&"","")',
+                f'MATCH($B{r},{DB}!$AA${FIRST}:$AA${LAST},0))&"","")',
                 f(9, bold=(col == "G"), color=RED if col == "G" else "000000"),
                 bg, LEFT if col in ("C", "G") else CENTER, BOX,
                 "@" if col in ("D", "F") else None)
@@ -1105,10 +1123,10 @@ def build_cetak(wb):
     """
     ws = wb.create_sheet("CETAK")
     ws.sheet_view.showGridLines = False
-    for col, w in zip("ABCDEFGHIJKL",
-                      [5, 27, 19, 19, 17, 13, 15, 3, 19, 17, 3, 9]):
+    for col, w in zip("ABCDEFGHIJKLM",
+                      [4, 24, 18, 18, 24, 15, 13, 14, 3, 19, 17, 3, 9]):
         ws.column_dimensions[col].width = w
-    ws.column_dimensions["L"].hidden = True     # penunjuk baris DATABASE
+    ws.column_dimensions["M"].hidden = True     # penunjuk baris DATABASE
 
     # emblem sebagai kop surat di kiri; teks judul tetap rata tengah A:G
     gambar(ws, "logo-emblem.png", "A2", 88)
@@ -1118,17 +1136,17 @@ def build_cetak(wb):
     put(ws, "A5", '="DESA "&id_desa&IF(id_kecamatan="-",""," • KECAMATAN "&id_kecamatan)'
         '&IF(id_kabupaten="-",""," • KABUPATEN "&id_kabupaten)', f(10), align=CENTER)
     for r in range(2, 6):
-        ws.merge_cells(f"A{r}:G{r}")
-    for col in "ABCDEFG":
+        ws.merge_cells(f"A{r}:H{r}")
+    for col in "ABCDEFGH":
         ws[f"{col}6"].border = Border(bottom=MED)
 
     put(ws, "A8", "DAFTAR ANGGOTA TEAM PEMENANGAN", f(12, True), align=CENTER)
-    ws.merge_cells("A8:G8")
+    ws.merge_cells("A8:H8")
 
     # ---- panel pemilihan (di luar area cetak)
     put(ws, "I9", "PANEL — TIDAK IKUT DICETAK", f(9, True, WHITE), BLUE, CENTER)
     ws.merge_cells("I9:J9")
-    panel = [("Pilih Kadus", "=daftar_kadus"), ("Pilih RT", "=daftar_rt"),
+    panel = [("Pilih Kadus", "=daftar_kampung"), ("Pilih RT", "=daftar_rt"),
              ("Pilih TPS", "=daftar_tps"), ("Pilih Jabatan", "=daftar_jabatan"),
              ("Pilih Status", "=daftar_status")]
     for i, (label, formula) in enumerate(panel):
@@ -1147,7 +1165,7 @@ def build_cetak(wb):
     ws.add_data_validation(dvh)
     dvh.add("J15")
     put(ws, "I16", "Jumlah data", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "J16", f'=COUNT({DB}!$X${FIRST}:$X${LAST})', f(11, True, RED),
+    put(ws, "J16", f'=COUNT({DB}!$AC${FIRST}:$AC${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "I17", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "J17", f'=MAX(1,ROUNDUP($J$16/{N_CETAK},0))', f(11, True, NAVY),
@@ -1175,46 +1193,46 @@ def build_cetak(wb):
     put(ws, "A10", "KELOMPOK", f(11, True), align=LEFT)
     put(ws, "C10", ":", f(11, True), align=CENTER)
     put(ws, "D10", judul, f(11, True, NAVY), align=LEFT)
-    ws.merge_cells("D10:G10")
+    ws.merge_cells("D10:H10")
     put(ws, "A11", "JUMLAH", f(11, True), align=LEFT)
     put(ws, "C11", ":", f(11, True), align=CENTER)
     put(ws, "D11", '=$J$16&" orang"&IF($J$17>1,"     (halaman "&$J$15&" dari "'
         '&$J$17&")","")', f(11, True), align=LEFT)
-    ws.merge_cells("D11:G11")
+    ws.merge_cells("D11:H11")
 
     hd = 13
-    header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("NIK", None),
-                        ("KORWIL", None), ("JABATAN", None), ("NO. HP", None),
-                        ("TANDA TANGAN", None)])
+    header_row(ws, hd, [("NO", None), ("NAMA LENGKAP", None), ("NIK KTP", None),
+                        ("NO. KK", None), ("ALAMAT", None), ("JABATAN", None),
+                        ("NO. HP", None), ("TANDA TANGAN", None)])
     # satu MATCH per baris, sisanya INDEX yang murah
-    src = {"B": "B", "C": "C", "D": "G", "E": "H", "F": "I"}
+    src = {"B": "B", "C": "C", "D": "D", "E": "M", "F": "N", "G": "O"}
     for i in range(N_CETAK):
         r = hd + 1 + i
         urut = f'(($J$15-1)*{N_CETAK}+{i + 1})'
-        put(ws, f"L{r}", f'=IFERROR(MATCH({urut},{DB}!$X${FIRST}:$X${LAST},0),"")',
+        put(ws, f"M{r}", f'=IFERROR(MATCH({urut},{DB}!$AC${FIRST}:$AC${LAST},0),"")',
             f(9))
-        put(ws, f"A{r}", f'=IF($L{r}="","",{urut})', f(10), None, CENTER, BOX)
+        put(ws, f"A{r}", f'=IF($M{r}="","",{urut})', f(10), None, CENTER, BOX)
         for col, dbcol in src.items():
             put(ws, f"{col}{r}",
-                f'=IF($L{r}="","",INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},$L{r})&"")',
-                f(10), None, LEFT if col in ("B", "D", "E") else CENTER, BOX,
-                "@" if col in ("C", "F") else None)
-        put(ws, f"G{r}", f'=IF($L{r}="","",$A{r}&".")', f(9, color="808080"),
+                f'=IF($M{r}="","",INDEX({DB}!${dbcol}${FIRST}:${dbcol}${LAST},$M{r})&"")',
+                f(10), None, LEFT if col in ("B", "E", "F") else CENTER, BOX,
+                "@" if col in ("C", "D", "G") else None)
+        put(ws, f"H{r}", f'=IF($M{r}="","",$A{r}&".")', f(9, color="808080"),
             None, LEFT, BOX)
         ws.row_dimensions[r].height = 22
 
     ttd = hd + N_CETAK + 2
-    put(ws, f"E{ttd}", f'=id_desa&", ......................... "&id_tahun',
+    put(ws, f"F{ttd}", f'=id_desa&", ......................... "&id_tahun',
         f(11), align=CENTER)
-    put(ws, f"E{ttd + 1}", "=id_jabatan_ttd", f(11), align=CENTER)
-    put(ws, f"E{ttd + 5}", "=id_ketua", f(11, True, color="000000"), align=CENTER)
+    put(ws, f"F{ttd + 1}", "=id_jabatan_ttd", f(11), align=CENTER)
+    put(ws, f"F{ttd + 5}", "=id_ketua", f(11, True, color="000000"), align=CENTER)
     for r in (ttd, ttd + 1, ttd + 5):
-        ws.merge_cells(f"E{r}:G{r}")
-    for col in "EFG":
+        ws.merge_cells(f"F{r}:H{r}")
+    for col in "FGH":
         ws[f"{col}{ttd + 5}"].border = Border(top=Side(style="thin", color="000000"))
 
     lock_sheet(ws)
-    page_print(ws, area=f"A1:G{ttd + 6}", landscape=False, fit_height=1)
+    page_print(ws, area=f"A1:H{ttd + 6}", landscape=True, fit_height=1)
     return ws
 
 
@@ -1235,7 +1253,7 @@ def build_kartu(wb):
     ws.merge_cells("J4:K4")
     put(ws, "J5", "Nomor awal", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "K5", 1, f(11, True, NAVY), INPUT, CENTER, BOX, unlock=True)
-    for i, (label, formula) in enumerate([("Pilih Kadus", "=daftar_kadus"),
+    for i, (label, formula) in enumerate([("Pilih Kampung", "=daftar_kampung"),
                                           ("Pilih RT", "=daftar_rt"),
                                           ("Pilih TPS", "=daftar_tps")]):
         r = 6 + i
@@ -1245,7 +1263,7 @@ def build_kartu(wb):
         ws.add_data_validation(d)
         d.add(f"K{r}")
     put(ws, "J9", "Jumlah tersaring", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "K9", f'=COUNT({DB}!$Z${FIRST}:$Z${LAST})', f(11, True, RED),
+    put(ws, "K9", f'=COUNT({DB}!$AE${FIRST}:$AE${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "J10", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "K10", f'=IF($K$5+{N_KARTU}>$K$9,"— sudah halaman terakhir —",'
@@ -1274,7 +1292,7 @@ def build_kartu(wb):
         no = f"($K$5+{idx})"
         # nomor mengikuti hasil penyaringan (kolom Z), bukan nomor urut global
         lookup = (f'IFERROR(INDEX({DB}!$%s${FIRST}:$%s${LAST},'
-                  f'MATCH({no},{DB}!$Z${FIRST}:$Z${LAST},0))&"","")')
+                  f'MATCH({no},{DB}!$AE${FIRST}:$AE${LAST},0))&"","")')
 
         ws.merge_cells(f"{cs}{top}:{cv}{top}")
         put(ws, f"{cs}{top}", '=id_team&" — "&id_calon', f(9, True, WHITE), NAVY,
@@ -1340,7 +1358,7 @@ def build_absensi(wb):
     fields = [("G7", "Nama kegiatan", "H7", None),
               ("G8", "Tanggal", "H8", None),
               ("G9", "Tempat", "H9", None),
-              ("G10", "Pilih Kadus", "H10", "=daftar_kadus"),
+              ("G10", "Pilih Kampung", "H10", "=daftar_kampung"),
               ("G11", "Pilih RT", "H11", "=daftar_rt"),
               ("G12", "Pilih TPS", "H12", "=daftar_tps")]
     for lab_ref, label, in_ref, formula in fields:
@@ -1358,7 +1376,7 @@ def build_absensi(wb):
     ws.add_data_validation(dvh)
     dvh.add("H13")
     put(ws, "G14", "Jumlah anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "H14", f'=COUNT({DB}!$Y${FIRST}:$Y${LAST})', f(11, True, RED),
+    put(ws, "H14", f'=COUNT({DB}!$AD${FIRST}:$AD${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "G15", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "H15", f'=MAX(1,ROUNDUP($H$14/{N_ABSEN},0))', f(11, True, NAVY),
@@ -1397,7 +1415,7 @@ def build_absensi(wb):
     for i in range(N_ABSEN):
         r = hd + 1 + i
         urut = f'(($H$13-1)*{N_ABSEN}+{i + 1})'
-        put(ws, f"J{r}", f'=IFERROR(MATCH({urut},{DB}!$Y${FIRST}:$Y${LAST},0),"")',
+        put(ws, f"J{r}", f'=IFERROR(MATCH({urut},{DB}!$AD${FIRST}:$AD${LAST},0),"")',
             f(9))
         put(ws, f"A{r}", f'=IF($J{r}="","",{urut})', f(10), None, CENTER, BOX)
         for col, dbcol in src.items():
@@ -1569,7 +1587,7 @@ CONTOH_ISIAN = [
     ("NAMA LENGKAP", "BUDI SANTOSO", "huruf kapital, sesuai KTP"),
     ("NIK (16 digit)", "3201011203800001", "16 angka, tanpa spasi"),
     ("L/P", "L", "pilih L atau P dari dropdown"),
-    ("KADUS", "Kadus I", "pilih dari dropdown"),
+    ("KAMPUNG", "Kadus I", "pilih dari dropdown"),
     ("RT", "001", "pilih dari dropdown, 3 angka"),
     ("KORWIL", "Kadus I - RT 001", "terisi otomatis, jangan diketik"),
     ("JABATAN", "Koordinator Wilayah", "pilih dari dropdown"),
@@ -1636,8 +1654,16 @@ def build_petunjuk(wb):
 
 def add_names(wb):
     names = {
-        "daftar_kadus": f"OFFSET(REFERENSI!$B${REF_FIRST},0,0,"
-                        f"MAX(1,COUNTA(REFERENSI!$B${REF_FIRST}:$B${REF_LAST})),1)",
+        "daftar_kampung": f"OFFSET(REFERENSI!$B${REF_FIRST},0,0,"
+                          f"MAX(1,COUNTA(REFERENSI!$B${REF_FIRST}:$B${REF_LAST})),1)",
+        "daftar_rw": f"OFFSET(REFERENSI!$E${REF_FIRST},0,0,"
+                     f"MAX(1,COUNTA(REFERENSI!$E${REF_FIRST}:$E${REF_LAST})),1)",
+        "daftar_nama_rt": f"OFFSET(REFERENSI!$O${REF_FIRST},0,0,"
+                          f"MAX(1,COUNTA(REFERENSI!$O${REF_FIRST}:$O${REF_LAST})),1)",
+        "daftar_nama_rk": f"OFFSET(REFERENSI!$P${REF_FIRST},0,0,"
+                          f"MAX(1,COUNTA(REFERENSI!$P${REF_FIRST}:$P${REF_LAST})),1)",
+        "daftar_kadus": f"OFFSET(REFERENSI!$Q${REF_FIRST},0,0,"
+                        f"MAX(1,COUNTA(REFERENSI!$Q${REF_FIRST}:$Q${REF_LAST})),1)",
         "daftar_rt": f"OFFSET(REFERENSI!$D${REF_FIRST},0,0,"
                      f"MAX(1,COUNTA(REFERENSI!$D${REF_FIRST}:$D${REF_LAST})),1)",
         "daftar_jabatan": f"OFFSET(REFERENSI!$F${REF_FIRST},0,0,"

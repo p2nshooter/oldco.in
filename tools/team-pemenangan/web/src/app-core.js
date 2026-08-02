@@ -22,11 +22,15 @@ const DEFAULTS = {
     motto: 'MELAYANI DENGAN HATI, MEMBANGUN DESA UNTUK NEGERI',
     driveUrl: 'https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8'
   },
-  kadus: ['Kadus I', 'Kadus II', 'Kadus III', 'Kadus IV', 'Kadus V'],
+  // nama orangnya, bukan nomor wilayah — sesuai cara daftar aslinya ditulis
+  kadus: [],
+  namaRk: [],
+  namaRt: [],
+  kampung: ['Kp. Gamprit', 'Kp. Kuda Kuda', 'Kp. Wangkal', 'Kp. Tenjolaut',
+    'Kp. Putri Melintang'],
   rt: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010',
     '011', '012', '013', '014', '015'],
   rw: ['001', '002', '003', '004', '005', '006', '007', '008'],
-  ketuaRt: [],
   tps: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'],
   jabatan: ['Ketua Team', 'Wakil Ketua', 'Sekretaris', 'Bendahara',
     'Koordinator Wilayah', 'Koordinator Lapangan', 'Anggota', 'Relawan'],
@@ -42,9 +46,13 @@ const DEFAULTS = {
   ]
 };
 
-const FIELDS = ['nama', 'nik', 'jk', 'kadus', 'rt', 'rw', 'ketuaRt', 'tps',
-  'jabatan', 'hp', 'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut',
-  'catatan'];
+const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRk', 'namaRt',
+  'kampung', 'rt', 'rw', 'alamat', 'tps', 'jabatan', 'hp', 'tglLahir',
+  'status', 'tglGabung', 'perekrut', 'catatan'];
+
+/** Daftar pilihan yang bisa disunting di Pengaturan. */
+const LISTS = ['kadus', 'namaRk', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
+  'jabatan', 'status'];
 
 /* ----------------------------------------------------------------- state */
 
@@ -53,19 +61,22 @@ let ui = {
   view: 'dasbor',
   theme: 'light',
   q: '',
-  f: { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' },
+  f: { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
   sort: { by: 'nama', dir: 1 },
   page: 1,
   perPage: 25,
-  cetak: { jenis: 'daftar', kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' },
-  kartu: { kadus: '', rt: '', rw: '', ketuaRt: '' }
+  cetak: {
+    jenis: 'daftar', kadus: '', namaRk: '', namaRt: '', kampung: '',
+    rt: '', rw: '', tps: '', jabatan: '', status: ''
+  },
+  kartu: { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' }
 };
 
 function clone(o) { return JSON.parse(JSON.stringify(o)); }
 
 function defaultSettings() {
   const s = clone(DEFAULTS);
-  s.kadus.forEach(k => { s.target[k] = 50; });
+  s.kampung.forEach(k => { s.target[k] = 0; });
   return s;
 }
 
@@ -78,7 +89,7 @@ function load() {
       state.disimpan = d.disimpan || '';
       state.settings = Object.assign(defaultSettings(), d.settings || {});
       // pastikan setiap daftar tetap array walau berkas cadangan lama
-      ['kadus', 'rt', 'rw', 'ketuaRt', 'tps', 'jabatan', 'status'].forEach(k => {
+      LISTS.forEach(k => {
         if (!Array.isArray(state.settings[k])) state.settings[k] = DEFAULTS[k].slice();
       });
       if (!state.settings.identitas) state.settings.identitas = clone(DEFAULTS.identitas);
@@ -100,9 +111,9 @@ function load() {
   try {
     const rawUi = localStorage.getItem(KEY_UI);
     if (rawUi) ui = Object.assign(ui, JSON.parse(rawUi));
-    if (!ui.f) ui.f = { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' };
-    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', rt: '', rw: '', ketuaRt: '', tps: '', jabatan: '', status: '' });
-    if (!ui.kartu) ui.kartu = { kadus: '', rt: '', rw: '', ketuaRt: '' };
+    if (!ui.f) ui.f = { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
+    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRk: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
+    if (!ui.kartu) ui.kartu = { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' };
   } catch (e) { /* pengaturan tampilan boleh gagal tanpa mengganggu data */ }
 }
 
@@ -131,20 +142,30 @@ function saveUi() {
 
 /* ------------------------------------------------------------- turunan */
 
+/** Kunci pengelompokan wilayah: kampung + RT bila nomornya ada. */
 function korwil(m) {
-  if (!m.kadus) return '';
-  if (m.rt) return m.kadus + ' - RT ' + m.rt + (m.rw ? '/' + m.rw : '');
-  if (m.ketuaRt) return m.kadus + ' - RT ' + m.ketuaRt;
-  return m.kadus;
+  const dasar = m.kampung || m.kadus || '';
+  if (!dasar) return '';
+  return m.rt ? dasar + ' - RT ' + m.rt + (m.rw ? '/' + m.rw : '') : dasar;
 }
 
-/** Alamat lengkap yang sudah terpisah, untuk tampilan dan dokumen cetak. */
+/** Alamat utuh satu baris. RT/RW ikut menyatu di sini, sedangkan nama RT,
+ *  RK, dan Kadus tetap berdiri sebagai kolom tersendiri. */
 function wilayah(m) {
   const b = [];
-  if (m.kadus) b.push(m.kadus);
+  if (m.kampung) b.push(m.kampung);
   if (m.rt) b.push('RT ' + m.rt + (m.rw ? '/' + m.rw : ''));
-  if (m.ketuaRt) b.push('(RT ' + m.ketuaRt + ')');
+  if (m.alamat) b.push(m.alamat);
   return b.join(' ');
+}
+
+/** Baris kepengurusan: RT / RK / Kadus yang membawahi anggota tersebut. */
+function pengurus(m) {
+  const b = [];
+  if (m.namaRt) b.push('RT ' + m.namaRt);
+  if (m.namaRk) b.push('RK ' + m.namaRk);
+  if (m.kadus) b.push('Kadus ' + m.kadus);
+  return b.join(' • ');
 }
 
 function usia(m, ref) {
@@ -174,11 +195,11 @@ function masalah(m, nikCount) {
   if (!nik) return 'NIK kosong';
   if (!/^\d{16}$/.test(nik)) return 'NIK bukan 16 digit';
   if (nikCount && (nikCount[nik] || 0) > 1) return 'NIK ganda';
-  if (!m.kadus) return 'Kampung kosong';
-  if (!m.rt && !m.ketuaRt) return 'RT kosong';
+  const kk = (m.kk || '').trim();
+  if (kk && !/^\d{16}$/.test(kk)) return 'No. KK bukan 16 digit';
+  if (!wilayah(m)) return 'Alamat kosong';
   if (!m.jabatan) return 'Jabatan kosong';
   if (!(m.hp || '').trim()) return 'No. HP kosong';
-  if (!(m.alamat || '').trim() && !wilayah(m)) return 'Alamat kosong';
   const u = usia(m);
   if (u !== null && u < 17) return 'Usia di bawah 17';
   return '';
@@ -197,16 +218,18 @@ function hitungNik() {
 
 function cocok(m, f, q) {
   if (f.kadus && m.kadus !== f.kadus) return false;
+  if (f.namaRk && m.namaRk !== f.namaRk) return false;
+  if (f.namaRt && m.namaRt !== f.namaRt) return false;
+  if (f.kampung && m.kampung !== f.kampung) return false;
   if (f.rt && m.rt !== f.rt) return false;
   if (f.rw && m.rw !== f.rw) return false;
-  if (f.ketuaRt && m.ketuaRt !== f.ketuaRt) return false;
   if (f.tps && m.tps !== f.tps) return false;
   if (f.jabatan && m.jabatan !== f.jabatan) return false;
   if (f.status && m.status !== f.status) return false;
   if (q) {
     const t = q.toLowerCase();
-    const blob = [m.nama, m.nik, m.hp, m.alamat, m.perekrut, m.jabatan,
-      wilayah(m), m.ketuaRt, m.tps, m.catatan].join(' ').toLowerCase();
+    const blob = [m.nama, m.nik, m.kk, m.hp, m.perekrut, m.jabatan, m.tps,
+      wilayah(m), pengurus(m), m.catatan].join(' ').toLowerCase();
     if (!blob.includes(t)) return false;
   }
   return true;
@@ -284,13 +307,13 @@ function ringkasan() {
   const aktif = ms.filter(m => m.status === 'Aktif').length;
   const L = ms.filter(m => m.jk === 'L').length;
   const P = ms.filter(m => m.jk === 'P').length;
-  const kadusAktif = new Set(ms.map(m => m.kadus).filter(Boolean)).size;
+  const kadusAktif = new Set(ms.map(m => m.kampung).filter(Boolean)).size;
   const rtAktif = new Set(ms.map(m => m.rt).filter(Boolean)).size;
   const tpsAktif = new Set(ms.map(m => m.tps).filter(Boolean)).size;
   const usiaList = ms.map(m => usia(m)).filter(u => u !== null);
   const rataUsia = usiaList.length
     ? Math.round(usiaList.reduce((a, b) => a + b, 0) / usiaList.length) : null;
-  const targetTotal = state.settings.kadus
+  const targetTotal = state.settings.kampung
     .reduce((a, k) => a + (Number(state.settings.target[k]) || 0), 0);
   const bermasalah = ms.filter(m => masalah(m, nikC)).length;
   return {
@@ -299,9 +322,10 @@ function ringkasan() {
   };
 }
 
+/** Kelompok utama untuk dasbor, rekap, dan target: kampung. */
 function perKadus() {
-  return state.settings.kadus.map(k => {
-    const anggota = state.members.filter(m => m.kadus === k);
+  return state.settings.kampung.map(k => {
+    const anggota = state.members.filter(m => m.kampung === k);
     const target = Number(state.settings.target[k]) || 0;
     return {
       kadus: k,

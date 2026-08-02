@@ -33,9 +33,11 @@ BACA_DULU = """APLIKASI TEAM PEMENANGAN — PAKET OFFLINE
 
 Isi paket ini:
 
-  Aplikasi Team Pemenangan.html   <- buka berkas ini (klik dua kali)
-  data/database.js                <- database Anda, dimuat otomatis
+  Aplikasi Team Pemenangan.html   <- cara 1: buka dengan Chrome (klik dua kali)
+  Aplikasi Team Pemenangan.xlsx   <- cara 2: buka dengan Excel
+  data/database.js                <- database, dimuat otomatis oleh versi HTML
   data/database.json              <- database yang sama, untuk cadangan
+  data/untuk-excel.csv            <- database yang sama dalam bentuk CSV
   BACA-DULU.txt                   <- berkas ini
 
 CARA PAKAI
@@ -43,8 +45,22 @@ CARA PAKAI
 1. Ekstrak (unzip) seluruh isi paket ini ke satu folder.
    JANGAN membuka berkas HTML langsung dari dalam ZIP — folder data
    tidak ikut terbaca sehingga database tidak termuat.
-2. Buka "Aplikasi Team Pemenangan.html" dengan Chrome.
-3. Database dari folder data akan dimuat otomatis saat pertama dibuka.
+2. Pilih salah satu cara:
+   - HTML  : buka "Aplikasi Team Pemenangan.html" dengan Chrome.
+             Database dari folder data dimuat otomatis.
+   - EXCEL : buka "Aplikasi Team Pemenangan.xlsx" dengan Excel.
+             Data 52 anggota sudah ada di dalamnya.
+3. Buat shortcut ke desktop: klik kanan berkasnya > Send to > Desktop
+   (Windows), atau seret ke desktop sambil menahan Alt.
+
+MENYAMAKAN ISI HTML DAN EXCEL
+-----------------------------
+Keduanya berkas terpisah, jadi mengetik di satu sisi tidak langsung muncul
+di sisi lain. Pindahkan lewat CSV:
+  - Dari HTML ke Excel : menu Cadangan > Unduh CSV, lalu buka di Excel.
+  - Dari Excel ke HTML : simpan sheet DATABASE sebagai CSV, lalu pakai
+                         "Pulihkan dari berkas" di menu Cadangan.
+Pilih satu sebagai induk data supaya tidak ada dua versi yang berbeda.
 
 DI HP
 -----
@@ -89,6 +105,12 @@ def build(keluaran: pathlib.Path, data_path: pathlib.Path | None = None) -> path
         z.writestr("Aplikasi Team Pemenangan.html", html)
         z.writestr("data/database.js", "window.TP_DATA = " + padat + ";\n")
         z.writestr("data/database.json", padat)
+        excel = HERE.parent / "Aplikasi_Team_Pemenangan_v2.xlsx"
+        if excel.exists():
+            z.writestr("Aplikasi Team Pemenangan.xlsx", excel.read_bytes())
+        csv = HERE / "seed" / "anggota-jf3.csv"
+        if csv.exists():
+            z.writestr("data/untuk-excel.csv", csv.read_text(encoding="utf-8"))
         z.writestr("BACA-DULU.txt", BACA_DULU)
     return keluaran
 

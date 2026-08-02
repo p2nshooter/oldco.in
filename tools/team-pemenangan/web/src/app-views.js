@@ -72,10 +72,12 @@ function filterBar(f, prefix, extra) {
     '<select data-fk="' + k + '" data-fp="' + prefix + '">' +
     opts(list, f[k], kosong) + '</select>';
   return '<div class="filters">' +
-    sel('kadus', s.kadus, '— semua Kampung —') +
+    sel('kampung', s.kampung, '— semua Kampung —') +
     sel('rt', s.rt, '— semua RT —') +
     sel('rw', s.rw, '— semua RW —') +
-    (s.ketuaRt.length ? sel('ketuaRt', s.ketuaRt, '— semua Ketua RT —') : '') +
+    (s.namaRt.length ? sel('namaRt', s.namaRt, '— semua Nama RT —') : '') +
+    (s.namaRk.length ? sel('namaRk', s.namaRk, '— semua Nama RK —') : '') +
+    (s.kadus.length ? sel('kadus', s.kadus, '— semua Kadus —') : '') +
     sel('tps', s.tps, '— semua TPS —') +
     (extra === false ? '' :
       sel('jabatan', s.jabatan, '— semua jabatan —') +
@@ -86,10 +88,12 @@ function filterBar(f, prefix, extra) {
 
 function labelFilter(f) {
   const b = [];
-  if (f.kadus) b.push(f.kadus);
+  if (f.kampung) b.push(f.kampung);
   if (f.rt) b.push('RT ' + f.rt + (f.rw ? '/' + f.rw : ''));
   else if (f.rw) b.push('RW ' + f.rw);
-  if (f.ketuaRt) b.push('RT ' + f.ketuaRt);
+  if (f.namaRt) b.push('RT ' + f.namaRt);
+  if (f.namaRk) b.push('RK ' + f.namaRk);
+  if (f.kadus) b.push('Kadus ' + f.kadus);
   if (f.tps) b.push('TPS ' + f.tps);
   if (f.jabatan) b.push(f.jabatan);
   if (f.status) b.push(f.status);
@@ -233,8 +237,9 @@ function viewData() {
 
   h += '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
     '<th style="width:44px">#</th>' + th('Nama', 'nama') + th('NIK', 'nik') +
-    '<th>L/P</th>' + th('Kampung', 'kadus') + '<th>RT/RW</th><th>Ketua RT</th>' +
-    '<th>TPS</th>' + th('Jabatan', 'jabatan') +
+    '<th>No. KK</th><th>L/P</th>' + th('Alamat', 'korwil') +
+    '<th>Nama RT</th><th>Nama RK</th><th>Kadus</th><th>TPS</th>' +
+    th('Jabatan', 'jabatan') +
     '<th>No. HP</th>' + th('Usia', 'usia', 'num') + th('Status', 'status') +
     '<th style="width:86px">Aksi</th></tr></thead><tbody>';
 
@@ -247,11 +252,12 @@ function viewData() {
       '<td class="name">' + esc(m.nama) +
       (mm ? '<div class="mini-note" style="color:var(--danger);font-weight:600">' + esc(mm) + '</div>' : '') + '</td>' +
       '<td style="font-variant-numeric:tabular-nums">' + esc(m.nik || '—') + '</td>' +
+      '<td style="font-variant-numeric:tabular-nums">' + esc(m.kk || '—') + '</td>' +
       '<td>' + esc(m.jk || '—') + '</td>' +
+      '<td style="white-space:normal;min-width:190px">' + esc(wilayah(m) || '—') + '</td>' +
+      '<td>' + esc(m.namaRt || '—') + '</td>' +
+      '<td>' + esc(m.namaRk || '—') + '</td>' +
       '<td>' + esc(m.kadus || '—') + '</td>' +
-      '<td style="font-variant-numeric:tabular-nums">' +
-      esc(m.rt ? m.rt + (m.rw ? '/' + m.rw : '') : '—') + '</td>' +
-      '<td>' + esc(m.ketuaRt || '—') + '</td>' +
       '<td>' + esc(m.tps || '—') + '</td>' +
       '<td>' + esc(m.jabatan || '—') + '</td>' +
       '<td>' + esc(m.hp || '—') + '</td>' +

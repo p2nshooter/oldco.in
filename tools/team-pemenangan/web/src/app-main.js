@@ -39,12 +39,13 @@ function viewPengaturan() {
     return x + '</div></div>';
   };
 
-  h += daftar('kadus', 'Daftar Kampung / Dusun',
+  h += daftar('kampung', 'Daftar Kampung',
     'Menghapus kampung tidak menghapus anggotanya — data lama tetap ada dan bisa diperbaiki lewat menu Data Anggota.');
   h += daftar('rt', 'Daftar RT', 'Tulis tiga angka, contoh 001.');
   h += daftar('rw', 'Daftar RW', 'Tulis tiga angka, contoh 002.');
-  h += daftar('ketuaRt', 'Daftar Ketua RT',
-    'Nama ketua RT, dipakai untuk alamat yang hanya menyebut "RT Wandi" tanpa nomor.');
+  h += daftar('namaRt', 'Nama Ketua RT', 'Contoh: Wandi, Basir, Onin, Ropik.');
+  h += daftar('namaRk', 'Nama Ketua RK', 'Contoh: Niman.');
+  h += daftar('kadus', 'Nama Kadus', 'Tiga kadus desa ini. Contoh: Markum.');
   h += daftar('tps', 'Daftar TPS', 'Tulis dua angka, contoh 01.');
   h += daftar('jabatan', 'Daftar Jabatan', 'Urutan bebas; dipakai pada dropdown formulir anggota.');
   h += daftar('status', 'Status Keanggotaan', 'Bawaan: Aktif, Calon, Nonaktif.');
@@ -52,7 +53,7 @@ function viewPengaturan() {
   h += '<div class="sec-title">Target per Kampung</div><div class="card"><div class="card-b">' +
     '<p class="mini-note" style="margin-bottom:12px">Angka ini asumsi yang Anda tentukan sendiri, ' +
     'dipakai untuk menghitung % capaian pada Dasbor dan Target.</p><div class="form-grid">';
-  s.kadus.forEach(k => {
+  s.kampung.forEach(k => {
     h += '<div class="field"><label>' + esc(k) + '</label>' +
       '<input type="number" min="0" step="1" data-target="' + esc(k) + '" value="' +
       (Number(s.target[k]) || 0) + '"></div>';
@@ -154,9 +155,9 @@ function exportJson() {
   toast('Cadangan JSON terunduh — unggah ke folder Drive Anda.');
 }
 
-const CSV_KOLOM = ['nama', 'nik', 'jk', 'kadus', 'rt', 'rw', 'ketuaRt', 'tps',
-  'jabatan', 'hp', 'alamat', 'tglLahir', 'status', 'tglGabung', 'perekrut',
-  'catatan'];
+const CSV_KOLOM = ['nama', 'nik', 'kk', 'jk', 'kampung', 'rt', 'rw', 'alamat',
+  'namaRt', 'namaRk', 'kadus', 'tps', 'jabatan', 'hp', 'tglLahir', 'status',
+  'tglGabung', 'perekrut', 'catatan'];
 
 function csvCell(v) {
   const s = String(v === undefined || v === null ? '' : v);
@@ -209,7 +210,8 @@ function importFile(file, gabung) {
         const petaAlias = {
           'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
           'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
-          'kampung': 'kadus', 'ketua rt': 'ketuaRt',
+          'nik ktp': 'nik', 'no. kk': 'kk', 'no kk': 'kk',
+          'nama rt': 'namaRt', 'nama rk': 'namaRk', 'nama kadus': 'kadus',
           'tgl gabung': 'tglGabung', 'kelompok usia': null, 'usia': null,
           'korwil': null, 'no': null, 'key': null
         };
@@ -362,8 +364,12 @@ function formAnggota(id) {
     '<span class="hint">Sesuai KTP. Otomatis jadi huruf kapital.</span>' +
     '<span class="err">Nama wajib diisi.</span></div>' +
 
-    '<div class="field" data-f="nik"><label>NIK (16 digit) <span style="color:var(--danger)">*</span></label>' +
+    '<div class="field" data-f="nik"><label>NIK KTP (16 digit)</label>' +
     '<input type="text" name="nik" value="' + v('nik') + '" inputmode="numeric" maxlength="16" placeholder="3201011203800001">' +
+    '<span class="err"></span></div>' +
+
+    '<div class="field" data-f="kk"><label>No. KK (16 digit)</label>' +
+    '<input type="text" name="kk" value="' + v('kk') + '" inputmode="numeric" maxlength="16" placeholder="3201010101010001">' +
     '<span class="err"></span></div>' +
 
     '<div class="field" data-f="jk"><label>Jenis kelamin</label><select name="jk">' +
@@ -372,14 +378,18 @@ function formAnggota(id) {
     '<option value="P"' + (m && m.jk === 'P' ? ' selected' : '') + '>P — Perempuan</option>' +
     '</select></div>' +
 
-    '<div class="field" data-f="kadus"><label>Kadus</label><select name="kadus">' + sel(s.kadus, 'kadus') + '</select></div>' +
+    '<div class="field" data-f="kampung"><label>Kampung</label><select name="kampung">' + sel(s.kampung, 'kampung') + '</select></div>' +
     '<div class="field" data-f="rt"><label>RT</label><select name="rt">' + sel(s.rt, 'rt') + '</select></div>' +
     '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + sel(s.rw, 'rw') + '</select></div>' +
-    '<div class="field" data-f="ketuaRt"><label>Ketua RT</label>' +
-    '<input type="text" name="ketuaRt" value="' + v('ketuaRt') + '" list="daftarKetuaRt" ' +
-    'placeholder="mis. Wandi"><span class="hint">Dipakai bila alamat hanya menyebut nama Ketua RT.</span>' +
-    '<datalist id="daftarKetuaRt">' +
-    s.ketuaRt.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
+    '<div class="field" data-f="namaRt"><label>Nama RT</label>' +
+    '<input type="text" name="namaRt" value="' + v('namaRt') + '" list="dlRt" placeholder="mis. Wandi">' +
+    '<datalist id="dlRt">' + s.namaRt.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
+    '<div class="field" data-f="namaRk"><label>Nama RK</label>' +
+    '<input type="text" name="namaRk" value="' + v('namaRk') + '" list="dlRk" placeholder="mis. Niman">' +
+    '<datalist id="dlRk">' + s.namaRk.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
+    '<div class="field" data-f="kadus"><label>Nama Kadus</label>' +
+    '<input type="text" name="kadus" value="' + v('kadus') + '" list="dlKadus" placeholder="mis. Markum">' +
+    '<datalist id="dlKadus">' + s.kadus.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
     '<div class="field" data-f="tps"><label>TPS</label><select name="tps">' + sel(s.tps, 'tps') + '</select></div>' +
     '<div class="field" data-f="jabatan"><label>Jabatan</label><select name="jabatan">' + sel(s.jabatan, 'jabatan') + '</select></div>' +
 
@@ -387,8 +397,9 @@ function formAnggota(id) {
     '<input type="text" name="hp" value="' + v('hp') + '" inputmode="tel" placeholder="081234567890"></div>' +
     '<div class="field" data-f="status"><label>Status</label><select name="status">' + sel(s.status, 'status') + '</select></div>' +
 
-    '<div class="field span2" data-f="alamat"><label>Alamat</label>' +
-    '<input type="text" name="alamat" value="' + v('alamat') + '" placeholder="Dusun I RT 001"></div>' +
+    '<div class="field span2" data-f="alamat"><label>Keterangan alamat</label>' +
+    '<input type="text" name="alamat" value="' + v('alamat') + '" placeholder="patokan / keterangan tambahan">' +
+    '<span class="hint">Kampung dan RT/RW sudah otomatis masuk alamat — isi ini hanya bila ada keterangan lain.</span></div>' +
 
     '<div class="field" data-f="tglLahir"><label>Tanggal lahir</label>' +
     '<input type="date" name="tglLahir" value="' + v('tglLahir') + '">' +
@@ -605,13 +616,13 @@ function bukaForm(id) {
   const form = $('#formAnggota');
   const perbaruiKorwil = () => {
     $('#korwilPrev').value = wilayah({
-      kadus: form.kadus.value, rt: form.rt.value,
-      rw: form.rw.value, ketuaRt: form.ketuaRt.value
+      kampung: form.kampung.value, rt: form.rt.value,
+      rw: form.rw.value, alamat: form.alamat.value
     });
   };
-  ['kadus', 'rt', 'rw', 'ketuaRt'].forEach(k =>
+  ['kampung', 'rt', 'rw', 'alamat'].forEach(k =>
     form[k].addEventListener('change', perbaruiKorwil));
-  form.ketuaRt.addEventListener('input', perbaruiKorwil);
+  form.alamat.addEventListener('input', perbaruiKorwil);
   form.tglLahir.addEventListener('change', () => {
     const u = usia({ tglLahir: form.tglLahir.value });
     $('#usiaHint').textContent = u === null

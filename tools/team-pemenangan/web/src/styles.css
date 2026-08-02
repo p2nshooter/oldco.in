@@ -922,7 +922,10 @@ table.tbl .row-act { display: flex; gap: 5px; }
 
 @media print {
   @page { size: A4 portrait; margin: 13mm 12mm 14mm; }
-  @page landscape { size: A4 landscape; }
+  /* halaman bernama: daftar lengkap butuh A4 melintang agar kolom NIK,
+     No. KK, dan alamat tetap muat di dalam kertas */
+  @page lebar { size: A4 landscape; margin: 11mm 10mm 12mm; }
+  .doc.lebar { page: lebar; }
 
   html, body { overflow: visible !important; height: auto !important; background: #fff !important; }
   body { font-size: 10.5pt; color: #000; }
@@ -989,6 +992,7 @@ table.tbl .row-act { display: flex; gap: 5px; }
   }
   table.doc-tbl td.c { text-align: center; }
   table.doc-tbl td.nw { white-space: nowrap; }
+  table.doc-tbl td .sub { font-size: 7.6pt; color: #555; margin-top: 1px; }
   table.doc-tbl td.sig { height: 30px; }
   table.doc-tbl tbody tr:nth-child(even) td { background: #f4f6fa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 

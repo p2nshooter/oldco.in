@@ -17,7 +17,7 @@ const JENIS_DOK = {
   },
   rekap: {
     judul: 'REKAPITULASI ANGGOTA',
-    ket: 'Ringkasan jumlah per Kadus, RT, TPS, jabatan, dan status'
+    ket: 'Ringkasan jumlah per kampung, RT, TPS, jabatan, dan status'
   },
   kartu: {
     judul: 'KARTU ANGGOTA',
@@ -76,6 +76,9 @@ function buatDokumen(jenis, f, ekstra) {
   if (jenis === 'rekap') return dokRekap(list, lab, tgl);
 
   const hadir = jenis === 'hadir';
+  // daftar lengkap memuat NIK + No. KK + alamat -> A4 melintang supaya
+  // seluruh kolom muat tanpa terpotong
+  const lebar = !hadir;
   const meta = hadir
     ? [['KEGIATAN', (ekstra && ekstra.kegiatan) || '.......................................'],
        ['HARI / TANGGAL', (ekstra && ekstra.tanggal) || '.......................................'],
@@ -84,33 +87,40 @@ function buatDokumen(jenis, f, ekstra) {
     : [['KELOMPOK', lab], ['JUMLAH', list.length + ' orang'],
        ['DICETAK', tgl]];
 
-  let h = '<div class="doc">' + kopDok() +
+  let h = '<div class="doc' + (lebar ? ' lebar' : '') + '">' + kopDok() +
     '<div class="doc-title">' + esc(JENIS_DOK[jenis].judul) + '</div>' +
     '<div class="doc-sub">' + esc(state.settings.identitas.motto || '') + '</div>' +
     metaDok(meta);
 
-  // lebar kolom harus berjumlah 100%, kalau lebih isi sel ikut membungkus
+  // lebar kolom dijaga berjumlah tepat 100% supaya tidak ada sel yang
+  // terdorong keluar batas kertas
   const w = hadir
-    ? { no: 5, nama: 30, nik: 18, korwil: 0, jab: 20, hp: 13, ttd: 14 }
-    : { no: 5, nama: 24, nik: 16, korwil: 16, jab: 15, hp: 12, ttd: 12 };
+    ? { no: 5, nama: 27, nik: 0, kk: 0, alamat: 26, jab: 16, hp: 12, ttd: 14 }
+    : { no: 4, nama: 19, nik: 12, kk: 12, alamat: 21, jab: 12, hp: 10, ttd: 10 };
+  const kolom = hadir ? 6 : 8;
   h += '<table class="doc-tbl"><thead><tr>' +
     '<th style="width:' + w.no + '%">No</th>' +
     '<th style="width:' + w.nama + '%">Nama Lengkap</th>' +
-    '<th style="width:' + w.nik + '%">NIK</th>' +
-    (hadir ? '' : '<th style="width:' + w.korwil + '%">Alamat</th>') +
+    (hadir ? '' :
+      '<th style="width:' + w.nik + '%">NIK KTP</th>' +
+      '<th style="width:' + w.kk + '%">No. KK</th>') +
+    '<th style="width:' + w.alamat + '%">Alamat</th>' +
     '<th style="width:' + w.jab + '%">Jabatan</th>' +
     '<th style="width:' + w.hp + '%">No. HP</th>' +
     '<th style="width:' + w.ttd + '%">Tanda Tangan</th></tr></thead><tbody>';
 
   if (!list.length) {
-    h += '<tr><td colspan="' + (hadir ? 6 : 7) + '" class="c" style="padding:18px">' +
+    h += '<tr><td colspan="' + kolom + '" class="c" style="padding:18px">' +
       'Tidak ada data untuk filter ini.</td></tr>';
   }
   list.forEach((m, i) => {
     h += '<tr><td class="c">' + (i + 1) + '</td><td>' + esc(m.nama) + '</td>' +
-      '<td class="c nw">' + esc(m.nik || '') + '</td>' +
-      (hadir ? '' : '<td class="nw">' + esc(wilayah(m)) + '</td>') +
-      '<td>' + esc(m.jabatan || '') + '</td><td class="c">' + esc(m.hp || '') + '</td>' +
+      (hadir ? '' :
+        '<td class="c nw">' + esc(m.nik || '') + '</td>' +
+        '<td class="c nw">' + esc(m.kk || '') + '</td>') +
+      '<td>' + esc(wilayah(m)) + (pengurus(m) ? '<div class="sub">' +
+        esc(pengurus(m)) + '</div>' : '') + '</td>' +
+      '<td>' + esc(m.jabatan || '') + '</td><td class="c nw">' + esc(m.hp || '') + '</td>' +
       '<td class="sig">' + (i + 1) + '.</td></tr>';
   });
   h += '</tbody></table>' + ttdDok() +
@@ -121,16 +131,16 @@ function buatDokumen(jenis, f, ekstra) {
 function dokRekap(list, lab, tgl) {
   const s = state.settings;
   const rtAda = s.rt.filter(rt => list.some(m => m.rt === rt));
-  let h = '<div class="doc">' + kopDok() +
+  let h = '<div class="doc lebar">' + kopDok() +
     '<div class="doc-title">REKAPITULASI ANGGOTA TEAM PEMENANGAN</div>' +
     '<div class="doc-sub">' + esc(state.settings.identitas.motto || '') + '</div>' +
     metaDok([['KELOMPOK', lab], ['JUMLAH', list.length + ' orang'], ['DICETAK', tgl]]);
 
-  h += '<table class="doc-tbl"><thead><tr><th>Kadus</th>';
+  h += '<table class="doc-tbl"><thead><tr><th>Kampung</th>';
   rtAda.forEach(rt => { h += '<th>RT ' + esc(rt) + '</th>'; });
   h += '<th>L</th><th>P</th><th>Aktif</th><th>Total</th></tr></thead><tbody>';
-  s.kadus.forEach(k => {
-    const a = list.filter(m => m.kadus === k);
+  s.kampung.forEach(k => {
+    const a = list.filter(m => m.kampung === k);
     if (!a.length) return;
     h += '<tr><td>' + esc(k) + '</td>';
     rtAda.forEach(rt => { h += '<td class="c">' + a.filter(m => m.rt === rt).length + '</td>'; });
@@ -161,6 +171,8 @@ function dokRekap(list, lab, tgl) {
     });
     return new Map(Array.from(m.entries()).sort((a, b) => b[1] - a[1]));
   };
+  h += tabel('Rekap per RT / korwil', per('korwil'));
+  h += tabel('Rekap per nama RT', per('namaRt'));
   h += tabel('Rekap per TPS', per('tps'));
   h += tabel('Rekap per jabatan', per('jabatan'));
   h += tabel('Rekap per status', per('status'));
