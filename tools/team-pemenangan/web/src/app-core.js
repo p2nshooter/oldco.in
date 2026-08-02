@@ -22,8 +22,10 @@ const DEFAULTS = {
     motto: 'MELAYANI DENGAN HATI, MEMBANGUN DESA UNTUK NEGERI',
     driveUrl: 'https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8'
   },
-  // nama orangnya, bukan nomor wilayah — sesuai cara daftar aslinya ditulis
-  kadus: [],
+  kadus: ['Kadus 1', 'Kadus 2', 'Kadus 3'],
+  // struktur pengurus desa: tiap kadus punya daftar RK dan RT beserta namanya.
+  // Nomor RT berulang di tiap kadus, jadi nama pengurusnya yang membedakan.
+  pengurus: [],
   namaRk: [],
   namaRt: [],
   kampung: ['Kp. Gamprit', 'Kp. Kuda Kuda', 'Kp. Wangkal', 'Kp. Tenjolaut',
@@ -31,7 +33,7 @@ const DEFAULTS = {
   rt: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010',
     '011', '012', '013', '014', '015'],
   rw: ['001', '002', '003', '004', '005', '006', '007', '008'],
-  tps: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'],
+  tps: Array.from({ length: 20 }, (_, i) => String(i + 1).padStart(2, '0')),
   jabatan: ['Ketua Team', 'Wakil Ketua', 'Sekretaris', 'Bendahara',
     'Koordinator Wilayah', 'Koordinator Lapangan', 'Anggota', 'Relawan'],
   status: ['Aktif', 'Calon', 'Nonaktif'],
@@ -96,6 +98,7 @@ function load() {
       else state.settings.identitas = Object.assign(clone(DEFAULTS.identitas),
         state.settings.identitas);
       if (!state.settings.target) state.settings.target = {};
+      if (!Array.isArray(state.settings.pengurus)) state.settings.pengurus = [];
       if (!Array.isArray(state.settings.kelompokUsia) || !state.settings.kelompokUsia.length) {
         state.settings.kelompokUsia = clone(DEFAULTS.kelompokUsia);
       }
@@ -159,12 +162,42 @@ function wilayah(m) {
   return b.join(' ');
 }
 
+/** Cari data kadus dan nomor RT dari nama ketua RT pada struktur pengurus. */
+function cariRt(nama) {
+  if (!nama) return null;
+  for (const k of state.settings.pengurus || []) {
+    for (const r of k.rt || []) {
+      if (r[1] && r[1] === nama) return { kadus: k.kadus, no: samakanRt(r[0]) };
+    }
+  }
+  return null;
+}
+
+/** Samakan penulisan nomor RT dengan yang ada di daftar RT (mis. 03 -> 003). */
+function samakanRt(no) {
+  if (!no) return '';
+  const daftar = state.settings.rt || [];
+  if (daftar.includes(no)) return no;
+  const padat = String(no).replace(/^0+/, '');
+  return daftar.find(x => String(x).replace(/^0+/, '') === padat) || no;
+}
+
+function cariRk(nama) {
+  if (!nama) return null;
+  for (const k of state.settings.pengurus || []) {
+    for (const r of k.rk || []) {
+      if (r[1] && r[1] === nama) return { kadus: k.kadus, no: r[0] };
+    }
+  }
+  return null;
+}
+
 /** Baris kepengurusan: RT / RK / Kadus yang membawahi anggota tersebut. */
 function pengurus(m) {
   const b = [];
   if (m.namaRt) b.push('RT ' + m.namaRt);
   if (m.namaRk) b.push('RK ' + m.namaRk);
-  if (m.kadus) b.push('Kadus ' + m.kadus);
+  if (m.kadus) b.push(m.kadus);   // nilainya sudah berbentuk "Kadus 3"
   return b.join(' • ');
 }
 

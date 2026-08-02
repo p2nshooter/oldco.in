@@ -43,9 +43,8 @@ function viewPengaturan() {
     'Menghapus kampung tidak menghapus anggotanya — data lama tetap ada dan bisa diperbaiki lewat menu Data Anggota.');
   h += daftar('rt', 'Daftar RT', 'Tulis tiga angka, contoh 001.');
   h += daftar('rw', 'Daftar RW', 'Tulis tiga angka, contoh 002.');
-  h += daftar('namaRt', 'Nama Ketua RT', 'Contoh: Wandi, Basir, Onin, Ropik.');
-  h += daftar('namaRk', 'Nama Ketua RK', 'Contoh: Niman.');
-  h += daftar('kadus', 'Nama Kadus', 'Tiga kadus desa ini. Contoh: Markum.');
+  h += viewPengurus();
+  h += daftar('kadus', 'Wilayah Kadus', 'Tiga kadus desa ini.');
   h += daftar('tps', 'Daftar TPS', 'Tulis dua angka, contoh 01.');
   h += daftar('jabatan', 'Daftar Jabatan', 'Urutan bebas; dipakai pada dropdown formulir anggota.');
   h += daftar('status', 'Status Keanggotaan', 'Bawaan: Aktif, Calon, Nonaktif.');
@@ -60,6 +59,49 @@ function viewPengaturan() {
   });
   h += '</div></div></div>';
   return h;
+}
+
+/** Struktur pengurus: kadus, ketua RK, dan ketua RT beserta namanya.
+ *  Inilah sumber isi dropdown Nama RT dan Nama RK pada formulir anggota. */
+function viewPengurus() {
+  const list = state.settings.pengurus || [];
+  let h = '<div class="sec-title">Struktur Pengurus — Kadus, RK, dan RT</div>' +
+    '<div class="card"><div class="card-b">' +
+    '<p class="mini-note" style="margin-bottom:12px">Daftar ini mengisi dropdown ' +
+    '<b>Nama RT</b> dan <b>Nama RK</b> pada formulir anggota. Memilih nama RT ' +
+    'otomatis mengisi nomor RT dan kadusnya. Nomor RT berulang di tiap kadus, ' +
+    'jadi nama pengurusnya yang membedakan.</p>';
+
+  if (!list.length) {
+    h += '<p class="mini-note">Belum ada struktur pengurus.</p></div></div>';
+    return h;
+  }
+
+  h += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">';
+  list.forEach((k, ik) => {
+    h += '<div class="card"><div class="card-h"><h3>' + esc(k.kadus) + '</h3>' +
+      '<div class="grow"></div>' +
+      (k.nama ? '<span class="chip aktif">' + esc(k.nama) + '</span>'
+        : '<span class="chip bad">nama kadus belum ada</span>') + '</div>' +
+      '<div class="card-b"><div class="field" style="margin-bottom:10px">' +
+      '<label>Nama Kadus</label>' +
+      '<input type="text" data-png="' + ik + '" data-pf="nama" value="' +
+      esc(k.nama || '') + '" placeholder="nama kadus"></div>';
+    [['rk', 'Ketua RK'], ['rt', 'Ketua RT']].forEach(([jenis, judul]) => {
+      h += '<div class="mini-note" style="margin:10px 0 6px;font-weight:700">' +
+        esc(judul) + '</div>';
+      (k[jenis] || []).forEach((r, ir) => {
+        h += '<div class="flex" style="gap:8px;margin-bottom:5px">' +
+          '<span class="chip" style="min-width:62px;justify-content:center">' +
+          esc((jenis === 'rt' ? 'RT ' : 'RK ') + r[0]) + '</span>' +
+          '<input type="text" data-png="' + ik + '" data-pj="' + jenis +
+          '" data-pi="' + ir + '" value="' + esc(r[1] || '') +
+          '" placeholder="belum ada nama" style="flex:1"></div>';
+      });
+    });
+    h += '</div></div>';
+  });
+  return h + '</div></div></div>';
 }
 
 /* -------------------------------------------------------- cadangan/drive */
@@ -382,14 +424,12 @@ function formAnggota(id) {
     '<div class="field" data-f="rt"><label>RT</label><select name="rt">' + sel(s.rt, 'rt') + '</select></div>' +
     '<div class="field" data-f="rw"><label>RW</label><select name="rw">' + sel(s.rw, 'rw') + '</select></div>' +
     '<div class="field" data-f="namaRt"><label>Nama RT</label>' +
-    '<input type="text" name="namaRt" value="' + v('namaRt') + '" list="dlRt" placeholder="mis. Wandi">' +
-    '<datalist id="dlRt">' + s.namaRt.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
+    '<select name="namaRt">' + optPengurus('rt', m ? m.namaRt : '') + '</select>' +
+    '<span class="hint">Memilih nama RT otomatis mengisi nomor RT dan Kadus.</span></div>' +
     '<div class="field" data-f="namaRk"><label>Nama RK</label>' +
-    '<input type="text" name="namaRk" value="' + v('namaRk') + '" list="dlRk" placeholder="mis. Niman">' +
-    '<datalist id="dlRk">' + s.namaRk.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
-    '<div class="field" data-f="kadus"><label>Nama Kadus</label>' +
-    '<input type="text" name="kadus" value="' + v('kadus') + '" list="dlKadus" placeholder="mis. Markum">' +
-    '<datalist id="dlKadus">' + s.kadus.map(x => '<option value="' + esc(x) + '">').join('') + '</datalist></div>' +
+    '<select name="namaRk">' + optPengurus('rk', m ? m.namaRk : '') + '</select></div>' +
+    '<div class="field" data-f="kadus"><label>Kadus</label>' +
+    '<select name="kadus">' + sel(s.kadus, 'kadus') + '</select></div>' +
     '<div class="field" data-f="tps"><label>TPS</label><select name="tps">' + sel(s.tps, 'tps') + '</select></div>' +
     '<div class="field" data-f="jabatan"><label>Jabatan</label><select name="jabatan">' + sel(s.jabatan, 'jabatan') + '</select></div>' +
 
@@ -424,6 +464,28 @@ function formAnggota(id) {
     '<button class="btn" data-close="1">Batal</button>' +
     '<button class="btn btn-primary" id="btnSimpan">' + (m ? 'Simpan perubahan' : 'Simpan anggota') + '</button>' +
     '</div>';
+}
+
+/** Pilihan nama RT / RK dikelompokkan per kadus memakai optgroup. */
+function optPengurus(jenis, terpilih) {
+  let h = '<option value="">— pilih —</option>';
+  (state.settings.pengurus || []).forEach(k => {
+    const isi = (k[jenis] || []).filter(r => r[1]);
+    if (!isi.length) return;
+    h += '<optgroup label="' + esc(k.kadus + (k.nama ? ' — ' + k.nama : '')) + '">';
+    isi.forEach(r => {
+      const label = (jenis === 'rt' ? 'RT ' : 'RK ') + r[0] + ' — ' + r[1];
+      h += '<option value="' + esc(r[1]) + '"' +
+        (r[1] === terpilih ? ' selected' : '') + '>' + esc(label) + '</option>';
+    });
+    h += '</optgroup>';
+  });
+  // nilai lama yang belum ada di struktur tetap bisa dipilih
+  if (terpilih && !h.includes('value="' + esc(terpilih) + '"')) {
+    h += '<optgroup label="Belum ada di struktur pengurus">' +
+      '<option value="' + esc(terpilih) + '" selected>' + esc(terpilih) + '</option></optgroup>';
+  }
+  return h;
 }
 
 function bukaModal(html, lebarKecil) {
@@ -631,6 +693,18 @@ function bukaForm(id) {
   ['kampung', 'rt', 'rw', 'alamat'].forEach(k =>
     form[k].addEventListener('change', perbaruiKorwil));
   form.alamat.addEventListener('input', perbaruiKorwil);
+  // memilih nama RT/RK langsung mengisi nomor RT dan kadusnya
+  form.namaRt.addEventListener('change', () => {
+    const info = cariRt(form.namaRt.value);
+    if (!info) return;
+    form.rt.value = info.no;
+    form.kadus.value = info.kadus;
+    perbaruiKorwil();
+  });
+  form.namaRk.addEventListener('change', () => {
+    const info = cariRk(form.namaRk.value);
+    if (info && !form.kadus.value) form.kadus.value = info.kadus;
+  });
   form.tglLahir.addEventListener('change', () => {
     const u = usia({ tglLahir: form.tglLahir.value });
     $('#usiaHint').textContent = u === null
@@ -789,6 +863,20 @@ function onInput(e) {
     save();
     $('#brandTeam').textContent = state.settings.identitas.team || 'Team Pemenangan';
     $('#brandCalon').textContent = state.settings.identitas.calon || '';
+    return;
+  }
+  if (t.dataset.png !== undefined && t.dataset.png !== '') {
+    const k = state.settings.pengurus[Number(t.dataset.png)];
+    if (k) {
+      if (t.dataset.pf === 'nama') k.nama = t.value.trim();
+      else if (t.dataset.pj) k[t.dataset.pj][Number(t.dataset.pi)][1] = t.value.trim();
+      // daftar nama ikut diperbarui supaya dropdown dan filter tetap cocok
+      state.settings.namaRt = state.settings.pengurus
+        .flatMap(x => (x.rt || []).map(r => r[1])).filter(Boolean);
+      state.settings.namaRk = state.settings.pengurus
+        .flatMap(x => (x.rk || []).map(r => r[1])).filter(Boolean);
+      save();
+    }
     return;
   }
   if (t.dataset.target !== undefined && t.dataset.target !== '') {

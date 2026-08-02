@@ -223,10 +223,21 @@ def page_print(ws, area=None, landscape=False, fit_width=1, titles=None,
 
 KAMPUNG_DEFAULT = ["Kp. Gamprit", "Kp. Kuda Kuda", "Kp. Wangkal",
                    "Kp. Tenjolaut", "Kp. Putri Melintang"]
-KADUS_DEFAULT = ["Markum"]
-NAMA_RT_DEFAULT = ["Wandi", "Basir", "Onin", "Ropik", "Nemin", "Engkus",
-                   "Opic/Ropik"]
-NAMA_RK_DEFAULT = ["Niman"]
+KADUS_DEFAULT = ["Kadus 1", "Kadus 2", "Kadus 3"]
+# struktur pengurus desa: (kadus, nama kadus, [(no RK, nama)], [(no RT, nama)])
+PENGURUS_DEFAULT = [
+    ("Kadus 1", "", [("1", "Maska"), ("2", "Pasni")],
+     [("001", "Ikin Lois"), ("002", "Sarjan"), ("003", "Basir"),
+      ("004", "Onin"), ("005", "Tongkat / Kahidir"), ("006", "Sa ari")]),
+    ("Kadus 2", "", [("3", "Sutejo"), ("4", "Ilyas")],
+     [("001", "Dedi"), ("002", "Rimun"), ("003", "Adi Ardiansyah"),
+      ("004", "Kusnadi")]),
+    ("Kadus 3", "Markum", [("5", "Uding"), ("6", "Saiman")],
+     [("001", "Ropic"), ("002", ""), ("003", "Wandy Suwandi"),
+      ("004", "Toyib"), ("005", "Nemuin"), ("006", "Sumintra")]),
+]
+NAMA_RT_DEFAULT = [n for _, _, _, rt in PENGURUS_DEFAULT for _, n in rt if n]
+NAMA_RK_DEFAULT = [n for _, _, rk, _ in PENGURUS_DEFAULT for _, n in rk if n]
 RW_DEFAULT = [f"{i:03d}" for i in range(1, 9)]
 RT_DEFAULT = [f"{i:03d}" for i in range(1, 16)]
 JABATAN_DEFAULT = [
@@ -234,7 +245,7 @@ JABATAN_DEFAULT = [
     "Ketua RK", "Ketua RT", "Koordinator Wilayah", "Koordinator Lapangan",
     "Anggota", "Relawan",
 ]
-TPS_DEFAULT = [f"{i:02d}" for i in range(1, 11)]
+TPS_DEFAULT = [f"{i:02d}" for i in range(1, 21)]
 STATUS_DEFAULT = ["Aktif", "Calon", "Nonaktif"]
 USIA_DEFAULT = [
     ("Di bawah 17 th", 0),
@@ -307,6 +318,31 @@ def build_referensi(wb):
         put(ws, f"B{row}", label, f(10, True), GREY_BG, LEFT, BOX)
         ws.merge_cells(f"C{row}:F{row}")
         put(ws, f"C{row}", value, f(10), INPUT, LEFT, BOX, unlock=True)
+
+    # --- struktur pengurus: acuan siapa RT/RK di kadus mana
+    put(ws, "B60", "STRUKTUR PENGURUS  •  ACUAN NAMA RT, RK, DAN KADUS",
+        f(10, True, WHITE), BLUE, LEFT)
+    ws.merge_cells("B60:F60")
+    baris = 61
+    for kadus, nama_kadus, rk_list, rt_list in PENGURUS_DEFAULT:
+        put(ws, f"B{baris}", kadus, f(10, True), GREY_BG, LEFT, BOX)
+        put(ws, f"C{baris}", "Kadus", f(9, color="595959"), GREY_BG, LEFT, BOX)
+        put(ws, f"D{baris}", nama_kadus or "(belum ada nama)",
+            f(10, True) if nama_kadus else f(9, italic=True, color=RED),
+            GREY_BG, LEFT, BOX)
+        baris += 1
+        for no, nm in rk_list:
+            put(ws, f"C{baris}", "RK " + no, f(9), None, CENTER, BOX)
+            put(ws, f"D{baris}", nm, f(10), None, LEFT, BOX)
+            baris += 1
+        for no, nm in rt_list:
+            put(ws, f"C{baris}", "RT " + no, f(9), None, CENTER, BOX)
+            put(ws, f"D{baris}", nm or "(belum ada nama)",
+                f(10) if nm else f(9, italic=True, color=RED), None, LEFT, BOX)
+            baris += 1
+        baris += 1
+    put(ws, f"B{baris}", "Nomor RT berulang di tiap kadus — nama pengurusnyalah "
+        "yang membedakan.", f(9, italic=True, color="595959"), align=LEFT)
 
     # --- catatan
     catatan = [

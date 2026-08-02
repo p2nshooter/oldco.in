@@ -207,6 +207,26 @@ Berkas ZIP ditulis sendiri di dalam aplikasi tanpa pustaka luar: CRC-32 plus
 struktur ZIP baku, dimampatkan dengan `CompressionStream('deflate-raw')` bila
 peramban mendukung, dan disimpan apa adanya bila tidak.
 
+## Struktur pengurus
+
+Data induk kepengurusan desa diisi lebih dulu dan mengisi dropdown formulir:
+
+| Kadus | Ketua RK | Ketua RT |
+|---|---|---|
+| Kadus 1 | RK 1 Maska, RK 2 Pasni | RT 001 Ikin Lois, 002 Sarjan, 003 Basir, 004 Onin, 005 Tongkat / Kahidir, 006 Sa ari |
+| Kadus 2 | RK 3 Sutejo, RK 4 Ilyas | RT 001 Dedi, 002 Rimun, 003 Adi Ardiansyah, 004 Kusnadi |
+| Kadus 3 — Markum | RK 5 Uding, RK 6 Saiman | RT 001 Ropic, 002 (belum ada), 003 Wandy Suwandi, 004 Toyib, 005 Nemuin, 006 Sumintra |
+
+**Nomor RT berulang di tiap kadus** — RT 001 ada di ketiganya — jadi nama
+pengurusnya yang membedakan. Karena itu dropdown Nama RT dikelompokkan per
+kadus memakai `optgroup`, dan memilih nama RT otomatis mengisi nomor RT serta
+kadusnya. Nomor pada struktur disamakan tiga digit (`003`, bukan `03`) supaya
+cocok dengan daftar RT.
+
+Struktur ini bisa disunting di **Pengaturan → Struktur Pengurus**; daftar nama
+RT dan RK ikut diperbarui sendiri. Pada Excel, acuannya ada di sheet
+PENGATURAN mulai baris 60.
+
 ## Struktur alamat
 
 Mengikuti cara daftar aslinya ditulis:

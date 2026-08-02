@@ -17,19 +17,148 @@
       "driveUrl": "https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8"
     },
     "kadus": [
-      "Markum"
+      "Kadus 1",
+      "Kadus 2",
+      "Kadus 3"
+    ],
+    "pengurus": [
+      {
+        "kadus": "Kadus 1",
+        "nama": "",
+        "rk": [
+          [
+            "1",
+            "Maska"
+          ],
+          [
+            "2",
+            "Pasni"
+          ]
+        ],
+        "rt": [
+          [
+            "001",
+            "Ikin Lois"
+          ],
+          [
+            "002",
+            "Sarjan"
+          ],
+          [
+            "003",
+            "Basir"
+          ],
+          [
+            "004",
+            "Onin"
+          ],
+          [
+            "005",
+            "Tongkat / Kahidir"
+          ],
+          [
+            "006",
+            "Sa ari"
+          ]
+        ]
+      },
+      {
+        "kadus": "Kadus 2",
+        "nama": "",
+        "rk": [
+          [
+            "3",
+            "Sutejo"
+          ],
+          [
+            "4",
+            "Ilyas"
+          ]
+        ],
+        "rt": [
+          [
+            "001",
+            "Dedi"
+          ],
+          [
+            "002",
+            "Rimun"
+          ],
+          [
+            "003",
+            "Adi Ardiansyah"
+          ],
+          [
+            "004",
+            "Kusnadi"
+          ]
+        ]
+      },
+      {
+        "kadus": "Kadus 3",
+        "nama": "Markum",
+        "rk": [
+          [
+            "5",
+            "Uding"
+          ],
+          [
+            "6",
+            "Saiman"
+          ]
+        ],
+        "rt": [
+          [
+            "001",
+            "Ropic"
+          ],
+          [
+            "002",
+            ""
+          ],
+          [
+            "003",
+            "Wandy Suwandi"
+          ],
+          [
+            "004",
+            "Toyib"
+          ],
+          [
+            "005",
+            "Nemuin"
+          ],
+          [
+            "006",
+            "Sumintra"
+          ]
+        ]
+      }
     ],
     "namaRk": [
-      "Niman"
+      "Maska",
+      "Pasni",
+      "Sutejo",
+      "Ilyas",
+      "Uding",
+      "Saiman"
     ],
     "namaRt": [
-      "Wandi",
+      "Ikin Lois",
+      "Sarjan",
       "Basir",
       "Onin",
-      "Ropik",
-      "Nemin",
-      "Engkus",
-      "Opic/Ropik"
+      "Tongkat / Kahidir",
+      "Sa ari",
+      "Dedi",
+      "Rimun",
+      "Adi Ardiansyah",
+      "Kusnadi",
+      "Ropic",
+      "Wandy Suwandi",
+      "Toyib",
+      "Nemuin",
+      "Sumintra"
     ],
     "kampung": [
       "Kp. Gamprit",
@@ -66,7 +195,17 @@
       "07",
       "08",
       "09",
-      "10"
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
     ],
     "jabatan": [
       "Ketua Team",
@@ -845,7 +984,7 @@
       "nik": "",
       "kk": "",
       "jk": "",
-      "kadus": "Markum",
+      "kadus": "Kadus 3",
       "namaRk": "",
       "namaRt": "",
       "kampung": "",

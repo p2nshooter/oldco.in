@@ -59,7 +59,7 @@ ANGGOTA = [
     ("OMAN", "", "003", "002", ("", "", ""), "", "Oman RT. 003/002"),
     ("WACEP ACENK", "", "003", "003", ("", "", ""), "", "Wacep Acenk RT. 003/003"),
     ("A. AZIZ MAULANA", "", "002", "002", ("", "", ""), "", "A. Aziz Maulana RT. 002/002"),
-    ("MARKUM", "", "", "", ("", "", "Markum"), "Kadus", "Kadus MARKUM Dusun 3"),
+    ("MARKUM", "", "", "", ("", "", "Kadus 3"), "Kadus", "Kadus MARKUM Dusun 3"),
     ("ANAH", "", "004", "002", ("Onin", "", ""), "", "Anah RT.04/02 .RT onin"),
     ("SUGENG", "", "004", "002", ("Onin", "", ""), "", "Sugeng RT.04/02.rt onin"),
     ("YUSRON EFENDI", "Kp. Kuda Kuda", "003", "001", ("Basir", "", ""), "", "Yusron Efendi Kp Kuda2 003/001 Bpk RT. Basir"),
@@ -82,9 +82,26 @@ ANGGOTA = [
     ("ALI NURDIN", "Kp. Gamprit", "", "", ("Wandi", "", ""), "", "Ali Nurdin kp gamprit RT wandi"),
 ]
 
-NAMA_RT = ["Wandi", "Basir", "Onin", "Ropik", "Nemin", "Engkus", "Opic/Ropik"]
-NAMA_RK = ["Niman"]
-NAMA_KADUS = ["Markum"]
+# Struktur pengurus desa. Nomor RT berulang di tiap kadus (RT 01 ada di
+# ketiganya), jadi nomor saja tidak cukup — nama pengurusnyalah pembedanya.
+PENGURUS = [
+    {"kadus": "Kadus 1", "nama": "",
+     "rk": [("1", "Maska"), ("2", "Pasni")],
+     "rt": [("001", "Ikin Lois"), ("002", "Sarjan"), ("003", "Basir"),
+            ("004", "Onin"), ("005", "Tongkat / Kahidir"), ("006", "Sa ari")]},
+    {"kadus": "Kadus 2", "nama": "",
+     "rk": [("3", "Sutejo"), ("4", "Ilyas")],
+     "rt": [("001", "Dedi"), ("002", "Rimun"), ("003", "Adi Ardiansyah"),
+            ("004", "Kusnadi")]},
+    {"kadus": "Kadus 3", "nama": "Markum",
+     "rk": [("5", "Uding"), ("6", "Saiman")],
+     "rt": [("001", "Ropic"), ("002", ""), ("003", "Wandy Suwandi"),
+            ("004", "Toyib"), ("005", "Nemuin"), ("006", "Sumintra")]},
+]
+
+KADUS = [k["kadus"] for k in PENGURUS]
+NAMA_RT = [n for k in PENGURUS for _, n in k["rt"] if n]
+NAMA_RK = [n for k in PENGURUS for _, n in k["rk"] if n]
 KAMPUNG = ["Kp. Gamprit", "Kp. Kuda Kuda", "Kp. Wangkal", "Kp. Tenjolaut",
            "Kp. Putri Melintang"]
 JABATAN = ["Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara", "Kadus",
@@ -92,7 +109,7 @@ JABATAN = ["Ketua Team", "Wakil Ketua", "Sekretaris", "Bendahara", "Kadus",
            "Anggota", "Relawan"]
 RT = ["001", "002", "003", "004", "005", "006", "007", "008"]
 RW = ["001", "002", "003", "004", "005", "006"]
-TPS = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+TPS = [f"{i:02d}" for i in range(1, 21)]
 
 
 def build():
@@ -142,7 +159,8 @@ def build():
                 "motto": "MELAYANI DENGAN HATI, MEMBANGUN DESA UNTUK NEGERI",
                 "driveUrl": "https://drive.google.com/drive/folders/14LvBYSGaDkrgcI3R5iJ7mja2uyAj0rR8",
             },
-            "kadus": NAMA_KADUS,
+            "kadus": KADUS,
+            "pengurus": PENGURUS,
             "namaRk": NAMA_RK,
             "namaRt": NAMA_RT,
             "kampung": KAMPUNG,
