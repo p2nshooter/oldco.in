@@ -1,17 +1,57 @@
 # Aplikasi Team Pemenangan — versi web offline
 
-Satu berkas HTML. Klik ganda, langsung jalan — tanpa server, tanpa internet,
-tanpa pemasangan. Data tersimpan di `localStorage` peramban perangkat itu.
+Klik ganda, langsung jalan — tanpa server, tanpa internet, tanpa pemasangan.
+Data disimpan di `localStorage` peramban, dan dibawa antar perangkat lewat
+paket ZIP.
 
-Berkas siap pakai: **`Aplikasi_Team_Pemenangan.html`** (± 940 KB)
+| Berkas | Untuk apa |
+|---|---|
+| **`Aplikasi-Team-Pemenangan.zip`** (± 660 KB) | Paket lengkap: aplikasi + database. **Ini yang dibagikan.** |
+| `Aplikasi_Team_Pemenangan.html` (± 950 KB) | Aplikasi saja, tanpa database bawaan |
+
+## Paket ZIP — database yang ikut berpindah
+
+Isi paket:
+
+```
+Aplikasi Team Pemenangan.html   aplikasi lengkap, satu berkas
+data/database.js                database, dimuat otomatis saat aplikasi dibuka
+data/database.json              database yang sama, untuk cadangan/alat lain
+BACA-DULU.txt                   petunjuk singkat
+```
+
+Alur pemakaian:
+
+1. Ekstrak paket ke satu folder, buka berkas HTML-nya. Database dari folder
+   `data` termuat otomatis.
+2. Input data seperti biasa — selama dipakai, data hidup di `localStorage`.
+3. Selesai menginput, tekan **Cadangan & Drive → Unduh paket ZIP**. Paket baru
+   berisi aplikasi + seluruh data terbaru.
+4. Kirim paket itu ke HP/laptop lain (WhatsApp, USB, Drive — bebas), ekstrak,
+   buka. Datanya sudah ada di sana.
+
+**Harus diekstrak lebih dulu.** Membuka berkas HTML langsung dari dalam ZIP
+membuat folder `data` tidak terbaca, sehingga database tidak termuat. Aplikasi
+tetap jalan, hanya kosong. Peringatan ini ada di dalam aplikasi dan di
+`BACA-DULU.txt`.
+
+**Data perangkat tidak pernah tertimpa diam-diam.** Bila paket berisi database
+yang lebih baru sedangkan perangkat sudah punya data sendiri, muncul dialog
+berisi perbandingan jumlah dan tanggal keduanya, dengan tiga pilihan:
+*Gunakan data paket*, *Gabungkan* (hanya NIK baru yang ditambah), atau
+*Pertahankan data perangkat*. Tidak ada yang berubah sampai dipilih.
 
 ## Membangun ulang
 
 ```bash
 pip install pillow                 # opsional, untuk memperkecil gambar
 python3 ../prepare_logos.py        # sekali saja, menyiapkan aset logo
-python3 build_html.py Aplikasi_Team_Pemenangan.html
+python3 build_html.py Aplikasi_Team_Pemenangan.html   # aplikasi saja
+python3 build_zip.py Aplikasi-Team-Pemenangan.zip     # paket lengkap
 ```
+
+`build_zip.py` selalu membangun ulang HTML-nya lebih dulu. Tambahkan
+`--data berkas.json` untuk memaketkan database yang sudah terisi.
 
 Sumbernya dipisah agar mudah disunting, lalu digabung jadi satu berkas:
 
@@ -22,8 +62,10 @@ Sumbernya dipisah agar mudah disunting, lalu digabung jadi satu berkas:
 | `src/app-core.js` | Data, penyimpanan, hitungan turunan, CRUD |
 | `src/app-views.js` | Dasbor, tabel data, rekap, target, validasi |
 | `src/app-print.js` | Dokumen cetak dan kartu anggota |
+| `src/app-data.js` | Penulis ZIP, database bawaan paket, penyelesaian konflik |
 | `src/app-main.js` | Pengaturan, cadangan, petunjuk, pengendali kejadian |
 | `build_html.py` | Menggabungkan semuanya + menanam logo sebagai data URI |
+| `build_zip.py` | Menyusun paket ZIP siap bagi |
 
 ## Isi aplikasi
 
@@ -41,7 +83,7 @@ Sumbernya dipisah agar mudah disunting, lalu digabung jadi satu berkas:
 - **Kartu Anggota** — 8 kartu per halaman A4, siap potong.
 - **Pengaturan** — identitas kop surat, daftar Kadus/RT/TPS/jabatan/status,
   dan target per Kadus.
-- **Cadangan & Drive** — ekspor/impor JSON dan CSV.
+- **Cadangan & Drive** — paket ZIP, ekspor/impor JSON dan CSV.
 - **Petunjuk** — panduan empat langkah, tabel cara mencetak, dan tanya-jawab.
 
 ## Mencetak
@@ -116,4 +158,22 @@ Diuji dengan Chromium melalui Playwright:
   NIK duplikat.
 - Keempat dokumen cetak dirender ke PDF dan diperiksa satu per satu.
 - Tema terang dan gelap, serta tampilan lebar 390 px (HP).
+- **Alur paket ZIP menyeluruh:** ekstrak paket kosong → input 6 anggota →
+  unduh paket ZIP → paket lolos `unzip -t` → ekstrak di profil peramban bersih
+  (setara perangkat lain) → 6 anggota termuat otomatis dan aplikasi berfungsi.
+- **Penyelesaian konflik:** perangkat berisi 8 anggota dibuka dengan paket
+  berisi 9 anggota bertanggal lebih baru → dialog muncul, data **tidak berubah**
+  sampai dipilih; setelah *Gabungkan* jadi 11 dan kedua data lokal selamat.
 - **Tidak ada kesalahan konsol maupun pageerror** pada seluruh rangkaian uji.
+
+## Kenapa database paket berupa `.js`, bukan `.json`
+
+Diuji langsung di Chromium: saat halaman dibuka lewat `file://`, `fetch()` ke
+berkas tetangga **diblokir** kebijakan CORS (origin `null`), sedangkan memuat
+berkas lewat tag `<script>` **tetap diizinkan**. Karena itu database paket
+disimpan sebagai `data/database.js` yang mengisi `window.TP_DATA`. Berkas
+`.json` tetap disertakan untuk cadangan dan alat lain.
+
+Berkas ZIP ditulis sendiri di dalam aplikasi tanpa pustaka luar: CRC-32 plus
+struktur ZIP baku, dimampatkan dengan `CompressionStream('deflate-raw')` bila
+peramban mendukung, dan disimpan apa adanya bila tidak.

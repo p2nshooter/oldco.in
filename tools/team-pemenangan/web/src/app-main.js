@@ -63,13 +63,29 @@ function viewPengaturan() {
 function viewDataIo() {
   const r = ringkasan();
   const drive = state.settings.identitas.driveUrl || '';
-  let h = '<div class="grid two">';
+  let h = '<div class="card" style="margin-bottom:16px"><div class="card-h">' +
+    '<h3>Paket offline (ZIP)</h3><div class="grow"></div>' +
+    '<span class="chip aktif">cara yang dianjurkan</span></div><div class="card-b">' +
+    '<p class="mini-note">Satu berkas ZIP berisi <b>aplikasi + seluruh database</b>. ' +
+    'Inilah cara memindahkan data antar HP dan laptop tanpa internet: ekstrak paketnya, ' +
+    'buka berkas HTML-nya, database langsung termuat.</p>' +
+    '<div class="flex" style="margin-top:12px">' +
+    '<button class="btn btn-primary" id="btnZip">Unduh paket ZIP</button>' +
+    '<span class="mini-note">berisi ' + num(r.total) + ' anggota + pengaturan</span>' +
+    '</div>' +
+    '<div class="tip blue" style="margin-top:14px">' + ICON.bulb +
+    '<div><b>Penting saat membuka paket:</b> ekstrak dulu seluruh isinya ke satu folder. ' +
+    'Membuka berkas HTML langsung dari dalam ZIP membuat folder <span class="kbd">data</span> ' +
+    'tidak terbaca, sehingga database tidak ikut termuat.</div></div>' +
+    '</div></div>';
+
+  h += '<div class="grid two">';
 
   h += '<div class="card"><div class="card-h"><h3>Cadangan data</h3></div><div class="card-b">' +
     '<p class="mini-note">Data tersimpan di penyimpanan peramban perangkat ini. ' +
     'Menghapus riwayat peramban bisa ikut menghapusnya — unduh cadangan secara berkala.</p>' +
     '<div class="flex" style="margin-top:12px">' +
-    '<button class="btn btn-primary" id="btnExport">Unduh cadangan (JSON)</button>' +
+    '<button class="btn" id="btnExport">Unduh cadangan (JSON)</button>' +
     '<button class="btn" id="btnExportCsv">Unduh CSV</button>' +
     '</div><div class="hr"></div>' +
     '<div class="field"><label>Pulihkan dari berkas</label>' +
@@ -661,6 +677,7 @@ function onKlik(e) {
   const addbtn = t.closest('[data-addbtn]');
   if (addbtn) { tambahDaftar(addbtn.dataset.addbtn); return; }
 
+  if (t.closest('#btnZip')) { unduhPaketZip(); return; }
   if (t.closest('#btnAdd')) { bukaForm(null); return; }
   if (t.closest('#btnCsv')) { exportCsv(urut(saring(), ui.sort.by, ui.sort.dir)); return; }
   if (t.closest('#btnExport')) { exportJson(); return; }
@@ -784,6 +801,9 @@ function mulai() {
   setTema(ui.theme === 'dark' ? 'dark' : 'light');
   pasangEvent();
   render();
+  // database bawaan paket (data/database.js) — diabaikan diam-diam bila
+  // aplikasi dibuka sendirian tanpa folder data
+  muatBawaan(ada => { if (ada) terapkanBawaan(window.TP_DATA); });
   window.addEventListener('beforeprint', () => {
     if (!$('#print-root').innerHTML.trim()) {
       $('#print-root').innerHTML = buatDokumen(ui.cetak.jenis || 'daftar', ui.cetak, {});

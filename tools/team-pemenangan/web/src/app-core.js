@@ -45,7 +45,7 @@ const FIELDS = ['nama', 'nik', 'jk', 'kadus', 'rt', 'tps', 'jabatan', 'hp',
 
 /* ----------------------------------------------------------------- state */
 
-let state = { members: [], settings: null };
+let state = { members: [], settings: null, disimpan: '' };
 let ui = {
   view: 'dasbor',
   theme: 'light',
@@ -72,6 +72,7 @@ function load() {
     if (raw) {
       const d = JSON.parse(raw);
       state.members = Array.isArray(d.members) ? d.members : [];
+      state.disimpan = d.disimpan || '';
       state.settings = Object.assign(defaultSettings(), d.settings || {});
       // pastikan setiap daftar tetap array walau berkas cadangan lama
       ['kadus', 'rt', 'tps', 'jabatan', 'status'].forEach(k => {
@@ -106,8 +107,9 @@ let saveTimer = null;
 function save(now) {
   const write = () => {
     try {
+      state.disimpan = new Date().toISOString();
       localStorage.setItem(KEY, JSON.stringify({
-        v: 1, disimpan: new Date().toISOString(),
+        v: 1, disimpan: state.disimpan,
         members: state.members, settings: state.settings
       }));
     } catch (e) {

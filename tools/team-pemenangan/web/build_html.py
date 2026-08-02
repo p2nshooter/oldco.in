@@ -70,7 +70,8 @@ def build(keluaran: pathlib.Path) -> pathlib.Path:
     css = baca("styles.css")
     tubuh = baca("index.html").replace("__LOGO_EMBLEM__", logo)
     js = "\n".join(baca(n) for n in
-                   ("app-core.js", "app-views.js", "app-print.js", "app-main.js"))
+                   ("app-core.js", "app-views.js", "app-print.js", "app-data.js",
+                    "app-main.js"))
 
     html = f"""<!doctype html>
 <html lang="id" data-theme="light">
