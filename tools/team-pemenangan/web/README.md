@@ -413,6 +413,31 @@ semuanya sudah diperbaiki dan diuji ulang.
 | Penanda versi data | tiga tempat menulis `1` padahal migrasinya menyetel `3` — tiap penyimpanan memundurkan penanda |
 | "Alamat kosong" | Excel dan HTML menilainya berbeda; nomor RT saja kini sama-sama dianggap belum beralamat |
 | Folder `supabase/` | disebut ada di paket buatan aplikasi, padahal tidak ikut; sekarang benar-benar ikut |
+| Tombol **Pratinjau** | seluruh gaya dokumen terkunci di dalam `@media print`, jadi pratinjaunya tampil tanpa gaya sama sekali: lambang 300 px, tabel tanpa garis, kop tidak berkolom |
+| Membetulkan ejaan nama pengurus | memutus hubungannya dengan anggota — 8 anggota "Wandy Suwandi" tertinggal memakai tulisan lama dan tidak lagi ikut tersaring |
+| Struktur pengurus | tidak bisa ditambah atau dikurangi sama sekali; RT baru yang terbentuk selama 2026–2034 tidak bisa dicatat |
+
+### Struktur pengurus sekarang bisa diurus sendiri
+
+Tiap baris punya tombol buang, dan tiap kadus punya tombol **+ Ketua RT** dan
+**+ Ketua RW**. Nomor barunya dihitung sendiri dari lingkup yang benar: nomor
+RT cukup unik di dalam kadusnya, nomor RW harus unik satu desa.
+
+Dua penjagaan yang membuatnya aman dipakai:
+
+- **Membetulkan ejaan memindahkan anggotanya sekalian.** Mengubah "Wandy
+  Suwandi" menjadi "Wandi Suwandi" ikut memindahkan 8 anggota di bawahnya,
+  dan jumlahnya diberitahukan. Pemindahan dikerjakan saat kotak isian selesai
+  disunting, bukan tiap ketukan huruf — kalau tidak, "W" sudah dianggap nama
+  baru sebelum namanya utuh. Bila nama lama ternyata masih dipakai baris lain,
+  tidak ada yang disentuh: itu berarti memang ada dua pengurus bernama sama.
+- **Menghapus baris bertanya lebih dulu**, lengkap dengan jumlah anggota yang
+  masih tercatat di bawahnya. Data anggotanya tidak ikut terhapus — namanya
+  tetap tersimpan dan tetap muncul di dropdown pada kelompok "Belum ada di
+  struktur pengurus", jadi bisa dipindahkan kapan saja.
+
+Jumlah anggota per pengurus ikut ditampilkan di editornya, supaya akibat
+sebuah perubahan terlihat sebelum dikerjakan.
 
 Yang **tidak** diubah, dan alasannya: berkas `untuk-excel.csv` tetap apa
 adanya. Nilai berawalan `=` di sana akan ditampilkan Excel sebagai `#NAME?` —

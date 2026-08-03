@@ -83,7 +83,7 @@ function viewPengurus() {
     return h;
   }
 
-  h += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(330px,1fr))">';
+  h += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(316px,1fr))">';
   list.forEach((k, ik) => {
     h += '<div class="card"><div class="card-h"><h3>' + esc(k.kadus) + '</h3>' +
       '<div class="grow"></div>' +
@@ -100,6 +100,7 @@ function viewPengurus() {
       // Sebaris berempat membuat kotak namanya tinggal selebar lima huruf —
       // "Wandy Suwandi" terpotong jadi "Wan" dan tidak bisa dibaca lagi.
       (k[jenis] || []).forEach((r, ir) => {
+        const dipakai = pemakaiPengurus(jenis, r[1]);
         h += '<div class="pg-baris">' +
           '<span class="chip pg-no">' +
           esc((jenis === 'rt' ? 'RT ' : 'RW ') + r[0]) + '</span>' +
@@ -107,19 +108,51 @@ function viewPengurus() {
           '<input type="text" data-png="' + ik + '" data-pj="' + jenis +
           '" data-pi="' + ir + '" value="' + esc(r[1] || '') +
           '" placeholder="belum ada nama">' +
+          // Keterangan dan pilihan RW turun ke baris kedua. Dijajarkan sebaris
+          // dengan kotak nama, kotak itu tinggal seratus piksel dan nama
+          // sepanjang "Wandy Suwandi" tidak lagi terbaca utuh.
+          '<span class="pg-meta">' +
+          '<span class="mini-note">' +
           (jenis === 'rt'
-            ? '<span class="mini-note">' + esc(r[2] || 'kampung belum ada') + '</span>'
-            : '') + '</span>' +
+            ? esc(r[2] || 'kampung belum ada') +
+              (dipakai ? ' · ' + num(dipakai) + ' anggota' : '')
+            : (dipakai ? num(dipakai) + ' anggota' : 'belum ada anggota')) +
+          '</span>' +
           (jenis === 'rt'
             ? '<select data-png="' + ik + '" data-pj="rt" data-pi="' + ir +
               '" data-prw="1" class="pg-rw" title="RW yang membawahi RT ini">' +
               optRw(r[3] || '', true) + '</select>'
-            : '') + '</div>';
+            : '') +
+          '</span></span>' +
+          '<button class="icon-btn pg-buang" data-pg-rm="' + ik + ':' + jenis + ':' + ir +
+          '" title="Hapus baris ini">' + ICON.x + '</button>' +
+          '</div>';
       });
+      h += '<button class="btn btn-sm" data-pg-add="' + ik + ':' + jenis + '">+ ' +
+        esc(judul) + '</button>';
     });
     h += '</div></div>';
   });
   return h + '</div></div></div>';
+}
+
+/** Berapa anggota yang memakai nama pengurus ini. Dipakai untuk memberi tahu
+ *  akibat sebelum sebuah baris dihapus atau namanya diganti. */
+function pemakaiPengurus(jenis, nama) {
+  if (!nama) return 0;
+  const kunci = jenis === 'rt' ? 'namaRt' : 'namaRw';
+  return state.members.filter(m => m[kunci] === nama).length;
+}
+
+/** Nomor berikutnya yang belum terpakai.
+ *  Nomor RT hanya perlu unik di dalam kadusnya, sedangkan nomor RW berlaku
+ *  satu desa — jadi keduanya dihitung dari lingkup yang berbeda. */
+function nomorBerikut(jenis, ik) {
+  const daftar = jenis === 'rt'
+    ? (state.settings.pengurus[ik].rt || []).map(r => r[0])
+    : (state.settings.pengurus || []).flatMap(k => (k.rw || []).map(r => r[0]));
+  const angka = daftar.map(x => parseInt(x, 10)).filter(n => !isNaN(n));
+  return String((angka.length ? Math.max(...angka) : 0) + 1).padStart(3, '0');
 }
 
 /** Pilihan nomor RW lengkap dengan nama ketuanya.
@@ -843,6 +876,9 @@ function pasangEvent() {
   $('#viewWrap').addEventListener('click', onKlik);
   $('#viewWrap').addEventListener('input', onInput);
   $('#viewWrap').addEventListener('change', onChange);
+  // nilai sebelum disunting harus direkam saat kotaknya disentuh, karena saat
+  // 'change' tiba isinya sudah berganti dan yang lama tidak bisa dilihat lagi
+  $('#viewWrap').addEventListener('focusin', e => ingatNamaPengurus(e.target));
 }
 
 function bukaForm(id) {
@@ -964,6 +1000,50 @@ function onKlik(e) {
   const addbtn = t.closest('[data-addbtn]');
   if (addbtn) { tambahDaftar(addbtn.dataset.addbtn); return; }
 
+  const pgAdd = t.closest('[data-pg-add]');
+  if (pgAdd) {
+    const [ik, jenis] = pgAdd.dataset.pgAdd.split(':');
+    const k = state.settings.pengurus[Number(ik)];
+    if (!k) return;
+    const no = nomorBerikut(jenis, Number(ik));
+    // baris RT membawa kampung dan nomor RW; baris RW cukup nomor dan nama
+    k[jenis] = (k[jenis] || []).concat(
+      jenis === 'rt' ? [[no, '', '', '']] : [[no, '']]);
+    // nomor baru ikut masuk daftar pilihan supaya bisa dipakai di formulir
+    const daftar = jenis === 'rt' ? state.settings.rt : state.settings.rw;
+    if (!daftar.includes(no)) { daftar.push(no); daftar.sort(); }
+    save(true); render();
+    toast((jenis === 'rt' ? 'RT ' : 'RW ') + no + ' ditambahkan pada ' +
+      k.kadus + ' — isi namanya.', 'info', 4500);
+    return;
+  }
+
+  const pgRm = t.closest('[data-pg-rm]');
+  if (pgRm) {
+    const [ikS, jenis, irS] = pgRm.dataset.pgRm.split(':');
+    const k = state.settings.pengurus[Number(ikS)];
+    const baris = k && k[jenis] && k[jenis][Number(irS)];
+    if (!baris) return;
+    const label = (jenis === 'rt' ? 'RT ' : 'RW ') + baris[0] +
+      (baris[1] ? ' — ' + baris[1] : '');
+    const dipakai = pemakaiPengurus(jenis, baris[1]);
+    konfirmasi('Hapus ' + esc(label) + '?',
+      'Baris ini dihapus dari struktur pengurus <b>' + esc(k.kadus) + '</b>.' +
+      (dipakai
+        ? ' <b>' + num(dipakai) + ' anggota</b> masih tercatat di bawahnya. Data mereka ' +
+          'tidak ikut terhapus — namanya tetap tersimpan dan tetap muncul di dropdown ' +
+          'pada kelompok "Belum ada di struktur pengurus", jadi bisa dipindahkan ' +
+          'kapan saja lewat menu Data Anggota.'
+        : ' Belum ada anggota yang tercatat di bawahnya.'),
+      () => {
+        k[jenis].splice(Number(irS), 1);
+        segarkanDaftarPengurus();
+        save(true); render();
+        toast(label + ' dihapus dari struktur.', 'info');
+      }, 'Ya, hapus');
+    return;
+  }
+
   if (t.closest('#btnZip')) { unduhPaketZip(); return; }
   if (t.closest('#btnAdd')) { bukaForm(null); return; }
   if (t.closest('#btnCsv')) { exportCsv(urut(saring(), ui.sort.by, ui.sort.dir)); return; }
@@ -1029,6 +1109,15 @@ function tambahDaftar(kunci) {
   toast('"' + v + '" ditambahkan.');
 }
 
+/** Daftar nama RT dan RW disusun ulang dari struktur, supaya dropdown dan
+ *  saringan selalu cocok dengan isinya. */
+function segarkanDaftarPengurus() {
+  state.settings.namaRt = state.settings.pengurus
+    .flatMap(x => (x.rt || []).map(r => r[1])).filter(Boolean);
+  state.settings.namaRw = state.settings.pengurus
+    .flatMap(x => (x.rw || []).map(r => r[1])).filter(Boolean);
+}
+
 /** Menyunting satu sel struktur pengurus. Mengembalikan true bila elemennya
  *  memang bagian dari struktur, supaya penanganan lain berhenti di sini. */
 function suntingPengurus(t) {
@@ -1041,13 +1130,51 @@ function suntingPengurus(t) {
     // kolom 1 = nama pengurus, kolom 3 = nomor RW yang membawahi RT itu
     baris[t.dataset.prw ? 3 : 1] = t.value.trim();
   }
-  // daftar nama ikut diperbarui supaya dropdown dan filter tetap cocok
-  state.settings.namaRt = state.settings.pengurus
-    .flatMap(x => (x.rt || []).map(r => r[1])).filter(Boolean);
-  state.settings.namaRw = state.settings.pengurus
-    .flatMap(x => (x.rw || []).map(r => r[1])).filter(Boolean);
+  segarkanDaftarPengurus();
   save();
   return true;
+}
+
+/* Membetulkan ejaan nama pengurus dulu memutus hubungannya dengan anggota:
+   nama lama hilang dari struktur, sementara anggotanya masih menyimpan tulisan
+   lama, sehingga tidak lagi ikut tersaring dan harus dibetulkan satu per satu.
+   Sekarang anggotanya ikut berpindah — dilakukan saat kotak isian selesai
+   disunting, bukan tiap ketukan huruf, kalau tidak "W" sudah dianggap nama
+   baru sebelum namanya utuh. */
+
+let namaPengurusSebelum = null;
+
+function ingatNamaPengurus(t) {
+  if (t.dataset.png !== undefined && t.dataset.pj && !t.dataset.prw) {
+    namaPengurusSebelum = t.value.trim();
+  }
+}
+
+function pindahkanAnggotaPengurus(t) {
+  if (t.dataset.png === undefined || !t.dataset.pj || t.dataset.prw) return;
+  const lama = namaPengurusSebelum;
+  const baru = t.value.trim();
+  namaPengurusSebelum = null;
+  if (!lama || lama === baru) return;
+
+  const kunci = t.dataset.pj === 'rt' ? 'namaRt' : 'namaRw';
+  const kena = state.members.filter(m => m[kunci] === lama);
+  if (!kena.length) return;
+
+  // Nama lama masih dipakai baris lain pada struktur? Jangan disentuh —
+  // artinya memang ada dua pengurus bernama sama, bukan pembetulan ejaan.
+  const masihAda = (state.settings.pengurus || []).some(k =>
+    (k[t.dataset.pj] || []).some(r => r[1] === lama));
+  if (masihAda) return;
+
+  kena.forEach(m => {
+    m[kunci] = baru;
+    m.diubah = new Date().toISOString();
+  });
+  save(true);
+  render();
+  toast(num(kena.length) + ' anggota ikut dipindahkan dari "' + lama +
+    '" ke "' + (baru || '(kosong)') + '".', 'info', 6000);
 }
 
 function onInput(e) {
@@ -1084,6 +1211,8 @@ function onInput(e) {
 function onChange(e) {
   const t = e.target;
   if (t.dataset.prw && suntingPengurus(t)) return;
+  // nama pengurus selesai disunting: anggotanya ikut berpindah
+  if (t.dataset.png !== undefined && t.dataset.pj) { pindahkanAnggotaPengurus(t); return; }
   if (t.dataset.fk) {
     const p = t.dataset.fp;
     const wadah = p === 'data' ? ui.f : (p === 'cetak' ? ui.cetak : ui.kartu);
