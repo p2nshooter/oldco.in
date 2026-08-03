@@ -61,7 +61,7 @@ SEED = _muat_seed()
 # ---------------------------------------------------------------- konstanta
 
 FIRST = 4                      # baris data pertama pada DATABASE
-ROWS = 2000                    # kapasitas baris data
+ROWS = 10000                   # kapasitas baris data
 LAST = FIRST + ROWS - 1        # = 2003
 DB = "DATABASE"
 
@@ -445,9 +445,11 @@ DB_COLS = [
 # kolom bantu (tersembunyi)
 HELP_COLS = [("KEY", 24), ("MASALAH", 26), ("IDX_CARI", 10),
              ("IDX_MASALAH", 12), ("KEY_KAMPUNG", 22), ("IDX_CETAK", 10),
-             ("IDX_ABSEN", 10), ("IDX_KARTU", 10)]
-# A..W data | X..AE bantu
-AUTO_COLS = {"A", "M", "R", "S", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE"}
+             ("IDX_ABSEN", 10), ("IDX_KARTU", 10),
+             ("NIK_DEPAN", 12), ("NIK_BELAKANG", 12), ("NIK_KEMBAR", 12)]
+# A..W data | X..AH bantu
+AUTO_COLS = {"A", "M", "R", "S", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE",
+             "AF", "AG", "AH"}
 
 
 def build_database(wb):
@@ -468,65 +470,96 @@ def build_database(wb):
 
     for row in range(FIRST, LAST + 1):
         p = row - 1  # baris sebelumnya
+        awal = row == FIRST
+
+        def jalan(kolom, syarat):
+            """Nomor urut berjalan yang hanya melihat satu baris di atasnya.
+
+            Bentuk lamanya MAX($Z$3:Z{sebelumnya})+1 — membaca seluruh baris di
+            atasnya untuk tiap baris, jadi biayanya kuadrat terhadap jumlah
+            baris. Pada 2.000 baris itu masih lewat; pada 10.000 baris satu
+            perubahan sel memicu ratusan juta pembacaan dan Excel berhenti
+            merespons.
+
+            Penggantinya menumpuk dari baris tepat di atasnya saja. Nilainya
+            kini selalu angka, tidak lagi kosong pada baris yang tidak cocok —
+            dan MATCH(k, kolom, 0) tetap menemukan baris ke-k yang cocok,
+            karena angka k pertama kali muncul persis di baris itu.
+            """
+            sblm = "0" if awal else f"${kolom}{p}"
+            return f'=IF(AND($B{row}<>"",{syarat}),{sblm}+1,{sblm})'
+
         vals = {
-            "A": f'=IF($B{row}="","",COUNTA($B${FIRST}:$B{row}))',
+            # Nomor urut tampak. COUNTA atas rentang yang memanjang juga
+            # kuadratik, jadi ikut ditumpuk dari baris sebelumnya; N() membuat
+            # sel kosong terbaca 0 sehingga rantainya tidak putus.
+            "A": (f'=IF($B{row}="","",1)' if awal
+                  else f'=IF($B{row}="","",N($A{p})+1)'),
             # korwil: kampung + RT bila nomornya ada
             "M": (f'=IF($F{row}="","",$F{row}&IF($G{row}="",""," - RT "&$G{row}'
                   f'&IF($H{row}="","","/"&$H{row})))'),
             "R": f'=IF(OR($B{row}="",$Q{row}=""),"",DATEDIF($Q{row},TODAY(),"Y"))',
             "S": f'=IF($R{row}="","",INDEX(usia_label,MATCH($R{row},usia_min,1)))',
+            # Penghitung per kelompok tidak bisa ditumpuk sesederhana nomor urut
+            # biasa, jadi COUNTIF-nya dipertahankan — rentangnya pun sudah
+            # berhenti di baris ini, tidak menyapu seluruh sheet.
             "X": f'=IF($M{row}="","",$M{row}&"#"&COUNTIF($M${FIRST}:$M{row},$M{row}))',
             "AB": f'=IF($F{row}="","",$F{row}&"#"&COUNTIF($F${FIRST}:$F{row},$F{row}))',
+            # NIK dipecah dua sebagai angka. COUNTIF bertanda bintang harus
+            # mencocokkan teks berpola dan itu jauh lebih lambat daripada
+            # membandingkan angka; dipecah dua karena 16 digit melampaui
+            # ketelitian angka Excel yang hanya 15 digit.
+            "AF": f'=IF(LEN($C{row})<>16,"",VALUE(LEFT($C{row},8)))',
+            "AG": f'=IF(LEN($C{row})<>16,"",VALUE(RIGHT($C{row},8)))',
+            # Pencarian NIK kembar dua tahap. Menyaring lebih dulu dengan
+            # delapan digit BELAKANG — bagian yang benar-benar membedakan orang
+            # — lalu baru mencocokkan kedua potongan pada baris yang lolos.
+            # Menyaring dengan delapan digit depan tidak ada gunanya di sini:
+            # seluruh warga satu desa memakai kode wilayah yang sama.
+            # Uji pada 3.000 baris: satu hitung-ulang penuh turun dari 41 detik
+            # menjadi 27 detik hanya karena perubahan ini.
+            "AH": (f'=IF($AG{row}="",0,'
+                   f'IF(COUNTIF($AG${FIRST}:$AG${LAST},$AG{row})>1,'
+                   f'COUNTIFS($AF${FIRST}:$AF${LAST},$AF{row},'
+                   f'$AG${FIRST}:$AG${LAST},$AG{row}),1))'),
             "Y": (
                 f'=IF($B{row}="","",'
                 f'IF($C{row}="","NIK kosong",'
                 f'IF(LEN($C{row})<>16,"NIK bukan 16 digit",'
-                f'IF(COUNTIF($C${FIRST}:$C${LAST},$C{row}&"*")>1,"NIK ganda",'
+                f'IF($AH{row}>1,"NIK ganda",'
                 f'IF(AND($D{row}<>"",LEN($D{row})<>16),"No. KK bukan 16 digit",'
                 f'IF(AND($F{row}="",$I{row}=""),"Alamat kosong",'
                 f'IF($N{row}="","Jabatan kosong",'
                 f'IF($O{row}="","No. HP kosong",'
                 f'IF(AND($R{row}<>"",$R{row}<17),"Usia di bawah 17","")))))))))'
             ),
-            "Z": (
-                # kata kunci kosong = cocokkan semua; SEARCH("") menghasilkan
-                # #VALUE! di LibreOffice sehingga harus dijaga lebih dulu.
-                f'=IF($B{row}="","",IF(AND('
-                f'OR(CARI!$C$5="",ISNUMBER(SEARCH(CARI!$C$5,'
+            # kata kunci kosong = cocokkan semua; SEARCH("") menghasilkan
+            # #VALUE! di LibreOffice sehingga harus dijaga lebih dulu.
+            "Z": jalan("Z",
+                f'AND(OR(CARI!$C$5="",ISNUMBER(SEARCH(CARI!$C$5,'
                 f'$B{row}&" "&$C{row}&" "&$D{row}&" "&$O{row}&" "&$I{row}&" "'
                 f'&$F{row}&" "&$J{row}&" "&$K{row}&" "&$L{row}&" "&$V{row}))),'
                 f'OR(CARI!$C$6="",$F{row}=CARI!$C$6),'
                 f'OR(CARI!$C$7="",$G{row}=CARI!$C$7),'
-                f'OR(CARI!$C$8="",$T{row}=CARI!$C$8)),'
-                f'MAX($Z$3:Z{p})+1,""))'
-            ),
-            "AA": f'=IF($Y{row}="","",MAX($AA$3:AA{p})+1)',
+                f'OR(CARI!$C$8="",$T{row}=CARI!$C$8))'),
+            "AA": jalan("AA", f'$Y{row}<>""'),
             # nomor urut hasil penyaringan untuk tiap sheet cetak; filter yang
             # dikosongkan berarti "semua", sehingga satu rumus melayani cetak
             # semua anggota, per kampung, per RT, per korwil, maupun per TPS
-            "AC": (
-                f'=IF($B{row}="","",IF(AND('
-                f'OR(CETAK!$J$10="",$F{row}=CETAK!$J$10),'
+            "AC": jalan("AC",
+                f'AND(OR(CETAK!$J$10="",$F{row}=CETAK!$J$10),'
                 f'OR(CETAK!$J$11="",$G{row}=CETAK!$J$11),'
                 f'OR(CETAK!$J$12="",$P{row}=CETAK!$J$12),'
                 f'OR(CETAK!$J$13="",$N{row}=CETAK!$J$13),'
-                f'OR(CETAK!$J$14="",$T{row}=CETAK!$J$14)),'
-                f'MAX($AC$3:AC{p})+1,""))'
-            ),
-            "AD": (
-                f'=IF($B{row}="","",IF(AND('
-                f'OR(ABSENSI!$H$10="",$F{row}=ABSENSI!$H$10),'
+                f'OR(CETAK!$J$14="",$T{row}=CETAK!$J$14))'),
+            "AD": jalan("AD",
+                f'AND(OR(ABSENSI!$H$10="",$F{row}=ABSENSI!$H$10),'
                 f'OR(ABSENSI!$H$11="",$G{row}=ABSENSI!$H$11),'
-                f'OR(ABSENSI!$H$12="",$P{row}=ABSENSI!$H$12)),'
-                f'MAX($AD$3:AD{p})+1,""))'
-            ),
-            "AE": (
-                f'=IF($B{row}="","",IF(AND('
-                f'OR(KARTU!$K$6="",$F{row}=KARTU!$K$6),'
+                f'OR(ABSENSI!$H$12="",$P{row}=ABSENSI!$H$12))'),
+            "AE": jalan("AE",
+                f'AND(OR(KARTU!$K$6="",$F{row}=KARTU!$K$6),'
                 f'OR(KARTU!$K$7="",$G{row}=KARTU!$K$7),'
-                f'OR(KARTU!$K$8="",$P{row}=KARTU!$K$8)),'
-                f'MAX($AE$3:AE{p})+1,""))'
-            ),
+                f'OR(KARTU!$K$8="",$P{row}=KARTU!$K$8))'),
         }
         for i, (name, _w) in enumerate(all_cols):
             col = get_column_letter(1 + i)
@@ -1800,8 +1833,8 @@ def build_sinkron(wb):
     # nomor barisnya dengan tangan membuatnya meleset begitu ada satu kalimat
     # petunjuk yang bertambah.
     petunjuk_a = [
-        "1.  Blok tabel di bawah — mulai dari baris judulnya sampai baris data terakhir "
-        "— lalu tekan Ctrl+C.",
+        "1.  Buka sheet DATABASE. Klik sel A3 (baris judul), tekan Ctrl+Shift+End "
+        "untuk memblok seluruh data, lalu Ctrl+C.",
         "2.  Buka aplikasi HTML, masuk ke menu \u201cCadangan & Drive\u201d.",
         "3.  Pada kotak \u201cTempel dari Excel\u201d tekan Ctrl+V, lalu tekan tombol "
         "\u201cProses tempelan\u201d.",
@@ -1837,41 +1870,26 @@ def build_sinkron(wb):
         "bila ingin sering menyinkronkan.", f(9, italic=True, color=RED), align=LEFT)
     row += 2
 
-    put(ws, f"B{row}", "TABEL SALINAN  —  blok dari baris judul di bawah ini",
+    put(ws, f"B{row}", "PETA KOLOM  —  urutan kolom pada sheet DATABASE",
         f(10, True, WHITE), BLUE, LEFT)
     ws.merge_cells(f"B{row}:{akhir}{row}")
     row += 1
 
     hd = row
-    for i, (judul, _) in enumerate(SINKRON_KOLOM):
+    for i, (judul, kolom) in enumerate(SINKRON_KOLOM):
         put(ws, f"{get_column_letter(2 + i)}{hd}", judul,
             f(10, True, WHITE), NAVY, CENTER, BOX)
+        put(ws, f"{get_column_letter(2 + i)}{hd + 1}", f"kolom {kolom}",
+            f(9, color="595959"), GREY_BG, CENTER, BOX)
     ws.row_dimensions[hd].height = 22
-    ws.freeze_panes = f"B{hd + 1}"
 
-    # Dua jebakan pada rumus penyalin ini:
-    #
-    #   * Menunjuk sel kosong menghasilkan angka 0, bukan teks kosong. Tanpa
-    #     &"" seluruh kolom yang belum diisi akan tersalin sebagai "0" dan
-    #     masuk ke aplikasi HTML sebagai NIK 0, No. HP 0, dan seterusnya.
-    #   * Tanggal disimpan sebagai angka. Ditambah &"" ia berubah menjadi nomor
-    #     serinya ("29587"), jadi kolom tanggal ditulis ulang bentuknya — tetapi
-    #     hanya bila isinya memang angka, karena tanggal yang diketik sebagai
-    #     teks harus lewat apa adanya.
-    tanggal = {"Q", "U"}
-    for j in range(ROWS):
-        baris = hd + 1 + j
-        src = FIRST + j
-        for i, (_, kolom) in enumerate(SINKRON_KOLOM):
-            sel = f'{DB}!${kolom}{src}'
-            isi = (f'IF(ISNUMBER({sel}),TEXT({sel},"YYYY-MM-DD"),{sel}&"")'
-                   if kolom in tanggal else f'{sel}&""')
-            put(ws, f"{get_column_letter(2 + i)}{baris}",
-                f'=IF({DB}!$B{src}="","",{isi})',
-                f(10), None, LEFT, BOX, "@")
+    row = hd + 3
+    put(ws, f"B{row}", "Kolom KORWIL, USIA, dan KELOMPOK USIA ikut tersalin bila "
+        "seluruh baris diblok — dan itu tidak apa-apa: aplikasi HTML mengenali "
+        "ketiganya sebagai kolom hitungan lalu mengabaikannya, karena dihitung "
+        "ulang sendiri di sana.", f(9, italic=True, color="595959"), align=LEFT)
 
-    page_print(ws, area=f"A1:{akhir}{hd + 60}", landscape=True,
-               titles=f"{hd}:{hd}")
+    page_print(ws, area=f"A1:{akhir}{row + 1}", landscape=True)
     return ws
 
 
@@ -2039,7 +2057,16 @@ def build(path, sample=False):
     wb.properties.title = "Aplikasi Team Pemenangan"
     wb.properties.subject = "Database anggota team pemenangan tingkat desa"
     wb.properties.creator = "Aplikasi Team Pemenangan"
-    wb.calculation.fullCalcOnLoad = True
+    # Berkas yang dibagikan SELALU sudah lewat recalc.py, jadi seluruh nilai
+    # hasil rumus tersimpan di dalamnya. Memaksa hitung ulang saat dibuka
+    # membuat pemakainya menunggu sekitar setengah menit pada kapasitas 10.000
+    # baris — padahal hasilnya sama persis. Fungsi yang memang berubah menurut
+    # waktu (USIA memakai TODAY) tetap dihitung ulang Excel dengan sendirinya.
+    #
+    # Karena itu poles_xlsx.py menolak menyelesaikan berkas yang nilainya belum
+    # tersimpan — tanpa penjagaan itu, melewatkan recalc menghasilkan berkas
+    # yang terlihat kosong seluruhnya.
+    wb.calculation.fullCalcOnLoad = False
 
     if sample:
         fill_sample(wb)

@@ -194,6 +194,23 @@ function save(now) {
   saveTimer = setTimeout(write, 250);
 }
 
+/** Ukuran data tersimpan, dalam byte.
+ *
+ *  Penyimpanan peramban punya batas — sekitar 5 MB pada sebagian peramban HP,
+ *  lebih longgar di komputer. Pada kapasitas 10.000 anggota dengan seluruh
+ *  kolom terisi, datanya bisa mendekati 4 MB, jadi batas itu bukan lagi angka
+ *  yang jauh. Ukurannya ditampilkan di halaman Cadangan supaya ketahuan
+ *  sebelum penuh, bukan setelah penyimpanan menolak. */
+function ukuranData() {
+  try {
+    return (localStorage.getItem(KEY) || '').length;
+  } catch (e) {
+    return 0;
+  }
+}
+
+const BATAS_AMAN = 3.5 * 1024 * 1024;   // mulai mengingatkan di sekitar sini
+
 function saveUi() {
   try { localStorage.setItem(KEY_UI, JSON.stringify(ui)); } catch (e) { /* abaikan */ }
 }

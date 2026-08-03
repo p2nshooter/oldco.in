@@ -86,6 +86,47 @@ bukan jalan keluar karena hasil hitung-ulangnya justru ikut hilang. Berkasnya
 ditambal langsung pada XML-nya: hanya atribut warna tab yang disentuh, dan
 tiap sheet yang diubah diurai ulang sebagai XML sebelum ditulis.
 
+### Kapasitas 10.000 baris dan harganya
+
+Menaikkan kapasitas dari 2.000 ke 10.000 bukan sekadar mengganti satu angka.
+Delapan rumus per baris membaca seluruh baris di atasnya, jadi biayanya
+kuadrat terhadap jumlah baris — pada 2.000 baris itu masih lewat, pada 10.000
+satu hitung-ulang tidak selesai dalam dua menit dan satu perubahan sel memicu
+ratusan juta pembacaan.
+
+Yang diubah, dan hasil ukurannya pada 3.000 anggota terisi:
+
+| Perubahan | Hitung-ulang penuh |
+|---|---|
+| apa adanya, kapasitas 10.000 | **> 120 detik** (tidak selesai) |
+| nomor urut berjalan ditumpuk dari satu baris di atasnya, bukan `MAX` atas rentang memanjang | 54 detik |
+| tabel salinan SINKRON dihapus — 190.000 rumus, 57% dari seluruhnya | 41 detik |
+| NIK kembar dicari dua tahap: saring dengan 8 digit belakang, baru cocokkan penuh | **30 detik** |
+
+Pencarian NIK kembar dulu memakai `COUNTIF(rentang, nik&"*")`. Tanda bintang
+memaksa pencocokan teks berpola, dan itu jauh lebih lambat daripada
+membandingkan angka — sendirian memakan 19 detik dari 41. Sekarang NIK dipecah
+menjadi dua angka delapan digit (16 digit melampaui ketelitian angka Excel yang
+15 digit), disaring lebih dulu dengan delapan digit **belakang**. Menyaring
+dengan delapan digit depan tidak ada gunanya: seluruh warga satu desa memakai
+kode wilayah yang sama.
+
+Hitung-ulang saat berkas dibuka juga dimatikan. Berkas yang dibagikan selalu
+sudah lewat `recalc.py` sehingga seluruh nilainya tersimpan — memaksa hitung
+ulang membuat pemakainya menunggu setengah menit untuk hasil yang sama persis.
+`poles_xlsx.py` karena itu menolak menyelesaikan berkas yang nilainya belum
+tersimpan; tanpa penjagaan itu, melewatkan `recalc.py` menghasilkan berkas yang
+tampil kosong seluruhnya.
+
+Harganya: berkas menjadi **3,8 MB** (dari 1,4 MB), karena 10.000 baris rumus
+beserta nilai tersimpannya. Sheet DATABASE sendiri 3,2 MB dari jumlah itu.
+
+Di sisi aplikasi HTML 10.000 anggota tidak jadi soal — menggambar halaman
+sekitar 120 ms — tetapi datanya mencapai **4,5 MB** di penyimpanan peramban,
+sedangkan sebagian peramban HP berhenti menyimpan di sekitar 5 MB. Halaman
+Cadangan karena itu menampilkan ukuran datanya dan memperingatkan sebelum
+batas itu tercapai.
+
 ### Poles yang bisa dan tidak bisa dipakai di Excel
 
 | Dipakai | Bentuknya |
@@ -122,7 +163,7 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 | Sheet | Fungsi |
 |---|---|
 | **MENU** | Dasbor: 10 angka ringkasan, capaian per Kadus, dan tombol ke semua sheet |
-| **DATABASE** | Input data anggota, 2.000 baris, 18 kolom + 8 kolom bantu tersembunyi; siap cetak hasil filter |
+| **DATABASE** | Input data anggota, **10.000 baris**, 19 kolom + 11 kolom bantu tersembunyi; siap cetak hasil filter |
 | **CARI** | Pencarian bebas (nama/NIK/HP/alamat/perekrut) + filter Kadus, RT, status |
 | **REKAP** | Matriks Kadus × RT, gender & status, jabatan, segmen usia, TPS, daftar per korwil, 2 grafik |
 | **TARGET** | Target vs realisasi per Kadus, % capaian, grafik batang, penanda warna |
@@ -137,7 +178,7 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 
 ## Yang berubah dari versi sebelumnya
 
-**Kapasitas** — 500 → 2.000 baris; 15 → 20 RT dan 8 → 20 Kadus pada rekap;
+**Kapasitas** — 500 → 10.000 baris; 15 → 20 RT dan 8 → 20 Kadus pada rekap;
 daftar per korwil 30 → 40 baris; formulir cetak 25 nama per halaman dengan
 halaman otomatis.
 

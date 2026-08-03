@@ -174,8 +174,16 @@ function optRw(terpilih, ringkas) {
 
 /* -------------------------------------------------------- cadangan/drive */
 
+/** Ukuran dalam satuan yang enak dibaca. */
+function mb(n) {
+  return n >= 1024 * 1024
+    ? (n / 1024 / 1024).toFixed(1).replace('.', ',') + ' MB'
+    : Math.round(n / 1024) + ' KB';
+}
+
 function viewDataIo() {
   const r = ringkasan();
+  const byteData = ukuranData();
   const drive = state.settings.identitas.driveUrl || '';
   let h = '<div class="card" style="margin-bottom:16px"><div class="card-h">' +
     '<h3>Paket offline (ZIP)</h3><div class="grow"></div>' +
@@ -209,7 +217,15 @@ function viewDataIo() {
     '<label class="mini-note"><input type="checkbox" id="impGabung" style="width:auto;margin-right:6px">' +
     'Gabungkan dengan data yang ada (bila tidak dicentang, data lama diganti)</label></div>' +
     '<div class="hr"></div>' +
-    '<div class="mini-note">Tersimpan sekarang: <b>' + num(r.total) + '</b> anggota</div>' +
+    '<div class="mini-note">Tersimpan sekarang: <b>' + num(r.total) + '</b> anggota' +
+    (byteData ? ' · <b>' + mb(byteData) + '</b> di penyimpanan peramban' : '') + '</div>' +
+    (byteData > BATAS_AMAN
+      ? '<div class="tip red" style="margin-top:10px">' + ICON.alert +
+        '<div><b>Mendekati batas penyimpanan peramban.</b> Sebagian peramban HP ' +
+        'berhenti menyimpan di sekitar 5 MB, dan bila itu terjadi data yang baru ' +
+        'diketik tidak ikut tersimpan. Unduh paket ZIP sekarang, dan pertimbangkan ' +
+        'memecah data per kadus ke beberapa perangkat.</div></div>'
+      : '') +
     '<button class="btn btn-red btn-sm" id="btnReset" style="margin-top:10px">Hapus semua data</button>' +
     '</div></div>';
 
@@ -544,6 +560,9 @@ const ALIAS_KOLOM = {
   'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
   'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
   'nik ktp': 'nik', 'no. kk': 'kk', 'no kk': 'kk',
+  // judul persis seperti di baris 3 sheet DATABASE, supaya blok yang disalin
+  // langsung dari sana terbaca tanpa dirapikan lebih dulu
+  'nik ktp (16 digit)': 'nik', 'no. kk (16 digit)': 'kk',
   'nama rt': 'namaRt', 'nama rw': 'namaRw', 'nama kadus': 'kadus',
   // cadangan lama masih memakai istilah RK
   'nama rk': 'namaRw', 'namark': 'namaRw',

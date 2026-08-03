@@ -31,7 +31,8 @@ TAB_WARNA = {
     "MENU": "C00000", "DATABASE": "1F3864", "CARI": "2E75B6",
     "REKAP": "1F6F5C", "TARGET": "9C6A15", "VALIDASI": "A33A2A",
     "CETAK": "3F5A8A", "KARTU": "5B4B8A", "ABSENSI": "2E6B7A",
-    "PROFIL": "7A2E4A", "REFERENSI": "6B6B6B", "PETUNJUK": "444444",
+    "PROFIL": "7A2E4A", "SINKRON": "1F6F5C", "REFERENSI": "6B6B6B",
+    "PETUNJUK": "444444",
 }
 
 
@@ -87,8 +88,29 @@ def warnai(xml: str, rgb: str) -> str:
     return xml[:j + 1] + sisip + xml[j + 1:]
 
 
+def periksa_nilai(z: zipfile.ZipFile) -> None:
+    """Pastikan berkas sudah berisi hasil rumus, bukan hanya rumusnya.
+
+    Sejak hitung-ulang saat dibuka dimatikan, berkas tanpa nilai tersimpan akan
+    tampil kosong seluruhnya di Excel — dan itu baru ketahuan setelah sampai di
+    tangan pemakai. Jadi diperiksa di sini: sheet MENU harus punya sel <v> pada
+    rumusnya."""
+    nama = [n for n in z.namelist() if n.startswith("xl/worksheets/sheet")]
+    berumus = bernilai = 0
+    for n in nama:
+        x = z.read(n).decode("utf-8", "ignore")
+        berumus += x.count("<f>")
+        bernilai += x.count("</f><v>")
+    if berumus and bernilai * 10 < berumus:
+        raise SystemExit(
+            f"GAGAL: {berumus} rumus tetapi hanya {bernilai} yang punya nilai "
+            "tersimpan. Jalankan recalc.py lebih dulu — tanpa itu berkasnya "
+            "akan tampil kosong di Excel.")
+
+
 def poles(path: pathlib.Path) -> int:
     with zipfile.ZipFile(path) as z:
+        periksa_nilai(z)
         peta = peta_sheet(z)
         urutan = z.namelist()
         isi = {n: z.read(n) for n in urutan}
