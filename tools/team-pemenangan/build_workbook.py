@@ -32,11 +32,13 @@ import sys
 from openpyxl import Workbook
 from openpyxl.drawing.image import Image as XLImage
 from openpyxl.chart import BarChart, PieChart, Reference
-from openpyxl.formatting.rule import CellIsRule, FormulaRule
+from openpyxl.formatting.rule import (CellIsRule, ColorScaleRule, DataBarRule,
+                                      FormulaRule, IconSetRule)
 from openpyxl.drawing.spreadsheet_drawing import AnchorMarker, OneCellAnchor
 from openpyxl.drawing.xdr import XDRPositiveSize2D
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Protection, Side
-from openpyxl.utils import coordinate_to_tuple, get_column_letter
+from openpyxl.utils import (column_index_from_string, coordinate_to_tuple,
+                            get_column_letter)
 from openpyxl.utils.units import pixels_to_EMU
 from openpyxl.workbook.defined_name import DefinedName
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -89,6 +91,26 @@ OK_FILL = "E2EFDA"
 WARN_FILL = "FFF2CC"
 BAD_FILL = "FFC7CE"
 
+# Emas dipakai sebagai garis aksen di bawah kop dan judul bagian — satu-satunya
+# warna hangat pada palet, jadi cukup tipis saja supaya tidak berebut perhatian.
+GOLD = "C08A2E"
+GOLD_MUDA = "E0BE72"
+
+# warna tab tiap sheet: satu keluarga warna supaya buku kerjanya terlihat
+# disusun, bukan sekadar kumpulan lembar
+TAB_WARNA = {
+    "MENU": RED, "DATABASE": NAVY, "CARI": BLUE, "REKAP": "1F6F5C",
+    "TARGET": "9C6A15", "VALIDASI": "A33A2A", "CETAK": "3F5A8A",
+    "KARTU": "5B4B8A", "ABSENSI": "2E6B7A", "PROFIL": "7A2E4A",
+    "REFERENSI": "6B6B6B", "PETUNJUK": "444444",
+}
+
+# Batang di dalam sel (data bar) memberi bentuk pada angka tanpa menambah
+# kolom. Nilainya tetap terbaca; batangnya hanya latar.
+BAR_BIRU = "9DC3E6"
+BAR_HIJAU = "A9D08E"
+BAR_EMAS = "F0C775"
+
 THIN = Side(style="thin", color="BFBFBF")
 MED = Side(style="medium", color=NAVY)
 BOX = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
@@ -133,9 +155,15 @@ def put(ws, ref, value, font=None, bg=None, align=None, border=None,
 
 
 def title_block(ws, row, judul, sub=None, width="H"):
-    """Kop merah + baris navigasi kembali ke MENU."""
+    """Kop merah bergaris emas + baris navigasi kembali ke MENU.
+
+    Latar bergradasi sempat dipakai di sini, tetapi LibreOffice Calc tidak
+    mengenal latar sel bergradasi dan memadamkannya saat berkas dihitung
+    ulang. Garis emas tebal di bawah kop memberi kesan tercetak yang sama dan
+    selamat melewati seluruh alur pembuatan."""
     ws.merge_cells(f"A{row}:{width}{row}")
     put(ws, f"A{row}", judul, f(14, True, WHITE), RED, LEFT)
+    garis_bawah(ws, row, "A", width, GOLD, "medium")
     ws.row_dimensions[row].height = 26
     r = row + 1
     link(ws, f"A{r}", "◀  MENU", "MENU!A1")
@@ -147,7 +175,20 @@ def title_block(ws, row, judul, sub=None, width="H"):
 def section(ws, row, text, width="H", color=NAVY):
     ws.merge_cells(f"B{row}:{width}{row}")
     put(ws, f"B{row}", "▌  " + text, f(11, True, WHITE), color, LEFT)
+    garis_bawah(ws, row, "B", width, GOLD_MUDA, "thin")
     ws.row_dimensions[row].height = 20
+
+
+def garis_bawah(ws, row, dari, sampai, warna, tebal="thin"):
+    """Garis bawah sepanjang sel yang digabung.
+
+    Sel gabungan hanya memakai batas milik sel pertama untuk sisi kiri dan sel
+    terakhir untuk sisi kanan; garis bawahnya harus dipasang satu per satu,
+    kalau tidak garisnya putus di tengah."""
+    sisi = Side(style=tebal, color=warna)
+    a, b = column_index_from_string(dari), column_index_from_string(sampai)
+    for i in range(a, b + 1):
+        ws.cell(row=row, column=i).border = Border(bottom=sisi)
 
 
 def link(ws, ref, text, location, size=10, bold=True):
@@ -772,6 +813,22 @@ def build_rekap(wb):
         put(ws, f"{col}{tot}", f"=SUM({col}{first}:{col}{tot - 1})",
             f(10, True, WHITE), NAVY, CENTER, BOX)
     matrix_first, matrix_tot = first, tot
+
+    # Peta panas: sel yang banyak anggotanya menggelap sendiri, jadi wilayah
+    # yang masih kosong langsung kelihatan tanpa perlu dibaca satu per satu.
+    kolom_akhir_rt = get_column_letter(2 + MAX_RT)
+    ws.conditional_formatting.add(
+        f"C{first}:{kolom_akhir_rt}{tot - 1}",
+        ColorScaleRule(start_type="num", start_value=0, start_color=WHITE,
+                       mid_type="percentile", mid_value=55, mid_color="CFE3F5",
+                       end_type="max", end_color="4E88C7"))
+    # Kolom TOTAL memakai batang, bukan warna — supaya perbandingan antar
+    # kampung terbaca sekali lihat.
+    ws.conditional_formatting.add(
+        f"{last_rt_col}{first}:{last_rt_col}{tot - 1}",
+        DataBarRule(start_type="num", start_value=0, end_type="max",
+                    color=BAR_BIRU, showValue=True))
+
     row = tot + 2
 
     # ---------- B. rekap gender + status per Kadus
@@ -807,6 +864,10 @@ def build_rekap(wb):
     put(ws, f"I{rb}", f'=IF(SUM(H{hb + 1}:H{rb - 1})=0,"",1)',
         f(10, True, WHITE), NAVY, CENTER, BOX, "0.0%")
     gender_head, gender_first = hb, hb + 1
+    ws.conditional_formatting.add(
+        f"H{hb + 1}:H{rb - 1}",
+        DataBarRule(start_type="num", start_value=0, end_type="max",
+                    color=BAR_BIRU, showValue=True))
     row = rb + 2
 
     # ---------- C. rekap per jabatan
@@ -998,7 +1059,22 @@ def build_target(wb):
     put(ws, f"H{tot}", f'=IF($G{tot}="","",REPT("█",ROUND(MIN($G{tot},1)*20,0)))',
         f(10, True, WHITE), NAVY, LEFT, BOX)
 
+    # Batang pada kolom TARGET dan REALISASI: tinggi rendahnya terlihat
+    # sebelum angkanya dibaca, dan keduanya memakai skala yang sama.
+    ws.conditional_formatting.add(
+        f"C{hd + 1}:C{tot - 1}",
+        DataBarRule(start_type="num", start_value=0, end_type="max",
+                    color=BAR_EMAS, showValue=True))
+    ws.conditional_formatting.add(
+        f"D{hd + 1}:D{tot - 1}",
+        DataBarRule(start_type="num", start_value=0, end_type="max",
+                    color=BAR_HIJAU, showValue=True))
+
     rng = f"G{hd + 1}:G{tot - 1}"
+    # Lampu lalu lintas di depan angka capaian — merah di bawah 50%, kuning
+    # 50-99%, hijau begitu targetnya tercapai.
+    ws.conditional_formatting.add(rng, IconSetRule(
+        "3TrafficLights1", "percent", [0, 50, 100], showValue=True))
     ws.conditional_formatting.add(rng, CellIsRule(
         operator="greaterThanOrEqual", formula=["1"], fill=fill(OK_FILL),
         font=Font(name=FONT, size=10, bold=True, color=GREEN)))
@@ -1831,6 +1907,8 @@ def build(path, sample=False):
              "CETAK", "KARTU", "ABSENSI", "PROFIL", "REFERENSI", "PETUNJUK"]
     wb._sheets = [wb[name] for name in order]
     wb.active = 0
+    for nama, warna in TAB_WARNA.items():
+        wb[nama].sheet_properties.tabColor = warna
 
     wb.properties.title = "Aplikasi Team Pemenangan"
     wb.properties.subject = "Database anggota team pemenangan tingkat desa"

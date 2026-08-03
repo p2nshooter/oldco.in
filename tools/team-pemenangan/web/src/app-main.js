@@ -83,7 +83,7 @@ function viewPengurus() {
     return h;
   }
 
-  h += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">';
+  h += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(330px,1fr))">';
   list.forEach((k, ik) => {
     h += '<div class="card"><div class="card-h"><h3>' + esc(k.kadus) + '</h3>' +
       '<div class="grow"></div>' +
@@ -96,18 +96,24 @@ function viewPengurus() {
     [['rw', 'Ketua RW'], ['rt', 'Ketua RT']].forEach(([jenis, judul]) => {
       h += '<div class="mini-note" style="margin:10px 0 6px;font-weight:700">' +
         esc(judul) + '</div>';
+      // Nama kampung diletakkan di bawah kotak nama, bukan di sebelahnya.
+      // Sebaris berempat membuat kotak namanya tinggal selebar lima huruf —
+      // "Wandy Suwandi" terpotong jadi "Wan" dan tidak bisa dibaca lagi.
       (k[jenis] || []).forEach((r, ir) => {
-        h += '<div class="flex" style="gap:8px;margin-bottom:5px">' +
-          '<span class="chip" style="min-width:62px;justify-content:center">' +
+        h += '<div class="pg-baris">' +
+          '<span class="chip pg-no">' +
           esc((jenis === 'rt' ? 'RT ' : 'RW ') + r[0]) + '</span>' +
+          '<span class="pg-isi">' +
           '<input type="text" data-png="' + ik + '" data-pj="' + jenis +
           '" data-pi="' + ir + '" value="' + esc(r[1] || '') +
-          '" placeholder="belum ada nama" style="flex:1">' +
+          '" placeholder="belum ada nama">' +
           (jenis === 'rt'
-            ? '<span class="mini-note" style="min-width:96px">' + esc(r[2] || '—') + '</span>' +
-              '<select data-png="' + ik + '" data-pj="rt" data-pi="' + ir +
-              '" data-prw="1" style="width:88px" title="RW yang membawahi RT ini">' +
-              optRw(r[3] || '') + '</select>'
+            ? '<span class="mini-note">' + esc(r[2] || 'kampung belum ada') + '</span>'
+            : '') + '</span>' +
+          (jenis === 'rt'
+            ? '<select data-png="' + ik + '" data-pj="rt" data-pi="' + ir +
+              '" data-prw="1" class="pg-rw" title="RW yang membawahi RT ini">' +
+              optRw(r[3] || '', true) + '</select>'
             : '') + '</div>';
       });
     });
@@ -116,16 +122,19 @@ function viewPengurus() {
   return h + '</div></div></div>';
 }
 
-/** Pilihan nomor RW lengkap dengan nama ketuanya. */
-function optRw(terpilih) {
-  let h = '<option value="">RW —</option>';
+/** Pilihan nomor RW lengkap dengan nama ketuanya.
+ *  `ringkas` membuang kata "RW" pada label — dipakai di editor struktur, yang
+ *  kotaknya sempit dan sudah jelas berisi nomor RW. */
+function optRw(terpilih, ringkas) {
+  const awalan = ringkas ? '' : 'RW ';
+  let h = '<option value="">' + (ringkas ? '—' : 'RW —') + '</option>';
   (state.settings.rw || []).forEach(no => {
     const p = rwDariNomor(no);
     h += '<option value="' + esc(no) + '"' + (no === terpilih ? ' selected' : '') +
-      '>RW ' + esc(no) + (p ? ' · ' + esc(p.nama) : '') + '</option>';
+      '>' + awalan + esc(no) + (p ? (ringkas ? '·' : ' · ') + esc(p.nama) : '') + '</option>';
   });
   if (terpilih && !(state.settings.rw || []).includes(terpilih)) {
-    h += '<option value="' + esc(terpilih) + '" selected>RW ' + esc(terpilih) + '</option>';
+    h += '<option value="' + esc(terpilih) + '" selected>' + awalan + esc(terpilih) + '</option>';
   }
   return h;
 }
@@ -646,19 +655,29 @@ const RENDERER = {
   pengaturan: viewPengaturan, 'data-io': viewDataIo, petunjuk: viewPetunjuk
 };
 
+let viewTerakhir = null;
+let bermasalahTerakhir = null;
+
 function render() {
   const v = ui.view;
   const el = $('#view-' + v);
   if (!el) return;
   $$('.view').forEach(x => { x.hidden = x.id !== 'view-' + v; });
   el.innerHTML = RENDERER[v]();
-  el.classList.remove('view-enter');
+
+  // Pindah menu layak diberi gerakan masuk yang penuh. Menggambar ulang
+  // halaman yang sama — mengetik di kotak cari, mengganti filter — cukup
+  // berkedip halus; kalau tidak, tiap huruf terasa seperti memuat ulang.
+  const pindah = viewTerakhir !== v;
+  viewTerakhir = v;
+  el.classList.remove('view-enter', 'view-refresh');
   void el.offsetWidth;
-  el.classList.add('view-enter');
+  el.classList.add(pindah ? 'view-enter' : 'view-refresh');
 
   $('#pageTitle').textContent = JUDUL[v][0];
   $('#pageSub').textContent = JUDUL[v][1];
   $$('#nav button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+  pindahkanPenanda();
 
   const id = state.settings.identitas;
   $('#brandTeam').textContent = id.team || 'Team Pemenangan';
@@ -672,13 +691,40 @@ function render() {
   const ni = $('#navIssues');
   ni.hidden = !r.bermasalah;
   ni.textContent = num(r.bermasalah);
+  // lencana masalah berdenyut sekali ketika jumlahnya bertambah, supaya
+  // baris baru yang belum lengkap tidak lewat begitu saja
+  if (bermasalahTerakhir !== null && r.bermasalah > bermasalahTerakhir) {
+    ni.classList.remove('naik');
+    void ni.offsetWidth;
+    ni.classList.add('naik');
+  }
+  bermasalahTerakhir = r.bermasalah;
 
-  animasi(el);
-  $('#viewWrap').scrollTop = 0;
+  animasi(el, pindah);
+  if (pindah) $('#viewWrap').scrollTop = 0;
 }
 
-/** Jalankan animasi bar & angka setelah elemen masuk DOM. */
-function animasi(root) {
+/** Penanda menu aktif meluncur mengikuti tombol yang sedang menyala. */
+function pindahkanPenanda() {
+  const nav = $('#nav');
+  if (!nav) return;
+  let ind = nav.querySelector('.nav-ind');
+  if (!ind) {
+    ind = document.createElement('span');
+    ind.className = 'nav-ind';
+    nav.appendChild(ind);
+  }
+  const aktif = nav.querySelector('button.on');
+  if (!aktif) { ind.classList.remove('siap'); return; }
+  ind.style.setProperty('--y', (aktif.offsetTop) + 'px');
+  ind.style.setProperty('--h', aktif.offsetHeight + 'px');
+  ind.classList.add('siap');
+}
+
+/** Jalankan animasi bar & angka setelah elemen masuk DOM.
+ *  Angka hanya dihitung naik saat berpindah menu; kalau tiap penyaringan ikut
+ *  menghitung ulang, angkanya terlihat berkedip terus. */
+function animasi(root, penuh) {
   requestAnimationFrame(() => {
     $$('[data-w]', root).forEach(b => { b.style.width = b.dataset.w + '%'; });
     $$('[data-h]', root).forEach(b => { b.style.height = b.dataset.h + '%'; });
@@ -690,7 +736,7 @@ function animasi(root) {
       // jangan disentuh, kalau tidak isinya berubah jadi 0
       if (el.dataset.count === '') return;
       const akhir = Number(el.dataset.count);
-      if (!akhir || akhir < 0) { el.textContent = num(akhir || 0); return; }
+      if (!penuh || !akhir || akhir < 0) { el.textContent = num(akhir || 0); return; }
       const mulai = performance.now();
       const durasi = Math.min(900, 260 + akhir * 6);
       const step = t => {
@@ -717,13 +763,45 @@ function tutupSidebar() {
   $('#scrim').hidden = true;
 }
 
-function setTema(t) {
+/** Benar bila perangkat minta gerakan dikurangi. Dibaca ulang tiap kali,
+ *  karena setelan itu bisa diubah selagi aplikasi terbuka. */
+function geraknyaDikurangi() {
+  return window.matchMedia
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+let temaTimer = null;
+function setTema(t, halus) {
   ui.theme = t;
+  // Transisi warna dinyalakan hanya sepanjang pergantian tema. Bila dibiarkan
+  // menyala, setiap penggambaran ulang tabel ikut ber-transisi dan terasa lamban.
+  if (halus && !geraknyaDikurangi()) {
+    document.documentElement.classList.add('ganti-tema');
+    clearTimeout(temaTimer);
+    temaTimer = setTimeout(
+      () => document.documentElement.classList.remove('ganti-tema'), 420);
+  }
   document.documentElement.setAttribute('data-theme', t);
   $('#themeIcon').innerHTML = t === 'dark'
     ? '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>'
     : '<path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/>';
   saveUi();
+}
+
+/** Riak sentuh pada tombol: satu lingkaran yang tumbuh dari titik yang
+ *  ditekan lalu menghapus dirinya sendiri. */
+function riak(e) {
+  const t = e.target.closest('.btn, .icon-btn, .nav button');
+  if (!t || t.disabled || geraknyaDikurangi()) return;
+  const k = t.getBoundingClientRect();
+  const d = Math.max(k.width, k.height);
+  const s = document.createElement('span');
+  s.className = 'riak';
+  s.style.width = s.style.height = d + 'px';
+  s.style.left = (e.clientX - k.left - d / 2) + 'px';
+  s.style.top = (e.clientY - k.top - d / 2) + 'px';
+  t.appendChild(s);
+  setTimeout(() => s.remove(), 580);
 }
 
 let qTimer = null;
@@ -739,7 +817,9 @@ function pasangEvent() {
     $('#scrim').hidden = !sb.classList.contains('open');
   });
   $('#scrim').addEventListener('click', tutupSidebar);
-  $('#themeToggle').addEventListener('click', () => setTema(ui.theme === 'dark' ? 'light' : 'dark'));
+  $('#themeToggle').addEventListener('click', () => setTema(ui.theme === 'dark' ? 'light' : 'dark', true));
+  document.addEventListener('pointerdown', riak, true);
+  window.addEventListener('resize', pindahkanPenanda);
   $('#btnAddTop').addEventListener('click', () => bukaForm(null));
 
   $('#overlay').addEventListener('click', e => {

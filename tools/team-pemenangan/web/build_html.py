@@ -93,6 +93,25 @@ const LOGO_EMBLEM = "{logo}";
 const LOGO_ALT = "{logo_alt}";
 </script>
 <script>
+/* Berkas yang sama dipakai dua cara. Dibuka lewat klik ganda (file://) ia
+   bekerja apa adanya. Diletakkan di alamat web (https), berkas pendamping
+   manifest dan sw.js membuatnya bisa dipasang di layar utama HP dan tetap
+   terbuka saat sinyal hilang. Keduanya hanya disentuh bila alamatnya http —
+   di file:// permintaan itu pasti gagal dan cuma mengotori konsol. */
+(function () {{
+  if (!/^https?:$/.test(location.protocol)) return;
+  var m = document.createElement('link');
+  m.rel = 'manifest';
+  m.href = 'manifest.webmanifest';
+  document.head.appendChild(m);
+  if ('serviceWorker' in navigator) {{
+    window.addEventListener('load', function () {{
+      navigator.serviceWorker.register('sw.js').catch(function () {{ /* biarkan */ }});
+    }});
+  }}
+}})();
+</script>
+<script>
 {js}
 </script>
 </body>

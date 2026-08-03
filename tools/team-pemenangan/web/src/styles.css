@@ -1048,3 +1048,353 @@ table.tbl .row-act { display: flex; gap: 5px; }
     padding: 1mm 3mm; display: flex; justify-content: space-between;
   }
 }
+
+/* ==========================================================================
+   LAPISAN GERAK & POLES
+   Ditulis terpisah supaya mudah ditelusuri: tokennya di sini, dan seluruhnya
+   dimatikan sekaligus oleh prefers-reduced-motion di bagian paling bawah.
+   Semua animasi memakai transform dan opacity saja — properti yang bisa
+   dikerjakan kartu grafis — supaya tetap enteng di HP kelas menengah.
+   ========================================================================== */
+
+:root {
+  --dur-1: 130ms;    /* sentuhan kecil: tekan, sorot */
+  --dur-2: 240ms;    /* perpindahan biasa */
+  --dur-3: 420ms;    /* masuknya kartu */
+  --dur-4: 900ms;    /* batang & angka bertumbuh */
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+  --ease-spring: cubic-bezier(.34, 1.4, .64, 1);
+  --sheen: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, .55) 50%, transparent 80%);
+}
+:root[data-theme="dark"] {
+  --sheen: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, .13) 50%, transparent 80%);
+}
+
+/* Pergantian tema menyapu seluruh halaman sekali, lalu berhenti — kalau
+   dibiarkan menyala terus, setiap penyaringan tabel ikut ber-transisi. */
+:root.ganti-tema, :root.ganti-tema * {
+  transition: background-color 360ms var(--ease-out),
+              border-color 360ms var(--ease-out),
+              color 360ms var(--ease-out) !important;
+}
+
+/* ----------------------------------------------------- perpindahan halaman */
+
+/* Pindah menu: naik, jernih. Menyaring di halaman yang sama: cukup berkedip
+   halus, supaya mengetik di kotak cari tidak terasa seperti memuat ulang. */
+.view-enter { animation: viewIn 380ms var(--ease-out) both; }
+@keyframes viewIn {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+.view-refresh { animation: viewFade 160ms var(--ease-out) both; }
+@keyframes viewFade { from { opacity: .55 } to { opacity: 1 } }
+
+/* Stagger sampai 20 anak; sisanya ikut yang terakhir supaya daftar panjang
+   tidak menunggu lama. */
+.stagger > * { animation: cardIn var(--dur-3) var(--ease-out) both; }
+.stagger > *:nth-child(n+11) { animation-delay: 340ms; }
+.stagger > *:nth-child(11) { animation-delay: 355ms; }
+.stagger > *:nth-child(12) { animation-delay: 375ms; }
+.stagger > *:nth-child(13) { animation-delay: 395ms; }
+.stagger > *:nth-child(14) { animation-delay: 415ms; }
+.stagger > *:nth-child(15) { animation-delay: 435ms; }
+.stagger > *:nth-child(n+16) { animation-delay: 450ms; }
+
+/* Baris tabel ikut masuk bergiliran, dibatasi 14 baris pertama supaya
+   halaman berisi 100 baris tidak berkedip lama. */
+.tbl-anim tbody tr { animation: rowIn 320ms var(--ease-out) both; }
+.tbl-anim tbody tr:nth-child(1) { animation-delay: 10ms }
+.tbl-anim tbody tr:nth-child(2) { animation-delay: 26ms }
+.tbl-anim tbody tr:nth-child(3) { animation-delay: 42ms }
+.tbl-anim tbody tr:nth-child(4) { animation-delay: 58ms }
+.tbl-anim tbody tr:nth-child(5) { animation-delay: 74ms }
+.tbl-anim tbody tr:nth-child(6) { animation-delay: 90ms }
+.tbl-anim tbody tr:nth-child(7) { animation-delay: 106ms }
+.tbl-anim tbody tr:nth-child(8) { animation-delay: 122ms }
+.tbl-anim tbody tr:nth-child(9) { animation-delay: 138ms }
+.tbl-anim tbody tr:nth-child(10) { animation-delay: 154ms }
+.tbl-anim tbody tr:nth-child(n+11) { animation-delay: 168ms }
+@keyframes rowIn {
+  from { opacity: 0; transform: translate3d(0, 6px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------- menu samping */
+
+/* Penanda menu aktif meluncur dari satu tombol ke tombol berikutnya, bukan
+   berpindah mendadak. Letaknya diatur JS lewat --y dan --h. */
+.nav { position: relative; }
+.nav .nav-ind {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: var(--h, 36px);
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--gold), #e0b45f);
+  transform: translate3d(0, var(--y, 0), 0);
+  transition: transform 360ms var(--ease-spring), height 240ms var(--ease-out);
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .nav-ind.siap { opacity: 1; }
+.nav button.on { box-shadow: none; }
+.nav button svg { transition: transform var(--dur-2) var(--ease-spring); }
+.nav button.on svg { transform: scale(1.12); }
+.nav button .badge { transition: transform var(--dur-2) var(--ease-spring); }
+.nav button .badge.naik { animation: badgePop 460ms var(--ease-spring); }
+@keyframes badgePop {
+  0% { transform: scale(1) } 45% { transform: scale(1.28) } 100% { transform: scale(1) }
+}
+
+/* ------------------------------------------------------------------ tombol */
+
+/* Riak sentuh — satu elemen sekali pakai yang dibuang sendiri setelah selesai. */
+.btn, .icon-btn, .nav button, .chip-btn { position: relative; overflow: hidden; }
+.riak {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: currentColor;
+  opacity: .22;
+  pointer-events: none;
+  animation: riak 560ms var(--ease-out) forwards;
+}
+@keyframes riak { to { transform: scale(2.6); opacity: 0; } }
+
+.btn { transition: background var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out),
+  color var(--dur-2) var(--ease-out), transform var(--dur-1) var(--ease-out),
+  box-shadow var(--dur-2) var(--ease-out); }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn:active { transform: translateY(0) scale(.975); }
+.btn-primary:hover { box-shadow: 0 4px 14px -4px var(--navy); }
+
+/* ---------------------------------------------------------------- kartu KPI */
+
+/* Sapuan cahaya melintas sekali saat kartu muncul — memberi kesan kaca,
+   bukan lampu berkedip. */
+.kpi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sheen);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.stagger .kpi::before { animation: sheen 1250ms var(--ease-out) 260ms both; }
+@keyframes sheen {
+  0% { background-position: 140% 0; opacity: 0 }
+  22% { opacity: .9 }
+  100% { background-position: -60% 0; opacity: 0 }
+}
+.kpi { transition: transform var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out); }
+.kpi:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.kpi:hover::after { width: 4px; }
+.kpi::after { transition: width var(--dur-2) var(--ease-out); }
+.kpi .k-val { font-variant-numeric: tabular-nums; }
+
+.card { transition: box-shadow var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out); }
+.card:hover { box-shadow: var(--shadow); }
+
+/* ------------------------------------------------------------ batang & cincin */
+
+/* Batang bertumbuh dari nol, lalu satu kilatan lewat sekali. */
+.bar-fill { position: relative; overflow: hidden; transition: width var(--dur-4) var(--ease-out); }
+.bar-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sheen);
+  background-size: 200% 100%;
+  animation: sheen 1500ms var(--ease-out) 420ms both;
+}
+.donut .ring { transition: stroke-dasharray 1100ms var(--ease-out); }
+.donut { animation: donutIn 700ms var(--ease-out) both; }
+@keyframes donutIn {
+  from { opacity: 0; transform: scale(.9) rotate(-8deg); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --------------------------------------------------------------- tabel */
+
+table.tbl tbody tr { transition: background 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+table.tbl tbody tr:hover { box-shadow: inset 3px 0 0 var(--navy-300); }
+table.tbl td, table.tbl th { transition: none; }
+
+/* --------------------------------------------------------- modal & pesan */
+
+.overlay { backdrop-filter: blur(3px); }
+.modal { animation: modalIn 340ms var(--ease-spring) both; }
+@keyframes modalIn {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+.modal .field { animation: rowIn 300ms var(--ease-out) both; }
+.modal .form-grid > *:nth-child(-n+6) { animation-delay: 40ms }
+.modal .form-grid > *:nth-child(n+7) { animation-delay: 90ms }
+
+/* Garis waktu pada pesan singkat: terlihat berapa lama lagi akan hilang. */
+.toast { position: relative; overflow: hidden; }
+.toast::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: .45;
+  transform-origin: left;
+  animation: toastBar linear forwards;
+  animation-duration: var(--umur, 3200ms);
+}
+@keyframes toastBar { from { transform: scaleX(1) } to { transform: scaleX(0) } }
+
+/* ------------------------------------------------------------------- hero */
+
+/* Emblem mengapung sangat pelan; jaraknya kecil supaya tidak mengganggu
+   saat halaman dibaca lama. */
+.guide-hero img { animation: apung 6s ease-in-out infinite; }
+@keyframes apung {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-6px) }
+}
+.guide-hero { position: relative; overflow: hidden; }
+.guide-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sheen);
+  background-size: 220% 100%;
+  pointer-events: none;
+  animation: sheen 1800ms var(--ease-out) 500ms both;
+}
+
+.step { animation: cardIn var(--dur-3) var(--ease-out) both; }
+.steps .step:nth-child(1) { animation-delay: 60ms }
+.steps .step:nth-child(2) { animation-delay: 130ms }
+.steps .step:nth-child(3) { animation-delay: 200ms }
+.steps .step:nth-child(4) { animation-delay: 270ms }
+
+/* --------------------------------------------------------------- sentuhan */
+
+*:focus-visible {
+  outline: 2px solid var(--navy-300);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+.view-wrap { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.view-wrap::-webkit-scrollbar { width: 10px; }
+.view-wrap::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+  border: 3px solid var(--bg);
+}
+.view-wrap::-webkit-scrollbar-thumb:hover { background: var(--navy-300); }
+
+.chip { transition: transform var(--dur-1) var(--ease-out), background var(--dur-2) var(--ease-out); }
+.chip:hover { transform: translateY(-1px); }
+
+select, input, textarea {
+  transition: border-color var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out),
+    background var(--dur-2) var(--ease-out);
+}
+
+/* Tanda "sedang menyiapkan" untuk daftar yang panjang. */
+.memuat {
+  display: grid;
+  gap: 10px;
+}
+.memuat i {
+  display: block;
+  height: 38px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(90deg, var(--line-2) 25%, var(--surface-2) 37%, var(--line-2) 63%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* ------------------------------------------------ hormati setelan perangkat
+
+   Sebagian orang pusing melihat gerakan. Peramban sudah menyediakan
+   setelannya; di sini seluruh animasi dipadamkan sekaligus — bukan hanya
+   dipercepat — sedangkan tampilannya tetap utuh. */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .guide-hero img { animation: none !important; }
+  .nav .nav-ind { transition: none !important; }
+}
+
+/* ------------------------------------------------- editor struktur pengurus
+
+   Satu baris berisi nomor, nama, dan RW yang membawahinya. Nama kampung
+   ditaruh di bawah kotak nama, bukan di sampingnya: berjajar berempat dalam
+   kartu selebar 330px menyisakan lebar lima huruf untuk nama pengurus. */
+
+.pg-baris {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.pg-no {
+  min-width: 66px;
+  justify-content: center;
+  margin-top: 7px;
+  font-variant-numeric: tabular-nums;
+}
+.pg-isi { flex: 1; min-width: 0; }
+.pg-isi input { width: 100%; }
+.pg-isi .mini-note {
+  display: block;
+  margin: 3px 0 0 2px;
+  font-size: 11.2px;
+}
+.pg-rw {
+  width: 116px;
+  flex: none;
+  margin-top: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------- rapi di layar HP
+
+   Judul halaman, tombol tambah, dan tombol tema berebut satu baris. Di layar
+   412 px tombol "Tambah Anggota" terdorong keluar layar dan tombol temanya
+   ikut terpotong — jadi di bawah 620 px tulisannya disembunyikan dan tombolnya
+   menyusut menjadi lingkaran berisi tanda tambah saja. */
+
+@media (max-width: 620px) {
+  .topbar { gap: 8px; padding: 10px 12px; }
+  .topbar h1 { font-size: 15px; line-height: 1.25; }
+  .topbar .sub { display: none; }
+  #btnAddTop .teks-tombol { display: none; }
+  #btnAddTop {
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    flex: none;
+    border-radius: 50%;
+  }
+  #btnAddTop svg { width: 19px; height: 19px; }
+  .icon-btn { flex: none; }
+  .view { padding: 14px 12px 72px; }
+  .kpi .k-val { font-size: 24px; }
+  .filters { gap: 7px; }
+  .filters select, .filters .btn { font-size: 12.6px; }
+}
+
+/* Layar sangat sempit (360 px ke bawah): kartu KPI satu per baris penuh. */
+@media (max-width: 400px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .two { grid-template-columns: 1fr; }
+}

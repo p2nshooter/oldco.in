@@ -328,3 +328,67 @@ Aplikasi juga bisa membuat berkas SQL itu sendiri kapan saja lewat
 **Data & Cadangan → Unduh SQL (Supabase)**. Keluarannya diuji byte-per-byte
 sama dengan `supabase/seed.sql` yang dihasilkan `build_sql.py`, jadi berapa
 lama pun tim bekerja offline lebih dulu, hasilnya tetap bisa diangkat utuh.
+
+## Gerak dan poles
+
+Animasi ditulis sebagai satu lapisan tersendiri di bagian bawah `styles.css`,
+lengkap dengan tokennya, supaya gampang ditelusuri dan bisa dipadamkan
+sekaligus. Semuanya memakai `transform` dan `opacity` saja — properti yang
+dikerjakan kartu grafis — supaya tetap enteng di HP kelas menengah.
+
+| Bagian | Geraknya |
+|---|---|
+| Pindah menu | halaman naik dan menjernih, penanda emas meluncur ke menu yang aktif |
+| Kartu & baris | masuk bergiliran, dibatasi supaya daftar panjang tidak berkedip lama |
+| Kartu KPI | sapuan cahaya melintas sekali, angkanya berhitung naik, terangkat saat disorot |
+| Batang & cincin | tumbuh dari nol, satu kilatan lewat |
+| Tombol | riak dari titik yang ditekan |
+| Modal | melenting masuk di atas latar buram |
+| Pesan singkat | garis waktu di dasarnya menyusut sesuai umurnya |
+| Lencana masalah | berdenyut sekali ketika jumlahnya bertambah |
+| Ganti tema | warna seluruh halaman menyeberang halus |
+
+Dua hal yang membuatnya terasa rapi, bukan ramai:
+
+- **Animasi penuh hanya saat berpindah menu.** Menyaring atau mengetik di
+  kotak cari cuma berkedip halus. Tanpa pembedaan ini setiap huruf yang
+  diketik memicu animasi masuk sepenuhnya, dan aplikasinya terasa seperti
+  memuat ulang terus-menerus.
+- **Angka berhitung naik hanya sekali** saat halaman dibuka, bukan tiap kali
+  filter berubah.
+
+Setelan **prefers-reduced-motion** dihormati penuh: seluruh animasi dipadamkan,
+riak tombol tidak dibuat sama sekali, dan tampilannya tetap utuh.
+
+## Dipakai daring
+
+Berkas HTML-nya satu dan sama untuk dua cara pakai. Dibuka lewat klik ganda
+(`file://`) ia bekerja apa adanya. Diletakkan di alamat web (`https`), dua
+berkas pendamping menyalakan kemampuan tambahan — dan keduanya hanya disentuh
+bila alamatnya memang `http`/`https`, karena di `file://` permintaan itu pasti
+gagal dan hanya mengotori konsol.
+
+```bash
+python3 build_online.py      # menghasilkan folder online/
+```
+
+| Berkas | Gunanya |
+|---|---|
+| `index.html` | aplikasi, persis berkas offline-nya |
+| `manifest.webmanifest` | bisa dipasang ke layar utama HP seperti aplikasi biasa |
+| `sw.js` | tetap terbuka walau sinyal hilang |
+| `icon-192.png`, `icon-512.png` | ikon saat terpasang |
+| `data/database.js` | database bawaan, dimuat otomatis |
+| `vercel.json` | kepala tanggapan; Vercel memakainya apa adanya |
+
+Isi folder `online/` bisa langsung ditarik ke Vercel, Netlify, atau GitHub
+Pages — tidak ada langkah `npm`, tidak ada kerangka kerja.
+
+Satu aturan penting pada `sw.js`: permintaan ke API database daring
+(`/rest/v1/`) **tidak pernah** disimpan. Halaman aplikasi boleh basi sebentar,
+data anggota tidak — orang bisa menghapus anggota yang sudah tidak ada, atau
+menghitung ulang target dari angka kemarin.
+
+Diuji langsung: setelah service worker aktif, servernya dimatikan lalu halaman
+dimuat ulang — aplikasi tetap terbuka dengan 52 anggota dan seluruh
+pengaturannya.

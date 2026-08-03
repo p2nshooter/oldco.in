@@ -26,6 +26,7 @@ python3 web/seed/anggota_jf3.py web/seed/database.json    # data awal
 python3 build_workbook.py Aplikasi_Team_Pemenangan_v2.xlsx
 python3 isi_data.py Aplikasi_Team_Pemenangan_v2.xlsx web/seed/database.json
 python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
+python3 poles_xlsx.py Aplikasi_Team_Pemenangan_v2.xlsx
 ```
 
 Urutannya penting. `isi_data.py` menyalin data dari sumber yang sama dengan
@@ -37,6 +38,29 @@ Struktur pengurus (kadus, ketua RW, ketua RT) tidak ditulis dua kali:
 `build_workbook.py` membacanya langsung dari `web/seed/anggota_jf3.py`, berkas
 yang sama yang dipakai aplikasi HTML. Mengganti nama pengurus cukup di satu
 tempat itu.
+
+`poles_xlsx.py` di baris terakhir mengembalikan warna tab sheet. LibreOffice
+membuang sebagian warna tab saat berkas dihitung ulang — pada percobaan
+terakhir hanya 4 dari 12 yang selamat — dan menyimpan ulang dengan openpyxl
+bukan jalan keluar karena hasil hitung-ulangnya justru ikut hilang. Berkasnya
+ditambal langsung pada XML-nya: hanya atribut warna tab yang disentuh, dan
+tiap sheet yang diubah diurai ulang sebagai XML sebelum ditulis.
+
+### Poles yang bisa dan tidak bisa dipakai di Excel
+
+| Dipakai | Bentuknya |
+|---|---|
+| Data bar | TARGET (target & realisasi), REKAP (kolom total) — batang di dalam sel |
+| Skala warna | matriks Kampung × RT jadi peta panas; wilayah kosong langsung terlihat |
+| Ikon lampu | kolom % capaian pada TARGET: merah / kuning / hijau |
+| Warna tab | 12 sheet, satu keluarga warna |
+| Garis emas | di bawah tiap kop dan judul bagian |
+
+Yang sengaja **tidak** dipakai: latar sel bergradasi. Kop merah sempat dibuat
+bergradasi, tetapi LibreOffice Calc tidak mengenal gradasi pada latar sel dan
+memadamkannya di langkah hitung-ulang — berkas yang dibagikan akan tampil beda
+dengan yang dilihat saat dibuat. Penggantinya garis emas tebal di bawah kop:
+kesannya sama, dan selamat melewati seluruh alur.
 
 `prepare_logos.py` cukup dijalankan ulang bila gambar di `assets/sumber/`
 diganti. Bila folder `assets/` kosong, workbook tetap terbangun — hanya tanpa

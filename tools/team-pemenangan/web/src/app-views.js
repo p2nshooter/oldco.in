@@ -48,11 +48,15 @@ function toast(msg, jenis, ms) {
   el.className = 'toast ' + (jenis || '');
   const ic = jenis === 'err' ? ICON.alert : (jenis === 'info' ? ICON.bulb : ICON.check);
   el.innerHTML = ic + '<div>' + esc(msg) + '</div>';
+  const umur = ms || 3200;
+  // garis waktu di dasar pesan menyusut selama umur itu — terlihat berapa
+  // lama lagi sebelum hilang, jadi tidak perlu buru-buru membacanya
+  el.style.setProperty('--umur', umur + 'ms');
   box.appendChild(el);
   const t = setTimeout(() => {
     el.classList.add('out');
     setTimeout(() => el.remove(), 260);
-  }, ms || 3200);
+  }, umur);
   el.addEventListener('click', () => { clearTimeout(t); el.remove(); });
 }
 
@@ -91,6 +95,16 @@ function filterBar(f, prefix, extra) {
       sel('status', s.status, '— semua status —')) +
     '<button class="btn btn-sm" data-reset="' + prefix + '">Reset filter</button>' +
     '</div>';
+}
+
+/** Warna batang capaian: hijau tercapai, kuning setengah jalan, merah kurang.
+ *
+ *  Selama targetnya belum diisi, capaiannya nol — dan tanpa penjagaan ini
+ *  seluruh batang tampil merah seakan tim gagal, padahal yang belum ada justru
+ *  angka pembandingnya. Tanpa target, batangnya dibiarkan warna dasar. */
+function warnaCapaian(x) {
+  if (!x.target) return '';
+  return x.capaian >= 1 ? 'g' : (x.capaian >= .5 ? 'a' : 'r');
 }
 
 function labelFilter(f) {
@@ -152,7 +166,7 @@ function viewDasbor() {
   } else {
     pk.forEach(x => {
       const w = (x.jumlah / maxKadus) * 100;
-      const cls = x.capaian >= 1 ? 'g' : (x.capaian >= .5 ? 'a' : 'r');
+      const cls = warnaCapaian(x);
       h += '<div class="bar-row"><span>' + esc(x.kadus) + '</span>' +
         '<span class="bar-track"><span class="bar-fill ' + cls + '" data-w="' + w + '"></span></span>' +
         '<span class="bar-val">' + num(x.jumlah) + (x.target ? '<span style="color:var(--muted);font-weight:500">/' + num(x.target) + '</span>' : '') + '</span></div>';
@@ -190,7 +204,7 @@ function viewDasbor() {
     String(b.dibuat || '').localeCompare(String(a.dibuat || ''))).slice(0, 6);
   if (terbaru.length) {
     h += '<div class="sec-title">Anggota terbaru</div><div class="card"><div class="tbl-wrap">' +
-      '<table class="tbl"><thead><tr><th>Nama</th><th>Korwil</th><th>Jabatan</th>' +
+      '<table class="tbl tbl-anim"><thead><tr><th>Nama</th><th>Korwil</th><th>Jabatan</th>' +
       '<th>Status</th><th>Ditambahkan</th></tr></thead><tbody>';
     terbaru.forEach(m => {
       h += '<tr data-open="' + m.id + '" style="cursor:pointer"><td class="name">' + esc(m.nama) + '</td>' +
@@ -242,7 +256,7 @@ function viewData() {
     return h;
   }
 
-  h += '<div class="tbl-wrap"><table class="tbl"><thead><tr>' +
+  h += '<div class="tbl-wrap"><table class="tbl tbl-anim"><thead><tr>' +
     '<th style="width:44px">#</th>' + th('Nama', 'nama') + th('NIK', 'nik') +
     '<th>No. KK</th><th>L/P</th>' + th('Alamat', 'korwil') +
     '<th>Nama RT</th><th>Nama RW</th><th>Kadus</th><th>TPS</th>' +
@@ -383,8 +397,9 @@ function viewTarget() {
     '<thead><tr><th>Kadus</th><th>Target</th><th>Realisasi</th><th>Aktif</th><th>Kurang</th>' +
     '<th>% capaian</th><th style="width:30%">Grafik</th></tr></thead><tbody>';
   pk.forEach(x => {
-    const cls = x.capaian >= 1 ? 'g' : (x.capaian >= .5 ? 'a' : 'r');
-    const warna = x.capaian >= 1 ? 'var(--green)' : (x.capaian >= .5 ? 'var(--amber)' : 'var(--red)');
+    const cls = warnaCapaian(x);
+    const warna = !x.target ? 'var(--muted)'
+      : (x.capaian >= 1 ? 'var(--green)' : (x.capaian >= .5 ? 'var(--amber)' : 'var(--red)'));
     h += '<tr><td>' + esc(x.kadus) + '</td><td>' + num(x.target) + '</td>' +
       '<td><b>' + num(x.jumlah) + '</b></td><td>' + num(x.aktif) + '</td>' +
       '<td>' + num(x.kurang) + '</td>' +
@@ -431,7 +446,7 @@ function viewValidasi() {
   h += '</div>';
 
   h += '<div class="sec-title">Daftar baris yang perlu diperbaiki</div>' +
-    '<div class="card"><div class="tbl-wrap"><table class="tbl"><thead><tr>' +
+    '<div class="card"><div class="tbl-wrap"><table class="tbl tbl-anim"><thead><tr>' +
     '<th style="width:44px">#</th><th>Nama</th><th>NIK</th><th>Korwil</th>' +
     '<th>Masalah</th><th style="width:96px">Aksi</th></tr></thead><tbody>';
   daftar.forEach((o, i) => {
