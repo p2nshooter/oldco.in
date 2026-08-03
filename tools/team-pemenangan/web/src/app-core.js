@@ -8,6 +8,16 @@
 const KEY = 'tp_app_v1';
 const KEY_UI = 'tp_ui_v1';
 
+/* Versi bentuk data. Dinaikkan setiap kali arti sebuah kolom berubah, bukan
+   setiap kali aplikasinya berubah. naikkanVersi() memakainya untuk tahu
+   cadangan mana yang masih perlu dipindahkan bentuknya.
+
+   Angka ini HARUS dipakai di semua tempat yang menulis data — simpanan
+   peramban, cadangan JSON, dan paket ZIP. Sempat ada tiga tempat yang menulis
+   1 padahal migrasinya sudah menyetel 3, sehingga tiap penyimpanan
+   mengembalikan penanda versi ke belakang. */
+const VERSI_DATA = 3;
+
 const DEFAULTS = {
   identitas: {
     calon: 'JONI FAHAMSYAH',
@@ -56,6 +66,18 @@ const FIELDS = ['nama', 'nik', 'kk', 'jk', 'kadus', 'namaRw', 'namaRt',
 const LISTS = ['kadus', 'namaRw', 'namaRt', 'kampung', 'rt', 'rw', 'tps',
   'jabatan', 'status'];
 
+/** Kunci saringan. Satu daftar dipakai bersama oleh saringan Data Anggota,
+ *  Cetak, dan Kartu — supaya ketiganya tidak bisa berbeda bentuk, dan supaya
+ *  tombol Reset tidak pernah ketinggalan satu kunci pun. */
+const KUNCI_SARING = ['kadus', 'namaRw', 'namaRt', 'kampung', 'rt', 'rw',
+  'tps', 'jabatan', 'status'];
+
+function saringanKosong() {
+  const f = {};
+  KUNCI_SARING.forEach(k => { f[k] = ''; });
+  return f;
+}
+
 /* ----------------------------------------------------------------- state */
 
 let state = { members: [], settings: null, disimpan: '' };
@@ -63,15 +85,12 @@ let ui = {
   view: 'dasbor',
   theme: 'light',
   q: '',
-  f: { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' },
+  f: saringanKosong(),
   sort: { by: 'nama', dir: 1 },
   page: 1,
   perPage: 25,
-  cetak: {
-    jenis: 'daftar', kadus: '', namaRw: '', namaRt: '', kampung: '',
-    rt: '', rw: '', tps: '', jabatan: '', status: ''
-  },
-  kartu: { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' }
+  cetak: Object.assign(saringanKosong(), { jenis: 'daftar' }),
+  kartu: saringanKosong()
 };
 
 function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -107,7 +126,7 @@ function naikkanVersi(d) {
     }
     if (m.jabatan === 'Ketua RK') m.jabatan = 'Ketua RW';
   });
-  d.v = 3;
+  d.v = VERSI_DATA;
   return d;
 }
 
@@ -148,9 +167,11 @@ function load() {
   try {
     const rawUi = localStorage.getItem(KEY_UI);
     if (rawUi) ui = Object.assign(ui, JSON.parse(rawUi));
-    if (!ui.f) ui.f = { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' };
-    if (!ui.cetak) ui.cetak = Object.assign({ jenis: 'daftar' }, { kadus: '', namaRw: '', namaRt: '', kampung: '', rt: '', rw: '', tps: '', jabatan: '', status: '' });
-    if (!ui.kartu) ui.kartu = { kadus: '', namaRt: '', kampung: '', rt: '', rw: '' };
+    // saringan lama bisa kekurangan kunci; lengkapi tanpa membuang pilihan
+    // yang sedang dipakai
+    ui.f = Object.assign(saringanKosong(), ui.f);
+    ui.cetak = Object.assign(saringanKosong(), { jenis: 'daftar' }, ui.cetak);
+    ui.kartu = Object.assign(saringanKosong(), ui.kartu);
   } catch (e) { /* pengaturan tampilan boleh gagal tanpa mengganggu data */ }
 }
 
@@ -160,7 +181,7 @@ function save(now) {
     try {
       state.disimpan = new Date().toISOString();
       localStorage.setItem(KEY, JSON.stringify({
-        v: 1, disimpan: state.disimpan,
+        v: VERSI_DATA, disimpan: state.disimpan,
         members: state.members, settings: state.settings
       }));
     } catch (e) {
@@ -289,7 +310,11 @@ function masalah(m, nikCount) {
   if (nikCount && (nikCount[nik] || 0) > 1) return 'NIK ganda';
   const kk = (m.kk || '').trim();
   if (kk && !/^\d{16}$/.test(kk)) return 'No. KK bukan 16 digit';
-  if (!wilayah(m)) return 'Alamat kosong';
+  // Nomor RT saja belum menjadi alamat: RT 003 ada di ketiga kadus, dan tanpa
+  // kampung atau keterangan tambahan orangnya tidak bisa ditemukan. Aturannya
+  // dibuat sama persis dengan rumus MASALAH pada Excel (kolom F dan I), supaya
+  // hasil kedua aplikasi bisa dibandingkan baris per baris.
+  if (!(m.kampung || '').trim() && !(m.alamat || '').trim()) return 'Alamat kosong';
   if (!m.jabatan) return 'Jabatan kosong';
   if (!(m.hp || '').trim()) return 'No. HP kosong';
   const u = usia(m);

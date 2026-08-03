@@ -110,7 +110,7 @@ async function buatZip(berkas) {
 function isiDatabase() {
   return {
     aplikasi: 'Aplikasi Team Pemenangan',
-    v: 1,
+    v: VERSI_DATA,
     disimpan: new Date().toISOString(),
     settings: state.settings,
     members: state.members
@@ -135,6 +135,11 @@ function salinanAplikasi() {
   // tag skrip database yang disuntik saat berjalan tidak ikut disalin —
   // aplikasi akan menyuntiknya lagi sendiri ketika dibuka
   doc.querySelectorAll('script[data-bawaan]').forEach(s => s.remove());
+  // begitu pula tautan manifest: itu hanya disuntik ketika aplikasi dibuka
+  // dari alamat web, dan salinan ini akan dibuka sebagai berkas biasa
+  doc.querySelectorAll('link[rel="manifest"]').forEach(s => s.remove());
+  // penanda menu aktif dibuat ulang saat aplikasi berjalan
+  doc.querySelectorAll('.nav-ind, .riak').forEach(s => s.remove());
   return '<!doctype html>\n' + doc.outerHTML;
 }
 
@@ -147,6 +152,8 @@ Isi paket ini:
   data/database.js                <- database Anda, dimuat otomatis
   data/database.json              <- database yang sama, untuk cadangan
   data/untuk-excel.csv            <- untuk dibuka / diimpor di Excel
+  supabase/schema.sql             <- bahan pindah ke database daring, belum
+  supabase/seed.sql                  dipakai; hanya persiapan untuk nanti
   BACA-DULU.txt                   <- berkas ini
 
 Berkas Excel tidak ikut dalam paket yang dibuat dari dalam aplikasi.
@@ -204,6 +211,13 @@ async function unduhPaketZip() {
       { nama: 'data/untuk-excel.csv', data: enc.encode(isiCsv()) },
       { nama: 'BACA-DULU.txt', data: enc.encode(BACA_DULU) }
     ];
+    // Bahan pindah ke database daring ikut dibawa supaya paket buatan aplikasi
+    // sama lengkapnya dengan paket bawaan — halaman Cadangan menyebut folder
+    // ini, dan sebelumnya folder itu memang tidak ada di sini.
+    if (typeof SKEMA_SQL === 'string' && SKEMA_SQL) {
+      berkas.push({ nama: 'supabase/schema.sql', data: enc.encode(SKEMA_SQL) });
+      berkas.push({ nama: 'supabase/seed.sql', data: enc.encode(buatSql()) });
+    }
     const zip = await buatZip(berkas);
     const url = URL.createObjectURL(zip);
     const a = document.createElement('a');
@@ -336,20 +350,82 @@ function sq(v) {
 
 function sqlTgl(v) { return v ? sq(v) + '::date' : 'null'; }
 
+/* Database daring menolak nilai yang tidak sesuai bentuknya, dan penolakan itu
+   menggugurkan satu transaksi penuh: satu tanggal rusak membuat SELURUH anggota
+   gagal masuk, dengan pesan galat yang tidak menyebut baris mana.
+
+   Aplikasi ini sengaja lebih longgar — data lapangan memang masuk sedikit demi
+   sedikit dan sering belum lengkap. Jadi pembersihannya dikerjakan di sini,
+   saat menuang ke SQL, bukan dengan memperketat formulirnya.
+
+   Tidak ada yang dibuang diam-diam: nilai aslinya pindah ke kolom CATATAN, dan
+   jumlahnya dilaporkan di kepala berkas SQL. Aturannya harus sama persis dengan
+   supabase/build_sql.py — keluaran keduanya diuji byte per byte. */
+const TANGGAL_SAH = /^\d{4}-\d{2}-\d{2}$/;
+const ENAM_BELAS = /^\d{16}$/;
+
+function bersihkanSql(m) {
+  const r = Object.assign({}, m);
+  const catat = [];
+
+  [['nik', 'NIK'], ['kk', 'No. KK']].forEach(([kunci, label]) => {
+    const nilai = (r[kunci] || '').trim();
+    if (nilai && !ENAM_BELAS.test(nilai)) {
+      catat.push(label + ' belum 16 digit: ' + nilai);
+      r[kunci] = '';
+    }
+  });
+
+  const jk = (r.jk || '').trim().toUpperCase();
+  r.jk = (jk === 'L' || jk === 'P') ? jk : '';
+  if ((m.jk || '').trim() && !r.jk) catat.push('L/P tidak dikenal: ' + m.jk);
+
+  [['tglLahir', 'Tgl lahir'], ['tglGabung', 'Tgl gabung']].forEach(([kunci, label]) => {
+    const nilai = (r[kunci] || '').trim();
+    if (nilai && !TANGGAL_SAH.test(nilai)) {
+      catat.push(label + ' tidak terbaca: ' + nilai);
+      r[kunci] = '';
+    }
+  });
+
+  if (catat.length) {
+    r.catatan = [r.catatan || ''].concat(catat).filter(Boolean).join(' | ');
+  }
+  return { r: r, catat: catat };
+}
+
 function buatSql() {
   const s = state.settings;
   const id = s.identitas || {};
   const png = s.pengurus || [];
   const kampung = s.kampung || [];
   const target = s.target || {};
-  const ms = state.members;
   const b = [];
   const w = x => b.push(x);
   const T = sq(TIM_ID);
 
+  // Anggota tanpa nama tidak bisa dimasukkan — databasenya menolak, dan
+  // barisnya pun tidak menunjuk siapa pun. Sisanya dibersihkan seperlunya.
+  const ms = [];
+  let dilewat = 0, diperbaiki = 0;
+  state.members.forEach(m => {
+    if (!(m.nama || '').trim()) { dilewat++; return; }
+    const h = bersihkanSql(m);
+    if (h.catat.length) diperbaiki++;
+    ms.push(h.r);
+  });
+
   w('-- ===================================================================');
   w('--  Data awal Team Pemenangan — dihasilkan dari database.json');
   w('--  Jalankan setelah schema.sql. Aman dijalankan berulang kali.');
+  if (dilewat || diperbaiki) {
+    w('--');
+    if (dilewat) w('--  ' + dilewat + ' baris dilewati karena tidak ada namanya.');
+    if (diperbaiki) {
+      w('--  ' + diperbaiki + ' baris dirapikan agar diterima database;');
+      w('--  nilai aslinya dipindahkan ke kolom CATATAN, tidak ada yang hilang.');
+    }
+  }
   w('-- ===================================================================');
   w('');
   w('begin;');

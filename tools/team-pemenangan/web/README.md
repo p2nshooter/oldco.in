@@ -392,3 +392,29 @@ menghitung ulang target dari angka kemarin.
 Diuji langsung: setelah service worker aktif, servernya dimatikan lalu halaman
 dimuat ulang — aplikasi tetap terbuka dengan 52 anggota dan seluruh
 pengaturannya.
+
+## Yang diperiksa saat audit, dan apa yang ditemukan
+
+Enam rangkaian uji dijalankan berulang di setiap pembangunan: data ekstrem,
+alur pemakaian, struktur RW, paket ZIP + cetak, versi daring, dan beban 2.000
+anggota. Yang berikut ini ditemukan lewat uji itu, bukan lewat membaca kode —
+semuanya sudah diperbaiki dan diuji ulang.
+
+| Temuan | Akibatnya bagi pemakai |
+|---|---|
+| Dokumen kartu menempelkan emblem 220 KB ke **tiap** kartu | 2.000 anggota menghasilkan teks **444 MB** — tab peramban mati sebelum sempat mencetak. Sekarang 1,4 MB. |
+| Pratinjau kartu memuat emblem 120 kali | menggambar halaman Kartu makan 553 ms; sekarang 45 ms |
+| `ui.view` tak dikenal | layar kosong melompong tanpa petunjuk; sekarang kembali ke Dasbor |
+| Jenis dokumen tak dikenal | halaman Cetak dan pintasan cetak peramban sama-sama mati; sekarang jatuh ke daftar biasa |
+| Nilai diawali `=` ditulis ke Excel | berubah jadi **rumus**: alamat "=RUMAH PAK RT" menjadi `#NAME?` dan ikut merusak kolom MASALAH serta rekap |
+| Satu tanggal rusak pada ekspor SQL | **seluruh** impor gagal, 0 anggota masuk, galatnya tidak menyebut baris mana |
+| `isi_data.py` tidak mengosongkan lebih dulu | menjalankannya pada berkas terisi meninggalkan nilai lama dan baris anggota yang sudah dihapus |
+| Tombol Reset filter | kampung, RW, Nama RT, dan Nama RW tidak ikut terhapus |
+| Penanda versi data | tiga tempat menulis `1` padahal migrasinya menyetel `3` — tiap penyimpanan memundurkan penanda |
+| "Alamat kosong" | Excel dan HTML menilainya berbeda; nomor RT saja kini sama-sama dianggap belum beralamat |
+| Folder `supabase/` | disebut ada di paket buatan aplikasi, padahal tidak ikut; sekarang benar-benar ikut |
+
+Yang **tidak** diubah, dan alasannya: berkas `untuk-excel.csv` tetap apa
+adanya. Nilai berawalan `=` di sana akan ditampilkan Excel sebagai `#NAME?` —
+terlihat, bukan diam-diam — sedangkan menambahkan tanda kutip pengaman akan
+merusak berkas itu ketika dipulihkan kembali ke aplikasi.

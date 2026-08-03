@@ -247,7 +247,7 @@ function stamp() {
 
 function exportJson() {
   unduh('team-pemenangan-' + stamp() + '.json', JSON.stringify({
-    aplikasi: 'Aplikasi Team Pemenangan', v: 1,
+    aplikasi: 'Aplikasi Team Pemenangan', v: VERSI_DATA,
     diekspor: new Date().toISOString(),
     settings: state.settings, members: state.members
   }, null, 2));
@@ -659,9 +659,15 @@ let viewTerakhir = null;
 let bermasalahTerakhir = null;
 
 function render() {
+  // Nama halaman ikut tersimpan di peramban. Cadangan lama, atau halaman yang
+  // pernah ada lalu diganti namanya, meninggalkan nama yang tidak dikenal lagi
+  // — dan tanpa penjagaan ini layarnya kosong melompong tanpa petunjuk apa pun.
+  if (!RENDERER[ui.view] || !$('#view-' + ui.view)) {
+    ui.view = 'dasbor';
+    saveUi();
+  }
   const v = ui.view;
   const el = $('#view-' + v);
-  if (!el) return;
   $$('.view').forEach(x => { x.hidden = x.id !== 'view-' + v; });
   el.innerHTML = RENDERER[v]();
 
@@ -934,10 +940,13 @@ function onKlik(e) {
   const reset = t.closest('[data-reset]');
   if (reset) {
     const p = reset.dataset.reset;
-    const kosong = { kadus: '', rt: '', tps: '', jabatan: '', status: '' };
-    if (p === 'data') { ui.f = kosong; ui.q = ''; ui.page = 1; }
-    else if (p === 'cetak') ui.cetak = Object.assign({ jenis: ui.cetak.jenis }, kosong);
-    else if (p === 'kartu') ui.kartu = { kadus: '', rt: '', tps: '' };
+    // Daftar kuncinya diambil dari satu tempat, bukan ditulis ulang di sini.
+    // Sebelumnya kampung, RW, Nama RT, dan Nama RW tidak ikut terhapus karena
+    // ketinggalan dari daftar ini, dan bentuk saringan kartu pun jadi berbeda
+    // sendiri dari dua saringan lainnya.
+    if (p === 'data') { ui.f = saringanKosong(); ui.q = ''; ui.page = 1; }
+    else if (p === 'cetak') ui.cetak = Object.assign(saringanKosong(), { jenis: ui.cetak.jenis });
+    else if (p === 'kartu') ui.kartu = saringanKosong();
     saveUi(); render(); return;
   }
 

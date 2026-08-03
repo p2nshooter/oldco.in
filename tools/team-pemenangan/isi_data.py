@@ -10,6 +10,7 @@ Pemakaian:
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import pathlib
 import sys
@@ -19,7 +20,13 @@ import openpyxl
 
 warnings.filterwarnings("ignore")
 
-FIRST = 4
+# Rentang baris data pada sheet DATABASE — harus sama dengan FIRST dan LAST di
+# build_workbook.py. Dibaca dari sana langsung supaya tidak bisa berbeda.
+_spec = importlib.util.spec_from_file_location(
+    "build_workbook", pathlib.Path(__file__).with_name("build_workbook.py"))
+_bw = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_bw)
+FIRST, LAST = _bw.FIRST, _bw.LAST
 
 # kolom Excel -> kunci pada JSON
 KOLOM = {
@@ -39,17 +46,34 @@ def isi(xlsx: pathlib.Path, data_path: pathlib.Path) -> int:
 
     wb = openpyxl.load_workbook(xlsx)
     ws = wb["DATABASE"]
+
+    # Kosongkan dulu seluruh kolom data. Tanpa ini, menjalankan ulang skrip
+    # pada berkas yang sudah terisi meninggalkan dua macam sisa: kolom yang
+    # sekarang dikosongkan tetap memakai isi lama, dan baris anggota yang sudah
+    # dihapus tetap tertinggal di bawah. Kolom rumus (M, R, S, dan kolom bantu)
+    # sengaja tidak disentuh.
+    for row in range(FIRST, LAST + 1):
+        for col in KOLOM:
+            ws[f"{col}{row}"].value = None
+
     for i, m in enumerate(anggota):
         row = FIRST + i
+        if row > LAST:
+            raise SystemExit(
+                f"GAGAL: {len(anggota)} anggota melebihi kapasitas sheet "
+                f"({LAST - FIRST + 1} baris). Naikkan ROWS di build_workbook.py.")
         for col, kunci in KOLOM.items():
             nilai = m.get(kunci, "")
             if not nilai:
                 continue
             sel = ws[f"{col}{row}"]
-            if col in TANGGAL:
-                sel.value = nilai            # biarkan teks bila formatnya bebas
-            else:
-                sel.value = nilai
+            sel.value = nilai                 # tanggal dibiarkan teks apa adanya
+            # Nilai yang diawali "=" diperlakukan Excel sebagai rumus, bukan
+            # teks. Sebuah alamat yang ditulis "=RUMAH PAK RT" akan berubah
+            # menjadi #NAME? dan ikut merusak kolom MASALAH serta seluruh rekap
+            # yang membacanya. Jenis selnya dipaksa teks supaya isinya utuh.
+            if isinstance(nilai, str) and nilai.startswith("="):
+                sel.data_type = "s"
 
     # daftar pilihan REFERENSI mengikuti berkas yang sama
     ref = wb["REFERENSI"]

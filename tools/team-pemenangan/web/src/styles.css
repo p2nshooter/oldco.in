@@ -864,9 +864,19 @@ table.tbl .row-act { display: flex; gap: 5px; }
   align-items: center;
   gap: 8px;
 }
-.id-card .ic-h img { width: 21px; height: 21px; object-fit: contain; }
+/* Lambang pada kartu dipasang lewat latar, bukan tag <img> berisi data URI.
+   Emblemnya sekitar 220 KB; 60 kartu pratinjau berisi dua gambar masing-masing
+   akan membangun 26 MB teks HTML tiap kali halaman digambar ulang. Dengan cara
+   ini gambarnya cukup satu salinan untuk seluruh halaman. */
+.id-card .segel {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.id-card .ic-h .segel { width: 21px; height: 21px; flex: none; }
 .id-card .ic-b { display: grid; grid-template-columns: 62px 1fr; gap: 11px; padding: 11px; }
-.id-card .ic-b img { width: 58px; height: 58px; object-fit: contain; align-self: center; }
+.id-card .ic-b .segel { width: 58px; height: 58px; align-self: center; }
 .id-card .ic-row { display: grid; grid-template-columns: 62px 1fr; font-size: 11.8px; gap: 4px; }
 .id-card .ic-row span:first-child { color: var(--muted); }
 .id-card .ic-row span:last-child { font-weight: 620; word-break: break-word; }
@@ -1039,7 +1049,18 @@ table.tbl .row-act { display: flex; gap: 5px; }
     text-transform: uppercase;
   }
   .kartu .kb { display: grid; grid-template-columns: 18mm 1fr; gap: 3mm; padding: 2.5mm 3mm; flex: 1; }
-  .kartu .kb img { width: 17mm; height: 17mm; object-fit: contain; align-self: center; }
+  /* segel kartu: gambarnya dipasang satu kali lewat aturan CSS yang
+     disisipkan dokumen cetak, bukan ditempel ulang ke tiap kartu */
+  .kartu .kb i.segel {
+    width: 17mm;
+    height: 17mm;
+    align-self: center;
+    display: block;
+    flex: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
   .kartu .kr { display: grid; grid-template-columns: 15mm 1fr; font-size: 7.8pt; line-height: 1.5; }
   .kartu .kr span:first-child { color: #555; }
   .kartu .kr span:last-child { font-weight: 700; }

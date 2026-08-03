@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import base64
 import io
+import json
 import mimetypes
 import pathlib
 import sys
@@ -67,6 +68,16 @@ def build(keluaran: pathlib.Path) -> pathlib.Path:
     alt = ASSETS / "logo-emblem-alt.png"
     logo_alt = data_uri(alt, 240) if alt.exists() else logo
 
+    # Skema database daring ditanam apa adanya dari supabase/schema.sql, bukan
+    # disalin ke dalam kode. Aplikasi memakainya untuk mengisi folder supabase
+    # pada paket ZIP yang dibuatnya sendiri — dan karena dibaca saat pembuatan,
+    # isinya tidak bisa menyimpang dari berkas aslinya.
+    skema_path = HERE.parent / "supabase" / "schema.sql"
+    skema = skema_path.read_text(encoding="utf-8") if skema_path.exists() else ""
+    if not skema:
+        print(f"peringatan: {skema_path} tidak ada — paket ZIP dari aplikasi "
+              "tidak akan berisi schema.sql", file=sys.stderr)
+
     css = baca("styles.css")
     tubuh = baca("index.html").replace("__LOGO_EMBLEM__", logo)
     js = "\n".join(baca(n) for n in
@@ -91,6 +102,7 @@ def build(keluaran: pathlib.Path) -> pathlib.Path:
 <script>
 const LOGO_EMBLEM = "{logo}";
 const LOGO_ALT = "{logo_alt}";
+const SKEMA_SQL = {json.dumps(skema, ensure_ascii=False)};
 </script>
 <script>
 /* Berkas yang sama dipakai dua cara. Dibuka lewat klik ganda (file://) ia

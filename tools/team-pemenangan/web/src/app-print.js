@@ -65,8 +65,14 @@ function metaDok(baris) {
   return h + '</div>';
 }
 
-/** Bangun seluruh dokumen cetak sesuai jenis + filter aktif. */
+/** Bangun seluruh dokumen cetak sesuai jenis + filter aktif.
+ *
+ *  Jenis dokumen yang terakhir dipilih ikut tersimpan di peramban. Nilai lama
+ *  yang sudah tidak dikenal lagi harus jatuh ke daftar biasa, bukan menghentikan
+ *  aplikasi — halaman Cetak dan pintasan cetak peramban sama-sama lewat sini,
+ *  jadi satu nilai basi cukup untuk membuat keduanya mati. */
 function buatDokumen(jenis, f, ekstra) {
+  if (!JENIS_DOK[jenis]) jenis = 'daftar';
   const list = urut(saring(f, ''), 'kadus', 1);
   const lab = labelFilter(f);
   const tgl = new Date().toLocaleDateString('id-ID',
@@ -183,14 +189,19 @@ function dokRekap(list, lab, tgl) {
 
 function dokKartu(list) {
   const id = state.settings.identitas;
-  let h = '';
+  // Segel kartu dipasang lewat satu aturan CSS, bukan ditempel ke tiap kartu.
+  // Emblemnya berupa data URI sekitar 220 KB: menempelkannya per kartu membuat
+  // dokumen 2.000 anggota membengkak menjadi ratusan megabyte dan mematikan
+  // tab peramban sebelum sempat tercetak. Satu salinan sudah cukup — hasil
+  // cetaknya sama persis.
+  let h = '<style>.kartu .kb i.segel{background-image:url(' + LOGO_EMBLEM + ')}</style>';
   for (let i = 0; i < list.length; i += 8) {
     const grup = list.slice(i, i + 8);
     h += '<div class="doc"><div class="kartu-sheet">';
     grup.forEach((m, j) => {
       h += '<div class="kartu">' +
         '<div class="kh">' + esc(id.team || '') + ' — ' + esc(id.calon || '') + '</div>' +
-        '<div class="kb"><img src="' + LOGO_EMBLEM + '" alt="">' +
+        '<div class="kb"><i class="segel" role="img" aria-label="Lambang team"></i>' +
         '<div>' +
         '<div class="kr"><span>NAMA</span><span>' + esc(m.nama) + '</span></div>' +
         '<div class="kr"><span>NIK</span><span>' + esc(m.nik || '-') + '</span></div>' +
@@ -286,12 +297,13 @@ function viewKartu() {
       '<h4>Belum ada anggota pada filter ini</h4></div></div>';
   }
 
-  h += '<div class="card-grid stagger" style="margin-top:16px">';
+  h += '<style>.id-card .segel{background-image:url(' + LOGO_EMBLEM + ')}</style>' +
+    '<div class="card-grid stagger" style="margin-top:16px">';
   list.slice(0, 60).forEach((m, i) => {
     const id = state.settings.identitas;
-    h += '<div class="id-card"><div class="ic-h"><img src="' + LOGO_EMBLEM + '" alt="">' +
+    h += '<div class="id-card"><div class="ic-h"><i class="segel"></i>' +
       '<span>' + esc(id.team || '') + '</span></div>' +
-      '<div class="ic-b"><img src="' + LOGO_EMBLEM + '" alt="">' +
+      '<div class="ic-b"><i class="segel" role="img" aria-label="Lambang team"></i>' +
       '<div>' +
       '<div class="ic-row"><span>NAMA</span><span>' + esc(m.nama) + '</span></div>' +
       '<div class="ic-row"><span>NIK</span><span>' + esc(m.nik || '-') + '</span></div>' +

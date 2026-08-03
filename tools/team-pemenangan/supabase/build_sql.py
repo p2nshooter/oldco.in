@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import re
 import sys
 
 # UUID tetap supaya menjalankan ulang berkas ini tidak membuat tim baru
@@ -41,6 +42,51 @@ def tgl(v) -> str:
     return q(v) + "::date" if v else "null"
 
 
+# --------------------------------------------------------------- pembersihan
+#
+# Database daring menolak nilai yang tidak sesuai bentuknya, dan penolakan itu
+# menggugurkan SATU TRANSAKSI PENUH: satu tanggal rusak membuat seluruh 52
+# anggota gagal masuk, dengan pesan galat yang tidak menyebut baris mana.
+#
+# Aplikasi offline sengaja lebih longgar — data lapangan memang masuk sedikit
+# demi sedikit dan sering belum lengkap. Jadi pembersihannya dikerjakan di sini,
+# saat menuang ke SQL, bukan dengan memperketat aplikasinya.
+#
+# Yang dibersihkan tidak dibuang diam-diam: nilai aslinya dipindahkan ke kolom
+# CATATAN, dan jumlahnya dilaporkan di kepala berkas SQL.
+
+TANGGAL_SAH = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+ENAM_BELAS = re.compile(r"^\d{16}$")
+
+
+def bersihkan(m: dict) -> tuple[dict, list[str]]:
+    """Kembalikan salinan anggota yang pasti diterima database, beserta daftar
+    keterangan apa saja yang dipindahkan."""
+    r = dict(m)
+    catat = []
+
+    for kunci, label in (("nik", "NIK"), ("kk", "No. KK")):
+        nilai = (r.get(kunci) or "").strip()
+        if nilai and not ENAM_BELAS.match(nilai):
+            catat.append(f"{label} belum 16 digit: {nilai}")
+            r[kunci] = ""
+
+    jk = (r.get("jk") or "").strip().upper()
+    r["jk"] = jk if jk in ("L", "P") else ""
+    if (m.get("jk") or "").strip() and not r["jk"]:
+        catat.append(f"L/P tidak dikenal: {m['jk']}")
+
+    for kunci, label in (("tglLahir", "Tgl lahir"), ("tglGabung", "Tgl gabung")):
+        nilai = (r.get(kunci) or "").strip()
+        if nilai and not TANGGAL_SAH.match(nilai):
+            catat.append(f"{label} tidak terbaca: {nilai}")
+            r[kunci] = ""
+
+    if catat:
+        r["catatan"] = " | ".join(filter(None, [r.get("catatan", "")] + catat))
+    return r, catat
+
+
 def build(data: dict) -> str:
     st = data.get("settings", {})
     ident = st.get("identitas", {})
@@ -48,12 +94,31 @@ def build(data: dict) -> str:
     kampung = st.get("kampung", [])
     target = st.get("target", {})
 
+    # Anggota tanpa nama tidak bisa dimasukkan — databasenya menolak, dan
+    # barisnya pun tidak menunjuk siapa pun. Sisanya dibersihkan seperlunya.
+    bersih, dilewat, diperbaiki = [], 0, 0
+    for m in data.get("members", []):
+        if not (m.get("nama") or "").strip():
+            dilewat += 1
+            continue
+        r, catat = bersihkan(m)
+        if catat:
+            diperbaiki += 1
+        bersih.append(r)
+
     b: list[str] = []
     w = b.append
 
     w("-- ===================================================================")
     w("--  Data awal Team Pemenangan — dihasilkan dari database.json")
     w("--  Jalankan setelah schema.sql. Aman dijalankan berulang kali.")
+    if dilewat or diperbaiki:
+        w("--")
+        if dilewat:
+            w(f"--  {dilewat} baris dilewati karena tidak ada namanya.")
+        if diperbaiki:
+            w(f"--  {diperbaiki} baris dirapikan agar diterima database;")
+            w("--  nilai aslinya dipindahkan ke kolom CATATAN, tidak ada yang hilang.")
     w("-- ===================================================================")
     w("")
     w("begin;")
@@ -170,7 +235,7 @@ def build(data: dict) -> str:
     w(") on commit drop;")
     w("")
 
-    ms = data.get("members", [])
+    ms = bersih
     if ms:
         w("insert into _impor values")
         baris = []
