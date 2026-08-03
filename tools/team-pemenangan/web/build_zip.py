@@ -58,11 +58,24 @@ CARA PAKAI
 MENYAMAKAN ISI HTML DAN EXCEL
 -----------------------------
 Keduanya berkas terpisah, jadi mengetik di satu sisi tidak langsung muncul
-di sisi lain. Pindahkan lewat CSV:
-  - Dari HTML ke Excel : menu Cadangan > Unduh CSV, lalu buka di Excel.
-  - Dari Excel ke HTML : simpan sheet DATABASE sebagai CSV, lalu pakai
-                         "Pulihkan dari berkas" di menu Cadangan.
-Pilih satu sebagai induk data supaya tidak ada dua versi yang berbeda.
+di sisi lain. Memindahkannya cukup lewat salin-tempel biasa:
+
+  DARI EXCEL KE HTML
+  1. Buka sheet SINKRON pada berkas Excel.
+  2. Blok tabelnya mulai dari baris judul, tekan Ctrl+C.
+  3. Di aplikasi HTML: menu "Cadangan & Drive" > kotak "Tempel dari Excel",
+     tekan Ctrl+V lalu tombol "Proses tempelan".
+
+  DARI HTML KE EXCEL
+  1. Di aplikasi HTML: "Cadangan & Drive" > bagian "Salin untuk Excel".
+  2. Ada tiga tombol salin. Tekan satu, lalu di sheet DATABASE klik sel yang
+     disebut tombolnya dan tekan Ctrl+V.
+  3. Ulangi untuk ketiganya: DATABASE!B4, DATABASE!N4, DATABASE!T4.
+     Dipecah tiga karena kolom KORWIL, USIA, dan KELOMPOK USIA berisi rumus
+     dan menyela di tengah - menempel satu blok panjang akan menimpanya.
+
+Menempel dua kali tidak menggandakan data: NIK dipakai sebagai penanda baris.
+Selama NIK belum diisi, isilah lebih dulu bila ingin sering menyinkronkan.
 
 DI HP
 -----

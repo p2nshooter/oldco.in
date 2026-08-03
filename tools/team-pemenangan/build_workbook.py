@@ -101,7 +101,7 @@ GOLD_MUDA = "E0BE72"
 TAB_WARNA = {
     "MENU": RED, "DATABASE": NAVY, "CARI": BLUE, "REKAP": "1F6F5C",
     "TARGET": "9C6A15", "VALIDASI": "A33A2A", "CETAK": "3F5A8A",
-    "KARTU": "5B4B8A", "ABSENSI": "2E6B7A", "PROFIL": "7A2E4A",
+    "KARTU": "5B4B8A", "ABSENSI": "2E6B7A", "PROFIL": "7A2E4A", "SINKRON": "1F6F5C",
     "REFERENSI": "6B6B6B", "PETUNJUK": "444444",
 }
 
@@ -652,6 +652,8 @@ def build_menu(wb):
         ("▶   CETAK DAFTAR HADIR", "ABSENSI!A1",
          "Absensi kegiatan, filter sama seperti CETAK"),
         ("▶   PROFIL & MEDIA KAMPANYE", "PROFIL!A1", "Poster dan emblem siap cetak"),
+        ("▶   SINKRON DENGAN APLIKASI HTML", "SINKRON!A1",
+         "Tukar data dua arah lewat salin-tempel"),
         ("▶   PENGATURAN KADUS / RT / JABATAN", "REFERENSI!A1", "Dropdown, target, identitas"),
         ("▶   PETUNJUK PENGGUNAAN", "PETUNJUK!A1", "Manual + kode makro opsional"),
     ]
@@ -1751,6 +1753,128 @@ CONTOH_ISIAN = [
 ]
 
 
+# ============================================================ 12. SINKRON
+
+
+# Kolom yang dipertukarkan dengan aplikasi HTML, beserta judul yang dikenali
+# pembaca CSV/TSV-nya. Urutan dan penulisannya harus persis — inilah satu-satunya
+# tempat kedua aplikasi bersepakat soal bentuk data.
+SINKRON_KOLOM = [
+    ("NAMA LENGKAP", "B"), ("NIK KTP", "C"), ("NO. KK", "D"), ("L/P", "E"),
+    ("KAMPUNG", "F"), ("RT", "G"), ("RW", "H"), ("ALAMAT", "I"),
+    ("NAMA RT", "J"), ("NAMA RW", "K"), ("NAMA KADUS", "L"), ("TPS", "P"),
+    ("JABATAN", "N"), ("NO. HP", "O"), ("TGL LAHIR", "Q"), ("STATUS", "T"),
+    ("TGL GABUNG", "U"), ("PEREKRUT", "V"), ("CATATAN", "W"),
+]
+
+# Kolom data pada DATABASE tidak berderet rapat: M (KORWIL), R (USIA), dan
+# S (KELOMPOK USIA) berisi rumus dan menyela di tengah. Menempel satu blok
+# panjang ke sana akan menimpa ketiganya — rumusnya hilang tanpa pemberitahuan.
+# Karena itu tempelannya dipecah menjadi tiga potong yang masing-masing rapat,
+# dan aplikasi HTML menyediakan satu tombol salin untuk tiap potong.
+SINKRON_POTONG = [("B", "L"), ("N", "Q"), ("T", "W")]
+
+
+def build_sinkron(wb):
+    """Jembatan dua arah antara berkas Excel ini dan aplikasi HTML.
+
+    Keduanya berkas terpisah yang bekerja tanpa server, jadi tidak ada cara
+    keduanya membaca satu berkas database yang sama secara langsung. Yang bisa
+    dilakukan tanpa internet adalah menyalin lewat papan klip — dan itu justru
+    lancar, karena salinan range Excel berbentuk teks berpisah TAB, bentuk yang
+    sama yang dibaca dan dihasilkan aplikasi HTML.
+    """
+    ws = wb.create_sheet("SINKRON")
+    ws.sheet_view.showGridLines = False
+    ws.column_dimensions["A"].width = 2
+    for i, (judul, _) in enumerate(SINKRON_KOLOM):
+        ws.column_dimensions[get_column_letter(2 + i)].width = max(13, len(judul) + 3)
+
+    akhir = get_column_letter(1 + len(SINKRON_KOLOM))
+    title_block(ws, 1, "SINKRON  •  TUKAR DATA DENGAN APLIKASI HTML", width=akhir)
+    put(ws, "C2", "Satu database, dua cara pakai. Berpindah lewat papan klip — "
+        "tanpa internet, tanpa berkas perantara.",
+        f(9, italic=True, color="595959"), align=LEFT)
+
+    # Baris judul tabel dihitung dulu, baru dipakai di dalam petunjuk. Menulis
+    # nomor barisnya dengan tangan membuatnya meleset begitu ada satu kalimat
+    # petunjuk yang bertambah.
+    petunjuk_a = [
+        "1.  Blok tabel di bawah — mulai dari baris judulnya sampai baris data terakhir "
+        "— lalu tekan Ctrl+C.",
+        "2.  Buka aplikasi HTML, masuk ke menu \u201cCadangan & Drive\u201d.",
+        "3.  Pada kotak \u201cTempel dari Excel\u201d tekan Ctrl+V, lalu tekan tombol "
+        "\u201cProses tempelan\u201d.",
+        "     Baris dengan NIK yang sudah ada akan diperbarui; yang belum ada ditambahkan.",
+    ]
+    petunjuk_b = [
+        "1.  Di aplikasi HTML: \u201cCadangan & Drive\u201d  →  bagian \u201cSalin untuk Excel\u201d.",
+        "2.  Di sana ada tiga tombol salin. Tekan satu tombol, lalu di sheet DATABASE "
+        "klik sel yang disebut tombolnya dan tekan Ctrl+V.",
+        "3.  Ulangi untuk ketiga tombol: DATABASE!B4, lalu DATABASE!N4, lalu DATABASE!T4.",
+        "     Dipecah tiga karena kolom KORWIL, USIA, dan KELOMPOK USIA berisi rumus dan "
+        "menyela di tengah —",
+        "     menempel satu blok panjang akan menimpa ketiganya.",
+    ]
+
+    row = 4
+    section(ws, row, "A.  DARI EXCEL  →  KE APLIKASI HTML", width=akhir)
+    row += 1
+    for teks in petunjuk_a:
+        put(ws, f"B{row}", teks, f(10), align=LEFT)
+        row += 1
+
+    row += 1
+    section(ws, row, "B.  DARI APLIKASI HTML  →  KE EXCEL", width=akhir)
+    row += 1
+    for teks in petunjuk_b:
+        put(ws, f"B{row}", teks, f(10), align=LEFT)
+        row += 1
+
+    row += 1
+    put(ws, f"B{row}", "NIK KTP dipakai sebagai penanda baris. Selama NIK belum diisi, "
+        "satu orang bisa masuk dua kali kalau disalin bolak-balik — isi NIK lebih dulu "
+        "bila ingin sering menyinkronkan.", f(9, italic=True, color=RED), align=LEFT)
+    row += 2
+
+    put(ws, f"B{row}", "TABEL SALINAN  —  blok dari baris judul di bawah ini",
+        f(10, True, WHITE), BLUE, LEFT)
+    ws.merge_cells(f"B{row}:{akhir}{row}")
+    row += 1
+
+    hd = row
+    for i, (judul, _) in enumerate(SINKRON_KOLOM):
+        put(ws, f"{get_column_letter(2 + i)}{hd}", judul,
+            f(10, True, WHITE), NAVY, CENTER, BOX)
+    ws.row_dimensions[hd].height = 22
+    ws.freeze_panes = f"B{hd + 1}"
+
+    # Dua jebakan pada rumus penyalin ini:
+    #
+    #   * Menunjuk sel kosong menghasilkan angka 0, bukan teks kosong. Tanpa
+    #     &"" seluruh kolom yang belum diisi akan tersalin sebagai "0" dan
+    #     masuk ke aplikasi HTML sebagai NIK 0, No. HP 0, dan seterusnya.
+    #   * Tanggal disimpan sebagai angka. Ditambah &"" ia berubah menjadi nomor
+    #     serinya ("29587"), jadi kolom tanggal ditulis ulang bentuknya — tetapi
+    #     hanya bila isinya memang angka, karena tanggal yang diketik sebagai
+    #     teks harus lewat apa adanya.
+    tanggal = {"Q", "U"}
+    for j in range(ROWS):
+        baris = hd + 1 + j
+        src = FIRST + j
+        for i, (_, kolom) in enumerate(SINKRON_KOLOM):
+            sel = f'{DB}!${kolom}{src}'
+            isi = (f'IF(ISNUMBER({sel}),TEXT({sel},"YYYY-MM-DD"),{sel}&"")'
+                   if kolom in tanggal else f'{sel}&""')
+            put(ws, f"{get_column_letter(2 + i)}{baris}",
+                f'=IF({DB}!$B{src}="","",{isi})',
+                f(10), None, LEFT, BOX, "@")
+
+    page_print(ws, area=f"A1:{akhir}{hd + 60}", landscape=True,
+               titles=f"{hd}:{hd}")
+    return ws
+
+
 def build_petunjuk(wb):
     ws = wb.create_sheet("PETUNJUK")
     ws.sheet_view.showGridLines = False
@@ -1900,11 +2024,13 @@ def build(path, sample=False):
     build_kartu(wb)
     build_absensi(wb)
     build_profil(wb)
+    build_sinkron(wb)
     build_petunjuk(wb)
     add_names(wb)
 
     order = ["MENU", "DATABASE", "CARI", "REKAP", "TARGET", "VALIDASI",
-             "CETAK", "KARTU", "ABSENSI", "PROFIL", "REFERENSI", "PETUNJUK"]
+             "CETAK", "KARTU", "ABSENSI", "PROFIL", "SINKRON", "REFERENSI",
+             "PETUNJUK"]
     wb._sheets = [wb[name] for name in order]
     wb.active = 0
     for nama, warna in TAB_WARNA.items():

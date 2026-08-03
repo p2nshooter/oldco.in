@@ -17,6 +17,46 @@ Aplikasi ini punya dua wujud dengan data yang sama persis:
 Folder `supabase/` berisi persiapan pindah ke database daring (Supabase +
 GitHub + Vercel) bila suatu saat dibutuhkan — belum dipakai.
 
+## Satu database, dua berkas
+
+Excel dan HTML adalah dua berkas terpisah yang sama-sama bekerja tanpa server,
+jadi keduanya tidak bisa membaca satu berkas database yang sama secara
+langsung. Yang bisa dilakukan tanpa internet adalah memindahkannya lewat papan
+klip — dan itu justru lancar, karena salinan range Excel sudah berbentuk teks
+berpisah TAB, bentuk yang sama yang dibaca dan dihasilkan aplikasi HTML.
+
+Sheet **SINKRON** dan bagian **Sinkron dengan berkas Excel** pada halaman
+Cadangan menangani keduanya:
+
+| Arah | Caranya |
+|---|---|
+| Excel → HTML | Blok tabel di sheet SINKRON dari baris judulnya, Ctrl+C, tempel di kotak "Tempel dari Excel", tekan Proses |
+| HTML → Excel | Tiga tombol salin; tekan satu, klik sel yang disebut di sheet DATABASE, Ctrl+V — ulangi untuk ketiganya |
+
+Dua hal yang membuatnya aman:
+
+- **Menempel dua kali tidak menggandakan data.** NIK dipakai sebagai penanda
+  baris: yang sudah ada diperbarui, yang belum ada ditambahkan.
+- **Sinkron pertama tidak menggandakan seluruh anggota.** Pada awalnya justru
+  NIK-lah yang baru diisi di Excel sementara barisnya di aplikasi masih kosong
+  NIK — kalau hanya NIK yang dicocokkan, semuanya masuk dua kali persis saat
+  datanya mulai dilengkapi. Karena itu ada satu cadangan yang sengaja sempit:
+  baris masuk ber-NIK boleh dicocokkan dengan baris yang namanya sama **dan**
+  NIK-nya masih kosong, dan hanya bila cuma ada satu yang cocok. Daftar ini
+  memuat dua orang bernama **WAWAN** — untuk kasus seperti itu tidak ada yang
+  ditebak, barisnya dianggap baru supaya diperiksa manusia.
+
+Salinannya dipecah tiga karena kolom KORWIL, USIA, dan KELOMPOK USIA berisi
+rumus dan menyela di tengah kolom data pada sheet DATABASE; menempel satu blok
+panjang akan menimpa ketiganya. Ketiga potongan selalu memakai urutan yang sama
+(menurut nama, bukan mengikuti urutan tabel di layar) — urutan yang bergeser di
+antara dua penekanan tombol akan menyambungkan nama seseorang dengan nomor HP
+orang lain.
+
+Diuji putar-balik penuh: 52 anggota dari sheet SINKRON masuk ke aplikasi yang
+kosong, lalu ketiga potongannya ditempel kembali ke berkas Excel yang baru —
+**52 baris, nol perbedaan**, dan seluruh kolom rumus terhitung ulang.
+
 ## Membangun ulang
 
 ```bash
@@ -91,6 +131,7 @@ python3 ~/.claude/skills/xlsx/scripts/recalc.py Aplikasi_Team_Pemenangan_v2.xlsx
 | **KARTU** | Kartu anggota siap potong, 8 per halaman, bisa disaring per wilayah |
 | **ABSENSI** | Daftar hadir kegiatan dengan filter yang sama seperti CETAK |
 | **PROFIL** | Poster resmi siap cetak + kedua emblem beserta keterangannya |
+| **SINKRON** | Tukar data dua arah dengan aplikasi HTML lewat salin-tempel |
 | **REFERENSI** | Pengaturan dropdown, target per Kadus, identitas (kop surat) |
 | **PETUNJUK** | Manual penggunaan + kode makro opsional |
 

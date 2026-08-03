@@ -3698,6 +3698,43 @@ function viewDataIo() {
     '<button class="btn btn-red btn-sm" id="btnReset" style="margin-top:10px">Hapus semua data</button>' +
     '</div></div>';
 
+  h += '<div class="card" style="margin-bottom:16px"><div class="card-h">' +
+    '<h3>Sinkron dengan berkas Excel</h3><div class="grow"></div>' +
+    '<span class="chip aktif">dua arah</span></div><div class="card-b">' +
+    '<p class="mini-note">Aplikasi ini dan berkas Excel adalah dua berkas terpisah yang ' +
+    'sama-sama bekerja tanpa internet, jadi keduanya tidak bisa membaca satu berkas ' +
+    'database yang sama secara langsung. Yang bisa dilakukan tanpa internet adalah ' +
+    'memindahkannya lewat papan klip — dan itu justru lancar, karena salinan dari Excel ' +
+    'sudah berbentuk teks berpisah TAB, bentuk yang sama yang dibaca dan dihasilkan di sini. ' +
+    'Langkah lengkapnya juga tertulis di sheet <b>SINKRON</b> pada berkas Excel.</p>' +
+
+    '<div class="hr"></div>' +
+    '<div class="sec-title" style="margin-top:0">Dari Excel ke sini</div>' +
+    '<p class="mini-note">Buka sheet <span class="kbd">SINKRON</span> di Excel, blok tabelnya ' +
+    'mulai dari baris judul, tekan Ctrl+C, lalu tempel di kotak ini.</p>' +
+    '<textarea id="tempelExcel" rows="4" placeholder="Tempel di sini (Ctrl+V)&#10;' +
+    'Baris pertama harus berisi judul kolom — NAMA LENGKAP, NIK KTP, dan seterusnya." ' +
+    'style="width:100%;margin-top:10px;font-family:ui-monospace,monospace;font-size:12.4px"></textarea>' +
+    '<div class="flex" style="margin-top:10px">' +
+    '<button class="btn btn-primary" id="btnTempel">Proses tempelan</button>' +
+    '<label class="mini-note"><input type="checkbox" id="tempelGanti" style="width:auto;margin-right:6px">' +
+    'Ganti seluruh data (bila tidak dicentang, digabungkan)</label>' +
+    '</div>' +
+
+    '<div class="hr"></div>' +
+    '<div class="sec-title" style="margin-top:0">Dari sini ke Excel</div>' +
+    '<p class="mini-note">Kolom data pada sheet DATABASE tidak berderet rapat — KORWIL, USIA, ' +
+    'dan KELOMPOK USIA berisi rumus dan menyela di tengah. Menempel satu blok panjang akan ' +
+    'menimpa ketiganya, jadi salinannya dipecah tiga. Tekan satu tombol, klik sel yang ' +
+    'disebut, tekan Ctrl+V — ulangi untuk ketiganya.</p>' +
+    '<div class="flex" style="margin-top:11px;flex-wrap:wrap">' +
+    SALIN_POTONG.map((p2, i) =>
+      '<button class="btn" data-salin="' + i + '">Salin ➜ DATABASE!' + p2.sel + '</button>').join('') +
+    '</div>' +
+    '<p class="mini-note" style="margin-top:9px">Tanpa baris judul — langsung baris datanya, ' +
+    'siap ditempel mulai baris 4.</p>' +
+    '</div></div>';
+
   h += '<div class="card"><div class="card-h"><h3>Persiapan database daring</h3>' +
     '<div class="grow"></div><span class="chip">untuk nanti</span></div><div class="card-b">' +
     '<p class="mini-note">Aplikasi ini tetap bekerja penuh tanpa internet. Tetapi bila suatu ' +
@@ -3746,6 +3783,167 @@ function viewDataIo() {
   return h;
 }
 
+/* ------------------------------------------------- sinkron dengan Excel
+
+   Kolom data pada sheet DATABASE tidak berderet rapat: M (KORWIL), R (USIA),
+   dan S (KELOMPOK USIA) berisi rumus dan menyela di tengah. Menempel satu blok
+   panjang ke sana akan menimpa ketiganya dan rumusnya hilang tanpa
+   pemberitahuan — karena itu salinannya dipecah menjadi tiga potong rapat,
+   masing-masing dengan sel tujuannya sendiri. */
+
+const SALIN_POTONG = [
+  { sel: 'B4', kolom: ['nama', 'nik', 'kk', 'jk', 'kampung', 'rt', 'rw',
+                       'alamat', 'namaRt', 'namaRw', 'kadus'] },
+  { sel: 'N4', kolom: ['jabatan', 'hp', 'tps', 'tglLahir'] },
+  { sel: 'T4', kolom: ['status', 'tglGabung', 'perekrut', 'catatan'] }
+];
+
+/** Satu sel salinan Excel. TAB dan ganti baris di dalam nilai akan merusak
+ *  susunan kolomnya, jadi keduanya diganti spasi. */
+function selTab(v) {
+  return String(v === undefined || v === null ? '' : v).replace(/[\t\r\n]+/g, ' ');
+}
+
+/** Urutan baris untuk ketiga potong salinan.
+ *
+ *  HARUS tetap sama di antara ketiganya: potongan-potongan itu ditempel ke tiga
+ *  kolom berbeda pada baris yang sama, jadi urutan yang bergeser di tengah jalan
+ *  akan menyambungkan nama seseorang dengan nomor HP orang lain. Karena itu
+ *  urutannya dipatok menurut nama, bukan mengikuti urutan tabel di layar yang
+ *  bisa diubah pemakainya di antara dua penekanan tombol. */
+function urutanSalin() {
+  return urut(state.members, 'nama', 1);
+}
+
+function isiPotong(i) {
+  const p = SALIN_POTONG[i];
+  return urutanSalin().map(m => p.kolom.map(k => selTab(m[k])).join('\t')).join('\r\n');
+}
+
+/** Salin ke papan klip. Clipboard API butuh konteks aman dan izin; bila
+ *  ditolak — atau peramban lawas — dipakai cara lama lewat elemen sementara,
+ *  yang berjalan di mana saja termasuk pada berkas yang dibuka langsung. */
+async function keClipboard(teks) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(teks);
+      return true;
+    }
+  } catch (e) { /* jatuh ke cara lama */ }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = teks;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, teks.length);
+    const ok = document.execCommand('copy');
+    ta.remove();
+    return ok;
+  } catch (e) {
+    return false;
+  }
+}
+
+async function salinUntukExcel(i) {
+  if (!state.members.length) { toast('Belum ada data untuk disalin.', 'err'); return; }
+  const ok = await keClipboard(isiPotong(i));
+  const p = SALIN_POTONG[i];
+  toast(ok
+    ? num(state.members.length) + ' baris tersalin — buka Excel, klik sel ' +
+      p.sel + ' pada sheet DATABASE, lalu tekan Ctrl+V.'
+    : 'Peramban menolak menyalin. Blok isi kotak tempelan lalu salin sendiri.',
+    ok ? 'ok' : 'err', 7000);
+}
+
+/** Cari baris yang sama dengan data masuk. Kembalikan -1 bila memang baru.
+ *
+ *  NIK adalah penandanya. Tetapi pada sinkron pertama justru NIK itulah yang
+ *  baru diisi di Excel, sementara barisnya di sini masih kosong NIK — kalau
+ *  hanya NIK yang dicocokkan, seluruh anggota masuk dua kali persis pada saat
+ *  datanya mulai dilengkapi.
+ *
+ *  Karena itu ada satu cadangan yang sengaja dibuat sempit: baris masuk yang
+ *  ber-NIK boleh dicocokkan dengan baris di sini yang NAMANYA sama DAN NIK-nya
+ *  masih kosong — dan hanya bila cuma ada satu yang cocok. Bila ada dua orang
+ *  bernama sama (daftar ini memang memuat dua "WAWAN"), tidak ada yang ditebak:
+ *  barisnya dianggap baru, biar diperiksa manusia. */
+function cocokkanBaris(m) {
+  if (m.nik) {
+    const lewatNik = state.members.findIndex(x => x.nik === m.nik);
+    if (lewatNik >= 0) return lewatNik;
+    const calon = [];
+    state.members.forEach((x, i) => {
+      if (!x.nik && x.nama && x.nama === m.nama) calon.push(i);
+    });
+    return calon.length === 1 ? calon[0] : -1;
+  }
+  // Baris masuk tanpa NIK tidak punya penanda yang bisa dipercaya sama sekali,
+  // jadi selalu dianggap baru.
+  return -1;
+}
+
+function prosesTempelan() {
+  const kotak = $('#tempelExcel');
+  const teks = (kotak && kotak.value || '').trim();
+  if (!teks) { toast('Kotak tempelan masih kosong.', 'err'); return; }
+  let masuk;
+  try {
+    masuk = bacaTabel(teks);
+  } catch (e) {
+    toast('Tempelan tidak terbaca: ' + e.message, 'err', 7000);
+    return;
+  }
+  if (!masuk.length) { toast('Tidak ada baris berisi nama pada tempelan itu.', 'err'); return; }
+
+  const ganti = $('#tempelGanti') && $('#tempelGanti').checked;
+  const bersih = masuk.map(r => {
+    const m = normalisasi(r);
+    m.id = uid();
+    m.dibuat = new Date().toISOString();
+    m.diubah = m.dibuat;
+    return m;
+  });
+
+  if (ganti) {
+    konfirmasi('Ganti seluruh data?',
+      'Seluruh <b>' + num(state.members.length) + ' anggota</b> di perangkat ini diganti ' +
+      'dengan <b>' + num(bersih.length) + ' baris</b> dari tempelan. Unduh cadangan lebih ' +
+      'dulu bila belum.',
+      () => {
+        state.members = bersih;
+        save(true); render();
+        toast('Data diganti: ' + num(bersih.length) + ' anggota.');
+      }, 'Ya, ganti semua');
+    return;
+  }
+
+  let baru = 0, perbarui = 0, lewatNama = 0, tanpaNik = 0;
+  bersih.forEach(m => {
+    const i = cocokkanBaris(m);
+    if (i < 0) {
+      state.members.push(m);
+      baru++;
+      if (!m.nik) tanpaNik++;
+      return;
+    }
+    const lama2 = state.members[i];
+    if (!lama2.nik && m.nik) lewatNama++;
+    state.members[i] = Object.assign({}, lama2, m,
+      { id: lama2.id, dibuat: lama2.dibuat, diubah: new Date().toISOString() });
+    perbarui++;
+  });
+  save(true);
+  if (kotak) kotak.value = '';
+  render();
+  const pesan = [num(baru) + ' ditambahkan', num(perbarui) + ' diperbarui'];
+  if (lewatNama) pesan.push(num(lewatNama) + ' di antaranya dikenali lewat nama karena ' +
+    'NIK-nya memang baru diisi');
+  if (tanpaNik) pesan.push(num(tanpaNik) + ' baris baru masih tanpa NIK');
+  toast(pesan.join(', ') + '.', 'ok', 8000);
+}
+
 function unduh(nama, isi, mime) {
   const blob = new Blob([isi], { type: mime || 'application/json;charset=utf-8' });
   const url = URL.createObjectURL(blob);
@@ -3790,7 +3988,23 @@ function exportCsv(list) {
   toast('CSV terunduh (' + num((list || state.members).length) + ' baris).');
 }
 
-function parseCsv(teks) {
+/** Tebak pemisah kolom dari baris pertama.
+ *
+ *  Salinan dari Excel berpisah TAB, berkas CSV berpisah koma, dan Excel
+ *  berbahasa Indonesia menyimpan CSV dengan titik koma. Dulu koma dan titik
+ *  koma sama-sama diperlakukan sebagai pemisah sekaligus; alamat yang memuat
+ *  koma karena itu terpotong menjadi dua kolom. Sekarang dipilih satu saja —
+ *  yang paling banyak muncul di baris judul. */
+function tebakPemisah(teks) {
+  const baris = (teks.split('\n')[0] || '');
+  const hitung = c => baris.split(c).length - 1;
+  const calon = [['\t', hitung('\t')], [',', hitung(',')], [';', hitung(';')]];
+  calon.sort((a, b) => b[1] - a[1]);
+  return calon[0][1] > 0 ? calon[0][0] : ',';
+}
+
+function parseCsv(teks, pemisah) {
+  const sep = pemisah || tebakPemisah(teks);
   const baris = [];
   let cur = [], nilai = '', dalam = false;
   const t = teks.replace(/^﻿/, '');
@@ -3801,12 +4015,49 @@ function parseCsv(teks) {
         if (t[i + 1] === '"') { nilai += '"'; i++; } else dalam = false;
       } else nilai += c;
     } else if (c === '"') dalam = true;
-    else if (c === ',' || c === ';') { cur.push(nilai); nilai = ''; }
+    else if (c === sep) { cur.push(nilai); nilai = ''; }
     else if (c === '\n') { cur.push(nilai); baris.push(cur); cur = []; nilai = ''; }
     else if (c !== '\r') nilai += c;
   }
   if (nilai !== '' || cur.length) { cur.push(nilai); baris.push(cur); }
   return baris.filter(b => b.some(v => String(v).trim() !== ''));
+}
+
+/** Judul kolom -> nama kolom di dalam aplikasi. Dipakai bersama oleh
+ *  pembacaan berkas CSV dan tempelan langsung dari Excel. */
+const ALIAS_KOLOM = {
+  'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
+  'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
+  'nik ktp': 'nik', 'no. kk': 'kk', 'no kk': 'kk',
+  'nama rt': 'namaRt', 'nama rw': 'namaRw', 'nama kadus': 'kadus',
+  // cadangan lama masih memakai istilah RK
+  'nama rk': 'namaRw', 'namark': 'namaRw',
+  'tgl gabung': 'tglGabung', 'kelompok usia': null, 'usia': null,
+  'korwil': null, 'no': null, 'key': null
+};
+
+/** Baca tabel berjudul (CSV, titik koma, atau tempelan TAB dari Excel)
+ *  menjadi daftar anggota. Baris tanpa nama dilewati — pada tempelan dari
+ *  Excel, baris kosong di bawah data selalu ikut tersalin. */
+function bacaTabel(teks) {
+  const baris = parseCsv(teks);
+  if (baris.length < 2) throw new Error('Tidak ada baris data di bawah judul kolom');
+  const kepala = baris[0].map(x => x.trim().toLowerCase());
+  const idx = kepala.map(k => {
+    if (Object.prototype.hasOwnProperty.call(ALIAS_KOLOM, k)) return ALIAS_KOLOM[k];
+    const bersih = k.replace(/[^a-z]/g, '');
+    return CSV_KOLOM.find(c => c.toLowerCase() === bersih) || null;
+  });
+  if (!idx.includes('nama')) {
+    throw new Error('Baris judul tidak memuat kolom NAMA LENGKAP');
+  }
+  const hasil = [];
+  for (let i = 1; i < baris.length; i++) {
+    const rec = {};
+    idx.forEach((kol, j) => { if (kol) rec[kol] = baris[i][j]; });
+    if ((rec.nama || '').trim()) hasil.push(rec);
+  }
+  return hasil;
 }
 
 function importFile(file, gabung) {
@@ -3821,30 +4072,7 @@ function importFile(file, gabung) {
         masuk = Array.isArray(d.members) ? d.members : (Array.isArray(d) ? d : []);
         if (d.settings) setelan = d.settings;
       } else {
-        const baris = parseCsv(teks);
-        if (baris.length < 2) throw new Error('CSV tidak berisi data');
-        const kepala = baris[0].map(x => x.trim().toLowerCase());
-        const petaAlias = {
-          'nama lengkap': 'nama', 'nik (16 digit)': 'nik', 'l/p': 'jk',
-          'no. hp': 'hp', 'no hp': 'hp', 'tgl lahir': 'tglLahir',
-          'nik ktp': 'nik', 'no. kk': 'kk', 'no kk': 'kk',
-          'nama rt': 'namaRt', 'nama rw': 'namaRw', 'nama kadus': 'kadus',
-          // cadangan lama masih memakai istilah RK
-          'nama rk': 'namaRw', 'namark': 'namaRw',
-          'tgl gabung': 'tglGabung', 'kelompok usia': null, 'usia': null,
-          'korwil': null, 'no': null, 'key': null
-        };
-        const idx = kepala.map(k => {
-          if (Object.prototype.hasOwnProperty.call(petaAlias, k)) return petaAlias[k];
-          const bersih = k.replace(/[^a-z]/g, '');
-          const cocokKol = CSV_KOLOM.find(c => c.toLowerCase() === bersih);
-          return cocokKol || null;
-        });
-        for (let i = 1; i < baris.length; i++) {
-          const rec = {};
-          idx.forEach((kol, j) => { if (kol) rec[kol] = baris[i][j]; });
-          if ((rec.nama || '').trim()) masuk.push(rec);
-        }
+        masuk = bacaTabel(teks);
       }
       if (!masuk.length) { toast('Tidak ada baris yang bisa dibaca dari berkas itu.', 'err'); return; }
 
@@ -4530,6 +4758,9 @@ function onKlik(e) {
   }
 
   if (t.closest('#btnZip')) { unduhPaketZip(); return; }
+  if (t.closest('#btnTempel')) { prosesTempelan(); return; }
+  const salin = t.closest('[data-salin]');
+  if (salin) { salinUntukExcel(Number(salin.dataset.salin)); return; }
   if (t.closest('#btnAdd')) { bukaForm(null); return; }
   if (t.closest('#btnCsv')) { exportCsv(urut(saring(), ui.sort.by, ui.sort.dir)); return; }
   if (t.closest('#btnExport')) { exportJson(); return; }
