@@ -3331,6 +3331,746 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'george-v-rupaya',
+    sections: [
+      {
+        hHi: 'चाँदी की कहानी: .917 से .500 तक',
+        hEn: 'The silver story: from .917 to .500',
+        pHi: [
+          'जॉर्ज V का रुपया दो अलग चाँदी-मानकों में मिलता है, और यह अंतर जानना इस सिक्के को समझने की कुंजी है।',
+          '1911 से लगभग 1939 तक रुपया .917 शुद्धता का था — यानी लगभग साढ़े दस ग्राम शुद्ध चाँदी, कुल वज़न 11.66 ग्राम में। यह वही मानक था जो उन्नीसवीं सदी से चला आ रहा था।',
+          'दूसरे विश्वयुद्ध के दबाव में 1940 के आसपास शुद्धता घटाकर .500 कर दी गई। सिक्का देखने में लगभग वैसा ही रहा, पर उसमें चाँदी आधी रह गई।',
+          'यह परिवर्तन जॉर्ज VI के दौर में हुआ, पर उसे जानना जॉर्ज V के सिक्के के मूल्यांकन के लिए ज़रूरी है — क्योंकि जॉर्ज V का हर रुपया उच्च शुद्धता का है, और यही उसे धातु-मूल्य में ऊपर रखता है।',
+        ],
+        pEn: [
+          'The George V rupee exists in two different silver standards, and knowing that difference is the key to understanding the coin.',
+          'From 1911 to about 1939 the rupee was .917 fine — roughly ten and a half grams of pure silver within a total weight of 11.66 grams. That was the same standard that had run since the nineteenth century.',
+          'Under the pressure of the Second World War the fineness was cut to .500 around 1940. The coin looked much the same, but it now held half the silver.',
+          'That change came during George VI’s reign, but knowing it matters for valuing a George V coin — because every George V rupee is of the higher fineness, and that is what keeps it above the later issues in metal value.',
+        ],
+      },
+      {
+        hHi: 'धातु-मूल्य बनाम संग्राहक-मूल्य',
+        hEn: 'Metal value versus collector value',
+        pHi: [
+          'यह वह जगह है जहाँ अधिकांश लोग उलझते हैं, और इसे साफ़ कर लेना बहुत उपयोगी है।',
+          'धातु-मूल्य वह है जो सिक्के में मौजूद चाँदी की उस दिन की बाज़ार-क़ीमत से निकलता है। यह हर दिन बदलता है और उसका सिक्के के इतिहास से कोई संबंध नहीं।',
+          'संग्राहक-मूल्य दशा, दुर्लभता और माँग से बनता है। एक अच्छी दशा का सामान्य वर्ष का रुपया अपने धातु-मूल्य से कुछ ऊपर बैठता है; एक बहुत ऊँची दशा का या दुर्लभ वर्ष का सिक्का कई गुना ऊपर।',
+          'व्यावहारिक निष्कर्ष यह है: घिसे हुए, सामान्य वर्ष के रुपये का दाम मोटे तौर पर चाँदी की क़ीमत के आसपास रहेगा। यह जानना निराशा से बचाता है और साथ ही एक न्यूनतम सीमा भी देता है।',
+        ],
+        pEn: [
+          'This is where most people get confused, and clearing it up is genuinely useful.',
+          'Metal value is what comes out of the market price of the silver in the coin on any given day. It changes daily and has nothing to do with the coin’s history.',
+          'Collector value is built from condition, rarity and demand. A common-date rupee in good condition sits somewhat above its metal value; a piece in very high grade or from a scarce year sits several multiples above.',
+          'The practical conclusion is this: a worn, common-date rupee will fetch roughly the price of its silver. Knowing that prevents disappointment and also gives you a floor beneath which you should not sell.',
+        ],
+      },
+      {
+        hHi: 'टकसाल और वर्ष',
+        hEn: 'Mints and years',
+        pHi: [
+          'जॉर्ज V के रुपये बंबई और कलकत्ता दोनों टकसालों में ढले। बंबई का चिह्न तारीख़ के नीचे एक छोटा बिंदु या हीरा है; कलकत्ता आमतौर पर कोई चिह्न नहीं छोड़ती।',
+          'कुछ वर्षों में ढलाई-संख्या कम रही, और वही वर्ष संग्राहकों की सूची में ऊपर बैठते हैं। यह जानकारी कैटलॉग में दर्ज है और उसे देखे बिना अंदाज़ा लगाना कठिन है।',
+          'एक और भेद देखने लायक़ है: चित्र की किस्में। जॉर्ज V के चित्र में समय के साथ छोटे परिवर्तन हुए, और विशेषज्ञ इन्हें अलग किस्मों के रूप में दर्ज करते हैं।',
+          'नए संग्राहक के लिए सलाह यही है कि पहले आम वर्ष जुटाइए और आँख बनाइए। दुर्लभ वर्ष तब ख़रीदिए जब आप ख़ुद दशा का आकलन कर सकें।',
+        ],
+        pEn: [
+          'George V rupees were struck at both the Bombay and Calcutta mints. The Bombay mark is a small dot or diamond below the date; Calcutta usually leaves no mark at all.',
+          'Mintages were low in certain years, and those years sit higher on a collector’s list. That information is in the catalogues and is hard to guess at without them.',
+          'One further distinction is worth watching: portrait varieties. The George V portrait changed in small ways over time, and specialists record these as separate types.',
+          'The advice for a new collector is to gather the common years first and build the eye. Buy a scarce year once you can assess condition yourself.',
+        ],
+      },
+      {
+        hHi: 'नक़ल की पहचान',
+        hEn: 'Identifying forgeries',
+        pHi: [
+          'यह भारत के सबसे ज़्यादा नक़ल किए जाने वाले सिक्कों में है, क्योंकि इसकी माँग बड़ी है और लोग इसे धातु के लिए भी ख़रीदते हैं।',
+          'वज़न सबसे तेज़ जाँच है: 11.66 ग्राम के मानक से स्पष्ट अंतर संदेह पैदा करता है। एक सस्ता डिजिटल तराज़ू अधिकांश नक़लों को यहीं पकड़ लेता है।',
+          'किनारा दूसरी जाँच है। असली सिक्के का किनारा धारीदार और तीखा है, और हर धारी समान गहराई तथा दूरी पर। ढली हुई नक़ल में किनारा चिकना, गोल या असमान होता है।',
+          'तीसरी जाँच आवाज़ है — चाँदी उँगली पर संतुलित करके ठोंकने पर लंबी, साफ़ आवाज़ देती है। और चौथी: चुंबक। चाँदी चुंबक से नहीं चिपकती, इसलिए चिपकना ही उत्तर है।',
+        ],
+        pEn: [
+          'This is among the most forged coins in India, because demand for it is large and people buy it for the metal as well.',
+          'Weight is the fastest check: a clear discrepancy from the 11.66 gram standard raises a question. A cheap digital scale catches most forgeries right here.',
+          'The edge is the second check. A genuine coin has sharp reeding, every groove at the same depth and spacing. A cast copy has an edge that is smooth, rounded or uneven.',
+          'The third check is sound — balanced on a fingertip and tapped, silver gives a long clear note. And the fourth is a magnet. Silver is not magnetic, so any attraction is itself the answer.',
+        ],
+      },
+      {
+        hHi: 'दशा कैसे परखें',
+        hEn: 'How to judge condition',
+        pHi: [
+          'जॉर्ज V के चित्र पर घिसाव सबसे पहले तीन जगह दिखता है: गाल की हड्डी, बालों की ऊपरी लट, और मुकुट का सबसे ऊँचा हिस्सा।',
+          'पिछली तरफ़ अक्षरों के ऊपरी किनारे और पुष्प-अलंकरण की नोकें पहले चपटी होती हैं। इन पाँच बिंदुओं को याद रखना इस सिक्के की व्यावहारिक ग्रेडिंग है।',
+          'लस्टर देखने के लिए सिक्के को एक ही रोशनी के नीचे धीरे-धीरे घुमाइए। असली लस्टर में चमक का चक्र सतह पर घूमता है; साफ़ की गई सतह पूरी एक साथ चमकती है और सपाट लगती है।',
+          'और वही नियम, जो इस सिक्के पर सबसे ज़्यादा तोड़ा जाता है: कभी साफ़ मत कीजिए। चाँदी चमकाने की इच्छा सबसे तीव्र यहीं होती है, और नुक़सान भी सबसे बड़ा यहीं होता है।',
+        ],
+        pEn: [
+          'On the George V portrait, wear shows first in three places: the cheekbone, the uppermost lock of hair, and the highest point of the crown.',
+          'On the reverse, the upper edges of the lettering and the tips of the floral ornament flatten earliest. Remembering those five points is the practical grading of this coin.',
+          'To see lustre, rotate the coin slowly under a single light. Genuine lustre shows a wheel of brightness moving across the surface; a cleaned surface lights up all at once and looks flat.',
+          'And the rule most often broken on this particular coin: never clean it. The urge to brighten silver is strongest here, and the damage done is greatest here too.',
+        ],
+      },
+      {
+        hHi: 'बेचने से पहले',
+        hEn: 'Before you sell',
+        pHi: [
+          'सबसे पहले वज़न तौलिए और वर्ष तथा टकसाल-चिह्न दर्ज कीजिए। यह तीन जानकारियाँ किसी भी मोल-भाव में आपकी स्थिति मज़बूत करती हैं।',
+          'फिर उस दिन की चाँदी की क़ीमत देखिए और अनुमान लगाइए कि धातु-मूल्य क्या बनता है। यह आपकी न्यूनतम सीमा है और उससे नीचे बेचने का कोई कारण नहीं।',
+          'फिर बीते नीलामी-नतीजे देखिए, माँगी गई क़ीमतें नहीं। और दशा का मिलान कीजिए — आपका घिसा हुआ सिक्का किसी UNC नमूने के दाम से नहीं तौला जा सकता।',
+          'और वही अंतिम नियम: पैसा ख़रीदार से विक्रेता की ओर बहता है। जो आपसे रजिस्ट्रेशन या कूरियर का शुल्क माँगे, वह ख़रीदार नहीं है।',
+        ],
+        pEn: [
+          'First weigh the coin and record the year and mint mark. Those three pieces of information strengthen your position in any negotiation.',
+          'Then look up the silver price that day and work out the metal value. That is your floor, and there is no reason to sell below it.',
+          'Then look at past auction results rather than asking prices. And match the grade — your worn coin cannot be weighed against the price of a UNC example.',
+          'And the same final rule: money flows from the buyer to the seller. Anybody asking you for a registration or courier fee is not a buyer.',
+        ],
+      },
+      {
+        hHi: 'रखने का कारण',
+        hEn: 'A reason to keep it',
+        pHi: [
+          'एक बात जो सलाह देने वाले कम कहते हैं: इस सिक्के को बेचना ही एकमात्र विकल्प नहीं है।',
+          'यह उस दौर का सबसे बड़ा और सबसे भारी चाँदी का सिक्का है, और हाथ में उसका वज़न वह चीज़ है जिसे कोई तस्वीर नहीं बता सकती।',
+          'यदि यह परिवार से आया है, तो उसके साथ एक पर्ची रख दीजिए जिस पर लिखा हो कि यह किसका था। पचास साल बाद वह पर्ची सिक्के जितनी ही क़ीमती होगी।',
+          'और यदि बेचना ही है, तो पूरा संग्रह एक साथ बेचने के बजाय पहले एक सिक्का बेचकर बाज़ार का अंदाज़ा लगाइए।',
+        ],
+        pEn: [
+          'One thing advisers rarely say: selling this coin is not the only option.',
+          'It is the largest and heaviest silver coin of its period, and its weight in the hand is something no photograph conveys.',
+          'If it came down through the family, keep a slip with it recording whose it was. Fifty years from now that slip will be worth as much as the coin.',
+          'And if you do intend to sell, try one coin first rather than the whole holding, so that you learn what the market actually pays.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'जॉर्ज V का रुपया .917 चाँदी का है, वज़न 11.66 ग्राम, और वही उसे धातु-मूल्य में बाद के सिक्कों से ऊपर रखता है।',
+          'दाम दो चीज़ों से बनता है: चाँदी की क़ीमत, जो आपकी न्यूनतम सीमा है, और दशा तथा दुर्लभता, जो उससे ऊपर की सब कुछ तय करती है। साफ़ करना दूसरी वाली को नष्ट कर देता है।',
+        ],
+        pEn: [
+          'The George V rupee is .917 silver at 11.66 grams, and that is what keeps it above the later issues in metal value.',
+          'Its price is built from two things: the silver price, which is your floor, and condition and rarity, which decide everything above it. Cleaning destroys the second of those entirely, which is why the single most valuable thing you can do with the coin is nothing at all.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'anna-system-samjhe',
+    sections: [
+      {
+        hHi: 'पूरी सीढ़ी, नीचे से ऊपर',
+        hEn: 'The full ladder, from the bottom up',
+        pHi: [
+          'सबसे नीचे पाई थी। तीन पाई का एक पैसा, चार पैसे का एक आना, और सोलह आने का एक रुपया। यानी एक रुपये में 192 पाई।',
+          'बीच में कुछ और इकाइयाँ भी चलीं। दो पैसे की एक धेली, आधे आने की एक अठन्नी नहीं बल्कि दुअन्नी — नामों में क्षेत्रीय भिन्नता थी और वही आज उलझन पैदा करती है।',
+          'दशमलव व्यवस्था में अठन्नी का अर्थ पचास पैसे हो गया, और चवन्नी का पच्चीस। पर मूल रूप से अठन्नी आठ आने थी, यानी आधा रुपया — और चवन्नी चार आने, यानी चौथाई।',
+          'यही निरंतरता दिलचस्प है: नाम बचे रहे, अर्थ बदल गया। आज भी लोग चवन्नी कहते हैं, बिना यह जाने कि वह शब्द एक ऐसी व्यवस्था से आया है जो साठ साल पहले ख़त्म हो गई।',
+        ],
+        pEn: [
+          'At the bottom sat the pie. Three pie made one pice, four pice made one anna, and sixteen annas made one rupee — meaning 192 pie to a rupee.',
+          'A few intermediate units ran alongside. Two pice made a dheli, and names varied by region, which is exactly what causes confusion today.',
+          'Under decimalisation athanni came to mean fifty paise and chavanni twenty-five. But originally athanni was eight annas, meaning half a rupee — and chavanni four annas, a quarter.',
+          'That continuity is the interesting part: the names survived while the meaning changed. People still say chavanni without knowing the word comes from a system that ended sixty years ago.',
+        ],
+      },
+      {
+        hHi: 'सोलह क्यों',
+        hEn: 'Why sixteen',
+        pHi: [
+          'आज दस का गुणक स्वाभाविक लगता है, पर ऐतिहासिक रूप से बारह और सोलह कहीं अधिक व्यावहारिक थे — और कारण गणितीय है।',
+          'सोलह को दो, चार और आठ से पूरा-पूरा बाँटा जा सकता है। बाज़ार में आधा, चौथाई और आठवाँ हिस्सा रोज़ चाहिए होता है, और सोलह इन तीनों को बिना अंश के देता है।',
+          'दस के साथ यह सुविधा नहीं है। दस का चौथाई ढाई होता है, और सिक्कों की दुनिया में आधा सिक्का देना संभव नहीं।',
+          'यही कारण है कि दुनिया भर की पुरानी मुद्रा-व्यवस्थाएँ बारह और बीस के गुणकों पर चलीं। दशमलव तब आया जब लिखित हिसाब-किताब मौखिक बाज़ार-गणित से ज़्यादा महत्वपूर्ण हो गया।',
+        ],
+        pEn: [
+          'A multiple of ten feels natural today, but historically twelve and sixteen were far more practical — and the reason is mathematical.',
+          'Sixteen divides cleanly by two, four and eight. A market needs halves, quarters and eighths every day, and sixteen gives all three without fractions.',
+          'Ten offers no such convenience. A quarter of ten is two and a half, and in a world of coins you cannot hand over half a coin.',
+          'This is why old currency systems across the world ran on multiples of twelve and twenty. Decimalisation arrived once written accounting mattered more than the spoken arithmetic of a marketplace.',
+        ],
+      },
+      {
+        hHi: 'भाषा में बची हुई व्यवस्था',
+        hEn: 'The system that survives in the language',
+        pHi: [
+          '“सोलह आने सच” — यानी पूरी तरह सच, क्योंकि सोलह आने पूरा रुपया होते थे। यह मुहावरा आज भी बोलचाल में जीवित है।',
+          '“फूटी कौड़ी नहीं” — कौड़ी उस दौर की सबसे छोटी इकाई थी, और फूटी यानी टूटी हुई। यानी इतना भी नहीं जितना एक टूटी हुई सबसे छोटी चीज़।',
+          '“चवन्नी छाप” — एक व्यंग्य, जिसका अर्थ है सस्ता या घटिया। चवन्नी चार आने की थी, और उससे जो ख़रीदा जा सकता था वह मामूली था।',
+          'ये मुहावरे बताते हैं कि मुद्रा-व्यवस्था केवल अर्थशास्त्र नहीं होती। वह भाषा में उतर जाती है और उस व्यवस्था के ख़त्म होने के बाद भी दशकों तक बोली जाती रहती है।',
+        ],
+        pEn: [
+          '“Sixteen annas true” — meaning entirely true, because sixteen annas made a whole rupee. The phrase is still alive in everyday Hindi.',
+          '“Not even a phooti kaudi” — the kaudi was the smallest unit of that period, and phooti means broken. Not even as much as a broken example of the smallest thing there is.',
+          '“Chavanni chhaap” — a jibe meaning cheap or second-rate. A chavanni was four annas, and what it bought was modest.',
+          'These phrases show that a monetary system is never only economics. It settles into the language and goes on being spoken for decades after the system itself has ended.',
+        ],
+      },
+      {
+        hHi: 'बाज़ार का गणित',
+        hEn: 'The arithmetic of the marketplace',
+        pHi: [
+          'इस व्यवस्था में रोज़मर्रा का हिसाब आज से बहुत अलग दिखता था, और उसे समझना पुराने दस्तावेज़ पढ़ने के लिए ज़रूरी है।',
+          'पुराने बहीखातों में रक़म अक्सर तीन खानों में लिखी मिलती है: रुपया, आना, पाई। जैसे “5-12-3” का अर्थ पाँच रुपये, बारह आने, तीन पाई।',
+          'जोड़ने में सावधानी चाहिए थी, क्योंकि हर खाना अलग आधार पर चलता था — पाई तीन पर, आना सोलह पर। बारह पाई हुईं तो चार पैसे, और चार पैसे हुए तो एक आना।',
+          'यही जटिलता दुकानदारों और मुनीमों का रोज़ का कौशल थी। जब 1957 में दशमलव आया, तो सबसे बड़ी राहत यही थी कि अब सब कुछ सौ के आधार पर चलेगा।',
+        ],
+        pEn: [
+          'Everyday reckoning under this system looked very different from today, and understanding it is necessary for reading old documents.',
+          'In old ledgers amounts appear in three columns: rupees, annas, pies. “5-12-3” means five rupees, twelve annas, three pies.',
+          'Addition required care, because each column ran on a different base — pies on three, annas on sixteen. Twelve pies made four pice, and four pice made an anna.',
+          'That complexity was the daily skill of shopkeepers and accountants. When decimalisation arrived in 1957, the greatest relief was simply that everything would now run on a base of a hundred.',
+        ],
+      },
+      {
+        hHi: 'सिक्कों को व्यवस्था में रखना',
+        hEn: 'Placing the coins in the system',
+        pHi: [
+          'जब आप एक पुराना सिक्का उठाते हैं, तो पहला सवाल यही होना चाहिए कि वह इस सीढ़ी पर कहाँ बैठता है।',
+          'सबसे आम सिक्के हैं: क्वार्टर आना (ताँबा, बड़ा), आधा आना, एक आना, दो आना, चौथाई रुपया, आधा रुपया, और रुपया।',
+          'ताँबे के छोटे सिक्के भारी संख्या में ढले और भारी संख्या में बचे, इसलिए वे सस्ते हैं। चाँदी के बड़े सिक्के कम बचे और अधिक माँगे जाते हैं।',
+          'एक अच्छा संग्रह-लक्ष्य यही है: पूरी सीढ़ी का एक-एक नमूना, एक ही शासक के दौर का। सात सिक्के, और वे मिलकर एक पूरी मुद्रा-व्यवस्था का चित्र बना देते हैं।',
+        ],
+        pEn: [
+          'When you pick up an old coin, the first question should be where it sits on this ladder.',
+          'The commonest are: the quarter anna (copper, large), the half anna, one anna, two annas, quarter rupee, half rupee, and rupee.',
+          'The small copper pieces were struck and survive in quantity, so they are cheap. The larger silver coins survive in smaller numbers and attract more demand.',
+          'A good collecting target follows from this: one example of each rung, all from a single ruler’s reign. Seven coins, and together they form a picture of an entire monetary system.',
+        ],
+      },
+      {
+        hHi: '1957 का परिवर्तन',
+        hEn: 'The change of 1957',
+        pHi: [
+          '1 अप्रैल 1957 से भारत दशमलव व्यवस्था पर चला गया। रुपया वही रहा, पर उसके नीचे की पूरी सीढ़ी बदल गई — अब सौ पैसे का एक रुपया।',
+          'भ्रम से बचने के लिए नए सिक्कों पर “नया पैसा” अंकित किया गया। यह शब्द 1964 तक चला, फिर हटा दिया गया जब लोग व्यवस्था के आदी हो गए।',
+          'कुछ वर्षों तक दोनों व्यवस्थाएँ साथ चलीं, और लोगों को दोनों में हिसाब करना पड़ा। पुराने आना-सिक्के धीरे-धीरे वापस लिए गए।',
+          'संग्राहक के लिए यह एक साफ़ विभाजन-रेखा है, और वही इसे इतना उपयोगी बनाती है। 1957 से पहले की हर चीज़ एक व्यवस्था की है; उसके बाद की दूसरी की।',
+        ],
+        pEn: [
+          'From 1 April 1957 India moved to a decimal system. The rupee itself stayed, but the entire ladder beneath it changed — now a hundred paise to the rupee.',
+          'To avoid confusion the new coins were inscribed “naya paisa”. The word ran until 1964, then was dropped once people had grown used to the system.',
+          'For some years both systems ran together, and people had to reckon in each. The old anna coins were gradually withdrawn.',
+          'For a collector this is a clean dividing line, and that is what makes it so useful. Everything before 1957 belongs to one system; everything after it to another.',
+        ],
+      },
+      {
+        hHi: 'यह जानना क्यों बुनियादी है',
+        hEn: 'Why knowing this is foundational',
+        pHi: [
+          'इस व्यवस्था को समझे बिना पुराने भारतीय सिक्कों का संग्रह अधूरा रहता है, क्योंकि हर सिक्के का अर्थ उसी सीढ़ी पर उसकी जगह से निकलता है।',
+          'यह पुराने दस्तावेज़ पढ़ने के लिए भी ज़रूरी है — पुराने पट्टे, बहीखाते, रसीदें, और साहित्य में आने वाली रक़में सब इसी भाषा में हैं।',
+          'और यह पारिवारिक कहानियाँ समझने के लिए भी काम आता है। जब कोई बुज़ुर्ग कहता है कि उसने चार आने में क्या ख़रीदा था, तो उस वाक्य का अर्थ तभी खुलता है जब आप जानते हों कि चार आने कितने थे।',
+          'इसलिए यह जानकारी उबाऊ नहीं, बुनियादी है। बाक़ी सब — पहचान, ग्रेडिंग, मूल्यांकन — इसी नींव पर खड़ा होता है।',
+        ],
+        pEn: [
+          'Without understanding this system a collection of old Indian coins stays incomplete, because the meaning of every coin comes from its place on that ladder.',
+          'It is necessary for reading old documents too — leases, ledgers, receipts, and the sums that appear in literature are all written in this language.',
+          'It also helps in understanding family stories. When an elderly relative says what four annas bought, the sentence only opens up if you know how much four annas were.',
+          'So this is not dull information but foundational. Everything else — identification, grading, valuation — is built on this footing.',
+        ],
+      },
+      {
+        hHi: 'याद रखने का आसान तरीक़ा',
+        hEn: 'An easy way to remember it',
+        pHi: [
+          'तीन संख्याएँ याद रखिए: 3, 4, 16। तीन पाई का पैसा, चार पैसे का आना, सोलह आने का रुपया।',
+          'और एक जाँच-संख्या: 192। एक रुपये में इतनी पाई होती थीं। यदि आपका गुणा 192 पर आकर बैठे, तो हिसाब सही है।',
+        ],
+        pEn: [
+          'Remember three numbers: 3, 4, 16. Three pie to a pice, four pice to an anna, sixteen annas to a rupee.',
+          'And one checking figure: 192. That is how many pie made a rupee. If your multiplication lands on 192, the arithmetic is right — and that single check will catch almost any mistake you make while reading an old ledger.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'naya-paisa-1957',
+    sections: [
+      {
+        hHi: 'सिक्के ख़ुद: धातु और आकार',
+        hEn: 'The coins themselves: metal and size',
+        pHi: [
+          '1957 में जारी हुई शृंखला में छह मूल्यवर्ग थे: एक, दो, पाँच, दस, पच्चीस और पचास नए पैसे।',
+          'एक और दो नए पैसे काँसे के थे — भूरे, छोटे, और अपेक्षाकृत भारी। पाँच और दस नए पैसे निकल-पीतल के, पीले रंग के और अष्टकोणीय या स्कैलप्ड किनारों के साथ।',
+          'पच्चीस और पचास नए पैसे कप्रो-निकल के थे — चाँदी जैसे दिखने वाले, गोल, और सबसे बड़े। ये उस दौर के सबसे भारी चलन-सिक्के थे।',
+          'आकार का यह अंतर जानबूझकर था। दशमलव व्यवस्था नई थी और लोगों को सिक्के छूकर पहचानने थे — इसलिए हर मूल्यवर्ग का अलग आकार, अलग किनारा और अलग धातु।',
+        ],
+        pEn: [
+          'The series issued in 1957 had six denominations: one, two, five, ten, twenty-five and fifty naye paise.',
+          'The one and two naye paise were bronze — brown, small and comparatively heavy. The five and ten were nickel-brass, yellow in colour, with octagonal or scalloped edges.',
+          'The twenty-five and fifty were cupro-nickel — silvery in appearance, round, and the largest of the set. These were the heaviest circulating coins of the period.',
+          'That variation in shape was deliberate. The decimal system was new and people had to recognise coins by touch — hence a different size, a different edge and a different metal for each denomination.',
+        ],
+      },
+      {
+        hHi: 'डिज़ाइन का चयन',
+        hEn: 'The choice of design',
+        pHi: [
+          'हर सिक्के के एक ओर अशोक स्तंभ का सिंह-शीर्ष है, और नीचे “सत्यमेव जयते”। यह स्वतंत्र भारत की मुद्रा की स्थायी पहचान बनी।',
+          'दूसरी ओर मूल्यवर्ग है — देवनागरी और अंग्रेज़ी दोनों में, और साथ में वर्ष। दो भाषाओं का यह चयन एक बहुभाषी देश की व्यावहारिक ज़रूरत थी।',
+          'डिज़ाइन जानबूझकर सादा रखा गया। कोई व्यक्ति-चित्र नहीं, कोई अलंकरण नहीं — यह उपनिवेशी सिक्कों से एक स्पष्ट विच्छेद था, जिन पर हमेशा किसी शासक का चेहरा रहता था।',
+          'यह निर्णय आज भी कायम है। भारतीय चलन-सिक्कों पर आज भी किसी व्यक्ति का चित्र नहीं होता, और उसकी जड़ इसी शृंखला में है।',
+        ],
+        pEn: [
+          'Each coin carries the lion capital of Ashoka on one side, with “Satyameva Jayate” beneath it. This became the permanent identity of independent India’s coinage.',
+          'The other side carries the denomination — in Devanagari and English both, with the year. That choice of two languages was the practical requirement of a multilingual country.',
+          'The design was kept deliberately plain. No portrait, no ornament — a clear break from colonial coinage, which had always carried a ruler’s face.',
+          'That decision still holds. Indian circulating coins carry no portrait of any person to this day, and the root of it lies in this series.',
+        ],
+      },
+      {
+        hHi: '“नया” कब हटा',
+        hEn: 'When “naya” was dropped',
+        pHi: [
+          'शब्द “नया” का एक ही काम था: पुराने पैसे से भ्रम रोकना। पुरानी व्यवस्था में भी पैसा था, पर उसका मूल्य अलग था।',
+          '1964 में यह शब्द हटा दिया गया। तब तक सात साल बीत चुके थे और लोग नई व्यवस्था के आदी हो चुके थे।',
+          'इसका संग्राहक के लिए सीधा उपयोग है: जिस सिक्के पर “नया पैसा” लिखा है, वह 1957 से 1964 के बीच का है। जिस पर केवल “पैसा” है, वह उसके बाद का।',
+          'यह एक बहुत साफ़ तारीख़-सूत्र है, और नए संग्राहक के लिए सबसे उपयोगी पहचान-नियमों में से एक।',
+        ],
+        pEn: [
+          'The word naya had one job: to prevent confusion with the old paisa. The earlier system had a paisa too, but its value was different.',
+          'The word was dropped in 1964. By then seven years had passed and people had grown used to the new system.',
+          'This has a direct use for a collector: a coin reading “naya paisa” belongs to 1957–1964. One reading only “paisa” comes after that.',
+          'It is a very clean dating clue, and one of the most useful identification rules a new collector can learn.',
+        ],
+      },
+      {
+        hHi: 'संक्रमण काल में जीवन',
+        hEn: 'Life during the transition',
+        pHi: [
+          'कुछ वर्षों तक दोनों व्यवस्थाएँ साथ चलीं, और यह व्यवहार में उतना आसान नहीं था जितना काग़ज़ पर लगता है।',
+          'दुकानदारों को दोनों में हिसाब करना पड़ता था, और रूपांतरण की दरें याद रखनी पड़ती थीं — एक आना लगभग छह नए पैसे के बराबर बैठता था, जो कोई गोल संख्या नहीं है।',
+          'सरकारी विभागों ने रूपांतरण तालिकाएँ छापकर बाँटीं, और अख़बारों में समझाने वाले लेख छपे। रेडियो पर भी इसकी व्याख्या की गई।',
+          'पुराने आना-सिक्के धीरे-धीरे वापस लिए गए, और वही कारण है कि आज भी वे मिलते हैं — वे एक ही दिन में ग़ायब नहीं हुए, बल्कि वर्षों में।',
+        ],
+        pEn: [
+          'Both systems ran together for some years, and in practice that was not as simple as it looks on paper.',
+          'Shopkeepers had to reckon in both and remember conversion rates — one anna came to roughly six naye paise, which is not a round number.',
+          'Government departments printed and distributed conversion tables, and newspapers carried explanatory articles. It was explained on the radio as well.',
+          'The old anna coins were withdrawn gradually, which is why they still turn up today — they did not vanish in a single day but over years.',
+        ],
+      },
+      {
+        hHi: 'एल्युमिनियम का दौर',
+        hEn: 'The aluminium period',
+        pHi: [
+          '1960 के दशक में लागत का दबाव आया। धातु की क़ीमत बढ़ी और छोटे मूल्यवर्ग बनाने में उनके अंकित मूल्य से ज़्यादा ख़र्च होने लगा।',
+          'समाधान एल्युमिनियम था। एक, दो, तीन, पाँच और दस पैसे के सिक्के एल्युमिनियम में ढाले गए — बेहद हल्के, और अक्सर तिकोने या स्कैलप्ड आकार में ताकि छूकर पहचाने जा सकें।',
+          'तीन पैसे का सिक्का इस दौर की एक विशेष जिज्ञासा है। यह एक असामान्य मूल्यवर्ग है और अपेक्षाकृत कम समय तक चला, इसलिए संग्राहकों में उसकी अलग जगह है।',
+          'ये हल्के सिक्के लोगों की स्मृति में गहरे बैठे हैं। बच्चे उन्हें उछालकर देखते थे कि कितनी देर हवा में रहते हैं — और यही उन्हें आज भावनात्मक रूप से क़ीमती बनाता है।',
+        ],
+        pEn: [
+          'Cost pressure arrived in the 1960s. Metal prices rose and the smaller denominations began to cost more to make than their face value.',
+          'The answer was aluminium. One, two, three, five and ten paise were struck in it — extremely light, and often in scalloped or triangular shapes so that they could be told apart by touch.',
+          'The three paise coin is a particular curiosity of this period. It is an unusual denomination and ran for a comparatively short time, which gives it a place of its own among collectors.',
+          'These light coins sit deep in people’s memory. Children used to toss them to see how long they stayed in the air — and that is what makes them emotionally valuable today.',
+        ],
+      },
+      {
+        hHi: 'संग्रह में इसकी जगह',
+        hEn: 'Its place in a collection',
+        pHi: [
+          'यह शृंखला संग्रह के लिए असाधारण रूप से उपयुक्त है, और कारण सरल है: वह पूरी की जा सकती है।',
+          '1957 की छह मूल्यवर्ग की शृंखला एक स्पष्ट, सीमित लक्ष्य है। सारे सिक्के सस्ते हैं, आसानी से मिलते हैं, और पूरा होने पर एक साफ़ कहानी बनती है।',
+          'अगला स्तर “हर वर्ष का हर मूल्यवर्ग, टकसाल-चिह्न सहित” है। यह वर्षों का काम है और कुछ संयोजन कठिन मिलते हैं — पर यही उसे दिलचस्प बनाता है।',
+          'और सबसे अच्छी बात: इसकी शुरुआत घर पर हो सकती है। दराज़ और गुल्लक में पड़े पुराने सिक्कों में से आधी शृंखला अक्सर पहले से मौजूद रहती है।',
+        ],
+        pEn: [
+          'This series suits collecting unusually well, for one simple reason: it can actually be completed.',
+          'The six denominations of 1957 are a clear, bounded target. All are cheap, easy to find, and once assembled they tell a clean story.',
+          'The next level is “every denomination for every year, mint marks included”. That is a project of years and some combinations are hard to find — which is exactly what makes it interesting.',
+          'And the best part: it can begin at home. Half the series is usually already sitting in a drawer or a piggy bank.',
+        ],
+      },
+      {
+        hHi: 'रख-रखाव की एक विशेष चेतावनी',
+        hEn: 'One particular warning about care',
+        pHi: [
+          'एल्युमिनियम के सिक्के इस पूरी शृंखला में सबसे नाज़ुक हैं और उन्हें अलग व्यवहार चाहिए।',
+          'वे नरम हैं, आसानी से मुड़ते और ख़रोंच खाते हैं, और नमी में उन पर सफ़ेद पाउडर जैसी परत जम जाती है जो सतह को स्थायी नुक़सान पहुँचाती है।',
+          'इसलिए इन्हें अलग-अलग रखिए — एक ही लिफ़ाफ़े में कई डालने से वे आपस में रगड़ खाते हैं। और सिलिका जेल का पाउच डिब्बे में ज़रूर रखिए।',
+          'काँसे और कप्रो-निकल के सिक्के अधिक मज़बूत हैं, पर उन पर भी वही नियम लागू है जो हर सिक्के पर — साफ़ मत कीजिए।',
+        ],
+        pEn: [
+          'The aluminium coins are the most fragile in this whole series and need different handling.',
+          'They are soft, bend and scratch easily, and in damp conditions develop a white powdery bloom that damages the surface permanently.',
+          'So keep them separated — several in one envelope simply rub against each other. And always keep a silica gel sachet in the box.',
+          'The bronze and cupro-nickel pieces are tougher, but the same rule applies to them as to every coin — do not clean them.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          '1957 की शृंखला में छह मूल्यवर्ग थे, हर एक का अलग आकार, किनारा और धातु — ताकि लोग नई व्यवस्था को छूकर पहचान सकें।',
+          '“नया पैसा” 1957 से 1964 तक लिखा गया, और यही सबसे साफ़ तारीख़-सूत्र है। बाद में एल्युमिनियम आया, और उसके साथ तीन पैसे जैसा असामान्य मूल्यवर्ग भी।',
+        ],
+        pEn: [
+          'The 1957 series had six denominations, each with its own size, edge and metal, so that people could recognise the new system by touch alone.',
+          '“Naya paisa” was inscribed from 1957 to 1964, and that remains the cleanest dating clue in the series. Aluminium arrived later, and with it unusual denominations such as the three paise, which is a curiosity worth having in any collection.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mughal-coinage-basics',
+    sections: [
+      {
+        hHi: 'रुपिया: वज़न, शुद्धता, और भरोसा',
+        hEn: 'The rupiya: weight, purity, and trust',
+        pHi: [
+          'मुग़ल चाँदी का रुपिया लगभग ग्यारह ग्राम का था और उसकी शुद्धता बहुत ऊँची — प्रायः 96 प्रतिशत से ऊपर।',
+          'यह शुद्धता संयोग नहीं थी। टकसालों में जाँच की व्यवस्था थी, और घटिया सिक्का पकड़े जाने पर दंड का प्रावधान था। मुद्रा की साख प्रशासन की प्राथमिकता थी।',
+          'परिणाम यह हुआ कि मुग़ल रुपिया साम्राज्य की सीमाओं से बाहर भी स्वीकार होता था। मध्य एशिया, फ़ारस की खाड़ी और हिंद महासागर के व्यापारिक मार्गों पर वह एक भरोसेमंद इकाई था।',
+          'यही किसी मुद्रा की असली सफलता है — जब उसे उन जगहों पर भी लिया जाए जहाँ जारी करने वाली सत्ता का कोई अधिकार नहीं।',
+        ],
+        pEn: [
+          'The Mughal silver rupiya weighed around eleven grams and was of very high fineness — frequently above 96 per cent.',
+          'That purity was not accidental. The mints had systems of assay, and penalties existed for producing debased coin. The credibility of the currency was an administrative priority.',
+          'The result was that the Mughal rupiya was accepted well beyond the empire’s borders. Across Central Asia, the Persian Gulf and the trade routes of the Indian Ocean it served as a dependable unit.',
+          'That is the real measure of a currency’s success — when it is taken in places where the issuing authority has no power at all.',
+        ],
+      },
+      {
+        hHi: 'मोहर और सोने की भूमिका',
+        hEn: 'The mohur and the role of gold',
+        pHi: [
+          'सोने की मोहर का वज़न लगभग साढ़े दस से ग्यारह ग्राम रहा, यानी रुपिया के बराबर — पर मूल्य में कहीं ऊपर।',
+          'मोहर रोज़मर्रा के बाज़ार का सिक्का नहीं थी। वह बड़े लेन-देन, ख़ज़ाने के भंडारण, और उपहार के लिए थी। दरबार में दी जाने वाली भेंट अक्सर मोहरों में गिनी जाती थी।',
+          'रुपिया और मोहर के बीच का अनुपात तय नहीं था — वह धातुओं के बाज़ार-भाव के साथ बदलता रहा, आमतौर पर एक मोहर बराबर नौ से चौदह रुपये के बीच।',
+          'यह लचीलापन आधुनिक दृष्टि से अजीब लगता है, पर उस दौर में सामान्य था। मुद्रा का मूल्य उसकी धातु में था, और धातु की क़ीमत बाज़ार तय करता था।',
+        ],
+        pEn: [
+          'The gold mohur weighed roughly ten and a half to eleven grams — about the same as the rupiya, but far above it in value.',
+          'The mohur was not a coin of the everyday market. It served large transactions, treasury storage and gifts. Offerings presented at court were frequently counted in mohurs.',
+          'The ratio between rupiya and mohur was not fixed — it shifted with the market prices of the metals, generally somewhere between nine and fourteen rupees to the mohur.',
+          'That flexibility looks strange from a modern viewpoint but was ordinary then. The value of currency lay in its metal, and the price of metal was set by the market.',
+        ],
+      },
+      {
+        hHi: 'ताँबे का दाम और रोज़मर्रा का बाज़ार',
+        hEn: 'The copper dam and the everyday market',
+        pHi: [
+          'ताँबे का दाम सबसे नीचे था और सबसे ज़्यादा चला। आम आदमी का दैनिक लेन-देन इसी में होता था।',
+          'इसका वज़न लगभग बीस ग्राम था — रुपिया से लगभग दोगुना भारी, पर मूल्य में उसका चालीसवाँ हिस्सा। यह अनुपात भी स्थिर नहीं था।',
+          'दाम की प्रचुरता का एक सुखद परिणाम है: आज ये सिक्के सबसे सस्ते मुग़ल सिक्के हैं। कुछ सौ रुपये में मिल जाते हैं, और उन पर वही लिपि तथा वही टकसाल-नाम होते हैं जो चाँदी पर।',
+          'इसलिए मुग़ल संग्रह की शुरुआत के लिए दाम सबसे उपयुक्त है। आँख बनाने के लिए वह आदर्श है, और ग़लती की क़ीमत मामूली।',
+        ],
+        pEn: [
+          'The copper dam sat at the bottom and circulated most of all. The daily transactions of ordinary people were conducted in it.',
+          'It weighed around twenty grams — roughly twice the rupiya — while being worth a fortieth of it. That ratio too was not fixed.',
+          'The abundance of dams has a happy consequence: they are the cheapest Mughal coins today. A few hundred rupees buys one, and it carries the same script and the same mint names as the silver.',
+          'The dam is therefore the right place to begin a Mughal collection. It is ideal for building the eye, and the cost of a mistake is trivial.',
+        ],
+      },
+      {
+        hHi: 'टकसाल का नाम पढ़ना',
+        hEn: 'Reading the mint name',
+        pHi: [
+          'हर मुग़ल सिक्के पर उसकी टकसाल का नाम फ़ारसी में दर्ज होता था, और यह उस दौर की एक असाधारण प्रशासनिक उपलब्धि है।',
+          'बड़े नाम बार-बार लौटते हैं: लाहौर, शाहजहानाबाद (दिल्ली), अकबराबाद (आगरा), अहमदाबाद, सूरत, पटना, बुरहानपुर, काबुल।',
+          'नाम अक्सर एक तय जगह पर होता है और एक तय शैली में लिखा जाता है, इसलिए उसका आकार पहचान लेना कुछ हफ़्तों का काम है — पूरी फ़ारसी सीखने की ज़रूरत नहीं।',
+          'यह पहचान क्यों ज़रूरी है? क्योंकि टकसाल ही सिक्के की कहानी तय करती है। एक ही शासक, एक ही वर्ष, पर दो अलग शहर — और दो अलग इतिहास।',
+        ],
+        pEn: [
+          'Every Mughal coin carried its mint name in Persian, which is an extraordinary administrative achievement for the period.',
+          'The major names recur: Lahore, Shahjahanabad (Delhi), Akbarabad (Agra), Ahmadabad, Surat, Patna, Burhanpur, Kabul.',
+          'The name usually sits in a fixed position and is written in a settled style, so learning to recognise its shape is a matter of weeks — there is no need to learn Persian.',
+          'Why does this identification matter? Because the mint decides the story of the coin. The same ruler, the same year, but two different cities — and two different histories.',
+        ],
+      },
+      {
+        hHi: 'दो तारीख़ें, एक सिक्का',
+        hEn: 'Two dates, one coin',
+        pHi: [
+          'मुग़ल सिक्कों पर आमतौर पर दो तारीख़ें मिलती हैं, और यह जोड़ा बेहद उपयोगी है।',
+          'पहली हिजरी सन् है, जो चंद्र कैलेंडर पर चलता है। दूसरी जुलूस वर्ष है — शासक के तख़्त पर बैठने से गिना गया साल।',
+          'दोनों मिलकर सिक्के को समय की रेखा पर लगभग सटीक जगह देते हैं। और यदि एक धुँधली हो, तो दूसरी से अनुमान लगाया जा सकता है।',
+          'व्यावहारिक सुझाव: हिजरी अंकों की एक छोटी तालिका छापकर डिब्बे में रख लीजिए। फ़ारसी अंक आधुनिक अरबी अंकों से थोड़े अलग हैं, और यही अंतर सबसे ज़्यादा भ्रम पैदा करता है।',
+        ],
+        pEn: [
+          'Mughal coins usually carry two dates, and that pairing is extremely useful.',
+          'The first is the Hijri year, which runs on the lunar calendar. The second is the julus year — counted from the ruler’s accession to the throne.',
+          'Together they place the coin on the timeline with near precision. And if one is worn away, the other allows an estimate.',
+          'A practical suggestion: print a small table of Hijri numerals and keep it in the box. Persian numerals differ slightly from modern Arabic ones, and that difference causes more confusion than anything else.',
+        ],
+      },
+      {
+        hHi: 'आधुनिक रुपये पर छाया',
+        hEn: 'The shadow on the modern rupee',
+        pHi: [
+          'इस पूरी व्यवस्था की सबसे बड़ी विरासत नाम है। “रुपया” शब्द आज भी वही है, और वह मुग़ल-पूर्व शेर शाह के सुधार से होते हुए यहाँ तक पहुँचा।',
+          'ब्रिटिश ने इस व्यवस्था को बदला नहीं, अपनाया। उनका रुपया भी लगभग ग्यारह ग्राम चाँदी का रहा, और आना-पाई की सीढ़ी भी उसी परंपरा से निकली।',
+          'यानी 1957 की दशमलव व्यवस्था तक, भारत की मुद्रा की बुनियाद वही थी जो सोलहवीं सदी में रखी गई थी। यह चार सौ वर्षों की निरंतरता है।',
+          'यही कारण है कि मुग़ल सिक्का किसी भारतीय संग्रह में केवल एक पुरानी वस्तु नहीं है। वह उस व्यवस्था का पूर्वज है जिसका नाम आप आज भी रोज़ बोलते हैं।',
+        ],
+        pEn: [
+          'The greatest legacy of this whole system is the name. The word rupee is still the same, and it reached here by way of Sher Shah’s pre-Mughal reform.',
+          'The British did not replace the system but adopted it. Their rupee too was roughly eleven grams of silver, and the anna-and-pie ladder came out of the same tradition.',
+          'So until decimalisation in 1957, the foundation of India’s currency was the one laid in the sixteenth century. That is four hundred years of continuity.',
+          'This is why a Mughal coin is not merely an old object in an Indian collection. It is the ancestor of the system whose name you still speak every day.',
+        ],
+      },
+      {
+        hHi: 'आज का बाज़ार',
+        hEn: 'The market today',
+        pHi: [
+          'ईमानदार तस्वीर यह है: मुग़ल सोने की मोहर महँगी है और अधिकांश बजट से बाहर। चाँदी का रुपिया मध्यम श्रेणी में है — आम टकसालों और आम शासकों का सुलभ, दुर्लभ संयोजन महँगा।',
+          'ताँबे का दाम सबसे सस्ता है और भरपूर मिलता है। यहीं से शुरुआत करना समझदारी है।',
+          'दाम मुख्यतः तीन बातों से बनता है: शासक, टकसाल, और दशा। औरंगज़ेब के सिक्के सबसे ज़्यादा मिलते हैं क्योंकि उनका शासन सबसे लंबा था; इसलिए वे अपेक्षाकृत सस्ते हैं।',
+          'और वही चेतावनी जो हर मुग़ल सिक्के पर लागू होती है: नक़ल आम है, ढली हुई नक़ल सबसे आम, और महँगी ख़रीद से पहले प्रमाणन ज़रूरी।',
+        ],
+        pEn: [
+          'The honest picture is this: the Mughal gold mohur is expensive and beyond most budgets. The silver rupiya sits in the middle — accessible from common mints and common rulers, expensive in scarce combinations.',
+          'The copper dam is the cheapest and is plentiful. Beginning here is the sensible course.',
+          'Price is built mainly from three things: the ruler, the mint, and the condition. Aurangzeb’s coins are the most plentiful because his reign was the longest, so they are comparatively cheap.',
+          'And the same warning that applies to every Mughal coin: forgeries are common, cast forgeries commonest of all, and certification is necessary before any expensive purchase.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'तीन धातुएँ, तीन भूमिकाएँ: सोने की मोहर ख़ज़ाने और उपहार के लिए, चाँदी का रुपिया व्यापार और वेतन के लिए, ताँबे का दाम रोज़मर्रा के बाज़ार के लिए।',
+          'हर सिक्के पर टकसाल का नाम, हिजरी सन् और जुलूस वर्ष — यानी वह ख़ुद बता देता है कि कहाँ और कब बना। ताँबे के दाम से शुरुआत कीजिए और वहीं आँख बनाइए।',
+        ],
+        pEn: [
+          'Three metals, three roles: the gold mohur for treasuries and gifts, the silver rupiya for trade and wages, the copper dam for the everyday market.',
+          'Every coin carries its mint name, the Hijri year and the julus year — meaning it declares for itself where and when it was made. Begin with the copper dam and build your eye there, because it costs a few hundred rupees and teaches everything the expensive coins would.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'the-birth-of-decimal-coinage',
+    sections: [
+      {
+        hHi: 'क़ानून और तैयारी',
+        hEn: 'The law, and the preparation',
+        pHi: [
+          'दशमलव व्यवस्था अचानक नहीं आई। इसके पीछे वर्षों की चर्चा, एक संसदीय क़ानून, और एक विस्तृत प्रशासनिक तैयारी थी।',
+          'भारतीय सिक्का अधिनियम में संशोधन के ज़रिए यह परिवर्तन किया गया, और लागू होने की तारीख़ 1 अप्रैल 1957 तय हुई — वित्तीय वर्ष की शुरुआत, ताकि लेखा-व्यवस्था में गड़बड़ी कम हो।',
+          'तैयारी में सबसे बड़ी चुनौती जनता को समझाना थी। करोड़ों लोग एक ऐसी व्यवस्था में जी रहे थे जिसे वे बचपन से जानते थे, और उसे बदलना केवल क़ानून का मामला नहीं था।',
+          'इसीलिए रूपांतरण तालिकाएँ छापी गईं, अख़बारों में लेख आए, और रेडियो पर समझाया गया। यह एक शिक्षा-अभियान था जितना कि एक प्रशासनिक क़दम।',
+        ],
+        pEn: [
+          'Decimalisation did not arrive suddenly. Behind it lay years of discussion, an Act of Parliament, and detailed administrative preparation.',
+          'The change was made through amendment to the Indian Coinage Act, and the date set for it was 1 April 1957 — the start of the financial year, so that accounting would be disrupted as little as possible.',
+          'The greatest challenge in the preparation was explaining it to the public. Crores of people were living inside a system they had known since childhood, and changing it was not merely a matter of law.',
+          'So conversion tables were printed, newspapers carried articles, and it was explained on the radio. It was an education campaign as much as an administrative step.',
+        ],
+      },
+      {
+        hHi: 'पुरानी व्यवस्था क्यों बदली',
+        hEn: 'Why the old system changed',
+        pHi: [
+          'तीन कारण मिलकर काम कर रहे थे। पहला, लेखांकन। रुपया-आना-पाई के तीन अलग आधारों पर हिसाब करना धीमा और त्रुटि-प्रवण था।',
+          'दूसरा, मशीनीकरण। बीसवीं सदी के मध्य तक गणना-मशीनें और बाद में कंप्यूटर आ रहे थे, और वे दशमलव पर चलते हैं। ग़ैर-दशमलव व्यवस्था उनके साथ बैठती ही नहीं।',
+          'तीसरा, अंतरराष्ट्रीय व्यापार। दुनिया की अधिकांश मुद्राएँ दशमलव पर जा चुकी थीं, और हर लेन-देन में रूपांतरण एक अतिरिक्त बोझ था।',
+          'चौथा कारण प्रतीकात्मक था और उसे कम नहीं आँकना चाहिए। आना-पाई व्यवस्था उपनिवेशी दौर से जुड़ी थी, और एक नए गणराज्य के लिए अपनी मुद्रा को आधुनिक आधार पर रखना एक बयान भी था।',
+        ],
+        pEn: [
+          'Three reasons worked together. The first was accounting. Reckoning across the three different bases of rupee, anna and pie was slow and error-prone.',
+          'The second was mechanisation. By the middle of the twentieth century calculating machines and then computers were arriving, and they run on decimals. A non-decimal system simply does not fit them.',
+          'The third was international trade. Most of the world’s currencies had already moved to decimals, and conversion at every transaction was an additional burden.',
+          'A fourth reason was symbolic and should not be underestimated. The anna-and-pie system was tied to the colonial period, and for a new republic putting its currency on a modern footing was a statement as well.',
+        ],
+      },
+      {
+        hHi: '“नया पैसा” नाम की कहानी',
+        hEn: 'The story of the name “naya paisa”',
+        pHi: [
+          'नाम एक व्यावहारिक समस्या का समाधान था। पुरानी व्यवस्था में भी “पैसा” मौजूद था — चार पैसे का एक आना। नई व्यवस्था में भी पैसा था, पर सौ का एक रुपया।',
+          'यदि दोनों को केवल “पैसा” कहा जाता, तो बाज़ार में हर सौदे में यह पूछना पड़ता कि कौन-सा पैसा। इसलिए नए सिक्कों पर “नया पैसा” अंकित किया गया।',
+          'यह एक अस्थायी उपाय था, और उसे अस्थायी ही माना गया। 1964 में, जब पुराने सिक्के लगभग वापस लिए जा चुके थे और लोग नई व्यवस्था के आदी हो चुके थे, यह शब्द हटा दिया गया।',
+          'भाषा में यह उपाय अपनी छाप छोड़ गया। कुछ क्षेत्रों में वर्षों तक “नया पैसा” कहने की आदत बनी रही, तब भी जब सिक्के पर वह शब्द नहीं रह गया था।',
+        ],
+        pEn: [
+          'The name solved a practical problem. The old system had a paisa too — four pice to an anna. The new system had a paisa as well, but a hundred to the rupee.',
+          'If both had simply been called paisa, every transaction in the market would have required asking which paisa was meant. So the new coins were inscribed naya paisa — new paisa.',
+          'It was a temporary measure and was treated as one. In 1964, once the old coins had largely been withdrawn and people had grown used to the system, the word was dropped.',
+          'The measure left its mark on the language. In some regions the habit of saying naya paisa persisted for years, even after the word had left the coin.',
+        ],
+      },
+      {
+        hHi: 'संक्रमण कैसे चला',
+        hEn: 'How the transition ran',
+        pHi: [
+          'दोनों व्यवस्थाएँ कुछ वर्षों तक साथ चलीं, और यह जानबूझकर था। पुराने सिक्कों को एक ही दिन में अमान्य करना करोड़ों लोगों के लिए कठिनाई पैदा करता।',
+          'रूपांतरण दर याद रखनी पड़ती थी, और वह गोल नहीं थी: एक आना लगभग छह नए पैसे, एक पाई लगभग आधा नया पैसा।',
+          'दुकानदार अक्सर दोनों में क़ीमत लिखते थे, और कुछ जगह दोहरी क़ीमत-सूचियाँ लगीं। बहीखातों में भी कुछ समय दोनों प्रणालियाँ साथ चलीं।',
+          'पुराने सिक्के धीरे-धीरे वापस लिए गए, और अंतिम रूप से 1960 के दशक में चलन से बाहर हुए। यह क्रमिक विदाई ही कारण है कि आज भी वे सिक्के आसानी से मिल जाते हैं।',
+        ],
+        pEn: [
+          'Both systems ran together for some years, and that was deliberate. Invalidating the old coins in a single day would have created hardship for crores of people.',
+          'Conversion rates had to be remembered, and they were not round: one anna to roughly six naye paise, one pie to about half a naya paisa.',
+          'Shopkeepers frequently marked prices in both, and in some places dual price lists went up. Ledgers too ran both systems side by side for a period.',
+          'The old coins were withdrawn gradually and finally left circulation during the 1960s. That gradual departure is why they are still easy to find today.',
+        ],
+      },
+      {
+        hHi: 'दुनिया में यही कहानी',
+        hEn: 'The same story elsewhere in the world',
+        pHi: [
+          'भारत अकेला नहीं था। बीसवीं सदी के मध्य में कई देश इसी परिवर्तन से गुज़रे, और उनकी कहानियों की तुलना दिलचस्प है।',
+          'ब्रिटेन ने यही क़दम 1971 में उठाया — भारत से चौदह वर्ष बाद। वहाँ भी पाउंड-शिलिंग-पेंस की तीन-स्तरीय व्यवस्था थी, और वहाँ भी संक्रमण में जनता को समझाना सबसे बड़ी चुनौती रही।',
+          'ऑस्ट्रेलिया 1966 में, न्यूज़ीलैंड 1967 में, दक्षिण अफ़्रीका 1961 में। यह एक वैश्विक लहर थी, जिसे मशीनीकरण और अंतरराष्ट्रीय व्यापार दोनों धकेल रहे थे।',
+          'भारत का संक्रमण इनमें से कई से पहले हुआ, और यह उल्लेखनीय है — एक ऐसे देश के लिए जहाँ साक्षरता दर तब बहुत कम थी, यह एक बड़ी प्रशासनिक उपलब्धि थी।',
+        ],
+        pEn: [
+          'India was not alone. Several countries went through the same change in the middle of the twentieth century, and comparing their stories is interesting.',
+          'Britain took the step in 1971 — fourteen years after India. It too had a three-tier system of pounds, shillings and pence, and there too explaining it to the public was the greatest challenge of the transition.',
+          'Australia in 1966, New Zealand in 1967, South Africa in 1961. It was a global wave, pushed by mechanisation and international trade together.',
+          'India’s transition came before many of these, which is notable — for a country where literacy was then very low, it was a considerable administrative achievement.',
+        ],
+      },
+      {
+        hHi: 'संग्राहक के लिए महत्व',
+        hEn: 'Significance for the collector',
+        pHi: [
+          'संग्राहक के लिए 1957 एक साफ़ विभाजन-रेखा है, और यही उसे इतना उपयोगी बनाती है।',
+          'उससे पहले की हर चीज़ आना-पाई व्यवस्था की है — क्वार्टर आना, आधा आना, दो आना, चौथाई रुपया। उसके बाद की हर चीज़ दशमलव की।',
+          'इसीलिए “संक्रमण काल का संग्रह” एक बहुत अच्छा विषय है: 1950 से 1965 तक के सारे सिक्के, दोनों व्यवस्थाओं के, एक साथ। यह पंद्रह वर्षों में एक देश की मुद्रा को बदलते हुए दिखाता है।',
+          'और यह लक्ष्य सस्ता है। इस दौर के अधिकांश सिक्के आम हैं और कुछ सौ रुपये में मिल जाते हैं, इसलिए एक पूरा संग्रह कुछ हज़ार में खड़ा हो सकता है।',
+        ],
+        pEn: [
+          'For a collector 1957 is a clean dividing line, and that is what makes it so useful.',
+          'Everything before it belongs to the anna-and-pie system — the quarter anna, half anna, two annas, quarter rupee. Everything after it is decimal.',
+          'This makes “a collection of the transition” an excellent subject: every coin from 1950 to 1965, from both systems, together. It shows a country changing its currency across fifteen years.',
+          'And the target is affordable. Most coins of this period are common and cost a few hundred rupees, so a complete holding can be built for a few thousand.',
+        ],
+      },
+      {
+        hHi: 'क्या रह गया, क्या चला गया',
+        hEn: 'What stayed, and what went',
+        pHi: [
+          'दिलचस्प बात यह है कि परिवर्तन में सब कुछ नहीं बदला। रुपया बना रहा — नाम भी, और मूल्य भी।',
+          'जो गया वह उसके नीचे की सीढ़ी थी: आना, पाई, पैसा अपने पुराने अर्थ में। और उनके साथ वह बाज़ार-गणित भी गया जो पीढ़ियों का कौशल था।',
+          'पर भाषा में वे बचे रहे। “चवन्नी”, “अठन्नी”, “सोलह आने सच” — ये शब्द व्यवस्था के जाने के बाद भी दशकों तक बोले जाते रहे, और कुछ आज भी बोले जाते हैं।',
+          'यही शायद इस पूरी कहानी की सबसे मानवीय बात है: सरकार सिक्के बदल सकती है, पर भाषा अपनी गति से बदलती है, और वह बहुत धीमी होती है।',
+        ],
+        pEn: [
+          'What is interesting is that the change did not alter everything. The rupee stayed — both the name and the value.',
+          'What went was the ladder beneath it: the anna, the pie, and the paisa in its old meaning. And with them went the marketplace arithmetic that had been a generational skill.',
+          'But they survived in the language. Chavanni, athanni, “sixteen annas true” — these words went on being spoken for decades after the system left, and some are spoken still.',
+          'That is perhaps the most human part of the whole story: a government can change the coins, but language changes at its own pace, and that pace is very slow.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          '1 अप्रैल 1957 को भारत दशमलव पर गया — वित्तीय वर्ष की शुरुआत पर, ताकि लेखांकन में गड़बड़ी कम हो। रुपया बचा रहा, उसके नीचे की पूरी सीढ़ी बदल गई।',
+          '“नया पैसा” 1964 तक अंकित रहा, और दोनों व्यवस्थाएँ कुछ वर्षों तक साथ चलीं। संग्राहक के लिए 1957 एक साफ़ रेखा है, और उसके आसपास के पंद्रह वर्ष एक बेहतरीन संग्रह-विषय।',
+        ],
+        pEn: [
+          'On 1 April 1957 India went decimal — at the start of the financial year, so that accounting would be disrupted as little as possible. The rupee survived; the whole ladder beneath it changed.',
+          '“Naya paisa” was inscribed until 1964, and both systems ran together for some years. For a collector 1957 is a clean line, and the fifteen years around it make an excellent and inexpensive subject to collect.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'anna-system-samjhe',
+    sections: [
+      {
+        hHi: 'एक अभ्यास',
+        hEn: 'An exercise',
+        pHi: [
+          'इसे पक्का करने का सबसे अच्छा तरीक़ा एक छोटा अभ्यास है। कल्पना कीजिए कि आपके पास तीन रुपये, नौ आने और सात पाई हैं।',
+          'पाई को पैसों में बदलिए: सात पाई यानी दो पैसे और एक पाई बची। अब वे दो पैसे आने के आधे भी नहीं, इसलिए वे वहीं रहेंगे।',
+          'यानी कुल रक़म तीन रुपये, नौ आने, दो पैसे और एक पाई। बहीखाते में यह “3-9-7” लिखी जाती, क्योंकि पाई का खाना कुल पाई गिनता था।',
+          'दो-तीन बार यह अभ्यास करने पर व्यवस्था अपने आप बैठ जाती है, और उसके बाद कोई भी पुराना दस्तावेज़ पढ़ना कठिन नहीं रहता।',
+        ],
+        pEn: [
+          'The best way to fix this in the mind is a small exercise. Imagine you hold three rupees, nine annas and seven pies.',
+          'Convert the pies into pice: seven pies make two pice with one pie left over. Those two pice are less than half an anna, so they stay where they are.',
+          'The total is therefore three rupees, nine annas, two pice and one pie. In a ledger this would be written “3-9-7”, because the third column counted total pies.',
+          'Do this two or three times and the system settles into place on its own, and after that no old document is difficult to read.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'naya-paisa-1957',
+    sections: [
+      {
+        hHi: 'घर से शुरुआत',
+        hEn: 'Starting from home',
+        pHi: [
+          'इस शृंखला की सबसे अच्छी बात यह है कि उसकी शुरुआत के लिए कुछ ख़रीदना नहीं पड़ता।',
+          'पुराने गुल्लक, दराज़ों के कोने, और घर के बुज़ुर्गों के पास रखे डिब्बे — इन तीनों जगहों से अक्सर आधी शृंखला निकल आती है, और वह मुफ़्त में मिलती है।',
+          'जो निकले उसे धोइए मत। उन्हें वर्ष के क्रम में लगाइए, मूल्यवर्ग के हिसाब से ढेरियाँ बनाइए, और देखिए कि क्या-क्या कमी है।',
+          'बाक़ी सिक्के किसी प्रदर्शनी या डीलर से कुछ सौ रुपये में मिल जाएँगे। यह संभवतः सबसे सस्ता पूर्ण संग्रह है जो भारत में बनाया जा सकता है।',
+        ],
+        pEn: [
+          'The best thing about this series is that beginning it requires buying nothing at all.',
+          'Old piggy banks, the corners of drawers, and the tins kept by older relatives — those three places usually yield half the series, and yield it free.',
+          'Whatever emerges, do not wash it. Arrange the coins by year, make piles by denomination, and see what is missing.',
+          'The rest can be found at a fair or from a dealer for a few hundred rupees. This is possibly the cheapest complete collection that can be assembled anywhere in India.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mughal-coinage-basics',
+    sections: [
+      {
+        hHi: 'पहचान का चार-चरणीय क्रम',
+        hEn: 'The four-step order of identification',
+        pHi: [
+          'हर मुग़ल सिक्के पर यही क्रम काम करता है, और एक बार अभ्यास हो जाए तो पूरी प्रक्रिया एक मिनट से कम की रह जाती है।',
+          'पहला — धातु और वज़न। सोना, चाँदी या ताँबा, और तराज़ू पर उसका वज़न। यह मूल्यवर्ग तुरंत तय कर देता है।',
+          'दूसरा — शासक का नाम, जो एक तय शैली में लिखा जाता है। तीसरा — टकसाल का नाम, प्रायः अलग पंक्ति में या किनारे पर।',
+          'चौथा — तारीख़ें, हिजरी और जुलूस दोनों। इन चार में से तीन भी मिल जाएँ तो सिक्का लगभग निश्चित रूप से पहचाना जा सकता है।',
+        ],
+        pEn: [
+          'This order works on every Mughal coin, and once practised the whole process takes under a minute.',
+          'First, metal and weight. Gold, silver or copper, and its weight on a scale. That settles the denomination immediately.',
+          'Second, the ruler’s name, which is written in a settled style. Third, the mint name, usually on a separate line or along the margin.',
+          'Fourth, the dates, both Hijri and julus. If even three of these four can be read, the coin can be identified with near certainty.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'the-birth-of-decimal-coinage',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'इस परिवर्तन की सबसे बड़ी उपलब्धि यह थी कि वह लगभग बिना अव्यवस्था के हुआ।',
+          'करोड़ों लोग, जिनमें से बहुतों ने कभी स्कूल नहीं देखा था, कुछ ही वर्षों में एक नई गणना-व्यवस्था में चले गए। यह क़ानून की नहीं, धैर्य और स्पष्ट संचार की उपलब्धि थी।',
+        ],
+        pEn: [
+          'The greatest achievement of this change was that it happened with almost no disorder.',
+          'Crores of people, many of whom had never seen a schoolroom, moved into a new system of reckoning within a few years. That was an achievement of patience and clear communication rather than of law, and it is worth remembering whenever a transition of this kind is described as impossible.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'naya-paisa-1957',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'यह शृंखला उन कम अवसरों में से है जहाँ एक पूरा संग्रह सचमुच संभव है, और वही उसका सबसे बड़ा आकर्षण है।',
+        ],
+        pEn: [
+          'This series is one of the few opportunities where a genuinely complete collection is possible, and that is its greatest attraction — most fields in this hobby never allow you the satisfaction of finishing anything at all.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
