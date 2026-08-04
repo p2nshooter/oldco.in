@@ -852,7 +852,28 @@ def build_rekap(wb):
         put(ws, f"{last_rt_col}{r}",
             f'=IF($B{r}="","",COUNTIF({DB}!$F${FIRST}:$F${LAST},$B{r}))',
             f(10, True), bg, CENTER, BOX)
-    tot = first + MAX_KADUS
+    # Baris untuk anggota yang kampungnya belum diisi.
+    #
+    # Matriks ini berporos kampung, jadi anggota tanpa kampung tidak punya sel
+    # sama sekali — mereka hilang dari seluruh halaman ini walau nomor RT-nya
+    # ada. Pada data awal itu tujuh orang: jumlah per RT terbaca 31 padahal
+    # sebenarnya 38, dan tidak ada tanda apa pun bahwa ada yang tidak terhitung.
+    sisa = first + MAX_KADUS
+    put(ws, f"B{sisa}", "(kampung belum diisi)", f(10, italic=True, color=RED),
+        WARN_FILL, LEFT, BOX)
+    for i in range(MAX_RT):
+        col = get_column_letter(3 + i)
+        put(ws, f"{col}{sisa}",
+            f'=IF({col}${head}="","",'
+            f'COUNTIFS({DB}!$B${FIRST}:$B${LAST},"?*",'
+            f'{DB}!$F${FIRST}:$F${LAST},"",'
+            f'{DB}!$G${FIRST}:$G${LAST},{col}${head}))',
+            f(9, color=RED), WARN_FILL, CENTER, BOX)
+    put(ws, f"{last_rt_col}{sisa}",
+        f'=COUNTIFS({DB}!$B${FIRST}:$B${LAST},"?*",{DB}!$F${FIRST}:$F${LAST},"")',
+        f(10, True, color=RED), WARN_FILL, CENTER, BOX)
+
+    tot = sisa + 1
     put(ws, f"B{tot}", "TOTAL", f(10, True, WHITE), NAVY, LEFT, BOX)
     for i in range(MAX_RT + 1):
         col = get_column_letter(3 + i)
@@ -864,14 +885,14 @@ def build_rekap(wb):
     # yang masih kosong langsung kelihatan tanpa perlu dibaca satu per satu.
     kolom_akhir_rt = get_column_letter(2 + MAX_RT)
     ws.conditional_formatting.add(
-        f"C{first}:{kolom_akhir_rt}{tot - 1}",
+        f"C{first}:{kolom_akhir_rt}{sisa - 1}",
         ColorScaleRule(start_type="num", start_value=0, start_color=WHITE,
                        mid_type="percentile", mid_value=55, mid_color="CFE3F5",
                        end_type="max", end_color="4E88C7"))
     # Kolom TOTAL memakai batang, bukan warna — supaya perbandingan antar
     # kampung terbaca sekali lihat.
     ws.conditional_formatting.add(
-        f"{last_rt_col}{first}:{last_rt_col}{tot - 1}",
+        f"{last_rt_col}{first}:{last_rt_col}{sisa - 1}",
         DataBarRule(start_type="num", start_value=0, end_type="max",
                     color=BAR_BIRU, showValue=True))
 
@@ -890,8 +911,12 @@ def build_rekap(wb):
         r = hb + 1 + k
         bg = BAND if k % 2 == 0 else WHITE
         put(ws, f"B{r}", f'=IFERROR(INDEX(daftar_kampung,{k + 1}),"")', f(10), bg, LEFT, BOX)
-        pairs = [("C", "$D$", "L"), ("D", "$D$", "P"), ("E", "$O$", "Aktif"),
-                 ("F", "$O$", "Calon"), ("G", "$O$", "Nonaktif")]
+        # Kolom sumbernya harus L/P (E) dan STATUS (T). Sempat tertulis D
+        # (NO. KK) dan O (NO. HP) — sisa dari penataan ulang kolom DATABASE
+        # dulu. Angkanya tidak pernah terlihat salah karena kedua kolom itu
+        # memang belum terisi, jadi hasilnya nol dan nol pun tampak wajar.
+        pairs = [("C", "$E$", "L"), ("D", "$E$", "P"), ("E", "$T$", "Aktif"),
+                 ("F", "$T$", "Calon"), ("G", "$T$", "Nonaktif")]
         for col, colref, crit in pairs:
             cr = colref.replace("$", "")
             put(ws, f"{col}{r}",
@@ -902,7 +927,25 @@ def build_rekap(wb):
         put(ws, f"I{r}",
             f'=IF(OR($B{r}="",COUNTA({DB}!$B${FIRST}:$B${LAST})=0),"",'
             f'$H{r}/COUNTA({DB}!$B${FIRST}:$B${LAST}))', f(9), bg, CENTER, BOX, "0.0%")
-    rb = hb + 1 + MAX_KADUS
+    # sama seperti matriks di atas: anggota tanpa kampung tetap harus terhitung
+    sisa_b = hb + 1 + MAX_KADUS
+    put(ws, f"B{sisa_b}", "(kampung belum diisi)", f(10, italic=True, color=RED),
+        WARN_FILL, LEFT, BOX)
+    for col, colref, crit in [("C", "E", "L"), ("D", "E", "P"), ("E", "T", "Aktif"),
+                              ("F", "T", "Calon"), ("G", "T", "Nonaktif")]:
+        put(ws, f"{col}{sisa_b}",
+            f'=COUNTIFS({DB}!$B${FIRST}:$B${LAST},"?*",{DB}!$F${FIRST}:$F${LAST},"",'
+            f'{DB}!${colref}${FIRST}:${colref}${LAST},"{crit}")',
+            f(9, color=RED), WARN_FILL, CENTER, BOX)
+    put(ws, f"H{sisa_b}",
+        f'=COUNTIFS({DB}!$B${FIRST}:$B${LAST},"?*",{DB}!$F${FIRST}:$F${LAST},"")',
+        f(10, True, color=RED), WARN_FILL, CENTER, BOX)
+    put(ws, f"I{sisa_b}",
+        f'=IF(COUNTA({DB}!$B${FIRST}:$B${LAST})=0,"",'
+        f'$H{sisa_b}/COUNTA({DB}!$B${FIRST}:$B${LAST}))',
+        f(9, color=RED), WARN_FILL, CENTER, BOX, "0.0%")
+
+    rb = sisa_b + 1
     put(ws, f"B{rb}", "TOTAL", f(10, True, WHITE), NAVY, LEFT, BOX)
     for col in "CDEFGH":
         put(ws, f"{col}{rb}", f"=SUM({col}{hb + 1}:{col}{rb - 1})",
@@ -911,7 +954,7 @@ def build_rekap(wb):
         f(10, True, WHITE), NAVY, CENTER, BOX, "0.0%")
     gender_head, gender_first = hb, hb + 1
     ws.conditional_formatting.add(
-        f"H{hb + 1}:H{rb - 1}",
+        f"H{hb + 1}:H{sisa_b - 1}",
         DataBarRule(start_type="num", start_value=0, end_type="max",
                     color=BAR_BIRU, showValue=True))
     row = rb + 2

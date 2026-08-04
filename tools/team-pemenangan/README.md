@@ -145,6 +145,40 @@ sedangkan sebagian peramban HP berhenti menyimpan di sekitar 5 MB. Halaman
 Cadangan karena itu menampilkan ukuran datanya dan memperingatkan sebelum
 batas itu tercapai.
 
+## Mengadu angka Excel dengan angka HTML
+
+```bash
+python3 adu_angka.py /tmp/kerja [database.json]
+```
+
+Kedua aplikasi menghitung hal yang sama dari data yang sama, jadi kalau
+berbeda salah satunya salah. Yang penting: perbedaan seperti itu **tidak muncul
+sebagai galat rumus** — berkasnya tetap dilaporkan "nol galat". Alat ini
+membandingkan MENU, REKAP (matriks RT, gender, status), TARGET, dan VALIDASI
+dengan hitungan aplikasi HTML atas data yang persis sama, lalu keluar dengan
+status 1 bila ada yang berbeda.
+
+Dibuat setelah dua kejadian:
+
+- Mengubah arti kolom indeks membuat seluruh jumlah hasil saringan terbaca
+  10.000. Hitung-ulang tetap melaporkan nol galat, dan seluruh sheet
+  penyaringan tetap mendaftar orang yang benar — hanya angkanya yang salah.
+- Blok gender dan status pada REKAP ternyata **sudah lama** menghitung kolom
+  yang keliru: NO. KK dan NO. HP, bukan L/P dan STATUS. Sisa dari penataan
+  ulang kolom DATABASE dulu. Tidak pernah terlihat karena kedua kolom itu
+  memang belum terisi pada data awal — hasilnya nol, dan nol pun tampak wajar.
+
+Pelajaran kedua itu penting saat memakainya: **jangan hanya menguji dengan data
+awal.** Kolom yang kosong menyembunyikan kesalahan. Berikan data yang
+kolom-kolomnya terisi bervariasi.
+
+Satu hal lagi yang ikut ketahuan: matriks REKAP berporos kampung, jadi anggota
+yang kampungnya belum diisi tidak punya sel sama sekali dan hilang dari seluruh
+halaman itu. Pada data awal itu tujuh orang — jumlah per RT terbaca 31 padahal
+sebenarnya 38, tanpa tanda apa pun bahwa ada yang tidak terhitung. Sekarang ada
+baris **(kampung belum diisi)** berlatar kuning sebelum baris TOTAL, sehingga
+jumlahnya kembali menutup dan orang yang datanya belum lengkap justru terlihat.
+
 ### Poles yang bisa dan tidak bisa dipakai di Excel
 
 | Dipakai | Bentuknya |
