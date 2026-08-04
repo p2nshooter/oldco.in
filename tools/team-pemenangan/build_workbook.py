@@ -446,10 +446,11 @@ DB_COLS = [
 HELP_COLS = [("KEY", 24), ("MASALAH", 26), ("IDX_CARI", 10),
              ("IDX_MASALAH", 12), ("KEY_KAMPUNG", 22), ("IDX_CETAK", 10),
              ("IDX_ABSEN", 10), ("IDX_KARTU", 10),
-             ("NIK_DEPAN", 12), ("NIK_BELAKANG", 12), ("NIK_KEMBAR", 12)]
-# A..W data | X..AH bantu
+             ("NIK_DEPAN", 12), ("NIK_BELAKANG", 12), ("NIK_KEMBAR", 12),
+             ("NO_URUT", 10)]
+# A..W data | X..AI bantu
 AUTO_COLS = {"A", "M", "R", "S", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE",
-             "AF", "AG", "AH"}
+             "AF", "AG", "AH", "AI"}
 
 
 def build_database(wb):
@@ -485,16 +486,26 @@ def build_database(wb):
             kini selalu angka, tidak lagi kosong pada baris yang tidak cocok —
             dan MATCH(k, kolom, 0) tetap menemukan baris ke-k yang cocok,
             karena angka k pertama kali muncul persis di baris itu.
+
+            Satu akibat yang harus diingat: jumlah hasil saringan TIDAK boleh
+            lagi dihitung dengan COUNT atas kolom ini — sekarang setiap baris
+            berisi angka, jadi COUNT selalu mengembalikan seluruh kapasitas.
+            Yang benar MAX, karena nilai terakhir penumpukan itulah jumlahnya.
             """
             sblm = "0" if awal else f"${kolom}{p}"
             return f'=IF(AND($B{row}<>"",{syarat}),{sblm}+1,{sblm})'
 
         vals = {
-            # Nomor urut tampak. COUNTA atas rentang yang memanjang juga
-            # kuadratik, jadi ikut ditumpuk dari baris sebelumnya; N() membuat
-            # sel kosong terbaca 0 sehingga rantainya tidak putus.
-            "A": (f'=IF($B{row}="","",1)' if awal
-                  else f'=IF($B{row}="","",N($A{p})+1)'),
+            # Nomor urut tampak, dibaca dari penghitung tersembunyi di AI.
+            #
+            # Sempat ditumpuk langsung dari kolom A sendiri, tetapi kolom itu
+            # harus kosong pada baris yang belum terisi — dan begitu ada satu
+            # baris dikosongkan di tengah (pemakai menghapus seseorang), rantai
+            # penumpukannya putus dan penomorannya mengulang dari 1. Karena itu
+            # penghitungnya dipisah ke kolom yang selalu berisi angka.
+            "A": f'=IF($B{row}="","",$AI{row})',
+            "AI": (f'=IF($B{row}="",0,1)' if awal
+                   else f'=IF($B{row}="",$AI{p},$AI{p}+1)'),
             # korwil: kampung + RT bila nomornya ada
             "M": (f'=IF($F{row}="","",$F{row}&IF($G{row}="",""," - RT "&$G{row}'
                   f'&IF($H{row}="","","/"&$H{row})))'),
@@ -723,7 +734,7 @@ def build_menu(wb):
         ("Capaian terhadap target",
          f'=IFERROR(COUNTA({DB}!$B${FIRST}:$B${LAST})/'
          f'SUM(REFERENSI!$C${REF_FIRST}:$C${REF_LAST}),"-")', "0.0%"),
-        ("Data perlu diperbaiki", f'=COUNT({DB}!$AA${FIRST}:$AA${LAST})', "#,##0"),
+        ("Data perlu diperbaiki", f'=MAX({DB}!$AA${FIRST}:$AA${LAST})', "#,##0"),
         ("Sisa kapasitas baris", f'={ROWS}-COUNTA({DB}!$B${FIRST}:$B${LAST})', "#,##0"),
     ]
     for i, (label, formula, fmt) in enumerate(kpi):
@@ -1180,7 +1191,7 @@ def build_cari(wb):
         d.add(f"C{row}")
 
     put(ws, "B10", "DITEMUKAN", f(11, True, WHITE), NAVY, CENTER, BOX)
-    put(ws, "C10", f'=COUNT({DB}!$Z${FIRST}:$Z${LAST})&" data"',
+    put(ws, "C10", f'=MAX({DB}!$Z${FIRST}:$Z${LAST})&" data"',
         f(12, True, RED), None, LEFT, BOX)
     put(ws, "D10", f"Maksimal {N_CARI} baris pertama yang ditampilkan di bawah. "
         "Persempit kata kunci bila hasil terpotong.",
@@ -1226,7 +1237,7 @@ def build_validasi(wb):
     section(ws, 4, "RINGKASAN MASALAH")
     ringkas = [
         ("Total data terdata", f'=COUNTA({DB}!$B${FIRST}:$B${LAST})', False),
-        ("Total baris bermasalah", f'=COUNT({DB}!$AA${FIRST}:$AA${LAST})', True),
+        ("Total baris bermasalah", f'=MAX({DB}!$AA${FIRST}:$AA${LAST})', True),
         ("NIK kosong", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK kosong")', True),
         ("NIK bukan 16 digit", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK bukan 16 digit")', True),
         ("NIK ganda (dobel)", f'=COUNTIF({DB}!$Y${FIRST}:$Y${LAST},"NIK ganda")', True),
@@ -1338,7 +1349,7 @@ def build_cetak(wb):
     ws.add_data_validation(dvh)
     dvh.add("J15")
     put(ws, "I16", "Jumlah data", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "J16", f'=COUNT({DB}!$AC${FIRST}:$AC${LAST})', f(11, True, RED),
+    put(ws, "J16", f'=MAX({DB}!$AC${FIRST}:$AC${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "I17", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "J17", f'=MAX(1,ROUNDUP($J$16/{N_CETAK},0))', f(11, True, NAVY),
@@ -1436,7 +1447,7 @@ def build_kartu(wb):
         ws.add_data_validation(d)
         d.add(f"K{r}")
     put(ws, "J9", "Jumlah tersaring", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "K9", f'=COUNT({DB}!$AE${FIRST}:$AE${LAST})', f(11, True, RED),
+    put(ws, "K9", f'=MAX({DB}!$AE${FIRST}:$AE${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "J10", "Halaman berikutnya", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "K10", f'=IF($K$5+{N_KARTU}>$K$9,"— sudah halaman terakhir —",'
@@ -1549,7 +1560,7 @@ def build_absensi(wb):
     ws.add_data_validation(dvh)
     dvh.add("H13")
     put(ws, "G14", "Jumlah anggota", f(10, True), GREY_BG, LEFT, BOX)
-    put(ws, "H14", f'=COUNT({DB}!$AD${FIRST}:$AD${LAST})', f(11, True, RED),
+    put(ws, "H14", f'=MAX({DB}!$AD${FIRST}:$AD${LAST})', f(11, True, RED),
         None, CENTER, BOX, "#,##0")
     put(ws, "G15", "Total halaman", f(10, True), GREY_BG, LEFT, BOX)
     put(ws, "H15", f'=MAX(1,ROUNDUP($H$14/{N_ABSEN},0))', f(11, True, NAVY),

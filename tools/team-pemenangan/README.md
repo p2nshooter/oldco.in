@@ -118,8 +118,26 @@ ulang membuat pemakainya menunggu setengah menit untuk hasil yang sama persis.
 tersimpan; tanpa penjagaan itu, melewatkan `recalc.py` menghasilkan berkas yang
 tampil kosong seluruhnya.
 
-Harganya: berkas menjadi **3,8 MB** (dari 1,4 MB), karena 10.000 baris rumus
-beserta nilai tersimpannya. Sheet DATABASE sendiri 3,2 MB dari jumlah itu.
+Harganya: berkas menjadi **4,0 MB** (dari 1,4 MB), karena 10.000 baris rumus
+beserta nilai tersimpannya. Sheet DATABASE sendiri sebagian besar dari jumlah itu.
+
+### Dua akibat yang baru ketahuan setelah diuji fungsinya
+
+Hitung-ulang melaporkan nol galat, dan seluruh sheet penyaringan tetap
+menampilkan orang yang benar. Tetapi mengubah arti kolom indeks membawa dua
+akibat yang tidak muncul sebagai galat sama sekali:
+
+- **Jumlah hasil saringan menjadi 10.000.** Enam tempat menghitungnya dengan
+  `COUNT` atas kolom indeks — benar selama kolom itu kosong pada baris yang
+  tidak cocok, dan sejak nomor urutnya ditumpuk setiap baris selalu berisi
+  angka. Sheet CETAK menuliskan "10000 orang" padahal hanya 10 yang tersaring.
+  Yang benar `MAX`, karena nilai terakhir penumpukan itulah jumlahnya.
+
+- **Nomor urut mengulang dari 1 setelah baris kosong.** Kolom NO harus tetap
+  kosong pada baris yang belum terisi, jadi penumpukannya putus begitu ada satu
+  baris dikosongkan di tengah — persis yang terjadi ketika pemakai menghapus
+  seseorang. Penghitungnya kini dipisah ke kolom tersembunyi yang selalu berisi
+  angka, dan kolom NO hanya menampilkannya.
 
 Di sisi aplikasi HTML 10.000 anggota tidak jadi soal — menggambar halaman
 sekitar 120 ms — tetapi datanya mencapai **4,5 MB** di penyimpanan peramban,
