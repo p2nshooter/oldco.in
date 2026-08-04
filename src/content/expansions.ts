@@ -2588,6 +2588,749 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'delhi-sultanate-tanka',
+    sections: [
+      {
+        hHi: 'इल्तुतमिश और मानक की स्थापना',
+        hEn: 'Iltutmish, and the setting of a standard',
+        pHi: [
+          'दिल्ली सल्तनत की मुद्रा-व्यवस्था का असली संस्थापक इल्तुतमिश को माना जाता है। उन्होंने तेरहवीं शताब्दी के आरंभ में चाँदी का टंका चलाया, जिसका वज़न लगभग ग्यारह ग्राम रखा गया।',
+          'इसके साथ ताँबे का जीतल चला, जो रोज़मर्रा के बाज़ार की मुद्रा थी। दोनों के बीच का अनुपात समय और क्षेत्र के साथ बदलता रहा, पर टंका का वज़न उल्लेखनीय रूप से स्थिर रहा।',
+          'यह स्थिरता ही उसकी सबसे बड़ी उपलब्धि है। एक भरोसेमंद वज़न का अर्थ है कि व्यापारी को हर सौदे में धातु तौलनी नहीं पड़ती — और यही वह चीज़ है जो किसी मुद्रा को मुद्रा बनाती है।',
+        ],
+        pEn: [
+          'Iltutmish is regarded as the real founder of the Delhi Sultanate’s monetary system. Early in the thirteenth century he introduced the silver tanka, set at a weight of roughly eleven grams.',
+          'Alongside it ran the copper jital, the currency of the everyday market. The ratio between the two shifted with time and region, but the weight of the tanka stayed remarkably constant.',
+          'That constancy is its greatest achievement. A dependable weight means a merchant need not weigh metal at every transaction — and that is precisely what turns a piece of silver into a currency.',
+        ],
+      },
+      {
+        hHi: 'पाँच वंश, एक शृंखला',
+        hEn: 'Five dynasties, one series',
+        pHi: [
+          'सल्तनत की मुद्रा को समझने का सबसे सरल तरीक़ा उसे वंशों के क्रम में रखना है। मामलूक या ग़ुलाम वंश पहला, फिर ख़िलजी, फिर तुग़लक़, फिर सैयद, और अंत में लोदी।',
+          'हर वंश की अपनी शैली है। ख़िलजी दौर के सिक्कों पर अलाउद्दीन की उपाधियाँ भव्य हैं; तुग़लक़ दौर प्रयोगों के लिए जाना जाता है; लोदी दौर के सिक्के अपेक्षाकृत सादे हैं।',
+          'यह क्रम संग्राहक के लिए एक स्वाभाविक लक्ष्य बनाता है — हर वंश का कम से कम एक सिक्का। यह पाँच वस्तुओं का संग्रह है, सीमित और स्पष्ट, और उसमें तीन सौ वर्ष का इतिहास बैठ जाता है।',
+        ],
+        pEn: [
+          'The simplest way to make sense of Sultanate coinage is to arrange it by dynasty. The Mamluk or Slave dynasty first, then the Khaljis, then the Tughlaqs, then the Sayyids, and finally the Lodis.',
+          'Each dynasty has its own style. The coins of the Khalji period carry Alauddin’s titles in grand form; the Tughlaq period is known for its experiments; the Lodi issues are comparatively plain.',
+          'For a collector this sequence makes a natural target — at least one coin from each dynasty. That is a set of five objects, bounded and clear, and three hundred years of history fit inside it.',
+        ],
+      },
+      {
+        hHi: 'सजावट के रूप में सुलेख',
+        hEn: 'Calligraphy as decoration',
+        pHi: [
+          'इन सिक्कों पर कोई चित्र नहीं है — न शासक का चेहरा, न कोई पशु, न कोई प्रतीक। जो है वह केवल लिखावट है, और वही लिखावट इनकी पूरी कला है।',
+          'लिपि अरबी है और भाषा प्रायः अरबी या फ़ारसी। अक्षरों की बनावट, उनका अनुपात, और गोल सतह पर उनका संयोजन — यह सब सोच-समझकर तय किया गया था।',
+          'कुछ सिक्कों पर अक्षरों को एक वर्ग या षट्कोण के भीतर बिठाया गया है, और कुछ पर वे वृत्त के साथ बहते हैं। एक ही पाठ को अलग-अलग टकसालों ने अलग ढंग से सजाया, और यही अंतर संग्राहकों को आकर्षित करता है।',
+          'शुरुआत करने वालों के लिए यह डराने वाला लग सकता है। पर व्यवहार में शासक का नाम और कुछ मुख्य उपाधियाँ गिनी-चुनी हैं, और उनके आकार पहचानना कुछ हफ़्तों का काम है।',
+        ],
+        pEn: [
+          'There is no image on these coins — no ruler’s face, no animal, no emblem. What there is, is writing alone, and that writing is their entire art.',
+          'The script is Arabic and the language usually Arabic or Persian. The form of the letters, their proportions, and their arrangement across a round surface were all deliberate decisions.',
+          'On some coins the lettering sits inside a square or a hexagon; on others it flows with the circle. Different mints treated the same text differently, and that variation is what draws collectors.',
+          'To a beginner this can look intimidating. In practice the ruler’s name and the main titles are a finite set, and learning to recognise their shapes is a matter of weeks.',
+        ],
+      },
+      {
+        hHi: 'तुग़लक़ का प्रसिद्ध प्रयोग',
+        hEn: 'Tughlaq’s famous experiment',
+        pHi: [
+          'मुहम्मद बिन तुग़लक़ ने 1330 के दशक में एक ऐसा क़दम उठाया जो अपने समय से बहुत आगे था — उन्होंने ताँबे और पीतल के टोकन सिक्के चलाए जिनका अंकित मूल्य चाँदी के टंका के बराबर था।',
+          'विचार आधुनिक है। मुद्रा का मूल्य उसकी धातु में नहीं, बल्कि राज्य की गारंटी में हो — यही आज की काग़ज़ी मुद्रा का सिद्धांत है।',
+          'पर यह विफल रहा, और कारण व्यावहारिक था: टोकन बनाना आसान था और उस दौर में जालसाज़ी रोकने का कोई तरीक़ा नहीं था। लोगों ने घरों में सिक्के ढालना शुरू कर दिया।',
+          'सुल्तान को अंततः सारे टोकन वापस लेकर चाँदी में बदलने पड़े, जिसका ख़ज़ाने पर भारी बोझ पड़ा। संग्राहक के लिए ये टोकन बेहद दिलचस्प हैं, क्योंकि वे एक असफल पर दूरदर्शी विचार का दस्तावेज़ हैं।',
+        ],
+        pEn: [
+          'In the 1330s Muhammad bin Tughlaq took a step far ahead of its time — he issued token coins of copper and brass carrying the face value of a silver tanka.',
+          'The idea is a modern one. The value of a currency should lie not in its metal but in the guarantee of the state — which is the principle behind all paper money today.',
+          'It failed, and for a practical reason: the tokens were easy to make and there was no way in that period to prevent counterfeiting. People began striking coins in their own homes.',
+          'The sultan eventually had to withdraw the tokens and redeem them in silver, at heavy cost to the treasury. For a collector these tokens are fascinating, because they document an idea that was visionary and unworkable at once.',
+        ],
+      },
+      {
+        hHi: 'पाठ और तारीख़ पढ़ना',
+        hEn: 'Reading the text and the date',
+        pHi: [
+          'सल्तनत के सिक्के पर आमतौर पर एक ओर शासक का नाम और उपाधियाँ होती हैं, और दूसरी ओर ख़लीफ़ा का उल्लेख या कलिमा।',
+          'तारीख़ हिजरी सन् में दर्ज होती है, अरबी अंकों में। ये अंक आधुनिक अरबी अंकों से थोड़े अलग दिख सकते हैं, और यही सबसे ज़्यादा भ्रम पैदा करता है।',
+          'टकसाल का नाम भी अक्सर मौजूद रहता है — दिल्ली, देवगिरि, लखनौती, और अन्य। कुछ सिक्कों पर वह स्पष्ट है, कुछ पर घिसाव के कारण अनुमान लगाना पड़ता है।',
+          'व्यावहारिक सुझाव: हिजरी अंकों की एक छोटी तालिका छापकर अपने संग्रह के डिब्बे में रख लीजिए। यह एक काग़ज़ इस पूरे क्षेत्र को कई गुना आसान बना देता है।',
+        ],
+        pEn: [
+          'A Sultanate coin usually carries the ruler’s name and titles on one side, and a mention of the caliph or the kalima on the other.',
+          'The date is recorded in the Hijri era in Arabic numerals. These can look slightly different from modern Arabic numerals, and that is what causes the most confusion.',
+          'The mint name is often present too — Delhi, Deogir, Lakhnauti and others. On some coins it is clear; on others wear makes it a matter of inference.',
+          'A practical suggestion: print a small table of Hijri numerals and keep it in your coin box. That single sheet makes the whole field several times easier.',
+        ],
+      },
+      {
+        hHi: 'ताँबे का जीतल — सस्ता प्रवेश-द्वार',
+        hEn: 'The copper jital — an affordable doorway',
+        pHi: [
+          'चाँदी का टंका महँगा है और अच्छी दशा में मिलना कठिन। पर ताँबे का जीतल भारी संख्या में ढला और आज भी अपेक्षाकृत सुलभ है।',
+          'इन पर वही लिपि, वही पाठ-शैली और वही टकसाल-नाम मिलते हैं जो चाँदी पर। यानी आँख बनाने के लिए वे उतने ही उपयोगी हैं, और दाम का दसवाँ हिस्सा।',
+          'शुरुआत का सबसे अच्छा क्रम यही है: पहले कुछ जीतल लीजिए, अक्षरों के आकार से परिचित होइए, टकसाल-नाम पहचानना सीखिए। फिर चाँदी की ओर बढ़िए।',
+          'जब तक आप वहाँ पहुँचेंगे, आप एक अच्छे नमूने और एक साधारण नमूने का अंतर ख़ुद बता सकेंगे — और यही वह क्षमता है जो आपको ज़्यादा दाम चुकाने से बचाती है।',
+        ],
+        pEn: [
+          'The silver tanka is expensive and difficult to find in good condition. The copper jital, however, was struck in large numbers and remains comparatively accessible.',
+          'It carries the same script, the same style of text and the same mint names as the silver. For building the eye it is therefore just as useful, at a tenth of the price.',
+          'The best order to begin in is this: acquire a few jitals first, get familiar with the shapes of the letters, learn to identify the mint names. Then move towards the silver.',
+          'By the time you reach it you will be able to tell a good example from an ordinary one yourself — and that is exactly the ability that stops you from overpaying.',
+        ],
+      },
+      {
+        hHi: 'सावधानी और ख़रीद',
+        hEn: 'Caution, and buying',
+        pHi: [
+          'सल्तनत के चाँदी के सिक्कों की नक़ल मौजूद है, और सबसे आम प्रकार वही है जो हर पुराने सिक्के में मिलता है — ढला हुआ नक़ल, जिसकी सतह पर बुलबुलों के गड्ढे और किनारे पर अस्वाभाविक गोलापन होता है।',
+          'वज़न सबसे तेज़ जाँच है: टंका लगभग ग्यारह ग्राम के आसपास होना चाहिए। घिसाव से थोड़ी कमी सामान्य है, पर बड़ा अंतर सवाल खड़ा करता है।',
+          'और एक विशेष सावधानी इस क्षेत्र में लागू होती है: तारीख़ या टकसाल-नाम में छेड़छाड़। दुर्लभ टकसाल का नाम गढ़कर आम सिक्के को महँगा बनाया जा सकता है, इसलिए महँगी ख़रीद से पहले लूप से अक्षरों के चारों ओर की सतह देखिए।',
+        ],
+        pEn: [
+          'Forgeries of Sultanate silver exist, and the commonest type is the one found with every old coin — a cast copy, with bubble pits across the surface and an unnatural roundness at the edge.',
+          'Weight is the fastest check: a tanka should sit around eleven grams. Some loss through wear is normal, but a large discrepancy raises a question.',
+          'And one caution is particular to this field: tampering with the date or the mint name. Fabricating a rare mint name can turn an ordinary coin into an expensive one, so before any significant purchase examine the surface around the lettering under a loupe.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'akbar-ke-sikke',
+    sections: [
+      {
+        hHi: 'तीन धातुओं की व्यवस्था अकबर के हाथ में',
+        hEn: 'The three-metal system in Akbar’s hands',
+        pHi: [
+          'अकबर को विरासत में शेर शाह सूरी की व्यवस्था मिली — सोने की मोहर, चाँदी का रुपिया, ताँबे का दाम — और उन्होंने उसे बदला नहीं, बल्कि कसा।',
+          'वज़न के मानक सख़्त किए गए, शुद्धता की जाँच नियमित हुई, और टकसालों की जवाबदेही बढ़ी। परिणाम यह हुआ कि मुग़ल रुपिया व्यापारियों के बीच भरोसे का सिक्का बन गया, साम्राज्य के बाहर भी।',
+          'उन्होंने मूल्यवर्ग की सीढ़ी भी बढ़ाई। मोहर के कई गुणक जारी हुए, और चाँदी में भी आधे, चौथाई और छोटे मूल्यवर्ग। यह विविधता संग्राहक के लिए आज एक बड़ा मैदान बनाती है।',
+        ],
+        pEn: [
+          'Akbar inherited Sher Shah Suri’s system — the gold mohur, the silver rupiya, the copper dam — and rather than replacing it he tightened it.',
+          'Weight standards were enforced more strictly, purity was checked regularly, and the mints were made more accountable. The result was that the Mughal rupiya became a coin merchants trusted, including beyond the empire’s borders.',
+          'He also extended the ladder of denominations. Multiples of the mohur were issued, and halves, quarters and smaller pieces in silver. That variety makes a large field for a collector today.',
+        ],
+      },
+      {
+        hHi: 'इलाही सन् और एक नया संदेश',
+        hEn: 'The Ilahi era, and a new message',
+        pHi: [
+          'अकबर ने अपने राज्यारोहण से गिना जाने वाला एक नया सौर कैलेंडर चलाया, जिसे इलाही सन् कहा गया, और कुछ सिक्कों पर हिजरी की जगह वही दर्ज हुआ।',
+          'यह केवल कैलेंडर का मामला नहीं था। हिजरी सन् इस्लामी परंपरा से जुड़ा है; उसकी जगह अपने शासन से गिना जाने वाला सन् रखना एक स्पष्ट राजनीतिक बयान था।',
+          'इसी दौर में कुछ सिक्कों पर “अल्लाहु अकबर” अंकित हुआ — एक वाक्य जिसे दो तरह पढ़ा जा सकता है, और यही उसकी चतुराई है। समकालीनों ने इस पर बहस की, और इतिहासकार आज भी करते हैं।',
+          'महीनों के फ़ारसी नाम भी सिक्कों पर आए — फ़रवर्दीन, ओर्दीबेहिश्त, और आगे। इससे तारीख़ पढ़ना आसान हो जाता है, बशर्ते नाम पहचान लिए जाएँ।',
+        ],
+        pEn: [
+          'Akbar introduced a new solar calendar counted from his own accession, called the Ilahi era, and on some coins it replaced the Hijri date entirely.',
+          'This was not merely a matter of calendars. The Hijri era is tied to Islamic tradition; replacing it with one counted from his own reign was a clear political statement.',
+          'In the same period some coins carry the phrase Allahu Akbar — a sentence that can be read two ways, and that ambiguity is its cleverness. Contemporaries argued about it, and historians still do.',
+          'The Persian month names appear on coins too — Farvardin, Ordibehesht, and onward. This makes the date easier to read, provided the names are recognised.',
+        ],
+      },
+      {
+        hHi: 'चौकोर सिक्के और असामान्य आकार',
+        hEn: 'Square coins and unusual shapes',
+        pHi: [
+          'अकबर के दौर की एक विशिष्ट पहचान चौकोर सिक्के हैं, जिन्हें मिहराबी कहा जाता है। ये गोल सिक्कों के साथ-साथ चले और आज संग्राहकों में विशेष रूप से माँगे जाते हैं।',
+          'चौकोर आकार व्यावहारिक कारणों से भी सुविधाजनक था — चादर से काटने पर धातु कम बर्बाद होती है — पर उसका सौंदर्य-प्रभाव भी स्पष्ट है, क्योंकि अरबी सुलेख वर्गाकार क्षेत्र में बेहतर बैठती है।',
+          'इनके अलावा कुछ बहुत बड़े सोने के सिक्के भी जारी हुए, जो प्रचलन के लिए नहीं बल्कि उपहार और प्रदर्शन के लिए थे। ये अत्यंत दुर्लभ हैं और संग्रहालयों में ही अधिक मिलते हैं।',
+        ],
+        pEn: [
+          'A distinctive feature of Akbar’s period is the square coin, known as mihrabi. These circulated alongside round issues and are particularly sought after by collectors today.',
+          'The square shape was practical as well — less metal is wasted when cutting from a sheet — but its aesthetic effect is equally clear, since Arabic calligraphy sits better within a square field.',
+          'Beyond these, some very large gold pieces were issued, made not for circulation but for presentation and display. They are extremely rare and are found mostly in museums.',
+        ],
+      },
+      {
+        hHi: 'टकसालों का जाल',
+        hEn: 'The web of mints',
+        pHi: [
+          'अकबर के दौर में सौ से अधिक टकसालें काम करती थीं, और हर सिक्के पर उसकी टकसाल का नाम फ़ारसी में दर्ज होता था।',
+          'बड़े नाम पहचाने-से लगते हैं: लाहौर, आगरा (अकबराबाद), दिल्ली, अहमदाबाद, इलाहाबाद, फ़तेहपुर सीकरी, काबुल, कश्मीर, बुरहानपुर।',
+          'कुछ टकसालें केवल कुछ वर्षों तक चलीं — जैसे फ़तेहपुर सीकरी, जो राजधानी रहने के दौरान ही सक्रिय थी। ऐसी अल्पकालिक टकसालों के सिक्के आज विशेष रूप से माँगे जाते हैं।',
+          'यही वह ब्योरा है जो संग्रह को गहराई देता है। एक ही वर्ष का एक ही मूल्यवर्ग, पर अलग टकसाल — और दोनों की कहानी अलग है।',
+        ],
+        pEn: [
+          'More than a hundred mints operated in Akbar’s period, and every coin carried its mint name in Persian.',
+          'The major names feel familiar: Lahore, Agra (Akbarabad), Delhi, Ahmadabad, Allahabad, Fatehpur Sikri, Kabul, Kashmir, Burhanpur.',
+          'Some mints ran for only a few years — Fatehpur Sikri, for instance, was active only while it served as the capital. Coins from such short-lived mints are particularly sought after today.',
+          'This is the detail that gives a collection depth. The same denomination of the same year, but a different mint — and the story of each is different.',
+        ],
+      },
+      {
+        hHi: 'पहचान का व्यावहारिक क्रम',
+        hEn: 'A practical order of identification',
+        pHi: [
+          'पहले धातु और वज़न देखिए। मोहर लगभग साढ़े दस से ग्यारह ग्राम सोना, रुपिया लगभग ग्यारह ग्राम चाँदी, दाम लगभग बीस ग्राम ताँबा।',
+          'फिर शासक का नाम ढूँढ़िए। अकबर के सिक्कों पर उनका नाम और उपाधियाँ एक निश्चित शैली में लिखी जाती हैं, और उस आकार को पहचान लेना पहला बड़ा क़दम है।',
+          'फिर टकसाल का नाम, जो प्रायः एक अलग पंक्ति में या किनारे पर होता है। और अंत में तारीख़ — हिजरी या इलाही।',
+          'यह चार-चरणीय क्रम हर मुग़ल सिक्के पर काम करता है, न केवल अकबर के। एक बार अभ्यास हो जाए तो पूरी प्रक्रिया एक मिनट से कम की रह जाती है।',
+        ],
+        pEn: [
+          'Look at the metal and the weight first. A mohur is roughly ten and a half to eleven grams of gold, a rupiya about eleven grams of silver, a dam around twenty grams of copper.',
+          'Then find the ruler’s name. On Akbar’s coins his name and titles are written in a settled style, and learning to recognise that shape is the first large step.',
+          'Then the mint name, usually on a separate line or along the margin. And finally the date — Hijri or Ilahi.',
+          'This four-step order works on every Mughal coin, not only Akbar’s. Once practised, the whole process takes under a minute.',
+        ],
+      },
+      {
+        hHi: 'संग्रह की शुरुआत कहाँ से',
+        hEn: 'Where to begin collecting',
+        pHi: [
+          'सोने की मोहर अधिकांश बजट से बाहर है, और यह कहना ईमानदारी है। पर चाँदी का रुपिया अपेक्षाकृत सुलभ है, ख़ासकर आम टकसालों और आम वर्षों का।',
+          'ताँबे का दाम सबसे सस्ता है और भारी संख्या में बचा है। उस पर वही लिपि और वही टकसाल-नाम मिलते हैं, इसलिए आँख बनाने के लिए वह आदर्श है।',
+          'एक अच्छा शुरुआती लक्ष्य है “एक टकसाल, कई वर्ष” — किसी एक शहर के दाम या रुपिया जुटाना। यह सीमित है और उसमें एक स्थान की कहानी बनती है।',
+          'दूसरा लक्ष्य “एक वर्ष, कई टकसालें” है, जो साम्राज्य के फैलाव का चित्र बनाता है। दोनों सस्ते हैं और दोनों पूरा होने पर सचमुच कुछ बनते हैं।',
+        ],
+        pEn: [
+          'The gold mohur is beyond most budgets, and saying so is simply honest. The silver rupiya, however, is comparatively accessible, particularly from common mints and common years.',
+          'The copper dam is the cheapest and survives in quantity. It carries the same script and the same mint names, which makes it ideal for building the eye.',
+          'A good opening target is “one mint, many years” — gathering the dams or rupees of a single city. It is bounded, and it builds the story of one place.',
+          'A second is “one year, many mints”, which forms a picture of the empire’s extent. Both are affordable, and both amount to something real once complete.',
+        ],
+      },
+      {
+        hHi: 'नक़ल की चेतावनी',
+        hEn: 'A warning about forgeries',
+        pHi: [
+          'मुग़ल सिक्के जालसाज़ों का पसंदीदा क्षेत्र हैं, क्योंकि ख़रीदार अक्सर फ़ारसी नहीं पढ़ पाते और अनुमान पर भरोसा करते हैं।',
+          'सबसे आम धोखा ढला हुआ नक़ल है — सतह पर छोटे गड्ढे, किनारे पर गोलापन, और अक्षरों के किनारे धुँधले। असली सिक्का ठोंककर बना था, इसलिए धातु का प्रवाह तीखा होता है।',
+          'दूसरा धोखा टकसाल-नाम बदलना है, ताकि आम सिक्का किसी दुर्लभ टकसाल का लगे। लूप से अक्षरों के चारों ओर की सतह देखिए — छेड़छाड़ वहाँ दिखती है।',
+          'महँगे सिक्के के लिए प्रमाणन कराइए। यह ख़र्च उबाऊ लगता है और ग़लत ख़रीद से हमेशा सस्ता पड़ता है।',
+        ],
+        pEn: [
+          'Mughal coins are a favourite field for forgers, because buyers frequently cannot read Persian and end up trusting guesswork.',
+          'The commonest deception is the cast copy — small pits on the surface, rounding at the edge, and blurred edges to the letters. A genuine coin was struck, so its metal flow is crisp.',
+          'The second is altering the mint name so that an ordinary coin appears to come from a rare mint. Examine the surface around the lettering under a loupe — tampering shows there.',
+          'For an expensive coin, pay for certification. That expense sounds dull and it is always cheaper than a wrong purchase.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'maratha-shivrai',
+    sections: [
+      {
+        hHi: 'शिवराई का जन्म',
+        hEn: 'The birth of the shivrai',
+        pHi: [
+          '1674 में रायगढ़ में राज्याभिषेक के बाद शिवाजी ने अपने नाम का सिक्का जारी किया। यह केवल आर्थिक क़दम नहीं था — अपने नाम का सिक्का चलाना संप्रभुता की सबसे दृश्य घोषणा है।',
+          'ताँबे का यह छोटा सिक्का शिवराई कहलाया, और साथ में सोने का होन भी जारी हुआ। शिवराई रोज़मर्रा के बाज़ार की मुद्रा बनी, और होन बड़े लेन-देन के लिए।',
+          'सबसे उल्लेखनीय बात लिपि है। उस दौर में क्षेत्र की अधिकांश मुद्रा फ़ारसी में थी; शिवराई पर देवनागरी है। यह चयन अपने आप में एक बयान था।',
+        ],
+        pEn: [
+          'After his coronation at Raigad in 1674, Shivaji issued coinage in his own name. This was not merely an economic step — striking a coin in your own name is the most visible declaration of sovereignty there is.',
+          'The small copper piece was called the shivrai, and a gold hon was issued alongside it. The shivrai became the currency of the everyday market, and the hon served larger transactions.',
+          'The most notable feature is the script. Most currency in the region at that time was in Persian; the shivrai carries Devanagari. That choice was itself a statement.',
+        ],
+      },
+      {
+        hHi: 'सिक्के पर क्या लिखा है',
+        hEn: 'What the coin says',
+        pHi: [
+          'एक ओर देवनागरी में “श्री राजा शिव” लिखा होता है, और दूसरी ओर “छत्रपति”। पाठ छोटा है और अक्षर बड़े, जो इसे पढ़ने में अपेक्षाकृत आसान बनाता है।',
+          'यह सादगी जानबूझकर थी। एक छोटे ताँबे के सिक्के पर लंबा पाठ पढ़ा नहीं जाता, ख़ासकर जब वह हज़ारों हाथों से गुज़रे। तीन-चार अक्षर पर्याप्त थे।',
+          'पर व्यवहार में यही सिक्के सबसे ज़्यादा घिसे हुए मिलते हैं, क्योंकि वे सचमुच रोज़ चले। अच्छी दशा में मिलना कठिन है, और यही अच्छे नमूनों को क़ीमती बनाता है।',
+          'शिवाजी के बाद उनके उत्तराधिकारियों ने भी शिवराई जारी करना जारी रखा, और कई मराठा सरदारों ने भी। इसीलिए “शिवराई” एक सिक्का नहीं, एक पूरी शृंखला है।',
+        ],
+        pEn: [
+          'One side carries “Shri Raja Shiva” in Devanagari, and the other “Chhatrapati”. The text is short and the letters large, which makes it comparatively easy to read.',
+          'That simplicity was deliberate. A long text on a small copper coin cannot be read, particularly once it has passed through thousands of hands. Three or four letters were enough.',
+          'In practice these are the coins found most heavily worn, because they genuinely circulated every day. Good condition is difficult to find, and that is what makes good examples valuable.',
+          'After Shivaji his successors continued issuing shivrais, and so did many Maratha chiefs. This is why “shivrai” names not one coin but an entire series.',
+        ],
+      },
+      {
+        hHi: 'इतनी किस्में क्यों हैं',
+        hEn: 'Why there are so many varieties',
+        pHi: [
+          'मराठा शासन एक केंद्रीकृत साम्राज्य से ज़्यादा एक संघ था — पेशवा, सिंधिया, होल्कर, गायकवाड़, भोंसले, और अनेक छोटे सरदार।',
+          'इनमें से कई ने अपनी टकसालें चलाईं और शिवराई जारी की, अक्सर शिवाजी के नाम के साथ ही। परिणाम यह है कि एक ही पाठ के सैकड़ों रूप मिलते हैं।',
+          'अक्षरों का आकार, उनकी दूरी, सिक्के का वज़न और मोटाई — इन्हीं बारीक अंतरों से विशेषज्ञ यह तय करते हैं कि कोई विशेष शिवराई किस टकसाल की है।',
+          'यह वर्गीकरण अभी भी पूरी तरह तय नहीं है, और यही इस क्षेत्र को शोध के लिए जीवित रखता है। एक नया संग्राहक भी यहाँ कुछ सार्थक जोड़ सकता है।',
+        ],
+        pEn: [
+          'Maratha rule was a confederacy more than a centralised empire — the Peshwas, the Scindias, the Holkars, the Gaekwads, the Bhonsles, and many smaller chiefs.',
+          'A number of these ran their own mints and issued shivrais, frequently keeping Shivaji’s name on them. The result is that hundreds of variations of the same text exist.',
+          'The shape of the letters, their spacing, the weight and the thickness of the coin — these fine differences are what specialists use to assign a particular shivrai to a mint.',
+          'That classification is still not settled, and it is what keeps the field alive for research. Even a new collector can add something meaningful here.',
+        ],
+      },
+      {
+        hHi: 'चाँदी और सोने की मराठा मुद्रा',
+        hEn: 'Maratha silver and gold',
+        pHi: [
+          'शिवराई सबसे प्रसिद्ध है, पर मराठा मुद्रा उस तक सीमित नहीं। सोने का होन शिवाजी के दौर से चला, और बाद में चाँदी के रुपये भी जारी हुए।',
+          'दिलचस्प बात यह है कि कई मराठा चाँदी के सिक्कों पर मुग़ल बादशाह का नाम फ़ारसी में दर्ज है, शिवराई के देवनागरी के विपरीत।',
+          'कारण व्यावहारिक था। बड़े व्यापार में वह सिक्का चलता था जिसे बाज़ार पहचानता हो, और उत्तर तथा दक्कन के व्यापारिक जाल में वह नाम मुग़ल बादशाह का था।',
+          'यानी एक ही सत्ता ने दो अलग दर्शकों के लिए दो अलग भाषाएँ चुनीं — स्थानीय बाज़ार के लिए देवनागरी, और व्यापक व्यापार के लिए फ़ारसी। यह अपने आप में एक पाठ है।',
+        ],
+        pEn: [
+          'The shivrai is the best known, but Maratha coinage is not limited to it. The gold hon ran from Shivaji’s time, and silver rupees were issued later.',
+          'What is interesting is that many Maratha silver coins carry the Mughal emperor’s name in Persian, in contrast to the Devanagari of the shivrai.',
+          'The reason was practical. In large trade the coin that circulated was the one the market recognised, and across the trading networks of the north and the Deccan that name was the Mughal emperor’s.',
+          'So one authority chose two different languages for two different audiences — Devanagari for the local market, Persian for the wider trade. That in itself is a lesson.',
+        ],
+      },
+      {
+        hHi: 'दशा और पठनीयता',
+        hEn: 'Condition and legibility',
+        pHi: [
+          'शिवराई में दशा का महत्व सामान्य से भी ज़्यादा है, और कारण सरल है: यदि अक्षर नहीं पढ़े जा सकते, तो सिक्का पहचाना नहीं जा सकता।',
+          'इसलिए ग्रेडिंग यहाँ केवल सौंदर्य का सवाल नहीं है। एक ऐसा नमूना जिस पर “श्री राजा शिव” स्पष्ट पढ़ा जाए, उसी वज़न के धुँधले नमूने से कई गुना ऊपर बैठता है।',
+          'ख़रीदते समय यही देखिए। तस्वीर में यदि अक्षर धुँधले हैं तो हाथ में भी वैसे ही होंगे, और विक्रेता का “थोड़ा घिसा है” अक्सर कम आँकना होता है।',
+          'और वही नियम: साफ़ मत कीजिए। ताँबे पर बनी प्राकृतिक परत हटाने से अक्षर और भी कम दिखते हैं, क्योंकि विरोधाभास ख़त्म हो जाता है।',
+        ],
+        pEn: [
+          'Condition matters more than usual with the shivrai, for a simple reason: if the letters cannot be read, the coin cannot be identified.',
+          'Grading here is therefore not only a question of appearance. An example on which “Shri Raja Shiva” reads clearly sits several multiples above a blurred piece of the same weight.',
+          'Look for exactly this when buying. If the letters are unclear in the photograph they will be unclear in the hand, and a seller’s “slightly worn” is frequently an understatement.',
+          'And the same rule applies: do not clean it. Removing the natural film on copper makes the letters harder to see rather than easier, because the contrast disappears.',
+        ],
+      },
+      {
+        hHi: 'यह क्षेत्र सस्ता क्यों है',
+        hEn: 'Why this field is inexpensive',
+        pHi: [
+          'शिवराई भारी संख्या में ढली और भारी संख्या में बची है। ताँबा गलाया नहीं गया, और सिक्के दो सौ वर्षों तक चलते रहे।',
+          'साथ ही पहचान कठिन है, इसलिए आकस्मिक ख़रीदार इस ओर नहीं आते। कम भीड़ का सीधा अर्थ है कम दाम।',
+          'व्यवहार में एक साधारण शिवराई कुछ सौ रुपये में मिल जाती है, और अच्छी दशा का नमूना भी बहुत महँगा नहीं। यह उन कम क्षेत्रों में है जहाँ इतिहास सचमुच सुलभ है।',
+          'महँगे वे हैं जिनकी टकसाल निश्चित रूप से पहचानी जा सके, या जो शिवाजी के अपने दौर के हों और अच्छी दशा में हों। बाक़ी सब शुरुआत के लिए आदर्श हैं।',
+        ],
+        pEn: [
+          'Shivrais were struck in large numbers and survive in large numbers. The copper was not melted down, and the coins circulated for two hundred years.',
+          'Identification is also difficult, so casual buyers stay away. Less crowding means directly lower prices.',
+          'In practice an ordinary shivrai costs a few hundred rupees, and even a good example is not expensive. It is one of the few fields where history is genuinely affordable.',
+          'The expensive ones are those whose mint can be identified with certainty, or which belong to Shivaji’s own period in good condition. The rest are ideal for a beginner.',
+        ],
+      },
+      {
+        hHi: 'शुरुआत कैसे करें',
+        hEn: 'How to begin',
+        pHi: [
+          'दस-बारह साधारण शिवराई ख़रीदिए — कुल ख़र्च कुछ हज़ार रुपये। उन्हें एक मेज़ पर रखिए और अक्षरों की स्पष्टता के क्रम में लगाइए।',
+          'फिर अक्षरों के आकार की तुलना कीजिए। कुछ ही देर में आप देखेंगे कि सब एक जैसे नहीं हैं — किसी में “श्री” चौड़ा है, किसी में सँकरा; किसी में अक्षर गहरे हैं, किसी में उथले।',
+          'यही अंतर टकसाल-वर्गीकरण की बुनियाद हैं। एक अच्छी संदर्भ-सूची साथ रखिए और मिलान करते जाइए।',
+          'और अपने ही क्षेत्र से शुरुआत कीजिए यदि आप महाराष्ट्र या दक्कन से हैं। स्थानीय जानकारी आसानी से मिलती है, और संग्रह व्यक्तिगत हो जाता है।',
+        ],
+        pEn: [
+          'Buy ten or twelve ordinary shivrais — a few thousand rupees in total. Lay them on a table and arrange them in order of how clearly the letters read.',
+          'Then compare the shapes of the letters. Within a short while you will see they are not all alike — the “Shri” is broad on one and narrow on another; the letters are deep on one and shallow on the next.',
+          'These differences are the foundation of mint classification. Keep a good reference listing beside you and work through the matches.',
+          'And begin with your own region if you are from Maharashtra or the Deccan. Local knowledge is easy to come by, and the collection becomes personal.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'madras-presidency-sikke',
+    sections: [
+      {
+        hHi: 'पगोडा, फ़नम और कैश की व्यवस्था',
+        hEn: 'The pagoda, fanam and cash system',
+        pHi: [
+          'मद्रास प्रेसीडेंसी की मुद्रा उत्तर भारत से पूरी तरह अलग व्यवस्था पर चलती थी। वहाँ रुपया नहीं, पगोडा मुख्य इकाई थी।',
+          'सोने का पगोडा सबसे ऊपर, उसके नीचे फ़नम — एक छोटा सिक्का जो सोने या चाँदी में आता था — और सबसे नीचे ताँबे का कैश, जो अत्यंत छोटे मूल्य का था।',
+          'अनुपात आमतौर पर एक पगोडा बराबर बयालीस फ़नम, और एक फ़नम बराबर अस्सी कैश के आसपास रहा। ये संख्याएँ अजीब लगती हैं और वे स्थानीय परंपरा से निकली थीं, ब्रिटिश आविष्कार नहीं।',
+          'यही इस क्षेत्र की सबसे बड़ी सीख है: कंपनी ने शुरुआत में अपनी व्यवस्था थोपी नहीं, बल्कि जो चल रही थी उसी में अपने सिक्के डाले।',
+        ],
+        pEn: [
+          'The currency of the Madras Presidency ran on a system entirely different from northern India. There the main unit was not the rupee but the pagoda.',
+          'The gold pagoda sat at the top, below it the fanam — a small coin issued in gold or silver — and at the bottom the copper cash, of very small value.',
+          'The ratios were generally one pagoda to forty-two fanams, and one fanam to around eighty cash. Those figures look odd and they came from local tradition rather than British invention.',
+          'That is the largest lesson of this field: the Company did not initially impose its own system but placed its coins inside the one already running.',
+        ],
+      },
+      {
+        hHi: 'लिपियों का मिश्रण',
+        hEn: 'The mixture of scripts',
+        pHi: [
+          'मद्रास प्रेसीडेंसी के सिक्के अपनी लिपि-विविधता के लिए जाने जाते हैं। एक ही सिक्के पर अंग्रेज़ी, फ़ारसी, तमिल और तेलुगु — चारों मिल सकती हैं।',
+          'कारण व्यावहारिक था। सिक्के को स्वीकार्य बनाने के लिए उसे उन सब भाषाओं में बोलना पड़ता था जिनमें उस क्षेत्र का बाज़ार चलता था।',
+          'फ़ारसी इसलिए कि प्रशासनिक और व्यापारिक भाषा वही थी। तमिल और तेलुगु इसलिए कि स्थानीय व्यापारी उन्हीं में पढ़ते थे। और अंग्रेज़ी कंपनी की अपनी पहचान के लिए।',
+          'संग्राहक के लिए यह चुनौती और आकर्षण दोनों है। चार लिपियों वाला एक छोटा-सा ताँबे का सिक्का अपने आप में उस दौर के दक्षिण भारत का चित्र है।',
+        ],
+        pEn: [
+          'The coins of the Madras Presidency are known for their variety of scripts. English, Persian, Tamil and Telugu can all appear on a single coin.',
+          'The reason was practical. To be accepted, the coin had to speak in every language in which the market of that region operated.',
+          'Persian because it was the administrative and commercial language. Tamil and Telugu because local traders read in them. And English for the Company’s own identity.',
+          'For a collector this is both the challenge and the attraction. A small copper coin carrying four scripts is in itself a portrait of southern India in that period.',
+        ],
+      },
+      {
+        hHi: 'स्टार पगोडा',
+        hEn: 'The star pagoda',
+        pHi: [
+          'सबसे प्रसिद्ध मद्रास सिक्का स्टार पगोडा है — सोने का छोटा सिक्का, जिस पर एक ओर तारा और दूसरी ओर देवता की आकृति।',
+          'इसे “तीन स्वामी पगोडा” भी कहा जाता है क्योंकि कुछ किस्मों पर तीन आकृतियाँ मिलती हैं, जिन्हें प्रायः वेंकटेश्वर और उनके साथ की मूर्तियों से जोड़ा जाता है।',
+          'यह सिक्का यूरोपीय व्यापारियों के दस्तावेज़ों में बार-बार आता है, क्योंकि अठारहवीं सदी में दक्षिण भारत के व्यापार का बड़ा हिस्सा इसी में तय होता था।',
+          'आज यह संग्राहकों के बीच महँगा है, पर उसका छोटा भाई — चाँदी और ताँबे के मूल्यवर्ग — कहीं अधिक सुलभ हैं और उसी व्यवस्था का हिस्सा हैं।',
+        ],
+        pEn: [
+          'The best-known Madras coin is the star pagoda — a small gold piece with a star on one side and a deity on the other.',
+          'It is also called the three-swami pagoda, because some varieties carry three figures, usually associated with Venkateswara and the images accompanying him.',
+          'The coin appears repeatedly in European merchants’ records, because a large part of eighteenth-century trade in southern India was settled in it.',
+          'It is expensive among collectors today, but its smaller relatives — the silver and copper denominations — are far more accessible and belong to the same system.',
+        ],
+      },
+      {
+        hHi: 'रुपये में परिवर्तन',
+        hEn: 'The change to the rupee',
+        pHi: [
+          'उन्नीसवीं सदी की शुरुआत में यह पूरी व्यवस्था बदल गई। कंपनी ने तीनों प्रेसीडेंसियों की मुद्रा को एक करने का निर्णय लिया, और मद्रास में पगोडा की जगह रुपया आया।',
+          'यह परिवर्तन 1818 के आसपास हुआ, और इसके साथ आना-पाई की व्यवस्था दक्षिण में भी लागू हुई।',
+          'व्यावहारिक कारण स्पष्ट था: तीन अलग व्यवस्थाएँ चलाना प्रशासन के लिए महँगा और उलझा हुआ था, और बढ़ते व्यापार के लिए एक साझा इकाई ज़रूरी थी।',
+          'संग्राहक के लिए यह एक साफ़ विभाजन-रेखा बनाती है। 1818 से पहले के मद्रास सिक्के एक अलग दुनिया के हैं; उसके बाद के वही ब्रिटिश भारत की मुख्यधारा में शामिल हो जाते हैं।',
+        ],
+        pEn: [
+          'Early in the nineteenth century this whole system changed. The Company decided to unify the coinage of its three presidencies, and in Madras the rupee replaced the pagoda.',
+          'The change came around 1818, and with it the anna-and-pie system was extended into the south.',
+          'The practical reason was clear: running three separate systems was expensive and confusing to administer, and growing trade needed a common unit.',
+          'For a collector this makes a clean dividing line. Madras coins before 1818 belong to a different world; those after it join the mainstream of British India.',
+        ],
+      },
+      {
+        hHi: 'ताँबे के सिक्के — प्रवेश-द्वार',
+        hEn: 'The copper — the doorway',
+        pHi: [
+          'सोने का पगोडा महँगा है, पर मद्रास के ताँबे के सिक्के अत्यंत सुलभ हैं और शुरुआत के लिए आदर्श।',
+          'इनमें कैश, दो कैश, चार कैश, बीस कैश और अन्य मूल्यवर्ग मिलते हैं। इनका आकार और डिज़ाइन विविध है, और कई पर वही लिपि-मिश्रण मिलता है जो बड़े सिक्कों पर।',
+          'दाम कुछ सौ रुपये से शुरू होता है। एक अच्छा शुरुआती लक्ष्य है इन मूल्यवर्गों का एक-एक नमूना जुटाना — कुल ख़र्च मामूली, और परिणाम एक स्पष्ट सेट।',
+          'इनकी एक और ख़ूबी है: ये अक्सर बड़े और मोटे होते हैं, इसलिए अक्षर बड़े और पढ़ने में आसान रहते हैं — जो लिपि सीखने के लिए बहुत मदद करता है।',
+        ],
+        pEn: [
+          'The gold pagoda is expensive, but the copper coinage of Madras is very accessible and ideal for a beginner.',
+          'It includes the cash, two cash, four cash, twenty cash and other denominations. Their shapes and designs vary, and many carry the same mixture of scripts as the larger coins.',
+          'Prices start at a few hundred rupees. A good opening target is one example of each denomination — a modest total outlay, and a clearly defined set as the result.',
+          'They have another advantage: they are often large and thick, so the lettering is big and easy to read — which helps a great deal when learning the scripts.',
+        ],
+      },
+      {
+        hHi: 'पहचान और दशा',
+        hEn: 'Identification and condition',
+        pHi: [
+          'पहचान का पहला क़दम लिपि पहचानना है। तमिल और तेलुगु अक्षर गोल और घुमावदार होते हैं; फ़ारसी दाएँ से बाएँ बहती है; अंग्रेज़ी स्पष्ट है।',
+          'फिर मूल्यवर्ग — जो अक्सर अंग्रेज़ी में लिखा होता है, और यही सबसे तेज़ सूत्र है। “XX CASH” या “II CASH” जैसे अंकन सीधे बता देते हैं।',
+          'दशा के मामले में ताँबे पर वही नियम लागू होते हैं जो हर जगह — प्राकृतिक परत को रहने दीजिए, और चमकाने की कोशिश मत कीजिए।',
+          'इस क्षेत्र की एक विशेष समस्या क्षरण है, क्योंकि दक्षिण की आर्द्र जलवायु में ताँबा तेज़ी से प्रभावित होता है। भंडारण में सिलिका जेल यहाँ सामान्य से भी ज़्यादा ज़रूरी है।',
+        ],
+        pEn: [
+          'The first step in identification is recognising the script. Tamil and Telugu letters are round and curving; Persian flows from right to left; English is obvious.',
+          'Then the denomination — usually written in English, which is the fastest clue. Markings such as “XX CASH” or “II CASH” state it directly.',
+          'On condition, the same rules apply to this copper as everywhere else — leave the natural film alone and make no attempt to brighten it.',
+          'One problem is particular to this field: corrosion, because copper is affected quickly in the humid climate of the south. Silica gel in storage matters here even more than usual.',
+        ],
+      },
+      {
+        hHi: 'सावधानी',
+        hEn: 'A caution',
+        pHi: [
+          'स्टार पगोडा की नक़ल बाज़ार में मौजूद है, और सोने के सिक्कों की तरह वह अक्सर सही वज़न और सही शुद्धता के साथ बनाई जाती है।',
+          'पकड़ शैली में होती है — आकृतियों का अनुपात और अक्षरों का आकार। इसलिए महँगे सोने के मद्रास सिक्के के लिए प्रमाणन आवश्यक है।',
+          'ताँबे के सिक्कों में नक़ल कम मिलती है क्योंकि उसमें मुनाफ़ा नहीं, पर वहाँ एक और समस्या है — अत्यधिक क्षरित सिक्कों को “दुर्लभ किस्म” बताकर बेचना।',
+          'यदि अक्षर पढ़े नहीं जा सकते, तो किस्म का दावा भी सत्यापित नहीं हो सकता। ऐसे सिक्के के लिए साधारण दाम ही उचित है, चाहे विक्रेता कुछ भी कहे।',
+        ],
+        pEn: [
+          'Forgeries of the star pagoda exist in the market, and like other gold coins they are frequently made at the correct weight and fineness.',
+          'They are caught on style — the proportions of the figures and the shapes of the letters. Certification is therefore necessary for any expensive Madras gold.',
+          'Forgery is rarer among the copper because there is no profit in it, but another problem appears there — heavily corroded coins being sold as “rare varieties”.',
+          'If the letters cannot be read, the claim about the variety cannot be verified either. For such a coin only an ordinary price is appropriate, whatever the seller says.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'quarter-anna-tamba',
+    sections: [
+      {
+        hHi: 'आना व्यवस्था में इसकी जगह',
+        hEn: 'Its place in the anna system',
+        pHi: [
+          'दशमलव से पहले की व्यवस्था में एक रुपये में सोलह आने होते थे, और हर आने में चार पैसे। चौथाई आना यानी एक आने का चौथा हिस्सा — रुपये का चौंसठवाँ भाग।',
+          'यह छोटी रक़म थी, पर उस दौर में बेकार नहीं। चौथाई आने से रोज़मर्रा की छोटी चीज़ें ख़रीदी जा सकती थीं, और यही कारण है कि यह सिक्का इतनी भारी संख्या में ढला।',
+          'इसीलिए यह हर पुरानी संदूक़ में मिलता है। यह उस दौर का सबसे आम सिक्का था, और आम होना ही आज इसे सबसे अच्छा शुरुआती सिक्का बनाता है।',
+        ],
+        pEn: [
+          'In the system before decimalisation a rupee held sixteen annas, and each anna four pice. A quarter anna is therefore a quarter of an anna — one sixty-fourth of a rupee.',
+          'That was a small sum, and not a worthless one at the time. Everyday small purchases could be made with a quarter anna, which is why the coin was struck in such large numbers.',
+          'This is why it appears in every old trunk. It was the commonest coin of its period, and being common is exactly what makes it the best beginner’s coin today.',
+        ],
+      },
+      {
+        hHi: 'भौतिक पहचान',
+        hEn: 'Physical identification',
+        pHi: [
+          'यह एक बड़ा, भारी ताँबे का सिक्का है — व्यास लगभग पच्चीस मिलीमीटर और वज़न छह से सात ग्राम के बीच, दौर के अनुसार।',
+          'हाथ में यह आधुनिक सिक्कों से स्पष्ट रूप से भारी लगता है, और यही पहली पहचान है। ताँबे का रंग भूरा-लाल होता है, और पुराने नमूनों पर एक गहरी प्राकृतिक परत बन जाती है।',
+          'एक ओर शासक का चित्र होता है, और दूसरी ओर मूल्यवर्ग तथा वर्ष। कुछ दौर में मूल्यवर्ग अंग्रेज़ी के साथ नागरी और फ़ारसी में भी अंकित हुआ।',
+          'बाद के दौर में आकार छोटा हुआ और कुछ किस्मों में बीच में छेद भी आया। ये परिवर्तन धातु की लागत बचाने के लिए थे, और वही कहानी हर मुद्रा में दोहराई जाती है।',
+        ],
+        pEn: [
+          'This is a large, heavy copper coin — around twenty-five millimetres across and weighing between six and seven grams depending on the period.',
+          'In the hand it feels distinctly heavier than modern coinage, and that is the first identification. The copper is brown-red, and older examples carry a deep natural film.',
+          'One side bears the ruler’s portrait, the other the denomination and the year. In some periods the denomination appears in Nagari and Persian alongside the English.',
+          'In later periods the size was reduced and some varieties acquired a hole in the centre. These changes were made to save on metal cost, and the same story repeats in every currency.',
+        ],
+      },
+      {
+        hHi: 'शासकों की पूरी शृंखला',
+        hEn: 'The full run of rulers',
+        pHi: [
+          'चौथाई आना विक्टोरिया के दौर से लेकर जॉर्ज VI तक चलता रहा, यानी लगभग नब्बे वर्ष। यह एक ही मूल्यवर्ग में पूरे ब्रिटिश भारत का इतिहास समेट देता है।',
+          'विक्टोरिया क्वीन (1862–1876), विक्टोरिया एम्प्रेस (1877–1901), एडवर्ड VII (1903–1910), जॉर्ज V (1911–1936), और जॉर्ज VI (1938–1947)।',
+          'हर शासक का चित्र अलग है, और उपाधि भी। इसलिए बिना कैटलॉग के भी इन्हें क्रम में लगाया जा सकता है — केवल चेहरा और लिखावट देखकर।',
+          'यही इसे सबसे अच्छा संग्रह-विषय बनाता है। “हर शासक का एक चौथाई आना” — पाँच सिक्कों का लक्ष्य, कुल ख़र्च कुछ हज़ार रुपये, और परिणाम एक पूरा ऐतिहासिक क्रम।',
+        ],
+        pEn: [
+          'The quarter anna ran from Victoria’s period through to George VI — some ninety years. It compresses the whole history of British India into a single denomination.',
+          'Victoria Queen (1862–1876), Victoria Empress (1877–1901), Edward VII (1903–1910), George V (1911–1936), and George VI (1938–1947).',
+          'Each ruler’s portrait differs, and so does the title. They can therefore be arranged in order without any catalogue at all — by face and inscription alone.',
+          'This is what makes it the best collecting subject there is. “One quarter anna per ruler” — a target of five coins, a few thousand rupees in total, and a complete historical sequence as the result.',
+        ],
+      },
+      {
+        hHi: 'क़ीमती किस्में',
+        hEn: 'The varieties that carry value',
+        pHi: [
+          'अधिकांश चौथाई आने सस्ते हैं, और यह कहना ईमानदारी है। क़ीमत तीन जगह छिपी है।',
+          'पहली — बहुत ऊँची दशा। चूँकि ये सिक्के रोज़ चले और किसी ने सँभालकर नहीं रखे, बिना घिसे नमूने अपेक्षाकृत दुर्लभ हैं और अच्छा दाम पाते हैं।',
+          'दूसरी — कम ढलाई वाले वर्ष-टकसाल संयोजन। हर वर्ष की संख्या अलग थी, और कुछ संयोजन बहुत कम बने। यह जानकारी कैटलॉग में दर्ज है।',
+          'तीसरी — असली ढलाई-दोष। ताँबे के छोटे सिक्के तेज़ रफ़्तार से ढाले जाते थे, इसलिए यहाँ एरर अपेक्षाकृत ज़्यादा मिलते हैं।',
+        ],
+        pEn: [
+          'Most quarter annas are cheap, and saying so is simply honest. The value hides in three places.',
+          'First, very high grade. Because these coins circulated daily and nobody put them away, unworn examples are comparatively scarce and command a good price.',
+          'Second, low-mintage year and mint combinations. Production varied from year to year, and some combinations were made in very small numbers. That information is recorded in the catalogues.',
+          'Third, genuine striking errors. Small copper coins were struck at high speed, so errors are comparatively common here.',
+        ],
+      },
+      {
+        hHi: 'घिसाव कैसे पढ़ें',
+        hEn: 'How to read the wear',
+        pHi: [
+          'चौथाई आने पर घिसाव सबसे पहले तीन जगह दिखता है: शासक की गाल की हड्डी, बालों की ऊपरी लट, और मुकुट या आवरण का सबसे ऊँचा भाग।',
+          'पिछली तरफ़ अक्षरों के ऊपरी किनारे और वर्ष के अंक पहले चपटे होते हैं। यदि वर्ष पढ़ा नहीं जा सकता, तो सिक्का ग्रेडिंग की निचली सीढ़ी पर है।',
+          'ताँबे में एक और बात देखिए — क्षरण। हरे धब्बे या खुरदुरे गड्ढे घिसाव नहीं, नुक़सान हैं, और वे क़ीमत को घिसाव से भी ज़्यादा गिराते हैं।',
+          'अभ्यास का सबसे अच्छा तरीक़ा यही है: दस चौथाई आने एक साथ रखिए और उन्हें सबसे घिसे से सबसे अच्छे तक क्रम में लगाइए। कुछ मिनटों में आँख बदल जाती है।',
+        ],
+        pEn: [
+          'On a quarter anna, wear shows first in three places: the ruler’s cheekbone, the uppermost lock of hair, and the highest point of the crown or veil.',
+          'On the reverse, the upper edges of the lettering and the digits of the year flatten earliest. If the year cannot be read, the coin sits on a lower rung of the grading ladder.',
+          'With copper, look for one more thing — corrosion. Green spots or rough pitting are damage rather than wear, and they reduce value even more sharply than wear does.',
+          'The best way to practise is this: put ten quarter annas together and arrange them from most worn to best. Within a few minutes the eye changes.',
+        ],
+      },
+      {
+        hHi: 'यह सबसे अच्छा पहला सिक्का क्यों है',
+        hEn: 'Why this is the best first coin',
+        pHi: [
+          'चार कारण मिलकर काम करते हैं। पहला — यह सस्ता है, इसलिए ग़लती की क़ीमत कम है। एक नया संग्राहक बिना डर के प्रयोग कर सकता है।',
+          'दूसरा — यह बड़ा है, इसलिए ब्योरे स्पष्ट दिखते हैं। छोटे सिक्के पर घिसाव पढ़ना कठिन है; यहाँ आसान।',
+          'तीसरा — यह आसानी से मिलता है। हर डीलर के पास है, हर प्रदर्शनी में है, और शायद आपके अपने घर में भी।',
+          'चौथा — इसकी शृंखला पूरी है। नब्बे वर्ष, पाँच शासक, कई टकसालें — एक ही सिक्के में पूरा पाठ्यक्रम मौजूद है, और उसे पूरा करना सचमुच संभव है।',
+        ],
+        pEn: [
+          'Four reasons work together. First, it is cheap, so the cost of a mistake is low. A new collector can experiment without fear.',
+          'Second, it is large, so the detail is clearly visible. Reading wear on a small coin is difficult; here it is straightforward.',
+          'Third, it is easy to find. Every dealer has them, every fair has them, and quite possibly your own house has them.',
+          'Fourth, the series is complete. Ninety years, five rulers, several mints — an entire syllabus inside one denomination, and finishing it is genuinely achievable.',
+        ],
+      },
+      {
+        hHi: 'क़ीमत के बारे में ईमानदार बात',
+        hEn: 'An honest word about value',
+        pHi: [
+          'एक साधारण, घिसा हुआ चौथाई आना कुछ दसियों रुपये का सिक्का है। यह सुनकर निराशा हो सकती है, और यही वह सच्चाई है जो आपको ठगों से बचाती है।',
+          'इंटरनेट पर इस सिक्के को लेकर “लाखों में बिकता है” वाले दावे नियमित रूप से घूमते हैं। ढाँचा हमेशा एक जैसा है: असाधारण दावा, एक फ़ोन नंबर, फिर अग्रिम शुल्क।',
+          'और वही नियम जो हर सौदे पर लागू होता है — पैसा ख़रीदार से विक्रेता की ओर बहता है। जो आपसे सिक्का ख़रीदने से पहले शुल्क माँगे, वह ख़रीदार नहीं है।',
+          'पर इसका मतलब यह नहीं कि सिक्का बेकार है। कुछ दसियों रुपये में आपको एक ऐसी वस्तु मिलती है जो सौ साल पुरानी है और जिस पर एक साम्राज्य का चेहरा बना है। यह सौदा बुरा नहीं है।',
+        ],
+        pEn: [
+          'An ordinary worn quarter anna is a coin worth a few tens of rupees. That is disappointing to hear, and it is exactly the fact that protects you from the fraudsters.',
+          'Claims that this coin “sells for lakhs” circulate online regularly. The structure never changes: an extraordinary claim, a phone number, then an advance fee.',
+          'And the same rule applies as in every transaction — money flows from the buyer to the seller. Anybody asking you for a fee before buying your coin is not a buyer.',
+          'But none of that makes the coin worthless. For a few tens of rupees you hold something a hundred years old with the face of an empire on it. That is not a bad bargain.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'delhi-sultanate-tanka',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'इल्तुतमिश ने तेरहवीं सदी में लगभग ग्यारह ग्राम का चाँदी का टंका चलाया, और उसके साथ ताँबे का जीतल। यही व्यवस्था तीन सौ वर्ष चली।',
+          'पाँच वंश — मामलूक, ख़िलजी, तुग़लक़, सैयद, लोदी — और हर एक की अपनी शैली। सिक्कों पर चित्र नहीं, केवल सुलेख, और वही उनकी कला है।',
+          'शुरुआत ताँबे के जीतल से कीजिए: वही लिपि, वही टकसाल-नाम, दाम का दसवाँ हिस्सा। चाँदी की ओर तब बढ़िए जब अक्षरों के आकार परिचित हो जाएँ।',
+        ],
+        pEn: [
+          'Iltutmish introduced the silver tanka of roughly eleven grams in the thirteenth century, and the copper jital alongside it. That system then ran for three hundred years.',
+          'Five dynasties — Mamluk, Khalji, Tughlaq, Sayyid, Lodi — each with its own style. The coins carry no images at all, only calligraphy, and the calligraphy is the art.',
+          'Begin with the copper jital: the same script, the same mint names, at a tenth of the price. Move towards the silver once the shapes of the letters have become familiar to you.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'akbar-ke-sikke',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'अकबर ने शेर शाह की तीन-धातु व्यवस्था को बदला नहीं, कसा — और उसी अनुशासन ने मुग़ल रुपिया को भरोसे का सिक्का बनाया।',
+          'इलाही सन्, चौकोर मिहराबी सिक्के, और सौ से अधिक टकसालें — यही इस दौर की पहचान हैं। पहचान का क्रम सरल है: धातु और वज़न, फिर शासक का नाम, फिर टकसाल, फिर तारीख़।',
+          'शुरुआत ताँबे के दाम से कीजिए, जो सस्ता है और उसी लिपि में लिखा है। महँगे सिक्के के लिए प्रमाणन कराइए — यह ख़र्च ग़लत ख़रीद से हमेशा सस्ता पड़ता है।',
+        ],
+        pEn: [
+          'Akbar did not replace Sher Shah’s three-metal system but tightened it — and that discipline is what made the Mughal rupiya a coin merchants trusted.',
+          'The Ilahi era, the square mihrabi coins, and more than a hundred mints are the marks of this period. The order of identification is simple: metal and weight, then the ruler’s name, then the mint, then the date.',
+          'Begin with the copper dam, which is inexpensive and written in the same script. For an expensive coin, pay for certification — that expense is always cheaper than a wrong purchase.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'maratha-shivrai',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'शिवाजी ने 1674 में अपने नाम का सिक्का जारी किया, और देवनागरी चुनी जबकि क्षेत्र की अधिकांश मुद्रा फ़ारसी में थी। वह चयन अपने आप में एक बयान था।',
+          'एक ओर “श्री राजा शिव”, दूसरी ओर “छत्रपति”। बाद में अनेक मराठा सरदारों ने भी शिवराई जारी की, इसलिए एक ही पाठ के सैकड़ों रूप मिलते हैं।',
+          'यह सबसे सस्ते और सबसे कम भीड़ वाले क्षेत्रों में है। दस-बारह साधारण नमूने ख़रीदिए, अक्षरों की स्पष्टता के क्रम में लगाइए, और आकारों की तुलना कीजिए — वहीं से वर्गीकरण शुरू होता है।',
+        ],
+        pEn: [
+          'Shivaji issued coinage in his own name in 1674, and chose Devanagari at a time when most currency in the region was in Persian. That choice was itself a statement.',
+          '“Shri Raja Shiva” on one side, “Chhatrapati” on the other. Many Maratha chiefs later issued shivrais as well, so hundreds of variations of the same text exist.',
+          'This is among the cheapest and least crowded fields there is. Buy ten or twelve ordinary examples, arrange them by how clearly the letters read, and compare the shapes — that is where classification begins.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'madras-presidency-sikke',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'मद्रास प्रेसीडेंसी रुपये पर नहीं, पगोडा–फ़नम–कैश की व्यवस्था पर चलती थी, जो स्थानीय परंपरा से निकली थी न कि ब्रिटिश आविष्कार से।',
+          'एक ही सिक्के पर अंग्रेज़ी, फ़ारसी, तमिल और तेलुगु — चारों मिल सकती हैं, क्योंकि सिक्के को उन सब भाषाओं में बोलना पड़ता था जिनमें बाज़ार चलता था।',
+          '1818 के आसपास यह व्यवस्था रुपये में बदल गई, और वही तारीख़ इस क्षेत्र की साफ़ विभाजन-रेखा है। शुरुआत ताँबे के कैश से कीजिए — बड़े, मोटे, और अक्षर पढ़ने में आसान।',
+        ],
+        pEn: [
+          'The Madras Presidency ran not on the rupee but on the pagoda–fanam–cash system, which came out of local tradition rather than British invention.',
+          'English, Persian, Tamil and Telugu can all appear on a single coin, because the coin had to speak in every language the market operated in.',
+          'Around 1818 the system changed to the rupee, and that date is the clean dividing line of this field. Begin with the copper cash — large, thick, and easy to read the lettering on.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'quarter-anna-tamba',
+    sections: [
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'चौथाई आना रुपये का चौंसठवाँ भाग था, और उस दौर का सबसे आम सिक्का — यही आज उसे सबसे अच्छा शुरुआती सिक्का बनाता है।',
+          'नब्बे वर्ष, पाँच शासक: विक्टोरिया क्वीन, विक्टोरिया एम्प्रेस, एडवर्ड VII, जॉर्ज V, जॉर्ज VI। “हर शासक का एक” — पाँच सिक्कों का लक्ष्य, कुछ हज़ार रुपये का ख़र्च।',
+          'क़ीमत तीन जगह है: बहुत ऊँची दशा, कम ढलाई वाले वर्ष, और असली एरर। बाक़ी सब सस्ते हैं, और उनके बारे में “लाखों में बिकेगा” वाला हर दावा झूठा है।',
+        ],
+        pEn: [
+          'The quarter anna was one sixty-fourth of a rupee and the commonest coin of its period — which is exactly what makes it the best beginner’s coin today.',
+          'Ninety years and five rulers: Victoria Queen, Victoria Empress, Edward VII, George V, George VI. “One per ruler” is a target of five coins for a few thousand rupees.',
+          'Value sits in three places: very high grade, low-mintage years, and genuine errors. The rest are cheap, and every “this sells for lakhs” claim made about them is false.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'akbar-ke-sikke',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'अकबर के सिक्के इसलिए महत्वपूर्ण हैं कि उन पर मुद्रा को विचार का माध्यम माना गया — केवल लेन-देन का साधन नहीं।',
+        ],
+        pEn: [
+          'Akbar’s coins matter because on them currency was treated as a medium for ideas rather than merely an instrument of exchange, and that is a rare thing to find struck into metal at any period.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'maratha-shivrai',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'शिवराई की सबसे बड़ी ख़ूबी यही है कि वह सस्ती रहते हुए भी असली है — कुछ सौ रुपये में तीन सौ साल पुराना इतिहास हथेली पर।',
+        ],
+        pEn: [
+          'The great virtue of the shivrai is that it stays inexpensive while remaining entirely genuine — three hundred years of history in your palm for a few hundred rupees, which very few fields can offer.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'madras-presidency-sikke',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'यह क्षेत्र इसलिए दिलचस्प है कि यहाँ सिक्का चार भाषाओं में बोलता है। एक छोटा ताँबे का टुकड़ा उस दौर के दक्षिण भारत का पूरा चित्र बन जाता है।',
+        ],
+        pEn: [
+          'This field is interesting because here the coin speaks in four languages at once. A small piece of copper becomes a complete portrait of southern India in its period, which is a great deal to carry on twenty-five millimetres of metal.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'quarter-anna-tamba',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'यदि किसी को इस शौक़ में लाना हो, तो उसके हाथ में एक चौथाई आना रख दीजिए। बड़ा, भारी, सस्ता, और सौ साल पुराना — इससे बेहतर पहला सिक्का नहीं है।',
+        ],
+        pEn: [
+          'If you want to bring somebody into this hobby, put a quarter anna in their hand. Large, heavy, inexpensive and a hundred years old — there is no better first coin than this one, and it costs almost nothing to give away.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'madras-presidency-sikke',
+    sections: [
+      {
+        hHi: 'शुरुआत का सुझाव',
+        hEn: 'A suggestion for starting',
+        pHi: [
+          'यदि आप दक्षिण भारत से हैं, तो इस क्षेत्र से शुरुआत करना स्वाभाविक है — स्थानीय जानकारी आसानी से मिलती है और संग्रह व्यक्तिगत हो जाता है।',
+          'ताँबे के कैश के पाँच-छह अलग मूल्यवर्ग जुटाइए, और उन्हें आकार के क्रम में रखिए। लिपियाँ पहचानने का अभ्यास वहीं से शुरू होता है।',
+        ],
+        pEn: [
+          'If you are from southern India, beginning here is the natural choice — local knowledge is easy to come by and the collection becomes personal to you.',
+          'Gather five or six different denominations of the copper cash and lay them out in order of size. That is where the practice of recognising the scripts begins, and it costs very little to set up.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
