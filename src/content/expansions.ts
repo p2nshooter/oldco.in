@@ -4071,6 +4071,823 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'east-india-company-coins',
+    sections: [
+      {
+        hHi: 'एक कंपनी को सिक्का ढालने का अधिकार कैसे मिला',
+        hEn: 'How a trading company came to mint money',
+        pHi: [
+          'ईस्ट इंडिया कंपनी 1600 में एक व्यापारिक संस्था के रूप में बनी, और उसका मूल उद्देश्य मसाले और कपड़े का व्यापार था — मुद्रा जारी करना नहीं।',
+          'पर व्यापार के लिए मुद्रा चाहिए थी, और स्थानीय सिक्कों पर निर्भर रहना असुविधाजनक था। कंपनी ने धीरे-धीरे स्थानीय शासकों से सिक्का ढालने की अनुमति ली।',
+          'सूरत में मुग़ल अनुमति से, मद्रास में स्थानीय शासकों की सहमति से, और बंबई में पुर्तगालियों से मिले क्षेत्र पर अपने अधिकार से — हर जगह आधार अलग था।',
+          'यह क्रमिक विस्तार ही इस पूरे विषय की कुंजी है। कंपनी ने एक दिन में मुद्रा-अधिकार नहीं पाया; उसने डेढ़ सौ वर्षों में टुकड़े-टुकड़े जोड़े।',
+        ],
+        pEn: [
+          'The East India Company was formed in 1600 as a trading body, and its original purpose was commerce in spices and cloth — not the issuing of currency.',
+          'But trade required money, and depending on local coinage was inconvenient. The Company gradually obtained permission to strike coins from local rulers.',
+          'At Surat by Mughal permission, at Madras with the consent of local rulers, and at Bombay by its own authority over territory received from the Portuguese — the basis was different in each place.',
+          'That gradual accumulation is the key to the whole subject. The Company did not acquire minting rights in a single step; it assembled them piece by piece over a century and a half.',
+        ],
+      },
+      {
+        hHi: 'तीन प्रेसीडेंसी, तीन व्यवस्थाएँ',
+        hEn: 'Three presidencies, three systems',
+        pHi: [
+          'कंपनी की तीन प्रेसीडेंसियाँ थीं — बंगाल, मद्रास और बंबई — और उन्नीसवीं सदी के आरंभ तक तीनों की अपनी अलग मुद्रा-व्यवस्था चलती रही।',
+          'बंगाल में रुपया चलता था, मुग़ल परंपरा के अनुसार। मद्रास में पगोडा, फ़नम और कैश की दक्षिणी व्यवस्था। बंबई में रुपया और साथ में स्थानीय इकाइयाँ।',
+          'इसका अर्थ यह था कि एक ही कंपनी के तीन क्षेत्रों के बीच व्यापार करने पर रूपांतरण करना पड़ता था — अपनी ही मुद्राओं के बीच।',
+          'यह असुविधा अंततः 1835 के एकसमान सिक्का अधिनियम तक ले गई, जिसने पूरे कंपनी-शासित भारत के लिए एक ही रुपया तय किया।',
+        ],
+        pEn: [
+          'The Company had three presidencies — Bengal, Madras and Bombay — and until the early nineteenth century each ran its own separate monetary system.',
+          'Bengal used the rupee, following Mughal practice. Madras used the southern system of pagodas, fanams and cash. Bombay used the rupee alongside local units.',
+          'This meant that trading between three territories of the same company required conversion — between its own currencies.',
+          'That inconvenience eventually led to the Uniform Coinage Act of 1835, which established a single rupee for all Company-ruled India.',
+        ],
+      },
+      {
+        hHi: 'मुग़ल बादशाह का नाम क्यों',
+        hEn: 'Why the Mughal emperor’s name',
+        pHi: [
+          'अठारहवीं सदी के कई कंपनी सिक्कों पर दिल्ली के मुग़ल बादशाह का नाम फ़ारसी में दर्ज है, कंपनी का नहीं। यह पहली नज़र में उलटा लगता है।',
+          'कारण व्यावहारिक था। बाज़ार जिस नाम को पहचानता था, उसी नाम वाला सिक्का बिना सवाल स्वीकार होता था। कंपनी को अपनी पहचान से ज़्यादा अपने सिक्के के चलने की चिंता थी।',
+          'एक क़ानूनी पक्ष भी था: कंपनी औपचारिक रूप से मुग़ल संप्रभुता के अधीन एक इकाई थी, और उसे सिक्का ढालने का अधिकार उसी संप्रभुता से मिला था।',
+          'दिलचस्प बात यह है कि कई सिक्कों पर शाह आलम द्वितीय का नाम उनकी मृत्यु के दशकों बाद तक चलता रहा — जब वह नाम एक व्यक्ति नहीं, एक मानक बन चुका था।',
+        ],
+        pEn: [
+          'Many eighteenth-century Company coins carry the name of the Mughal emperor at Delhi in Persian, not the Company’s. At first sight that seems inverted.',
+          'The reason was practical. A coin bearing the name the market recognised was accepted without question. The Company cared more that its coin should circulate than that it should carry its own identity.',
+          'There was a legal dimension too: the Company was formally a body under Mughal sovereignty, and its right to mint derived from that sovereignty.',
+          'What is interesting is that the name of Shah Alam II continued on coins for decades after his death — by which point the name had become a standard rather than a person.',
+        ],
+      },
+      {
+        hHi: 'कंपनी के सिक्के कैसे दिखते हैं',
+        hEn: 'What Company coins look like',
+        pHi: [
+          'असली कंपनी सिक्कों की पहचान सीधी है, और यह जानना बाज़ार में घूमने वाले नक़ली टोकनों से बचाता है।',
+          'शुरुआती सिक्कों पर कंपनी का द्विशीर्ष चिह्न या उसका बेल-मार्क मिलता है, और फ़ारसी में लिखावट। कोई देवी-देवता नहीं, कोई अलंकरण नहीं।',
+          'उन्नीसवीं सदी के सिक्कों पर अंग्रेज़ी में “EAST INDIA COMPANY”, मूल्यवर्ग, और वर्ष स्पष्ट रूप से अंकित है। कुछ पर शेर और ताड़ का पेड़ का प्रतीक भी।',
+          'चरित्र में ये सिक्के प्रशासनिक हैं — सूखे, व्यावहारिक, और सजावट से रहित। यही उन्हें बाज़ार में बिकने वाले “1616 वाले” पीतल के टोकनों से तुरंत अलग कर देता है।',
+        ],
+        pEn: [
+          'Identifying genuine Company coins is straightforward, and knowing this protects you from the fake tokens circulating in bazaars.',
+          'Early issues carry the Company’s bale mark and an inscription in Persian. No deities, no ornament.',
+          'Nineteenth-century coins carry “EAST INDIA COMPANY” in English, with the denomination and year clearly marked. Some also bear the lion and palm tree device.',
+          'In character these coins are administrative — dry, practical, and free of decoration. That alone separates them immediately from the brass “1616” tokens sold in the markets.',
+        ],
+      },
+      {
+        hHi: '1835 का एकसमान सिक्का',
+        hEn: 'The uniform coinage of 1835',
+        pHi: [
+          '1835 का अधिनियम इस पूरी कहानी का मोड़ है। उसने तीनों प्रेसीडेंसियों की अलग व्यवस्थाएँ समाप्त कीं और एक ही रुपया तय किया — 180 ग्रेन वज़न, 11/12 शुद्धता।',
+          'इन सिक्कों पर पहली बार विलियम IV का चित्र आया, और उसके बाद विक्टोरिया का — यानी सिक्के पर अब एक ब्रिटिश शासक का चेहरा था, मुग़ल बादशाह का नाम नहीं।',
+          'यह परिवर्तन प्रतीकात्मक रूप से बड़ा है। मुग़ल नाम हटाना यह घोषित करना था कि अब संप्रभुता का स्रोत दिल्ली नहीं रहा।',
+          'संग्राहक के लिए यह एक साफ़ विभाजन-रेखा बनाती है: 1835 से पहले के सिक्के एक दुनिया के हैं, उसके बाद के दूसरी के।',
+        ],
+        pEn: [
+          'The Act of 1835 is the turning point of this whole story. It ended the separate systems of the three presidencies and fixed a single rupee — 180 grains in weight, eleven-twelfths fine.',
+          'These coins carried a portrait of William IV for the first time, and then of Victoria — meaning the coin now bore the face of a British monarch rather than the name of a Mughal emperor.',
+          'That change is symbolically large. Removing the Mughal name was a declaration that the source of sovereignty was no longer Delhi.',
+          'For a collector it makes a clean dividing line: coins before 1835 belong to one world, those after it to another.',
+        ],
+      },
+      {
+        hHi: 'ताज को हस्तांतरण',
+        hEn: 'The transition to the Crown',
+        pHi: [
+          '1857 के विद्रोह के बाद ब्रिटिश संसद ने कंपनी का शासन समाप्त कर दिया, और 1858 में भारत सीधे ब्रिटिश ताज के अधीन आया।',
+          'सिक्कों पर यह परिवर्तन तुरंत नहीं दिखा। कंपनी के नाम वाले सिक्के कुछ वर्षों तक ढलते रहे, और 1862 से “VICTORIA QUEEN” वाली नई शृंखला शुरू हुई।',
+          'यही कारण है कि 1858 और 1862 के बीच का दौर संग्राहकों के लिए दिलचस्प है — वह एक संक्रमण-काल है जिसमें दोनों तरह के सिक्के मिलते हैं।',
+          'और 1877 में एक और शब्द बदला: “QUEEN” की जगह “EMPRESS” आया, जब विक्टोरिया को भारत की सम्राज्ञी घोषित किया गया।',
+        ],
+        pEn: [
+          'After the revolt of 1857 the British Parliament ended Company rule, and in 1858 India came directly under the British Crown.',
+          'The change did not appear on the coinage immediately. Coins bearing the Company’s name continued to be struck for some years, and the new “VICTORIA QUEEN” series began in 1862.',
+          'This is why the period between 1858 and 1862 is interesting to collectors — it is a transition in which both kinds of coin are found.',
+          'And in 1877 one more word changed: “QUEEN” became “EMPRESS”, when Victoria was proclaimed Empress of India.',
+        ],
+      },
+      {
+        hHi: 'ख़रीदते समय सावधानी',
+        hEn: 'Caution when buying',
+        pHi: [
+          'इस क्षेत्र की सबसे बड़ी समस्या असली सिक्कों की नक़ल नहीं, बल्कि आधुनिक टोकनों को असली बताकर बेचना है।',
+          'बाज़ार में और ऑनलाइन “ONE ANNA EAST INDIA COMPANY 1616” जैसे पीतल के टोकन भारी संख्या में मिलते हैं। वे पूजा-सामग्री और स्मृति-चिह्न के रूप में बने, और उनका ऐतिहासिक मूल्य शून्य है।',
+          'पहचान सरल है: तारीख़ की असंगति, पीतल की आधुनिक चमक, देवी-देवताओं की आकृतियाँ, और चिकना-गोल किनारा जो ढलाई का प्रमाण है।',
+          'अच्छी ख़बर यह है कि असली कंपनी सिक्के सस्ते और सुलभ हैं। ताँबे के क्वार्टर आना और आधा पाइस कुछ सौ रुपये में मिल जाते हैं — यानी उतने ही पैसे में असली इतिहास।',
+        ],
+        pEn: [
+          'The largest problem in this field is not forgery of genuine coins but the sale of modern tokens as authentic ones.',
+          'Brass tokens reading “ONE ANNA EAST INDIA COMPANY 1616” are found in quantity in markets and online. They were made as devotional and souvenir objects, and their historical value is nil.',
+          'Identification is simple: the inconsistent date, the modern brightness of the brass, the figures of deities, and the smooth rounded edge that betrays casting.',
+          'The good news is that genuine Company coins are cheap and available. Copper quarter annas and half pice cost a few hundred rupees — real history for the same money.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'एक व्यापारिक कंपनी ने डेढ़ सौ वर्षों में टुकड़े-टुकड़े मुद्रा-अधिकार जोड़े, तीन अलग व्यवस्थाएँ चलाईं, और 1835 में उन्हें एक किया।',
+          'अठारहवीं सदी के सिक्कों पर मुग़ल बादशाह का नाम है, उन्नीसवीं सदी के सिक्कों पर ब्रिटिश शासक का चेहरा — और वह परिवर्तन ही पूरी राजनीतिक कहानी बता देता है।',
+        ],
+        pEn: [
+          'A trading company assembled minting rights piece by piece across a century and a half, ran three separate systems, and unified them in 1835.',
+          'Eighteenth-century coins carry the Mughal emperor’s name; nineteenth-century coins carry a British monarch’s face — and that single change tells the entire political story of the period.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'victoria-portrait-coins',
+    sections: [
+      {
+        hHi: 'चित्र किसने बनाया',
+        hEn: 'Who made the portrait',
+        pHi: [
+          'सिक्के का चित्र एक मूर्तिकार का काम होता है, और विक्टोरिया के भारतीय सिक्कों के पीछे वायन परिवार का नाम है — रॉयल मिंट के प्रमुख उत्कीर्णक।',
+          'विलियम वायन ने विक्टोरिया के आरंभिक ब्रिटिश सिक्कों का चित्र बनाया, और उनके पुत्र लियोनार्ड वायन ने बाद के दौर का काम सँभाला, जिसमें भारतीय शृंखला भी आती है।',
+          'चित्र बनाना केवल कला नहीं थी। सिक्के पर उभार सीमित होता है, और चेहरे को इतना सपाट रखना पड़ता है कि वह चलन में जल्दी न घिसे, फिर भी पहचाना जा सके।',
+          'यही तकनीकी बाध्यता वह कारण है कि सिक्कों के चित्र चित्रकला से अलग दिखते हैं — वे एक ऐसी सतह के लिए बने हैं जो हज़ारों हाथों से गुज़रेगी।',
+        ],
+        pEn: [
+          'A coin portrait is the work of a sculptor, and behind Victoria’s Indian coinage stands the Wyon family — chief engravers at the Royal Mint.',
+          'William Wyon made the portrait for Victoria’s early British coinage, and his son Leonard Wyon handled the later period, which includes the Indian series.',
+          'Making the portrait was not only an artistic task. Relief on a coin is limited, and the face has to be kept flat enough not to wear away quickly in circulation while remaining recognisable.',
+          'That technical constraint is why coin portraits look different from painting — they are made for a surface that will pass through thousands of hands.',
+        ],
+      },
+      {
+        hHi: '“क्वीन” और “एम्प्रेस” का अंतर',
+        hEn: 'The difference between “Queen” and “Empress”',
+        pHi: [
+          '1862 से 1876 तक के सिक्कों पर “VICTORIA QUEEN” लिखा है; 1877 से 1901 तक “VICTORIA EMPRESS”। एक शब्द का यह अंतर एक बड़ी ऐतिहासिक घटना बताता है।',
+          '1876 के रॉयल टाइटल्स एक्ट के बाद विक्टोरिया को भारत की सम्राज्ञी घोषित किया गया, और 1877 की दिल्ली दरबार में यह औपचारिक रूप से घोषित हुआ।',
+          'सिक्का इस राजनीतिक निर्णय का सबसे सीधा भौतिक प्रमाण है। किसी दस्तावेज़ को खोजने की ज़रूरत नहीं — शब्द वहीं धातु पर लिखा है।',
+          'संग्राहक के लिए यह सबसे तेज़ पहचान-सूत्र भी है। एक नज़र में सिक्का दो युगों में से किसी एक में चला जाता है।',
+        ],
+        pEn: [
+          'Coins from 1862 to 1876 read “VICTORIA QUEEN”; those from 1877 to 1901 read “VICTORIA EMPRESS”. That one word tells of a large historical event.',
+          'After the Royal Titles Act of 1876 Victoria was proclaimed Empress of India, formally announced at the Delhi Durbar of 1877.',
+          'The coin is the most direct physical evidence of that political decision. No document needs to be found — the word is written on the metal.',
+          'For a collector it is also the fastest identification clue. A single glance places the coin in one of two eras.',
+        ],
+      },
+      {
+        hHi: 'चित्र का विकास',
+        hEn: 'How the portrait evolved',
+        pHi: [
+          'क्वीन दौर का चित्र युवा है — बाल पीछे बँधे, सिर पर कोई मुकुट नहीं, और अभिव्यक्ति सरल। यह उस समय की विक्टोरिया है जो चालीस के आसपास थीं।',
+          'एम्प्रेस दौर में चित्र बदला। अब मुकुट है, आवरण है, और समग्र प्रभाव औपचारिक तथा साम्राज्यिक। यह एक शासक का चित्र है, न कि केवल एक व्यक्ति का।',
+          'यह परिवर्तन जानबूझकर था। जब उपाधि बदली, तो चित्र भी उसी संदेश को दोहराने के लिए बदला गया।',
+          'दोनों चित्रों को एक बार साथ देख लेने पर अंतर स्थायी रूप से याद रह जाता है, और उसके बाद किसी कैटलॉग की ज़रूरत नहीं पड़ती।',
+        ],
+        pEn: [
+          'The Queen-period portrait is young — hair drawn back, no crown, and a plain expression. This is Victoria in her forties.',
+          'In the Empress period the portrait changed. Now there is a crown, a veil, and an overall effect that is formal and imperial. This is the portrait of a sovereign rather than simply of a person.',
+          'The change was deliberate. When the title changed, the portrait was altered to repeat the same message.',
+          'Once you have seen the two side by side the difference stays in the memory permanently, and no catalogue is needed afterwards.',
+        ],
+      },
+      {
+        hHi: 'पिछली तरफ़ का डिज़ाइन',
+        hEn: 'The design on the reverse',
+        pHi: [
+          'पिछली तरफ़ का डिज़ाइन कम चर्चित है और उतना ही सोचा-समझा। बीच में मूल्यवर्ग, चारों ओर पुष्प-अलंकरण, और किनारे पर वर्ष।',
+          'मूल्यवर्ग अंग्रेज़ी के साथ नागरी और फ़ारसी में भी अंकित होता था। यह चयन व्यावहारिक था — सिक्के को उन सब भाषाओं में बोलना पड़ता था जिनमें बाज़ार चलता था।',
+          'पुष्प-अलंकरण में कमल और अन्य भारतीय रूपांकन शामिल किए गए, जो एक सचेत निर्णय था: सिक्का ब्रिटिश शासक का था, पर उसे भारतीय दिखना भी था।',
+          'यही द्वैत इन सिक्कों को दिलचस्प बनाता है। एक ओर ब्रिटिश चेहरा, दूसरी ओर भारतीय लिपियाँ और रूपांकन — एक ही धातु के टुकड़े पर दो दुनियाएँ।',
+        ],
+        pEn: [
+          'The reverse design is less discussed and just as considered. The denomination at the centre, floral ornament around it, and the year along the edge.',
+          'The denomination appeared in Nagari and Persian alongside the English. That choice was practical — the coin had to speak in every language the market used.',
+          'Lotus and other Indian motifs were worked into the ornament, which was a conscious decision: the coin belonged to a British sovereign but had to look Indian as well.',
+          'That duality is what makes these coins interesting. A British face on one side, Indian scripts and motifs on the other — two worlds on one piece of metal.',
+        ],
+      },
+      {
+        hHi: 'आम और दुर्लभ',
+        hEn: 'Common versus rare',
+        pHi: [
+          'अधिकांश विक्टोरिया सिक्के आम हैं, और यह कहना ईमानदारी है। साठ वर्षों में करोड़ों ढले, और बड़ी संख्या में बचे।',
+          'क़ीमत तीन जगह छिपी है। पहली — बहुत ऊँची दशा, ख़ासकर मूल लस्टर वाले नमूने। दूसरी — कम ढलाई वाले वर्ष-टकसाल संयोजन। तीसरी — असली ढलाई-दोष।',
+          'क्वीन दौर आम तौर पर कम मिलता है क्योंकि वह केवल पंद्रह वर्ष चला, जबकि एम्प्रेस दौर पच्चीस वर्ष का है। यह अंतर दाम में दिखता है।',
+          'नए संग्राहक के लिए सलाह वही है: पहले आम तारीख़ें जुटाइए, आँख बनाइए, और दुर्लभ किस्म तब ख़रीदिए जब आप ख़ुद दशा परख सकें।',
+        ],
+        pEn: [
+          'Most Victoria coins are common, and saying so is honest. Crores were struck across sixty years, and large numbers survive.',
+          'The value hides in three places. First, very high grade, particularly examples retaining original lustre. Second, low-mintage year and mint combinations. Third, genuine striking errors.',
+          'The Queen period is generally scarcer because it ran only fifteen years, against twenty-five for the Empress period. That difference shows in the price.',
+          'The advice for a new collector is the same: gather common dates first, build the eye, and buy a scarce variety only once you can judge condition yourself.',
+        ],
+      },
+      {
+        hHi: 'साम्राज्य भर का चेहरा',
+        hEn: 'A face across an empire',
+        pHi: [
+          'एक बात जो कम कही जाती है: यही चित्र उस दौर में दुनिया के कई हिस्सों में एक साथ चल रहा था।',
+          'कनाडा, ऑस्ट्रेलिया, न्यूज़ीलैंड, दक्षिण अफ़्रीका, हांगकांग, सीलोन, ईस्ट अफ़्रीका — सब जगह विक्टोरिया का चेहरा सिक्कों पर था, हालाँकि शैली और विवरण अलग थे।',
+          'यही एक साम्राज्य की सबसे मूर्त अभिव्यक्ति है। एक ही चेहरा, दर्जनों भाषाओं में, दर्जनों बाज़ारों में, एक साथ चलता हुआ।',
+          'संग्राहकों में इसका एक अलग शौक़ है — विभिन्न उपनिवेशों के विक्टोरिया सिक्के एक साथ जुटाना, ताकि वही चेहरा अलग-अलग रूपों में दिखे।',
+        ],
+        pEn: [
+          'One thing said less often: this same portrait was circulating simultaneously across much of the world.',
+          'Canada, Australia, New Zealand, South Africa, Hong Kong, Ceylon, East Africa — Victoria’s face appeared on coins everywhere, though the style and details differed.',
+          'That is the most tangible expression of an empire. One face, in dozens of languages, in dozens of markets, circulating at once.',
+          'There is a hobby within the hobby here — gathering Victoria coins from different colonies so that the same face appears in its many forms.',
+        ],
+      },
+      {
+        hHi: 'क्या देखें, क्या न करें',
+        hEn: 'What to look at, and what not to do',
+        pHi: [
+          'घिसाव सबसे पहले तीन जगह दिखता है: गाल की हड्डी, बालों की ऊपरी लट, और मुकुट या आवरण का सबसे ऊँचा भाग। पिछली तरफ़ अक्षरों के ऊपरी किनारे।',
+          'तारीख़ के नीचे टकसाल-चिह्न देखिए — बंबई का हीरा या बिंदु, और कलकत्ता का कोई चिह्न नहीं। इसके लिए दस गुना आवर्धन का लूप चाहिए।',
+          'और वही नियम जो सबसे ज़्यादा तोड़ा जाता है: साफ़ मत कीजिए। चाँदी चमकाने की इच्छा प्रबल होती है, और साफ़ किया हुआ सिक्का आधे से ज़्यादा क़ीमत खो देता है।',
+          'भंडारण में माइलर या पॉलीप्रोपिलीन के फ़्लिप का उपयोग कीजिए, पीवीसी वाली पुरानी थैलियों का नहीं — वे वर्षों में हरी चिपचिपी परत छोड़ती हैं।',
+        ],
+        pEn: [
+          'Wear shows first in three places: the cheekbone, the uppermost lock of hair, and the highest point of the crown or veil. On the reverse, the upper edges of the lettering.',
+          'Look below the date for the mint mark — the Bombay diamond or dot, and Calcutta’s absence of one. A ten-times loupe is needed for this.',
+          'And the rule most often broken: do not clean them. The urge to brighten silver is strong, and a cleaned coin loses more than half its value.',
+          'For storage use Mylar or polypropylene flips rather than old PVC sleeves, which leave a green sticky film over the years.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'एक शब्द — क्वीन या एम्प्रेस — सिक्के को दो युगों में से एक में रख देता है, और वह शब्द 1876 के एक क़ानून का सीधा परिणाम है।',
+          'चित्र भी उसी के साथ बदला: युवा और सादा से मुकुटधारी और औपचारिक। दोनों को एक बार साथ देख लीजिए, और उसके बाद पहचान के लिए कैटलॉग की ज़रूरत नहीं रहेगी।',
+        ],
+        pEn: [
+          'One word — Queen or Empress — places the coin in one of two eras, and that word is the direct result of an Act passed in 1876.',
+          'The portrait changed with it: from young and plain to crowned and formal. Look at the two side by side once, and after that you will never need a catalogue to tell them apart.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'republic-india-first-coins',
+    sections: [
+      {
+        hHi: '1950: एक चेहरा हटा, एक प्रतीक आया',
+        hEn: '1950: a face left, a symbol arrived',
+        pHi: [
+          'भारत 15 अगस्त 1947 को स्वतंत्र हुआ, पर सिक्के तुरंत नहीं बदले। जॉर्ज VI के चित्र वाले सिक्के 1950 तक ढलते रहे।',
+          'कारण व्यावहारिक था। नए सिक्कों का डिज़ाइन तय करना, डाई बनाना और उत्पादन शुरू करना समय माँगता है, और संविधान लागू होने तक गणराज्य औपचारिक रूप से अस्तित्व में नहीं आया था।',
+          '26 जनवरी 1950 को भारत गणराज्य बना, और उसी वर्ष नए सिक्के जारी हुए। ब्रिटिश शासक का चेहरा हटा, और उसकी जगह अशोक स्तंभ का सिंह-शीर्ष आया।',
+          'यह प्रतिस्थापन सोचा-समझा था। किसी व्यक्ति की जगह एक प्रतीक — और वह प्रतीक भी किसी आधुनिक व्यक्ति का नहीं, बल्कि ढाई हज़ार साल पुराना।',
+        ],
+        pEn: [
+          'India became independent on 15 August 1947, but the coinage did not change immediately. Coins bearing the portrait of George VI continued to be struck until 1950.',
+          'The reason was practical. Settling a new design, cutting dies and beginning production takes time, and until the Constitution came into force the Republic did not formally exist.',
+          'On 26 January 1950 India became a Republic, and new coins were issued that same year. The face of a British monarch left, and the lion capital of Ashoka took its place.',
+          'That substitution was considered. A symbol in place of a person — and a symbol not of any modern figure but one two and a half thousand years old.',
+        ],
+      },
+      {
+        hHi: 'अशोक स्तंभ के सिंह',
+        hEn: 'The lions of the Ashoka capital',
+        pHi: [
+          'यह प्रतीक सारनाथ के अशोक स्तंभ के शीर्ष से लिया गया है, जो तीसरी शताब्दी ईसा पूर्व का है और आज सारनाथ संग्रहालय में रखा है।',
+          'मूल शीर्ष में चार सिंह हैं, पीठ से पीठ जोड़े हुए, चारों दिशाओं में देखते। सिक्के पर तीन दिखते हैं और चौथा पीछे छिपा रहता है — यह द्वि-आयामी सतह की बाध्यता है।',
+          'नीचे देवनागरी में “सत्यमेव जयते” अंकित है, जो मुंडक उपनिषद से लिया गया वाक्य है — सत्य की ही जीत होती है।',
+          'चयन का अर्थ स्पष्ट था। एक ऐसा प्रतीक जो किसी एक धर्म, क्षेत्र या भाषा का नहीं, और जो भारत के अपने इतिहास से आता है, न कि किसी बाहरी सत्ता से।',
+        ],
+        pEn: [
+          'The emblem is taken from the top of the Ashoka pillar at Sarnath, dating from the third century before the common era and now kept in the Sarnath museum.',
+          'The original capital has four lions set back to back, facing the four directions. Three are visible on a coin and the fourth stays hidden behind — a constraint of a two-dimensional surface.',
+          'Beneath it is inscribed “Satyameva Jayate” in Devanagari, a phrase from the Mundaka Upanishad — truth alone triumphs.',
+          'The meaning of the choice was clear. An emblem belonging to no single religion, region or language, and one that comes from India’s own history rather than from any external authority.',
+        ],
+      },
+      {
+        hHi: 'शुरुआती मूल्यवर्ग',
+        hEn: 'The early denominations',
+        pHi: [
+          '1950 की शृंखला अभी भी आना-पाई व्यवस्था पर चली, क्योंकि दशमलव व्यवस्था सात साल बाद आनी थी।',
+          'मूल्यवर्ग थे: एक पाई, आधा पैसा, एक पैसा, आधा आना, एक आना, दो आना, चौथाई रुपया, आधा रुपया और रुपया।',
+          'चाँदी अब नहीं थी। स्वतंत्र भारत के सिक्के निकल और काँसे के थे — यह युद्ध के बाद की धातु-अर्थव्यवस्था का सीधा परिणाम था, न कि कोई प्रतीकात्मक चयन।',
+          'पिछली तरफ़ के डिज़ाइन में भारतीय विषय आए — गेहूँ की बालियाँ, बैल, और घोड़ा। ये सब कृषि और श्रम के प्रतीक थे, जो उस दौर की राष्ट्रीय प्राथमिकता को दर्शाते हैं।',
+        ],
+        pEn: [
+          'The 1950 series still ran on the anna-and-pie system, because decimalisation was seven years away.',
+          'The denominations were: one pie, half pice, one pice, half anna, one anna, two annas, quarter rupee, half rupee and rupee.',
+          'Silver was gone. The coins of independent India were nickel and bronze — a direct consequence of the post-war metal economy rather than any symbolic choice.',
+          'Indian subjects appeared on the reverse — ears of wheat, a bull, a horse. All were emblems of agriculture and labour, reflecting the national priorities of the period.',
+        ],
+      },
+      {
+        hHi: 'व्यक्ति-चित्र न रखने का निर्णय',
+        hEn: 'The decision to carry no portrait',
+        pHi: [
+          'एक निर्णय जो तब लिया गया और आज तक क़ायम है: भारतीय चलन-सिक्कों पर किसी जीवित या मृत व्यक्ति का चित्र नहीं होता।',
+          'यह दुनिया में सार्वभौमिक नहीं है। कई गणराज्य अपने संस्थापकों या राष्ट्रपतियों के चित्र सिक्कों पर रखते हैं।',
+          'भारत ने प्रतीक चुना, और उसका निहितार्थ यह था कि गणराज्य किसी व्यक्ति पर नहीं, एक विचार पर खड़ा है।',
+          'अपवाद केवल स्मारक सिक्कों में हैं — नेहरू, गांधी, आंबेडकर और अन्य के चित्र वहाँ मिलते हैं। पर वे विशेष जारी हैं, रोज़मर्रा की मुद्रा नहीं।',
+        ],
+        pEn: [
+          'One decision taken then still holds: Indian circulating coins carry no portrait of any person, living or dead.',
+          'This is not universal. Many republics place their founders or presidents on their coinage.',
+          'India chose an emblem, and the implication was that the Republic rests on an idea rather than on any individual.',
+          'The exceptions are commemoratives — Nehru, Gandhi, Ambedkar and others do appear there. But those are special issues, not everyday currency.',
+        ],
+      },
+      {
+        hHi: 'संक्रमण के सिक्के',
+        hEn: 'The coins of the transition',
+        pHi: [
+          'संग्राहक के लिए सबसे दिलचस्प वे सिक्के हैं जो 1947 और 1950 के बीच के हैं — जब देश स्वतंत्र था पर सिक्कों पर अभी भी जॉर्ज VI थे।',
+          'ये सिक्के एक विचित्र स्थिति का दस्तावेज़ हैं: एक स्वतंत्र देश, जिसकी मुद्रा पर अभी भी विदेशी शासक का चेहरा है, केवल इसलिए कि नई डाई तैयार नहीं थी।',
+          'इसी दौर में पाकिस्तान के लिए भी सिक्के ढले, और कुछ पर “PAKISTAN” अंकित किया गया — विभाजन का एक और भौतिक निशान।',
+          'यह तीन साल का दौर एक बहुत अच्छा संग्रह-विषय है। सीमित, स्पष्ट, और वह एक ऐसे क्षण को पकड़ता है जो दोबारा नहीं आएगा।',
+        ],
+        pEn: [
+          'The most interesting coins for a collector are those between 1947 and 1950 — when the country was independent but the coinage still carried George VI.',
+          'These document a peculiar situation: an independent country whose currency still bore a foreign monarch’s face, simply because new dies were not ready.',
+          'Coins for Pakistan were struck in the same period, some inscribed “PAKISTAN” — another physical mark of Partition.',
+          'That three-year window makes an excellent collecting subject. Bounded, clear, and it captures a moment that will not come again.',
+        ],
+      },
+      {
+        hHi: '1957 का दूसरा परिवर्तन',
+        hEn: 'The second change, in 1957',
+        pHi: [
+          '1950 की शृंखला केवल सात वर्ष चली, क्योंकि 1957 में भारत दशमलव व्यवस्था पर चला गया।',
+          'इसका अर्थ यह है कि गणराज्य के शुरुआती सिक्के अपेक्षाकृत कम समय तक ढले, और यही उन्हें संग्राहकों के लिए दिलचस्प बनाता है।',
+          'अशोक स्तंभ का प्रतीक दोनों शृंखलाओं में बना रहा — यही निरंतरता है जो 1950 से आज तक चली आ रही है।',
+          'बदला केवल उसके नीचे का हिसाब: आना-पाई से नया पैसा। प्रतीक वही रहा, गणित बदल गया।',
+        ],
+        pEn: [
+          'The 1950 series ran only seven years, because India went decimal in 1957.',
+          'This means the earliest Republic coins were struck for a comparatively short period, which is what makes them interesting to collectors.',
+          'The Ashoka capital carried across both series — that is the continuity running from 1950 to today.',
+          'What changed was only the reckoning beneath it: from annas and pies to the naya paisa. The emblem stayed; the arithmetic changed.',
+        ],
+      },
+      {
+        hHi: 'संग्राहक के लिए',
+        hEn: 'For the collector',
+        pHi: [
+          '1950 की पूरी शृंखला एक बहुत अच्छा शुरुआती लक्ष्य है। नौ मूल्यवर्ग, सब सस्ते, और पूरा होने पर एक स्पष्ट कहानी — गणराज्य का पहला रूप।',
+          'इनमें से अधिकांश आज भी कुछ सौ रुपये में मिल जाते हैं, क्योंकि वे भारी संख्या में ढले। ऊँची दशा के नमूने अपेक्षाकृत कम मिलते हैं।',
+          'एक और अच्छा विषय: “तीन युग एक साथ” — जॉर्ज VI का एक सिक्का, 1950 शृंखला का एक, और 1957 दशमलव का एक। तीन सिक्के, और उनमें तीन अलग भारत।',
+          'रख-रखाव में वही नियम: निकल और काँसे के सिक्के अपेक्षाकृत मज़बूत हैं, पर नमी से बचाइए और साफ़ मत कीजिए।',
+        ],
+        pEn: [
+          'The complete 1950 series is an excellent opening target. Nine denominations, all inexpensive, and once assembled it tells a clear story — the first form of the Republic.',
+          'Most can still be had for a few hundred rupees, because they were struck in quantity. Examples in high grade are comparatively scarce.',
+          'Another good subject: “three eras together” — one George VI coin, one from the 1950 series, and one decimal coin from 1957. Three coins, and three different Indias inside them.',
+          'For care the same rules apply: nickel and bronze are comparatively tough, but keep them from damp and do not clean them.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          '1950 में ब्रिटिश शासक का चेहरा हटा और अशोक स्तंभ का सिंह-शीर्ष आया — एक व्यक्ति की जगह एक प्रतीक, और वह प्रतीक भारत के अपने इतिहास से।',
+          'शृंखला अभी भी आना-पाई पर चली और केवल सात वर्ष तक। 1947–1950 के संक्रमण-सिक्के, जिन पर स्वतंत्र भारत में भी जॉर्ज VI हैं, इस पूरे विषय के सबसे दिलचस्प दस्तावेज़ हैं।',
+        ],
+        pEn: [
+          'In 1950 the face of a British monarch left and the lion capital of Ashoka arrived — a symbol in place of a person, and a symbol drawn from India’s own history.',
+          'The series still ran on annas and pies and lasted only seven years. The transition coins of 1947–1950, carrying George VI in an independent India, are the most interesting documents in this whole subject.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-to-start-collecting-coins',
+    sections: [
+      {
+        hHi: 'सबसे महँगी शुरुआती ग़लतियाँ',
+        hEn: 'The most expensive beginner mistakes',
+        pHi: [
+          'पहली और सबसे महँगी: पहले महीने में कोई महँगा सिक्का ख़रीदना। अप्रशिक्षित आँख से की गई महँगी ख़रीद लगभग हमेशा ग़लत निकलती है, और वह ग़लती वर्षों याद रहती है।',
+          'दूसरी: सफ़ाई। नए संग्राहक की सबसे स्वाभाविक इच्छा सिक्के को चमकाने की होती है, और यही सबसे ज़्यादा क़ीमत नष्ट करती है। साफ़ किया हुआ सिक्का आधे से ज़्यादा मूल्य खो देता है।',
+          'तीसरी: बिना विषय के इकट्ठा करना। नतीजा एक डिब्बा भर असंबंधित सिक्के, जिनमें न कोई क्रम है न पूर्णता का एहसास।',
+          'चौथी: जल्दबाज़ी। यह शौक़ जमा करने का नहीं, धीरे-धीरे समझने का है। जो पहले साल में सबसे ज़्यादा ख़रीदते हैं, वे अक्सर तीसरे साल तक आधा बेच देते हैं।',
+        ],
+        pEn: [
+          'The first and most expensive: buying something costly in the first month. An expensive purchase made with an untrained eye turns out wrong almost every time, and the mistake is remembered for years.',
+          'The second: cleaning. A new collector’s most natural instinct is to brighten a coin, and that is what destroys the most value. A cleaned coin loses more than half its worth.',
+          'The third: collecting without a theme. The result is a box of unrelated coins with neither order nor any sense of completion.',
+          'The fourth: hurry. This hobby is about understanding slowly rather than accumulating. Those who buy the most in their first year very often sell half of it by their third.',
+        ],
+      },
+      {
+        hHi: 'पहले सीखिए, बाद में ख़रीदिए',
+        hEn: 'Learn first, buy later',
+        pHi: [
+          'इस क्षेत्र में जानकारी ही असली मुद्रा है। जो जानता है वह कम में बेहतर ख़रीदता है; जो नहीं जानता वह ज़्यादा में ग़लत ख़रीदता है।',
+          'सीखने के तीन स्रोत हैं, और तीनों सस्ते हैं। पहला — एक अच्छी संदर्भ-पुस्तक, जो किसी भी एक सिक्के से ज़्यादा उपयोगी है।',
+          'दूसरा — संग्राहकों की समिति। लगभग हर बड़े शहर में एक है, और वहाँ जाने का सबसे बड़ा लाभ ख़रीदना नहीं, सैकड़ों असली सिक्के हाथ में लेकर देखना है।',
+          'तीसरा — प्रदर्शनियाँ। एक दोपहर में जितनी असली धातु आप देखते हैं, उतनी किसी और तरीक़े से नहीं, और यही आँख बनाने का सबसे तेज़ रास्ता है।',
+        ],
+        pEn: [
+          'In this field knowledge is the real currency. Somebody who knows buys better for less; somebody who does not buys wrongly for more.',
+          'There are three sources of learning and all three are cheap. The first is a good reference book, which is more useful than any single coin you could buy with the same money.',
+          'The second is a collectors’ society. Almost every major city has one, and the greatest benefit of attending is not buying but handling hundreds of genuine coins.',
+          'The third is fairs. You see more real metal in one afternoon than by any other route, and that is the fastest way there is to build the eye.',
+        ],
+      },
+      {
+        hHi: 'विषय चुनना',
+        hEn: 'Choosing a theme',
+        pHi: [
+          'एक अच्छा विषय तीन शर्तें पूरी करता है: वह सीमित हो, सस्ता हो, और आपको सचमुच दिलचस्प लगे। तीनों में से कोई एक भी छूट जाए तो संग्रह रुक जाता है।',
+          'कुछ आज़माए हुए विषय: “हर शासक का एक चौथाई आना”, “1957 की पूरी दशमलव शृंखला”, “मेरे राज्य की रियासत के सिक्के”, “एक टकसाल, कई वर्ष”।',
+          'विषय का सबसे बड़ा लाभ यह है कि वह आपको ना कहना सिखाता है। जब कोई डीलर कुछ आकर्षक दिखाए, सवाल सरल हो जाता है — क्या यह मेरे विषय में आता है?',
+          'अधिकांश बार जवाब “नहीं” होता है, और वही जवाब आपका पैसा बचाता है और आपके संग्रह को संग्रह बनाए रखता है।',
+        ],
+        pEn: [
+          'A good theme meets three conditions: bounded, affordable, and genuinely interesting to you. If any one is missing the collection stalls.',
+          'Some that work well: “one quarter anna per ruler”, “the complete 1957 decimal series”, “the coins of my own princely state”, “one mint across many years”.',
+          'The greatest advantage of a theme is that it teaches you to say no. When a dealer shows you something attractive, the question becomes simple — does this belong to my theme?',
+          'Most of the time the answer is no, and that answer both saves your money and keeps your collection a collection.',
+        ],
+      },
+      {
+        hHi: 'पहली ख़रीद',
+        hEn: 'The first purchase',
+        pHi: [
+          'पहली ख़रीद सस्ती और आम होनी चाहिए — कोई ऐसा सिक्का जिसकी क़ीमत इतनी हो कि ग़लती निकलने पर भी तकलीफ़ न हो।',
+          'ब्रिटिश भारत का ताँबे का चौथाई आना इसके लिए आदर्श है: बड़ा, इसलिए ब्योरे साफ़ दिखते हैं; सस्ता, इसलिए जोखिम कम; और हर जगह उपलब्ध।',
+          'किसी प्रदर्शनी में जाकर, हाथ में लेकर ख़रीदिए। ऑनलाइन पहली ख़रीद इसलिए ठीक नहीं कि तस्वीर से घिसाव, लस्टर और वज़न का अंदाज़ा नहीं लगता।',
+          'विक्रेता से पूछिए कि वह इसे किस ग्रेड का मानता है और क्यों। एक अच्छा डीलर जवाब देने में ख़ुशी महसूस करता है, और वह बातचीत किसी किताब से ज़्यादा सिखाती है।',
+        ],
+        pEn: [
+          'The first purchase should be cheap and common — a coin priced low enough that a mistake would not hurt.',
+          'A British India copper quarter anna is ideal: large, so the detail shows clearly; cheap, so the risk is low; and available everywhere.',
+          'Buy it at a fair, with the coin in your hand. A first purchase online is a poor idea because a photograph tells you nothing reliable about wear, lustre or weight.',
+          'Ask the seller what grade he considers it and why. A good dealer is glad to answer, and that conversation teaches more than any book.',
+        ],
+      },
+      {
+        hHi: 'ज़रूरी औज़ार',
+        hEn: 'The necessary tools',
+        pHi: [
+          'तीन चीज़ें काफ़ी हैं और तीनों सस्ती हैं। पहली — दस गुना आवर्धन का लूप, जो टकसाल-चिह्न पढ़ने और नक़ल पहचानने के लिए ज़रूरी है।',
+          'दूसरी — एक डिजिटल तराज़ू जो 0.01 ग्राम तक नापे। वज़न सबसे तेज़ प्रामाणिकता-परीक्षण है और अधिकांश जाली सिक्के इसी एक जाँच में पकड़े जाते हैं।',
+          'तीसरी — सही भंडारण: माइलर या पॉलीप्रोपिलीन के फ़्लिप, या अम्ल-रहित लिफ़ाफ़े। पीवीसी वाली पुरानी थैलियाँ हरगिज़ नहीं।',
+          'इन तीनों का कुल ख़र्च एक अच्छे सिक्के से भी कम है, और ये जीवन भर काम आते हैं। इन्हें पहले ख़रीदिए, सिक्के बाद में।',
+        ],
+        pEn: [
+          'Three things are enough and all three are cheap. First, a ten-times loupe, needed for reading mint marks and spotting forgeries.',
+          'Second, a digital scale reading to 0.01 gram. Weight is the fastest authenticity test there is, and most counterfeits are caught by that single check.',
+          'Third, proper storage: Mylar or polypropylene flips, or acid-free envelopes. Never old PVC sleeves.',
+          'All three together cost less than one decent coin, and all three last a lifetime. Buy these first and the coins afterwards.',
+        ],
+      },
+      {
+        hHi: 'सुरक्षित रखना और दर्ज करना',
+        hEn: 'Keeping them safe, and recording them',
+        pHi: [
+          'नमी सबसे बड़ा शत्रु है। एक बंद डिब्बा और उसमें सिलिका जेल का पाउच — साल में एक-दो बार बदला हुआ — अधिकांश समस्या हल कर देता है।',
+          'जगह भी मायने रखती है: रसोई और स्नानघर से दूर, खिड़की से दूर, घर के भीतर की अलमारी में। तहख़ाना और छत दोनों तापमान के चरम झेलते हैं।',
+          'हर सिक्के के साथ एक पर्ची रखिए — कहाँ से, कब, कितने में, और विरासत हो तो किसका था। हर बार तीस सेकंड लगते हैं।',
+          'यह जानकारी वर्षों बाद सोने जैसी क़ीमती हो जाती है। बेचते समय स्रोत का रिकॉर्ड दाम बढ़ाता है, और न बेचें तो अगली पीढ़ी को सिक्के के साथ उसकी कहानी मिलती है।',
+        ],
+        pEn: [
+          'Humidity is the greatest enemy. A closed box with a silica gel sachet inside — replaced once or twice a year — solves most of the problem.',
+          'Location matters too: away from the kitchen and bathroom, away from windows, in an interior cupboard. A basement and a roof room both suffer extremes of temperature.',
+          'Keep a slip with every coin — where, when, for how much, and if inherited, whose it was. Thirty seconds each time.',
+          'That information becomes gold years later. When selling, a record of provenance raises the price; and if you never sell, the next generation receives the coin with its story.',
+        ],
+      },
+      {
+        hHi: 'ईमानदारी का सवाल',
+        hEn: 'A question of honesty',
+        pHi: [
+          'एक बात जो कम कही जाती है: इस शौक़ में साख सबसे बड़ी संपत्ति है, और वह धीरे बनती है तथा जल्दी टूटती है।',
+          'यदि आपका कोई सिक्का साफ़ किया गया है या मरम्मत किया गया है, तो बेचते समय यह बता दीजिए। छिपाना अल्पकालिक लाभ देता है और दीर्घकालिक नुक़सान।',
+          'यही बात ख़रीदते समय भी लागू होती है। यदि विक्रेता को नहीं पता कि उसके पास क्या है, तो उसे बताना और उचित दाम देना सही व्यवहार है।',
+          'यह क्षेत्र छोटा है और लोग एक-दूसरे को जानते हैं। जो साख बनाता है, उसे बेहतर सिक्के पहले दिखाए जाते हैं — और यह किसी भी छूट से बड़ा लाभ है।',
+        ],
+        pEn: [
+          'One thing said less often: reputation is the largest asset in this hobby, and it builds slowly and breaks quickly.',
+          'If a coin of yours has been cleaned or repaired, say so when selling. Concealing it brings a short-term gain and a long-term loss.',
+          'The same applies when buying. If a seller does not know what he has, telling him and paying a fair price is the right conduct.',
+          'This field is small and people know one another. Somebody who builds a reputation is shown the better coins first — and that is worth more than any discount.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'पहले महीने कुछ महँगा मत ख़रीदिए, कभी साफ़ मत कीजिए, एक विषय चुनिए, और तीन सस्ते औज़ार पहले ले लीजिए।',
+          'फिर किसी प्रदर्शनी या समिति में जाइए और असली सिक्के हाथ में लेकर देखिए। जानकारी इस क्षेत्र की असली मुद्रा है, और वह लोगों के पास है — किताबों में उतनी नहीं।',
+        ],
+        pEn: [
+          'Buy nothing expensive in the first month, never clean anything, choose a theme, and get the three cheap tools before you get the coins.',
+          'Then go to a fair or a society and handle genuine coins. Knowledge is the real currency in this field, and it lives with people rather than in books — which is why an afternoon among collectors is worth more than a month of reading.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'grading-coins-basics',
+    sections: [
+      {
+        hHi: 'दशा और घिसाव दो अलग चीज़ें हैं',
+        hEn: 'Condition and wear are two different things',
+        pHi: [
+          'यह भेद सबसे पहले समझ लेना चाहिए, क्योंकि इसी पर पूरा मूल्यांकन टिका है।',
+          'घिसाव वह है जो सिक्के के चलन में होने से आया — हज़ारों हाथों की रगड़, जेब, गल्ला। यह स्वाभाविक है और सिक्के की उम्र का ईमानदार निशान है।',
+          'क्षति वह है जो बाद में की गई — ख़रोंच, छेद, मोड़, सफ़ाई, या रासायनिक क्षरण। यह स्वाभाविक नहीं और मूल्य को कहीं तेज़ी से गिराती है।',
+          'एक भारी घिसा हुआ सिक्का ईमानदार है — उसने अपना जीवन जिया। एक साफ़ किया हुआ सिक्का, चाहे कम घिसा हो, क्षतिग्रस्त है, और वह अंतर स्थायी है।',
+        ],
+        pEn: [
+          'This distinction should be understood before anything else, because the whole of valuation rests on it.',
+          'Wear is what came from circulation — the rubbing of thousands of hands, pockets, cash drawers. It is natural and an honest mark of the coin’s age.',
+          'Damage is what was done afterwards — scratches, holes, bends, cleaning, or chemical corrosion. It is not natural and it reduces value far more sharply.',
+          'A heavily worn coin is honest; it lived its life. A cleaned coin, however little worn, is damaged — and that distinction is permanent.',
+        ],
+      },
+      {
+        hHi: 'दशा को क्या-क्या गिराता है',
+        hEn: 'What lowers a coin’s condition',
+        pHi: [
+          'ख़रोंचें — विशेषकर वे जो चेहरे के खुले हिस्सों पर हों। किनारे की छोटी ख़रोंच उतनी नहीं खटकती जितनी गाल पर पड़ी एक रेखा।',
+          'किनारे की चोट — गिरने से किनारा दब जाता है, और वह चोट कभी नहीं जाती। इसीलिए काम हमेशा नरम सतह के ऊपर करना चाहिए।',
+          'छेद — कभी-कभी सिक्कों में गहना बनाने के लिए छेद किया गया। यह मूल्य को नाटकीय रूप से गिराता है, चाहे बाक़ी सिक्का बेहतरीन हो।',
+          'क्षरण — ताँबे पर हरे धब्बे, लोहे पर ज़ंग, एल्युमिनियम पर सफ़ेद पाउडर। यह घिसाव नहीं, धातु का नुक़सान है और वह वापस नहीं आता।',
+        ],
+        pEn: [
+          'Scratches — particularly across the open fields of the portrait. A small nick on the rim matters far less than a line drawn across a cheek.',
+          'Rim knocks — a fall flattens part of the edge, and that injury never leaves. This is why work should always be done over a soft surface.',
+          'Holes — coins were sometimes pierced to be worn as jewellery. This reduces value dramatically, however fine the rest of the coin.',
+          'Corrosion — green spots on copper, rust on iron, white powder on aluminium. That is not wear but loss of metal, and it does not come back.',
+        ],
+      },
+      {
+        hHi: 'ताँबे और चाँदी की ग्रेडिंग अलग है',
+        hEn: 'Grading copper is not grading silver',
+        pHi: [
+          'यह बात कम कही जाती है और व्यवहार में बहुत उपयोगी है। दोनों धातुएँ अलग तरह से पुरानी होती हैं, इसलिए उन्हें अलग नज़र से देखना पड़ता है।',
+          'चाँदी पर टोनिंग आमतौर पर आकर्षक मानी जाती है — नीले, बैंगनी और सुनहरे रंगों की इंद्रधनुषी परत प्रीमियम पाती है।',
+          'ताँबे पर रंग ही ग्रेड का बड़ा हिस्सा है। संग्राहक इसे तीन श्रेणियों में बाँटते हैं: लाल (मूल टकसाल-रंग), लाल-भूरा, और भूरा। लाल सबसे ऊपर और सबसे दुर्लभ।',
+          'इसका व्यावहारिक अर्थ यह है कि ताँबे के सिक्के का रंग बदलना उसकी ग्रेड बदल देता है — और यही एक और कारण है कि उसे कभी साफ़ नहीं करना चाहिए।',
+        ],
+        pEn: [
+          'This is said less often and is very useful in practice. The two metals age differently, so they have to be looked at differently.',
+          'On silver, toning is generally considered attractive — a rainbow film of blue, violet and gold commands a premium.',
+          'On copper, colour is a large part of the grade itself. Collectors divide it into three categories: red (original mint colour), red-brown, and brown. Red is highest and scarcest.',
+          'The practical consequence is that changing the colour of a copper coin changes its grade — one more reason it should never be cleaned.',
+        ],
+      },
+      {
+        hHi: 'सीढ़ी, संक्षेप में',
+        hEn: 'The ladder, briefly',
+        pHi: [
+          'सबसे नीचे पुअर — जहाँ तारीख़ मुश्किल से पढ़ी जाए और मुख्य आकृतियाँ भी अस्पष्ट हों।',
+          'उसके ऊपर गुड, फ़ाइन, वेरी फ़ाइन और एक्स्ट्रीमली फ़ाइन। इस बीच बारीक ब्योरे धीरे-धीरे लौटते हैं — बालों की लटें अलग होती जाती हैं, अलंकरण के हिस्से दिखने लगते हैं।',
+          'सबसे ऊपर अनसर्कुलेटेड — कोई घिसाव नहीं, पूरा लस्टर। ध्यान रहे कि UNC का अर्थ बेदाग़ नहीं है; टकसाल की थैली में सिक्के टकराते हैं, इसलिए हल्के बैग-मार्क सामान्य हैं।',
+          'अधिकांश अच्छे संग्रह वेरी फ़ाइन के आसपास टिकते हैं, क्योंकि वहीं दाम और दिखावट का संतुलन सबसे अच्छा बैठता है।',
+        ],
+        pEn: [
+          'At the bottom sits Poor — where the date is barely legible and even the main devices are indistinct.',
+          'Above it Good, Fine, Very Fine and Extremely Fine. Across that range the fine detail gradually returns — locks of hair separate, elements of the ornament reappear.',
+          'At the top, Uncirculated — no wear, full lustre. Note that UNC does not mean flawless; coins knock together in the mint bag, so light bag marks are normal.',
+          'Most good collections settle around Very Fine, because that is where the balance between price and appearance sits best.',
+        ],
+      },
+      {
+        hHi: 'सफ़ाई की चेतावनी',
+        hEn: 'A warning about cleaning',
+        pHi: [
+          'यह वह ग़लती है जो सबसे ज़्यादा की जाती है और जिसका नुक़सान सबसे बड़ा होता है, इसलिए इसे दोहराना उचित है।',
+          'साफ़ किया हुआ सिक्का ग्रेडिंग की दुनिया में एक अलग श्रेणी में चला जाता है। अंतरराष्ट्रीय सेवाएँ उसे संख्यात्मक ग्रेड देने के बजाय “cleaned” का लेबल लगाती हैं।',
+          'पहचान का तरीक़ा सरल है: प्राकृतिक घिसाव की ख़रोंचें हर दिशा में यादृच्छिक होती हैं; रगड़ने से बनी ख़रोंचें समानांतर रेखाओं में चलती हैं, और लूप के नीचे यह तुरंत दिखता है।',
+          'दूसरा संकेत दरारों में बची गहरी परत है। रगड़ने वाला ऊँची सतह साफ़ कर देता है पर कोनों तक नहीं पहुँचता — और वह विरोधाभास ही सबूत बन जाता है।',
+        ],
+        pEn: [
+          'This is the mistake made most often and with the greatest cost, so it bears repeating.',
+          'A cleaned coin moves into a separate category in the grading world. International services do not assign it a numerical grade but label it “cleaned”.',
+          'Recognising it is simple: scratches from natural wear run randomly in every direction; scratches from rubbing run in parallel lines, and under a loupe this is immediately visible.',
+          'The second clue is the darker film surviving in the crevices. Somebody rubbing a coin cleans the raised surface but cannot reach the corners — and that contradiction becomes the proof.',
+        ],
+      },
+      {
+        hHi: 'ग्रेडिंग को समझदारी से देखिए',
+        hEn: 'View grading sensibly',
+        pHi: [
+          'एक बात जो अक्सर छूट जाती है: ग्रेडिंग कोई कठोर विज्ञान नहीं है। दो अनुभवी लोग एक ही सिक्के पर एक पायदान का फ़र्क़ रख सकते हैं, और दोनों ठीक हो सकते हैं।',
+          'इसीलिए मोल-भाव में ग्रेड के लेबल पर बहस करने के बजाय सिक्के के ब्योरे पर बात कीजिए। ब्योरे जाँचे जा सकते हैं; लेबल राय है।',
+          'यह भी याद रखिए कि ग्रेड बाज़ार की एक भाषा है, सिक्के का गुण नहीं। एक VF सिक्का जो आपको पसंद है, वह किसी XF से बेहतर संग्रह-वस्तु हो सकती है।',
+          'और सबसे व्यावहारिक बात: अपनी आँख पर भरोसा बनाइए। दस समान सिक्के लेकर उन्हें क्रम में लगाने का अभ्यास किसी भी लेबल से ज़्यादा सिखाता है।',
+        ],
+        pEn: [
+          'One point often missed: grading is not an exact science. Two experienced people can differ by one rung on the same coin, and both can be right.',
+          'So in a negotiation, discuss the specific details of the coin rather than arguing about the label. Details are checkable; labels are opinions.',
+          'Remember too that a grade is a language of the market rather than a property of the coin. A VF piece you like can be a better collection object than an XF one you do not.',
+          'And the most practical point: build confidence in your own eye. Taking ten similar coins and arranging them in order teaches more than any label.',
+        ],
+      },
+      {
+        hHi: 'अभ्यास का तरीक़ा',
+        hEn: 'How to practise',
+        pHi: [
+          'सस्ते, आम सिक्कों से शुरुआत कीजिए — ब्रिटिश भारत के ताँबे के छोटे सिक्के आदर्श हैं क्योंकि वे बड़े हैं और कुछ रुपयों में मिल जाते हैं।',
+          'एक ही प्रकार के दस नमूने ख़रीदिए और उन्हें बिना कैटलॉग देखे अपनी समझ से सबसे घिसे से सबसे अच्छे तक क्रम में लगाइए।',
+          'फिर एक-एक करके देखिए कि आपने किस ब्योरे के आधार पर फ़ैसला किया — गाल, बाल, अक्षरों के किनारे, या कुछ और। यही सचेत विश्लेषण आँख को प्रशिक्षित करता है।',
+          'यह अभ्यास दो-तीन बार करने के बाद आप किसी भी सिक्के का मोटा ग्रेड बता सकेंगे, और यही वह कौशल है जो आपको ज़्यादा दाम चुकाने से बचाता है।',
+        ],
+        pEn: [
+          'Start with cheap, common coins — the small copper of British India is ideal, being large and costing a few rupees.',
+          'Buy ten examples of one type and arrange them, without consulting any catalogue, from most worn to best by your own judgement.',
+          'Then work through them one at a time and identify which detail drove each decision — the cheek, the hair, the edges of the letters, or something else. That conscious analysis is what trains the eye.',
+          'After doing this two or three times you will be able to state the approximate grade of any coin, and that is precisely the skill that stops you from overpaying.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'घिसाव ईमानदार है, क्षति नहीं — और सफ़ाई क्षति है। ताँबे में रंग ग्रेड का हिस्सा है, चाँदी में लस्टर सबसे निर्णायक तत्व।',
+          'ग्रेडिंग कोई सटीक विज्ञान नहीं, इसलिए लेबल पर नहीं ब्योरों पर बात कीजिए। और अभ्यास किताब से नहीं, दस सस्ते सिक्कों को क्रम में लगाकर होता है।',
+        ],
+        pEn: [
+          'Wear is honest, damage is not — and cleaning is damage. On copper the colour is part of the grade; on silver, lustre is the most decisive element of all.',
+          'Grading is not an exact science, so discuss details rather than labels. And practice comes not from a book but from taking ten cheap coins and putting them in order.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'east-india-company-coins',
+    sections: [
+      {
+        hHi: 'शुरुआत कहाँ से करें',
+        hEn: 'Where to begin',
+        pHi: [
+          'ताँबे के छोटे सिक्के इस क्षेत्र का प्रवेश-द्वार हैं — क्वार्टर आना, आधा पाइस, और मद्रास के कैश। ये कुछ सौ रुपये में मिलते हैं और भरपूर उपलब्ध हैं।',
+          'एक अच्छा शुरुआती लक्ष्य है “तीनों प्रेसीडेंसी से एक-एक” — बंगाल, मद्रास और बंबई का एक-एक सिक्का। तीन वस्तुएँ, और उनमें तीन अलग व्यवस्थाएँ बैठ जाती हैं।',
+          'उसके बाद 1835 के एकसमान सिक्के की ओर बढ़िए, जो उस पूरी विविधता के अंत का दस्तावेज़ है।',
+        ],
+        pEn: [
+          'The small copper is the doorway into this field — quarter annas, half pice, and the Madras cash. They cost a few hundred rupees and are plentiful.',
+          'A good opening target is “one from each presidency” — a single coin from Bengal, Madras and Bombay. Three objects, and three separate monetary systems sit inside them.',
+          'After that move towards the uniform coinage of 1835, which documents the end of all that variety and the beginning of a single Indian rupee.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'victoria-portrait-coins',
+    sections: [
+      {
+        hHi: 'संग्रह का एक अच्छा लक्ष्य',
+        hEn: 'A good collecting target',
+        pHi: [
+          '“दो उपाधियाँ, एक मूल्यवर्ग” इस क्षेत्र का सबसे साफ़ लक्ष्य है — एक क्वीन दौर का सिक्का और एक एम्प्रेस दौर का, दोनों एक ही मूल्यवर्ग में।',
+          'दो सिक्के, कुल ख़र्च कुछ सौ रुपये, और वे साथ रखे जाने पर एक ऐतिहासिक घटना को दिखा देते हैं जो 1876 में घटी।',
+          'इसके बाद इसे बढ़ाना आसान है: हर मूल्यवर्ग के लिए वही जोड़ा। यह लक्ष्य सीमित रहता है और पूरा होने पर सचमुच कुछ बनता है।',
+        ],
+        pEn: [
+          '“Two titles, one denomination” is the cleanest target in this field — one Queen-period coin and one Empress-period coin, both of the same denomination.',
+          'Two coins, a few hundred rupees in total, and placed side by side they display a historical event that took place in 1876.',
+          'Extending it afterwards is easy: the same pair for every denomination. The target stays bounded, and once complete it genuinely amounts to something.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'republic-india-first-coins',
+    sections: [
+      {
+        hHi: 'प्रतीक का चयन क्यों मायने रखता है',
+        hEn: 'Why the choice of emblem matters',
+        pHi: [
+          'एक नए गणराज्य के लिए मुद्रा का डिज़ाइन केवल सौंदर्य का प्रश्न नहीं होता। सिक्का हर दिन हर हाथ में जाता है, और उस पर जो अंकित है वही दोहराया जाता है।',
+          'भारत ने किसी व्यक्ति के बजाय एक प्रतीक चुना, और वह प्रतीक भी ऐसा जो किसी एक धर्म, क्षेत्र या भाषा का नहीं।',
+          'अशोक स्तंभ ढाई हज़ार साल पुराना है, यानी वह किसी हालिया राजनीति से नहीं जुड़ा। और “सत्यमेव जयते” एक उपनिषद से आया वाक्य है, जो एक नैतिक दावा करता है, राजनीतिक नहीं।',
+          'यही चयन आज तक क़ायम है, और वह अपने आप में एक निरंतरता है जो 1950 से आज तक हर भारतीय सिक्के पर चली आ रही है।',
+        ],
+        pEn: [
+          'For a new republic, the design of its currency is not merely a question of appearance. A coin passes through every hand every day, and whatever is stamped on it is what gets repeated.',
+          'India chose an emblem rather than a person, and an emblem belonging to no single religion, region or language.',
+          'The Ashoka capital is two and a half thousand years old, meaning it is attached to no recent politics. And “Satyameva Jayate” comes from an Upanishad and makes a moral claim rather than a political one.',
+          'That choice still holds, and it is a continuity of its own — running across every Indian coin from 1950 to today.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-to-start-collecting-coins',
+    sections: [
+      {
+        hHi: 'धैर्य ही असली औज़ार है',
+        hEn: 'Patience is the real tool',
+        pHi: [
+          'हर ख़रीद से पहले एक हफ़्ता रुकिए। जो सिक्का हफ़्ते भर बाद भी उतना ही ज़रूरी लगे, वही असल में चाहिए था।',
+          'यह नियम सरल लगता है और वह अधिकांश अनावश्यक ख़रीद रोक देता है, क्योंकि इस शौक़ में सबसे ज़्यादा पैसा उत्साह के क्षणों में ख़र्च होता है।',
+        ],
+        pEn: [
+          'Wait a week before every purchase. A coin that still feels necessary after that week is the one you actually wanted.',
+          'The rule sounds simple and it prevents most unnecessary buying, because in this hobby the greatest amount of money is spent in moments of enthusiasm rather than after consideration.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'grading-coins-basics',
+    sections: [
+      {
+        hHi: 'थर्ड-पार्टी ग्रेडिंग कब उचित है',
+        hEn: 'When third-party grading is worth it',
+        pHi: [
+          'अंतरराष्ट्रीय ग्रेडिंग कंपनियाँ सिक्के को जाँचकर एक सीलबंद डिब्बे में बंद कर देती हैं, जिस पर ग्रेड और प्रामाणिकता दर्ज होती है।',
+          'इससे ख़रीदार को भरोसा मिलता है और सिक्का बेचना आसान हो जाता है। पर शुल्क, विदेश भेजने का ख़र्च, बीमा और समय — सब जोड़कर यह ठीक-ठाक रक़म बनती है।',
+          'सीधा नियम यह है: यदि कुल ख़र्च सिक्के के अनुमानित मूल्य के एक चौथाई से ज़्यादा है, तो मत कीजिए।',
+          'महँगे, दुर्लभ और विवादित सिक्कों के लिए यह निवेश सार्थक है; आम सिक्कों के लिए यह पैसा बर्बाद करना है।',
+        ],
+        pEn: [
+          'International grading companies examine a coin and seal it in a holder marked with its grade and authenticity.',
+          'This gives buyers confidence and makes the coin easier to sell. But the fee, shipping abroad, insurance and time together add up to a substantial amount.',
+          'The straightforward rule is this: if the total cost exceeds about a quarter of the coin’s estimated value, do not do it.',
+          'For expensive, rare or disputed pieces the investment is worthwhile; for ordinary coins it is money thrown away.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'east-india-company-coins',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'इन सिक्कों का सबसे बड़ा मूल्य यही है कि वे एक असामान्य ऐतिहासिक स्थिति का दस्तावेज़ हैं।',
+        ],
+        pEn: [
+          'The greatest value of these coins is that they document an unusual historical situation: a private trading company issuing currency across a subcontinent, in the name of an emperor it formally answered to, until the day it became a government in all but name and then stopped being anything at all.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'victoria-portrait-coins',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'इन सिक्कों को देखते समय याद रखिए कि वे एक तकनीकी बाध्यता के भीतर बनी कला हैं।',
+        ],
+        pEn: [
+          'When looking at these coins, remember that they are art made inside a technical constraint: a face that had to survive thousands of hands without wearing away, cut into a surface a couple of millimetres deep, by somebody who would never see the person and never see most of the places the coin would travel to.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'republic-india-first-coins',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'गणराज्य के पहले सिक्के किसी उत्सव की घोषणा नहीं थे। वे सादे, व्यावहारिक और निकल के थे — और यही उन्हें ईमानदार बनाता है।',
+        ],
+        pEn: [
+          'The first coins of the Republic were not a celebration announced in metal. They were plain, practical and made of nickel, because the country could not afford silver and did not pretend otherwise — and that unadorned honesty is precisely what makes them worth having in a collection today.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-to-start-collecting-coins',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'इस शौक़ में सबसे अच्छा निवेश कोई सिक्का नहीं, बल्कि एक अच्छी संदर्भ-पुस्तक और कुछ अच्छे लोगों से जान-पहचान है।',
+        ],
+        pEn: [
+          'The best investment in this hobby is not a coin at all but a good reference book and the acquaintance of a few knowledgeable people — because a book costs less than one decent purchase and prevents a dozen bad ones, and the people will show you things you would never have found in any catalogue.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'grading-coins-basics',
+    sections: [
+      {
+        hHi: 'एक आख़िरी बात',
+        hEn: 'One last thing',
+        pHi: [
+          'ग्रेडिंग सीखने का असली लाभ यह नहीं कि आप बेहतर बेच सकेंगे, बल्कि यह कि आप ग़लत ख़रीद से बच जाएँगे।',
+        ],
+        pEn: [
+          'The real benefit of learning to grade is not that you will sell better but that you will avoid buying badly — and over a collecting lifetime the money saved by recognising a cleaned coin at a glance comfortably exceeds anything you would ever make by selling well.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
