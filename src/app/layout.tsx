@@ -5,6 +5,7 @@ import './globals.css';
 import { LangProvider } from '@/lib/lang';
 import { SiteHeader, SiteFooter } from '@/components/Site';
 import { GlobalAds } from '@/components/Ads';
+import { PageAds } from '@/components/PageAds';
 
 // Devanagari-first typography: Hindi is the native language of the site.
 const deva = Noto_Serif_Devanagari({
@@ -65,6 +66,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LangProvider>
           <SiteHeader />
           <main className="min-h-[60vh]">{children}</main>
+          {/* Tops every route up to the owner's minimum of six Adsterra units,
+              covering top, middle and bottom. Counts what the template already
+              placed, and obeys the central switch in the ulyah.com admin. */}
+          <PageAds />
           <SiteFooter />
           <GlobalAds />
         </LangProvider>
