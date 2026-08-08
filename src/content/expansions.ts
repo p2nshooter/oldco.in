@@ -4888,6 +4888,801 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'cleaning-coins-warning',
+    sections: [
+      {
+        hHi: 'लोग साफ़ क्यों करना चाहते हैं',
+        hEn: 'Why people want to clean',
+        pHi: [
+          'यह इच्छा समझने लायक़ है, क्योंकि उसे समझे बिना यह सलाह केवल एक निषेध लगती है।',
+          'हमें बचपन से सिखाया जाता है कि साफ़ चीज़ अच्छी होती है और गंदी चीज़ ख़राब। धातु पर जमी गहरी परत सहज रूप से “गंदगी” दिखती है, और उसे हटाना देखभाल लगता है।',
+          'दूसरा कारण यह है कि चमकीला सिक्का तस्वीर में बेहतर दिखता है, और बेचने वाले को लगता है कि वह ज़्यादा दाम पाएगा।',
+          'दोनों धारणाएँ इस एक क्षेत्र में उलटी हैं। यहाँ पुराना दिखना गुण है, और चमक अक्सर क्षति का प्रमाण। यही वह मानसिक पलटाव है जो हर नए संग्राहक को करना पड़ता है।',
+        ],
+        pEn: [
+          'The impulse is worth understanding, because without understanding it this advice reads as a bare prohibition.',
+          'We are taught from childhood that a clean object is good and a dirty one bad. A dark film on metal instinctively looks like dirt, and removing it feels like care.',
+          'The second reason is that a bright coin photographs better, and a seller assumes it will fetch more.',
+          'Both assumptions are inverted in this one field. Here looking old is a virtue, and brightness is frequently evidence of damage. That is the mental reversal every new collector has to make.',
+        ],
+      },
+      {
+        hHi: 'संरक्षण और सफ़ाई दो अलग चीज़ें हैं',
+        hEn: 'Conservation and cleaning are two different things',
+        pHi: [
+          'संग्रहालय के संरक्षक कभी-कभी सिक्कों पर काम करते हैं, और उसे देखकर कुछ लोग सोचते हैं कि सफ़ाई स्वीकार्य है। यह ग़लतफ़हमी है और भेद जानना ज़रूरी है।',
+          'संरक्षण का उद्देश्य क्षति रोकना है, दिखावट सुधारना नहीं। जब कोई सक्रिय रासायनिक प्रक्रिया धातु को खा रही हो — जैसे ताँबे पर सक्रिय क्षरण या पीवीसी की परत — तब हस्तक्षेप ज़रूरी होता है।',
+          'यह काम नियंत्रित परिस्थितियों में, विशिष्ट रसायनों से, और उस व्यक्ति द्वारा किया जाता है जो जानता है कि किस धातु पर क्या प्रतिक्रिया होगी। और वह दर्ज भी किया जाता है।',
+          'घर पर टूथपेस्ट से रगड़ना इसका उलटा है: उद्देश्य दिखावट है, विधि घर्षक है, और परिणाम अपरिवर्तनीय। एक चिकित्सा है, दूसरा नुक़सान।',
+        ],
+        pEn: [
+          'Museum conservators do sometimes work on coins, and seeing that leads some people to conclude cleaning is acceptable. That is a misunderstanding and the distinction matters.',
+          'The purpose of conservation is to stop damage, not to improve appearance. When an active chemical process is eating the metal — active corrosion on copper, or a PVC film — intervention is necessary.',
+          'That work is done under controlled conditions, with specific reagents, by somebody who knows how each metal will react. And it is documented.',
+          'Rubbing with toothpaste at home is the opposite on every count: the purpose is appearance, the method is abrasive, and the result is irreversible. One is treatment; the other is harm.',
+        ],
+      },
+      {
+        hHi: 'ज़मीन से निकले सिक्कों का विशेष मामला',
+        hEn: 'The special case of coins from the ground',
+        pHi: [
+          'यहाँ एक अपवाद है जिसे स्पष्ट कर देना चाहिए, क्योंकि सामान्य नियम इस पर सीधे लागू नहीं होता।',
+          'ज़मीन में दबे रहे सिक्कों पर अक्सर सख़्त मिट्टी की परत जमी होती है, और कभी-कभी उसके नीचे सक्रिय क्षरण चलता रहता है जो धातु को धीरे-धीरे नष्ट करता है।',
+          'ऐसे मामलों में कुछ करना पड़ता है, पर वह “सफ़ाई” नहीं बल्कि स्थिरीकरण है — और वह विशेषज्ञ का काम है। ग़लत तरीक़ा सिक्के को कुछ ही मिनटों में नष्ट कर सकता है।',
+          'यदि आपके पास ऐसा सिक्का है, तो उसे सूखा रखिए, अलग रखिए, और किसी अनुभवी व्यक्ति को दिखाइए। जो नहीं करना है वह है उसे पानी में भिगोकर ब्रश से रगड़ना।',
+        ],
+        pEn: [
+          'There is an exception here that should be stated plainly, because the general rule does not apply directly to it.',
+          'Coins that have been buried often carry a hard crust of soil, and beneath it an active corrosion can continue eating the metal.',
+          'Something has to be done in such cases, but that something is stabilisation rather than cleaning — and it is specialist work. The wrong method can destroy the coin within minutes.',
+          'If you hold such a coin, keep it dry, keep it separate, and show it to somebody experienced. What must not be done is soaking it in water and scrubbing with a brush.',
+        ],
+      },
+      {
+        hHi: 'नुक़सान संख्या में',
+        hEn: 'The damage, in numbers',
+        pHi: [
+          'यह हिस्सा लोगों को सबसे ज़्यादा चौंकाता है, और इसीलिए इसे स्पष्ट रूप से कहना उपयोगी है।',
+          'एक ही सिक्का, एक ही दशा — पर एक अछूता और दूसरा साफ़ किया हुआ। दूसरे का दाम अक्सर पहले के आधे से भी कम बैठता है, और कभी-कभी उससे भी नीचे।',
+          'कारण यह है कि अंतरराष्ट्रीय ग्रेडिंग सेवाएँ साफ़ किए गए सिक्के को संख्यात्मक ग्रेड ही नहीं देतीं। वे उस पर “cleaned” का लेबल लगाती हैं, और वह लेबल स्थायी है।',
+          'इसका व्यावहारिक अर्थ यह है कि सिक्का उस बाज़ार से लगभग बाहर हो जाता है जहाँ गंभीर संग्राहक ख़रीदते हैं। जो बचता है वह केवल धातु या भावना के लिए ख़रीदने वालों का बाज़ार है।',
+        ],
+        pEn: [
+          'This is the part that surprises people most, which is why stating it clearly is useful.',
+          'The same coin in the same grade — one untouched and one cleaned. The second frequently fetches less than half of the first, and sometimes considerably less.',
+          'The reason is that international grading services do not assign a numerical grade to a cleaned coin at all. They label it “cleaned”, and that label is permanent.',
+          'The practical consequence is that the coin leaves the market where serious collectors buy. What remains is the market of those buying for metal or for sentiment alone.',
+        ],
+      },
+      {
+        hHi: 'सिक्का पहले ही साफ़ हो चुका हो तो',
+        hEn: 'If the coin has already been cleaned',
+        pHi: [
+          'यह स्थिति आम है, ख़ासकर विरासत में मिले संग्रहों में, जहाँ किसी पिछली पीढ़ी ने नेक इरादे से सब कुछ चमका दिया।',
+          'पहली बात: नुक़सान की भरपाई नहीं हो सकती। कोई तरीक़ा नहीं है जिससे लस्टर लौटे या मूल परत वापस बने। यह जान लेना ही आगे बढ़ने का पहला क़दम है।',
+          'दूसरी बात: सिक्का बेकार नहीं हुआ। उसका ऐतिहासिक महत्व वही है, उसकी कहानी वही है, और यदि वह परिवार से आया है तो उसकी भावनात्मक क़ीमत अछूती है।',
+          'तीसरी: बेचते समय यह बता दीजिए। छिपाना अल्पकालिक लाभ देता है और साख का दीर्घकालिक नुक़सान — और यह क्षेत्र छोटा है, जहाँ लोग एक-दूसरे को जानते हैं।',
+          'और चौथी: समय के साथ ताँबे और चाँदी पर एक नई प्राकृतिक परत धीरे-धीरे बनने लगती है। वह मूल जैसी नहीं होगी, पर दशकों में सिक्का फिर स्वाभाविक दिखने लगता है।',
+        ],
+        pEn: [
+          'This situation is common, particularly in inherited collections where some earlier generation polished everything with the best of intentions.',
+          'First: the damage cannot be undone. There is no method that restores lustre or rebuilds the original surface. Accepting that is the first step forward.',
+          'Second: the coin is not worthless. Its historical importance is unchanged, its story is unchanged, and if it came from the family its emotional value is untouched.',
+          'Third: say so when selling. Concealment brings a short-term gain and a long-term loss of reputation — and this is a small field where people know one another.',
+          'And fourth: over time a new natural film begins to form on copper and silver. It will not be the original, but across decades the coin starts to look natural again.',
+        ],
+      },
+      {
+        hHi: 'परिवार को यह कैसे बताएँ',
+        hEn: 'How to tell the family',
+        pHi: [
+          'सबसे ज़्यादा सिक्के परिवार के भीतर नष्ट होते हैं, और वह भी मदद करने की नीयत से। इसलिए इसे कहने का तरीक़ा मायने रखता है।',
+          '“मत छुओ” कहना काम नहीं करता। इसके बजाय कारण बताइए: यह परत वर्षों में बनी है, यही उसे बचाती है, और उसे हटाने से दाम आधा रह जाता है।',
+          'यदि घर में पुराने सिक्कों की संदूक़ है, तो एक छोटी पर्ची उसमें रख दीजिए — “कृपया इन्हें साफ़ न करें, इससे मूल्य नष्ट होता है।” यह वाक्य बहुत कुछ बचा लेता है।',
+          'और बच्चों को यह बताना विशेष रूप से उपयोगी है, क्योंकि सिक्के चमकाने की इच्छा उनमें सबसे प्रबल होती है और वे कारण जल्दी समझ लेते हैं।',
+        ],
+        pEn: [
+          'More coins are destroyed within families than anywhere else, and always with the intention of helping. So how this is said matters.',
+          '“Don’t touch them” does not work. Give the reason instead: this film took years to form, it is what protects the surface, and removing it halves the value.',
+          'If there is a trunk of old coins in the house, put a small slip inside it — “Please do not clean these; it destroys their value.” That one sentence saves a great deal.',
+          'Telling children is particularly useful, because the urge to polish is strongest in them and they grasp the reason quickly.',
+        ],
+      },
+      {
+        hHi: 'जो करना चाहिए',
+        hEn: 'What you should do instead',
+        pHi: [
+          'ढीली धूल हटाना सुरक्षित है — एक मुलायम ब्रश, हल्के हाथ से, और बस इतना।',
+          'बाक़ी सारी ऊर्जा भंडारण में लगाइए: माइलर या पॉलीप्रोपिलीन के फ़्लिप, अम्ल-रहित लिफ़ाफ़े, और एक बंद डिब्बे में सिलिका जेल का पाउच।',
+          'पीवीसी वाली पुरानी थैलियाँ आज ही हटाइए। यह एकमात्र स्थिति है जहाँ तुरंत कार्रवाई ज़रूरी है, क्योंकि वह परत सक्रिय रूप से धातु को नुक़सान पहुँचा रही है।',
+          'और पकड़ने का तरीक़ा: हमेशा किनारों से, चेहरे पर उँगली नहीं, नरम सतह के ऊपर। ये चार आदतें मिलकर सिक्के को अगली सदी तक पहुँचा देती हैं।',
+        ],
+        pEn: [
+          'Removing loose dust is safe — a soft brush, a light hand, and nothing more.',
+          'Put all the remaining energy into storage: Mylar or polypropylene flips, acid-free envelopes, and a silica gel sachet in a closed box.',
+          'Get rid of old PVC sleeves today. That is the one situation requiring immediate action, because the film is actively damaging the metal.',
+          'And how to hold them: always by the edges, fingers off the faces, over a soft surface. Those four habits together carry a coin into the next century.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'चमक क्षति का प्रमाण है, गुण का नहीं। साफ़ किया हुआ सिक्का अपनी क़ीमत का आधे से ज़्यादा खो देता है और वह नुक़सान अपरिवर्तनीय है।',
+          'संरक्षण अलग चीज़ है — वह क्षति रोकने के लिए, विशेषज्ञ द्वारा, नियंत्रित परिस्थितियों में किया जाता है। घर पर करने लायक़ केवल एक काम है: ढीली धूल हटाना, और फिर सिक्के को अकेला छोड़ देना।',
+        ],
+        pEn: [
+          'Brightness is evidence of damage rather than of quality. A cleaned coin loses more than half its value, and that loss is irreversible.',
+          'Conservation is a different thing — done to stop damage, by a specialist, under controlled conditions. The only job worth doing at home is lifting loose dust, and then leaving the coin alone.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'spotting-fake-coins',
+    sections: [
+      {
+        hHi: 'नक़ल सबसे ज़्यादा कहाँ मिलती है',
+        hEn: 'Where fakes are most often found',
+        pHi: [
+          'यह जानना उतना ही उपयोगी है जितना यह जानना कि नक़ल कैसी दिखती है, क्योंकि अधिकांश ग़लत ख़रीद कुछ ही जगहों पर होती है।',
+          'पहली — पर्यटन स्थलों की दुकानें। किले, स्मारक और बाज़ार जहाँ यात्री आते हैं, वहाँ “प्राचीन सिक्के” लगभग हमेशा आधुनिक टोकन होते हैं।',
+          'दूसरी — ऑनलाइन मंच जहाँ विक्रेता गुमनाम हो। तस्वीर सुंदर, विवरण अस्पष्ट, दाम आकर्षक — यही तीनों मिलकर सबसे बड़ा ख़तरा हैं।',
+          'तीसरी — “किसी परिचित का पुराना संग्रह”। यह सबसे कठिन है, क्योंकि विश्वास सतर्कता को कम कर देता है, और बेचने वाला अक्सर स्वयं भी नहीं जानता कि वस्तु नक़ली है।',
+        ],
+        pEn: [
+          'Knowing this is as useful as knowing what a fake looks like, because most wrong purchases happen in only a few places.',
+          'First, shops at tourist sites. At forts, monuments and markets where travellers come, “ancient coins” are almost always modern tokens.',
+          'Second, online platforms where the seller is anonymous. A beautiful photograph, a vague description and an attractive price — those three together are the greatest danger.',
+          'Third, “an old collection belonging to somebody I know”. This is the hardest, because trust lowers vigilance, and the seller frequently does not know it is fake either.',
+        ],
+      },
+      {
+        hHi: 'विवरण में छिपे संकेत',
+        hEn: 'The warning signs hidden in a description',
+        pHi: [
+          'नक़ली सिक्कों की सूचियाँ अक्सर भाषा से ही पहचानी जा सकती हैं, इससे पहले कि आप तस्वीर देखें।',
+          '“दुर्लभ”, “अत्यंत दुर्लभ”, “संग्रहालय गुणवत्ता” — ये शब्द बिना किसी संदर्भ के इस्तेमाल होते हैं और कुछ भी सिद्ध नहीं करते।',
+          'स्रोत की अनुपस्थिति एक बड़ा संकेत है। ईमानदार विक्रेता बताता है कि सिक्का कहाँ से आया; “पुश्तैनी संग्रह” बिना किसी ब्योरे के एक टाल-मटोल है।',
+          'और सबसे स्पष्ट: उसी विक्रेता के पास वही “दुर्लभ” सिक्का कई नग हों। सचमुच दुर्लभ वस्तु एक होती है, दस नहीं।',
+        ],
+        pEn: [
+          'Listings of fake coins can often be identified from the language alone, before you even look at the photograph.',
+          '“Rare”, “extremely rare”, “museum quality” — these words are used without any reference and prove nothing at all.',
+          'The absence of provenance is a large signal. An honest seller says where the coin came from; “ancestral collection” without any detail is an evasion.',
+          'And the clearest of all: the same seller holding several examples of the same “rare” coin. A genuinely rare object exists once, not ten times.',
+        ],
+      },
+      {
+        hHi: 'प्रतिकृति जो हाथ बदलते-बदलते “असली” हो जाती है',
+        hEn: 'The replica that becomes “genuine” as it changes hands',
+        pHi: [
+          'यह एक ऐसी समस्या है जिसकी शुरुआत में कोई बेईमानी नहीं होती, और इसीलिए वह इतनी व्यापक है।',
+          'संग्रहालय और शैक्षिक संस्थाएँ प्रतिकृतियाँ बनाती हैं, और वे प्रायः “COPY” अंकित करके बेची जाती हैं। कुछ सजावटी प्रतिकृतियाँ भी बनती हैं।',
+          'समस्या तब शुरू होती है जब वह वस्तु दूसरे, तीसरे हाथ में जाती है। हर हस्तांतरण में संदर्भ खोता है, और अंततः कोई उसे “दादाजी का पुराना सिक्का” समझकर बेच देता है।',
+          'इसीलिए किनारे और सतह की जाँच ज़रूरी है, चाहे बेचने वाला कितना भी ईमानदार लगे। सवाल उसकी नीयत का नहीं, वस्तु के इतिहास का है।',
+        ],
+        pEn: [
+          'This is a problem that begins with no dishonesty at all, which is exactly why it is so widespread.',
+          'Museums and educational bodies make replicas, usually sold marked “COPY”. Decorative reproductions are made as well.',
+          'The trouble begins when the object passes to a second and third owner. Context is lost at every transfer, and eventually somebody sells it believing it to be grandfather’s old coin.',
+          'This is why checking the edge and surface matters however honest the seller seems. The question is not about their intentions but about the object’s history.',
+        ],
+      },
+      {
+        hHi: 'चार जाँचें, क्रम में',
+        hEn: 'Four checks, in order',
+        pHi: [
+          'पहली — वज़न। हर मानक सिक्के का वज़न प्रकाशित है, और एक सस्ता डिजिटल तराज़ू अधिकांश नक़लों को यहीं पकड़ लेता है।',
+          'दूसरी — किनारा। ढली हुई नक़ल का किनारा चिकना और गोल होता है, और धारीदार किनारे पर धारियाँ उथली या असमान। असली ठोंका हुआ सिक्का यहाँ तीखा होता है।',
+          'तीसरी — सतह, दस गुना आवर्धन के लूप से। ढलाई छोटे बुलबुले जैसे गड्ढे छोड़ती है, और अक्षरों के किनारे धुँधले लगते हैं।',
+          'चौथी — तुलना। संदिग्ध सिक्के को उसी किस्म के असली सिक्के के साथ रखिए। जालसाज़ बड़ी तस्वीर सही बना लेते हैं और छोटे ब्योरों पर पकड़े जाते हैं।',
+        ],
+        pEn: [
+          'First, weight. The standard weight of every coin is published, and a cheap digital scale catches most forgeries right here.',
+          'Second, the edge. A cast copy has a smooth rounded edge, and where the edge is reeded the grooves are shallow or uneven. A genuine struck coin is sharp here.',
+          'Third, the surface under a ten-times loupe. Casting leaves small bubble-like pits, and the edges of the letters look blurred.',
+          'Fourth, comparison. Place the suspect coin beside a genuine example of the same type. Forgers get the large picture right and are caught on the small details.',
+        ],
+      },
+      {
+        hHi: 'ग़लत ख़रीद हो चुकी हो तो',
+        hEn: 'If you have already bought a fake',
+        pHi: [
+          'सबसे पहले, इसे व्यक्तिगत असफलता मत मानिए। लगभग हर अनुभवी संग्राहक ने शुरुआत में कम से कम एक नक़ली सिक्का ख़रीदा है।',
+          'यदि ख़रीद हाल की है और विक्रेता प्रतिष्ठित है, तो उससे संपर्क कीजिए। एक अच्छा डीलर वापसी स्वीकार करता है, क्योंकि उसकी साख उस एक सौदे से बड़ी है।',
+          'यदि वापसी संभव न हो, तो सिक्के को फेंकिए मत। उस पर “COPY” लिखकर या अलग रखकर उसे संदर्भ-नमूने के रूप में रखिए — असली से तुलना करने के लिए वह उपयोगी है।',
+          'और जो कभी नहीं करना है: उसे आगे किसी को असली बताकर बेचना। यह आपका नुक़सान किसी और पर डालना है, और यही वह व्यवहार है जिससे यह पूरी समस्या बनी रहती है।',
+        ],
+        pEn: [
+          'First, do not treat it as a personal failure. Nearly every experienced collector bought at least one fake early on.',
+          'If the purchase is recent and the seller reputable, contact them. A good dealer accepts a return, because their reputation is larger than any single sale.',
+          'If a return is not possible, do not throw the coin away. Mark it “COPY” or keep it separately as a reference piece — it is useful for comparison against genuine examples.',
+          'And what must never be done: selling it on as genuine. That is passing your loss to somebody else, and it is exactly the behaviour that keeps the whole problem alive.',
+        ],
+      },
+      {
+        hHi: 'सबसे बड़ी सुरक्षा: स्रोत',
+        hEn: 'The greatest protection: the source',
+        pHi: [
+          'सारी तकनीकी जाँचों से ऊपर एक चीज़ है, और वह है उससे ख़रीदना जिसकी साख आपसे बड़ी है।',
+          'एक स्थापित डीलर की साख वर्षों में बनी है और एक नक़ली सिक्के से कहीं ज़्यादा क़ीमती है। उसे जोखिम में डालना उसके लिए घाटे का सौदा है।',
+          'संग्राहक-समितियाँ इसी कारण उपयोगी हैं। वहाँ लोग एक-दूसरे को जानते हैं, और जो बेईमानी करता है वह जल्दी पहचाना जाता है।',
+          'यह सुरक्षा मुफ़्त नहीं है — प्रतिष्ठित विक्रेता का दाम अक्सर थोड़ा ऊपर रहता है। पर वह अंतर एक ग़लत ख़रीद की तुलना में कुछ भी नहीं।',
+        ],
+        pEn: [
+          'Above all the technical checks sits one thing: buying from somebody whose reputation is larger than yours.',
+          'An established dealer’s standing was built over years and is worth far more than any single fake. Risking it is a bad trade for them.',
+          'Collectors’ societies are useful for the same reason. People there know one another, and anybody dishonest is identified quickly.',
+          'This protection is not free — a reputable seller’s price is usually somewhat higher. But that difference is nothing beside the cost of one wrong purchase.',
+        ],
+      },
+      {
+        hHi: 'कब विशेषज्ञ के पास जाएँ',
+        hEn: 'When to go to an expert',
+        pHi: [
+          'तीन स्थितियों में घर की जाँच पर मत रुकिए। पहली — जब सिक्का महँगा हो। दूसरी — जब वह किसी दुर्लभ किस्म का दावा करता हो, क्योंकि दुर्लभ किस्मों की ही सबसे ज़्यादा नक़ल बनती है।',
+          'तीसरी — जब कुछ सही न लग रहा हो पर आप बता न पा रहे हों कि क्या। यह अनुभवी लोगों का सबसे भरोसेमंद संकेत है और इसे नज़रअंदाज़ नहीं करना चाहिए।',
+          'ग्रेडिंग सेवा का शुल्क तभी उचित है जब वह सिक्के के अनुमानित मूल्य के एक चौथाई से कम हो। उससे ऊपर हो तो वह ख़र्च समझदारी नहीं।',
+          'और सबसे सस्ता विशेषज्ञ अक्सर पास ही होता है: किसी संग्राहक-समिति का वरिष्ठ सदस्य, जो अक्सर मुफ़्त में देख देता है और बदले में केवल आपकी दिलचस्पी चाहता है।',
+        ],
+        pEn: [
+          'In three situations do not stop at home checks. First, when the coin is expensive. Second, when it claims to be a rare variety, because rare varieties attract the most forgery.',
+          'Third, when something feels wrong and you cannot say what. That instinct is the most reliable signal experienced people have, and it should not be dismissed.',
+          'A grading fee is justified only when it comes to less than about a quarter of the coin’s estimated value. Above that it is not a sensible expense.',
+          'And the cheapest expert is often nearby: a senior member of a collectors’ society, who will usually look for free and asks nothing in return but your interest.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'नक़ल सबसे ज़्यादा पर्यटन स्थलों, गुमनाम ऑनलाइन विक्रेताओं, और “परिचित के पुराने संग्रह” में मिलती है — यानी वहाँ जहाँ सतर्कता सबसे कम होती है।',
+          'चार जाँचें क्रम से कीजिए: वज़न, किनारा, लूप से सतह, और असली नमूने से तुलना। और सबसे बड़ी सुरक्षा तकनीकी नहीं — वह उससे ख़रीदना है जिसकी साख आपसे बड़ी है।',
+        ],
+        pEn: [
+          'Fakes are found most often at tourist sites, from anonymous online sellers, and in “an old collection belonging to somebody I know” — that is, wherever vigilance is lowest.',
+          'Run four checks in order: weight, edge, surface under a loupe, and comparison against a genuine example. And the greatest protection is not technical at all — it is buying from somebody whose reputation is larger than yours.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'storing-coins-properly',
+    sections: [
+      {
+        hHi: 'भारत की जलवायु का विशेष मामला',
+        hEn: 'The particular problem of the Indian climate',
+        pHi: [
+          'भंडारण की अधिकांश सलाह ठंडे, सूखे देशों के लिए लिखी गई है, और वह यहाँ सीधे लागू नहीं होती।',
+          'भारत की समस्या नमी है, और वह मौसम के साथ नाटकीय रूप से बदलती है। मानसून के महीनों में सापेक्ष आर्द्रता अस्सी प्रतिशत से ऊपर चली जाती है — यानी वह स्तर जिस पर धातु पर सक्रिय क्षरण शुरू हो सकता है।',
+          'पेशेवर लक्ष्य लगभग चालीस प्रतिशत है, और यह अंतर मामूली नहीं। एक बंद डिब्बे में सिलिका जेल के दो-तीन पाउच इस अंतर को पाट देते हैं।',
+          'पाउच को हर मानसून से पहले बदलिए या धूप में सुखाकर दोबारा इस्तेमाल कीजिए। यह साल में एक बार का काम है और वह पूरे संग्रह की रक्षा करता है।',
+        ],
+        pEn: [
+          'Most storage advice was written for cold, dry countries and does not apply directly here.',
+          'India’s problem is humidity, and it varies dramatically with the season. Through the monsoon months relative humidity climbs above eighty per cent — the level at which active corrosion can begin on metal.',
+          'The professional target is around forty per cent, and that difference is not small. Two or three silica gel sachets in a closed box bridge it.',
+          'Replace the sachets before each monsoon, or dry them in the sun and reuse them. It is a once-a-year job and it protects the entire collection.',
+        ],
+      },
+      {
+        hHi: 'तटीय और भीतरी इलाक़े',
+        hEn: 'Coastal and inland',
+        pHi: [
+          'एक भेद जो शायद ही कभी बताया जाता है: समुद्र के पास रहने वाले संग्राहक की समस्या अलग है।',
+          'तटीय हवा में नमक के कण होते हैं, और नमक धातु पर क्षरण को कई गुना तेज़ करता है। मुंबई, चेन्नई, कोच्चि या विशाखापत्तनम में रखा संग्रह भीतरी इलाक़े की तुलना में ज़्यादा जोखिम में है।',
+          'वहाँ दो अतिरिक्त उपाय उचित हैं: वायुरोधी डिब्बा — केवल ढक्कन वाला नहीं, बल्कि गैस्केट वाला — और सिलिका जेल की अधिक मात्रा।',
+          'खिड़की के पास या समुद्र की ओर की दीवार से लगी अलमारी में संग्रह मत रखिए। घर के भीतरी हिस्से की अलमारी हमेशा बेहतर है।',
+        ],
+        pEn: [
+          'One distinction that is rarely mentioned: the collector living near the sea has a different problem.',
+          'Coastal air carries salt particles, and salt accelerates corrosion on metal several times over. A collection kept in Mumbai, Chennai, Kochi or Visakhapatnam is at greater risk than one inland.',
+          'Two additional measures are appropriate there: an airtight box — one with a gasket, not merely a lid — and a larger quantity of silica gel.',
+          'Do not keep the collection near a window or in a cupboard against a seaward wall. An interior cupboard is always better.',
+        ],
+      },
+      {
+        hHi: 'तीन बजट, तीन समाधान',
+        hEn: 'Three budgets, three solutions',
+        pHi: [
+          'भंडारण की सलाह अक्सर महँगी लगती है, इसलिए इसे तीन स्तरों में रखना उपयोगी है।',
+          'शून्य बजट: पुरानी पीवीसी थैलियाँ हटाइए और सिक्कों को साधारण काग़ज़ में अलग-अलग लपेटकर एक टिन के डिब्बे में रखिए, साथ में चावल की एक पोटली नमी सोखने के लिए। यह आदर्श नहीं, पर पीवीसी से बहुत बेहतर है।',
+          'कम बजट: अम्ल-रहित 2×2 काग़ज़ के लिफ़ाफ़े, एक प्लास्टिक का वायुरोधी डिब्बा, और सिलिका जेल के पाउच। कुछ सौ रुपये में पूरा संग्रह सुरक्षित।',
+          'आदर्श: माइलर के फ़्लिप या संग्राहकों वाला एल्बम, गैस्केट वाला डिब्बा, आर्द्रता-मापक, और एक अलग सूची। यह कुछ हज़ार का मामला है और दशकों चलता है।',
+        ],
+        pEn: [
+          'Storage advice often sounds expensive, so it helps to set it out at three levels.',
+          'Zero budget: remove old PVC sleeves and wrap the coins individually in plain paper inside a tin, with a pouch of rice to absorb moisture. Not ideal, and far better than PVC.',
+          'Low budget: acid-free two-inch paper envelopes, an airtight plastic box, and silica gel sachets. The whole collection protected for a few hundred rupees.',
+          'Ideal: Mylar flips or a collectors’ album, a gasketed box, a hygrometer, and a separate inventory. A few thousand rupees, and it lasts for decades.',
+        ],
+      },
+      {
+        hHi: 'वे ग़लतियाँ जो सुरक्षित दिखती हैं',
+        hEn: 'The mistakes that look safe',
+        pHi: [
+          'कुछ भंडारण-विधियाँ देखभाल जैसी लगती हैं और असल में नुक़सान करती हैं। यही सबसे ख़तरनाक श्रेणी है।',
+          'रुई में लपेटना — रुई नमी सोखती है और उसे धातु के पास रोके रखती है। यह ठीक उलटा काम करता है।',
+          'कसकर बंद प्लास्टिक की थैली बिना सिलिका जेल के — भीतर की नमी बाहर नहीं निकल पाती, और वह एक छोटा नम कक्ष बन जाता है।',
+          'सिक्कों को एक साथ ढेर में रखना, चाहे डिब्बा कितना भी अच्छा हो। धातु धातु से रगड़ती है, और हर हलचल नई ख़रोंच छोड़ती है। हर सिक्का अलग रहना चाहिए।',
+          'और लकड़ी की ट्रे बिना अस्तर के — कुछ लकड़ियाँ, ख़ासकर ओक, समय के साथ अम्लीय वाष्प छोड़ती हैं जो धातु पर असर डालती हैं।',
+        ],
+        pEn: [
+          'Some storage methods look like care and in fact do harm. This is the most dangerous category.',
+          'Wrapping in cotton wool — cotton absorbs moisture and holds it against the metal. It does exactly the opposite of what is wanted.',
+          'A tightly sealed plastic bag with no silica gel — the moisture inside cannot escape, and it becomes a small damp chamber.',
+          'Keeping coins heaped together, however good the box. Metal rubs against metal, and every movement leaves a new scratch. Each coin should sit separately.',
+          'And an unlined wooden tray — some timbers, oak in particular, release acidic vapours over time that act on metal.',
+        ],
+      },
+      {
+        hHi: 'विरासत में मिला संग्रह: पहले क्या करें',
+        hEn: 'An inherited collection: what to do first',
+        pHi: [
+          'यह स्थिति आम है और उसमें क्रम मायने रखता है, क्योंकि पहली कुछ घंटों में की गई ग़लतियाँ स्थायी होती हैं।',
+          'पहला क़दम — कुछ मत धोइए, कुछ मत रगड़िए। यह सबसे ज़रूरी बात है और वही सबसे ज़्यादा तोड़ी जाती है।',
+          'दूसरा — पीवीसी की पुरानी थैलियाँ तुरंत हटाइए। यदि किसी सिक्के पर हरी चिपचिपी परत है, तो उसे अलग रखिए और विशेषज्ञ को दिखाइए।',
+          'तीसरा — सब कुछ एक साफ़ मेज़ पर फैलाकर तस्वीरें लीजिए और एक सूची बनाइए। यह एक शाम का काम है और वह पूरे संग्रह का बीमा है।',
+          'चौथा — अस्थायी रूप से भी सही भंडारण में डाल दीजिए। अम्ल-रहित लिफ़ाफ़े और एक सिलिका पाउच वाला डिब्बा उसी दिन तैयार किया जा सकता है।',
+        ],
+        pEn: [
+          'This situation is common and the order matters, because mistakes made in the first few hours are permanent.',
+          'Step one — wash nothing, rub nothing. That is the most important point and the one most often broken.',
+          'Step two — remove old PVC sleeves immediately. If any coin carries a green sticky film, set it aside and show it to a specialist.',
+          'Step three — spread everything on a clean table, photograph it, and make a list. That is an evening’s work and it is insurance for the whole collection.',
+          'Step four — get it into proper storage even temporarily. Acid-free envelopes and a box with a silica sachet can be assembled the same day.',
+        ],
+      },
+      {
+        hHi: 'सुरक्षा और बीमा',
+        hEn: 'Security and insurance',
+        pHi: [
+          'यह पहलू अक्सर छूट जाता है, और महँगे संग्रह के लिए वह भंडारण जितना ही ज़रूरी है।',
+          'पहला नियम: पूरा संग्रह एक ही जगह मत रखिए, ख़ासकर यदि उसमें कुछ मूल्यवान सिक्के हों। बैंक लॉकर उन कुछ के लिए उपयुक्त है — पर याद रखिए कि लॉकर में नमी नियंत्रित नहीं होती, इसलिए वहाँ भी सिलिका जेल चाहिए।',
+          'दूसरा: संग्रह के बारे में सार्वजनिक रूप से चर्चा मत कीजिए, और सोशल मीडिया पर तस्वीरें डालते समय स्थान की जानकारी हटा दीजिए।',
+          'तीसरा: बीमा के लिए सूची और तस्वीरें अनिवार्य हैं। बिना दस्तावेज़ के किसी भी दावे का आधार नहीं बनता, और यही वह जगह है जहाँ अधिकांश लोग तैयार नहीं होते।',
+        ],
+        pEn: [
+          'This aspect is often overlooked, and for a valuable collection it matters as much as storage.',
+          'The first rule: do not keep the whole collection in one place, particularly if it contains valuable pieces. A bank locker suits those few — but remember that humidity is not controlled in a locker, so silica gel is needed there too.',
+          'Second: do not discuss the collection publicly, and strip location data from photographs before posting them.',
+          'Third: an inventory and photographs are mandatory for insurance. Without documentation no claim has a basis, and this is exactly where most people are unprepared.',
+        ],
+      },
+      {
+        hHi: 'यात्रा और स्थानांतरण',
+        hEn: 'Travel and moving house',
+        pHi: [
+          'संग्रह को हिलाना उन कुछ क्षणों में से है जब सबसे ज़्यादा नुक़सान होता है, और थोड़ी तैयारी उसे रोक देती है।',
+          'हर सिक्का अपने फ़्लिप या लिफ़ाफ़े में रहे, और डिब्बे में कोई ख़ाली जगह न बचे — हिलने की जगह ही ख़रोंच का कारण है।',
+          'डिब्बे को कभी सामान के साथ मत भेजिए। हवाई यात्रा में उसे हाथ के सामान में रखिए, और सड़क यात्रा में गोद या सीट पर, डिक्की में नहीं जहाँ तापमान चरम पर जाता है।',
+          'और स्थानांतरण से पहले सूची अद्यतन कर लीजिए। यदि कुछ खो जाए, तो वही एक काग़ज़ है जो बताएगा कि क्या खोया।',
+        ],
+        pEn: [
+          'Moving a collection is one of the few moments when most damage occurs, and a little preparation prevents it.',
+          'Keep every coin in its flip or envelope, and leave no empty space in the box — room to move is what causes the scratches.',
+          'Never send the box with the luggage. On a flight keep it in hand baggage, and on a road journey on your lap or the seat rather than in the boot, where temperatures reach extremes.',
+          'And update the inventory before moving. If something goes missing, that sheet of paper is the only thing that will tell you what.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'भारत में नमी सबसे बड़ा शत्रु है, और मानसून में वह सक्रिय क्षरण की सीमा पार कर जाती है। एक बंद डिब्बा और सिलिका जेल इस पूरी समस्या का नब्बे प्रतिशत हल कर देते हैं।',
+          'हर सिक्का अलग रहे, पीवीसी कभी नहीं, रुई कभी नहीं, और डिब्बा घर के भीतरी हिस्से में। शून्य बजट में भी यह सब संभव है — काग़ज़, टिन का डिब्बा, और चावल की एक पोटली।',
+        ],
+        pEn: [
+          'In India humidity is the greatest enemy, and through the monsoon it crosses the threshold at which active corrosion begins. A closed box and silica gel solve ninety per cent of the whole problem.',
+          'Keep every coin separate, never PVC, never cotton wool, and keep the box in an interior part of the house. All of this is possible even on no budget at all — paper, a tin, and a pouch of rice.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-coins-are-valued',
+    sections: [
+      {
+        hHi: 'ढलाई-संख्या और बची हुई संख्या',
+        hEn: 'Mintage and survival',
+        pHi: [
+          'दुर्लभता को समझने के लिए दो अलग संख्याएँ जाननी पड़ती हैं, और उन्हें आपस में गड्डमड्ड करना सबसे आम ग़लती है।',
+          'पहली है ढलाई-संख्या — उस वर्ष कितने सिक्के बने। यह आँकड़ा प्रकाशित है और कैटलॉग में दर्ज।',
+          'दूसरी है बची हुई संख्या — आज कितने मौजूद हैं। यह कहीं दर्ज नहीं और केवल अनुमान लगाया जा सकता है, पर असल में वही दाम तय करती है।',
+          'दोनों में बड़ा अंतर हो सकता है। चाँदी के सिक्के गलाए गए जब धातु का दाम चढ़ा; ताँबे के सिक्के फेंक दिए गए जब वे बेकार हो गए। इसीलिए भारी ढलाई वाला सिक्का भी दुर्लभ हो सकता है।',
+        ],
+        pEn: [
+          'Understanding rarity requires knowing two separate numbers, and confusing them is the commonest mistake there is.',
+          'The first is mintage — how many coins were struck that year. That figure is published and recorded in the catalogues.',
+          'The second is survival — how many exist today. This is recorded nowhere and can only be estimated, and yet it is what actually sets the price.',
+          'The gap between them can be large. Silver coins were melted when the metal price rose; copper coins were discarded once they became worthless. A heavily minted coin can therefore still be scarce.',
+        ],
+      },
+      {
+        hHi: 'दशा: सबसे बड़ा अकेला कारक',
+        hEn: 'Condition: the single largest factor',
+        pHi: [
+          'यदि केवल एक कारक चुनना हो, तो वह दशा है। एक ही सिक्का, एक ही वर्ष, एक ही टकसाल — पर दो अलग दशाओं में दाम कई गुना अलग हो सकते हैं।',
+          'कारण आपूर्ति में है। किसी वर्ष के लाखों सिक्के बचे हो सकते हैं, पर उनमें से अनछुई दशा वाले कुछ सौ ही होंगे, क्योंकि किसी ने उन्हें सँभालकर नहीं रखा।',
+          'इसीलिए ऊँची दशा में दुर्लभता अलग तरीक़े से काम करती है: सिक्का आम है, पर उस दशा में वही सिक्का दुर्लभ है।',
+          'और यही कारण है कि सफ़ाई इतना बड़ा नुक़सान करती है — वह सिक्के को दुर्लभ श्रेणी से निकालकर आम श्रेणी में डाल देती है, एक ही क्षण में।',
+        ],
+        pEn: [
+          'If only one factor could be chosen, it is condition. The same coin, the same year, the same mint — yet prices in two different grades can differ several times over.',
+          'The reason lies in supply. Lakhs of coins from a given year may survive, but only a few hundred of them in untouched condition, because nobody put them away.',
+          'This is why rarity works differently at high grade: the coin is common, but that coin in that condition is rare.',
+          'And it is why cleaning does such damage — it moves a coin out of the scarce category and into the common one, in a single moment.',
+        ],
+      },
+      {
+        hHi: 'माँग: वह कारक जो बदलता रहता है',
+        hEn: 'Demand: the factor that keeps changing',
+        pHi: [
+          'दुर्लभता और दशा वस्तु के गुण हैं; माँग बाहर की चीज़ है, और वही सबसे अप्रत्याशित है।',
+          'कोई सिक्का बेहद दुर्लभ हो सकता है और फिर भी सस्ता, यदि उसे इकट्ठा करने वाले लोग कम हैं। इसके उलट एक आम सिक्का महँगा हो सकता है क्योंकि हज़ारों लोग उसे चाहते हैं।',
+          'माँग कई चीज़ों से बनती है: ऐतिहासिक महत्व, कहानी की अपील, सौंदर्य, और कभी-कभी केवल फ़ैशन। किसी फ़िल्म या समाचार से भी किसी विषय की माँग अचानक बढ़ सकती है।',
+          'इसका व्यावहारिक अर्थ यह है कि दाम स्थिर नहीं हैं। पाँच साल पुराना कैटलॉग दिशा बता सकता है, संख्या नहीं — और यही कारण है कि बीते नीलामी-नतीजे देखना ज़रूरी है।',
+        ],
+        pEn: [
+          'Rarity and condition are properties of the object; demand comes from outside, and it is the least predictable of the four.',
+          'A coin can be extremely rare and still cheap, if few people collect it. Conversely a common coin can be expensive because thousands of people want it.',
+          'Demand is built from several things: historical importance, the appeal of the story, beauty, and sometimes simply fashion. A film or a news item can raise demand for a subject overnight.',
+          'The practical consequence is that prices are not fixed. A five-year-old catalogue tells you the direction but not the number — which is why looking at recent auction results matters.',
+        ],
+      },
+      {
+        hHi: 'प्रामाणिकता: वह द्वार जिससे बाक़ी सब गुज़रता है',
+        hEn: 'Authenticity: the gate everything else passes through',
+        pHi: [
+          'यह चौथा कारक बाक़ी तीनों से अलग है, क्योंकि यह गुणा नहीं करता — यह शून्य से गुणा करता है।',
+          'एक नक़ली सिक्का चाहे कितना भी दुर्लभ प्रकार दिखाए और कितनी भी अच्छी दशा में हो, उसका संग्रह-मूल्य शून्य है। यह घटाव नहीं, समाप्ति है।',
+          'इसीलिए महँगे सिक्कों में प्रमाणन का मूल्य है। वह अनिश्चितता हटाता है, और अनिश्चितता ही वह चीज़ है जो दाम को नीचे खींचती है।',
+          'और इसीलिए स्रोत मायने रखता है। एक ज्ञात संग्रह से आया सिक्का, जिसका इतिहास दर्ज हो, उसी सिक्के से ऊपर बैठता है जो कहीं से आया।',
+        ],
+        pEn: [
+          'The fourth factor differs from the other three, because it does not multiply — it multiplies by zero.',
+          'A fake coin, however rare the type it imitates and however fine its condition, has a collecting value of nil. That is not a reduction but an extinction.',
+          'This is why certification has value on expensive coins. It removes uncertainty, and uncertainty is exactly what drags a price down.',
+          'And it is why provenance matters. A coin from a known collection with a recorded history sits above the same coin that came from nowhere in particular.',
+        ],
+      },
+      {
+        hHi: '“पुराना इसलिए महँगा” क्यों ग़लत है',
+        hEn: 'Why “old therefore expensive” is wrong',
+        pHi: [
+          'यह इस पूरे विषय की सबसे व्यापक ग़लतफ़हमी है, और उसे एक तुलना से तोड़ा जा सकता है।',
+          'ढाई हज़ार साल पुराना आहत सिक्का कुछ हज़ार रुपये में मिल जाता है, क्योंकि वे भारी संख्या में ढले, चाँदी के होने के कारण गलाए नहीं गए, और आज भी भंडार मिलते रहते हैं।',
+          'वहीं तीस साल पुराना एक असली ढलाई-दोष वाला सिक्का उससे ज़्यादा दाम पा सकता है, क्योंकि वैसा दोष शायद कुछ ही सिक्कों में हुआ।',
+          'उम्र दुर्लभता का पर्याय नहीं है। यह वाक्य याद रखने लायक़ है, क्योंकि हर धोखाधड़ी की शुरुआत इसी ग़लतफ़हमी से होती है।',
+        ],
+        pEn: [
+          'This is the most widespread misconception in the whole subject, and one comparison breaks it.',
+          'A punch-marked coin two and a half thousand years old costs a few thousand rupees, because they were struck in enormous numbers, being silver were not melted, and hoards continue to surface.',
+          'Meanwhile a thirty-year-old coin carrying a genuine striking error can fetch more, because that error perhaps occurred on only a handful of pieces.',
+          'Age is not a synonym for rarity. That sentence is worth remembering, because every fraud in this field begins with the opposite assumption.',
+        ],
+      },
+      {
+        hHi: 'माँगी गई क़ीमत और बिकी हुई क़ीमत',
+        hEn: 'Asking price and realised price',
+        pHi: [
+          'यह भेद अधिकांश निराशा की जड़ है, और उसे समझ लेना सबसे उपयोगी व्यावहारिक कौशल है।',
+          'किसी वेबसाइट पर कोई सिक्का पचास हज़ार में सूचीबद्ध होने का अर्थ यह नहीं कि वह पचास हज़ार का है। इसका अर्थ केवल यह है कि किसी ने उतना माँगा।',
+          'भरोसेमंद स्रोत वे हैं जो बीते नतीजे दर्ज करते हैं — प्रतिष्ठित नीलामी घरों के पुराने कैटलॉग और परिणाम, जहाँ लिखा होता है कि हथौड़ा किस दाम पर गिरा।',
+          'और तुलना करते समय ग्रेड का मिलान अनिवार्य है। आपका VF सिक्का किसी UNC नमूने के दाम से नहीं तौला जा सकता; वह अंतर कई गुना का होता है।',
+        ],
+        pEn: [
+          'This distinction is the root of most disappointment, and grasping it is the single most useful practical skill.',
+          'A coin listed at fifty thousand on a website does not mean a coin worth fifty thousand. It means only that somebody asked for that.',
+          'The reliable sources are those recording past results — the old catalogues and results of reputable auction houses, which state the price at which the hammer fell.',
+          'And when comparing, matching the grade is mandatory. Your VF coin cannot be weighed against the price of a UNC example; that difference runs to several multiples.',
+        ],
+      },
+      {
+        hHi: 'भ्रामक दावों से बचाव',
+        hEn: 'Guarding against misleading claims',
+        pHi: [
+          'चारों कारकों को जान लेने के बाद अधिकांश झूठे दावे अपने आप गिर जाते हैं, क्योंकि वे किसी न किसी कारक की अनदेखी करते हैं।',
+          '“यह सिक्का सौ साल पुराना है इसलिए लाखों का है” — उम्र को दुर्लभता समझने की ग़लती। “यह चमकदार है इसलिए क़ीमती है” — सफ़ाई को दशा समझने की ग़लती।',
+          '“सीमित संस्करण” जिसकी सीमा कहीं दर्ज न हो — दुर्लभता का दावा बिना संख्या के। और “गारंटीड रिटर्न” — माँग का वादा, जो कोई नहीं कर सकता।',
+          'और वह नियम जो हर सौदे पर लागू होता है: पैसा ख़रीदार से विक्रेता की ओर बहता है। जो आपसे सिक्का ख़रीदने से पहले शुल्क माँगे, वह ख़रीदार नहीं है।',
+        ],
+        pEn: [
+          'Once the four factors are understood, most false claims collapse on their own, because each ignores one of them.',
+          '“This coin is a hundred years old so it is worth lakhs” — mistaking age for rarity. “It is shiny so it is valuable” — mistaking cleaning for condition.',
+          '“Limited edition” with the limit recorded nowhere — a claim of rarity without a number. And “guaranteed returns” — a promise about demand, which nobody can make.',
+          'And the rule that applies to every transaction: money flows from the buyer to the seller. Anybody asking you for a fee before buying your coin is not a buyer.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'चार कारक: दुर्लभता (ढलाई नहीं, बची हुई संख्या), दशा (सबसे बड़ा अकेला कारक), माँग (सबसे अप्रत्याशित), और प्रामाणिकता (जो बाक़ी सबको शून्य कर सकती है)।',
+          'उम्र इनमें नहीं है। और दाम जानने का एकमात्र भरोसेमंद तरीक़ा बीते नीलामी-नतीजे देखना है, वह भी अपनी दशा से मिलान करके।',
+        ],
+        pEn: [
+          'Four factors: rarity (not mintage but survival), condition (the largest single factor), demand (the least predictable), and authenticity (which can reduce all the others to zero).',
+          'Age is not among them. And the only dependable way to learn a price is to look at past auction results, matched against the grade you actually hold.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'selling-old-coins-safely',
+    sections: [
+      {
+        hHi: 'बेचने से पहले तीन प्रश्न',
+        hEn: 'Three questions before selling',
+        pHi: [
+          'पहला — क्या आपको सचमुच बेचना है? यदि संग्रह छोटा है और उसकी बाज़ारू क़ीमत कुछ हज़ार रुपये है, तो उसे व्यवस्थित करके रख लेना अक्सर बेहतर फ़ैसला है।',
+          'दूसरा — क्या आप जानते हैं कि आपके पास क्या है? बिना जाने बेचना उस स्थिति की जड़ है जिसमें अच्छे सिक्के कौड़ियों के मोल चले जाते हैं।',
+          'तीसरा — क्या जल्दी है? जल्दी ही वह चीज़ है जिसका फ़ायदा हर ख़रीदार उठाता है, और वही सबसे कम दाम दिलाती है।',
+          'इन तीनों का ईमानदार उत्तर तय कर देता है कि आपको कौन-सा रास्ता चुनना चाहिए और किस दाम की उम्मीद रखनी चाहिए।',
+        ],
+        pEn: [
+          'First — do you actually need to sell? If the collection is small and its market value runs to a few thousand rupees, organising it and keeping it is often the better decision.',
+          'Second — do you know what you hold? Selling without knowing is the root of every situation in which good coins go for a pittance.',
+          'Third — are you in a hurry? Hurry is the thing every buyer takes advantage of, and it produces the lowest price.',
+          'Honest answers to those three determine which route you should choose and what price you should expect.',
+        ],
+      },
+      {
+        hHi: 'तैयारी: सूची और तस्वीरें',
+        hEn: 'Preparation: the list and the photographs',
+        pHi: [
+          'एक सूची बनाइए जिसमें हर सिक्के का मूल्यवर्ग, वर्ष, टकसाल-चिह्न, धातु और मोटी दशा दर्ज हो। यह मोल-भाव में आपकी सबसे बड़ी ताक़त है।',
+          'तस्वीरें लीजिए — दोनों तरफ़ की, दिन की रोशनी में, बिना फ़्लैश, सादे गहरे रंग की पृष्ठभूमि पर, और सिक्का फ़्रेम में भरा हुआ।',
+          'धुँधली तस्वीर सबसे बड़ी वजह है कि गंभीर ख़रीदार जवाब नहीं देते। एक अच्छी तस्वीर लेना पाँच मिनट का काम है और वह सीधे दाम पर असर डालता है।',
+          'और सबसे ज़रूरी: साफ़ मत कीजिए। यह सलाह यहाँ इसलिए दोहरानी पड़ती है क्योंकि बेचने से ठीक पहले यह ग़लती सबसे ज़्यादा की जाती है।',
+        ],
+        pEn: [
+          'Make a list recording each coin’s denomination, year, mint mark, metal and approximate condition. That list is your greatest strength in a negotiation.',
+          'Take photographs — both faces, in daylight, without flash, against a plain dark background, with the coin filling the frame.',
+          'Blurred photographs are the single biggest reason serious buyers never reply. Taking a good one is five minutes of work and it affects the price directly.',
+          'And most important: do not clean anything. This advice has to be repeated here because the mistake is made most often in the days just before selling.',
+        ],
+      },
+      {
+        hHi: 'मोल-भाव कैसे करें',
+        hEn: 'How to negotiate',
+        pHi: [
+          'पहला नियम: पहले दाम मत बताइए। पूछिए कि वे क्या दे सकते हैं। जो पहले संख्या बोलता है वह अक्सर पूरे सौदे का दायरा तय कर देता है — अपने नुक़सान में।',
+          'दूसरा: कम तवज्जो वाला जवाब सीखिए। यदि प्रस्ताव कम है, तो नाराज़ मत होइए — बस पूछिए कि यह दाम किस आधार पर बना। एक अच्छा डीलर कारण बता देगा, और वह जानकारी अपने आप में मूल्यवान है।',
+          'तीसरा: चलने के लिए तैयार रहिए। यही अकेली चीज़ है जो मोल-भाव में सचमुच शक्ति देती है, और वह तभी संभव है जब आपको जल्दी न हो।',
+          'चौथा: एक साथ सब मत बेचिए। पहले एक या दो सिक्के बेचकर बाज़ार का अंदाज़ा लगाइए। यह जानकारी बाक़ी संग्रह के लिए बेहतर दाम दिला देती है।',
+        ],
+        pEn: [
+          'First rule: do not name a price first. Ask what they can offer. Whoever states a number first frequently sets the range for the whole negotiation — to their own disadvantage.',
+          'Second: learn a low-key response. If an offer is low, do not take offence — simply ask what the price is based on. A good dealer will explain, and that information is valuable in itself.',
+          'Third: be willing to walk away. That is the only thing that gives real power in a negotiation, and it is only possible if you are not in a hurry.',
+          'Fourth: do not sell everything at once. Sell one or two coins first and learn what the market pays. That knowledge earns a better price for the rest.',
+        ],
+      },
+      {
+        hHi: 'ऑनलाइन बेचते समय',
+        hEn: 'When selling online',
+        pHi: [
+          'ऑनलाइन बाज़ार असली अवसर देता है और असली जोखिम भी, और तीन एहतियात अधिकांश समस्या हल कर देते हैं।',
+          'पहला — भुगतान पहले, भेजना बाद में, और भुगतान किसी ऐसे माध्यम से जिसका रिकॉर्ड रहे। नक़द-ऑन-डिलीवरी में विवाद का कोई सहारा नहीं बचता।',
+          'दूसरा — ट्रैकिंग वाली कूरियर और बीमा, चाहे वस्तु छोटी हो। और भेजने से पहले पैकिंग की तस्वीर तथा वीडियो बना लीजिए।',
+          'तीसरा — “मैं ज़्यादा दे रहा हूँ, बस आप पहले यह शुल्क भर दीजिए” वाला हर प्रस्ताव ठुकरा दीजिए। पैसा ख़रीदार से विक्रेता की ओर बहता है, कभी उल्टा नहीं।',
+        ],
+        pEn: [
+          'The online market offers real opportunity and real risk, and three precautions resolve most of the problem.',
+          'First — payment before dispatch, through a channel that leaves a record. Cash on delivery leaves you no recourse in a dispute.',
+          'Second — a tracked courier and insurance, however small the item. And photograph or film the packing before it goes.',
+          'Third — refuse every offer of the form “I will pay more, you just cover this fee first”. Money flows from the buyer to the seller, never the other way.',
+        ],
+      },
+      {
+        hHi: 'विरासत का संग्रह बेचना',
+        hEn: 'Selling an inherited collection',
+        pHi: [
+          'यह अलग स्थिति है और उसमें दो अतिरिक्त सावधानियाँ लागू होती हैं।',
+          'पहली — परिवार में सहमति। संग्रह अक्सर कई लोगों की भावनात्मक संपत्ति होता है, और बेचने से पहले बात कर लेना बाद के विवाद से कहीं सस्ता है।',
+          'दूसरी — जल्दी न करना। विरासत के संग्रह अक्सर किसी की मृत्यु के तुरंत बाद बेचे जाते हैं, जब कोई सोचने की स्थिति में नहीं होता, और यही वह क्षण है जब सबसे कम दाम मिलता है।',
+          'व्यावहारिक सुझाव: संग्रह को छह महीने रख लीजिए। इस बीच सूची बनाइए, तस्वीरें लीजिए, और थोड़ा पढ़ लीजिए। छह महीने की देरी अक्सर दाम को दोगुना कर देती है।',
+        ],
+        pEn: [
+          'This is a different situation and two additional cautions apply.',
+          'First — agreement within the family. A collection is frequently the emotional property of several people, and talking before selling is far cheaper than the dispute afterwards.',
+          'Second — not rushing. Inherited collections are often sold immediately after a death, when nobody is in a state to think, and that is precisely when the lowest prices are obtained.',
+          'A practical suggestion: hold the collection for six months. During that time make the list, take the photographs, and read a little. A six-month delay frequently doubles the price.',
+        ],
+      },
+      {
+        hHi: 'दस्तावेज़ रखना',
+        hEn: 'Keeping documentation',
+        pHi: [
+          'यह पहलू अक्सर छूट जाता है और बड़े सौदों में महत्वपूर्ण हो जाता है।',
+          'हर बिक्री का रिकॉर्ड रखिए — क्या बेचा, किसे, कब, किस दाम पर, और भुगतान कैसे आया। यह आपकी अपनी सुरक्षा है यदि बाद में कोई प्रश्न उठे।',
+          'ख़रीदार से भी एक साधारण रसीद माँगना उचित है। प्रतिष्ठित डीलर इसे सामान्य मानते हैं और देने में हिचकते नहीं।',
+          'और यदि रक़म बड़ी है, तो अपने कर-सलाहकार से पूछ लीजिए कि क्या घोषित करना है। यह लेख कर-सलाह नहीं दे सकता, और यह सवाल पूछना ही सही क़दम है।',
+        ],
+        pEn: [
+          'This aspect is often overlooked and becomes important in larger transactions.',
+          'Keep a record of every sale — what was sold, to whom, when, at what price, and how payment arrived. That is your own protection if a question arises later.',
+          'It is also reasonable to ask the buyer for a simple receipt. Reputable dealers treat this as normal and do not hesitate.',
+          'And if the amount is substantial, ask your tax adviser what needs declaring. This article cannot give tax advice, and asking the question is itself the right step.',
+        ],
+      },
+      {
+        hHi: 'कब बेचना सबसे अच्छा है',
+        hEn: 'When it is best to sell',
+        pHi: [
+          'कोई जादुई समय नहीं है, और जो कोई ऐसा दावा करे उससे सावधान रहिए। पर कुछ व्यावहारिक बातें मायने रखती हैं।',
+          'नीलामी घर की तारीख़ें तय होती हैं, और अच्छी नीलामी में सूचीबद्ध होने के लिए महीनों पहले सामग्री देनी पड़ती है। यदि यह रास्ता चुनना है तो योजना पहले बनानी होगी।',
+          'चाँदी और सोने के सिक्कों के लिए धातु की क़ीमत मायने रखती है, क्योंकि वह न्यूनतम सीमा तय करती है। धातु महँगी हो तो वह सीमा ऊपर चली जाती है।',
+          'और सबसे बड़ी बात: तब बेचिए जब आपको जल्दी न हो। यह कोई बाज़ार-भविष्यवाणी नहीं, बल्कि मोल-भाव का सीधा गणित है।',
+        ],
+        pEn: [
+          'There is no magic moment, and be wary of anybody who claims otherwise. But a few practical points matter.',
+          'Auction houses have fixed dates, and material has to be consigned months in advance to be catalogued for a good sale. If that is the route, it needs planning ahead.',
+          'For silver and gold coins the metal price matters, because it sets the floor. When metal is dear the floor rises.',
+          'And the largest point: sell when you are not in a hurry. That is not a market prediction but the plain arithmetic of negotiation.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'पहले जानिए कि आपके पास क्या है, फिर सूची और तस्वीरें बनाइए, और कभी साफ़ मत कीजिए। तीन असली रास्ते हैं: डीलर, नीलामी घर, और संग्राहक-समिति।',
+          'मोल-भाव में पहले दाम मत बताइए और चलने के लिए तैयार रहिए। और वह अंतिम नियम जो कभी नहीं बदलता — पैसा ख़रीदार से विक्रेता की ओर बहता है।',
+        ],
+        pEn: [
+          'Know what you hold first, then make the list and the photographs, and never clean anything. Three real routes exist: a dealer, an auction house, and a collectors’ society.',
+          'In a negotiation do not name a price first and be willing to walk away. And the final rule that never changes — money flows from the buyer to the seller.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'cleaning-coins-warning',
+    sections: [
+      {
+        hHi: 'एक तुलना जो याद रह जाती है',
+        hEn: 'A comparison that stays in the mind',
+        pHi: [
+          'पुराने फ़र्नीचर के बारे में सोचिए। सागौन की एक सदी पुरानी अलमारी पर जो गहरी चमक होती है, उसे कोई सैंडपेपर से नहीं उतारता — वही परत उसका मूल्य है।',
+          'सिक्के के साथ यही बात है, और अंतर केवल यह है कि लोग फ़र्नीचर के बारे में यह जानते हैं और सिक्कों के बारे में नहीं।',
+        ],
+        pEn: [
+          'Think of old furniture. Nobody takes sandpaper to the deep patina on a century-old teak cabinet — that surface is precisely where its value lives, and stripping it would turn an antique into a piece of secondhand wood.',
+          'The same holds for a coin, and the only difference is that people already understand this about furniture and have not yet been told it about metal. Once the comparison lands, the instinct to polish usually disappears for good.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'spotting-fake-coins',
+    sections: [
+      {
+        hHi: 'सबसे अच्छा अभ्यास',
+        hEn: 'The best practice there is',
+        pHi: [
+          'नक़ल पहचानने का सबसे तेज़ तरीक़ा असली सिक्के देखना है, न कि नक़ली सिक्कों की सूची पढ़ना।',
+          'दस सस्ते, निश्चित रूप से असली सिक्के ख़रीदिए और उन्हें बार-बार देखिए — वज़न, आवाज़, किनारा, धातु का बहाव। आँख इन्हीं से मानक बनाती है।',
+          'उसके बाद जब कोई नक़ली सामने आएगा, तो वह ग़लत लगेगा — भले आप पहले क्षण में बता न पाएँ कि क्यों। यही वह अनुभूति है जिस पर अनुभवी संग्राहक भरोसा करते हैं।',
+        ],
+        pEn: [
+          'The fastest way to learn to spot a fake is to look at genuine coins, not to read lists of what fakes look like.',
+          'Buy ten cheap, certainly genuine coins and handle them repeatedly — the weight, the sound, the edge, the flow of the metal. The eye builds its standard from these and from nothing else.',
+          'After that, when a fake appears it will simply feel wrong, even if you cannot say why in the first moment. That instinct is what experienced collectors actually rely on, and it can only be built by handling the real thing.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'storing-coins-properly',
+    sections: [
+      {
+        hHi: 'सरल और निरंतर',
+        hEn: 'Simple and consistent',
+        pHi: [
+          'सबसे अच्छी भंडारण-व्यवस्था वह नहीं जो सबसे महँगी हो, बल्कि वह जिसे आप सचमुच निभाएँगे।',
+          'एक जटिल व्यवस्था जिसे छह महीने बाद छोड़ दिया जाए, उस साधारण व्यवस्था से बुरी है जो वर्षों चलती रहे। यही बात लगभग हर संग्रह-सलाह पर लागू होती है।',
+          'इसलिए वही चुनिए जो आपके घर, आपके बजट और आपकी आदत में बैठे — और फिर उसे बदलिए मत।',
+        ],
+        pEn: [
+          'The best storage system is not the most expensive one but the one you will actually keep up.',
+          'An elaborate arrangement abandoned after six months is worse than a simple one maintained for years, and that principle applies to almost every piece of advice in this hobby.',
+          'So choose what fits your house, your budget and your habits — and then leave it alone. A box, envelopes and a silica sachet checked once a year will outlast any system that demands attention every week, because the second kind quietly stops happening and nobody notices until the damage is already done.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-coins-are-valued',
+    sections: [
+      {
+        hHi: 'एक व्यावहारिक जाँच',
+        hEn: 'A practical test',
+        pHi: [
+          'जब कोई आपको किसी सिक्के का दाम बताए, तो चार सवाल पूछिए — एक हर कारक के लिए।',
+          'कितने बचे हैं? किस दशा का यह नमूना है? इसे कौन इकट्ठा करता है? और यह असली है, इसका क्या प्रमाण है?',
+          'जो व्यक्ति चारों का उत्तर दे सके, वह जानता है कि वह क्या बेच रहा है। जो न दे सके, उसका दाम एक अनुमान है — या उससे भी कम।',
+        ],
+        pEn: [
+          'When somebody quotes you a price for a coin, ask four questions — one for each factor.',
+          'How many survive? What grade is this particular example? Who collects this? And what is the evidence that it is genuine?',
+          'Anybody who can answer all four knows what they are selling. Anybody who cannot is quoting a guess, or something worse than a guess, and the price should be treated accordingly rather than accepted because it was stated with confidence.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'selling-old-coins-safely',
+    sections: [
+      {
+        hHi: 'और अंत में',
+        hEn: 'And finally',
+        pHi: [
+          'बिक्री का सबसे बड़ा जोखिम धोखाधड़ी नहीं है — वह जल्दबाज़ी है, और जल्दबाज़ी से बचना पूरी तरह आपके हाथ में है।',
+          'सूची बनाने, तस्वीरें लेने और थोड़ा पढ़ने में एक शाम लगती है। उस एक शाम के बाद आप उसी सिक्के के लिए कहीं बेहतर दाम पा सकेंगे।',
+          'और यदि अंततः आप न बेचने का फ़ैसला करें, तो वह भी एक वैध परिणाम है — शायद सबसे अच्छा।',
+        ],
+        pEn: [
+          'The greatest risk in selling is not fraud but haste, and avoiding haste is entirely within your control.',
+          'Making the list, taking the photographs and reading a little takes one evening. After that single evening you will obtain a considerably better price for the same coin, from the same buyer, in the same market.',
+          'And if you eventually decide not to sell at all, that is a legitimate outcome too — quite possibly the best one, because the money from a small collection rarely compensates for the story that leaves with it.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'storing-coins-properly',
+    sections: [
+      {
+        hHi: 'एक साल का कैलेंडर',
+        hEn: 'A calendar for the year',
+        pHi: [
+          'भंडारण को एक बार का काम मत समझिए — साल में दो बार दस मिनट देना काफ़ी है।',
+          'मानसून से पहले: सिलिका जेल बदलिए और डिब्बा जाँचिए। मानसून के बाद: सिक्कों पर नज़र डालिए कि कहीं कोई नया धब्बा तो नहीं।',
+        ],
+        pEn: [
+          'Do not treat storage as a one-off task — ten minutes twice a year is enough to keep a collection safe indefinitely.',
+          'Before the monsoon: replace the silica gel and check the box seals. After the monsoon: look over the coins for any new spotting, particularly on copper, because that is when active corrosion would have started if it started at all. Catching it in the first month is the difference between a mark and a hole.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-coins-are-valued',
+    sections: [
+      {
+        hHi: 'और एक बात',
+        hEn: 'And one more thing',
+        pHi: [
+          'इन चारों कारकों के बाहर एक पाँचवाँ है जिसे बाज़ार नहीं मापता: वह अर्थ जो सिक्का आपके लिए रखता है।',
+          'वह किसी कैटलॉग में दर्ज नहीं होता और किसी नीलामी में नहीं बिकता, और अक्सर वही सबसे टिकाऊ कारण होता है किसी चीज़ को रखने का।',
+        ],
+        pEn: [
+          'Beyond these four factors sits a fifth that the market does not measure: what the coin means to you.',
+          'It appears in no catalogue and sells at no auction, and it is very often the most durable reason there is for keeping something. A collection assembled only on the first four factors becomes a portfolio; a collection that includes the fifth stays interesting for a lifetime.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'selling-old-coins-safely',
+    sections: [
+      {
+        hHi: 'एक अंतिम जाँच-सूची',
+        hEn: 'A final checklist',
+        pHi: [
+          'साफ़ नहीं किया — सूची बनाई — तस्वीरें लीं — बीते नीलामी-नतीजे देखे — तीन में से एक भरोसेमंद रास्ता चुना।',
+          'कोई अग्रिम शुल्क नहीं दिया — भुगतान का रिकॉर्ड रखा — और जल्दबाज़ी नहीं की। इन सात बिंदुओं पर हाँ हो, तो बिक्री सुरक्षित है।',
+        ],
+        pEn: [
+          'Nothing cleaned — a list made — photographs taken — past auction results consulted — one of the three trustworthy routes chosen.',
+          'No advance fee paid — a record of the payment kept — and no hurry anywhere in the process. If the answer to all seven is yes, the sale is a safe one, and you will have obtained close to what the coins are genuinely worth rather than what somebody hoped you would accept.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
