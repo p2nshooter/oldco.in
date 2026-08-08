@@ -6455,6 +6455,602 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------------
+  // Batch eleven. All five of these are twins of articles already expanded
+  // above, so each is given an angle the other member of the pair does not
+  // cover. The two URLs stay separate and neither repeats the other.
+  // ---------------------------------------------------------------------
+
+  {
+    slug: 'george-v-and-vi-coins',
+    sections: [
+      {
+        hHi: 'वे दो शासनकाल जिनके सिक्के आज भी सबसे आसानी से मिलते हैं',
+        hEn: 'The two reigns whose coins still turn up most easily',
+        pHi: [
+          'यदि भारत में किसी पुराने संदूक से ब्रिटिश कालीन सिक्के निकलें, तो सबसे अधिक संभावना यही है कि वे जॉर्ज पंचम या जॉर्ज षष्ठम के हों। इसका कारण दुर्लभता नहीं, बल्कि उल्टा है — इन दोनों शासनकालों में सिक्के इतनी बड़ी मात्रा में ढाले गए कि वे आज भी घरों में बचे हुए हैं।',
+          'यह बात नए संग्राहक को निराश कर सकती है, पर होना उल्टा चाहिए। जो सिक्का आम है वही अभ्यास के लिए सबसे अच्छा है, क्योंकि उस पर की गई ग़लती महँगी नहीं पड़ती और उसकी तुलना के लिए दर्जनों नमूने मिल जाते हैं।',
+          'दोनों शासनकाल मिलाकर लगभग चालीस वर्ष बनते हैं, और उन चालीस वर्षों में दो विश्वयुद्ध, चाँदी का संकट और अंततः सत्ता का हस्तांतरण आता है। इसलिए ये सिक्के केवल आम नहीं हैं — ये उस दौर का सबसे सस्ता उपलब्ध दस्तावेज़ भी हैं।',
+        ],
+        pEn: [
+          'If British-era coins come out of an old trunk anywhere in India, the odds are overwhelming that they belong to George V or George VI. The reason is not scarcity but its opposite — coins were struck in such enormous quantities during these two reigns that they are still sitting in ordinary households a century later.',
+          'That can disappoint a new collector, though the reaction ought to run the other way. A common coin is the best possible thing to learn on, because a mistake made on it costs almost nothing and there are dozens of comparable examples available whenever you want to check a detail against another piece.',
+          'Between them the two reigns cover roughly forty years, and those forty years contain two world wars, a silver crisis and finally the transfer of power itself. So these coins are not merely common — they are also the cheapest surviving documentary record of that entire period.',
+        ],
+      },
+      {
+        hHi: 'जॉर्ज पंचम: चालीस वर्ष धातु में लिखे हुए',
+        hEn: 'George V: four decades written into metal',
+        pHi: [
+          'जॉर्ज पंचम के सिक्कों पर राजा का मुकुटधारी अर्ध-चित्र बाईं ओर देखता हुआ है, और उसके चारों ओर लैटिन में उपाधियाँ। यही मूल रूप उनके पूरे शासनकाल में चलता रहा, इसलिए पहचान का काम तिथि और मूल्यवर्ग पर आ टिकता है।',
+          'शुरुआती वर्षों के रुपये और आधे रुपये अच्छी चाँदी में हैं और हाथ में भारी लगते हैं। ताँबे के छोटे मूल्यवर्ग — पाई, आधा पैसा, चौथाई आना — कहीं अधिक संख्या में बचे हैं और आमतौर पर बुरी हालत में मिलते हैं, क्योंकि वे रोज़ के लेन-देन में सबसे अधिक चले।',
+          'ध्यान देने योग्य एक विवरण यह है कि 1911 के पहले अंक पर हाथी की सूँड को कुछ लोगों ने सुअर समझ लिया था, और उस विवाद के बाद डिज़ाइन बदल दिया गया। वह पहला संस्करण आज संग्राहकों के बीच अलग से जाना जाता है।',
+        ],
+        pEn: [
+          'On the coins of George V the king appears as a crowned bust facing left, with his titles running around him in Latin. That basic arrangement continued throughout the reign, which means identification comes down almost entirely to reading the date and the denomination rather than the portrait.',
+          'The rupees and half rupees of the early years are struck in good silver and feel genuinely heavy in the hand. The small copper denominations — the pie, the half pice, the quarter anna — survive in far greater numbers and usually turn up badly worn, precisely because they were the pieces that did the most work in everyday transactions.',
+          'One detail worth knowing is that on the first issue of 1911 the elephant on the king\'s robe was widely mistaken for a pig, and after the controversy the design was quietly altered. That first version is known separately among collectors today and carries a premium the ordinary type does not.',
+        ],
+      },
+      {
+        hHi: 'पहले विश्वयुद्ध का दबाव',
+        hEn: 'The pressure of the First World War',
+        pHi: [
+          'युद्ध ने चाँदी की माँग को अचानक बढ़ा दिया और उसकी क़ीमत ऊपर चली गई। जिस सिक्के में जितनी चाँदी थी, उसका धातु-मूल्य कभी-कभी उसके अंकित मूल्य से ऊपर निकलने लगा — और यही वह क्षण होता है जब सिक्के प्रचलन से ग़ायब होकर पिघलने चले जाते हैं।',
+          'इसी दबाव में 1918 के आसपास कुछ असामान्य क़दम उठाए गए, जिनमें बंबई टकसाल में सोने के सिक्के ढालने का प्रयोग भी शामिल है। यह प्रयोग छोटा रहा, पर वह उस दौर की बदहवासी को अच्छी तरह दिखाता है।',
+          'संग्राहक के लिए इसका व्यावहारिक अर्थ यह है कि युद्ध के आसपास के वर्षों के चाँदी के सिक्के अपेक्षा से कम बचे हैं। जो बचे, उनमें से बहुत सारे पिघलाने वालों के हाथ से इसलिए बच गए क्योंकि वे किसी घर के गहनों के डिब्बे में पड़े रह गए।',
+        ],
+        pEn: [
+          'The war pushed the demand for silver up sharply and its price rose with it. Whatever silver a coin contained could suddenly be worth more as metal than the coin was worth as money — and that is exactly the moment at which coins begin to vanish from circulation and end up in the melting pot instead.',
+          'Under that pressure a number of unusual steps were taken around 1918, including an experiment with striking gold coins at the Bombay mint. The experiment stayed small and short-lived, but it captures the improvisation of the period rather well and it produced pieces collectors still chase.',
+          'The practical consequence for a collector is that silver coins from the war years survive in smaller numbers than their mintage figures would suggest. Many of the ones that did survive escaped the melters for an accidental reason: they had been put away in somebody\'s jewellery box and simply forgotten there.',
+        ],
+      },
+      {
+        hHi: 'जॉर्ज षष्ठम के दो अलग चित्र',
+        hEn: 'The two different portraits of George VI',
+        pHi: [
+          'जॉर्ज षष्ठम के सिक्कों में एक ऐसी बात है जो जॉर्ज पंचम में नहीं थी: चित्र बीच शासनकाल में बदला। शुरुआती अंकों पर मुकुटधारी अर्ध-चित्र है, और बाद के अंकों पर राजा का सिर बिना कंधों के, अधिक सपाट राहत में।',
+          'यह अंतर देखने में मामूली लगता है पर पहचान में बहुत काम आता है, क्योंकि इससे आप बिना तिथि पढ़े भी सिक्के को शासनकाल के पूर्वार्ध या उत्तरार्ध में रख सकते हैं — और घिसे हुए सिक्कों पर तिथि प्रायः सबसे पहले मिटती है।',
+          'दोनों प्रकार आम हैं, इसलिए दोनों को साथ रखना किसी भी संग्रह के लिए सस्ता और शिक्षाप्रद है। दो सिक्के अगल-बग़ल रखकर देखने से राहत की गहराई का अंतर तुरंत समझ आता है, जो केवल पढ़कर समझना कठिन है।',
+        ],
+        pEn: [
+          'The coins of George VI contain something the previous reign did not: the portrait changed partway through. The earlier issues show a crowned bust, while the later ones show the king\'s head alone without shoulders, cut in a noticeably flatter relief that wears differently over time.',
+          'The difference looks minor but it is genuinely useful for identification, because it lets you place a coin in the first or second half of the reign without reading the date at all — and on a worn coin the date is very often the first thing to disappear entirely.',
+          'Both types are common, so keeping one of each is cheap and instructive for any collection. Setting the two side by side makes the difference in relief depth obvious within seconds, which is something no amount of reading about relief will teach you nearly as quickly.',
+        ],
+      },
+      {
+        hHi: '1940 का चाँदी घटाव और उसे कैसे पहचानें',
+        hEn: 'The silver reduction of 1940 and how to spot it',
+        pHi: [
+          'दूसरे विश्वयुद्ध ने वही दबाव फिर पैदा किया, और इस बार उत्तर अलग था। सिक्कों को प्रचलन से हटाने के बजाय उनमें चाँदी की मात्रा घटा दी गई — पहले उसे लगभग आधा किया गया, और युद्ध के अंतिम वर्षों में चाँदी लगभग हटा ही दी गई।',
+          'इसे पहचानने का सबसे भरोसेमंद तरीक़ा तराज़ू है, आँख नहीं। घटी हुई चाँदी वाला रुपया अपने पुराने समकक्ष से हल्का है, और यह अंतर एक साधारण रसोई के डिजिटल तराज़ू पर भी साफ़ दिख जाता है।',
+          'दूसरा संकेत ध्वनि और रंग है। अधिक ताँबे वाली मिश्रधातु समय के साथ थोड़ी गर्म, पीली आभा ले लेती है और गिराए जाने पर उसकी झंकार छोटी होती है। ये संकेत सहायक हैं, निर्णायक नहीं — वज़न ही अंतिम प्रमाण है।',
+        ],
+        pEn: [
+          'The Second World War produced the same pressure again, and this time the answer was different. Rather than withdraw the coins from circulation, the authorities reduced the silver inside them — first to roughly half, and in the last years of the war very nearly to nothing at all.',
+          'The reliable way to detect this is a scale, not an eye. A reduced-silver rupee is lighter than its older equivalent of the same denomination, and the difference is large enough to show clearly even on an ordinary digital kitchen scale that cost a few hundred rupees.',
+          'The second set of clues is sound and colour. An alloy carrying more copper takes on a slightly warmer, yellower tone as it ages, and it rings shorter when dropped on a hard surface. Those signs are helpful rather than conclusive — the weight remains the only real proof.',
+        ],
+      },
+      {
+        hHi: 'युद्धकालीन सिक्के: छेद, कटे किनारे और छोटे चक्र',
+        hEn: 'Wartime coinage: holes, scalloped edges and smaller flans',
+        pHi: [
+          'युद्ध के वर्षों में छोटे मूल्यवर्गों में कुछ ऐसे रूप आए जो उससे पहले या बाद में सामान्य नहीं रहे। बीच में छेद वाले सिक्के, लहरदार कटे किनारों वाले सिक्के, और सामान्य से पतले तथा छोटे चक्र — सब धातु बचाने की कोशिश थे।',
+          'ये असामान्य आकार आज संग्राहकों के बीच लोकप्रिय हैं क्योंकि वे ट्रे में तुरंत अलग दिखते हैं। और चूँकि वे बहुत बड़ी संख्या में ढाले गए थे, इसलिए इनका दाम आज भी बहुत कम है।',
+          'यहाँ एक चेतावनी ज़रूरी है। छेद वाला हर सिक्का टकसाल में छेदा नहीं गया था; बहुत सारे सिक्के बाद में गहने या ताबीज़ बनाने के लिए घर पर छेदे गए। असली छेद साफ़, केंद्रित और किनारों पर चिकना होता है, जबकि बाद का छेद अक्सर टेढ़ा और खुरदरा होता है।',
+        ],
+        pEn: [
+          'The war years brought shapes into the small denominations that were not normal before or after. Coins with a hole punched through the centre, coins with wavy scalloped edges, and flans noticeably thinner and smaller than usual — every one of these was an attempt to make the available metal go further.',
+          'These unusual shapes are popular with collectors today simply because they stand out instantly in a tray of ordinary round coins. And since they were struck in very large numbers to begin with, they remain among the cheapest genuinely interesting things a beginner can buy.',
+          'A caution belongs here. Not every holed coin was holed at the mint; a great many were pierced at home afterwards to be worn as jewellery or as an amulet. A genuine mint hole is clean, properly centred and smooth at its edges, while a later piercing is usually off-centre and rough where the metal tore.',
+        ],
+      },
+      {
+        hHi: '1947 और आख़िरी अंक',
+        hEn: '1947 and the final issues',
+        pHi: [
+          'जॉर्ज षष्ठम के नाम पर सिक्के 1947 में और उसके थोड़ा बाद तक भी ढाले जाते रहे, क्योंकि नया गणराज्य अपनी अलग शृंखला 1950 में ही जारी कर सका। इसलिए स्वतंत्रता की तिथि और सिक्कों के बदलने की तिथि एक नहीं हैं।',
+          'इस अंतराल के सिक्के इतिहास की दृष्टि से दिलचस्प हैं: देश स्वतंत्र हो चुका था, पर जेब में अब भी विदेशी राजा का चेहरा चल रहा था। यह विवरण किसी भी संग्रह में एक अच्छी कहानी बनाता है।',
+          'दाम की दृष्टि से 1947 का कोई जादू नहीं है — ये सिक्के आम हैं और सस्ते। जो लोग "स्वतंत्रता वर्ष का सिक्का" कहकर ऊँचा दाम माँगते हैं, वे तिथि की भावनात्मक क़ीमत बेच रहे हैं, दुर्लभता नहीं।',
+        ],
+        pEn: [
+          'Coins continued to be struck in the name of George VI through 1947 and for a little while afterwards, because the new republic could not issue its own distinct series until 1950. The date of independence and the date the coinage changed are therefore two different things entirely.',
+          'The coins of that gap are historically interesting precisely because of the mismatch: the country was independent, yet the face of a foreign monarch was still passing from hand to hand in every bazaar. It is a detail that makes a good story in any collection arranged chronologically.',
+          'In price terms there is no magic in 1947 at all — these coins are common and cheap. Anybody asking a high price on the strength of "a coin from the year of independence" is selling the emotional weight of a date rather than any actual scarcity, and the distinction is worth holding onto.',
+        ],
+      },
+      {
+        hHi: 'इन सिक्कों को कैसे इकट्ठा करें',
+        hEn: 'How to collect these coins',
+        pHi: [
+          'चूँकि सामग्री सस्ती और भरपूर है, इसलिए यहाँ असली चुनौती दुर्लभता खोजना नहीं बल्कि हालत पर अनुशासन रखना है। घिसा हुआ सिक्का आसानी से मिल जाएगा; साफ़ अंकन वाला सिक्का थोड़ा इंतज़ार माँगेगा, और वह इंतज़ार करने लायक़ है।',
+          'एक अच्छा ढाँचा यह है: प्रत्येक मूल्यवर्ग का एक-एक अच्छा नमूना, दोनों शासनकालों के लिए अलग-अलग, और साथ में युद्धकालीन असामान्य आकार। यह लगभग बीस सिक्कों का संग्रह बनता है जो पूरा दिखता है और जिसकी लागत मामूली रहती है।',
+          'और जब वह ढाँचा भर जाए, तब गहराई की ओर बढ़िए — वही मूल्यवर्ग, पर अलग-अलग टकसालों और तिथियों से। यही वह बिंदु है जहाँ एक सस्ता संग्रह चुपचाप एक गंभीर संग्रह में बदल जाता है।',
+        ],
+        pEn: [
+          'Because the material is cheap and plentiful, the real challenge here is not finding rarity but keeping discipline about condition. A worn coin will come to you easily; a coin with a clean, fully legible striking asks you to wait a little, and that waiting is what separates a collection from an accumulation.',
+          'A good framework runs like this: one good example of each denomination, kept separately for each of the two reigns, together with the unusual wartime shapes. That works out to about twenty coins, which looks complete on a page and costs very little to assemble.',
+          'Once that framework is full, move towards depth instead of breadth — the same denominations, but from different mints and different dates. That is the exact point at which an inexpensive collection quietly turns into a serious one, without ever needing a large sum of money to do it.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'the-rupee-coin-evolution',
+    sections: [
+      {
+        hHi: 'धातु की कहानी ही रुपये की कहानी है',
+        hEn: 'The story of the metal is the story of the rupee',
+        pHi: [
+          'रुपये के सिक्के का इतिहास पढ़ने का सबसे साफ़ तरीक़ा डिज़ाइन नहीं, धातु है। डिज़ाइन सजावट है और बदलती रहती है; धातु का चुनाव हमेशा किसी ठोस आर्थिक कारण से होता है, और इसलिए वह अपने समय के बारे में अधिक सच बोलता है।',
+          'यह शृंखला चाँदी से शुरू होकर निकल, कप्रो-निकल, स्टेनलेस स्टील और अंततः हल्की फेराइटिक स्टील तक जाती है। हर छलाँग के पीछे एक ही सवाल है: सिक्के में लगी धातु उसके अंकित मूल्य से सस्ती कैसे रखी जाए।',
+          'यदि आप इस एक सूत्र को पकड़ लें, तो आपको सिक्कों की तिथियाँ रटने की ज़रूरत नहीं रहती। हाथ में उठाते ही वज़न और रंग आपको लगभग बता देते हैं कि यह किस दशक का है।',
+        ],
+        pEn: [
+          'The clearest way to read the history of the rupee coin is through its metal rather than its design. Design is decoration and it changes for many reasons; the choice of metal is always made for a hard economic reason, and it therefore tells you far more that is true about the period it belongs to.',
+          'The sequence runs from silver through nickel, cupro-nickel, stainless steel and finally to the light ferritic steel used today. Behind every one of those jumps lies exactly the same question: how do you keep the metal inside the coin cheaper than the value stamped on its face?',
+          'Once you have that single thread in hand, memorising dates stops being necessary. Picking a coin up and feeling its weight and seeing its colour will tell you roughly which decade it came from, long before you have turned it over to look for the year.',
+        ],
+      },
+      {
+        hHi: 'चाँदी का युग और उसका अंत',
+        hEn: 'The silver age and its end',
+        pHi: [
+          'बहुत लंबे समय तक रुपया एक चाँदी का सिक्का था, और उसका मूल्य केवल घोषणा से नहीं बल्कि उसमें लगी धातु से आता था। यही कारण है कि पुराने रुपये हाथ में भारी और ठंडे लगते हैं, और गिराए जाने पर उनकी झंकार लंबी होती है।',
+          'यह व्यवस्था तब तक चलती है जब तक चाँदी सस्ती रहे। जैसे ही चाँदी की अंतरराष्ट्रीय क़ीमत चढ़ती है, सिक्का अपने आप ग़ायब होने लगता है — लोग उसे ख़र्च करने के बजाय रख लेते हैं, और सर्राफ़ उसे पिघला देते हैं।',
+          'दो विश्वयुद्धों ने यह दबाव दो बार पैदा किया, और दूसरी बार के बाद वापसी नहीं हुई। बीसवीं सदी के मध्य तक यह तय हो चुका था कि रोज़मर्रा का सिक्का क़ीमती धातु में नहीं ढाला जा सकता।',
+        ],
+        pEn: [
+          'For a very long stretch the rupee was a silver coin, and its value came not merely from an announcement but from the metal physically inside it. That is why old rupees feel heavy and cold in the hand, and why they ring for a noticeably long time when dropped onto a hard surface.',
+          'An arrangement like that works only while silver stays cheap. The moment the international price of silver climbs, the coin starts disappearing on its own — people hold it instead of spending it, and jewellers melt whatever reaches them, because the metal is simply worth more than the money.',
+          'The two world wars produced that pressure twice, and after the second one there was no going back. By the middle of the twentieth century it had become settled that an everyday circulating coin could no longer be struck in a precious metal at all.',
+        ],
+      },
+      {
+        hHi: 'निकल और कप्रो-निकल के दशक',
+        hEn: 'The nickel and cupro-nickel decades',
+        pHi: [
+          'चाँदी के बाद जो धातुएँ आईं, उनका काम एक ही था: चाँदी जैसा दिखना, पर उसकी क़ीमत का एक छोटा-सा हिस्सा होना। निकल और कप्रो-निकल ने यह काम अच्छी तरह किया और कई दशकों तक टिके रहे।',
+          'ये सिक्के आज भी बहुत लोगों की स्मृति में हैं — भारी, सफ़ेद-धूसर, और घिसने में धीमे। यही धातु पचास पैसे और एक रुपये के उन सिक्कों में है जिन्हें साठ, सत्तर और अस्सी के दशक में लोग रोज़ इस्तेमाल करते थे।',
+          'संग्रह की दृष्टि से यह दौर सबसे संतोषजनक है, क्योंकि सिक्के पर्याप्त बड़े हैं कि उन पर काम साफ़ दिखे, और पर्याप्त आम हैं कि अच्छी हालत का नमूना सस्ते में मिल जाए।',
+        ],
+        pEn: [
+          'The metals that followed silver all had the same job: to look something like silver while costing a small fraction of it. Nickel and then cupro-nickel did that job well and held their place in Indian pockets for several decades without any serious challenge.',
+          'These are the coins still sitting in most people\'s memory — heavy, greyish-white, and slow to wear down. It is the metal of the fifty paise and one rupee pieces that people handled every single day through the sixties, seventies and eighties across the whole country.',
+          'From a collecting point of view this stretch is the most satisfying of all, because the coins are large enough for the engraving to show properly and common enough that a genuinely good example costs very little to acquire when one turns up.',
+        ],
+      },
+      {
+        hHi: 'स्टेनलेस स्टील की ओर',
+        hEn: 'The turn to stainless steel',
+        pHi: [
+          'निकल भी अंततः महँगा हो गया, और नब्बे के दशक में स्टेनलेस स्टील ने उसकी जगह ले ली। यहीं से सिक्के का चरित्र बदल जाता है: वह हल्का हो जाता है, ठंडा कम लगता है, और उसकी झंकार पतली हो जाती है।',
+          'बहुत से लोगों को ये सिक्के "नक़ली जैसे" लगे, और यह प्रतिक्रिया समझ में आती है। हम धातु के वज़न को मूल्य से जोड़ते हैं, इसलिए हल्का सिक्का सहज रूप से कम क़ीमती महसूस होता है, भले ही उस पर वही अंक छपा हो।',
+          'पर अर्थशास्त्र की दृष्टि से यह बदलाव अनिवार्य था। जब मुद्रास्फीति अंकित मूल्य को गिराती है और धातु की क़ीमत चढ़ती है, तो दोनों रेखाएँ किसी न किसी दिन कट जाती हैं — और तब धातु बदलने के अलावा कोई रास्ता नहीं बचता।',
+        ],
+        pEn: [
+          'Nickel eventually grew expensive too, and through the nineties stainless steel took its place. This is where the character of the coin changes: it becomes light, it no longer feels cold in the palm, and the sound it makes when dropped turns thin and short.',
+          'A lot of people found these coins felt "like fakes", and the reaction makes sense. We instinctively tie the weight of metal to value, so a light coin feels less valuable than a heavy one even when the number stamped on its face is exactly the same.',
+          'Economically, though, the change was unavoidable. When inflation pushes the real worth of a face value down while the price of metal climbs, the two lines are going to cross on some particular day — and once they do, changing the metal is the only remaining option.',
+        ],
+      },
+      {
+        hHi: 'आकार क्यों घटता गया',
+        hEn: 'Why the coin kept shrinking',
+        pHi: [
+          'धातु बदलने के साथ-साथ एक दूसरी चीज़ भी लगातार होती रही: सिक्के छोटे होते गए। पुराना एक रुपया आज के एक रुपये से काफ़ी बड़ा है, और यह अंतर किसी को भी दो सिक्के अगल-बग़ल रखते ही दिख जाता है।',
+          'आकार घटाने के दो कारण हैं। पहला वही लागत है — कम धातु, कम ख़र्च। दूसरा व्यावहारिक है: जैसे-जैसे कम मूल्यवर्ग बेकार होकर हटते हैं, बड़े मूल्यवर्ग रोज़मर्रा के छोटे सिक्के बन जाते हैं, और रोज़ का सिक्का जेब में हल्का होना चाहिए।',
+          'यह प्रक्रिया इतनी धीमी है कि जीते-जागते इसे महसूस करना कठिन है। पर एक ही मूल्यवर्ग के तीन दशकों के तीन सिक्के एक पंक्ति में रख दीजिए, और पूरी अर्थव्यवस्था की कहानी बिना किसी शब्द के सामने आ जाती है।',
+        ],
+        pEn: [
+          'Alongside the changes of metal, something else was happening steadily: the coins kept getting smaller. An older one-rupee piece is considerably bigger than today\'s, and the difference is obvious to anybody the instant the two are laid side by side on a table.',
+          'There are two reasons for the shrinking. The first is that same question of cost — less metal, less expense. The second is practical: as the lowest denominations become worthless and drop away, the higher ones take over as everyday small change, and everyday change needs to sit lightly in a pocket.',
+          'The process is slow enough that it is hard to notice while living through it. But put three coins of the same denomination from three different decades in a row, and the whole economic story presents itself without a single word of explanation being needed.',
+        ],
+      },
+      {
+        hHi: 'धातु-मूल्य बनाम अंकित मूल्य',
+        hEn: 'Metal value against face value',
+        pHi: [
+          'हर सिक्के में दो क़ीमतें एक साथ रहती हैं: वह जो उस पर छपी है, और वह जो उसमें लगी धातु की है। स्वस्थ मुद्रा-व्यवस्था में पहली दूसरी से ऊपर रहती है, और जब यह क्रम उलटता है तो सिक्का प्रचलन से बाहर हो जाता है।',
+          'भारत में यह उलटाव कई बार हुआ है, और हर बार उत्तर एक जैसा रहा — सस्ती धातु, हल्का सिक्का, या मूल्यवर्ग का पूरा त्याग। बीस पैसे, दस पैसे और अंततः पच्चीस पैसे इसी तर्क से विदा हुए।',
+          'यहीं से यह भ्रम भी पैदा होता है कि "पुराने सिक्के में चाँदी है, इसलिए वह लाखों का है"। सच यह है कि चाँदी की मात्रा छोटी होती है और उसका वज़न बाज़ार भाव से गुणा करके निकाला जा सकता है — कोई रहस्य नहीं, केवल गणित।',
+        ],
+        pEn: [
+          'Two prices live inside every coin at once: the one printed on its face, and the one belonging to the metal it is made of. In a healthy currency system the first stays comfortably above the second, and when that order inverts the coin leaves circulation of its own accord.',
+          'India has been through that inversion several times, and the answer has been the same on each occasion — a cheaper metal, a lighter coin, or abandoning the denomination altogether. The twenty paise, the ten paise and finally the twenty-five paise all disappeared following exactly this logic.',
+          'This is also the origin of a familiar confusion: "the old coin has silver in it, so it must be worth lakhs." The truth is that the quantity of silver is small and can be worked out by multiplying its weight by the day\'s market rate — no mystery involved, only arithmetic.',
+        ],
+      },
+      {
+        hHi: '2011 का नया रुपया चिह्न और आधुनिक शृंखला',
+        hEn: 'The 2011 rupee symbol and the modern series',
+        pHi: [
+          'सबसे हालिया बड़ा बदलाव 2011 के आसपास आया, जब नया रुपया चिह्न सिक्कों पर आना शुरू हुआ। यह पहली बार था कि भारतीय मुद्रा को एक ऐसा दृश्य चिह्न मिला जो देवनागरी और लैटिन दोनों से जुड़ता है।',
+          'इसी दौर में डिज़ाइन भी सरल हुआ और मूल्यवर्ग को बड़े अंकों में दिखाया जाने लगा, ताकि पहचान तेज़ हो। यह सजावट का नहीं, उपयोगिता का निर्णय था — भीड़ भरे बाज़ार में सिक्का एक झलक में पहचाना जाना चाहिए।',
+          'इस शृंखला के सिक्के आज भी प्रचलन में हैं, इसलिए संग्राहक के लिए यह सबसे सस्ता संभव संग्रह है: तिथि-दर-तिथि, टकसाल-दर-टकसाल, केवल अपनी जेब की खुल्ली रक़म से।',
+        ],
+        pEn: [
+          'The most recent large change arrived around 2011, when the new rupee symbol began appearing on the coins themselves. It was the first time Indian currency had been given a visual mark of its own that deliberately connects the Devanagari and Latin traditions in a single form.',
+          'The designs were simplified in the same period and the denomination was set in large numerals so that it could be read fast. That was a decision about usefulness rather than decoration — in a crowded market a coin has to be identifiable at a single glance.',
+          'Coins from this series are still circulating today, which makes them the cheapest possible collection a person can build: date by date and mint by mint, assembled entirely out of the loose change already passing through their own hands each week.',
+        ],
+      },
+      {
+        hHi: 'संग्राहक के लिए इसका क्या अर्थ है',
+        hEn: 'What all of this means for a collector',
+        pHi: [
+          'यदि आप इस पूरी कहानी को एक ट्रे में रखना चाहें, तो आपको केवल एक मूल्यवर्ग चाहिए — एक रुपया — और उसके हर धातु-चरण का एक नमूना। चाँदी, निकल, कप्रो-निकल, स्टेनलेस स्टील, और आज की हल्की शृंखला।',
+          'यह पाँच या छह सिक्कों की पंक्ति है, और इसमें से केवल पहला महँगा है। बाक़ी सब या तो सस्ते हैं या मुफ़्त, और फिर भी यह पंक्ति सौ वर्ष की आर्थिक कहानी बिना किसी पाठ के कह देती है।',
+          'यही इस विषय की सबसे अच्छी बात है। रुपये के सिक्के का विकास समझने के लिए धन की आवश्यकता नहीं, केवल ध्यान की आवश्यकता है — और ध्यान वह चीज़ है जो किसी भी संग्राहक के पास पहले दिन से होती है।',
+        ],
+        pEn: [
+          'If you wanted to put this entire story into one tray, you would need only a single denomination — the one rupee — and one example from each stage of its metal. Silver, nickel, cupro-nickel, stainless steel, and the light modern series in use today.',
+          'That is a row of five or six coins, and only the first of them costs real money. The rest are either cheap or free, and yet the row tells a hundred years of economic history without needing a single line of explanatory text beneath it.',
+          'That is the best thing about this particular subject. Understanding how the rupee coin evolved does not require money; it requires attention — and attention is the one resource every collector already has in full supply from their very first day.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'ancient-indian-coins-intro',
+    sections: [
+      {
+        hHi: 'प्राचीन भारतीय सिक्कों का एक नक़्शा',
+        hEn: 'A map of the ancient Indian coinages',
+        pHi: [
+          'प्राचीन भारतीय सिक्के एक विषय नहीं बल्कि कई विषय हैं जो एक ही नाम के नीचे रख दिए गए हैं। शुरुआत में सबसे उपयोगी काम कोई सिक्का ख़रीदना नहीं, बल्कि एक मोटा नक़्शा बना लेना है कि कौन-सी परंपरा कहाँ और कब बैठती है।',
+          'सबसे पुरानी परत आहत या पंच-मार्क सिक्कों की है — चाँदी के अनियमित टुकड़े जिन पर अलग-अलग ठप्पे ठोके गए। इसके बाद इंडो-ग्रीक आते हैं, फिर कुषाण और सातवाहन, और फिर गुप्त काल की स्वर्ण मुद्राएँ।',
+          'यह क्रम याद रखने लायक़ है क्योंकि इससे हर नया सिक्का अपने आप किसी खाने में चला जाता है। बिना इस ढाँचे के प्राचीन सिक्कों की दुनिया केवल अपरिचित नामों का ढेर लगती है।',
+        ],
+        pEn: [
+          'Ancient Indian coinage is not one subject but several subjects filed together under a single heading. The most useful first move is not to buy anything at all, but to build a rough map of which tradition sits where and belongs to roughly which period.',
+          'The oldest layer is the punch-marked coinage — irregular pieces of silver carrying several separate symbols hammered into them. After that come the Indo-Greeks, then the Kushans and the Satavahanas, and then the gold of the Gupta period, each with a completely different look.',
+          'That order is worth committing to memory, because with it in place every new coin you meet drops into a slot by itself. Without the framework, the ancient field looks like nothing more than a heap of unfamiliar names arriving in no particular sequence.',
+        ],
+      },
+      {
+        hHi: 'हम यह सब जानते कैसे हैं',
+        hEn: 'How any of this came to be known',
+        pHi: [
+          'प्राचीन सिक्कों के बारे में हमारी जानकारी मुख्यतः दो स्रोतों से आती है: नियंत्रित उत्खनन, और संयोग से मिले भंडार। पहला बहुमूल्य है क्योंकि वहाँ सिक्के के साथ उसका संदर्भ भी दर्ज होता है — किस परत में, किन वस्तुओं के साथ।',
+          'दूसरा स्रोत कहीं अधिक सामान्य है और कहीं कम उपयोगी। जब कोई किसान खेत में घड़ा निकालता है, तो सिक्के बच जाते हैं पर उनका संदर्भ हमेशा के लिए खो जाता है, और उसी क्षण उनकी ऐतिहासिक क़ीमत का एक बड़ा हिस्सा भी चला जाता है।',
+          'यह बात संग्राहक के लिए सीधा सबक़ रखती है। किसी सिक्के के बारे में यह जानना कि वह कहाँ से आया, केवल औपचारिकता नहीं है; वही जानकारी उसे एक वस्तु से बदलकर एक साक्ष्य बनाती है।',
+        ],
+        pEn: [
+          'What we know about ancient coins comes mainly from two sources: controlled excavation, and hoards found by accident. The first is enormously valuable because the coin is recorded together with its context — which layer it lay in, and what other objects were lying beside it.',
+          'The second source is far more common and far less useful. When a farmer turns up a pot in a field the coins survive, but their context is lost permanently in that same moment, and with it goes a large part of everything they could have told us about their own period.',
+          'This carries a direct lesson for collectors. Knowing where a coin came from is not a formality to be filled in later; that single piece of information is what turns an object into a piece of evidence, and no amount of money spent afterwards can put it back.',
+        ],
+      },
+      {
+        hHi: 'इंडो-ग्रीक: नाम और चेहरे',
+        hEn: 'The Indo-Greeks: names and faces',
+        pHi: [
+          'इंडो-ग्रीक सिक्के इस पूरी शृंखला में सबसे अलग दिखते हैं, क्योंकि उन पर शासक का यथार्थवादी चित्र है। यह चित्र केवल कला नहीं है — यह भारतीय उपमहाद्वीप में चित्र-आधारित सिक्का-परंपरा के प्रवेश का चिह्न है।',
+          'इनमें से कई सिक्के द्विभाषी हैं: एक ओर यूनानी लेख, दूसरी ओर खरोष्ठी। यही द्विभाषिकता उन्हें भाषाविदों के लिए भी क़ीमती बनाती है, क्योंकि दो लिपियों का एक ही पाठ पढ़ने की कुंजी बन जाता है।',
+          'दिलचस्प बात यह है कि इस काल के कई शासकों के बारे में हम केवल उनके सिक्कों से जानते हैं। कोई शिलालेख नहीं, कोई ग्रंथ नहीं — केवल धातु पर उनका नाम, जो अपने आप में इस विषय के महत्व का सबसे मज़बूत तर्क है।',
+        ],
+        pEn: [
+          'Indo-Greek coins look unlike anything else in the sequence, because they carry a realistic portrait of the ruler. That portrait is not merely a matter of art — it marks the arrival of a portrait-based coin tradition in the subcontinent, and everything afterwards is affected by it.',
+          'Many of these coins are bilingual: a Greek legend on one side and Kharoshthi on the other. That bilingualism makes them valuable to linguists as well as to historians, because the same text in two scripts becomes a key for reading the less familiar one.',
+          'The genuinely striking fact is that several rulers of this period are known to us only from their coins. No inscription, no text, nothing else at all — just a name struck into metal, which is on its own the strongest possible argument for why this subject matters.',
+        ],
+      },
+      {
+        hHi: 'कुषाण और सातवाहन',
+        hEn: 'Kushan and Satavahana',
+        pHi: [
+          'कुषाण सिक्के सोने और ताँबे दोनों में मिलते हैं और उन पर देवताओं की एक असाधारण विविधता है — भारतीय, ईरानी और यूनानी परंपराओं से। यह विविधता उस साम्राज्य के भौगोलिक विस्तार का सीधा प्रतिबिंब है।',
+          'सातवाहन सिक्के इसके ठीक उलट हैं: प्रायः सीसे या पोटीन में, कम चमकदार, और अक्सर जहाज़, हाथी या पहाड़ जैसे प्रतीकों के साथ। ये दक्षिण और मध्य भारत की अर्थव्यवस्था की कहानी कहते हैं।',
+          'दोनों को साथ रखकर देखना उपयोगी है क्योंकि इससे यह समझ आता है कि "प्राचीन भारतीय सिक्का" कोई एक चीज़ नहीं है। एक ही सदी में उत्तर और दक्षिण की मुद्रा-परंपराएँ धातु, तकनीक और विषय — तीनों में अलग थीं।',
+        ],
+        pEn: [
+          'Kushan coins survive in both gold and copper, and they carry an extraordinary range of deities drawn from Indian, Iranian and Greek traditions at once. That range is a direct reflection of how far the empire stretched and how many populations it had to speak to.',
+          'Satavahana coins are the opposite in almost every respect: usually struck in lead or potin, far less lustrous, and often carrying symbols such as a ship, an elephant or a hill. They tell the economic story of southern and central India rather than the northern one.',
+          'Looking at the two together is instructive, because it makes clear that "ancient Indian coin" is not a single thing at all. Within the same century, the northern and southern traditions differed in metal, in technique and in subject matter — three separate axes of difference.',
+        ],
+      },
+      {
+        hHi: 'गुप्त काल: कला की चोटी',
+        hEn: 'The Gupta period: the high point of the art',
+        pHi: [
+          'गुप्त स्वर्ण मुद्राएँ प्राचीन भारतीय सिक्का-कला की चोटी मानी जाती हैं, और यह प्रतिष्ठा वाजिब है। इन पर शासक किसी क्रिया में दिखाया जाता है — धनुष चलाते, वीणा बजाते, सिंह का शिकार करते — जो सिक्के को एक छोटे दृश्य में बदल देता है।',
+          'दूसरी ओर संस्कृत के छंदबद्ध लेख हैं, जो इन सिक्कों को साहित्यिक साक्ष्य भी बना देते हैं। धातु पर लिखी हुई प्रशस्ति उस काल की काव्य-परंपरा का एक जीवित नमूना है।',
+          'यही कारण है कि इस क्षेत्र में नक़ल सबसे अधिक है। प्रसिद्धि और ऊँचे दाम मिलकर जालसाज़ी को आकर्षक बना देते हैं, इसलिए यहाँ बिना ठोस प्रमाणन के ख़रीदना सबसे जोखिम भरा है।',
+        ],
+        pEn: [
+          'Gupta gold coins are usually treated as the high point of ancient Indian coin art, and the reputation is deserved. The ruler is shown performing an action — drawing a bow, playing the vina, hunting a lion — which turns the surface of the coin into a small scene rather than a static portrait.',
+          'On the other side sit metrical legends in Sanskrit, which makes these coins literary evidence as well as economic evidence. A verse of praise struck into gold is a living specimen of the poetic conventions of the period, preserved in a way manuscripts rarely manage.',
+          'This is precisely why the field is so heavily forged. Fame and high prices together make counterfeiting worthwhile, so buying here without solid, independent authentication is the riskiest thing a beginner in ancient Indian numismatics can possibly do.',
+        ],
+      },
+      {
+        hHi: 'असलियत ही सबसे बड़ी समस्या है',
+        hEn: 'Authenticity is the dominant problem',
+        pHi: [
+          'आधुनिक सिक्कों में मुख्य प्रश्न हालत का होता है; प्राचीन सिक्कों में मुख्य प्रश्न असलियत का है। यह अंतर इतना बड़ा है कि जो व्यक्ति आधुनिक संग्रह से आ रहा है, उसे अपनी पूरी आदत बदलनी पड़ती है।',
+          'नक़ल कई स्तरों की होती है — पर्यटक बाज़ार की भद्दी ढलाई से लेकर सावधानी से बनाए गए ऐसे नमूनों तक जो तस्वीर में असली से अलग नहीं दिखते। इसलिए तस्वीर के आधार पर प्राचीन सिक्का ख़रीदना लगभग हमेशा ग़लती है।',
+          'सुरक्षित रास्ता उबाऊ है और इसीलिए काम करता है: स्थापित नीलामी घर, प्रकाशित उद्गम, और लिखित वापसी की शर्त। जो विक्रेता इन तीनों में से कोई एक भी नहीं दे सकता, उससे प्राचीन सिक्का नहीं लेना चाहिए।',
+        ],
+        pEn: [
+          'With modern coins the central question is condition; with ancient coins the central question is authenticity. The gap between those two is wide enough that somebody arriving from modern collecting has to rebuild their habits more or less from the ground up.',
+          'Forgeries exist at every level — from crude castings sold in tourist markets to carefully made pieces that are genuinely indistinguishable from real ones in a photograph. For that reason, buying an ancient coin on the strength of an image is almost always a mistake.',
+          'The safe route is boring, and that is exactly why it works: an established auction house, a published provenance, and a written right of return. A seller who can offer none of those three is not somebody to buy an ancient coin from, however attractive the price looks.',
+        ],
+      },
+      {
+        hHi: 'क़ानूनी स्थिति जो हर नए संग्राहक को जाननी चाहिए',
+        hEn: 'The legal position every beginner should know',
+        pHi: [
+          'भारत में पुरावशेषों से जुड़े क़ानून मौजूद हैं और वे प्राचीन सिक्कों पर भी लागू हो सकते हैं। मोटे तौर पर, एक निश्चित आयु से पुरानी वस्तुओं के पंजीकरण और निर्यात पर नियम हैं, और ज़मीन से मिले भंडार के लिए अलग प्रावधान हैं।',
+          'यह जानकारी डराने के लिए नहीं बल्कि बचाने के लिए है। जो संग्राहक शुरू से नियमों के भीतर रहता है, उसका संग्रह बाद में बेचने, प्रदर्शित करने या विरासत में देने में कोई समस्या नहीं देता।',
+          'व्यावहारिक सलाह सरल है: दस्तावेज़ रखिए, रसीदें सँभालिए, और किसी भी बड़ी ख़रीद से पहले वर्तमान नियमों की पुष्टि किसी जानकार से कर लीजिए। नियम समय के साथ बदलते हैं, इसलिए यह जाँच हर बार दोहराने लायक़ है।',
+        ],
+        pEn: [
+          'India has legislation covering antiquities, and it can apply to ancient coins as well. Broadly speaking there are rules about registering and exporting objects above a certain age, and separate provisions governing hoards recovered from the ground rather than bought on the market.',
+          'None of that is mentioned to frighten anybody; it is mentioned to protect them. A collector who stays inside the rules from the beginning ends up with a collection that can be sold, exhibited or passed on to family later without any of it becoming complicated.',
+          'The practical advice is simple: keep documentation, hold on to receipts, and confirm the current position with somebody knowledgeable before any significant purchase. Rules change over time, which makes this a check worth repeating rather than doing once and forgetting.',
+        ],
+      },
+      {
+        hHi: 'बिना कुछ ख़रीदे शुरुआत कैसे करें',
+        hEn: 'How to begin without buying anything',
+        pHi: [
+          'इस क्षेत्र में सबसे अच्छी शुरुआत ख़रीदारी नहीं, देखना है। संग्रहालय की गैलरी में आधा घंटा उन दो-तीन बातों को सिखा देता है जो किसी किताब से महीनों में आती हैं — असली धातु की सतह कैसी दिखती है, घिसाव कहाँ पहले पड़ता है, और अच्छा अंकन किसे कहते हैं।',
+          'दूसरा मुफ़्त संसाधन नीलामी सूचियाँ हैं। बड़े घरों की पुरानी सूचियाँ ऑनलाइन उपलब्ध रहती हैं और उनमें हर सिक्के की उच्च-गुणवत्ता तस्वीर, विवरण और अंतिम दाम होता है। यह अपने आप में एक पाठ्यक्रम है।',
+          'जब आप कई सौ असली तस्वीरें देख चुके हों, तब पहली ख़रीद कीजिए — और वह भी छोटी, सस्ती और प्रमाणित। प्राचीन सिक्कों में जल्दबाज़ी की क़ीमत बाक़ी सभी क्षेत्रों से अधिक है, और धैर्य की कमाई भी उतनी ही अधिक।',
+        ],
+        pEn: [
+          'The best possible start in this field is looking rather than buying. Half an hour in a museum gallery teaches two or three things that take months to absorb from a book — what a genuine metal surface looks like, where wear falls first, and what a good strike actually means.',
+          'The second free resource is auction catalogues. Old catalogues from the major houses stay available online, and each one carries a high-quality photograph of every coin along with its description and the price it finally reached. That is a complete course in itself.',
+          'Once you have looked carefully at several hundred genuine photographs, make a first purchase — and make it small, inexpensive and properly authenticated. Haste costs more in ancient coins than anywhere else in the hobby, and patience pays back correspondingly more as well.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'anna-and-paisa-denominations',
+    sections: [
+      {
+        hHi: 'वह गिनती जो सोलह पर चलती थी',
+        hEn: 'An arithmetic that ran on sixteen',
+        pHi: [
+          'दशमलव से पहले भारत की मुद्रा दस पर नहीं, सोलह और बारह पर चलती थी। यह आज अजीब लगता है, पर उस समय यह पूरी तरह सामान्य था और लोग इस गिनती में इतने अभ्यस्त थे कि हिसाब मन में ही कर लेते थे।',
+          'इस व्यवस्था को समझे बिना पुराने सिक्के केवल अजीब नामों वाले धातु के टुकड़े लगते हैं। और चूँकि ये नाम आज भी मुहावरों में ज़िंदा हैं, इसलिए यह जानकारी सिक्कों से बाहर भी काम आती है।',
+          'सबसे अच्छी बात यह है कि यह पूरी व्यवस्था एक बार समझ लेने के बाद भूलती नहीं। इसमें केवल तीन संख्याएँ याद रखनी हैं, और उनसे बाक़ी सब निकल आता है।',
+        ],
+        pEn: [
+          'Before decimalisation, Indian money ran on sixteen and twelve rather than on ten. That looks strange from here, but at the time it was entirely ordinary, and people were so practised in the arithmetic that they carried out the conversions in their heads without pausing.',
+          'Without understanding this system, old coins are just pieces of metal carrying odd names. And because those names are still alive inside everyday idioms, the knowledge turns out to be useful well beyond the tray of coins itself.',
+          'The best part is that once the structure is understood it does not slip away again. There are really only three numbers to remember, and everything else in the system follows out of them without further effort.',
+        ],
+      },
+      {
+        hHi: 'पाई, पैसा, आना, रुपया — पूरी सीढ़ी',
+        hEn: 'Pie, pice, anna, rupee — the whole ladder',
+        pHi: [
+          'सीढ़ी नीचे से ऊपर इस तरह चढ़ती है: तीन पाई का एक पैसा, चार पैसे का एक आना, और सोलह आने का एक रुपया। इन तीन कड़ियों से पूरी व्यवस्था बन जाती है।',
+          'इससे कुछ उपयोगी संख्याएँ अपने आप निकल आती हैं। एक रुपये में चौंसठ पैसे थे, और एक सौ बानवे पाई। यही कारण है कि दशमलव में जाना इतना बड़ा बदलाव था — कोई भी संख्या सीधे नहीं बैठती थी।',
+          'व्यवहार में लोग इन सभी इकाइयों का बराबर इस्तेमाल नहीं करते थे। आना रोज़मर्रा की भाषा की इकाई थी, पैसा छोटी ख़रीद की, और पाई इतनी छोटी थी कि वह प्रायः केवल हिसाब-किताब में दिखती थी।',
+        ],
+        pEn: [
+          'The ladder climbs like this from the bottom: three pies make one pice, four pice make one anna, and sixteen annas make one rupee. Those three links between them build the entire system, and nothing else has to be memorised.',
+          'A few useful numbers fall out of that immediately. There were sixty-four pice in a rupee, and one hundred and ninety-two pies. That is exactly why moving to decimals was such a large upheaval — none of these figures maps neatly onto a hundred of anything.',
+          'In practice people did not use all of these units equally. The anna was the unit of everyday speech, the pice was the unit of small purchases, and the pie was so small that it mostly appeared in written accounts rather than in conversation at a shop.',
+        ],
+      },
+      {
+        hHi: 'बारह और सोलह ही क्यों',
+        hEn: 'Why twelve and sixteen',
+        pHi: [
+          'यह चुनाव मनमाना नहीं था। बारह और सोलह जैसी संख्याओं का बड़ा व्यावहारिक लाभ यह है कि वे आसानी से बँटती हैं — सोलह के आधे, चौथाई और आठवें हिस्से सब पूर्णांक रहते हैं, जबकि दस के साथ ऐसा नहीं होता।',
+          'जिस समय अधिकांश लेन-देन बाज़ार में मौखिक रूप से होता था, वहाँ यह गुण अनमोल था। आधा आना, चौथाई आना और आठवाँ आना — तीनों वास्तविक सिक्के थे, न कि हिसाब की कल्पनाएँ।',
+          'दशमलव इसके ठीक उलट तर्क पर बना है: वह बाँटने में नहीं, लिखने और जोड़ने में सरल है। यही कारण है कि जैसे-जैसे लिखित हिसाब और मशीनी गणना बढ़ी, पुरानी व्यवस्था का लाभ घटता गया।',
+        ],
+        pEn: [
+          'The choice was not arbitrary. Numbers like twelve and sixteen have one large practical advantage: they divide easily — halves, quarters and eighths of sixteen all remain whole numbers, which is simply not true of ten however you approach it.',
+          'At a time when most transactions happened verbally across a market stall, that property was worth a great deal. The half anna, the quarter anna and the eighth of an anna were all real coins you could hand over, not accounting fictions to be settled later.',
+          'Decimal systems are built on exactly the opposite logic: they are simple to write down and add up rather than simple to divide. That is why the advantage of the older arrangement steadily eroded as written accounting and machine calculation spread through the economy.',
+        ],
+      },
+      {
+        hHi: 'दाम कैसे बोले जाते थे',
+        hEn: 'How prices were actually spoken',
+        pHi: [
+          'पुराने दस्तावेज़ पढ़ते समय यह जानना काम आता है कि दाम कैसे कहे जाते थे। "दो रुपये चार आने" जैसी अभिव्यक्ति सामान्य थी, और लिखने में इसे प्रायः स्तंभों में अलग-अलग दर्ज किया जाता था — रुपये, आने, पाई।',
+          'इसी कारण पुराने बहीखातों में तीन संकरे स्तंभ दिखते हैं। जो व्यक्ति यह ढाँचा नहीं जानता, उसे वे स्तंभ भ्रमित करते हैं; जो जानता है, उसके लिए पूरा पन्ना एक झलक में पढ़ा जा सकता है।',
+          'बोलचाल में यह व्यवस्था और भी गहरी उतरी हुई थी। "सोलह आने सच" जैसा मुहावरा आज भी चलता है और उसका अर्थ पूरी तरह — यानी पूरे एक रुपये के बराबर — सच है। मुहावरा बच गया, सिक्का नहीं।',
+        ],
+        pEn: [
+          'When reading old documents it helps to know how prices were spoken aloud. An expression like "two rupees four annas" was completely ordinary, and in writing the amount was usually recorded in separate columns — rupees, annas, pies, in that order across the page.',
+          'That is why old ledgers show three narrow columns side by side. Somebody who does not know the structure finds those columns confusing; somebody who does can read an entire page at a glance without slowing down to work anything out.',
+          'The system ran even deeper in ordinary speech. An idiom like "sixteen annas true" is still in use today and means completely true — true to the value of a whole rupee. The idiom survived the currency reform even though the coin behind it did not.',
+        ],
+      },
+      {
+        hHi: 'पुराने बहीखाते और रसीदें पढ़ना',
+        hEn: 'Reading old ledgers and receipts',
+        pHi: [
+          'संग्राहकों के लिए पुरानी रसीदें सिक्कों जितनी ही दिलचस्प हो सकती हैं, क्योंकि वे बताती हैं कि किसी सिक्के से वास्तव में क्या ख़रीदा जा सकता था। एक आने में क्या मिलता था, यह सवाल किसी भी सूची से अधिक जीवंत है।',
+          'रसीद पढ़ते समय दो सावधानियाँ काम आती हैं। पहली, अंक अक्सर स्थानीय लिपि या पुरानी शैली में लिखे होते हैं। दूसरी, कुल जोड़ में सोलह और बारह का हिसाब लगता है, इसलिए दशमलव की आदत से जोड़ने पर उत्तर ग़लत आएगा।',
+          'यदि आपके परिवार में पुराने काग़ज़ बचे हों, तो उन्हें सिक्कों के साथ रखिए। एक रसीद और उसी काल का सिक्का साथ रखे जाने पर दोनों की कहानी कई गुना बढ़ जाती है।',
+        ],
+        pEn: [
+          'For collectors, old receipts can be as interesting as the coins themselves, because they show what a given coin actually bought. The question of what one anna would fetch is a far more vivid one than any figure sitting in a catalogue of values.',
+          'Two cautions help when reading a receipt. The first is that numerals are often written in a local script or in an older hand. The second is that the totals are worked in sixteens and twelves, so adding them with decimal habits will reliably produce the wrong answer.',
+          'If old papers have survived anywhere in your family, keep them with the coins rather than apart from them. A receipt and a coin of the same period displayed together tell a story several times larger than either of them manages on its own.',
+        ],
+      },
+      {
+        hHi: 'जो इकाइयाँ काग़ज़ पर थीं पर धातु में नहीं',
+        hEn: 'Units that existed on paper but not in metal',
+        pHi: [
+          'एक बात जो नए संग्राहकों को उलझाती है, वह यह है कि हर इकाई का अपना सिक्का नहीं था। कुछ इकाइयाँ केवल हिसाब की थीं, और उनके लिए कोई धातु का टुकड़ा कभी ढाला ही नहीं गया।',
+          'साथ ही उलटा भी सच है: कुछ सिक्के ऐसे थे जो सीधे किसी इकाई के नाम पर नहीं बल्कि उसके भिन्न पर थे — आधा आना, दो आने, चार आने, आठ आने। इसलिए ट्रे में रखे सिक्के सीढ़ी के हर पायदान से मेल नहीं खाते।',
+          'इसका व्यावहारिक अर्थ यह है कि "पूरा सेट" बनाते समय सूची को इकाइयों से नहीं, वास्तव में ढाले गए मूल्यवर्गों से बनाना चाहिए। यही ग़लती सबसे अधिक निराशा पैदा करती है।',
+        ],
+        pEn: [
+          'One thing that confuses newcomers is that not every unit had a coin of its own. Some of these units were purely units of account, and no piece of metal was ever struck to represent them at any point in their existence.',
+          'The reverse is true as well: several coins were denominated not as a unit but as a fraction of one — half anna, two annas, four annas, eight annas. So the coins sitting in a tray do not line up one-to-one with the rungs of the ladder described above.',
+          'The practical consequence is that when assembling a "complete set" the checklist should be built from the denominations actually struck, not from the units in the system. Getting that backwards is the single most common source of frustration in this area.',
+        ],
+      },
+      {
+        hHi: '1957 से 1964 का दुहरा दौर',
+        hEn: 'The double years, 1957 to 1964',
+        pHi: [
+          'दशमलव व्यवस्था एक दिन में नहीं आई। कई वर्षों तक पुराने और नए दोनों प्रकार के सिक्के साथ-साथ चले, और इसी कारण नए सिक्कों पर कुछ समय तक "नया पैसा" लिखा गया — ताकि भ्रम न हो।',
+          'यह संक्रमण-काल संग्राहकों के लिए सबसे दिलचस्प खिड़की है, क्योंकि एक ही जेब में दो अलग गणित के सिक्के मौजूद थे। दुकानदारों को रोज़ रूपांतरण करना पड़ता था, और उसी ज़रूरत से छपे हुए रूपांतरण-चार्ट प्रचलन में आए।',
+          'यदि आप एक ही पंक्ति में चार आने, पच्चीस नये पैसे और आज के सिक्के रख दें, तो आपके सामने पूरा बदलाव खड़ा हो जाता है — तीन वस्तुएँ, एक ही मूल्य, तीन अलग-अलग व्यवस्थाएँ।',
+        ],
+        pEn: [
+          'Decimalisation did not arrive in a single day. For several years the old and new coins circulated side by side, which is why the new pieces carried the words "naya paisa" for a while — the label existed specifically to prevent confusion at the counter.',
+          'That transitional period is the most interesting window of all for collectors, because two different systems of arithmetic were sitting in the same pocket at once. Shopkeepers had to convert constantly, and printed conversion charts came into circulation to meet exactly that need.',
+          'Lay four annas, twenty-five naye paise and a modern coin in a single row and the whole change stands in front of you — three objects representing the same value under three completely different systems, separated by only a handful of years.',
+        ],
+      },
+      {
+        hHi: 'यह जानकारी सिक्कों की पहचान में कैसे काम आती है',
+        hEn: 'How all this helps you identify coins',
+        pHi: [
+          'सबसे सीधा लाभ यह है कि आप सिक्के पर लिखे मूल्यवर्ग को तुरंत सही जगह रख पाते हैं। "ONE QUARTER ANNA" पढ़ते ही आपको पता है कि यह रुपये का चौंसठवाँ हिस्सा है, और उसी से उसका आकार और धातु भी अपेक्षित हो जाती है।',
+          'दूसरा लाभ जालसाज़ी पकड़ने में है। यदि किसी सिक्के पर ऐसा मूल्यवर्ग लिखा हो जो इस व्यवस्था में मौजूद ही नहीं था, तो आगे कुछ जाँचने की ज़रूरत नहीं — वह सिक्का असली नहीं हो सकता।',
+          'तीसरा लाभ बातचीत का है। जब आप विक्रेता से इन इकाइयों की भाषा में बात करते हैं, तो यह अपने आप स्पष्ट हो जाता है कि आप जानकार हैं, और इससे सौदे का पूरा स्वर बदल जाता है।',
+        ],
+        pEn: [
+          'The most direct benefit is that you can place a denomination correctly the moment you read it. Seeing "ONE QUARTER ANNA" tells you immediately that this is a sixty-fourth of a rupee, and from that the expected size and metal of the coin follow as well.',
+          'The second benefit is in detecting forgeries. If a coin carries a denomination that never existed within the system, there is nothing further to check — that piece cannot be genuine, whatever else about it happens to look convincing.',
+          'The third benefit is conversational. When you discuss a coin with a seller in the language of these units, it becomes obvious without any announcement that you know the subject, and the tone of the entire negotiation shifts accordingly from that point on.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'coin-dealers-and-auctions',
+    sections: [
+      {
+        hHi: 'चार अलग बाज़ार, एक ही शौक़',
+        hEn: 'Four different markets, one hobby',
+        pHi: [
+          'सिक्के ख़रीदने और बेचने के लिए एक बाज़ार नहीं, कम से कम चार अलग बाज़ार हैं: दुकानदार, नीलामी घर, ऑनलाइन मंच, और सिक्का मेला। इनकी क़ीमतें, गति और जोखिम तीनों अलग हैं।',
+          'नए संग्राहक अक्सर सबसे पहले जिस बाज़ार से टकराते हैं, उसे ही पूरा बाज़ार मान लेते हैं। यही वह ग़लती है जिससे लोग या तो बहुत महँगा ख़रीदते हैं या बहुत सस्ता बेच देते हैं।',
+          'इन चारों को अलग-अलग समझ लेना उतना ही ज़रूरी है जितना सिक्कों को पहचानना सीखना, क्योंकि एक ही सिक्का अलग-अलग चैनलों में अलग-अलग दाम पाता है — और यह अंतर छोटा नहीं होता।',
+        ],
+        pEn: [
+          'There is not one market for buying and selling coins but at least four separate ones: the dealer, the auction house, the online platform and the coin fair. They differ in price, in speed and in risk, and none of the three moves in the same direction across all four.',
+          'New collectors often meet one of these markets first and quietly assume it is the whole market. That is exactly the mistake that leads people either to pay far too much when buying or to accept far too little when selling.',
+          'Understanding the four separately matters as much as learning to identify coins, because the same coin fetches genuinely different prices in different channels — and the gap between the best and worst is not a small one.',
+        ],
+      },
+      {
+        hHi: 'दुकानदार: सबसे पुराना रास्ता',
+        hEn: 'The dealer: the oldest route',
+        pHi: [
+          'सिक्का व्यापारी की दुकान इस शौक़ का सबसे पुराना और अब भी सबसे उपयोगी रास्ता है, ख़ासकर शुरुआत में। यहाँ सिक्का हाथ में लेकर देखा जा सकता है, और हाथ में लेने से जो पता चलता है वह किसी तस्वीर से नहीं चलता।',
+          'दुकानदार का दाम आमतौर पर नीलामी से ऊँचा होता है, और यह ठीक भी है — वह जोखिम उठा रहा है, माल रखे हुए है, और छाँटकर लाया है। उस सेवा का मूल्य होता है, और नए संग्राहक के लिए वह प्रायः वसूल भी हो जाता है।',
+          'एक अच्छे दुकानदार की पहचान दाम से नहीं, उसकी बातचीत से होती है। जो व्यापारी किसी सिक्के की कमियाँ ख़ुद बता दे, वह लंबे समय के लिए भरोसेमंद है; जो केवल ख़ूबियाँ गिनाए, उससे दूरी रखना बेहतर है।',
+        ],
+        pEn: [
+          'A dealer\'s shop is the oldest route into this hobby and still the most useful one at the start, because a coin can be picked up and turned over in the hand. What the hand tells you in three seconds is something no photograph will ever convey.',
+          'A dealer\'s price is usually higher than an auction price, and that is entirely fair — he is carrying the risk, holding the stock, and has done the work of sorting through material to find what is worth offering. That service has a value, and for a beginner it is often money well spent.',
+          'A good dealer is recognised by how he talks rather than by what he charges. A trader who volunteers the faults of a coin before you find them is trustworthy over the long run; one who lists only its merits is somebody to keep at a polite distance.',
+        ],
+      },
+      {
+        hHi: 'नीलामी घर कैसे काम करता है',
+        hEn: 'How an auction house actually works',
+        pHi: [
+          'नीलामी की प्रक्रिया बाहर से रहस्यमय लगती है पर भीतर से सीधी है। विक्रेता अपना सिक्का घर को सौंपता है, घर उसे सूची में विवरण और तस्वीर के साथ रखता है, और तय दिन बोली लगती है।',
+          'दो शब्द जानने ज़रूरी हैं। "रिज़र्व" वह न्यूनतम दाम है जिससे नीचे सिक्का नहीं बिकेगा; यदि बोली उससे कम रही तो सिक्का अनबिका लौट आता है। "एस्टिमेट" घर का अनुमान है, वादा नहीं।',
+          'नीलामी का सबसे बड़ा लाभ पारदर्शिता है। बोली सार्वजनिक होती है और परिणाम प्रायः प्रकाशित रहते हैं, इसलिए आपको पता चलता है कि बाज़ार ने उस सिक्के के लिए वास्तव में क्या दिया — किसी की राय नहीं, वास्तविक आँकड़ा।',
+        ],
+        pEn: [
+          'The auction process looks mysterious from outside and is quite straightforward from within. A seller consigns the coin to the house, the house lists it in a catalogue with a description and photograph, and on the appointed day bidding decides the price.',
+          'Two terms are worth knowing. The "reserve" is the minimum below which the coin will not be sold; if bidding stops short of it the piece comes back unsold. The "estimate" is the house\'s own opinion of the likely range, and it is an opinion rather than any kind of promise.',
+          'The great advantage of an auction is transparency. Bidding happens in the open and results are usually published afterwards, so you learn what the market genuinely paid for that coin — a real figure rather than somebody\'s assertion about what it ought to be worth.',
+        ],
+      },
+      {
+        hHi: 'ख़रीदार प्रीमियम और विक्रेता कमीशन',
+        hEn: 'Buyer\'s premium and seller\'s commission',
+        pHi: [
+          'नीलामी में जो दाम हथौड़े पर बोला जाता है, वह अंतिम दाम नहीं होता। ख़रीदार को उसके ऊपर एक प्रतिशत और देना होता है, जिसे ख़रीदार प्रीमियम कहते हैं, और इसी तरह विक्रेता की प्राप्ति से कमीशन कटता है।',
+          'यह विवरण छोटा लगता है पर हिसाब बदल देता है। यदि आप अपनी अधिकतम सीमा तय करते समय प्रीमियम भूल जाएँ, तो जीतने के बाद आपको वह दाम चुकाना पड़ेगा जो आपने कभी सोचा ही नहीं था।',
+          'इसलिए बोली लगाने से पहले पूरा गणित लिख लेना चाहिए: हथौड़ा दाम, प्रीमियम, कर, और भेजने का ख़र्च। यही कुल संख्या आपकी असली सीमा है, और उसे कमरे के जोश में बदलना नहीं चाहिए।',
+        ],
+        pEn: [
+          'The price called at the hammer is not the price you pay. A percentage is added on top for the buyer, known as the buyer\'s premium, and in the same way a commission is deducted from whatever the seller finally receives.',
+          'This detail sounds minor and it changes the arithmetic completely. If you set your maximum limit while forgetting the premium, then winning the lot means paying a figure you never actually decided you were willing to pay in the first place.',
+          'So the whole calculation should be written down before bidding starts: hammer price, premium, taxes and shipping. That total is your real limit, and it is not a number that should be revised upward in the excitement of the room or the closing seconds online.',
+        ],
+      },
+      {
+        hHi: 'ऑनलाइन बाज़ार: पहुँच और जोखिम साथ-साथ',
+        hEn: 'Online marketplaces: reach and risk together',
+        pHi: [
+          'ऑनलाइन मंचों ने सिक्कों की पहुँच पूरी तरह बदल दी है। जो सिक्का पहले केवल किसी बड़े शहर की दुकान में मिलता, वह अब कहीं से भी देखा और ख़रीदा जा सकता है, और दाम की तुलना कुछ ही मिनटों में हो जाती है।',
+          'इसी पहुँच के साथ जोखिम भी आता है। यहाँ आप सिक्का हाथ में नहीं ले सकते, विक्रेता को नहीं जानते, और तस्वीर बहुत कुछ छिपा सकती है। इसलिए यहाँ प्रश्न पूछना दुकान की तुलना में कहीं अधिक ज़रूरी है।',
+          'सबसे उपयोगी अभ्यास यह है कि हर विक्रेता से एक ही चीज़ माँगी जाए: सिक्के का वज़न, और सीधी रोशनी में किनारे की तस्वीर। जो विक्रेता ये दोनों सहजता से दे दे, उससे आगे बात करना सुरक्षित है।',
+        ],
+        pEn: [
+          'Online platforms have changed access to coins completely. A piece that once could only be found in a shop in a large city can now be seen and bought from anywhere, and prices across a dozen sellers can be compared within a few minutes.',
+          'That reach brings matching risk. You cannot hold the coin, you do not know the seller, and a photograph can conceal a great deal by choice of angle and lighting. Asking questions therefore matters far more here than it does across a counter.',
+          'The single most useful habit is to ask every seller for the same two things: the weight of the coin, and a photograph of its edge taken in direct light. A seller who supplies both without fuss is somebody it is reasonably safe to continue talking to.',
+        ],
+      },
+      {
+        hHi: 'सिक्का मेला और नुमिस्मैटिक सोसाइटी',
+        hEn: 'Coin fairs and numismatic societies',
+        pHi: [
+          'सिक्का मेला वह जगह है जहाँ दर्जनों विक्रेता एक साथ बैठते हैं, और इसी कारण यह तुलना के लिए सबसे अच्छा स्थान है। एक ही प्रकार का सिक्का पाँच अलग मेज़ों पर देखकर आप कुछ ही घंटों में दाम की समझ बना लेते हैं।',
+          'नुमिस्मैटिक सोसाइटी इससे भी अधिक उपयोगी है, पर अलग कारण से। वहाँ बेचना मुख्य उद्देश्य नहीं है; वहाँ लोग जानकारी साझा करते हैं, और किसी संदिग्ध सिक्के पर दूसरी राय मुफ़्त में मिल जाती है।',
+          'जो संग्राहक किसी सोसाइटी से जुड़ा है, वह लगभग कभी बड़े धोखे का शिकार नहीं होता। इसका कारण सरल है — कोई भी बड़ी ख़रीद करने से पहले वह किसी और को दिखा सकता है, और यही एक आदत अधिकांश नुक़सान रोक देती है।',
+        ],
+        pEn: [
+          'A coin fair puts dozens of sellers in one room, and that is precisely what makes it the best place for comparison. Seeing the same type of coin on five different tables builds a working sense of price within a couple of hours that reading cannot produce in a month.',
+          'A numismatic society is more useful still, though for a different reason. Selling is not the main purpose there; people are exchanging information, and a second opinion on a doubtful coin can usually be had for nothing more than the asking.',
+          'A collector who belongs to a society almost never falls victim to a serious fraud. The reason is simple — before any significant purchase there is somebody available to show it to, and that single habit prevents the large majority of losses in this hobby.',
+        ],
+      },
+      {
+        hHi: 'किस चैनल में क्या बेचना चाहिए',
+        hEn: 'Which channel suits which coin',
+        pHi: [
+          'एक व्यावहारिक नियम यह है कि सिक्के का मूल्य जितना अधिक हो, नीलामी उतनी ही अधिक उपयुक्त है। ऊँचे दाम वाले सिक्के के लिए ख़रीदार कम हैं और बिखरे हुए हैं, और नीलामी ही वह जगह है जहाँ वे सब एक दिन इकट्ठा होते हैं।',
+          'इसके उलट, आम और कम दाम वाले सिक्कों को नीलामी में डालना घाटे का सौदा है, क्योंकि कमीशन और तस्वीरों की मेहनत मिलकर मुनाफ़े से अधिक हो जाती है। ऐसे सिक्के लॉट में दुकानदार को या मेले में बेचना बेहतर है।',
+          'बीच की श्रेणी सबसे कठिन है, और यहीं ऑनलाइन मंच सबसे अच्छा काम करता है — पर्याप्त पहुँच, स्वीकार्य लागत, और उतना ही धैर्य जितना आप देने को तैयार हों।',
+        ],
+        pEn: [
+          'A practical rule is that the higher the value of the coin, the better an auction suits it. Buyers for an expensive piece are few and scattered, and an auction is the one arrangement that gathers all of them into the same place on the same day.',
+          'The reverse also holds: putting common, low-value coins into an auction is a losing proposition, because commission and the effort of photography together exceed whatever profit is available. Those pieces are better sold in bulk lots to a dealer, or across a table at a fair.',
+          'The middle band is the hardest of the three, and it is where an online platform performs best — enough reach to find a buyer, acceptable costs, and a timeline that stretches exactly as far as your own patience is willing to stretch.',
+        ],
+      },
+      {
+        hHi: 'तीन नियम जो हर जगह लागू होते हैं',
+        hEn: 'Three rules that apply everywhere',
+        pHi: [
+          'पहला: चैनल चाहे कोई भी हो, लिखित विवरण माँगिए। मौखिक आश्वासन का कोई मूल्य नहीं है, और एक पंक्ति का लिखित वर्णन बाद के हर विवाद को छोटा कर देता है।',
+          'दूसरा: कभी भी अपने तय बजट से ऊपर मत जाइए, चाहे सिक्का कितना ही आकर्षक लगे। बाज़ार में सिक्के ख़त्म नहीं होते; जो आज छूट गया, वह किसी न किसी रूप में फिर आएगा।',
+          'तीसरा: हर लेन-देन का रिकॉर्ड रखिए — तिथि, दाम, विक्रेता, और चैनल। कुछ वर्षों बाद यही रिकॉर्ड आपको बताएगा कि आपने कहाँ अच्छा किया और कहाँ नहीं, और यह जानकारी किसी भी सलाह से अधिक क़ीमती है।',
+        ],
+        pEn: [
+          'First: whatever the channel, ask for the description in writing. A verbal assurance is worth nothing at all, and a single written line about what is being sold shrinks every dispute that might follow it down to a manageable size.',
+          'Second: never go above the budget you set beforehand, however attractive the coin looks in the moment. The market does not run out of coins; whatever slips away today will come around again in one form or another, usually sooner than you expect.',
+          'Third: keep a record of every transaction — date, price, seller and channel. A few years later that record will tell you where you did well and where you did not, and that information is worth more than any advice anybody else can offer you.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
