@@ -7667,6 +7667,444 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------------
+  // Batch thirteen — the last three hand-written articles on the site.
+  // ---------------------------------------------------------------------
+
+  {
+    slug: 'edward-vii-coins',
+    sections: [
+      {
+        hHi: 'नौ वर्ष का एक साफ़ खाँचा',
+        hEn: 'A clean slot of nine years',
+        pHi: [
+          'एडवर्ड सप्तम का शासनकाल भारतीय सिक्कों के इतिहास में एक असामान्य रूप से साफ़ खाँचा है। यह विक्टोरिया के लंबे दौर के तुरंत बाद आता है और जॉर्ज पंचम के उससे भी लंबे दौर से पहले समाप्त हो जाता है।',
+          'इसका व्यावहारिक अर्थ यह है कि यहाँ तिथियों की गुंजाइश बहुत सीमित है। जब आप किसी सिक्के पर यह नाम पढ़ते हैं, तो आप पहले से जानते हैं कि वह किस दशक का है — कोई और शासनकाल इतनी सुविधा नहीं देता।',
+          'इसी कारण यह शासनकाल संग्रह में एक अच्छा "पुल" बनाता है। दो बहुत बड़े दौरों के बीच रखा यह छोटा दौर पूरी शृंखला को जोड़ देता है, और उसके बिना ब्रिटिश भारतीय संग्रह में एक साफ़ दिखने वाला अंतराल रह जाता है।',
+        ],
+        pEn: [
+          'The reign of Edward VII occupies an unusually clean slot in the history of Indian coinage. It follows immediately after Victoria\'s very long period and closes before George V\'s even longer one begins, leaving a short and well-defined window.',
+          'The practical consequence is that the range of possible dates here is very narrow. When you read this name on a coin, you already know roughly which decade you are holding — no other reign in the series offers that convenience so cleanly.',
+          'This is exactly why the reign makes such a good bridge inside a collection. Placed between two much larger periods, this short one joins the whole sequence together, and without it a British Indian collection carries a gap that is visible at a glance.',
+        ],
+      },
+      {
+        hHi: 'चित्र से पहचान',
+        hEn: 'Identifying by the portrait',
+        pHi: [
+          'एडवर्ड सप्तम का चित्र विक्टोरिया के चित्र से तुरंत अलग दिखता है, और यह अंतर केवल चेहरे का नहीं है। यहाँ पहली बार एक ऐसा पुरुष शासक दिखता है जिसका मुकुटधारी अर्ध-चित्र दाईं ओर देखता है।',
+          'दाढ़ी और मूँछ इस चित्र की सबसे स्पष्ट पहचान हैं, और वे घिसे हुए सिक्कों पर भी बची रहती हैं। इसलिए जब तिथि पढ़ी न जा सके, तब भी शासनकाल पहचानना कठिन नहीं होता।',
+          'एक और उपयोगी संकेत लेख का है। उपाधियाँ लैटिन के संक्षिप्त रूप में हैं और उनका क्रम विक्टोरिया के अंतिम सिक्कों से थोड़ा अलग है, जो एक बार देख लेने के बाद आँख में बैठ जाता है।',
+        ],
+        pEn: [
+          'The portrait of Edward VII looks immediately different from Victoria\'s, and the difference is not only in the face. Here for the first time in this series is a male ruler shown as a crowned bust facing to the right.',
+          'The beard and moustache are the clearest identifying feature of that portrait, and they survive on coins worn far past the point where finer detail has gone. So even when the date cannot be read, placing the reign is rarely difficult.',
+          'Another useful signal is the legend. The titles appear in abbreviated Latin and their order differs slightly from that on Victoria\'s last coins, a distinction that settles into the eye after you have seen it once or twice.',
+        ],
+      },
+      {
+        hHi: 'कौन-से मूल्यवर्ग ढाले गए',
+        hEn: 'Which denominations were struck',
+        pHi: [
+          'इस शासनकाल में मूल्यवर्गों की पूरी सामान्य शृंखला चली: चाँदी में रुपया, आधा रुपया, चौथाई रुपया और दो आने; ताँबे में चौथाई आना, आधा पैसा और पाई।',
+          'चाँदी के बड़े मूल्यवर्ग अपेक्षाकृत कम बचे हैं, क्योंकि बाद के दशकों में चाँदी की क़ीमत चढ़ने पर बहुत सारे पिघला दिए गए। ताँबे के छोटे सिक्के इसके उलट बहुतायत में मिलते हैं।',
+          'संग्राहक के लिए इसका व्यावहारिक अर्थ यह है कि इस शासनकाल का एक "पूरा सेट" बनाना सस्ते सिरे से शुरू होता है और महँगे सिरे पर धीमा हो जाता है। ताँबे के सिक्के पहले महीने में मिल जाएँगे; अच्छा रुपया इंतज़ार माँगेगा।',
+        ],
+        pEn: [
+          'The usual full range of denominations ran through this reign: in silver the rupee, half rupee, quarter rupee and two annas; in copper the quarter anna, the half pice and the pie.',
+          'The larger silver denominations survive in comparatively small numbers, because a great many were melted in later decades when the price of silver rose. The small copper pieces are the opposite case and turn up in quantity.',
+          'For a collector the practical meaning is that assembling a "complete set" for this reign starts at the cheap end and slows down at the expensive one. The copper will arrive within a month; a good rupee will ask you to wait.',
+        ],
+      },
+      {
+        hHi: 'टकसालें और उनके चिह्न',
+        hEn: 'The mints and their marks',
+        pHi: [
+          'इस काल के सिक्के मुख्यतः कलकत्ता और बंबई की टकसालों से आए, और इन दोनों को अलग करना संग्रह में गहराई जोड़ने का सबसे आसान तरीक़ा है।',
+          'चिह्न बहुत छोटा होता है और प्रायः तिथि के पास या नीचे रखा जाता है, इसलिए उसे देखने के लिए तिरछी रोशनी और दस गुना लूप चाहिए। घिसे हुए सिक्कों पर यह सबसे पहले मिटने वाली चीज़ों में है।',
+          'कुछ वर्षों में एक टकसाल का उत्पादन दूसरी से बहुत अधिक रहा, और इसी असंतुलन से कुछ संयोजन आज कम मिलते हैं। यही वह विवरण है जो एक साधारण सेट को एक दिलचस्प सेट में बदल देता है।',
+        ],
+        pEn: [
+          'Coins of this period came mainly from the Calcutta and Bombay mints, and separating the two is the easiest way to add real depth to a collection of the reign without adding much cost.',
+          'The mark is very small and usually sits near or below the date, so seeing it takes raking light and a ten-times loupe. On worn coins it is among the first details to disappear entirely.',
+          'In some years one mint produced far more than the other, and that imbalance is why certain date-and-mint combinations are scarce today. This is precisely the detail that turns an ordinary set into an interesting one.',
+        ],
+      },
+      {
+        hHi: 'हालत की दुर्लभता बनाम तिथि की दुर्लभता',
+        hEn: 'Condition rarity against date rarity',
+        pHi: [
+          'इस शासनकाल में लगभग कोई तिथि सचमुच दुर्लभ नहीं है, और यह बात नए संग्राहक को निराश कर सकती है। पर दुर्लभता का दूसरा रूप यहाँ पूरी तरह मौजूद है: अच्छी हालत।',
+          'चूँकि ये सिक्के दशकों तक चले, इसलिए अधिकांश बहुत घिसे हुए हैं। बिना घिसा हुआ, मूल चमक वाला नमूना उसी तिथि के साधारण नमूने से कई गुना अधिक दाम रखता है।',
+          'इसलिए इस क्षेत्र में असली खोज तिथि की नहीं, सतह की है। जो संग्राहक यह अंतर समझ लेता है, वह कम पैसे में बहुत बेहतर संग्रह बनाता है — क्योंकि वह वहाँ ध्यान देता है जहाँ बाक़ी लोग नहीं देखते।',
+        ],
+        pEn: [
+          'Almost no date in this reign is genuinely rare, and that can disappoint a new collector. But the other form of rarity is fully present here: rarity of condition, which in a common series is where all the real difficulty lies.',
+          'Because these coins circulated for decades, most survivors are heavily worn. An unworn example still carrying its original lustre is worth several times an ordinary piece of exactly the same date and mint.',
+          'So the real hunt in this area is for surfaces rather than for dates. A collector who understands that distinction builds a far better collection for less money, because they are paying attention where most other buyers are not.',
+        ],
+      },
+      {
+        hHi: 'नक़ल और बदली हुई तिथियाँ',
+        hEn: 'Forgeries and altered dates',
+        pHi: [
+          'चूँकि इस शासनकाल में कोई तिथि विशेष रूप से महँगी नहीं है, इसलिए यहाँ पूरी तरह गढ़े हुए सिक्के कम मिलते हैं — जालसाज़ी वहाँ जाती है जहाँ मुनाफ़ा हो।',
+          'फिर भी दो प्रकार की समस्याएँ मिलती हैं। पहली, चाँदी के सिक्कों की पुरानी सर्राफ़ा-नक़लें, जो गहनों के लिए बनाई गई थीं और जिनका वज़न प्रायः ग़लत होता है।',
+          'दूसरी, साफ़ किए गए सिक्के। यह जालसाज़ी नहीं पर नुक़सान वही करती है: चमकाई गई सतह मूल चमक जैसी नहीं होती, और लूप के नीचे उस पर बारीक समानांतर खरोंचें दिखती हैं।',
+          'इन दोनों के विरुद्ध वही दो जाँचें काम करती हैं जो हर जगह काम करती हैं — तराज़ू, और तिरछी रोशनी में सतह का ध्यान से देखना।',
+        ],
+        pEn: [
+          'Because no date in this reign is especially expensive, wholly fabricated coins are uncommon here — forgery tends to go where the profit is, and this is not a profitable place for it.',
+          'Two kinds of problem do occur nonetheless. The first is old bazaar copies of the silver pieces, made for use in jewellery, which almost always give themselves away on the scale.',
+          'The second is cleaned coins. That is not forgery but it does the same damage: a polished surface does not resemble original lustre, and under a loupe it shows fine parallel scratches running across the fields.',
+          'The same two checks that work everywhere work against both of these — the scale, and a careful look at the surface under raking light before any money changes hands.',
+        ],
+      },
+      {
+        hHi: 'संग्रह में इसे कहाँ रखें',
+        hEn: 'Where this reign sits in a collection',
+        pHi: [
+          'यदि आपका संग्रह ब्रिटिश भारतीय सिक्कों का है, तो इस शासनकाल को छोड़ना संभव नहीं। यह वह कड़ी है जो विक्टोरिया के अंतिम अंकों और जॉर्ज पंचम के पहले अंकों को जोड़ती है।',
+          'एक बहुत अच्छा प्रदर्शन इस प्रकार बनता है: तीन शासकों का एक-एक रुपया, एक पंक्ति में, तिथि के क्रम में। इससे चित्र-शैली का विकास और दिशा का बदलाव दोनों एक साथ दिख जाते हैं।',
+          'यदि बजट अनुमति दे, तो इसी पंक्ति के नीचे तीनों शासकों का एक-एक चौथाई आना रख दीजिए। ऊपर चाँदी, नीचे ताँबा — यह छह सिक्कों का प्रदर्शन किसी भी दीवार पर पूरा दिखता है।',
+        ],
+        pEn: [
+          'If your collection covers British Indian coinage, this reign cannot reasonably be left out. It is the link that joins Victoria\'s final issues to the first issues of George V without leaving a hole in the middle.',
+          'A very effective display runs like this: one rupee from each of the three rulers, laid out in a row in date order. The development of the portrait style and the change in direction both become visible in the same glance.',
+          'If the budget allows, place one quarter anna from each of the three below that row. Silver above, copper below — a display of six coins that looks complete on any wall without needing anything further added to it.',
+        ],
+      },
+      {
+        hHi: 'ख़रीदते समय क्या देखें',
+        hEn: 'What to look for when buying',
+        pHi: [
+          'इस क्षेत्र में ख़रीदते समय पहली चीज़ जो देखनी चाहिए वह तिथि नहीं, चेहरे का उभार है। एडवर्ड सप्तम के चित्र में गाल और दाढ़ी सबसे ऊँचे बिंदु हैं, इसलिए घिसाव वहीं पहले दिखता है।',
+          'दूसरी चीज़ अक्षरों की तीक्ष्णता है। यदि लेख के अक्षर अपने किनारों पर तेज़ हैं, तो सिक्का कम चला है, भले ही सतह पर हल्की रगड़ हो।',
+          'तीसरी चीज़ किनारा है। चाँदी के सिक्कों पर बारीक धारियाँ बनी होती हैं, और यदि वे चपटी या ग़ायब हैं तो या तो सिक्का बहुत घिसा है या उसे किसी तरह छेड़ा गया है।',
+          'ये तीनों जाँचें दस सेकंड में हो जाती हैं और मिलकर उस अधिकांश निराशा से बचा देती हैं जो सिक्का घर पहुँचने के बाद होती है।',
+        ],
+        pEn: [
+          'The first thing to look at when buying in this area is not the date but the relief on the face. On the Edward VII portrait the cheek and the beard are the highest points, so wear appears there before it appears anywhere else.',
+          'The second thing is the sharpness of the lettering. If the letters of the legend are crisp at their edges, the coin has not circulated much, even if the fields carry some light rubbing.',
+          'The third is the edge. Silver pieces carry fine reeding, and if that reeding is flattened or missing then either the coin is very heavily worn or it has been interfered with in some way.',
+          'All three checks take about ten seconds together, and between them they prevent most of the disappointment that otherwise arrives with the coin in the post.',
+        ],
+      },
+      {
+        hHi: 'एक छोटा दौर, एक अच्छा शुरुआती बिंदु',
+        hEn: 'A short reign, and a good place to start',
+        pHi: [
+          'नए संग्राहकों के लिए यह शासनकाल एक असामान्य रूप से अच्छा शुरुआती बिंदु है, और इसका कारण ठीक वही है जो इसे कम चर्चित बनाता है: यह छोटा है।',
+          'नौ वर्षों का पूरा सेट बनाना संभव है, और वह संभावना बहुत महत्वपूर्ण है। जो संग्रह पूरा हो सकता है, वह संग्राहक को दिशा देता है; जो कभी पूरा नहीं हो सकता, वह देर-सबेर बिखर जाता है।',
+          'और जब वह सेट पूरा हो जाए, तो अगला क़दम अपने आप सामने खड़ा होता है — वही सेट, पर दोनों टकसालों से। इस तरह एक छोटा शासनकाल वर्षों का काम दे देता है, और हर क़दम पर पूरा होने का संतोष भी।',
+        ],
+        pEn: [
+          'For a new collector this reign is an unusually good place to begin, and the reason is precisely what makes it less talked about: it is short.',
+          'A complete set of nine years is genuinely achievable, and that possibility matters more than it sounds. A collection that can be finished gives a collector direction; one that never can eventually falls apart on its own.',
+          'And when the set is complete the next step presents itself without having to be looked for — the same set again, but from both mints. In this way a short reign supplies years of work, and the satisfaction of completion at every stage of it.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'coins-as-a-hobby-not-investment',
+    sections: [
+      {
+        hHi: 'ख़रीद और बिक्री के बीच की खाई',
+        hEn: 'The gap between what you pay and what you get',
+        pHi: [
+          'सिक्कों को निवेश मानने में सबसे पहली और सबसे बड़ी बाधा वह अंतर है जो ख़रीदने के दाम और बेचने के दाम के बीच रहता है। यह अंतर छोटा नहीं है, और यही अधिकांश निराशा की जड़ है।',
+          'जब आप किसी व्यापारी से सिक्का ख़रीदते हैं, तो आप खुदरा दाम देते हैं। जब आप वही सिक्का उसी व्यापारी को बेचते हैं, तो आपको थोक दाम मिलता है। दोनों के बीच का अंतर उसका मुनाफ़ा है, और वह होना भी चाहिए।',
+          'व्यवहार में इसका अर्थ यह है कि सिक्का ख़रीदते ही उसका "आपके लिए मूल्य" गिर जाता है। उस अंतर की भरपाई होने में वर्षों लगते हैं, और कई सिक्कों में कभी नहीं होती।',
+          'यह बात किसी भी वास्तविक निवेश-गणना का पहला पद है, और वायरल वीडियो इसका उल्लेख कभी नहीं करते।',
+        ],
+        pEn: [
+          'The first and largest obstacle to treating coins as an investment is the gap between the price you pay and the price you receive. That gap is not small, and it is the root of most of the disappointment in this area.',
+          'When you buy a coin from a dealer you pay a retail price. When you sell the same coin back to the same dealer you receive a wholesale price. The difference between the two is his margin, and it is entirely legitimate that it exists.',
+          'In practice this means that the moment you buy a coin, its value to you drops. Recovering that gap takes years, and for a great many coins it never happens at all within a normal lifetime of ownership.',
+          'That is the first line of any honest investment calculation, and it is the line the viral videos never mention.',
+        ],
+      },
+      {
+        hHi: 'तरलता: वह चीज़ जो कोई नहीं गिनता',
+        hEn: 'Liquidity: the factor nobody counts',
+        pHi: [
+          'निवेश के किसी भी साधन का एक ज़रूरी गुण यह है कि उसे ज़रूरत पड़ने पर तुरंत नक़दी में बदला जा सके। सिक्कों में यह गुण सबसे कमज़ोर है, और यह कमज़ोरी परिस्थिति के साथ बढ़ती है।',
+          'सामान्य समय में भी किसी सिक्के का सही ख़रीदार खोजने में हफ़्ते या महीने लग सकते हैं। नीलामी का चक्र अपना समय लेता है, और बीच में क़ीमत की कोई गारंटी नहीं होती।',
+          'और जिस दिन आपको सचमुच पैसे की ज़रूरत हो — यानी ठीक वही दिन जब निवेश काम आना चाहिए — उसी दिन आपको जल्दी बेचना पड़ता है, और जल्दी बेचने का अर्थ है सबसे कम दाम स्वीकार करना।',
+          'यही कारण है कि अनुभवी लोग कहते हैं कि सिक्कों में वही पैसा लगाइए जिसकी आपको निकट भविष्य में ज़रूरत न हो।',
+        ],
+        pEn: [
+          'An essential property of any investment is that it can be turned into cash quickly when the need arises. Coins are weakest on exactly this point, and the weakness grows worse in precisely the circumstances where it matters most.',
+          'Even in ordinary times, finding the right buyer for a particular coin can take weeks or months. An auction cycle runs on its own timetable, and no price is guaranteed anywhere along the way.',
+          'And on the day you genuinely need money — which is the day an investment is supposed to help — you are forced to sell quickly, and selling quickly means accepting the lowest price on offer.',
+          'This is why experienced people say to put only money you will not need in the near future into coins, and to treat everything above that line as spending rather than saving.',
+        ],
+      },
+      {
+        hHi: 'रखने की लागत और शून्य आय',
+        hEn: 'The cost of holding, and the absence of yield',
+        pHi: [
+          'एक सिक्का रखे रहने पर कुछ नहीं देता। न ब्याज, न लाभांश, न किराया। उसका पूरा प्रतिफल इस उम्मीद पर टिका है कि कोई भविष्य में उसके लिए अधिक देगा।',
+          'साथ ही रखने की अपनी लागत है, भले वह छोटी हो: सुरक्षित भंडारण, बीमा यदि संग्रह बड़ा हो, और वह जगह जो घर में घिरी रहती है। ये सब मिलकर प्रतिफल से घटते हैं।',
+          'इसकी तुलना किसी साधारण बचत साधन से कीजिए, जो हर वर्ष कुछ न कुछ जोड़ता है और जिसे किसी भी दिन भुनाया जा सकता है। इस तुलना में सिक्के निवेश के रूप में स्पष्ट रूप से पीछे रहते हैं।',
+          'यह कहना सिक्कों की निंदा नहीं है। यह केवल यह कहना है कि उन्हें उस काम के लिए मत चुनिए जिसके लिए वे बने ही नहीं हैं।',
+        ],
+        pEn: [
+          'A coin sitting in a box produces nothing. No interest, no dividend, no rent. Its entire return rests on the hope that somebody in the future will pay more for it than you did.',
+          'Meanwhile holding it has its own cost, however small: secure storage, insurance if the collection is large, and the space it occupies in the house. All of that subtracts from whatever return eventually arrives.',
+          'Compare that with an ordinary savings instrument which adds something every year and can be redeemed on any working day. Set beside it, coins fall clearly behind as a financial proposition.',
+          'Saying so is not a criticism of coins. It is only saying that they should not be chosen for a job they were never built to do.',
+        ],
+      },
+      {
+        hHi: 'सुर्ख़ियों की चयन-भ्रांति',
+        hEn: 'The survivorship bias in the headlines',
+        pHi: [
+          '"यह सिक्का करोड़ों में बिका" जैसी ख़बरें सच हो सकती हैं, और फिर भी वे बुरी तरह भ्रामक हैं। कारण यह है कि जो सिक्के औसत दाम पर बिके, उनकी ख़बर कभी नहीं बनती।',
+          'यदि आप केवल जीतने वालों को देखेंगे और हारने वालों को कभी नहीं, तो किसी भी क्षेत्र का प्रतिफल असाधारण दिखेगा। यही भ्रांति शेयर बाज़ार, कला और सिक्कों — तीनों में एक जैसी काम करती है।',
+          'ईमानदार तस्वीर देखने के लिए किसी नीलामी घर की पूरी सूची देखिए, केवल शीर्ष लॉट नहीं। वहाँ आपको सैकड़ों सिक्के मामूली दामों पर बिकते दिखेंगे, और कई अनबिके लौटते हुए।',
+          'वही पूरी सूची, न कि उसका सबसे ऊँचा एक पन्ना, इस क्षेत्र का असली प्रतिफल बताती है।',
+        ],
+        pEn: [
+          'Headlines saying "this coin sold for crores" may well be true, and they are badly misleading all the same. The reason is that coins which sold at ordinary prices never become news at any point.',
+          'If you only ever see the winners and never the losers, the returns in any field will look extraordinary. The same bias operates identically across the stock market, the art market and coins.',
+          'To see an honest picture, look at a full auction catalogue rather than only its top lots. There you will find hundreds of coins selling at modest prices, and a good number coming back unsold.',
+          'That complete list, and not its single highest page, is what describes the actual return available in this field.',
+        ],
+      },
+      {
+        hHi: 'कब सिक्के आर्थिक रूप से समझ में आते हैं',
+        hEn: 'When coins do make financial sense',
+        pHi: [
+          'यह कहना ग़लत होगा कि सिक्कों से कभी लाभ नहीं होता। होता है, पर बहुत विशेष परिस्थितियों में, और उन परिस्थितियों को स्पष्ट रूप से बताया जाना चाहिए।',
+          'पहली परिस्थिति गहरी विशेषज्ञता है। जो व्यक्ति किसी संकीर्ण क्षेत्र को वर्षों से जानता है, वह कभी-कभी ऐसा सिक्का पहचान लेता है जिसे बेचने वाला नहीं पहचान पाया। यह ज्ञान का प्रतिफल है, निवेश का नहीं।',
+          'दूसरी परिस्थिति बहुत लंबा समय है। तीस या चालीस वर्ष रखे गए अच्छे सिक्के प्रायः अच्छा प्रदर्शन करते हैं, पर यह अवधि अधिकांश लोगों की योजना से कहीं लंबी है।',
+          'तीसरी परिस्थिति सबसे ऊपरी श्रेणी है — प्रमाणित, दुर्लभ और असाधारण हालत के सिक्के। यह बाज़ार असली है, पर उसमें प्रवेश की लागत ऊँची है और उसमें ग़लती करने की गुंजाइश कम।',
+        ],
+        pEn: [
+          'It would be wrong to say coins never produce a profit. They do, but only under very particular conditions, and those conditions deserve to be stated plainly rather than left implied.',
+          'The first condition is deep expertise. Somebody who has known a narrow field for years occasionally recognises a coin the seller did not. That is a return on knowledge rather than a return on investment.',
+          'The second condition is a very long horizon. Good coins held for thirty or forty years often perform well, but that span is considerably longer than most people\'s actual planning.',
+          'The third condition is the very top of the market — certified, genuinely rare coins in exceptional condition. That market is real, but the cost of entry is high and it leaves very little room for mistakes.',
+        ],
+      },
+      {
+        hHi: 'शौक़ का अपना प्रतिफल',
+        hEn: 'The return the hobby itself pays',
+        pHi: [
+          'यदि गणित इतना प्रतिकूल है, तो लोग सिक्के क्यों इकट्ठा करते हैं? उत्तर सीधा है: क्योंकि इस काम का अपना प्रतिफल है, और वह पहले दिन से मिलना शुरू हो जाता है।',
+          'वह प्रतिफल कई रूपों में आता है। कुछ नया सीखने का संतोष, किसी पुरानी वस्तु को हाथ में लेने का अनुभव, किसी अधूरे सेट के पूरा होने की ख़ुशी, और उन लोगों का साथ जो वही रुचि रखते हैं।',
+          'इनमें से कोई भी चीज़ किसी खाते में दर्ज नहीं होती, और फिर भी हर संग्राहक जानता है कि वही उसे रोके हुए है। जो व्यक्ति वर्षों से इस शौक़ में है, वह वहाँ मुनाफ़े के कारण नहीं है।',
+          'यही कारण है कि "शौक़ पहले" कहना कोई सांत्वना नहीं बल्कि सबसे व्यावहारिक सलाह है। यह इस काम को उसी माप पर तौलता है जिस पर वह सचमुच खरा उतरता है।',
+        ],
+        pEn: [
+          'If the arithmetic runs so unfavourably, why do people collect coins at all? The answer is straightforward: the activity pays a return of its own, and it starts paying from the very first day.',
+          'That return arrives in several forms. The satisfaction of learning something, the experience of holding an old object, the pleasure of completing a set that was incomplete, and the company of people who share the same interest.',
+          'None of it appears in any account, and every collector nonetheless knows it is what keeps them there. Somebody who has been in this hobby for years is not in it because of the money.',
+          'This is why saying "hobby first" is not a consolation but the most practical advice available. It measures the activity against the standard it genuinely meets rather than one it does not.',
+        ],
+      },
+      {
+        hHi: 'दोनों को साथ रखने का व्यावहारिक तरीक़ा',
+        hEn: 'A practical way to hold both together',
+        pHi: [
+          'शौक़ और आर्थिक समझ के बीच चुनाव करने की ज़रूरत नहीं है; दोनों को साथ रखने का एक सीधा तरीक़ा है, और वह अनुशासन का है।',
+          'पहला नियम: संग्रह पर उतना ही ख़र्च कीजिए जितना आप बिना किसी वापसी की उम्मीद के ख़र्च कर सकें। यही एक वाक्य लगभग हर बड़ी निराशा रोक देता है।',
+          'दूसरा नियम: हर ख़रीद का रिकॉर्ड रखिए। आप निवेशक नहीं हैं, पर यह जानना कि आपने वास्तव में कितना ख़र्च किया, हमेशा उपयोगी है — और उत्तराधिकारियों के लिए तो और भी।',
+          'तीसरा नियम: गुणवत्ता चुनिए। यह सलाह शौक़ और अर्थ दोनों दिशाओं में एक ही ओर इशारा करती है, और यही इसे इतना मज़बूत बनाता है।',
+        ],
+        pEn: [
+          'There is no need to choose between enjoying the hobby and thinking sensibly about money; there is a straightforward way of holding both at once, and it is a matter of discipline rather than cleverness.',
+          'The first rule: spend on the collection only what you could spend without expecting any of it back. That single sentence prevents very nearly every serious disappointment in this field.',
+          'The second rule: keep a record of every purchase. You are not an investor, but knowing what you actually spent is always useful — and it is considerably more useful to whoever inherits the collection later.',
+          'The third rule: choose quality. That advice points the same direction whether you are thinking as a collector or as somebody watching their money, which is exactly what makes it so dependable.',
+        ],
+      },
+      {
+        hHi: 'जब कोई कहे कि यह "सुरक्षित निवेश" है',
+        hEn: 'When somebody calls it a "safe investment"',
+        pHi: [
+          'बिक्री की बातचीत में यह वाक्य बार-बार आता है, और उसे पहचान लेना उपयोगी है। "सुरक्षित निवेश" कोई विवरण नहीं है; यह एक भावना है जिसे बेचा जा रहा है।',
+          'ऐसे किसी भी दावे पर एक ही प्रश्न पूछिए: इसी सिक्के का पिछला दर्ज बिक्री-मूल्य क्या था, और कब? यदि उत्तर में कोई वास्तविक आँकड़ा नहीं आता, तो दावा भी वास्तविक नहीं है।',
+          'दूसरा प्रश्न और भी सरल है: यदि यह इतना सुरक्षित है, तो आप इसे बेच क्यों रहे हैं? यह प्रश्न असभ्य नहीं है, और एक ईमानदार विक्रेता के पास इसका सीधा उत्तर होता है।',
+        ],
+        pEn: [
+          'This phrase turns up repeatedly in sales conversations, and it is worth recognising for what it is. "Safe investment" is not a description of anything; it is a feeling being offered for sale.',
+          'Ask a single question of any such claim: what did this same coin last actually sell for, and when? If no real figure comes back in reply, then the claim behind it is not real either.',
+          'The second question is simpler still: if it is so safe, why are you selling it? That question is not rude, and an honest seller has a straightforward answer ready for it.',
+        ],
+      },
+      {
+        hHi: 'सही क्रम में रखने का लाभ',
+        hEn: 'The advantage of keeping the order right',
+        pHi: [
+          'अंत में यह ध्यान देने योग्य है कि "शौक़ पहले" रखने वाले लोग प्रायः आर्थिक रूप से भी बेहतर करते हैं, और इसका कारण मनोवैज्ञानिक है।',
+          'जो व्यक्ति मुनाफ़े के लिए ख़रीदता है, वह जल्दी करता है, अफ़वाहों पर चलता है, और बाज़ार गिरने पर घबराकर बेच देता है। जो व्यक्ति रुचि के लिए ख़रीदता है, वह धीरे चलता है, पढ़ता है, और गिरावट में ख़रीदता है।',
+          'दूसरा व्यवहार हर बाज़ार में बेहतर परिणाम देता है, और सिक्कों में तो और भी अधिक, क्योंकि यहाँ ज्ञान का सीधा आर्थिक मूल्य है।',
+          'इसलिए यह सलाह अपने आप में विरोधाभासी लगती है पर है नहीं: सिक्कों से पैसा बनाने की सबसे अच्छी संभावना उसी के पास है जो पैसे के लिए नहीं आया।',
+        ],
+        pEn: [
+          'One last thing is worth noticing: people who keep the hobby first often do better financially as well, and the reason for that is psychological rather than economic.',
+          'Somebody buying for profit hurries, follows rumours, and sells in a panic when the market falls. Somebody buying out of interest moves slowly, reads, and buys during exactly those falls.',
+          'The second pattern of behaviour produces better outcomes in every market, and in coins it does so even more strongly, because here knowledge carries a direct monetary value of its own.',
+          'So the advice sounds self-contradictory and it is not: the best chance of making money from coins belongs to the person who did not come for the money.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'organising-and-displaying-a-collection',
+    sections: [
+      {
+        hHi: 'क्रम चुनना: चार सामान्य विकल्प',
+        hEn: 'Choosing an order: four common options',
+        pHi: [
+          'किसी संग्रह को व्यवस्थित करने का पहला निर्णय यह है कि सिक्के किस क्रम में रखे जाएँ। यहाँ कोई एक सही उत्तर नहीं है, पर चार विकल्प इतने आम हैं कि उन्हीं से शुरुआत करना समझदारी है।',
+          'पहला कालक्रम है — सबसे पुराने से सबसे नए तक। यह सबसे स्वाभाविक क्रम है और देखने वाले को इतिहास की रेखा तुरंत दिखा देता है।',
+          'दूसरा मूल्यवर्ग का है — सारे रुपये साथ, सारे आने साथ। यह क्रम उन लोगों के लिए अच्छा है जो किसी शृंखला को पूरा कर रहे हैं, क्योंकि इसमें ख़ाली जगहें साफ़ दिखती हैं।',
+          'तीसरा भौगोलिक है और चौथा विषय-आधारित। पहला रियासती सिक्कों के लिए स्वाभाविक है; दूसरा तब काम आता है जब संग्रह किसी कहानी के आसपास बना हो।',
+        ],
+        pEn: [
+          'The first decision in organising a collection is what order the coins should sit in. There is no single correct answer here, but four options are common enough that starting from one of them is sensible.',
+          'The first is chronological — oldest to newest. It is the most natural arrangement and it shows a viewer the line of history immediately, without anything needing to be explained to them.',
+          'The second is by denomination — all the rupees together, all the annas together. This suits somebody completing a series, because the empty spaces are conspicuous exactly where the work still remains.',
+          'The third is geographic and the fourth thematic. The first of those is natural for princely state coinage; the second works when the collection has been built around a story rather than a series.',
+        ],
+      },
+      {
+        hHi: 'इन्वेंट्री: वह सूची जो संग्रह से भी ज़रूरी है',
+        hEn: 'The inventory: a list that matters as much as the coins',
+        pHi: [
+          'व्यवस्था केवल ट्रे में नहीं, काग़ज़ पर भी होनी चाहिए। एक साधारण सूची जिसमें हर सिक्के का क्रमांक, विवरण, ख़रीद की तिथि और दाम हो, पूरे संग्रह की रीढ़ बन जाती है।',
+          'इस सूची के तीन काम हैं। पहला, आपको पता रहता है कि आपके पास क्या है — जो संग्रह के बड़े होते ही स्मृति के बस से बाहर चला जाता है।',
+          'दूसरा, यह बीमा और उत्तराधिकार के लिए ज़रूरी दस्तावेज़ है। तीसरा, यह उद्गम बन जाती है: दस वर्ष बाद यही सूची बताएगी कि सिक्का कहाँ से आया।',
+          'सूची काग़ज़ पर हो या स्प्रेडशीट में, इससे अंतर नहीं पड़ता। जो अंतर पड़ता है वह यह है कि हर नया सिक्का उसी दिन दर्ज हो, बाद में नहीं।',
+        ],
+        pEn: [
+          'Organisation has to exist on paper as well as in the tray. A simple list carrying each coin\'s number, description, date of purchase and price becomes the spine of the whole collection.',
+          'That list does three jobs. The first is that you know what you actually own — something which slips out of memory\'s reach as soon as a collection passes a certain size.',
+          'The second is that it is the document required for insurance and for inheritance. The third is that it becomes provenance: ten years from now this list is what will say where a coin came from.',
+          'Whether it lives in a notebook or a spreadsheet makes no difference at all. What makes a difference is that every new coin is entered the same day it arrives rather than later.',
+        ],
+      },
+      {
+        hHi: 'लेबल कैसे लिखें',
+        hEn: 'How to write the labels',
+        pHi: [
+          'हर सिक्के के साथ एक छोटा लेबल होना चाहिए, और उसमें क्या लिखा जाए यह उतना ही महत्वपूर्ण है जितना कि वह हो।',
+          'न्यूनतम चार चीज़ें: शासक या काल, मूल्यवर्ग, वर्ष, और टकसाल। इतना लिख देने पर कोई भी देखने वाला — आप सहित, दस वर्ष बाद — सिक्के को बिना किसी और सहायता के समझ सकता है।',
+          'एक पाँचवीं पंक्ति उपयोगी है और अक्सर छोड़ दी जाती है: यह सिक्का आपके पास कैसे आया। "दादी के संदूक से, 2019" जैसी पंक्ति किसी भी सूची-संख्या से अधिक क़ीमती है।',
+          'लेबल पेंसिल या तटस्थ स्याही से लिखिए, और उसे सिक्के के साथ रखिए, उस पर चिपकाइए नहीं। कोई भी चिपकने वाली चीज़ धातु के पास नहीं जानी चाहिए।',
+        ],
+        pEn: [
+          'Every coin should have a small label with it, and what goes on that label matters as much as the fact of having one at all.',
+          'Four things at minimum: the ruler or period, the denomination, the year, and the mint. With those written down, any viewer — including you, ten years from now — can understand the coin without further help.',
+          'A fifth line is useful and usually omitted: how the coin came to you. A line reading "from grandmother\'s trunk, 2019" is worth more than any catalogue number that could be put in its place.',
+          'Write labels in pencil or neutral ink, and keep them beside the coin rather than stuck to it. Nothing adhesive should ever come near the metal, whatever the packaging claims about being safe.',
+        ],
+      },
+      {
+        hHi: 'काम की ट्रे और प्रदर्शन का फ़्रेम — दो अलग चीज़ें',
+        hEn: 'The working tray and the display frame are two different things',
+        pHi: [
+          'यह भेद बहुत उपयोगी है और अक्सर नहीं किया जाता। काम की ट्रे वह है जिसे आप बार-बार खोलते हैं, जिसमें सिक्के आते-जाते हैं, और जो पूर्ण नहीं दिखनी चाहिए।',
+          'प्रदर्शन का फ़्रेम इसका उलट है: वह स्थिर रहता है, कम खुलता है, और उसमें केवल वही सिक्के जाते हैं जिनकी जगह तय हो चुकी है।',
+          'दोनों को अलग रखने का व्यावहारिक लाभ यह है कि प्रदर्शन बार-बार छेड़ा नहीं जाता, और छेड़छाड़ ही अधिकांश नुक़सान का कारण है।',
+          'दूसरा लाभ मनोवैज्ञानिक है। जब काम की ट्रे अधूरी दिखती है, तो वह अगले क़दम की याद दिलाती है; और जब फ़्रेम पूरा दिखता है, तो वह किए हुए काम का संतोष देता है।',
+        ],
+        pEn: [
+          'This distinction is genuinely useful and is often not made. The working tray is the one you open repeatedly, through which coins pass in and out, and which is not supposed to look finished.',
+          'The display frame is its opposite: it stays still, it is opened rarely, and only coins whose place has been settled go into it in the first place.',
+          'The practical benefit of separating them is that the display is not disturbed constantly, and handling is the cause of most of the damage that collections suffer.',
+          'The second benefit is psychological. An incomplete working tray is a reminder of the next step; a complete frame is the satisfaction of the work already done. Keeping both is better than having only one.',
+        ],
+      },
+      {
+        hHi: 'प्रदर्शन में रोशनी का ख़तरा',
+        hEn: 'The danger of light in a display',
+        pHi: [
+          'दीवार पर लगा प्रदर्शन सुंदर लगता है, पर उसके साथ एक जोखिम आता है जिसे लोग प्रायः नहीं सोचते: लगातार रोशनी।',
+          'सीधी धूप सबसे बुरी है। वह न केवल लेबल का काग़ज़ पीला करती है, बल्कि फ़्रेम के भीतर तापमान बढ़ाकर नमी का चक्र बनाती है, और यही चक्र धातु पर असर डालता है।',
+          'तेज़ कृत्रिम रोशनी भी, यदि वह बहुत पास हो, गर्मी पैदा करती है। इसलिए प्रदर्शन के लिए वह दीवार चुनिए जिस पर सीधी धूप न पड़े, और लैंप को दूर रखिए।',
+          'एक सरल समाधान यह भी है कि प्रदर्शन स्थायी न रखा जाए। कुछ महीनों बाद सिक्के बदल दीजिए — इससे संग्रह के अधिक हिस्से दिखते हैं और कोई भी सिक्का लंबे समय तक रोशनी में नहीं रहता।',
+        ],
+        pEn: [
+          'A display mounted on a wall looks good, and it brings with it a risk people rarely think about: continuous exposure to light.',
+          'Direct sunlight is the worst of it. It not only yellows the paper of the labels but raises the temperature inside the frame, setting up a humidity cycle, and it is that cycle which acts on the metal.',
+          'Strong artificial light does the same if it sits too close, because it produces heat. So choose a wall the sun does not reach directly, and keep lamps at a distance from the frame.',
+          'A simple solution is not to make the display permanent at all. Change the coins every few months — more of the collection gets seen, and no single coin sits under light for very long.',
+        ],
+      },
+      {
+        hHi: 'प्रदर्शन को घुमाते रहना',
+        hEn: 'Rotating the display',
+        pHi: [
+          'यह विचार छोटा लगता है पर संग्रह के साथ आपके संबंध को बदल देता है। एक तय प्रदर्शन कुछ हफ़्तों बाद दीवार का हिस्सा बन जाता है और दिखना बंद हो जाता है।',
+          'यदि आप हर कुछ महीनों में उसे बदलें — किसी नए विषय पर, या किसी नए काल पर — तो हर बार वह फिर से दिखने लगता है, और उसे तैयार करने में आप अपने ही संग्रह को दोबारा देखते हैं।',
+          'यह पुनरावलोकन अपने आप में उपयोगी है। लगभग हर बार कुछ ऐसा सामने आता है जो भूल चुका था, और कई बार कोई ऐसी कमी दिखती है जिसे भरना अगला लक्ष्य बन जाता है।',
+          'व्यावहारिक तरीक़ा यह है कि हर बदलाव के साथ एक छोटा शीर्षक लिख दीजिए — "1857 से पहले", "चार टकसालें", "चाँदी की विदाई"। यह प्रदर्शन को संग्रह से बदलकर एक छोटी प्रदर्शनी बना देता है।',
+        ],
+        pEn: [
+          'The idea sounds small and it changes your relationship with the collection. A fixed display becomes part of the wall within a few weeks and stops being seen at all.',
+          'If you change it every few months — around a new theme, or a new period — it becomes visible again each time, and preparing it makes you look through your own collection properly once more.',
+          'That review is valuable in itself. Almost every time, something surfaces that had been forgotten, and often a gap becomes apparent which then turns into the next objective.',
+          'The practical method is to write a short title with each change — "before 1857", "four mints", "the end of silver". That turns a display into a small exhibition rather than a shelf of objects.',
+        ],
+      },
+      {
+        hHi: 'किसी और को संग्रह दिखाना',
+        hEn: 'Showing the collection to somebody else',
+        pHi: [
+          'संग्रह दिखाना इस शौक़ का सबसे सुखद हिस्सा है, और थोड़ी तैयारी से वह कहीं बेहतर हो जाता है।',
+          'सबसे बड़ी ग़लती सब कुछ एक साथ दिखा देना है। पचास सिक्के देखने के बाद कोई भी थक जाता है और कुछ याद नहीं रहता। पाँच या छह सिक्के, जिनके साथ कहानी हो, कहीं अधिक असर छोड़ते हैं।',
+          'दूसरी बात हाथ में देने की है। लोग छूना चाहते हैं, और मना करना रूखा लगता है। इसका सरल समाधान यह है कि कुछ आम, सस्ते सिक्के अलग रखे जाएँ जो छूने के लिए हों — और बाक़ी धारकों में रहें।',
+          'तीसरी बात प्रश्नों की है। "यह किस चीज़ का बना है" या "इससे क्या ख़रीदा जा सकता था" जैसे सवाल सबसे अच्छे हैं, और उनके उत्तर तैयार रखने से पूरी बातचीत जीवंत हो जाती है।',
+        ],
+        pEn: [
+          'Showing a collection is the most enjoyable part of this hobby, and a little preparation makes it considerably better than it would otherwise be.',
+          'The largest mistake is showing everything at once. After fifty coins anybody is tired and nothing is remembered. Five or six coins that come with a story leave a far stronger impression.',
+          'The second point concerns handling. People want to touch, and refusing feels ungracious. The simple solution is to keep a few common, inexpensive coins aside specifically for handling, and leave the rest in their holders.',
+          'The third point is questions. "What is it made of" and "what would this have bought" are the best ones, and having answers ready for them turns the whole conversation into something alive.',
+        ],
+      },
+      {
+        hHi: 'संग्रह को आगे सौंपना',
+        hEn: 'Passing the collection on',
+        pHi: [
+          'यह विषय अप्रिय लग सकता है पर यह व्यवस्था का ही एक हिस्सा है, और इसे टालने से केवल दूसरों के लिए कठिनाई बढ़ती है।',
+          'सबसे उपयोगी काम वही सूची है जिसकी चर्चा ऊपर हुई। जो व्यक्ति सिक्कों के बारे में कुछ नहीं जानता, वह उस सूची के सहारे यह समझ सकता है कि उसके हाथ में क्या है और उसका मोटा मूल्य क्या है।',
+          'दूसरा काम एक छोटा नोट है जिसमें यह लिखा हो कि किन दो-तीन लोगों या संस्थाओं से सलाह ली जा सकती है। बिना इसके, अच्छे संग्रह अक्सर कबाड़ के भाव चले जाते हैं।',
+          'और तीसरा, यदि परिवार में किसी की रुचि हो तो उसे अभी शामिल कीजिए। जो संग्रह किसी के साथ देखा गया है, वह आगे भी सँभाला जाता है; जो अकेले बना, वह प्रायः बिखर जाता है।',
+        ],
+        pEn: [
+          'This subject can feel unwelcome and it is genuinely part of organising a collection, and postponing it only makes matters harder for somebody else later on.',
+          'The most useful thing is the same list discussed above. Somebody who knows nothing about coins can use it to understand what they are holding and roughly what it is worth.',
+          'The second is a short note naming two or three people or institutions who could be asked for advice. Without that, good collections regularly get sold for scrap prices by families with no way to know better.',
+          'And third, if anybody in the family is interested, involve them now. A collection that has been looked at with somebody tends to be looked after afterwards; one built alone usually scatters.',
+        ],
+      },
+      {
+        hHi: 'यह संग्रह आपका है',
+        hEn: 'The collection is yours',
+        pHi: [
+          'ऊपर लिखी हर बात सुझाव है, नियम नहीं। संग्रह की व्यवस्था का अंतिम माप यह है कि वह आपको समझ में आती है या नहीं, न कि यह कि वह किसी पुस्तक से मेल खाती है या नहीं।',
+          'कुछ लोग कड़ाई से कालक्रम में रखते हैं और कुछ अपने पसंदीदा सिक्कों को हमेशा सामने रखते हैं। दोनों सही हैं, क्योंकि दोनों उस व्यक्ति के लिए काम करते हैं जिसका संग्रह है।',
+          'एकमात्र चीज़ जिस पर समझौता नहीं करना चाहिए वह सुरक्षा है — सही धारक, सूखी जगह, और कम छेड़छाड़। इसके बाद बाक़ी सब स्वाद का मामला है।',
+          'और यही इस शौक़ की सबसे अच्छी बात है: एक ही सामग्री से दो लोग दो पूरी तरह अलग संग्रह बना सकते हैं, और दोनों सही होंगे।',
+        ],
+        pEn: [
+          'Everything above is a suggestion rather than a rule. The final measure of how a collection is organised is whether it makes sense to you, not whether it matches an arrangement described in a book.',
+          'Some people keep strictly to chronology and others keep their favourite coins at the front regardless of period. Both are right, because both work for the person whose collection it is.',
+          'The one thing not to compromise on is protection — proper holders, a dry place, and as little handling as possible. Past that point, everything else is a matter of taste.',
+          'And that is the best thing about this hobby: two people can build two entirely different collections out of the same material, and both of them will be correct.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
