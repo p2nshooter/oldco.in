@@ -5683,6 +5683,778 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+  {
+    slug: 'online-coin-scams',
+    sections: [
+      {
+        hHi: 'चार अलग तरह की ठगी',
+        hEn: 'Four different kinds of fraud',
+        pHi: [
+          'इन्हें अलग-अलग पहचानना ज़रूरी है, क्योंकि बचाव का तरीक़ा हर एक में अलग है।',
+          'पहली — नक़ली ख़रीदार। वह आपका सिक्का लाखों में ख़रीदने का वादा करता है, फिर रजिस्ट्रेशन या कूरियर के नाम पर शुल्क माँगता है। भुगतान कभी नहीं आता।',
+          'दूसरी — नक़ली विक्रेता। वह असली सिक्के की तस्वीर दिखाकर आधुनिक टोकन भेजता है, या कुछ भी नहीं भेजता।',
+          'तीसरी — अधिक-भुगतान का जाल। ख़रीदार “ग़लती से” ज़्यादा पैसे भेजता है और अंतर वापस माँगता है; बाद में उसका मूल भुगतान रद्द हो जाता है और आपका भेजा हुआ पैसा चला जाता है।',
+          'चौथी — नक़ली एस्क्रो। वह एक ऐसी “सुरक्षित भुगतान सेवा” का लिंक भेजता है जो असल में उसी की बनाई वेबसाइट है।',
+        ],
+        pEn: [
+          'Recognising these separately matters, because the defence against each is different.',
+          'First, the fake buyer. He promises to buy your coin for lakhs, then asks for a fee for registration or courier. The payment never arrives.',
+          'Second, the fake seller. He shows a photograph of a genuine coin and sends a modern token, or sends nothing at all.',
+          'Third, the overpayment trap. A buyer “accidentally” sends too much and asks for the difference back; his original payment is later reversed and the money you sent is gone.',
+          'Fourth, the fake escrow. He sends a link to a “secure payment service” that is in fact a website he built himself.',
+        ],
+      },
+      {
+        hHi: 'विज्ञापन की भाषा से पहचान',
+        hEn: 'Recognition from the language of the advertisement',
+        pHi: [
+          'अधिकांश ठगी तस्वीर देखने से पहले ही भाषा से पकड़ी जा सकती है, और यह सबसे सस्ता बचाव है।',
+          'असाधारण दावा बिना किसी प्रमाण के — “यह सिक्का करोड़ों में बिकता है” — और साथ में एक फ़ोन नंबर। यही सबसे आम ढाँचा है।',
+          'तात्कालिकता — “केवल आज”, “सीमित समय”, “जल्दी संपर्क करें”। जल्दबाज़ी सोचने का समय छीनने के लिए बनाई जाती है।',
+          'और सबसे स्पष्ट संकेत: मोल-भाव का न होना। कोई सच्चा ख़रीदार बिना दाम पर बात किए भारी रक़म पर राज़ी नहीं होता। जो तुरंत हाँ कहे, वह ख़रीदने नहीं आया।',
+        ],
+        pEn: [
+          'Most frauds can be caught from the language before you even look at the photograph, and that is the cheapest defence there is.',
+          'An extraordinary claim with no evidence — “this coin sells for crores” — accompanied by a phone number. That is the commonest structure.',
+          'Urgency — “today only”, “limited time”, “contact quickly”. Haste is manufactured in order to remove your time to think.',
+          'And the clearest signal of all: the absence of negotiation. No genuine buyer agrees to a large sum without discussing the price. Anybody who says yes immediately did not come to buy.',
+        ],
+      },
+      {
+        hHi: 'विक्रेता की जाँच कैसे करें',
+        hEn: 'How to check a seller',
+        pHi: [
+          'ऑनलाइन ख़रीदते समय कुछ जाँचें कुछ ही मिनटों में हो जाती हैं और अधिकांश जोखिम हटा देती हैं।',
+          'खाता कब बना? नया खाता जिस पर तुरंत महँगी वस्तुएँ हों, संदेह का कारण है। पुराना खाता जिसमें लगातार गतिविधि हो, बेहतर संकेत है।',
+          'पिछली प्रतिक्रियाएँ पढ़िए, केवल रेटिंग नहीं। और देखिए कि क्या वे उसी श्रेणी की वस्तुओं की हैं — किसी ने कपड़े बेचकर अच्छी रेटिंग बनाई हो, तो वह सिक्कों के बारे में कुछ नहीं बताती।',
+          'तस्वीर की उलटी खोज कीजिए। यदि वही तस्वीर किसी नीलामी घर की पुरानी सूची में मिले, तो विक्रेता किसी और की वस्तु की तस्वीर इस्तेमाल कर रहा है।',
+        ],
+        pEn: [
+          'When buying online a few checks take only minutes and remove most of the risk.',
+          'When was the account created? A new account with expensive items on it immediately is a reason for suspicion. An older account with continuous activity is a better sign.',
+          'Read past feedback rather than only the rating. And check whether it relates to the same category — somebody who built a good rating selling clothes tells you nothing about coins.',
+          'Do a reverse image search. If the same photograph appears in an old auction house listing, the seller is using somebody else’s picture.',
+        ],
+      },
+      {
+        hHi: 'भुगतान: सबसे ज़रूरी हिस्सा',
+        hEn: 'Payment: the most important part',
+        pHi: [
+          'लगभग हर ऑनलाइन ठगी भुगतान के तरीक़े पर टिकी होती है, और यहीं सबसे मज़बूत बचाव है।',
+          'ऐसे माध्यम का उपयोग कीजिए जिसका रिकॉर्ड रहे और जिसमें विवाद की व्यवस्था हो। सीधे किसी व्यक्तिगत खाते में पैसे भेजना सबसे कम सुरक्षित है।',
+          'और वह नियम जो कभी नहीं टूटता: सिक्का बेचते समय आपसे कोई शुल्क नहीं माँगा जाता। रजिस्ट्रेशन, वेरिफ़िकेशन, जीएसटी, कूरियर, बीमा, “क्लियरेंस” — इनमें से कोई भी माँग ठगी है।',
+          'यदि कोई “सुरक्षित भुगतान सेवा” का लिंक भेजे, तो उस लिंक पर मत जाइए। उस सेवा का नाम अलग से खोजिए और उसकी अपनी वेबसाइट से पहुँचिए।',
+        ],
+        pEn: [
+          'Almost every online fraud rests on the method of payment, and that is where the strongest defence lies.',
+          'Use a channel that leaves a record and has a dispute process. Sending money directly to a personal account is the least secure option available.',
+          'And the rule that never breaks: nobody asks you for a fee in order to buy your coin. Registration, verification, GST, courier, insurance, “clearance” — every one of those requests is fraud.',
+          'If somebody sends a link to a “secure payment service”, do not open the link. Search for the name of the service separately and reach it through its own website.',
+        ],
+      },
+      {
+        hHi: 'भेजते समय',
+        hEn: 'When dispatching',
+        pHi: [
+          'बेचने वाले के लिए सबसे बड़ा जोखिम यही चरण है, और तीन आदतें उसे लगभग समाप्त कर देती हैं।',
+          'पैकिंग की तस्वीर और वीडियो बनाइए — सिक्का, फिर लपेटना, फिर सील, फिर पते वाला लेबल, सब एक ही वीडियो में। यह विवाद में आपका सबसे मज़बूत सबूत है।',
+          'ट्रैकिंग वाली कूरियर और बीमा का उपयोग कीजिए, चाहे वस्तु छोटी हो। बीमा का ख़र्च मामूली है और वह पूरे सौदे को सुरक्षित बनाता है।',
+          'और भुगतान पूरी तरह मिलने के बाद ही भेजिए। “मैंने भेज दिया है, स्क्रीनशॉट देखिए” किसी भुगतान का प्रमाण नहीं — अपने खाते में देखिए।',
+        ],
+        pEn: [
+          'For a seller this stage carries the greatest risk, and three habits nearly eliminate it.',
+          'Photograph and film the packing — the coin, then the wrapping, then the seal, then the addressed label, all in one video. That is your strongest evidence in a dispute.',
+          'Use a tracked courier with insurance, however small the item. The cost of insurance is trivial and it secures the whole transaction.',
+          'And dispatch only after the payment has fully arrived. “I have sent it, here is a screenshot” is not proof of a payment — check your own account.',
+        ],
+      },
+      {
+        hHi: 'ठगी हो जाने पर',
+        hEn: 'If you have been defrauded',
+        pHi: [
+          'पहला क़दम — भुगतान रोकने की कोशिश। यदि कुछ ही समय हुआ हो, तो बैंक या भुगतान सेवा से तुरंत संपर्क करने पर कभी-कभी लेन-देन रुक जाता है।',
+          'दूसरा — सारे सबूत सहेजिए। बातचीत के स्क्रीनशॉट, विज्ञापन, भुगतान का विवरण, फ़ोन नंबर। बाद में ये सब हटा दिए जाते हैं।',
+          'तीसरा — शिकायत दर्ज कीजिए। भारत में साइबर अपराध की शिकायत के लिए राष्ट्रीय पोर्टल और हेल्पलाइन मौजूद है, और जल्दी दर्ज की गई शिकायत में वसूली की संभावना अधिक रहती है।',
+          'चौथा — जिस मंच पर यह हुआ, वहाँ भी रिपोर्ट कीजिए। और संग्राहक-समूहों में बता दीजिए; वही सूचना अगले व्यक्ति को बचा लेती है।',
+        ],
+        pEn: [
+          'First — try to stop the payment. If only a short time has passed, contacting your bank or payment service immediately sometimes halts the transaction.',
+          'Second — preserve all evidence. Screenshots of the conversation, the advertisement, the payment details, the phone number. All of these get deleted later.',
+          'Third — file a complaint. India has a national cybercrime reporting portal and helpline, and a complaint filed quickly has a better chance of recovery.',
+          'Fourth — report it on the platform where it happened. And tell the collector groups; that information is what saves the next person.',
+        ],
+      },
+      {
+        hHi: 'सुरक्षित ऑनलाइन ख़रीद-बिक्री संभव है',
+        hEn: 'Safe online buying and selling is possible',
+        pHi: [
+          'यह लेख डराने के लिए नहीं है। ऑनलाइन बाज़ार असली अवसर देता है, ख़ासकर उन लोगों के लिए जिनके शहर में कोई डीलर या प्रदर्शनी नहीं।',
+          'अधिकांश विक्रेता ईमानदार हैं, और अधिकांश सौदे बिना किसी समस्या के पूरे होते हैं। समस्या कुछ पहचाने जा सकने वाले पैटर्न में केंद्रित है।',
+          'सबसे सुरक्षित रास्ता वही है जो ऑफ़लाइन भी है: उससे ख़रीदिए जिसकी साख आपसे बड़ी है। ऑनलाइन इसका अर्थ है स्थापित डीलरों की अपनी वेबसाइटें और मान्यता प्राप्त नीलामी मंच।',
+          'और संग्राहक-समूहों में सक्रिय रहिए। वहाँ लोग एक-दूसरे को जानते हैं, और वही जान-पहचान किसी भी तकनीकी जाँच से बड़ी सुरक्षा है।',
+        ],
+        pEn: [
+          'This article is not written to frighten anybody. The online market offers real opportunity, particularly to people whose city has no dealer and no fair.',
+          'Most sellers are honest, and most transactions complete without incident. The trouble is concentrated in a few recognisable patterns.',
+          'The safest route online is the same as offline: buy from somebody whose reputation is larger than yours. Online that means the websites of established dealers and recognised auction platforms.',
+          'And stay active in collector groups. People there know one another, and that acquaintance is a greater protection than any technical check.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'चार पैटर्न याद रखिए: नक़ली ख़रीदार, नक़ली विक्रेता, अधिक-भुगतान का जाल, और नक़ली एस्क्रो। तीनों में से किसी में भी पहला क़दम आपसे पैसा माँगना होता है।',
+          'भुगतान ऐसे माध्यम से जिसका रिकॉर्ड रहे, भेजते समय पैकिंग का वीडियो, और वह नियम जो कभी नहीं बदलता — पैसा ख़रीदार से विक्रेता की ओर बहता है।',
+        ],
+        pEn: [
+          'Remember four patterns: the fake buyer, the fake seller, the overpayment trap, and the fake escrow. In every one of them the first move is to ask you for money.',
+          'Pay through a channel that leaves a record, film the packing when you dispatch, and hold to the rule that never changes — money flows from the buyer to the seller.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'princely-state-coins',
+    sections: [
+      {
+        hHi: 'विविधता का कारण',
+        hEn: 'The reason for the variety',
+        pHi: [
+          'ब्रिटिश भारत का नक़्शा दो रंगों का था। एक हिस्सा सीधे ब्रिटिश प्रशासन के अधीन, और दूसरा — लगभग दो-पाँचवाँ भूभाग — रियासतों का, जिनके अपने शासक थे।',
+          'ये रियासतें ब्रिटिश सर्वोच्चता स्वीकार करती थीं, पर आंतरिक मामलों में स्वायत्त थीं। और सिक्का ढालना आंतरिक मामला माना जाता था।',
+          'हर रियासत के अधिकार अलग थे, संधि के अनुसार। कुछ पूरी मुद्रा चला सकती थीं, कुछ केवल ताँबे के छोटे सिक्के, और कुछ को केवल नाममात्र का अधिकार था।',
+          'यही असमानता विविधता का असली कारण है। यह अराजकता नहीं थी बल्कि सैकड़ों अलग-अलग संधियों का परिणाम, और हर सिक्का उस संधि का दस्तावेज़ है।',
+        ],
+        pEn: [
+          'The map of British India was two colours. One part under direct British administration, and the other — roughly two-fifths of the territory — the princely states, with rulers of their own.',
+          'These states accepted British paramountcy but remained autonomous in internal matters. And striking coins was treated as an internal matter.',
+          'The rights of each state differed according to its treaty. Some could run a full currency, some only small copper, and some held only a nominal right.',
+          'That unevenness is the real reason for the variety. It was not chaos but the outcome of hundreds of separate treaties, and every coin documents one of them.',
+        ],
+      },
+      {
+        hHi: 'हैदराबाद: सबसे लंबी कहानी',
+        hEn: 'Hyderabad: the longest story',
+        pHi: [
+          'रियासती मुद्राओं में हैदराबाद अकेला ऐसा है जो स्वतंत्रता के बाद भी कुछ समय चलता रहा, और यह उसे विशेष बनाता है।',
+          'निज़ाम की मुद्रा — हाली सिक्का — का अपना पूरा तंत्र था: सोने का अशरफ़ी, चाँदी का रुपया, और छोटे मूल्यवर्ग, सब अपनी टकसाल में ढले।',
+          'सबसे प्रसिद्ध डिज़ाइन वह है जिस पर चारमीनार बना है, और वह आज भी संग्राहकों में सबसे लोकप्रिय रियासती सिक्का है।',
+          '1948 के बाद हैदराबाद भारत में शामिल हुआ, पर उसकी मुद्रा तुरंत नहीं हटी — कुछ समय दोनों साथ चलीं, और वह संक्रमण-काल संग्राहकों के लिए बेहद दिलचस्प है।',
+        ],
+        pEn: [
+          'Among princely currencies Hyderabad is the only one that continued for a period after independence, and that makes it special.',
+          'The Nizam’s currency — the Hali Sicca — had a complete system of its own: a gold ashrafi, a silver rupee, and smaller denominations, all struck at its own mint.',
+          'The best-known design is the one bearing the Charminar, and it remains the most popular princely coin among collectors today.',
+          'Hyderabad joined India after 1948, but its currency did not disappear at once — both ran together for a period, and that transition is of considerable interest to collectors.',
+        ],
+      },
+      {
+        hHi: 'सिक्का एक राजनीतिक दस्तावेज़ है',
+        hEn: 'A coin as a political document',
+        pHi: [
+          'रियासती सिक्कों की सबसे दिलचस्प बात यह है कि वे शक्ति-संतुलन को सीधे दिखाते हैं, और इसे पढ़ना सीखा जा सकता है।',
+          'कुछ रियासतों के सिक्कों पर केवल स्थानीय शासक का नाम है — यह अधिक स्वायत्तता का संकेत। कुछ पर मुग़ल बादशाह का नाम बना रहा, दिल्ली की सत्ता समाप्त होने के बाद भी।',
+          'और कुछ पर ब्रिटिश सम्राट का नाम स्थानीय शासक के साथ आया — बीकानेर जैसे कुछ मामलों में दोनों नाम एक ही सिक्के पर मिलते हैं।',
+          'यह क्रम अपने आप में एक कहानी है। सिक्के पर किसका नाम है और किस क्रम में — यह उस संधि की शर्तों को उतनी ही सटीकता से बताता है जितना कोई दस्तावेज़।',
+        ],
+        pEn: [
+          'The most interesting thing about princely coinage is that it displays the balance of power directly, and reading it is a skill that can be learned.',
+          'Some states’ coins carry only the local ruler’s name — a sign of greater autonomy. Some kept the Mughal emperor’s name long after power at Delhi had ended.',
+          'And some carried the British sovereign’s name alongside the local ruler’s — in cases such as Bikaner both names appear on the same coin.',
+          'That ordering is itself a story. Whose name appears, and in what sequence, states the terms of a treaty as precisely as any document could.',
+        ],
+      },
+      {
+        hHi: 'एकीकरण के बाद',
+        hEn: 'After integration',
+        pHi: [
+          '1947 से 1950 के बीच रियासतें भारत में मिलीं, और उनकी मुद्राएँ भी उसी प्रक्रिया में समाप्त हुईं।',
+          'यह एक ही दिन में नहीं हुआ। कुछ रियासती सिक्के 1950 के आसपास तक चलन में रहे, और उन्हें धीरे-धीरे वापस लिया गया।',
+          'इसका एक व्यावहारिक परिणाम यह है कि ये सिक्के आज भी बड़ी संख्या में मिलते हैं — वे रातोंरात नष्ट नहीं किए गए बल्कि लोगों के पास रह गए।',
+          'और एक बौद्धिक परिणाम भी है: यह क्षेत्र अब बंद है। नई किस्में कभी नहीं जुड़ेंगी, और यही उसे एक पूर्ण, सीमित अध्ययन-क्षेत्र बनाता है।',
+        ],
+        pEn: [
+          'Between 1947 and 1950 the princely states joined India, and their currencies ended in the same process.',
+          'It did not happen in a single day. Some princely coins remained in circulation until around 1950 and were withdrawn gradually.',
+          'One practical consequence is that these coins are still found in quantity — they were not destroyed overnight but stayed with people.',
+          'And there is an intellectual consequence too: the field is now closed. No new types will ever be added, which makes it a complete and bounded subject of study.',
+        ],
+      },
+      {
+        hHi: 'वर्गीकरण और संदर्भ',
+        hEn: 'Classification and reference',
+        pHi: [
+          'यह वह जगह है जहाँ नए संग्राहक सबसे ज़्यादा अटकते हैं, और समाधान सरल है।',
+          'रियासती सिक्कों की मानक सूचियाँ प्रकाशित हैं, जिनमें हर राज्य के लिए वज़न, धातु, अवधि और चित्र दर्ज हैं। एक अच्छी संदर्भ-पुस्तक इस क्षेत्र में किसी भी एक सिक्के से ज़्यादा उपयोगी है।',
+          'पहचान का व्यावहारिक क्रम यह है: पहले लिपि पहचानिए, फिर धातु और वज़न लीजिए, फिर आकार नापिए, और उसके बाद सूची में मिलान कीजिए।',
+          'कई सिक्कों पर राज्य का नाम भी दर्ज होता है, और वही सबसे तेज़ सूत्र है। घिसे हुए नमूनों में शैली और वज़न से काम चलाना पड़ता है।',
+        ],
+        pEn: [
+          'This is where new collectors get stuck most often, and the solution is straightforward.',
+          'Standard listings of princely coinage are published, recording the weight, metal, period and illustration for every state. A good reference book is more useful in this field than any single coin.',
+          'The practical order of identification is this: recognise the script first, then take the metal and weight, then measure the diameter, and only then match against the listing.',
+          'Many coins carry the name of the state as well, and that is the fastest clue. On worn examples you have to work from style and weight instead.',
+        ],
+      },
+      {
+        hHi: 'क्षेत्र के हिसाब से शुरुआत',
+        hEn: 'Beginning by region',
+        pHi: [
+          'सबसे स्वाभाविक शुरुआत अपने ही क्षेत्र की रियासत से है, और उसके तीन कारण हैं।',
+          'पहला — वहाँ के सिक्के स्थानीय बाज़ार में अधिक मिलते हैं, इसलिए सस्ते और सुलभ रहते हैं।',
+          'दूसरा — स्थानीय इतिहास आपको पहले से पता होता है, इसलिए सिक्का किसी अजनबी नाम का नहीं बल्कि उस जगह का लगता है जहाँ आप रहते हैं।',
+          'तीसरा — लिपि परिचित होती है। यदि आप महाराष्ट्र से हैं तो देवनागरी पढ़ लेंगे, कर्नाटक से हैं तो कन्नड़, और यह पहचान की सबसे बड़ी बाधा हटा देता है।',
+        ],
+        pEn: [
+          'The most natural beginning is with the princely state of your own region, for three reasons.',
+          'First, its coins appear more often in the local market, so they stay cheap and available.',
+          'Second, you already know the local history, so the coin belongs not to some unfamiliar name but to the place where you live.',
+          'Third, the script is familiar. If you are from Maharashtra you can read Devanagari, from Karnataka you can read Kannada — and that removes the largest obstacle to identification.',
+        ],
+      },
+      {
+        hHi: 'क्यों यह क्षेत्र भीड़ से बचा हुआ है',
+        hEn: 'Why this field stays uncrowded',
+        pHi: [
+          'तीन कारण मिलकर काम करते हैं, और तीनों संग्राहक के पक्ष में हैं।',
+          'पहला — विविधता इतनी ज़्यादा है कि कोई “पूरा सेट” संभव नहीं। इसलिए पूर्णता की वह होड़ नहीं बनती जो दाम चढ़ाती है।',
+          'दूसरा — पहचान कठिन है, इसलिए आकस्मिक ख़रीदार दूर रहते हैं। कम भीड़ का सीधा अर्थ है कम दाम।',
+          'तीसरा — ताँबे के रियासती सिक्के भारी संख्या में बचे हैं और आज भी कुछ सौ रुपये में मिल जाते हैं।',
+          'यानी सीमित बजट वाले संग्राहक के लिए यह शायद सबसे संतोषजनक क्षेत्र है — कम पैसे में असली इतिहास, और सीखने के लिए जीवन भर की सामग्री।',
+        ],
+        pEn: [
+          'Three reasons work together, and all three favour the collector.',
+          'First, the variety is so great that no complete set is possible. The race for completion that drives prices up therefore never forms.',
+          'Second, identification is difficult, so casual buyers stay away. Less crowding means directly lower prices.',
+          'Third, princely copper survives in quantity and still costs a few hundred rupees.',
+          'For a collector on a limited budget this is arguably the most satisfying field there is — real history for little money, and a lifetime of material to learn from.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'सैकड़ों रियासतों ने अपने सिक्के ढाले, हर एक अपनी संधि की शर्तों के अनुसार — और सिक्के पर किसका नाम है, वही उस संधि को बता देता है।',
+          'यह क्षेत्र अब बंद है, सस्ता है, और भीड़ से बचा हुआ है। शुरुआत अपने ही क्षेत्र की रियासत से कीजिए, और एक अच्छी संदर्भ-सूची पहले ख़रीदिए।',
+        ],
+        pEn: [
+          'Hundreds of states struck their own coins, each according to the terms of its treaty — and whose name appears on a coin is what states those terms.',
+          'The field is now closed, inexpensive, and uncrowded. Begin with the princely state of your own region, and buy a good reference listing before you buy any coins.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'commemorative-coins-india',
+    sections: [
+      {
+        hHi: 'ये सामान्य सिक्कों से कैसे अलग हैं',
+        hEn: 'How they differ from ordinary coins',
+        pHi: [
+          'तकनीकी रूप से अंतर चार जगह है, और इन्हें जानना ख़रीदते समय काम आता है।',
+          'पहला — उद्देश्य। सामान्य सिक्का चलन के लिए ढाला जाता है; स्मारक सिक्का किसी घटना, व्यक्ति या अभियान को दर्ज करने के लिए।',
+          'दूसरा — डिज़ाइन। स्मारक सिक्के पर विषय-विशेष का चित्र या प्रतीक आता है, जबकि सामान्य सिक्के का डिज़ाइन वर्षों स्थिर रहता है।',
+          'तीसरा — मूल्यवर्ग। स्मारक सिक्के अक्सर असामान्य मूल्यवर्ग में आते हैं — जैसे साठ रुपये, सौ रुपये, एक सौ पचीस रुपये — जो चलन के लिए व्यावहारिक नहीं।',
+          'चौथा — संस्करण। एक ही स्मारक सिक्का चलन, यूएनसी और प्रूफ़ तीन रूपों में आ सकता है, और तीनों के दाम बहुत अलग हैं।',
+        ],
+        pEn: [
+          'Technically the difference sits in four places, and knowing them helps when buying.',
+          'First, purpose. An ordinary coin is struck for circulation; a commemorative to record an event, a person or a campaign.',
+          'Second, design. A commemorative carries an image or emblem specific to its subject, whereas an ordinary coin’s design stays fixed for years.',
+          'Third, denomination. Commemoratives frequently appear in unusual denominations — sixty rupees, a hundred rupees, a hundred and twenty-five — which are impractical for circulation.',
+          'Fourth, version. The same commemorative can exist as a circulation, UNC and proof issue, and the three are priced very differently.',
+        ],
+      },
+      {
+        hHi: 'विषयों में दशकों का प्रतिबिंब',
+        hEn: 'The decades reflected in the subjects',
+        pHi: [
+          'स्मारक सिक्कों की एक शृंखला असल में आधुनिक भारत की प्राथमिकताओं का संक्षिप्त इतिहास है, और उसे इसी तरह पढ़ना सबसे दिलचस्प है।',
+          'साठ और सत्तर के दशक में खाद्य सुरक्षा के नारे — “ग्रो मोर फ़ूड”, और कृषि विषयक शृंखलाएँ। यह हरित क्रांति का दौर था।',
+          'सत्तर के दशक में परिवार नियोजन और बचत के संदेश। अस्सी और नब्बे में साक्षरता, महिला सशक्तीकरण, और पर्यावरण।',
+          'हाल के दशकों में वर्षगाँठें और संस्थाएँ प्रमुख हैं। जो विषय सिक्के पर चढ़ा, वह उस दशक की सार्वजनिक चिंता थी — और यह अपने आप में पढ़ने लायक़ दस्तावेज़ है।',
+        ],
+        pEn: [
+          'A run of commemoratives is in fact a compressed history of modern India’s priorities, and reading them that way is the most interesting approach.',
+          'In the sixties and seventies, slogans of food security — “Grow More Food” — and agricultural series. That was the Green Revolution period.',
+          'In the seventies, messages of family planning and saving. In the eighties and nineties, literacy, the position of women, and the environment.',
+          'In recent decades anniversaries and institutions dominate. Whatever subject reached the coinage was the public concern of that decade — a document worth reading in itself.',
+        ],
+      },
+      {
+        hHi: 'अंतरराष्ट्रीय शृंखलाएँ',
+        hEn: 'The international series',
+        pHi: [
+          'एक कम चर्चित पहलू यह है कि भारत ने कई अंतरराष्ट्रीय अभियानों के साथ मिलकर सिक्के जारी किए।',
+          'खाद्य और कृषि संगठन की शृंखला सबसे व्यापक है। दुनिया भर के दर्जनों देशों ने इसमें भाग लिया, और हर देश ने अपने कृषि-विषय पर सिक्के जारी किए।',
+          'भारत की इस शृंखला में गेहूँ, चावल, मछली-पालन, वन और अन्य विषय आए, और उन पर अंग्रेज़ी में अभियान का नारा भी अंकित है।',
+          'संग्राहक के लिए यह एक दिलचस्प विषय है, क्योंकि इसे दो तरह से जमाया जा सकता है — केवल भारत के, या दुनिया भर के देशों के एक ही अभियान के सिक्के।',
+        ],
+        pEn: [
+          'A less discussed aspect is that India issued coins jointly with several international campaigns.',
+          'The Food and Agriculture Organisation series is the most extensive. Dozens of countries took part, each issuing coins on its own agricultural themes.',
+          'India’s contribution covered wheat, rice, fisheries, forestry and other subjects, with the campaign slogan inscribed in English.',
+          'For a collector this is an interesting subject, because it can be assembled two ways — only India’s, or the coins of many countries from the same single campaign.',
+        ],
+      },
+      {
+        hHi: 'क़ीमत के बारे में यथार्थ',
+        hEn: 'Realism about value',
+        pHi: [
+          'यह वह हिस्सा है जो विक्रेता शायद ही कभी बताते हैं, और इसे साफ़ कह देना उचित है।',
+          'अधिकांश आधुनिक स्मारक सिक्के निवेश के रूप में अच्छे नहीं रहे। जारी करते समय जो प्रीमियम लिया जाता है, वह अक्सर बाद के बाज़ार-भाव से ऊपर बैठ जाता है।',
+          'कारण सीधा है: ढलाई की संख्या। जब कोई सिक्का लाखों में बनता है और उसका बड़ा हिस्सा संग्राहकों के पास सीलबंद रखा रहता है, तो आपूर्ति कभी कम नहीं पड़ती।',
+          'अपवाद वे हैं जो बहुत कम संख्या में जारी हुए — कुछ प्रूफ़ सेट — या जिनके पीछे व्यापक भावनात्मक जुड़ाव है। पर अपवाद नियम नहीं बनते।',
+        ],
+        pEn: [
+          'This is the part sellers rarely mention, and it deserves stating plainly.',
+          'Most modern commemoratives have not performed well as investments. The premium charged at issue frequently sits above the later market price.',
+          'The reason is straightforward: mintage. When a coin is made in lakhs and much of it sits sealed in collectors’ cupboards, supply never becomes scarce.',
+          'The exceptions are those issued in very small numbers — certain proof sets — or those carrying broad emotional attachment. But exceptions do not become the rule.',
+        ],
+      },
+      {
+        hHi: 'संग्रह में जगह',
+        hEn: 'A place in a collection',
+        pHi: [
+          'यदि निवेश का तर्क कमज़ोर है, तो इन्हें इकट्ठा क्यों किया जाए? कारण वही है जो किसी भी अच्छे संग्रह का होता है।',
+          'विषय में रुचि — यदि आप किसी व्यक्ति या घटना से जुड़ाव महसूस करते हैं, तो उस पर जारी सिक्का रखना अर्थपूर्ण है।',
+          'डिज़ाइन — कुछ स्मारक सिक्के सचमुच सुंदर हैं, और उन्हें देखने का आनंद अपने आप में एक कारण है।',
+          'और शृंखला बनाने का संतोष — एक विषय, एक दशक, या एक अभियान की पूरी शृंखला जुटाना एक स्पष्ट, सीमित लक्ष्य है जिसे पूरा किया जा सकता है।',
+        ],
+        pEn: [
+          'If the investment case is weak, why collect them at all? For the same reasons that underlie any good collection.',
+          'Interest in the subject — if you feel a connection to a person or an event, holding the coin issued for it is meaningful.',
+          'Design — some commemoratives are genuinely beautiful, and the pleasure of looking at them is a reason in itself.',
+          'And the satisfaction of completing a series — one theme, one decade, or one campaign is a clear and bounded target that can actually be finished.',
+        ],
+      },
+      {
+        hHi: 'ख़रीदने का सही तरीक़ा',
+        hEn: 'The right way to buy',
+        pHi: [
+          'नए जारी सिक्कों के लिए सबसे सीधा रास्ता आधिकारिक है। भारत सरकार की टकसाल अग्रिम बुकिंग स्वीकार करती है, और वहीं मूल पैकिंग, प्रमाणपत्र और निश्चित प्रामाणिकता एक साथ मिलती है।',
+          'पुराने सिक्कों के लिए स्थापित डीलर, नीलामी घर और संग्राहक-प्रदर्शनियाँ भरोसेमंद हैं।',
+          'ख़रीदते समय हमेशा पूछिए कि कौन-सा संस्करण है — चलन, यूएनसी या प्रूफ़ — और क्या मूल पैकिंग तथा प्रमाणपत्र साथ हैं। सीलबंद इकाई खुली हुई से हमेशा ऊपर रहती है।',
+          'और उन “सीमित संस्करणों” से बचिए जिनकी सीमा कहीं दर्ज न हो। दुर्लभता का दावा बिना संख्या के केवल एक शब्द है।',
+        ],
+        pEn: [
+          'For newly issued coins the most direct route is the official one. The India Government Mint accepts advance booking, and that is where original packaging, certificate and certain authenticity arrive together.',
+          'For older issues, established dealers, auction houses and collectors’ fairs are dependable.',
+          'When buying, always ask which version it is — circulation, UNC or proof — and whether the original packaging and certificate are present. A sealed piece always sits above a loose one.',
+          'And avoid “limited editions” whose limit is recorded nowhere. A claim of rarity without a number is only a word.',
+        ],
+      },
+      {
+        hHi: 'रख-रखाव',
+        hEn: 'Care',
+        pHi: [
+          'स्मारक सिक्कों में एक बात सामान्य सिक्कों से अलग है: मूल पैकिंग स्वयं मूल्य का हिस्सा है।',
+          'सीलबंद पैकिंग मत खोलिए, ख़ासकर प्रूफ़ सेट की। खुली हुई इकाई का दाम स्पष्ट रूप से कम रहता है, और सील दोबारा नहीं लगती।',
+          'प्रमाणपत्र सिक्के के साथ ही रखिए। वह अलग हो जाए तो लौटाना मुश्किल होता है, और उसके बिना सेट अधूरा माना जाता है।',
+          'और वही सामान्य नियम: नमी से बचाइए, सिलिका जेल रखिए, और छूने की ज़रूरत पड़े तो किनारों से — विशेषकर प्रूफ़ सिक्कों की दर्पण-सतह पर उँगली का निशान स्थायी होता है।',
+        ],
+        pEn: [
+          'One thing differs from ordinary coins here: the original packaging is itself part of the value.',
+          'Do not open sealed packaging, particularly for proof sets. An opened piece is clearly worth less, and the seal cannot be replaced.',
+          'Keep the certificate with the coin. If it becomes separated it is difficult to restore, and without it the set is considered incomplete.',
+          'And the usual rules: keep them from damp, use silica gel, and handle by the edges if you must — a fingerprint on the mirror field of a proof coin is permanent.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'स्मारक सिक्के उद्देश्य, डिज़ाइन, मूल्यवर्ग और संस्करण — चार बातों में सामान्य सिक्कों से अलग हैं, और संस्करण पूछना सबसे ज़रूरी सवाल है।',
+          'निवेश के रूप में अधिकांश कमज़ोर रहे हैं, पर एक शृंखला के रूप में वे आधुनिक भारत की प्राथमिकताओं का संक्षिप्त इतिहास बन जाते हैं — और यही उन्हें इकट्ठा करने का सबसे अच्छा कारण है।',
+        ],
+        pEn: [
+          'Commemoratives differ from ordinary coins in four respects — purpose, design, denomination and version — and asking which version is the most important question.',
+          'Most have been weak as investments, but assembled as a series they become a compressed history of modern India’s priorities, and that is the best reason there is to collect them.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mint-marks-explained',
+    sections: [
+      {
+        hHi: 'भारत में चार टकसालें क्यों',
+        hEn: 'Why India has four mints',
+        pHi: [
+          'यह सवाल शायद ही कोई पूछता है, और उसका उत्तर व्यावहारिक है।',
+          'एक देश जिसकी आबादी सौ करोड़ से ऊपर है, उसे हर साल अरबों सिक्के चाहिए। एक टकसाल इतना उत्पादन नहीं कर सकती, चाहे कितनी भी बड़ी हो।',
+          'दूसरा कारण भूगोल है। सिक्के भारी होते हैं और उन्हें ढोना महँगा। चार अलग-अलग क्षेत्रों में टकसालें होने से वितरण की लागत घटती है।',
+          'तीसरा कारण जोखिम-प्रबंधन है। यदि एक टकसाल में उत्पादन रुके — मरम्मत, आपदा या किसी और कारण से — तो बाक़ी तीन काम चलाती रहती हैं।',
+        ],
+        pEn: [
+          'Hardly anybody asks this question, and the answer is practical.',
+          'A country of over a hundred crore people needs billions of coins a year. One mint cannot produce that, however large it is.',
+          'The second reason is geography. Coins are heavy and transporting them is expensive. Mints in four different regions reduce the cost of distribution.',
+          'The third is risk management. If production stops at one mint — for repairs, a disaster, or any other reason — the other three keep going.',
+        ],
+      },
+      {
+        hHi: 'हर टकसाल का अपना इतिहास',
+        hEn: 'Each mint has its own history',
+        pHi: [
+          'कोलकाता सबसे पुरानी है, और उसकी जड़ें अठारहवीं सदी की कंपनी-टकसाल तक जाती हैं। यही वह निरंतरता है जिसके कारण उसे चिह्न की आवश्यकता कभी नहीं पड़ी — वह मूल टकसाल थी।',
+          'मुंबई भी उन्नीसवीं सदी की है, और वह लंबे समय तक चाँदी के रुपये की मुख्य टकसाल रही।',
+          'हैदराबाद की जड़ें निज़ाम की अपनी टकसाल में हैं, जो एकीकरण के बाद भारत सरकार की टकसाल बनी — यानी उसका इतिहास रियासती दौर से जुड़ता है।',
+          'नोएडा सबसे नई है, 1988 में शुरू हुई, और वह स्टेनलेस स्टील के सिक्कों के दौर के लिए बनी। इसीलिए उसका चिह्न — एक ठोस बिंदु — केवल आधुनिक सिक्कों पर मिलता है।',
+        ],
+        pEn: [
+          'Kolkata is the oldest, its roots going back to the eighteenth-century Company mint. That continuity is why it never needed a mark — it was the original mint.',
+          'Mumbai is also nineteenth-century, and for a long period it was the principal mint for the silver rupee.',
+          'Hyderabad’s roots lie in the Nizam’s own mint, which became a Government of India mint after integration — meaning its history connects to the princely period.',
+          'Noida is the newest, opened in 1988, built for the era of stainless steel coinage. This is why its mark — a solid dot — appears only on modern coins.',
+        ],
+      },
+      {
+        hHi: 'चिह्न कहाँ देखें',
+        hEn: 'Where to look for the mark',
+        pHi: [
+          'लगभग हमेशा तारीख़ के ठीक नीचे। यह पहली जगह है और नब्बे प्रतिशत मामलों में वहीं मिल जाता है।',
+          'कुछ किस्मों में चिह्न तारीख़ के बग़ल में या थोड़ा हटकर होता है, और कुछ पुराने सिक्कों में वह किनारे की ओर खिसका मिलता है।',
+          'देखने का तरीक़ा: दस गुना आवर्धन का लूप आँख के पास रखिए, सिक्के के पास नहीं। फिर सिक्के को आगे-पीछे करके फ़ोकस पाइए और धीरे-धीरे झुकाइए।',
+          'बहुत घिसा हुआ चिह्न केवल एक विशेष कोण पर छाया बनाता है। इसीलिए घुमाना ज़रूरी है — सीधा देखने पर वह अक्सर नहीं दिखता।',
+        ],
+        pEn: [
+          'Almost always immediately below the date. That is the first place to look and it is there in ninety per cent of cases.',
+          'On some varieties the mark sits beside the date or slightly offset, and on certain older coins it is shifted towards the rim.',
+          'How to look: hold a ten-times loupe close to your eye rather than close to the coin, then move the coin back and forth to find focus and tilt it slowly.',
+          'A heavily worn mark casts a shadow at only one particular angle. Rotating is therefore essential — looked at straight on, it frequently does not appear at all.',
+        ],
+      },
+      {
+        hHi: 'आम पहचान-ग़लतियाँ',
+        hEn: 'Common identification mistakes',
+        pHi: [
+          'पहली और सबसे आम: चिह्न न दिखने को “चिह्न नहीं है” समझ लेना। घिसे हुए सिक्के पर चिह्न मिट सकता है, और तब निष्कर्ष निकालना जल्दबाज़ी है।',
+          'दूसरी: किसी धब्बे या ख़रोंच को चिह्न समझ लेना। असली चिह्न की आकृति निश्चित होती है और वह उभरा हुआ होता है, गड्ढा नहीं।',
+          'तीसरी: विभिन्न वर्षों में एक ही टकसाल के चिह्न के अलग रूपों को अलग टकसाल समझ लेना। हैदराबाद के चिह्न कई रूपों में मिलते हैं और तीनों एक ही टकसाल के हैं।',
+          'चौथी: विदेशी टकसाल के चिह्न को न पहचानना। भारत ने कई बार विदेश में सिक्के ढलवाए, और वे चिह्न भारतीय सूची में नहीं मिलते।',
+        ],
+        pEn: [
+          'The first and commonest: treating a mark you cannot see as a mark that is not there. On a worn coin the mark can be erased, and concluding otherwise is hasty.',
+          'The second: mistaking a spot or a scratch for a mark. A genuine mark has a defined shape and is raised rather than sunken.',
+          'The third: treating different forms of the same mint’s mark across years as different mints. Hyderabad’s mark appears in several forms and all belong to one mint.',
+          'The fourth: failing to recognise a foreign mint mark. India has had coins struck abroad on several occasions, and those marks do not appear in an Indian listing.',
+        ],
+      },
+      {
+        hHi: 'पुराने सिक्कों के चिह्न',
+        hEn: 'Mint marks on older coins',
+        pHi: [
+          'आधुनिक चार टकसालों की व्यवस्था हाल की है। ब्रिटिश भारत के दौर में स्थिति अलग थी और उसे अलग से जानना पड़ता है।',
+          'बंबई टकसाल एक छोटा हीरा या बिंदु छोड़ती थी; कलकत्ता आमतौर पर कोई चिह्न नहीं; लाहौर अंग्रेज़ी का “L”; और प्रिटोरिया एक बिंदु।',
+          'यही “चिह्न न होना ही कलकत्ता है” वाला नियम उस दौर से चला आ रहा है, और आज भी वही तर्क लागू होता है — जो अपने आप में एक अच्छी निरंतरता है।',
+          'रियासती सिक्कों में यह और जटिल है, क्योंकि हर राज्य की अपनी टकसाल थी और चिह्न की परंपरा भी अलग। वहाँ पहचान चिह्न से नहीं, शैली और लिपि से होती है।',
+        ],
+        pEn: [
+          'The modern four-mint arrangement is recent. The situation in British India was different and has to be learned separately.',
+          'The Bombay mint left a small diamond or dot; Calcutta usually no mark; Lahore the letter “L”; and Pretoria a dot.',
+          'The rule that “no mark means Calcutta” comes down from that period, and the same reasoning still applies today — which is a rather satisfying continuity.',
+          'With princely coins it is more complicated again, because each state had its own mint and its own conventions. There identification comes from style and script rather than from a mark.',
+        ],
+      },
+      {
+        hHi: 'यह ब्योरा क्यों आदी बनाता है',
+        hEn: 'Why this detail becomes addictive',
+        pHi: [
+          'टकसाल-चिह्न खोजने में एक ख़ास संतोष है, और उसका कारण मनोवैज्ञानिक है।',
+          'यह एक छोटा, स्पष्ट, तुरंत हल होने वाला काम है। सिक्का उठाइए, लूप लगाइए, और कुछ सेकंड में उत्तर मिल जाता है — हाँ या नहीं।',
+          'दूसरा कारण यह है कि हर सिक्का एक संभावना है। जेब में आने वाला कोई भी सिक्का वह हो सकता है जो आपके पास नहीं था।',
+          'और तीसरा — यह मुफ़्त है। इस शौक़ का यह हिस्सा किसी ख़रीद की माँग नहीं करता; बस देखने की आदत चाहिए, और वह आदत जीवन भर चलती है।',
+        ],
+        pEn: [
+          'There is a particular satisfaction in finding a mint mark, and the reason is psychological.',
+          'It is a small, clear, immediately resolvable task. Pick up the coin, apply the loupe, and within seconds there is an answer — yes or no.',
+          'The second reason is that every coin is a possibility. Any coin reaching your pocket might be the one you did not have.',
+          'And the third — it is free. This part of the hobby demands no purchase at all; it needs only the habit of looking, and that habit lasts a lifetime.',
+        ],
+      },
+      {
+        hHi: 'दुर्लभता के दावों पर सावधानी',
+        hEn: 'Caution about rarity claims',
+        pHi: [
+          'टकसाल-चिह्न के आधार पर “यह सिक्का दुर्लभ है” वाले दावे इंटरनेट पर बहुत घूमते हैं, और अधिकांश ग़लत हैं।',
+          'ढलाई-संख्या के असली आँकड़े प्रकाशित हैं और कैटलॉग में दर्ज। किसी वीडियो के दावे पर भरोसा करने से पहले वह आँकड़ा देखिए।',
+          'और याद रखिए कि कम ढलाई का अर्थ स्वतः ऊँचा दाम नहीं है। दाम माँग से भी बनता है, और यदि उस किस्म को कोई इकट्ठा नहीं करता तो वह सस्ती ही रहेगी।',
+          'वह अंतिम नियम यहाँ भी लागू है: कोई भी सौदा जिसमें आपसे पहले पैसे माँगे जाएँ, सौदा नहीं है।',
+        ],
+        pEn: [
+          'Claims that “this coin is rare because of its mint mark” circulate widely online, and most of them are wrong.',
+          'The real mintage figures are published and recorded in the catalogues. Look at the figure before trusting the claim in a video.',
+          'And remember that low mintage does not automatically mean a high price. Price is also built from demand, and if nobody collects that variety it will stay cheap.',
+          'The same final rule applies here too: any transaction in which somebody asks you for money first is not a transaction.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'चार टकसालें मौजूद हैं क्योंकि एक देश को अरबों सिक्के चाहिए, और उन्हें ढोना महँगा है। चिह्न तारीख़ के नीचे मिलता है — कोलकाता के अलावा, जो कोई चिह्न नहीं छोड़ती।',
+          'सबसे आम ग़लती है चिह्न न दिखने को चिह्न न होना समझ लेना। और यह शौक़ का वह हिस्सा है जो पूरी तरह मुफ़्त है — बस देखने की आदत चाहिए।',
+        ],
+        pEn: [
+          'Four mints exist because a country needs billions of coins and moving them is expensive. The mark sits below the date — except at Kolkata, which leaves none.',
+          'The commonest mistake is treating a mark you cannot see as a mark that is not there. And this is the part of the hobby that costs nothing at all — it needs only the habit of looking.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'error-coins-guide',
+    sections: [
+      {
+        hHi: 'एरर और क्षति में अंतर',
+        hEn: 'The difference between an error and damage',
+        pHi: [
+          'यह इस पूरे विषय का सबसे ज़रूरी भेद है, और इसे समझ लेने से अधिकांश ग़लत ख़रीद रुक जाती है।',
+          'एरर वह है जो टकसाल में, ढलाई के क्षण में हुआ। क्षति वह है जो सिक्के के टकसाल से निकलने के बाद हुई — चलन में, या जानबूझकर।',
+          'एक मुड़ा हुआ सिक्का, एक ख़रोंच, एक छेद, एक जला हुआ किनारा, एक तेज़ाब से खाई हुई सतह — ये सब क्षति हैं, चाहे वे कितनी भी असामान्य दिखें।',
+          'जाँच का तरीक़ा सरल है: पूछिए कि यह मशीन के किस चरण में बना होगा। यदि कोई चरण फिट न बैठे, तो वह एरर नहीं है।',
+        ],
+        pEn: [
+          'This is the most important distinction in the whole subject, and grasping it prevents most wrong purchases.',
+          'An error happens at the mint, at the moment of striking. Damage happens after the coin left the mint — in circulation, or deliberately.',
+          'A bent coin, a scratch, a hole, a burnt edge, a surface eaten by acid — all of these are damage, however unusual they look.',
+          'The test is simple: ask which stage of the machinery would have produced it. If no stage fits, it is not an error.',
+        ],
+      },
+      {
+        hHi: 'वे एरर जिनका कोई मूल्य नहीं',
+        hEn: 'The errors that carry no value',
+        pHi: [
+          'यह हिस्सा शायद ही कहीं बताया जाता है, और वह उतना ही ज़रूरी है जितना यह जानना कि क्या मूल्यवान है।',
+          'बहुत हल्का ऑफ़-सेंटर — एक मिलीमीटर का खिसकाव इतना आम है कि उसका कोई प्रीमियम नहीं। यह लगभग हर बैच में होता है।',
+          'डाई की घिसाई से बनी धुँधली दोहराव — यह असली डबल स्ट्राइक नहीं है और उसका कोई मूल्य नहीं। असली दोहराव में दोनों छापें तीखी होती हैं।',
+          'छोटे-छोटे डाई-दरार — पतली उभरी रेखाएँ जो घिसी हुई डाई से बनती हैं। ये आम हैं और केवल तभी दिलचस्प होती हैं जब वे नाटकीय हों।',
+          'और सतह के छोटे धब्बे या असमानताएँ, जो अक्सर धातु की गुणवत्ता से आती हैं। ये त्रुटियाँ हैं पर संग्राहकों की दृष्टि में एरर नहीं।',
+        ],
+        pEn: [
+          'This part is rarely explained anywhere, and it matters as much as knowing what is valuable.',
+          'A very slight off-centre strike — a shift of one millimetre is so common that it carries no premium at all. It occurs in nearly every batch.',
+          'Blurred doubling from a worn die — this is not a genuine double strike and has no value. In a real double strike both impressions are sharp.',
+          'Small die cracks — thin raised lines produced by a worn die. These are common and become interesting only when dramatic.',
+          'And small surface spots or irregularities, often arising from the quality of the metal. These are flaws but not errors in a collector’s sense.',
+        ],
+      },
+      {
+        hHi: 'मूल्य की सीढ़ी',
+        hEn: 'The ladder of value',
+        pHi: [
+          'एरर का दाम मुख्यतः दो बातों से बनता है, और उन्हें जान लेने से अपेक्षा दुरुस्त रहती है।',
+          'पहली — नाटकीयता। जितना स्पष्ट और असामान्य एरर, उतनी अधिक माँग। पचास प्रतिशत ऑफ़-सेंटर जिस पर तारीख़ फिर भी पढ़ी जाए, सबसे ऊपर बैठता है।',
+          'दूसरी — पहचान की क्षमता। यदि एरर इतना बड़ा हो कि सिक्का पहचाना ही न जाए, तो दाम गिर जाता है। संग्राहक चाहते हैं कि सिक्का असामान्य भी हो और पहचानने योग्य भी।',
+          'तीसरी बात, जो कम कही जाती है — वह मूल सिक्का जिस पर एरर हुआ। एक आम सिक्के पर बड़ा एरर, एक दुर्लभ सिक्के पर छोटे एरर से ज़्यादा माँगा जाता है।',
+        ],
+        pEn: [
+          'The price of an error is built mainly from two things, and knowing them keeps expectations correct.',
+          'First, how dramatic it is. The clearer and more unusual the error, the greater the demand. A fifty per cent off-centre strike on which the date still reads sits at the top.',
+          'Second, whether the coin remains identifiable. If the error is so large that the coin cannot be identified, the price falls. Collectors want it both unusual and recognisable.',
+          'A third point, said less often — the base coin the error occurred on. A large error on a common coin is wanted more than a small one on a scarce coin.',
+        ],
+      },
+      {
+        hHi: 'भारतीय आधुनिक सिक्कों में एरर',
+        hEn: 'Errors on modern Indian coins',
+        pHi: [
+          'यह वह क्षेत्र है जहाँ एक साधारण संग्राहक सचमुच कुछ पा सकता है, और उसकी लागत शून्य है।',
+          'आधुनिक भारतीय सिक्के तेज़ रफ़्तार से ढाले जाते हैं, और उतनी बड़ी संख्या में कुछ त्रुटियाँ अनिवार्य रूप से निकल जाती हैं।',
+          'सबसे अधिक मिलने वाले प्रकार हैं: ऑफ़-सेंटर छाप, घूमी हुई डाई, और कभी-कभी एक तरफ़ बिना छाप वाला सिक्का।',
+          'और यही एक क्षेत्र है जहाँ खोज मुफ़्त है — जेब, गुल्लक, और दुकान से मिली खुल्ली रक़म। हज़ार सिक्के देखने में शायद एक कुछ दिलचस्प निकले, और वह खोज अपने आप में दिलचस्प है।',
+        ],
+        pEn: [
+          'This is the field where an ordinary collector can genuinely find something, and it costs nothing.',
+          'Modern Indian coins are struck at high speed, and at that volume some flaws inevitably get through.',
+          'The types found most often are the off-centre strike, the rotated die, and occasionally a coin blank on one side.',
+          'And this is the one area where searching is free — pockets, piggy banks, and change from a shop. Perhaps one coin in a thousand turns out interesting, and the search is interesting in itself.',
+        ],
+      },
+      {
+        hHi: 'नक़ली एरर से बचाव',
+        hEn: 'Guarding against fake errors',
+        pHi: [
+          'बाज़ार में घूमने वाले अधिकांश “एरर सिक्के” टकसाल से नहीं, किसी की कार्यशाला से निकले हैं।',
+          'सबसे आम तरीक़ा है साधारण सिक्के को घिसकर, दबाकर या गर्म करके बदल देना। दूसरा है दो सिक्कों को काटकर जोड़ना, जो नज़दीक से जोड़ की रेखा दिखा देता है।',
+          'पहचान का सूत्र यह है कि टकसाल की ग़लती ठोंकने के समय होती है, इसलिए धातु का प्रवाह और चमक उसी दबाव के अनुरूप रहती है।',
+          'बाद में की गई छेड़छाड़ में धातु खिंची, कटी या पिघली हुई दिखती है। दस गुना आवर्धन के लूप के नीचे यह अंतर स्पष्ट है।',
+        ],
+        pEn: [
+          'Most of the “error coins” circulating in the market came not from a mint but from somebody’s workshop.',
+          'The commonest method is altering an ordinary coin by filing, pressing or heating. The second is cutting two coins and joining them, which shows a seam under close inspection.',
+          'The clue is that a mint error occurs at the moment of striking, so the metal flow and lustre stay consistent with that pressure.',
+          'Tampering done afterwards leaves metal that looks stretched, cut or melted. Under a ten-times loupe the difference is clear.',
+        ],
+      },
+      {
+        hHi: 'दस्तावेज़ीकरण',
+        hEn: 'Documenting what you find',
+        pHi: [
+          'यदि आपको कुछ मिले, तो उसे सही ढंग से दर्ज करना उसकी क़ीमत का हिस्सा बन जाता है।',
+          'तस्वीरें लीजिए — दोनों तरफ़ की, और एरर वाले हिस्से की एक नज़दीकी तस्वीर। दिन की रोशनी में, बिना फ़्लैश, सादे गहरे रंग की पृष्ठभूमि पर।',
+          'वज़न और व्यास नापकर दर्ज कीजिए। एरर वाले सिक्कों में ये आँकड़े महत्वपूर्ण हैं क्योंकि कुछ प्रकार वज़न में भी भिन्न होते हैं।',
+          'और लिखिए कि यह कहाँ से मिला — जेब से, दुकान से, किसी संग्रह से। एरर सिक्कों में स्रोत का रिकॉर्ड प्रामाणिकता के पक्ष में एक अतिरिक्त तर्क बन जाता है।',
+        ],
+        pEn: [
+          'If you do find something, recording it properly becomes part of its value.',
+          'Take photographs — both faces, and a close-up of the error itself. In daylight, without flash, against a plain dark background.',
+          'Measure and record the weight and diameter. These figures matter with error coins because some types differ in weight as well.',
+          'And write down where it came from — a pocket, a shop, a collection. With error coins a record of the source becomes an additional argument in favour of authenticity.',
+        ],
+      },
+      {
+        hHi: 'यथार्थवादी अपेक्षाएँ',
+        hEn: 'Realistic expectations',
+        pHi: [
+          'यह हिस्सा उबाऊ लगता है और वही सबसे ज़्यादा पैसा बचाता है।',
+          'अधिकांश एरर मामूली हैं और उनका दाम कुछ सौ रुपये से आगे नहीं जाता। नाटकीय एरर दुर्लभ हैं, और वे इसीलिए दुर्लभ हैं।',
+          'भारत में एरर का बाज़ार अमेरिका या यूरोप जितना संगठित नहीं है। वहाँ ग्रेडिंग कंपनियाँ एरर को श्रेणीबद्ध करती हैं और नीलामी-रिकॉर्ड सार्वजनिक रहते हैं; यहाँ अधिकांश सौदे व्यक्तिगत स्तर पर होते हैं।',
+          'इसका अर्थ यह है कि दाम में बड़ा फैलाव मिलता है, और बीते नीलामी-नतीजे देखे बिना कोई भी संख्या केवल एक राय है।',
+        ],
+        pEn: [
+          'This part sounds dull and it saves the most money.',
+          'Most errors are minor and their price does not go beyond a few hundred rupees. Dramatic errors are rare, and that is precisely why they are rare.',
+          'The error market in India is not as organised as in America or Europe. There, grading companies classify errors and auction records stay public; here most transactions happen privately.',
+          'This means prices vary widely, and without looking at past auction results any figure quoted is only an opinion.',
+        ],
+      },
+      {
+        hHi: 'संक्षेप में',
+        hEn: 'In short',
+        pHi: [
+          'एरर टकसाल में होता है; क्षति उसके बाद। यदि कोई “एरर” मशीन के किसी चरण से नहीं जुड़ता, तो वह एरर नहीं है।',
+          'अधिकांश एरर मामूली हैं और सस्ते; नाटकीय और फिर भी पहचानने योग्य एरर ही माँगे जाते हैं। और खोज का सबसे अच्छा हिस्सा मुफ़्त है — अपनी जेब की खुल्ली रक़म।',
+        ],
+        pEn: [
+          'An error happens at the mint; damage happens afterwards. If an “error” cannot be tied to a stage of the machinery, it is not one.',
+          'Most errors are minor and cheap; the ones in demand are dramatic and still identifiable. And the best part of the search costs nothing — the loose change already in your pocket.',
+        ],
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------------
+  // Top-off pass for batch ten. Each entry below adds to an article that is
+  // already expanded above, taking both language columns past the minimum.
+  // ---------------------------------------------------------------------
+
+  {
+    slug: 'online-coin-scams',
+    sections: [
+      {
+        hHi: 'जो सबक़ ठगे जाने वालों ने साझा किए',
+        hEn: 'The lessons shared by those who were cheated',
+        pHi: [
+          'ऑनलाइन ठगी के बाद अधिकांश लोग चुप रह जाते हैं, और यही चुप्पी अगले शिकार को तैयार करती है। जिन संग्राहकों ने खुलकर अपनी कहानी बताई, उनके अनुभवों में एक ही ढर्रा बार-बार दिखता है — नुक़सान उस पल नहीं हुआ जब पैसा भेजा गया, बल्कि उस पल जब जल्दबाज़ी ने सवाल पूछना बंद करा दिया।',
+          'एक संग्राहक ने लिखा कि उन्होंने विक्रेता से केवल इसलिए सवाल पूछना बंद कर दिया क्योंकि वह “बहुत विनम्र” लग रहा था; विनम्रता कोई प्रमाण नहीं है, वह केवल शैली है, और बेईमान आदमी को उसे अपनाने में कुछ ख़र्च नहीं होता। दूसरे ने बताया कि तस्वीरें इतनी अच्छी थीं कि उन्होंने वज़न पूछना ही ज़रूरी नहीं समझा — और जो सिक्का आया वह असली नमूने से चार ग्राम हल्का था।',
+          'तीसरा सबक़ सबसे कड़वा है: कई लोग ठगे जाने के बाद दोबारा ठगे गए, इस बार “पैसा वापस दिलाने वाली सेवा” के हाथों, जो अग्रिम शुल्क लेकर रक़म लौटाने का वादा करती है। जो व्यक्ति पहले से परेशान है, वह दूसरी बार और भी जल्दी भरोसा करता है, और ठग इस मनोविज्ञान को अपने शिकार से कहीं बेहतर जानते हैं।',
+          'इन सबका सार एक वाक्य में रखा जा सकता है। धीमे रहिए। एक असली विक्रेता आपकी सुस्ती से नाराज़ नहीं होगा, क्योंकि उसके पास ऐसा कुछ है ही नहीं जिसे सुस्ती उजागर कर दे; केवल ठग को जल्दी होती है, और वह जल्दी ही उसका सबसे साफ़ परिचय है।',
+        ],
+        pEn: [
+          'Most people stay silent after being cheated online, and that silence is precisely what prepares the next victim. Among the collectors who have spoken openly about what happened to them, the same pattern surfaces again and again — the loss did not occur at the moment the money was sent, but at the earlier moment when haste stopped them from asking questions.',
+          'One collector wrote that he stopped questioning a seller simply because the man seemed "very polite". Politeness is not evidence of anything; it is only a manner, and it costs a dishonest person nothing at all to adopt. Another said the photographs were so good that asking for a weight had felt unnecessary — and the coin that arrived was four grams lighter than a genuine example of the same type has any right to be.',
+          'The third lesson is the bitterest of the three. A striking number of people were cheated a second time after the first loss, this time by a "recovery service" that promised to get their money back in exchange for an advance fee. Somebody who is already distressed trusts faster rather than slower, and the people running these schemes understand that piece of psychology far better than their targets ever do.',
+          'All of it compresses into a single instruction. Go slowly. A genuine seller will not resent your slowness, because there is nothing on his side that slowness can expose; only the dishonest one is in a hurry, and that hurry is itself the clearest description of who he really is.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'princely-state-coins',
+    sections: [
+      {
+        hHi: 'इस क्षेत्र में क़ीमत कैसे तय होती है',
+        hEn: 'How value is decided in this field',
+        pHi: [
+          'रियासती सिक्कों की क़ीमत ब्रिटिश भारतीय सिक्कों की तुलना में कहीं कम सीधी है, और यही बात नए संग्राहकों को उलझाती है। यहाँ ढलाई-संख्या के आँकड़े प्रायः मौजूद ही नहीं हैं, इसलिए दुर्लभता का अनुमान बाज़ार में दिखने की आवृत्ति से लगाया जाता है — यानी उस साक्ष्य से जो स्वभाव से अधूरा है और नए भंडार मिलने पर बदलता रहता है।',
+          'व्यवहार में तीन चीज़ें दाम को सबसे अधिक हिलाती हैं। पहली, राज्य का आकार नहीं बल्कि उसकी ढलाई की अवधि: कुछ बड़े राज्यों ने दशकों तक भारी मात्रा में सिक्के ढाले, जबकि कुछ छोटे राज्यों ने केवल कुछ वर्षों तक, और वे कुछ वर्ष ही आज उनकी दुर्लभता का असली कारण हैं।',
+          'दूसरी, अंकन की सुपाठ्यता। हाथ से ठप्पा लगाए गए सिक्कों में पूरा लेख शायद ही कभी पूरा उतरता है, इसलिए वह नमूना जिस पर राज्य का नाम और तिथि दोनों साफ़ पढ़े जा सकें, उसी प्रकार के धुँधले नमूने से कई गुना अधिक क़ीमत रखता है। सूची में एक जैसे दर्ज दो सिक्कों के बीच अकेले इसी कारण बड़ा अंतर आ जाता है।',
+          'तीसरी, प्रमाणन की उपलब्धता। जिन राज्यों का साहित्य अच्छी तरह प्रकाशित है, उनके सिक्के आत्मविश्वास से ख़रीदे जाते हैं और इसलिए महँगे हैं; जिनका साहित्य पुरानी पत्रिकाओं में बिखरा हुआ है, वे सस्ते रह जाते हैं — दुर्लभता के कारण नहीं, बल्कि अनिश्चितता के कारण। पढ़ने को तैयार धैर्यवान संग्राहक के लिए यही अंतिम श्रेणी सबसे दिलचस्प जगह है।',
+        ],
+        pEn: [
+          'Value in princely state coinage is decided far less directly than it is for British Indian issues, and that is exactly what confuses newcomers to the field. Mintage figures often simply do not exist here, so rarity has to be inferred from how frequently a type appears on the market — evidence that is incomplete by nature and that shifts whenever a new hoard surfaces somewhere.',
+          'In practice three things move prices more than anything else. The first is not the size of the state but the length of its striking period: some large states produced coins in great volume across many decades, while some small ones struck for only a handful of years, and those few years are precisely what makes their coins scarce today.',
+          'The second is the legibility of the striking. On hand-struck coins the full legend almost never lands completely on the flan, so an example on which both the name of the state and the date can actually be read is worth several times a blurred specimen of the very same type. Two coins that a catalogue lists identically can be separated by a wide margin for this reason alone.',
+          'The third is the availability of published reference. States whose coinage has been well documented are bought with confidence and therefore trade dearer; states whose literature is scattered across old journals stay cheap — not because their coins are common, but because the uncertainty discourages buyers. For a patient collector willing to read, that last category is easily the most interesting place to be.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'commemorative-coins-india',
+    sections: [
+      {
+        hHi: 'संग्रह को दिशा देने वाले कुछ व्यावहारिक निर्णय',
+        hEn: 'A few practical decisions that give the collection direction',
+        pHi: [
+          'स्मारक सिक्कों की सूची इतनी लंबी है कि बिना किसी नियम के जमा करने पर संग्रह जल्दी ही एक ढेर बन जाता है। इसलिए शुरुआत में ही यह तय कर लेना बेहतर है कि आप किस धागे को पकड़ रहे हैं, भले ही बाद में आपको लगे कि धागा बदलना चाहिए — जिस नियम से आप आगे निकल जाएँ वह भी बिना नियम के रहने से बेहतर है।',
+          'सबसे सरल नियम मूल्यवर्ग का है — केवल दस रुपये के स्मारक सिक्के, या केवल वे जो सचमुच प्रचलन में आए, न कि वे बड़े मूल्य के अंक जो संग्राहकों को बेचे गए। यह चुनाव संग्रह को सस्ता और सचमुच पूरा करने योग्य रखता है, और इसकी सीमाएँ बिना किसी मेहनत के स्पष्ट रहती हैं।',
+          'दूसरा नियम विषय का है — केवल व्यक्तित्वों पर जारी सिक्के, या केवल संस्थाओं की वर्षगाँठें, या केवल कृषि और खाद्य से जुड़े अंक। विषय-आधारित संग्रह पढ़ने में सबसे अच्छा लगता है, क्योंकि हर सिक्का किसी कहानी की कड़ी बन जाता है, न कि ट्रे में पड़ी एक अलग-थलग वस्तु।',
+          'तीसरा नियम कालखंड का है — केवल एक दशक, पूरी गंभीरता से। यह उन लोगों के लिए उपयुक्त है जो विस्तार के बजाय गहराई चाहते हैं: दस वर्ष के सारे अंक, उन्हें ढालने वाली सभी टकसालें, और जहाँ बजट अनुमति दे, उनके प्रूफ़ संस्करण भी।',
+          'तीनों में से कोई भी नियम निरपेक्ष रूप से दूसरे से बेहतर नहीं है। महत्व केवल इस बात का है कि कोई नियम हो, क्योंकि नियम ही वह चीज़ है जो अगली ख़रीद को आसान बनाती है और तैयार संग्रह को हर देखने वाले के लिए सुसंगत।',
+        ],
+        pEn: [
+          'The list of Indian commemorative issues is long enough that collecting without a rule turns the collection into a pile rather quickly. It is better to decide early which thread you are following, even if you later change your mind about which thread it should be — a rule you outgrow is still far more useful than no rule at all.',
+          'The simplest rule is denomination — only the ten-rupee commemoratives, say, or only those that actually entered circulation rather than the higher-value pieces sold to collectors. This keeps the collection affordable and genuinely completable, and its boundaries stay obvious without any effort on your part.',
+          'The second rule is subject — only coins issued for individuals, or only institutional anniversaries, or only the issues tied to agriculture and food. A thematically arranged collection reads better than any other kind, because each coin becomes a link in a story instead of an isolated object sitting in a tray.',
+          'The third rule is period — a single decade, taken seriously. This suits collectors who want depth rather than breadth: every issue of those ten years, every mint that struck them, and where the budget allows, the proof versions as well.',
+          'None of the three is better than the others in any absolute sense. What matters is only that a rule exists, because the rule is the thing that makes the next purchase easy to judge and the finished collection coherent to anyone who later looks at it.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'mint-marks-explained',
+    sections: [
+      {
+        hHi: 'टकसाल-चिह्न पढ़ने का अभ्यास कैसे बनाएँ',
+        hEn: 'How to build the habit of reading mint marks',
+        pHi: [
+          'टकसाल-चिह्न पहचानना जानकारी से अधिक अभ्यास की चीज़ है। नियम पढ़ लेना एक दोपहर का काम है; कठिन यह है कि हाथ में आए हर सिक्के पर तिथि के नीचे नज़र डालने की आदत बन जाए, बिना पहले से यह तय किए कि इस बार शायद देखने लायक़ कुछ न मिले।',
+          'शुरुआत के लिए सबसे अच्छा तरीक़ा एक छोटा, दोहराने योग्य काम है। घर में जितनी खुल्ली रक़म मिले, उसे एक बार में छाँटिए और केवल एक मूल्यवर्ग लीजिए — मान लीजिए एक रुपया। हर सिक्के की तिथि और चिह्न लिखते जाइए, और कुछ ही दिनों में आपके सामने वह तस्वीर बन जाएगी जो किसी सूची में नहीं मिलती: आपके अपने इलाक़े के प्रचलन में किस टकसाल का दबदबा है।',
+          'दूसरा अभ्यास प्रकाश का है। चिह्न प्रायः छोटा और अक्सर घिसा हुआ होता है, इसलिए सीधी रोशनी से कहीं अधिक तिरछी रोशनी काम आती है — सिक्के को तब तक झुकाइए जब तक छाया उभार को पकड़ न ले और आकृति पृष्ठभूमि से अलग न दिखने लगे। यह एक छोटी-सी तरकीब है, और अनुभवी संग्राहक इसे बिना सोचे इस्तेमाल करते हैं।',
+          'तीसरा और सबसे उपयोगी अभ्यास लिखने का है। जो चिह्न आपने पहचाना, उसे उसी क्षण दर्ज कीजिए। सिक्कों के मामले में स्मृति भरोसेमंद नहीं होती, और छह महीने बाद आपके अपने हाथ की लिखी एक पंक्ति उस आत्मविश्वास से कहीं अधिक क़ीमती साबित होगी जिसके साथ आप याद करेंगे कि आपने क्या देखा था।',
+        ],
+        pEn: [
+          'Recognising mint marks is a matter of practice far more than a matter of information. Reading the rules takes an afternoon; what actually takes time is building the habit of glancing below the date on every coin that passes through your hands, without first deciding that this one is probably not worth checking.',
+          'The best way to start is with a small, repeatable exercise. Gather whatever loose change is in the house, sort it once, and take a single denomination — say the one-rupee coin. Write down the date and the mark of every piece, and within a few days you will have built a picture that no catalogue can give you: which mint actually dominates the circulating coinage in your own region.',
+          'The second exercise concerns light. The mark is usually small and often worn, so raking light works far better than light falling straight down — tilt the coin until the shadow catches the relief and the shape separates itself from the field behind it. It is a small trick, and experienced collectors use it without consciously noticing that they do.',
+          'The third exercise, and the most useful of the three, is writing things down. Record each mark the moment you identify it. Memory is unreliable where coins are concerned, and six months from now a line in your own handwriting will be worth considerably more than any amount of confident recollection about what you think you once saw.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'error-coins-guide',
+    sections: [
+      {
+        hHi: 'एरर खोजने वाले के लिए एक कार्य-पद्धति',
+        hEn: 'A working method for the error hunter',
+        pHi: [
+          'एरर सिक्के खोजने का सबसे बड़ा लाभ यह है कि इसमें पूँजी की आवश्यकता लगभग नहीं है। लेकिन बिना पद्धति के खोजने पर हज़ार सिक्के आँखों के आगे से गुज़र जाने के बाद भी हाथ ख़ाली रहता है, इसलिए एक साधारण, तय क्रम बना लेना और हर बार उसी को दोहराना फ़ायदेमंद है।',
+          'पहला चरण किनारा है। सिक्के को उँगलियों में घुमाइए और गोलाई देखिए — कटा हुआ किनारा, अधूरा गोल, या असामान्य मोटाई तुरंत ख़ुद को ज़ाहिर कर देती है, और संयोग से यही सबसे अधिक मिलने वाले वास्तविक एरर हैं।',
+          'दूसरा चरण अंकन का है। तिथि और लेख पर दोहरी छाप, फिसली हुई छाप या ग़ायब अक्षर देखिए। यहाँ सावधानी ज़रूरी है, क्योंकि सामान्य घिसाव और यांत्रिक क्षति अक्सर दोहरी छाप की नक़ल कर देती है; अंतर यह है कि असली दोहरी छाप में धातु दो जगह उभरी रहती है, जबकि क्षति में वह दबी, चपटी या खुरची हुई होती है।',
+          'तीसरा चरण संरेखण का है। सिक्के को ऊर्ध्वाधर अक्ष पर पलटिए और देखिए कि पिछला भाग अग्रभाग की तुलना में कितने अंश घूमा हुआ है। प्रचलित सिक्कों में कुछ अंश का अंतर पूरी तरह सामान्य है; नब्बे अंश या उससे अधिक का घुमाव दर्ज करने और रखने लायक़ है।',
+          'यही तीन चरण, हर बार उसी क्रम में दोहराए जाएँ, तो कुछ ही महीनों में आपकी गति और भरोसा दोनों साफ़ बेहतर हो जाएँगे। और जो सिक्का इन तीनों जाँचों से साफ़ निकल जाए, उसे बिना किसी अफ़सोस के वापस जेब में रख दीजिए — यही खोज का सामान्य और अपेक्षित परिणाम है, उसकी विफलता नहीं।',
+        ],
+        pEn: [
+          'The great advantage of hunting for error coins is that it needs almost no capital at all. But hunting without a method leaves you empty-handed even after a thousand coins have passed under your eyes, so it pays to settle on a simple, fixed sequence and then repeat that same sequence every single time.',
+          'The first step is the edge. Roll the coin between your fingers and look at the circumference — a clipped edge, an incomplete circle, or an unusual thickness announces itself immediately, and these happen to be the most commonly encountered genuine errors of all.',
+          'The second step is the striking. Look at the date and the legend for doubling, for a slipped impression, for missing letters. Care is needed here, because ordinary wear and mechanical damage frequently imitate doubling; the distinction is that genuine doubling leaves the metal raised in two places, while damage leaves it pushed down, flattened or scraped away.',
+          'The third step is alignment. Flip the coin about its vertical axis and see how far the reverse has rotated relative to the obverse. A few degrees of difference is entirely normal on circulating coinage; a rotation of ninety degrees or more is worth recording and worth keeping.',
+          'Repeat those three steps in that same order every time, and within a few months both your speed and your confidence will have improved noticeably. And when a coin comes through all three checks clean, put it back in your pocket without any regret at all — that is the ordinary and expected result of the search, not a failure of it.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
