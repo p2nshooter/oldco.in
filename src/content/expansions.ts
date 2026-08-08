@@ -7051,6 +7051,622 @@ export const EXPANSIONS: Expansion[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------------
+  // Batch twelve.
+  // ---------------------------------------------------------------------
+
+  {
+    slug: 'viral-coin-value-myths',
+    sections: [
+      {
+        hHi: 'वीडियो बनाने वाला कमाता कैसे है',
+        hEn: 'How the person making the video actually earns',
+        pHi: [
+          'इन दावों को समझने का सबसे तेज़ रास्ता यह पूछना है कि वीडियो बनाने वाले को इससे क्या मिलता है। यदि उसके पास सचमुच करोड़ों का सिक्का होता, तो वह उसे बेचता, न कि उसका वीडियो बनाकर विज्ञापन से कमाता।',
+          'कमाई के तीन ढाँचे साफ़ दिखते हैं। पहला विज्ञापन है: सनसनीखेज़ शीर्षक अधिक क्लिक लाता है, और अधिक क्लिक अधिक आय। यहाँ सच्चाई की कोई ज़रूरत नहीं, केवल ध्यान की ज़रूरत है।',
+          'दूसरा और अधिक ख़तरनाक ढाँचा वह है जहाँ वीडियो के नीचे एक नंबर दिया जाता है — "अपना सिक्का बेचने के लिए संपर्क करें"। यह नंबर सिक्के ख़रीदने के लिए नहीं, आपसे शुल्क वसूलने के लिए है।',
+        ],
+        pEn: [
+          'The quickest way to understand these claims is to ask what the person making the video gets out of it. If they genuinely owned a coin worth crores, they would sell the coin — not make a film about it and earn from advertising instead.',
+          'Three earning structures are clearly visible. The first is advertising: a sensational title brings more clicks, and more clicks bring more income. Truth plays no part in that arrangement at all; only attention does, and outrage produces attention efficiently.',
+          'The second and more dangerous structure is the one where a phone number appears below the video — "contact us to sell your coin". That number does not exist to buy coins from you. It exists to collect a fee from you, and the coin is only the bait.',
+        ],
+      },
+      {
+        hHi: 'शुल्क वाला जाल कैसे चलता है',
+        hEn: 'How the fee trap is run',
+        pHi: [
+          'यह जाल हमेशा एक ही क्रम में चलता है। पहले आपको बताया जाता है कि आपका सिक्का दुर्लभ है। फिर कहा जाता है कि उसे "पंजीकृत" या "प्रमाणित" कराना होगा, और उसके लिए एक छोटी रक़म चाहिए।',
+          'रक़म जानबूझकर छोटी रखी जाती है, ताकि आप बिना ज़्यादा सोचे दे दें। भुगतान के बाद अगला चरण आता है — कोई और शुल्क, कोई और औपचारिकता, और हर बार वादा कि बड़ी रक़म बस अगले क़दम पर है।',
+          'किसी बिंदु पर संपर्क टूट जाता है। तब तक ठगी गई रक़म भले बड़ी न हो, पर वह हज़ारों लोगों से ली गई होती है, और यही इस धंधे का पूरा अर्थशास्त्र है।',
+          'बचाव का नियम एक ही है और वह अपवाद-रहित है: सिक्का बेचने के लिए आपको पहले पैसा नहीं देना पड़ता। कोई असली ख़रीदार आपसे अग्रिम शुल्क नहीं माँगता, कभी नहीं।',
+        ],
+        pEn: [
+          'The trap always runs in the same order. First you are told your coin is rare. Then you are told it must be "registered" or "certified" before it can be sold, and that this requires a small payment to begin the process.',
+          'The amount is kept deliberately small so that you hand it over without thinking hard about it. Once it is paid the next stage arrives — another fee, another formality, and each time the assurance that the large sum is waiting just one step further along.',
+          'At some point contact simply stops. The amount taken from any single person may not be large, but it has been taken from thousands of people, and that repetition is the entire economics of the business.',
+          'There is one rule of protection and it has no exceptions: you never pay money in order to sell a coin. A genuine buyer does not ask you for an advance fee, under any description, ever.',
+        ],
+      },
+      {
+        hHi: 'नक़ली स्क्रीनशॉट और गढ़ी हुई नीलामी सूचियाँ',
+        hEn: 'Fake screenshots and invented auction listings',
+        pHi: [
+          'इन वीडियो में प्रमाण के तौर पर अक्सर एक स्क्रीनशॉट दिखाया जाता है जिसमें कोई विदेशी वेबसाइट किसी सिक्के का ऊँचा दाम दिखा रही होती है। यह स्क्रीनशॉट लगभग हमेशा भ्रामक होता है, और तीन में से किसी एक तरीक़े से।',
+          'पहला तरीक़ा सीधा जालसाज़ी है — तस्वीर संपादित कर दी गई। दूसरा तरीक़ा अधिक चालाक है: स्क्रीनशॉट किसी ऐसी सूची का है जहाँ विक्रेता ने ख़ुद मनमाना दाम लिख रखा है, पर वह सिक्का कभी बिका ही नहीं।',
+          'तीसरा तरीक़ा भ्रम का है: दाम असली है पर सिक्का दूसरा है — कोई दुर्लभ किस्म, कोई अलग तिथि, या कोई अलग देश का सिक्का जो देखने में आपके सिक्के जैसा लगता है।',
+          'इसलिए किसी भी स्क्रीनशॉट पर एक ही सवाल पूछिए: यह "माँगा गया दाम" है या "मिला हुआ दाम"? केवल दूसरा वास्तविक है, और असली नीलामी घर हमेशा यही प्रकाशित करते हैं।',
+        ],
+        pEn: [
+          'These videos frequently offer a screenshot as proof, showing some foreign website with a high price against a coin. That screenshot is almost always misleading, and it is misleading in one of three specific ways.',
+          'The first is straightforward forgery — the image has been edited. The second is more cunning: the screenshot shows a listing where a seller has simply typed in whatever number they liked, and the coin never actually sold at that figure or at any other.',
+          'The third works by confusion: the price is real but the coin is not yours — it is a rare variety, a different date, or a coin from another country altogether that happens to resemble the one in your hand.',
+          'So ask a single question of any screenshot: is this an asking price or a realised price? Only the second means anything, and genuine auction houses publish exactly that, which is why their archives are worth more than any video.',
+        ],
+      },
+      {
+        hHi: 'पाँच मिनट में किसी दावे की जाँच',
+        hEn: 'Checking a claim in five minutes',
+        pHi: [
+          'किसी भी वायरल दावे को परखने के लिए पाँच मिनट काफ़ी हैं, और उसके लिए किसी विशेषज्ञता की ज़रूरत नहीं। पहला क़दम: उस सिक्के की ढलाई-संख्या देखिए। यदि वह करोड़ों में है, तो सिक्का दुर्लभ नहीं हो सकता, बात यहीं ख़त्म।',
+          'दूसरा क़दम: किसी स्थापित नीलामी घर के पुराने परिणाम खोजिए। वहाँ उसी प्रकार के सिक्के का वास्तविक बिक्री-मूल्य मिल जाएगा, और वह प्रायः दावे से हज़ार गुना कम होगा।',
+          'तीसरा क़दम सबसे सरल है: किसी स्थानीय सिक्का व्यापारी को वह सिक्का दिखा दीजिए। यदि उसका सचमुच कोई असाधारण मूल्य होता, तो व्यापारी उसे तुरंत ख़रीदने को तैयार होता।',
+          'इन तीन क़दमों में से कोई भी अकेले पर्याप्त है। तीनों साथ मिलकर लगभग हर वायरल दावे को उसी दिन ख़त्म कर देते हैं।',
+        ],
+        pEn: [
+          'Five minutes is enough to test any viral claim, and no expertise is required to do it. The first step: look up the mintage of the coin. If it runs into crores of pieces, the coin cannot be rare, and the matter ends there without further discussion.',
+          'The second step: search the past results of an established auction house. You will find what that type of coin has actually sold for, and the figure is usually smaller than the claim by a factor of a thousand or more.',
+          'The third step is the simplest of all: show the coin to a local dealer. If it genuinely carried some extraordinary value, the dealer would be reaching for his wallet rather than explaining anything to you.',
+          'Any one of those three steps is sufficient on its own. Taken together they dispose of very nearly every viral claim within the same afternoon it reached you.',
+        ],
+      },
+      {
+        hHi: 'आम सिक्कों की असली छत क्या है',
+        hEn: 'What the real ceiling on ordinary coins is',
+        pHi: [
+          'यह जानना उपयोगी है कि आम प्रचलित सिक्कों का यथार्थवादी दाम कहाँ तक जाता है, क्योंकि तब कोई भी बढ़ा-चढ़ाया दावा अपने आप संदिग्ध लगने लगता है।',
+          'साधारण घिसे हुए ताँबे या स्टील के सिक्के प्रायः कुछ रुपये के हैं, और कई तो केवल लॉट में ही बिकते हैं। अच्छी हालत के आम चाँदी के सिक्कों का दाम उनकी धातु से थोड़ा ऊपर रहता है।',
+          'जो सिक्के सचमुच बड़ी रक़म पाते हैं, वे तीन में से किसी एक कारण से पाते हैं: बहुत कम ढलाई, कोई प्रमाणित एरर, या असाधारण रूप से बेहतरीन हालत। इन तीनों में से किसी की भी पुष्टि की जा सकती है।',
+          'यदि किसी दावे में इन तीन में से कोई कारण नहीं बताया गया — केवल तिथि बताई गई है — तो वह दावा लगभग निश्चित रूप से ख़ाली है।',
+        ],
+        pEn: [
+          'It helps to know where realistic prices for ordinary circulating coins actually stop, because once you do, any inflated claim begins to look suspicious entirely on its own without anybody having to argue you out of it.',
+          'An ordinary worn copper or steel coin is usually worth a few rupees, and many of them only move at all as part of a bulk lot. Common silver coins in good condition sit a little above the value of the metal inside them, and not dramatically above it.',
+          'Coins that genuinely fetch large sums do so for one of three reasons: a very small mintage, a certified error, or exceptionally fine condition. Every one of those three can be independently verified by somebody other than the seller.',
+          'If a claim offers none of those three reasons — if it offers only a date — then the claim is almost certainly empty, however confidently it happens to be delivered.',
+        ],
+      },
+      {
+        hHi: 'यह भ्रम इतना असरदार क्यों है',
+        hEn: 'Why the illusion works so well',
+        pHi: [
+          'इन दावों की ताक़त सिक्कों में नहीं, हमारी अपनी उम्मीद में है। लगभग हर घर में कहीं न कहीं पुराने सिक्के पड़े हैं, इसलिए "आपके पास शायद ख़ज़ाना हो" कहना हर सुनने वाले को सीधे छू जाता है।',
+          'दूसरा कारण यह है कि दावा सत्यापित करने में मेहनत लगती है, जबकि उस पर विश्वास करने में कुछ नहीं। जो बात हमें अच्छी लगती है, उसे हम स्वभाव से कम जाँचते हैं।',
+          'तीसरा कारण दोहराव है। जब वही दावा दस अलग खातों से आता है, तो वह स्वतंत्र पुष्टि जैसा लगने लगता है, जबकि असल में सब एक ही मूल से नक़ल किया गया होता है।',
+          'इसलिए बचाव का असली तरीक़ा जानकारी से अधिक आदत है: किसी भी दावे को मानने से पहले एक बार रुकना, और यह पूछना कि बताने वाले को इससे क्या मिल रहा है।',
+        ],
+        pEn: [
+          'The force behind these claims lies not in the coins but in our own hope. Almost every household has old coins lying somewhere, so saying "you might be sitting on a fortune" reaches each listener personally rather than in the abstract.',
+          'The second reason is that verifying a claim takes effort while believing it takes none. We instinctively examine pleasant news less carefully than unpleasant news, and these videos are built precisely on that asymmetry.',
+          'The third reason is repetition. When the same claim arrives from ten different accounts it starts to feel like independent confirmation, when in fact all ten have simply copied a single original source between them.',
+          'So the real defence is a habit rather than a body of knowledge: pausing once before accepting any claim, and asking what the person making it stands to gain from your believing it.',
+        ],
+      },
+      {
+        hHi: 'यदि आप पहले ही भुगतान कर चुके हैं',
+        hEn: 'If you have already paid',
+        pHi: [
+          'यदि आपने किसी ऐसे "पंजीकरण शुल्क" का भुगतान कर दिया है, तो सबसे पहला काम आगे कोई भुगतान न करना है। दूसरा भुगतान पहले से बड़ा होता है और पहला वापस नहीं लाता।',
+          'दूसरा काम प्रमाण सँभालना है — बातचीत के स्क्रीनशॉट, भुगतान की रसीद, और वह नंबर या खाता जिस पर पैसा गया। इसके बाद अपने बैंक को सूचित कीजिए और साइबर अपराध पोर्टल पर शिकायत दर्ज कीजिए।',
+          'तीसरा और सबसे उपयोगी काम बताना है। अधिकांश लोग शर्म के कारण चुप रह जाते हैं, और उसी चुप्पी से यह धंधा चलता है। आपकी कही हुई बात किसी और को उसी जाल से बचा सकती है।',
+        ],
+        pEn: [
+          'If you have already paid one of these "registration fees", the first thing to do is to make no further payment. The second demand is always larger than the first, and paying it does not bring the first one back.',
+          'The second thing is to preserve evidence — screenshots of the conversation, the payment receipt, and the number or account the money went to. Then inform your bank and file a complaint on the cybercrime portal without waiting to see whether contact resumes.',
+          'The third and most useful thing is to talk about it. Most people stay quiet out of embarrassment, and that silence is what keeps the business alive. Something you say may keep somebody else out of the same trap next month.',
+        ],
+      },
+      {
+        hHi: 'शांत रहने का व्यावहारिक लाभ',
+        hEn: 'The practical advantage of staying calm',
+        pHi: [
+          'इन दावों को नज़रअंदाज़ करना केवल नुक़सान से बचना नहीं है; इसका एक सकारात्मक पक्ष भी है। जो व्यक्ति शोर से दूर रहता है, वह उस समय और ध्यान को असली विषय पर लगा पाता है।',
+          'और असली विषय पर्याप्त दिलचस्प है। आपके संदूक का सिक्का करोड़ों का नहीं है, पर वह किसी ख़ास वर्ष का, किसी ख़ास टकसाल का, और किसी ख़ास आर्थिक परिस्थिति का साक्ष्य ज़रूर है।',
+          'यही वह क़ीमत है जो कोई वायरल वीडियो नहीं छीन सकता, और जो समय के साथ घटती नहीं। सिक्का जितना पुराना होता जाएगा, उसकी कहानी उतनी ही मज़बूत होती जाएगी — भले उसका दाम वही रहे।',
+        ],
+        pEn: [
+          'Ignoring these claims is not merely a matter of avoiding loss; there is a positive side to it as well. Somebody who stays away from the noise has that time and attention free for the subject itself, which is where the reward actually is.',
+          'And the subject is interesting enough on its own terms. The coin in your trunk is not worth crores, but it is certainly evidence of a particular year, a particular mint, and a particular set of economic circumstances that produced it.',
+          'That is a value no viral video can take away and one that does not shrink over time. The older the coin becomes, the stronger its story grows — even if the price beside it in a catalogue never moves at all.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'building-a-collection-on-a-budget',
+    sections: [
+      {
+        hHi: 'एक तय मासिक रक़म, और उसका अनुशासन',
+        hEn: 'A fixed monthly amount, and the discipline of it',
+        pHi: [
+          'छोटे बजट में संग्रह बनाने की सबसे कारगर तरकीब कोई सस्ता स्रोत खोजना नहीं, बल्कि एक तय रक़म तय कर लेना है। मान लीजिए हर महीने पाँच सौ रुपये — छोटी रक़म, पर नियमित।',
+          'नियमितता का असर हैरान करने वाला है। साल भर में यह छह हज़ार बनता है, जो एक सुविचारित संग्रह के लिए पर्याप्त से अधिक है, बशर्ते वह एक ही दिशा में ख़र्च किया जाए।',
+          'इसका दूसरा लाभ मनोवैज्ञानिक है। जब सीमा पहले से तय हो, तो हर सिक्के के सामने "ले लूँ या नहीं" का द्वंद्व नहीं रहता; प्रश्न केवल यह रहता है कि इस महीने की रक़म के लिए सबसे अच्छा उम्मीदवार कौन है।',
+        ],
+        pEn: [
+          'The most effective trick for building a collection on a small budget is not finding a cheap source but fixing an amount in advance. Say five hundred rupees a month — a small sum, but arriving reliably every single month without fail.',
+          'The effect of that regularity is surprising. Across a year it becomes six thousand rupees, which is more than enough for a thoughtfully assembled collection, provided the whole of it is spent in one consistent direction.',
+          'The second benefit is psychological. When the limit is already settled, no coin brings with it the struggle of "should I or shouldn\'t I"; the only remaining question is which candidate best deserves this particular month\'s money.',
+        ],
+      },
+      {
+        hHi: 'लॉट में ख़रीदने की रणनीति',
+        hEn: 'The strategy of buying in bulk lots',
+        pHi: [
+          'कम बजट में सबसे अधिक मूल्य लॉट से आता है। जब कोई विक्रेता सौ या दो सौ मिश्रित सिक्के एक साथ बेचता है, तो प्रति सिक्का दाम अलग-अलग ख़रीदने की तुलना में बहुत कम पड़ता है।',
+          'लॉट का असली लाभ छँटाई में है। सौ सिक्कों में से शायद पाँच आपके विषय के काम के निकलेंगे, कुछ बदलने लायक़ होंगे, और बाक़ी अभ्यास के लिए रहेंगे — और अभ्यास की सामग्री का अपना मूल्य है।',
+          'यहाँ एक चेतावनी भी है। लॉट तभी अच्छा सौदा है जब उसकी तस्वीर साफ़ हो और आप उसमें से कम से कम कुछ सिक्के पहचान सकें। "आश्चर्य का थैला" ख़रीदना जुआ है, बचत नहीं।',
+        ],
+        pEn: [
+          'On a small budget the most value comes out of bulk lots. When a seller offers a hundred or two hundred mixed coins together, the price per coin falls far below what the same pieces would cost bought individually one at a time.',
+          'The real benefit of a lot lies in the sorting. Out of a hundred coins perhaps five will serve your actual theme, a few more will be worth trading away, and the rest become practice material — and practice material has a genuine value of its own.',
+          'A caution belongs here too. A lot is only a good deal when the photograph is clear and you can identify at least some of the coins in it beforehand. Buying a "surprise bag" is gambling rather than economising, however low the price looks.',
+        ],
+      },
+      {
+        hHi: 'प्रचलन से सीधे इकट्ठा करना',
+        hEn: 'Collecting straight out of circulation',
+        pHi: [
+          'सबसे सस्ता स्रोत वह है जिसकी लागत शून्य है: आपकी अपनी जेब की खुल्ली रक़म। आधुनिक भारतीय सिक्कों की पूरी शृंखला — तिथि-दर-तिथि, टकसाल-दर-टकसाल — इसी तरह बनाई जा सकती है।',
+          'यह सुनने में मामूली लगता है पर वास्तव में यह गंभीर काम है। किसी एक मूल्यवर्ग की हर तिथि और हर टकसाल-चिह्न जमा करना वर्षों का काम है, और उसमें कुछ संयोजन सचमुच कठिन निकलते हैं।',
+          'इसका सबसे बड़ा लाभ शिक्षा है। जो व्यक्ति हज़ार सिक्के अपने हाथ से छाँट चुका है, उसकी आँख वह चीज़ सीख जाती है जो कोई किताब नहीं सिखा सकती — सामान्य क्या दिखता है, और इसलिए असामान्य क्या है।',
+        ],
+        pEn: [
+          'The cheapest source of all is the one that costs nothing: the loose change already in your own pocket. An entire run of modern Indian coins — date by date and mint by mint — can be assembled this way without a single rupee of outlay.',
+          'That sounds trivial and it is genuinely serious work. Gathering every date and every mint mark for a single denomination takes years, and some of the combinations turn out to be surprisingly difficult to find in ordinary change.',
+          'The greatest benefit here is educational. Somebody who has sorted a thousand coins by hand develops an eye for something no book can teach — what normal looks like, and therefore what abnormal looks like the instant it appears.',
+        ],
+      },
+      {
+        hHi: 'एक अच्छा सिक्का या दस औसत सिक्के',
+        hEn: 'One good coin or ten mediocre ones',
+        pHi: [
+          'यह वह निर्णय है जो हर सीमित बजट वाले संग्राहक के सामने बार-बार आता है, और अनुभव लगभग हमेशा एक ही ओर झुकता है: एक अच्छा सिक्का बेहतर है।',
+          'इसका कारण केवल सौंदर्य नहीं है। घिसे हुए सिक्के लगभग हमेशा उपलब्ध रहते हैं, इसलिए उनमें कोई जल्दी नहीं है; अच्छी हालत का सिक्का कभी-कभार ही सामने आता है, और उसे छोड़ देने पर लंबा इंतज़ार करना पड़ता है।',
+          'दूसरा कारण व्यावहारिक है। जब कभी संग्रह बेचना पड़े, तो दस औसत सिक्कों का ख़रीदार ढूँढ़ना कठिन होता है, जबकि एक अच्छे सिक्के के लिए ख़रीदार अपने आप मिल जाते हैं।',
+          'इसलिए बजट कम हो तो दायरा छोटा कीजिए, गुणवत्ता नहीं। पाँच अच्छे सिक्कों का संग्रह पचास साधारण सिक्कों से हर दृष्टि से आगे रहता है।',
+        ],
+        pEn: [
+          'This is the decision that returns again and again to every collector working within a limit, and experience nearly always leans the same way: one good coin is worth more than ten mediocre ones.',
+          'The reason is not merely aesthetic. Worn coins are almost always available, so there is no urgency about them; a coin in good condition appears only occasionally, and letting one go usually means a long wait before the next comparable example turns up.',
+          'The second reason is practical. If a collection ever has to be sold, finding a buyer for ten mediocre coins is hard work, while a single good coin attracts buyers without any effort on the seller\'s part at all.',
+          'So when the budget is small, narrow the scope rather than the quality. A collection of five good coins stands ahead of fifty ordinary ones by every measure that matters, including the pleasure of owning it.',
+        ],
+      },
+      {
+        hHi: 'वे ख़र्च जो चुपचाप बजट खा जाते हैं',
+        hEn: 'The costs that quietly eat the budget',
+        pHi: [
+          'कम बजट वाले संग्राहक का पैसा प्रायः सिक्कों में नहीं, उनके आसपास की चीज़ों में चला जाता है। महँगे एल्बम, सजावटी डिब्बे, और विशेष रूप से प्रमाणन शुल्क — ये तीनों बजट के सबसे बड़े रिसाव हैं।',
+          'प्रमाणन का प्रश्न सबसे साफ़ है। किसी सिक्के को प्रमाणित कराने का ख़र्च अक्सर उस सिक्के के दाम से अधिक होता है, इसलिए सस्ते सिक्कों के लिए यह ख़र्च तर्कहीन है।',
+          'एल्बम पर भी वही तर्क लागू होता है। साधारण, पीवीसी-मुक्त धारक और एक सस्ता डिब्बा वही सुरक्षा देते हैं जो महँगा एल्बम देता है, और बचा हुआ पैसा सीधे सिक्कों में जा सकता है।',
+          'नियम सरल है: भंडारण पर उतना ही ख़र्च कीजिए जितना संग्रह की रक्षा के लिए ज़रूरी है, एक पैसा अधिक नहीं। सजावट बाद में आती है, और तब आती है जब संग्रह उसका हक़ बना ले।',
+        ],
+        pEn: [
+          'A collector on a small budget usually loses money not to coins but to the things around them. Expensive albums, decorative cases, and above all certification fees — those three are the largest leaks in any modest collecting budget.',
+          'The question of certification is the clearest of them. Having a coin graded and encapsulated frequently costs more than the coin itself is worth, which makes the expense simply irrational for inexpensive material.',
+          'The same logic applies to albums. Plain PVC-free holders and an inexpensive box give exactly the protection that an expensive album gives, and the money saved can go straight into coins where it does visible good.',
+          'The rule is simple: spend on storage only what protecting the collection actually requires, and not one rupee beyond it. Presentation comes later, and it comes when the collection has earned the right to it.',
+        ],
+      },
+      {
+        hHi: 'अदला-बदली: वह रास्ता जिसमें पैसा लगता ही नहीं',
+        hEn: 'Trading: the route that needs no money at all',
+        pHi: [
+          'संग्राहकों के बीच अदला-बदली इस शौक़ की सबसे पुरानी परंपरा है और सबसे कम इस्तेमाल की जाने वाली भी। हर संग्रह में कुछ ऐसे सिक्के होते हैं जो दोहरे हैं या विषय से बाहर, और वही किसी और के लिए ज़रूरत के हो सकते हैं।',
+          'अदला-बदली की सबसे अच्छी बात यह है कि उसमें दोनों पक्ष जीतते हैं। कोई पैसा हाथ नहीं बदलता, फिर भी दोनों संग्रह बेहतर होकर निकलते हैं — यह बाज़ार का ऐसा कोना है जहाँ यह सचमुच संभव है।',
+          'इसे व्यवस्थित रखने के लिए एक "अतिरिक्त" डिब्बा रखिए। जो भी सिक्का दोहरा आए, वह सीधे उसी डिब्बे में जाए, और सोसाइटी की अगली बैठक या मेले में वही डिब्बा साथ ले जाइए।',
+        ],
+        pEn: [
+          'Trading between collectors is the oldest tradition in this hobby and also the least used. Every collection holds some coins that are duplicates or outside its theme, and those same pieces may be exactly what somebody else has been looking for.',
+          'The best thing about a trade is that both sides win. No money changes hands, and yet both collections come away improved — this is one of the few corners of any market where that is genuinely possible rather than merely claimed.',
+          'To keep it organised, keep a "duplicates" box. Any coin that arrives as a second example goes straight into it, and that box travels with you to the next society meeting or coin fair without needing any further preparation.',
+        ],
+      },
+      {
+        hHi: 'ख़र्च का हिसाब रखना',
+        hEn: 'Keeping track of what you spend',
+        pHi: [
+          'यह सलाह उबाऊ लगती है पर छोटे बजट में यही सबसे अधिक काम आती है। हर ख़रीद के साथ तिथि, दाम और विक्रेता लिख लीजिए — एक साधारण कॉपी पर्याप्त है।',
+          'कुछ महीनों बाद यह सूची आपको वह बताएगी जो स्मृति कभी नहीं बताती: आपका पैसा वास्तव में कहाँ गया। लगभग हर संग्राहक को यह देखकर आश्चर्य होता है कि कितना धन बिना सोचे किए गए छोटे सौदों में चला गया।',
+          'दूसरा लाभ यह है कि यही सूची बाद में संग्रह का रिकॉर्ड बन जाती है, और यदि कभी बेचना पड़े तो वह रिकॉर्ड अपने आप उद्गम का काम करता है, जिसकी अपनी क़ीमत होती है।',
+        ],
+        pEn: [
+          'This advice sounds dull and it is the piece that matters most on a small budget. Write down the date, the price and the seller with every purchase — an ordinary notebook is entirely sufficient for the job.',
+          'A few months later that list will tell you what memory never does: where the money actually went. Almost every collector is surprised to find how much of it disappeared into small, unconsidered purchases rather than into the pieces they meant to buy.',
+          'The second benefit is that the same list eventually becomes the record of the collection, and if a sale is ever necessary that record functions as provenance on its own, which carries a value of its own in any negotiation.',
+        ],
+      },
+      {
+        hHi: 'धैर्य ही असली पूँजी क्यों है',
+        hEn: 'Why patience is the real capital',
+        pHi: [
+          'सीमित बजट का सबसे बड़ा प्रतिस्थापन धन नहीं, समय है। जिस चीज़ को कोई और पैसे से तुरंत ख़रीद लेता है, उसे आप प्रतीक्षा से उसी दाम में — या उससे कम में — पा सकते हैं।',
+          'यह कोई सांत्वना नहीं बल्कि बाज़ार की बनावट है। सिक्के बार-बार बिकते हैं, और हर बार एक नया मौक़ा बनता है। जो व्यक्ति दो साल इंतज़ार करने को तैयार है, उसके लिए क़ीमतें व्यावहारिक रूप से कम हो जाती हैं।',
+          'और अंत में एक बात जो हर पुराने संग्राहक कहते हैं: छोटे बजट से बने संग्रह प्रायः बड़े बजट से बने संग्रहों से अधिक व्यक्तिगत होते हैं, क्योंकि उनमें हर सिक्का चुना गया है, केवल ख़रीदा नहीं गया।',
+        ],
+        pEn: [
+          'The main substitute for a limited budget is not money but time. What somebody else buys instantly by paying more, you can obtain by waiting — at the same price or often at a lower one when the right example finally comes around.',
+          'That is not a consolation but a description of how the market is built. Coins sell repeatedly, and each sale creates another opportunity. For a person willing to wait two years, prices are effectively lower than they are for somebody who must buy today.',
+          'And finally, something every long-standing collector says: collections built on small budgets are usually more personal than those built on large ones, because in them every coin was chosen rather than merely purchased.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'silver-coins-and-their-appeal',
+    sections: [
+      {
+        hHi: 'चाँदी क्यों धूमिल होती है — और यह हमेशा बुरा नहीं',
+        hEn: 'Why silver tarnishes — and why that is not always bad',
+        pHi: [
+          'चाँदी हवा में मौजूद गंधक के यौगिकों से प्रतिक्रिया करती है और उसकी सतह पर एक पतली परत बन जाती है। यही परत सिक्के को धूसर, सुनहरा, नीला या बैंगनी रंग देती है, और यही वह चीज़ है जिसे संग्राहक "टोनिंग" कहते हैं।',
+          'नए संग्राहक की पहली प्रतिक्रिया इसे गंदगी समझकर हटाने की होती है, और यही सबसे महँगी ग़लती है। यह परत गंदगी नहीं, धातु का ही रूपांतरित हिस्सा है — इसे हटाने का अर्थ है सिक्के की मूल सतह को हटाना।',
+          'और महत्वपूर्ण बात यह है कि अच्छी टोनिंग दाम बढ़ाती है, घटाती नहीं। समान रूप से फैली हुई, चिकनी और गहरी रंगत वाली सतह संग्राहकों के बीच चमकाई गई सतह से कहीं अधिक माँगी जाती है।',
+        ],
+        pEn: [
+          'Silver reacts with sulphur compounds in the air and forms a thin layer across its surface. That layer is what gives a coin its grey, golden, blue or purple cast, and it is exactly what collectors mean when they speak of toning.',
+          'A new collector\'s first instinct is to treat it as dirt and remove it, and that is the most expensive mistake available in this field. The layer is not dirt but a transformed part of the metal itself — removing it means removing the coin\'s original surface.',
+          'What matters most is that good toning raises value rather than lowering it. An evenly spread, smooth, deeply coloured surface is far more sought after among collectors than a brightly polished one will ever be.',
+        ],
+      },
+      {
+        hHi: 'अच्छी टोनिंग और नुक़सान में अंतर',
+        hEn: 'Telling good toning from damage',
+        pHi: [
+          'हर रंगत अच्छी नहीं होती, और अंतर पहचानना सीखने लायक़ है। अच्छी टोनिंग धीरे-धीरे बनी होती है, इसलिए वह पूरी सतह पर एक जैसी और मुलायम दिखती है, और उसके किनारे धुँधले होते हैं।',
+          'ख़राब रंगत के दो प्रकार हैं। पहला धब्बेदार काला जमाव है, जो प्रायः नमी और किसी रासायनिक संपर्क से आता है और सतह को खुरदुरा कर देता है। दूसरा हरा या सफ़ेद पाउडर जैसा जमाव है, जो सक्रिय संक्षारण का संकेत है और फैलता रहता है।',
+          'तीसरी श्रेणी कृत्रिम टोनिंग है, जो जानबूझकर गर्मी या रसायन से बनाई जाती है ताकि सिक्का पुराना और आकर्षक लगे। यह प्रायः बहुत चमकीली, बहुत असमान और किनारों पर बहुत तेज़ होती है — प्राकृतिक रंगत इतनी नाटकीय नहीं होती।',
+        ],
+        pEn: [
+          'Not all colour is good colour, and the difference is worth learning. Genuine toning forms slowly, so it appears even and soft across the whole surface, and its boundaries fade into one another rather than stopping abruptly.',
+          'Bad colour comes in two forms. The first is patchy black deposit, usually caused by moisture together with some chemical contact, and it leaves the surface rough rather than smooth. The second is a green or white powdery deposit, which signals active corrosion and will keep spreading if nothing is done.',
+          'A third category is artificial toning, produced deliberately with heat or chemicals so that a coin looks older and more attractive. It tends to be too bright, too uneven, and too sharply bounded at its edges — natural colour is rarely that dramatic.',
+        ],
+      },
+      {
+        hHi: 'शुद्धता कैसे पढ़ें',
+        hEn: 'How to read fineness',
+        pHi: [
+          'चाँदी के सिक्के शुद्ध चाँदी के नहीं होते, क्योंकि शुद्ध चाँदी बहुत नरम है और प्रचलन में तुरंत घिस जाती। इसलिए उसमें ताँबा मिलाया जाता है, और इस मिश्रण के अनुपात को शुद्धता या फाइननेस कहते हैं।',
+          'यह अनुपात प्रायः हज़ार के पैमाने पर लिखा जाता है। नौ सौ सत्रह का अर्थ है हज़ार भागों में नौ सौ सत्रह भाग चाँदी, और यही ब्रिटिश भारतीय रुपये का सामान्य मानक रहा।',
+          'यह जानकारी दो कारणों से काम आती है। पहला, इससे आप सिक्के में लगी वास्तविक चाँदी की मात्रा निकाल सकते हैं। दूसरा, शुद्धता में बदलाव प्रायः किसी आर्थिक घटना का सूचक होता है, इसलिए वह तिथि की तरह ही एक ऐतिहासिक संकेत है।',
+        ],
+        pEn: [
+          'Silver coins are not made of pure silver, because pure silver is soft enough that circulating pieces would wear away almost immediately. Copper is added to harden it, and the ratio of that mixture is what is called the fineness of the coin.',
+          'The ratio is usually expressed against a thousand. Nine hundred and seventeen means nine hundred and seventeen parts of silver in a thousand, and that was the ordinary standard for the British Indian rupee across most of its life.',
+          'Knowing this helps in two ways. First, it lets you work out how much actual silver a coin contains. Second, a change in fineness is almost always the signature of some economic event, so it functions as a historical marker in the same way a date does.',
+        ],
+      },
+      {
+        hHi: 'वज़न और ध्वनि की जाँच',
+        hEn: 'Checking by weight and by sound',
+        pHi: [
+          'चाँदी के सिक्कों की सबसे भरोसेमंद जाँच वज़न है, क्योंकि हर प्रकार का निर्धारित वज़न प्रकाशित है और नक़ल करने वालों के लिए धातु का घनत्व सबसे कठिन चीज़ है।',
+          'दूसरी जाँच ध्वनि की है। असली चाँदी का सिक्का उँगली पर संतुलित करके हल्के से ठोकने पर लंबी, ऊँची झंकार देता है जो कई सेकंड तक चलती है। सीसा या मिश्रित नक़ली धातु में यह झंकार छोटी और दबी हुई होती है।',
+          'तीसरी जाँच चुंबक की है, पर वह उलटी दिशा में काम करती है: चाँदी चुंबकीय नहीं है, इसलिए यदि सिक्का चुंबक से चिपके तो वह निश्चित रूप से नक़ली है। न चिपकना कोई प्रमाण नहीं, केवल एक बाधा पार करना है।',
+          'ये तीनों जाँचें घर पर, बिना किसी विशेष उपकरण के हो जाती हैं, और मिलकर अधिकांश साधारण नक़ल पकड़ लेती हैं।',
+        ],
+        pEn: [
+          'The most reliable test for a silver coin is its weight, because the specified weight for every type is published and the density of the metal is the hardest single property for a counterfeiter to reproduce accurately.',
+          'The second test is sound. Balanced on a fingertip and tapped lightly, a genuine silver coin gives a long, high ring that carries on for several seconds. Lead or a mixed counterfeit alloy produces a short, dull note that dies almost immediately.',
+          'The third test uses a magnet, and it works in the negative direction: silver is not magnetic, so a coin that sticks to a magnet is certainly false. A coin that does not stick has proved nothing — it has merely cleared one hurdle out of several.',
+          'All three checks can be done at home without any special equipment, and taken together they catch the large majority of ordinary counterfeits before any money changes hands.',
+        ],
+      },
+      {
+        hHi: 'चाँदी हाथ में अलग क्यों लगती है',
+        hEn: 'Why silver feels different in the hand',
+        pHi: [
+          'लोग अक्सर कहते हैं कि पुराना चाँदी का रुपया हाथ में "अलग" लगता है, और यह केवल भावना नहीं है। इसके पीछे तीन भौतिक कारण हैं जिन्हें अलग-अलग पहचाना जा सकता है।',
+          'पहला घनत्व है: चाँदी अधिकांश आधुनिक सिक्का-धातुओं से भारी है, इसलिए उसी आकार का सिक्का हाथ में अधिक वज़नी लगता है। दूसरा तापीय चालकता है: चाँदी ऊष्मा तेज़ी से खींचती है, इसलिए वह छूने पर ठंडी लगती है और धीरे-धीरे गर्म होती है।',
+          'तीसरा किनारे की बनावट है। पुराने चाँदी के सिक्कों के किनारे पर बारीक धारियाँ बनाई जाती थीं ताकि कोई उन्हें छीलकर धातु न चुरा सके, और वह बनावट उँगली के नीचे तुरंत महसूस होती है।',
+          'ये तीनों मिलकर वही अनुभव बनाते हैं जिसे लोग "असली लगना" कहते हैं — और यही कारण है कि हाथ में लेकर देखना तस्वीर देखने से हमेशा बेहतर रहता है।',
+        ],
+        pEn: [
+          'People often say an old silver rupee feels "different" in the hand, and that is not merely sentiment. There are three physical reasons behind the impression, and each of them can be identified separately once you know to look for it.',
+          'The first is density: silver is heavier than most modern coinage metals, so a coin of the same size sits noticeably more solidly in the palm. The second is thermal conductivity: silver draws heat away quickly, which is why it feels cold at first touch and warms only slowly.',
+          'The third is the edge. Old silver coins were given fine reeding along the rim specifically so that nobody could shave metal off them unnoticed, and that texture registers under a fingertip immediately.',
+          'Together those three produce exactly the impression people describe as "feeling real" — and it is why handling a coin will always tell you more than looking at a photograph of one, however good the photograph happens to be.',
+        ],
+      },
+      {
+        hHi: 'चाँदी के लिए भंडारण की ख़ास ज़रूरतें',
+        hEn: 'Storage needs specific to silver',
+        pHi: [
+          'चाँदी को अन्य धातुओं से थोड़ी अलग देखभाल चाहिए, क्योंकि उसकी समस्या नमी से अधिक हवा में मौजूद गंधक की है। इसलिए उसे यथासंभव बंद और स्थिर वातावरण में रखना चाहिए।',
+          'सबसे बड़ी व्यावहारिक चेतावनी सामग्री की है। रबर, ऊन, कुछ प्रकार के काग़ज़ और पुराने पीवीसी धारक — इन सबमें गंधक होता है और ये चाँदी को तेज़ी से काला कर देते हैं। यही कारण है कि "एल्बम में रखा था फिर भी काला हो गया" इतनी आम शिकायत है।',
+          'सही चुनाव तटस्थ, पीवीसी-मुक्त धारक और एक सूखा, बंद डिब्बा है, जिसमें सिलिका जेल का एक छोटा पैकेट रखा जा सके। इतना पर्याप्त है; इससे अधिक कुछ करने की ज़रूरत नहीं।',
+        ],
+        pEn: [
+          'Silver needs slightly different care from other metals, because its main enemy is not moisture but sulphur in the surrounding air. It should therefore be kept in as closed and as stable an environment as can reasonably be arranged.',
+          'The largest practical warning concerns materials. Rubber, wool, certain kinds of paper and older PVC holders all contain sulphur and will blacken silver quickly. That is precisely why "it was in an album and it still went black" is such a common complaint.',
+          'The right choice is a neutral, PVC-free holder inside a dry, closed box with a small packet of silica gel in it. That is sufficient, and there is no need to do anything more elaborate than that however valuable the coins happen to be.',
+        ],
+      },
+      {
+        hHi: 'भारत में चाँदी का सांस्कृतिक स्थान',
+        hEn: 'The cultural place of silver in India',
+        pHi: [
+          'भारत में चाँदी का महत्व केवल आर्थिक नहीं है, और यही बात इन सिक्कों के प्रति लगाव को समझाती है। चाँदी उपहार की धातु है, शुभ अवसरों की धातु है, और पीढ़ियों तक सँभालकर रखी जाने वाली धातु है।',
+          'यही कारण है कि पुराने चाँदी के रुपये अक्सर पूजा की थाली, गहनों के डिब्बे या किसी संदूक के कोने से निकलते हैं, न कि किसी संग्रह से। वे बचे इसलिए हैं क्योंकि उन्हें पैसा नहीं, वस्तु समझा गया।',
+          'संग्राहक के लिए इसका एक व्यावहारिक अर्थ भी है। ऐसे सिक्के प्रायः घिसे नहीं होते, क्योंकि वे प्रचलन में कम रहे — और यही वह कारण है जिससे भारतीय घरों से निकले चाँदी के सिक्के अक्सर अपेक्षा से बेहतर हालत में मिलते हैं।',
+        ],
+        pEn: [
+          'Silver in India carries a significance that is not only economic, and that is what explains the particular attachment people feel towards these coins. Silver is the metal of gifts, of auspicious occasions, and of things kept carefully across generations.',
+          'This is why old silver rupees so often emerge from a puja thali, a jewellery box or the corner of a trunk rather than from anybody\'s collection. They survived precisely because they were treated as objects rather than as money to be spent.',
+          'There is a practical consequence for collectors in this. Such coins are frequently not worn at all, because they spent little time in circulation — and that is why silver coming out of Indian households is often in considerably better condition than expected.',
+        ],
+      },
+      {
+        hHi: 'यथार्थ के साथ आनंद',
+        hEn: 'Enjoyment held together with realism',
+        pHi: [
+          'चाँदी के सिक्कों के बारे में दो बातें एक साथ सच हैं, और दोनों को साथ रखना ज़रूरी है। पहली, वे सुंदर, ऐतिहासिक और छूने में संतोषजनक हैं। दूसरी, अधिकांश आम चाँदी के सिक्कों का दाम उनकी धातु से बहुत ऊपर नहीं जाता।',
+          'जो व्यक्ति केवल दूसरी बात देखता है, वह इस विषय का आनंद खो देता है। जो केवल पहली देखता है, वह देर-सबेर निराश होता है। दोनों को साथ रखने वाला संग्राहक सबसे लंबे समय तक टिकता है।',
+          'व्यावहारिक निष्कर्ष यह है: चाँदी के सिक्के इसलिए इकट्ठा कीजिए क्योंकि वे आपको अच्छे लगते हैं, और उनकी धातु के मूल्य को एक सुरक्षा-जाल समझिए, लक्ष्य नहीं। इस क्रम में रखने पर यह शौक़ कभी बोझ नहीं बनता।',
+        ],
+        pEn: [
+          'Two things are true about silver coins at the same time, and holding both together is what matters. The first is that they are beautiful, historical and genuinely satisfying to handle. The second is that most common silver coins do not trade far above the value of their metal.',
+          'Somebody who sees only the second of those loses the enjoyment of the subject entirely. Somebody who sees only the first will be disappointed sooner or later. The collector who keeps both in view is the one who lasts longest in the hobby.',
+          'The practical conclusion runs like this: collect silver because you like it, and treat the metal value underneath as a safety net rather than as the objective. Kept in that order, this particular corner of collecting never turns into a burden.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'coin-collecting-tools',
+    sections: [
+      {
+        hHi: 'आवर्धन: कितना, और क्यों',
+        hEn: 'Magnification: how much, and why',
+        pHi: [
+          'सबसे पहला उपकरण एक लूप है, और यहाँ पहली ग़लती अक्सर यह होती है कि लोग जितना अधिक आवर्धन मिले उतना बेहतर समझ लेते हैं। वास्तव में उलटा सच है।',
+          'दस गुना आवर्धन इस काम का मानक है, और इसका कारण व्यावहारिक है। दस गुना पर दृष्टि-क्षेत्र इतना बड़ा रहता है कि आप पूरा तिथि-क्षेत्र एक साथ देख सकें, और गहराई इतनी रहती है कि सिक्के को लगातार हिलाना न पड़े।',
+          'बीस या तीस गुना पर दोनों चीज़ें टूट जाती हैं: दिखता बहुत कम है और ज़रा-सी हिलावट पर सब धुँधला हो जाता है। ऐसा आवर्धन केवल किसी एक संदिग्ध बिंदु की जाँच के लिए उपयोगी है, सामान्य देखने के लिए नहीं।',
+        ],
+        pEn: [
+          'The first tool is a loupe, and the first mistake here is usually assuming that more magnification must be better. In practice the opposite turns out to be true for almost everything a collector actually does.',
+          'Ten times magnification is the standard for this work, and the reason is practical. At ten times the field of view is wide enough to hold the whole date area at once, and the depth of focus is forgiving enough that the coin does not have to be held perfectly still.',
+          'At twenty or thirty times both of those break down: very little is visible and the smallest movement blurs everything. That level of magnification is useful for examining one suspicious point, not for looking at coins in general.',
+        ],
+      },
+      {
+        hHi: 'रोशनी वह उपकरण है जिसे लोग भूल जाते हैं',
+        hEn: 'Light is the tool people forget',
+        pHi: [
+          'अधिकांश नए संग्राहक लूप ख़रीदते हैं और रोशनी के बारे में नहीं सोचते, जबकि रोशनी का असर आवर्धन से कम नहीं है। एक साधारण सिक्का सही रोशनी में पूरी तरह अलग दिखता है।',
+          'सबसे उपयोगी व्यवस्था एक चल-लैंप है जिसे आप कोण से लगा सकें। सिक्के को सीधे ऊपर से रोशन करने पर सतह सपाट दिखती है; रोशनी को बग़ल से डालने पर छाया बनती है और हर उभार, हर खरोंच सामने आ जाती है।',
+          'रंग भी मायने रखता है। बहुत नीली सफ़ेद रोशनी में चाँदी की टोनिंग का असली रंग नहीं दिखता, इसलिए तटस्थ या हल्की गर्म रोशनी बेहतर है। और यदि संभव हो तो एक ही लैंप हमेशा इस्तेमाल कीजिए, ताकि तुलना एक जैसी रहे।',
+        ],
+        pEn: [
+          'Most new collectors buy a loupe and give no thought to lighting, even though light matters as much as magnification does. An ordinary coin looks like an entirely different object under the right lamp at the right angle.',
+          'The most useful arrangement is a movable lamp you can set at an angle. Lit straight from above, a surface looks flat; bring the light in from the side and shadows appear, and every raised detail and every scratch declares itself at once.',
+          'Colour matters as well. Very blue-white light hides the true colour of toning on silver, so neutral or slightly warm light is preferable. And if you can, use the same lamp every time, so that comparisons between coins stay consistent.',
+        ],
+      },
+      {
+        hHi: 'तराज़ू: सबसे कम आकर्षक, सबसे अधिक उपयोगी',
+        hEn: 'The scale: least glamorous, most useful',
+        pHi: [
+          'यदि किसी संग्राहक को केवल एक उपकरण चुनना हो, तो सही उत्तर लूप नहीं बल्कि तराज़ू है। वज़न वह एकमात्र माप है जो राय पर निर्भर नहीं करता, और नक़ल पकड़ने में यही सबसे प्रभावी है।',
+          'आवश्यकता बहुत मामूली है: एक छोटा डिजिटल तराज़ू जो सौवें हिस्से तक पढ़े। ऐसा तराज़ू सस्ता है और लगभग हर जगह मिल जाता है, और वह एक ही ख़राब सौदे से बचाकर अपनी क़ीमत वसूल कर देता है।',
+          'इस्तेमाल का तरीक़ा भी सरल है। सिक्के का निर्धारित वज़न सूची में देखिए और तुलना कीजिए। घिसाव के कारण थोड़ा कम वज़न सामान्य है; उल्लेखनीय अंतर, ख़ासकर अधिक वज़न, हमेशा जाँच माँगता है।',
+        ],
+        pEn: [
+          'If a collector could own only one tool, the correct answer is not the loupe but the scale. Weight is the single measurement that does not depend on anybody\'s opinion, and it is the most effective test available against counterfeits.',
+          'The requirement is very modest: a small digital scale reading to hundredths of a gram. Such a scale is inexpensive and available almost everywhere, and it repays its cost the first time it saves you from a single bad purchase.',
+          'Using it is equally simple. Look up the specified weight for the type and compare. Slightly low weight from wear is perfectly normal; a notable difference, and especially a coin that weighs more than it should, always deserves further examination.',
+        ],
+      },
+      {
+        hHi: 'कैलिपर और व्यास की जाँच',
+        hEn: 'The caliper and checking diameter',
+        pHi: [
+          'तराज़ू के बाद दूसरा माप व्यास का है, और उसके लिए एक साधारण वर्नियर कैलिपर पर्याप्त है। यह उपकरण भी सस्ता है और इसे सीखने में कुछ मिनट लगते हैं।',
+          'व्यास इसलिए उपयोगी है क्योंकि नक़ल करने वाले प्रायः वज़न ठीक कर लेते हैं पर आकार में चूक जाते हैं, या इसके उलट। जब दोनों माप एक साथ सही बैठें, तो सिक्के के असली होने की संभावना बहुत बढ़ जाती है।',
+          'तीसरा माप मोटाई का है, जो उसी कैलिपर से हो जाता है। ढली हुई नक़लें प्रायः थोड़ी मोटी होती हैं, क्योंकि साँचे में धातु उतनी सघन नहीं बैठती जितनी दबाव में ढाले गए सिक्के में।',
+        ],
+        pEn: [
+          'After the scale, the next measurement is diameter, and an ordinary vernier caliper is entirely sufficient for it. That tool is also inexpensive and takes only a few minutes to learn how to read properly.',
+          'Diameter is useful because counterfeiters frequently get the weight right and the size wrong, or the other way round. When both measurements agree with the published figures at once, the probability that a coin is genuine rises considerably.',
+          'The third measurement is thickness, taken with the same caliper. Cast forgeries tend to be slightly thick, because metal poured into a mould does not compact the way metal struck under pressure between two dies does.',
+        ],
+      },
+      {
+        hHi: 'दस्ताने, या साफ़ सूखे हाथ',
+        hEn: 'Gloves, or clean dry hands',
+        pHi: [
+          'यह विषय संग्राहकों के बीच बहस का रहा है, और सच्चाई बीच में है। उँगलियों पर मौजूद तेल और नमी धातु पर निशान छोड़ते हैं, इसलिए सतह को छूने से बचना चाहिए — पर दस्ताने अपनी समस्या साथ लाते हैं।',
+          'सूती दस्ताने पकड़ ढीली कर देते हैं, और गिरा हुआ सिक्का उस निशान से कहीं बड़ा नुक़सान है जिसे आप रोक रहे थे। इसलिए बहुत से अनुभवी संग्राहक नाइट्राइल दस्ताने पसंद करते हैं, जो पतले होते हैं और फिसलते नहीं।',
+          'सबसे व्यावहारिक नियम यह है: सिक्के को हमेशा किनारे से पकड़िए, अँगूठे और तर्जनी के बीच, और सतह को कभी न छुएँ। यदि आप यह अनुशासन रखते हैं, तो साफ़ सूखे हाथ भी पर्याप्त हैं।',
+        ],
+        pEn: [
+          'This has been argued about among collectors for a long time, and the truth sits in the middle. Oil and moisture on fingertips leave marks on metal, so the surfaces should not be touched — but gloves bring problems of their own.',
+          'Cotton gloves loosen your grip, and a dropped coin is a much larger loss than the fingerprint you were preventing. For that reason many experienced collectors prefer thin nitrile gloves, which are thin enough to keep a proper hold.',
+          'The most practical rule is this: always hold a coin by its edge, between thumb and forefinger, and never touch the faces at all. If you keep that discipline, clean dry hands are perfectly sufficient on their own.',
+        ],
+      },
+      {
+        hHi: 'मेज़ पर एक नरम सतह',
+        hEn: 'A soft surface on the table',
+        pHi: [
+          'यह सबसे सस्ता उपकरण है और सबसे अधिक अनदेखा किया जाता है: मेज़ पर बिछा एक नरम कपड़ा या फ़ोम की चटाई। इसका काम केवल एक है — गिरे हुए सिक्के को बचाना।',
+          'सिक्के गिरते हैं, यह मान लेना ही समझदारी है। कठोर मेज़ पर गिरने से किनारा दब जाता है और वह निशान स्थायी रहता है; नरम सतह पर वही गिरावट बिना किसी नुक़सान के बीत जाती है।',
+          'इसका दूसरा लाभ यह है कि सिक्का लुढ़ककर दूर नहीं जाता, जो फ़र्श पर गिरने और गुम होने की सबसे आम शुरुआत है। एक साधारण कपड़ा इन दोनों जोखिमों को लगभग ख़त्म कर देता है।',
+        ],
+        pEn: [
+          'This is the cheapest tool of all and the one most often ignored: a soft cloth or foam mat spread across the working table. It has exactly one job — to protect a coin that has been dropped.',
+          'Coins do get dropped, and the sensible approach is to assume it. Landing on a hard table flattens the rim and that mark is permanent; the same fall onto a soft surface passes without any damage at all.',
+          'The second benefit is that a coin does not roll away, which is how most coins end up on the floor and then lost under furniture. A plain cloth removes very nearly both of those risks for almost no cost.',
+        ],
+      },
+      {
+        hHi: 'दर्ज करने के उपकरण: कॉपी और कैमरा',
+        hEn: 'Tools for recording: the notebook and the camera',
+        pHi: [
+          'उपकरणों की सूची में दो चीज़ें ऐसी हैं जो सिक्के को छूती ही नहीं, फिर भी सबसे उपयोगी में गिनी जाती हैं। पहली एक साधारण कॉपी है जिसमें हर सिक्के का विवरण दर्ज हो।',
+          'दूसरा आपका फ़ोन है। हर सिक्के की दोनों ओर की एक अच्छी तस्वीर लेना कुछ सेकंड का काम है और उसका मूल्य समय के साथ बढ़ता जाता है — तुलना के लिए, बीमा के लिए, और यदि कभी सिक्का खो जाए तो पहचान के लिए।',
+          'तस्वीर लेने का एक छोटा नियम याद रखने लायक़ है: सिक्के को सीधे नीचे रखिए, कैमरे को ठीक ऊपर, और रोशनी बग़ल से। सीधी फ़्लैश से बचिए, क्योंकि वह सतह का सारा विवरण मिटा देती है।',
+        ],
+        pEn: [
+          'Two items on any tool list never touch a coin at all and still count among the most useful. The first is an ordinary notebook in which the details of every coin are written down as it enters the collection.',
+          'The second is your phone. Taking one good photograph of each side of a coin costs a few seconds, and its value grows steadily over time — for comparison, for insurance, and for identification if a coin is ever lost or stolen.',
+          'One small rule about photography is worth remembering: lay the coin flat, place the camera directly above it, and bring the light in from the side. Avoid the direct flash, because it erases all surface detail in a single burst.',
+        ],
+      },
+      {
+        hHi: 'जो उपकरण नहीं ख़रीदने चाहिए',
+        hEn: 'The tools not to buy',
+        pHi: [
+          'यह सूची उतनी ही महत्वपूर्ण है जितनी पहले वाली। सबसे पहले, कोई भी सफ़ाई का रसायन मत ख़रीदिए। ये उत्पाद सिक्के की मूल सतह हटाते हैं और उसका दाम स्थायी रूप से घटा देते हैं।',
+          'दूसरे, अल्ट्रासोनिक सफ़ाई मशीन। यह गहनों के लिए बनी है, सिक्कों के लिए नहीं, और पुरानी सतह पर इसका असर विनाशकारी होता है।',
+          'तीसरे, तथाकथित "सिक्का परखने वाली" सस्ती इलेक्ट्रॉनिक मशीनें। इनका परिणाम अविश्वसनीय होता है, और उनसे मिला झूठा आत्मविश्वास बिना किसी मशीन के होने से अधिक ख़तरनाक है।',
+          'बचाया हुआ यह सारा पैसा एक ही जगह लगाइए जो हमेशा लाभ देती है: किताबें और सूचियाँ। यही वह उपकरण है जिसकी धार समय के साथ कुंद नहीं होती।',
+        ],
+        pEn: [
+          'This list matters as much as the previous one. First, do not buy cleaning chemicals of any kind. These products strip away the original surface of a coin and reduce its value permanently, whatever the packaging promises.',
+          'Second, the ultrasonic cleaner. It was designed for jewellery rather than coins, and its effect on an aged surface is straightforwardly destructive rather than merely risky.',
+          'Third, the cheap electronic "coin testers" sold online. Their readings are unreliable, and the false confidence they produce is more dangerous than owning no device at all would have been.',
+          'Put all of that saved money into the one place that always repays it: books and catalogues. That is the single tool in this hobby whose edge never goes blunt with use.',
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: 'why-coins-matter-history',
+    sections: [
+      {
+        hHi: 'सिक्का एक अलग तरह का स्रोत है',
+        hEn: 'A coin is a different kind of source',
+        pHi: [
+          'इतिहास के अधिकांश स्रोत किसी के लिखे हुए हैं, और लिखने वाले का अपना दृष्टिकोण होता है। सिक्का भी सत्ता द्वारा बनाया गया है, पर उसकी प्रकृति अलग है — और यही अंतर उसे ख़ास बनाता है।',
+          'पहला अंतर यह है कि सिक्का बड़ी संख्या में बनाया जाता है और हर जगह फैलता है, इसलिए वह किसी एक दरबार का नहीं बल्कि पूरे क्षेत्र का साक्ष्य बन जाता है।',
+          'दूसरा अंतर यह है कि सिक्का धातु में है, इसलिए वह जलता नहीं, सड़ता नहीं और दीमक नहीं खाती। जहाँ काग़ज़ और ताड़पत्र नष्ट हो चुके हैं, वहाँ भी सिक्के बचे रह जाते हैं।',
+        ],
+        pEn: [
+          'Most historical sources were written by somebody, and whoever writes carries a point of view into the writing. A coin is also made by authority, but its nature is different — and that difference is precisely what makes it valuable.',
+          'The first difference is that a coin is produced in enormous numbers and spreads everywhere it can be spent, so it becomes evidence about a whole region rather than about a single court and its immediate surroundings.',
+          'The second difference is that a coin is metal. It does not burn, it does not rot, and insects do not eat it. Where paper and palm leaf have long since perished, coins survive in the ground and come back up intact.',
+        ],
+      },
+      {
+        hHi: 'तिथि, नाम और उपाधि — तीन तथ्य एक वस्तु पर',
+        hEn: 'Date, name and title — three facts on one object',
+        pHi: [
+          'एक सिक्के पर प्रायः तीन चीज़ें एक साथ मिलती हैं: शासक का नाम, उसकी उपाधियाँ, और वर्ष। तीनों एक ही समय, एक ही अधिकार से दर्ज किए गए हैं, और यही संयोजन दुर्लभ है।',
+          'नाम से हमें यह पता चलता है कि उस क्षेत्र पर किसका दावा था। उपाधि से हमें यह पता चलता है कि वह अपने को क्या मानता था — और उपाधियों का बदलना अक्सर किसी विजय या किसी हार का संकेत होता है।',
+          'वर्ष सबसे क़ीमती है, क्योंकि वह पूरी कालक्रम-संरचना को टिकाता है। जहाँ ग्रंथ अस्पष्ट हैं, वहाँ एक तिथियुक्त सिक्का बहस को कुछ ही शब्दों में तय कर देता है।',
+        ],
+        pEn: [
+          'A coin usually carries three things at once: the ruler\'s name, his titles, and a year. All three were recorded at the same moment by the same authority, and that combination is genuinely rare among surviving sources.',
+          'The name tells us who was claiming that territory. The titles tell us what he considered himself to be — and a change in titles is very often the signature of a conquest or of a defeat that no chronicle happened to record.',
+          'The year is the most valuable element of the three, because it anchors the whole framework of chronology. Where texts are vague or contradictory, a dated coin can settle the argument in a handful of words.',
+        ],
+      },
+      {
+        hHi: 'सिक्के कहाँ मिलते हैं, यह भी एक प्रमाण है',
+        hEn: 'Where coins are found is itself evidence',
+        pHi: [
+          'सिक्के पर क्या लिखा है, यह आधी जानकारी है; वह कहाँ मिला, यह दूसरी आधी है। जब किसी शासक के सिक्के किसी विशेष क्षेत्र में बड़ी संख्या में मिलते हैं, तो वह उस क्षेत्र पर उसके प्रभाव का ठोस संकेत है।',
+          'इससे भी दिलचस्प वह स्थिति है जब सिक्के अपने मूल क्षेत्र से बहुत दूर मिलें। दक्षिण भारत में मिले रोमन सिक्के व्यापार-मार्गों का प्रमाण हैं, और वे किसी ग्रंथ के बिना भी वह कहानी कह देते हैं।',
+          'यही कारण है कि पुरातत्ववेत्ता "मिलने की जगह" को इतना महत्व देते हैं। बिना संदर्भ के सिक्का केवल एक वस्तु है; संदर्भ के साथ वह एक नक़्शा बन जाता है।',
+        ],
+        pEn: [
+          'What is written on a coin is half the information; where it was found is the other half. When a ruler\'s coins turn up in quantity across a particular region, that is solid evidence of his influence over it.',
+          'More interesting still is when coins are found far from where they were struck. Roman coins recovered in southern India are proof of trade routes, and they tell that story perfectly well without any surviving text to accompany them.',
+          'This is exactly why archaeologists place such weight on findspot. Without context a coin is only an object; with context it becomes a map, and the map is frequently the more valuable of the two.',
+        ],
+      },
+      {
+        hHi: 'अवमूल्यन: संकट जो धातु में दर्ज हो जाता है',
+        hEn: 'Debasement: crisis recorded in the metal',
+        pHi: [
+          'सिक्कों की सबसे शक्तिशाली गवाही शायद यह है कि वे आर्थिक संकट को छिपा नहीं सकते। जब कोई शासन कठिनाई में होता है, तो वह सिक्के में क़ीमती धातु घटाता है — और यह घटाव मापा जा सकता है।',
+          'इतिहासकार इसी माप से उन संकटों तक पहुँचते हैं जिनका कोई लिखित विवरण नहीं बचा। शुद्धता की गिरती हुई रेखा एक प्रकार का आर्थिक ग्राफ़ है, जो शासन के अपने दस्तावेज़ों से अधिक ईमानदार है।',
+          'यही बात उलटी दिशा में भी काम करती है। जब कोई नया शासन सत्ता में आकर सिक्कों की शुद्धता बहाल करता है, तो वह एक राजनीतिक घोषणा है — भरोसा लौटाने की कोशिश, धातु के माध्यम से कही गई।',
+        ],
+        pEn: [
+          'Perhaps the most powerful testimony coins give is that they cannot hide an economic crisis. When a regime is in difficulty it reduces the precious metal in its coinage — and that reduction can be measured centuries afterwards.',
+          'Historians use exactly this measurement to reach crises for which no written account survives. A declining line of fineness is a kind of economic graph, and it is considerably more honest than the regime\'s own documents ever were.',
+          'The same thing works in the opposite direction. When a new regime comes to power and restores the fineness of the coinage, that is a political announcement — an attempt to rebuild confidence, made through metal rather than through words.',
+        ],
+      },
+      {
+        hHi: 'कला, लिपि और भाषा का रिकॉर्ड',
+        hEn: 'A record of art, script and language',
+        pHi: [
+          'सिक्के छोटे हैं, पर उन पर की गई कला अपने समय की शैली का सटीक नमूना है। चेहरे का बनाव, वस्त्र, आभूषण, और पीछे बनी आकृतियाँ — सब उस काल की दृश्य-भाषा बताती हैं।',
+          'लिपि इससे भी अधिक उपयोगी है। अक्षरों का आकार सदियों के साथ बदलता है, और सिक्कों पर वह बदलाव तिथियुक्त रूप में दर्ज हो जाता है। इसी कारण सिक्के लिपि-विज्ञान के सबसे भरोसेमंद आधारों में गिने जाते हैं।',
+          'और भाषा का चुनाव अपने आप में एक राजनीतिक तथ्य है। किसी सिक्के पर कौन-सी भाषा पहले आती है, कौन-सी दूसरी, और कौन-सी बिल्कुल नहीं — इन तीन सवालों के उत्तर उस शासन के दर्शकों के बारे में बहुत कुछ बता देते हैं।',
+        ],
+        pEn: [
+          'Coins are small, but the art on them is an exact specimen of the style of their period. The modelling of a face, the clothing, the ornaments, the figures on the reverse — all of it records the visual language then in use.',
+          'Script is more useful still. The shapes of letters change across centuries, and on coins that change is recorded in dated form. This is why coins count among the most reliable foundations of palaeography anywhere in the field.',
+          'And the choice of language is itself a political fact. Which language comes first on a coin, which comes second, and which is absent altogether — the answers to those three questions say a great deal about whom the regime was addressing.',
+        ],
+      },
+      {
+        hHi: 'सिक्के क्या नहीं बता सकते',
+        hEn: 'What coins cannot tell us',
+        pHi: [
+          'ईमानदारी यह माँगती है कि इस स्रोत की सीमाएँ भी बताई जाएँ। सिक्का सत्ता का दस्तावेज़ है, इसलिए वह वही कहता है जो सत्ता कहलवाना चाहती थी। उस पर लिखी उपाधि दावा है, प्रमाण नहीं।',
+          'दूसरी सीमा यह है कि सिक्के आम लोगों के जीवन के बारे में बहुत कम कहते हैं। वे बताते हैं कि किसने शासन किया और किस धातु में, पर यह नहीं कि किसान की थाली में क्या था।',
+          'तीसरी सीमा नक़ल और अनुकरण की है। कई शासकों ने पड़ोसी या पूर्ववर्ती शासकों के सिक्कों की नक़ल की, इसलिए किसी सिक्के से सीधे यह निष्कर्ष निकालना कि वह क्षेत्र उसी के अधीन था, हमेशा सुरक्षित नहीं।',
+          'इन सीमाओं को जानना इस स्रोत को कमज़ोर नहीं करता; यह उसे सही ढंग से इस्तेमाल करने योग्य बनाता है।',
+        ],
+        pEn: [
+          'Honesty requires stating the limits of this source as well. A coin is a document of authority, so it says what authority wanted said. The title struck on it is a claim rather than a proof, and it should be read that way.',
+          'The second limit is that coins say very little about the lives of ordinary people. They tell us who ruled and in what metal, but not what was on a farmer\'s plate or how much of the harvest he was able to keep.',
+          'The third limit is imitation. Many rulers copied the coinage of neighbours or predecessors, so concluding directly from a coin that a territory was under a particular ruler is not always safe without other supporting evidence.',
+          'Knowing these limits does not weaken the source; it is what makes it usable correctly rather than carelessly.',
+        ],
+      },
+      {
+        hHi: 'नुमिस्मैटिक्स और संग्रह में अंतर',
+        hEn: 'The difference between numismatics and collecting',
+        pHi: [
+          'ये दो शब्द अक्सर एक साथ इस्तेमाल होते हैं पर उनका अर्थ एक नहीं है। संग्रह करना वस्तुएँ इकट्ठा करना है; नुमिस्मैटिक्स उन वस्तुओं से प्रश्न पूछना है।',
+          'एक ही व्यक्ति दोनों कर सकता है, और सबसे संतोषजनक अनुभव तभी बनता है जब वह दोनों करे। जो केवल इकट्ठा करता है, उसका शौक़ किसी दिन ऊब में बदल जाता है; जो प्रश्न पूछता है, उसका कभी नहीं।',
+          'व्यावहारिक अंतर छोटा है और असर बड़ा। जब भी कोई नया सिक्का संग्रह में आए, उसके बारे में एक वाक्य लिख लीजिए — यह क्या है, कहाँ का है, और यह किस बात का साक्ष्य है। यही एक आदत संग्रह को अध्ययन में बदल देती है।',
+        ],
+        pEn: [
+          'These two words are often used together but they do not mean the same thing. Collecting is the gathering of objects; numismatics is the practice of asking questions of those objects and following the answers.',
+          'One person can do both, and the most satisfying version of this hobby is the one where they do. Somebody who only accumulates eventually finds the interest fading; somebody who asks questions never runs out of the next thing to look into.',
+          'The practical difference is small and its effect is large. Whenever a new coin enters the collection, write one sentence about it — what it is, where it is from, and what it is evidence of. That single habit turns a collection into a study.',
+        ],
+      },
+      {
+        hHi: 'यही असली मूल्य है',
+        hEn: 'This is where the real value lies',
+        pHi: [
+          'यदि कोई पूछे कि किसी साधारण, सस्ते, घिसे हुए सिक्के का क्या मूल्य है, तो सबसे सच्चा उत्तर यह है: उसका मूल्य इस बात में है कि वह किसी विशेष वर्ष में, किसी विशेष व्यवस्था में, किसी वास्तविक व्यक्ति के हाथ में था।',
+          'वह हाथ अब नहीं है, वह व्यवस्था अब नहीं है, पर वह धातु का टुकड़ा दोनों को छूकर आया है। बाज़ार इस बात के लिए कुछ नहीं देता, और फिर भी यही इस पूरे विषय की जड़ है।',
+          'इसलिए जो व्यक्ति सिक्कों को केवल निवेश समझता है, वह वास्तव में सबसे सस्ता हिस्सा ख़रीद रहा है और सबसे क़ीमती हिस्सा छोड़ रहा है। दूसरा हिस्सा किसी भी बजट में उपलब्ध है, और वह कभी घटता नहीं।',
+        ],
+        pEn: [
+          'If somebody asks what an ordinary, cheap, worn coin is worth, the most truthful answer is this: its value lies in the fact that in some particular year, under some particular system, it sat in the hand of a real person.',
+          'That hand is gone and that system is gone, but this piece of metal passed through both of them. The market pays nothing at all for that, and it is nevertheless the root of the entire subject.',
+          'So somebody who treats coins purely as an investment is buying the cheapest part of them and leaving the most valuable part behind. The second part is available at any budget whatsoever, and unlike the first it never falls in value.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function applyExpansions(all: Article[]): void {
