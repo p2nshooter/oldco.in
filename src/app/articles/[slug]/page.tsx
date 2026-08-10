@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ARTICLES, CATEGORIES, getArticle, getArticlesByCategory } from '@/content/articles';
 import { ArticleBody, RelatedArticles } from '@/components/Article';
+import { jsonLdHtml } from '@/lib/json-ld';
 
 const BASE = 'https://oldco.in';
 const NAME = 'OldCo.in';
@@ -56,7 +57,7 @@ export default async function ArticlePage({ params }: Props) {
   };
   return (
     <div className="py-10">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }} />
       <ArticleBody article={article} />
       <RelatedArticles articles={related} />
     </div>

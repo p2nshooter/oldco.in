@@ -6,6 +6,7 @@ import { LangProvider } from '@/lib/lang';
 import { SiteHeader, SiteFooter } from '@/components/Site';
 import { GlobalAds } from '@/components/Ads';
 import { PageAds } from '@/components/PageAds';
+import { jsonLdHtml } from '@/lib/json-ld';
 
 // Devanagari-first typography: Hindi is the native language of the site.
 const deva = Noto_Serif_Devanagari({
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdHtml({
               '@context': 'https://schema.org',
               '@graph': [
                 { '@type': 'Organization', '@id': 'https://oldco.in#org', name: 'OldCo.in', url: 'https://oldco.in', logo: 'https://oldco.in/icon.svg' },
