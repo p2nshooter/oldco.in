@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import { useLang } from '@/lib/lang';
-import { AdSlot } from '@/components/AdSlot';
-import { BannerAd, NativeAd, SponsoredCard } from '@/components/Ads';
 import { CATEGORIES, type Article } from '@/content/articles';
 
 /** Article tile for grids — premium framed card. */
@@ -49,22 +47,9 @@ export function ArticleBody({ article }: { article: Article }) {
       </p>
       <div className="ornament-rule mt-5" />
 
-      <BannerAd slot="leaderboard" />
-
       <div className={`article-body mt-6 ${lang === 'hi' ? 'dropcap-hi' : 'dropcap-en'}`}>
         {article.sections.map((s, i) => (
           <section key={i}>
-            {/* Reader-friendly ad density: distinct in-content slots spaced ~2
-                sections apart (each centrally controlled from the ulyah.com
-                admin), so a normal article shows 3–4 tasteful ads with the
-                footer unit — never inside a paragraph, never sticky. */}
-            {i === 0 && <BannerAd slot="rectangle" />}
-            {i === 1 && <AdSlot placement="in_article" />}
-            {i === 2 && <NativeAd />}
-            {i === 3 && <AdSlot placement="in_article_1" />}
-            {i === 4 && <BannerAd slot="banner468" />}
-            {i === 5 && <AdSlot placement="in_article_2" />}
-            {i === 6 && <BannerAd slot="skyscraper" />}
             {(lang === 'hi' ? s.hHi : s.hEn) && <h2>{lang === 'hi' ? s.hHi : s.hEn}</h2>}
             {(lang === 'hi' ? s.pHi : s.pEn).map((p, j) => (
               <p key={j}>{p}</p>
@@ -72,10 +57,6 @@ export function ArticleBody({ article }: { article: Article }) {
           </section>
         ))}
       </div>
-
-      <AdSlot placement="footer" />
-      <BannerAd slot="halfpage" />
-      <SponsoredCard />
 
       <div className="ornament-rule mt-10" />
       <p className="mt-4 text-xs leading-relaxed text-ink-800/60">
@@ -168,8 +149,6 @@ export function HomeContent({ articles }: { articles: Article[] }) {
         </div>
       </section>
 
-      <BannerAd slot="leaderboard" className="mx-auto max-w-6xl px-4" />
-
       {/* Topic desks */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="flex items-end justify-between">
@@ -204,9 +183,6 @@ export function HomeContent({ articles }: { articles: Article[] }) {
             <ArticleCard key={a.slug} article={a} />
           ))}
         </div>
-        <AdSlot placement="footer" />
-        <NativeAd />
-        <SponsoredCard />
       </section>
     </div>
   );
@@ -221,7 +197,6 @@ export function CategoryContent({ cat, articles }: { cat: (typeof CATEGORIES)[nu
       <h1 className="mt-2 font-serif text-3xl font-black text-ink-900">{lang === 'hi' ? cat.nameHi : cat.nameEn}</h1>
       <p className="mt-2 max-w-xl text-ink-800/70">{lang === 'hi' ? cat.taglineHi : cat.taglineEn}</p>
       <div className="ornament-rule mt-5 max-w-sm" />
-      <BannerAd slot="rectangle" />
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((a) => (
           <ArticleCard key={a.slug} article={a} />
