@@ -4,8 +4,6 @@ import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
 import './globals.css';
 import { LangProvider } from '@/lib/lang';
 import { SiteHeader, SiteFooter } from '@/components/Site';
-import { GlobalAds } from '@/components/Ads';
-import { PageAds } from '@/components/PageAds';
 import { jsonLdHtml } from '@/lib/json-ld';
 
 // Devanagari-first typography: Hindi is the native language of the site.
@@ -35,7 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'hi_IN'
   },
-  other: { 'google-adsense-account': 'ca-pub-6371903555702163' }
+  other: { 'google-adsense-account': 'ca-pub-6293576511807510' }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,10 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="hi" className={`${deva.variable} ${inter.variable}`}>
       <head>
         {/* Google AdSense — the one loader + account meta, on every page. */}
-        <meta name="google-adsense-account" content="ca-pub-6371903555702163" />
+        <meta name="google-adsense-account" content="ca-pub-6293576511807510" />
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6371903555702163"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6293576511807510"
           crossOrigin="anonymous"
         />
         <script
@@ -67,12 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LangProvider>
           <SiteHeader />
           <main className="min-h-[60vh]">{children}</main>
-          {/* Tops every route up to the owner's minimum of six Adsterra units,
-              covering top, middle and bottom. Counts what the template already
-              placed, and obeys the central switch in the ulyah.com admin. */}
-          <PageAds />
           <SiteFooter />
-          <GlobalAds />
         </LangProvider>
       </body>
     </html>
