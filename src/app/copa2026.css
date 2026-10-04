@@ -1,0 +1,23 @@
+/* Spain, world champion 2026 — the ribbon at the top of every page
+   (owner: "animasi pemenang piala Dunia 2026 Spanyol" on every site).
+   Palace room: Royal Mint (Taksal). Decoration only; nothing here is clickable. */
+/* oldco.in — the Royal Mint: maroon velvet and old gold. The 2026 chip is a
+   freshly struck coin whose milled edge keeps turning. */
+.taksal26{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:36px;padding:4px 12px;color:#f3dfa6;border-bottom:2px solid #c9a24a;
+  background:repeating-linear-gradient(45deg,#5a0f1c 0 10px,#61121f 10px 20px);font:600 13px/1.3 inherit;letter-spacing:.02em}
+.taksal26-flag{width:20px;height:13px;background:linear-gradient(#c60b1e 0 25%,#ffc400 25% 75%,#c60b1e 75%);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,12% 50%)}
+.taksal26-trophy{font-size:16px;filter:drop-shadow(0 0 5px rgba(243,223,166,.6));animation:taksal26-strike 2.4s ease-in-out infinite}
+@keyframes taksal26-strike{0%,70%,100%{transform:scale(1)}78%{transform:scale(1.18)}86%{transform:scale(.96)}}
+.taksal26-pitch{position:relative;width:46px;height:20px}
+.taksal26-ballx{position:absolute;left:0;bottom:0;animation:taksal26-x 2.8s ease-in-out infinite}
+.taksal26-ball{display:block;font-size:12px;animation:taksal26-y .7s ease-in infinite alternate}
+@keyframes taksal26-x{50%{transform:translateX(32px)}}
+@keyframes taksal26-y{to{transform:translateY(-9px) rotate(-200deg)}}
+.taksal26-chip{position:relative;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;font:800 9px/1 system-ui,sans-serif;color:#4a1a0a;background:radial-gradient(circle,#f6e2a3 55%,#c9a24a 56%)}
+.taksal26-chip::before{content:"";position:absolute;inset:-2px;border-radius:50%;background:repeating-conic-gradient(#c9a24a 0 6deg,#8a6a1f 6deg 12deg);z-index:-1;animation:taksal26-mill 6s linear infinite}
+@keyframes taksal26-mill{to{transform:rotate(360deg)}}
+
+.taksal26-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:480px){.taksal26-pitch{display:none}.taksal26{font-size:11.5px;gap:7px}}
+@media (prefers-reduced-motion:reduce){.taksal26,.taksal26 *,.taksal26::before,.taksal26::after,.taksal26 *::before,.taksal26 *::after{animation:none!important}}
