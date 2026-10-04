@@ -27,8 +27,21 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      # next/font downloads the Google Fonts CSS while it builds. On
+      # 2026-10-04 the oldco.in deploy died in next/font while fetching
+      # Noto Serif Devanagari, though the same code built the day before (the
+      # same failure hit xaa.es on 2026-10-03). A failure that names next/font
+      # is retried twice; any other build error fails at once.
       - name: Build for Cloudflare
-        run: npm run cf:build
+        run: |
+          set -o pipefail
+          for attempt in 1 2 3; do
+            if npm run cf:build 2>&1 | tee /tmp/build.log; then exit 0; fi
+            if ! grep -q "next/font" /tmp/build.log; then exit 1; fi
+            echo "::warning::next/font could not fetch Google Fonts (attempt $attempt), retrying in $((attempt * 20))s"
+            sleep $((attempt * 20))
+          done
+          exit 1
 
       # The Cloudflare steps below need repo secrets. If they are not set yet,
       # skip them with a LOUD notice instead of failing the whole run red —
