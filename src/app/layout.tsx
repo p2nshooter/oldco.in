@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { SiteBeacon } from "@/components/SiteBeacon";
 import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
 import './globals.css';
+import './copa2026.css';
 import { LangProvider } from '@/lib/lang';
 import { SiteHeader, SiteFooter } from '@/components/Site';
+import { Copa2026 } from '@/components/Copa2026';
 import { jsonLdHtml } from '@/lib/json-ld';
 
 // Devanagari-first typography: Hindi is the native language of the site.
@@ -63,7 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-serif">
         <SiteBeacon />
         <LangProvider>
-          <SiteHeader />
+          <Copa2026 />
+        <SiteHeader />
           <main className="min-h-[60vh]">{children}</main>
           <SiteFooter />
         </LangProvider>
