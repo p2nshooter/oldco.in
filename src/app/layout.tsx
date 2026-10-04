@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   // Own brand favicon — overrides the leftover Sedo parking favicon that a
   // browser may still show for a freshly-migrated domain.
-  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
+  icons: { icon: '/icon.svg?v=2', shortcut: '/icon.svg?v=2', apple: '/icon.svg?v=2' },
   robots: { index: true, follow: true },
   openGraph: {
     siteName: 'OldCo.in',
