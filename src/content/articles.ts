@@ -1,7 +1,6 @@
 import { ARTICLES_BATCH2 } from './articles-batch2';
 import { ARTICLES_BATCH3 } from './articles-batch3';
 import { ARTICLES_BATCH4 } from './articles-batch4';
-import AUTO_ARTICLES from "./auto-articles.json";
 import { applyExpansions } from './expansions';
 /**
  * OldCo.in — original bilingual library on India's old coins and numismatics.
@@ -734,8 +733,8 @@ ARTICLES.push(...ARTICLES_BATCH2);
 ARTICLES.push(...ARTICLES_BATCH3);
 ARTICLES.push(...ARTICLES_BATCH4);
 
-// Autonomous content bot output (committed by the ulyah.com Orchestra).
-ARTICLES.push(...(AUTO_ARTICLES as unknown as Article[]));
+// Machine-written articles are no longer published here: hand-written only.
+// The 23 that were removed redirect to their hand-written twins (next.config.js).
 
 // Hand-written additive expansions. Sections are only ever appended; no
 // existing article is edited, replaced or merged.
