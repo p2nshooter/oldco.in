@@ -147,6 +147,9 @@ export function SiteFooter() {
               <li><Link href="/contact" className="transition hover:text-gold-300">{lang === 'hi' ? 'संपर्क' : 'Contact'}</Link></li>
               <li><Link href="/privacy" className="transition hover:text-gold-300">{lang === 'hi' ? 'गोपनीयता नीति' : 'Privacy Policy'}</Link></li>
               <li><Link href="/terms" className="transition hover:text-gold-300">{lang === 'hi' ? 'नियम व शर्तें' : 'Terms'}</Link></li>
+              <li><Link href="/cookies" className="transition hover:text-gold-300">{lang === 'hi' ? 'कुकी नीति' : 'Cookie Policy'}</Link></li>
+              <li><Link href="/disclaimer" className="transition hover:text-gold-300">{lang === 'hi' ? 'अस्वीकरण' : 'Disclaimer'}</Link></li>
+              <li><Link href="/editorial-policy" className="transition hover:text-gold-300">{lang === 'hi' ? 'संपादकीय नीति' : 'Editorial Policy'}</Link></li>
               <li><a href="#top" className="transition hover:text-gold-300">↑ {lang === 'hi' ? 'ऊपर जाएँ' : 'Back to top'}</a></li>
             </ul>
           </div>
