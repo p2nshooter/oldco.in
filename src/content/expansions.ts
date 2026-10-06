@@ -1,4 +1,15 @@
 import type { Article, Section } from './articles';
+import { TOPUP_1500_01 } from './expansions-1500-01';
+import { TOPUP_1500_02 } from './expansions-1500-02';
+import { TOPUP_1500_03 } from './expansions-1500-03';
+import { TOPUP_1500_04 } from './expansions-1500-04';
+import { TOPUP_1500_05 } from './expansions-1500-05';
+import { TOPUP_1500_06 } from './expansions-1500-06';
+import { TOPUP_1500_07 } from './expansions-1500-07';
+import { TOPUP_1500_08 } from './expansions-1500-08';
+import { TOPUP_1500_09 } from './expansions-1500-09';
+import { TOPUP_1500_10 } from './expansions-1500-10';
+import { TOPUP_1500_11 } from './expansions-1500-11';
 
 /**
  * Additive expansions for the OldCo.in bilingual library.
@@ -8109,7 +8120,7 @@ export const EXPANSIONS: Expansion[] = [
 
 export function applyExpansions(all: Article[]): void {
   const bySlug = new Map(all.map((a) => [a.slug, a]));
-  for (const exp of EXPANSIONS) {
+  for (const exp of [...EXPANSIONS, ...TOPUP_1500_01, ...TOPUP_1500_02, ...TOPUP_1500_03, ...TOPUP_1500_04, ...TOPUP_1500_05, ...TOPUP_1500_06, ...TOPUP_1500_07, ...TOPUP_1500_08, ...TOPUP_1500_09, ...TOPUP_1500_10, ...TOPUP_1500_11]) {
     const article = bySlug.get(exp.slug);
     if (!article) continue;
     article.sections.push(...exp.sections);
