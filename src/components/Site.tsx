@@ -92,6 +92,9 @@ export function SiteHeader() {
           <Link href="/about" className="mk-underline shrink-0 whitespace-nowrap opacity-70 transition hover:text-gold-600">
             {lang === 'hi' ? 'हमारे बारे में' : 'About'}
           </Link>
+          <Link href="/collector-tools" className="mk-underline eco-promo shrink-0 whitespace-nowrap font-semibold text-gold-600 transition">
+            {lang === 'hi' ? '✦ संग्राहक टूल' : '✦ Collector tools'}
+          </Link>
         </div>
       </nav>
     </header>
@@ -144,6 +147,7 @@ export function SiteFooter() {
             <p className="text-sm font-semibold text-gold-300">{lang === 'hi' ? 'साइट' : 'Site'}</p>
             <ul className="mt-3 space-y-2 text-sm text-ivory-100/70">
               <li><Link href="/about" className="transition hover:text-gold-300">{lang === 'hi' ? 'हमारे बारे में' : 'About us'}</Link></li>
+              <li><Link href="/collector-tools" className="eco-promo font-semibold text-gold-300 transition hover:text-gold-300">{lang === 'hi' ? '✦ संग्राहक टूल' : '✦ Collector tools'}</Link></li>
               <li><Link href="/contact" className="transition hover:text-gold-300">{lang === 'hi' ? 'संपर्क' : 'Contact'}</Link></li>
               <li><Link href="/privacy" className="transition hover:text-gold-300">{lang === 'hi' ? 'गोपनीयता नीति' : 'Privacy Policy'}</Link></li>
               <li><Link href="/terms" className="transition hover:text-gold-300">{lang === 'hi' ? 'नियम व शर्तें' : 'Terms'}</Link></li>
