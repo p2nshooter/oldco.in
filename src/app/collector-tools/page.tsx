@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'संग्राहकों के डिजिटल साथी · Tools for collectors — AXTO & XAA',
   description:
-    'हमारा अपना प्रचार: सिक्कों के नोट्स और वीडियो के लिए AXTO, और डीलरों व संग्राहक समितियों की वेबसाइट के लिए XAA. Our own promotion, clearly labelled.',
+    'प्रकाशक की ओर से विज्ञापन: सिक्कों के नोट्स और वीडियो के लिए AXTO, और डीलरों व संग्राहक समितियों की वेबसाइट के लिए XAA. Our own promotion, clearly labelled.',
   alternates: { canonical: '/collector-tools' }
 };
 
@@ -17,7 +17,7 @@ const link = (base: string) => `${base}/?utm_source=oldco.in&utm_medium=referral
 export default function CollectorToolsPage() {
   return (
     <div className="mx-auto max-w-prose2 px-4 py-12">
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">✦ हमारा अपना प्रचार · Our own promotion</p>
+      <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold-600">✦ प्रकाशक की ओर से · From our publisher</p>
       <h1 className="mt-2 font-serif text-3xl font-black">संग्राहकों के डिजिटल साथी</h1>
       <div className="ornament-rule mt-4 max-w-sm" />
       <p className="mt-4 text-sm opacity-60">Last reviewed: 19 October 2026</p>
@@ -37,7 +37,7 @@ export default function CollectorToolsPage() {
             <strong>Clipper</strong> किसी लंबे वीडियो से छोटी, सबटाइटल वाली क्लिप आपके अपने डिवाइस पर बनाता है — प्रदर्शनी या संग्रह दिखाने के लिए उपयोगी।
           </li>
           <li>
-            AI आपकी अपनी कुंजी से चलता है; AXTO केवल अनुरोध आगे भेजता है। इंटरफ़ेस हिंदी में भी उपलब्ध है।
+            AI का ख़र्च सीधे उस सेवा को जाता है जिसकी कुंजी आप जोड़ते हैं — AXTO बीच में सिर्फ़ संदेशवाहक है। मेनू और बटन हिंदी में देखे जा सकते हैं।
           </li>
         </ul>
         <p>
@@ -48,8 +48,8 @@ export default function CollectorToolsPage() {
         <h2>XAA — डीलरों और संग्राहक समितियों के लिए वेबसाइट</h2>
         <p>
           <a href={link('https://xaa.es')} className="text-gold-600 underline" rel="noopener">XAA</a> यूरोप का वेब डेवलपमेंट स्टूडियो है। सिक्कों की दुनिया के लिए वह बना सकता है:
-          संग्राहक समिति की वेबसाइट और सदस्यता, डीलर की ऑनलाइन दुकान, या कई विक्रेताओं वाला मार्केटप्लेस। हर काम चरणों में बँटता है, जो अलग-अलग तय, पूरे और भुगतान
-          (PayPal, बैंक ट्रांसफ़र या USDT) होते हैं। तैयार टेम्पलेट से शुरुआत भी हो सकती है; XAA की साइट अंग्रेज़ी, स्पेनिश और इंडोनेशियाई में है।
+          संग्राहक समिति की वेबसाइट और सदस्यता, डीलर की ऑनलाइन दुकान, या कई विक्रेताओं वाला मार्केटप्लेस। पूरा काम पड़ावों में बँटा रहता है और हर पड़ाव देख लेने के बाद ही उसका भुगतान होता है — PayPal, USDT या बैंक के ज़रिए।
+          छोटे बजट वाले तैयार ढाँचे से शुरू कर सकते हैं; स्टूडियो की अपनी साइट अंग्रेज़ी, स्पेनिश और इंडोनेशियाई भाषा में पढ़ी जा सकती है।
         </p>
 
         <h2>For English-speaking collectors</h2>
@@ -62,7 +62,7 @@ export default function CollectorToolsPage() {
 
         <h2>हमारी स्वतंत्रता · Our independence</h2>
         <p>
-          OldCo.in का कोई लेख AXTO या XAA की सिफ़ारिश नहीं करता और न उनके कारण बदला गया है। Our guides stay independent and none was written because of them.
+          हमारे लेख पहले की तरह स्वतंत्र हैं — किसी भी लेख में इन दोनों का ज़िक्र सलाह के तौर पर नहीं आता। Our guides stay independent and none was written because of them.
         </p>
       </div>
     </div>
