@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'hi_IN'
   },
-  other: { 'google-adsense-account': 'ca-pub-2493615451319531' }
+  other: { 'google-adsense-account': 'ca-pub-6293576511807510' }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,12 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="hi" className={`${deva.variable} ${inter.variable}`}>
       <head>
         {/* Google AdSense — the one loader + account meta, on every page.
-            19 Oct 2026 (owner, latest): oldco.in → google.com, pub-2493615451319531
-            (replaces 6293576511807510). */}
-        <meta name="google-adsense-account" content="ca-pub-2493615451319531" />
+            20 Oct 2026 (owner, latest): oldco.in → google.com, pub-6293576511807510
+            (replaces 2493615451319531). */}
+        <meta name="google-adsense-account" content="ca-pub-6293576511807510" />
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2493615451319531"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6293576511807510"
           crossOrigin="anonymous"
         />
         <script
