@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
  * or authenticity claims, no ad slot.
  */
 export const metadata: Metadata = {
-  title: 'संग्राहकों के डिजिटल साथी · Tools for collectors — AXTO & XAA',
+  title: 'संग्राहकों के डिजिटल साथी — AXTO & XAA',
   description:
     'प्रकाशक की ओर से विज्ञापन: सिक्कों के नोट्स और वीडियो के लिए AXTO, और डीलरों व संग्राहक समितियों की वेबसाइट के लिए XAA. Our own promotion, clearly labelled.',
   alternates: { canonical: '/collector-tools' }

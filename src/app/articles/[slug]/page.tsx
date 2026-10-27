@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ARTICLES, CATEGORIES, getArticle, getArticlesByCategory } from '@/content/articles';
 import { ArticleBody, RelatedArticles } from '@/components/Article';
+import { searchTitle, snippet } from '@/lib/seo';
 import { jsonLdHtml } from '@/lib/json-ld';
 
 const BASE = 'https://oldco.in';
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
   const url = `${BASE}/articles/${slug}`;
   return {
-    title: article.titleHi,
-    description: article.excerptHi,
+    title: { absolute: searchTitle(article.titleHi, 'OldCo.in') },
+    description: snippet(article.excerptHi),
     alternates: { canonical: `/articles/${slug}` },
     openGraph: { title: article.titleHi, description: article.excerptHi, type: 'article', url, publishedTime: article.date, modifiedTime: article.date, section: article.category },
   };
@@ -37,7 +38,7 @@ export default async function ArticlePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Article', '@id': `${url}#article`,
+        '@type': 'Article', '@id': `${url}#article`, image: `${BASE}/opengraph-image.png`,
         headline: article.titleHi, alternativeHeadline: article.titleEn,
         description: article.excerptHi, datePublished: article.date, dateModified: article.date,
         articleSection: catName, wordCount, inLanguage: ['hi', 'en'], isAccessibleForFree: true,
