@@ -24,11 +24,13 @@ export const metadata: Metadata = {
     template: '%s · OldCo.in'
   },
   description:
-    'पुराने भारतीय सिक्कों का इतिहास, असली क़ीमत, ग्रेडिंग और संग्रह की कला — हिन्दी और अंग्रेज़ी में, मुफ़्त, बिना रजिस्ट्रेशन। Honest guides to old Indian coins, their history and value, in Hindi and English.',
+    'पुराने भारतीय सिक्कों का इतिहास, असली क़ीमत और ग्रेडिंग — हिन्दी और अंग्रेज़ी में, मुफ़्त। Honest guides to old Indian coins and their value.',
   alternates: { canonical: '/' },
   // Own brand favicon — overrides the leftover Sedo parking favicon that a
   // browser may still show for a freshly-migrated domain.
-  icons: { icon: '/icon.svg?v=2', shortcut: '/icon.svg?v=2', apple: '/icon.svg?v=2' },
+  // apple-icon.png, opengraph-image.png and twitter-image.png sit in app/ (file conventions).
+  icons: { icon: '/icon.svg?v=2', shortcut: '/icon.svg?v=2' },
+  twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
   openGraph: {
     siteName: 'OldCo.in',
