@@ -26,6 +26,8 @@ jobs:
 
       - name: Type check
         run: npm run typecheck
+      - name: AdSense accounts (src/lib/adsense.ts = public/ads.txt = layout)
+        run: node scripts/check-adsense.mjs
 
       # next/font downloads the Google Fonts CSS while it builds. On
       # 2026-10-04 the oldco.in deploy died in next/font while fetching
