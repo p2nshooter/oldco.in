@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { AD_ACCOUNTS, AD_CLIENT } from '@/lib/adsense';
 import { SiteBeacon } from "@/components/SiteBeacon";
 import { Noto_Serif_Devanagari, Inter } from 'next/font/google';
 import './globals.css';
@@ -36,21 +37,21 @@ export const metadata: Metadata = {
     siteName: 'OldCo.in',
     type: 'website',
     locale: 'hi_IN'
-  },
-  other: { 'google-adsense-account': 'ca-pub-6293576511807510' }
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hi" className={`${deva.variable} ${inter.variable}`}>
       <head>
-        {/* Google AdSense — the one loader + account meta, on every page.
-            20 Oct 2026 (owner, latest): oldco.in → google.com, pub-6293576511807510
-            (replaces 2493615451319531). */}
-        <meta name="google-adsense-account" content="ca-pub-6293576511807510" />
+        {/* Google AdSense (owner, 7 Nov 2026): one google-adsense-account meta tag per authorised account and ONE
+            loader, the primary account — src/lib/adsense.ts. */}
+        {AD_ACCOUNTS.map((account) => (
+          <meta key={account} name="google-adsense-account" content={account} />
+        ))}
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6293576511807510"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`}
           crossOrigin="anonymous"
         />
         <script
